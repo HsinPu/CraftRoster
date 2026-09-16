@@ -22,6 +22,17 @@ function isNonEmptyString(value) {
   return typeof value === 'string' && value.trim().length > 0;
 }
 
+function validateLocale(item, label, errors) {
+  if (item.locale === undefined) return;
+  if (!['en', 'zh-TW', 'mixed-zh-TW-en'].includes(item.locale)) {
+    errors.push(`${label}: locale must be en, zh-TW, or mixed-zh-TW-en`);
+  } else if (item.locale !== 'en' && typeof item.prompt === 'string' && !/[\u3400-\u9fff]/.test(item.prompt)) {
+    errors.push(`${label}: Chinese locale needs a Chinese-language prompt`);
+  } else if (item.locale === 'mixed-zh-TW-en' && typeof item.prompt === 'string' && !/[A-Za-z]{2,}/.test(item.prompt)) {
+    errors.push(`${label}: mixed locale needs English text as well`);
+  }
+}
+
 function isWithin(parent, candidate) {
   const relative = path.relative(parent, candidate);
   return relative === '' || (!relative.startsWith(`..${path.sep}`) && relative !== '..' && !path.isAbsolute(relative));
@@ -197,6 +208,7 @@ function validateEvalDocument(skillName, skillDir, document, errors) {
     if (!isNonEmptyString(evaluation.prompt)) {
       errors.push(`${label}: evals[${evalIndex}].prompt must be a non-empty string`);
     }
+    validateLocale(evaluation, `${label}: evals[${evalIndex}]`, errors);
     if (!isNonEmptyString(evaluation.expected_output)) {
       errors.push(`${label}: evals[${evalIndex}].expected_output must be a non-empty string`);
     }
@@ -221,6 +233,15 @@ function validateEvalDocument(skillName, skillDir, document, errors) {
       }
     }
 
+    if (evaluation.fixture_root !== undefined) {
+      const fixtureRoot = evaluation.fixture_root;
+      if (typeof fixtureRoot !== 'string' || !/^evals\/fixtures(?:\/[A-Za-z0-9_-]+)*$/.test(fixtureRoot)) {
+        errors.push(`${label}: evals[${evalIndex}].fixture_root must be a normalized directory under evals/fixtures`);
+      } else if (!Array.isArray(evaluation.files) || evaluation.files.length === 0
+        || evaluation.files.some(file => typeof file !== 'string' || !file.startsWith(fixtureRoot + '/'))) {
+        errors.push(`${label}: evals[${evalIndex}].files must be nonempty and stay below fixture_root`);
+      }
+    }
     if (evaluation.files === undefined) continue;
     if (!Array.isArray(evaluation.files)) {
       errors.push(`${label}: evals[${evalIndex}].files must be an array when declared`);
@@ -320,6 +341,7 @@ function validateRoutingDocument(skillName, document, errors, routingReferences)
     if (!isNonEmptyString(routingCase.prompt)) {
       errors.push(`${label}: cases[${caseIndex}].prompt must be a non-empty string`);
     }
+    validateLocale(routingCase, `${label}: cases[${caseIndex}]`, errors);
 
     const expectedSkills = validateRoutingSkillList(
       routingCase.expected_skills,
@@ -335,6 +357,15 @@ function validateRoutingDocument(skillName, document, errors, routingReferences)
       caseIndex,
       errors
     );
+    const allowedSkills = routingCase.allowed_skills === undefined ? new Set() : validateRoutingSkillList(
+      routingCase.allowed_skills, 'allowed_skills', label, caseIndex, errors
+    );
+    for (const allowedSkill of allowedSkills) {
+      routingReferences.push({ label, caseIndex, field: 'allowed_skills', skillName: allowedSkill });
+      if (excludedSkills.has(allowedSkill)) {
+        errors.push(`${label}: cases[${caseIndex}] contains Skill in both allowed_skills and excluded_skills: ${allowedSkill}`);
+      }
+    }
 
     for (const expectedSkill of expectedSkills) {
       routingReferences.push({ label, caseIndex, field: 'expected_skills', skillName: expectedSkill });
@@ -479,13 +510,17 @@ function parseRoot(argv) {
   process.exit(2);
 }
 
-const root = parseRoot(process.argv.slice(2));
-const result = validateRepository(root);
-if (result.errors.length > 0) {
-  console.error('Skill eval validation failed:');
-  for (const error of result.errors) console.error(`- ${error}`);
-  console.error(`Coverage: ${formatCoverage(result.summary)}`);
-  process.exit(1);
+if (require.main === module) {
+  const root = parseRoot(process.argv.slice(2));
+  const result = validateRepository(root);
+  if (result.errors.length > 0) {
+    console.error('Skill eval validation failed:');
+    for (const error of result.errors) console.error(`- ${error}`);
+    console.error(`Coverage: ${formatCoverage(result.summary)}`);
+    process.exitCode = 1;
+  } else {
+    console.log(`Skill eval validation passed: ${formatCoverage(result.summary)} (case definitions only; no model tasks executed)`);
+  }
 }
 
-console.log(`Skill eval validation passed: ${formatCoverage(result.summary)}`);
+module.exports = { validateRepository, validateRoutingDocument, formatCoverage };

@@ -134,6 +134,36 @@ function safeCleanup() {
 }
 
 try {
+  expectPass('accepts localized public fixture metadata', (caseRoot) => {
+    writeCoverageManifest(caseRoot, ['alpha-skill']);
+    const skillDir = writeEvalDocument(caseRoot, 'alpha-skill', {
+      skill_name: 'alpha-skill', evals: [{ id: 1, prompt: '請檢查 local fixture。', locale: 'mixed-zh-TW-en',
+        expected_output: 'An observable result.', assertions: ['The file is verified.'],
+        fixture_root: 'evals/fixtures/local', files: ['evals/fixtures/local/input.txt'] }],
+    });
+    fs.mkdirSync(path.join(skillDir, 'evals/fixtures/local'), { recursive: true });
+    fs.writeFileSync(path.join(skillDir, 'evals/fixtures/local/input.txt'), 'sample');
+  });
+
+  expectRejected('rejects unsupported locale and mislabeled language', (caseRoot) => {
+    writeCoverageManifest(caseRoot, ['alpha-skill']);
+    writeEvalDocument(caseRoot, 'alpha-skill', {
+      skill_name: 'alpha-skill', evals: [
+        { id: 1, prompt: 'English only.', locale: 'zh-TW', expected_output: 'Result.', assertions: ['Checked.'] },
+        { id: 2, prompt: '只有中文。', locale: 'mixed-zh-TW-en', expected_output: 'Result.', assertions: ['Checked.'] },
+        { id: 3, prompt: 'Example.', locale: 'unsupported', expected_output: 'Result.', assertions: ['Checked.'] },
+      ],
+    });
+  }, ['Chinese locale needs', 'mixed locale needs English', 'locale must be']);
+
+  expectRejected('rejects fixture files outside declared workspace root', (caseRoot) => {
+    writeCoverageManifest(caseRoot, ['alpha-skill']);
+    writeEvalDocument(caseRoot, 'alpha-skill', {
+      skill_name: 'alpha-skill', evals: [{ id: 1, prompt: 'Check fixture.', expected_output: 'Result.',
+        assertions: ['Checked.'], fixture_root: 'evals/fixtures/local', files: ['SKILL.md'] }],
+    });
+  }, ['files must be nonempty and stay below fixture_root']);
+
   expectPass('accepts valid routing eval cases', (caseRoot) => {
     writeCoverageManifest(caseRoot, ['alpha-skill']);
     writeValidEvalDocument(caseRoot, 'alpha-skill');

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "chair-oak-01",
+  "name": "Oak reading chair",
+  "dimensionsMm": {
+    "width": 700,
+    "depth": 650,
+    "seatHeight": 420,
+    "backHeight": 440
+  },
+  "finish": {
+    "frame": "oak",
+    "upholstery": "teal"
+  },
+  "camera": {
+    "yawDegrees": 25,
+    "pitchDegrees": 15,
+    "distanceMeters": 3.2
+  },
+  "capture": {
+    "seed": 17,
+    "timeSeconds": 0,
+    "durationSeconds": 4,
+    "fps": 24,
+    "label": "Oak reading chair",
+    "audioCue": "tone-a"
+  }
+}
+

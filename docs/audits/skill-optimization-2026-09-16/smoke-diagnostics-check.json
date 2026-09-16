@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-09-16T13:51:44.828Z",
+  "kind": "offline_smoke_diagnostics_author_check",
+  "status": "passed",
+  "scope": "Actual helper functions parsed from the current smoke script and executed against harmless temporary child scripts; no installer behavior evaluated.",
+  "sources": [
+    {
+      "path": "scripts/smoke-install.ps1",
+      "sha256": "79a66a31dc93102ba6b4cb61613b7d634c7eefaf0719452d0fbc606e94b5466c"
+    },
+    {
+      "path": "docs/audits/skill-optimization-2026-09-16/check-smoke-diagnostics.ps1",
+      "sha256": "d84234566c2f3809ed74b5450af5672c1a3955eaa560b166c3cf089cf6ebea14"
+    }
+  ],
+  "results": [
+    {
+      "path": "docs/audits/skill-optimization-2026-09-16/smoke-diagnostics-host51.log",
+      "sha256": "7fa27cb4eaa91445cad4dc387a4a17362d0ab86eb6d2fd9d214279367cd8841b",
+      "host_version": "5.1.19041.3803",
+      "failure_checks": 4,
+      "behavior_controls": 3,
+      "cleaned": true
+    },
+    {
+      "path": "docs/audits/skill-optimization-2026-09-16/smoke-diagnostics-host7.log",
+      "sha256": "0b7ceace056d23a76cbed24c5101cb18fb1fbaa082938974bf3bf911456ded3c",
+      "host_version": "7.6.5",
+      "failure_checks": 4,
+      "behavior_controls": 3,
+      "cleaned": true
+    }
+  ],
+  "model_calls": 0,
+  "limitations": [
+    "The negative NTSTATUS-shaped exit was deliberately returned by a child; no native crash was induced or diagnosed.",
+    "Full installer/platform acceptance is independent."
+  ]
+}

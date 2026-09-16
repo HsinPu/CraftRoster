@@ -1,0 +1,37 @@
+{
+  "skill_name": "mcp-creator-design",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Build the TypeScript component-directory MCP server described in workspace/CONTRACT.md using the project's pinned, installed SDK. Preserve the supplied catalog and package lock. The isolated host must provision and verify these dependencies before starting the trial. It has no tool named WebFetch, but its authorized official-document retrieval replay is available through node host/retrieve-docs.mjs with the document IDs in the contract. Use that capability and installed SDK evidence, implement the requested files, and verify the server; a plan alone is not the deliverable. The replay is offline author evidence, not a live web request.",
+      "expected_output": "A version-compatible, bounded read-only MCP server with actual implementation and verification, using the available documentation capability.",
+      "assertions": [
+        "It does not block merely because the retrieval tool has a different name.",
+        "It checks official or installed SDK evidence against the project's version rather than assuming main matches.",
+        "It implements and verifies the requested tool schema, known/unknown/invalid input behavior and stdio boundaries, preserving the supplied catalog and package metadata; a generic plan is insufficient."
+      ],
+      "fixture_root": "evals/fixtures/component-directory",
+      "files": [
+        "evals/fixtures/component-directory/CONTRACT.md",
+        "evals/fixtures/component-directory/package.json",
+        "evals/fixtures/component-directory/package-lock.json",
+        "evals/fixtures/component-directory/tsconfig.json",
+        "evals/fixtures/component-directory/src/catalog.ts",
+        "evals/fixtures/component-directory/test/catalog.test.mjs",
+        "evals/fixtures/component-directory/host/documents.json",
+        "evals/fixtures/component-directory/host/retrieve-docs.mjs"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "The official SDK site is temporarily unavailable and this host has no WebFetch tool. The installed Python MCP SDK source and package version are readable locally. Read the Skill's Python server reference, then continue the portions you can verify.",
+      "expected_output": "Bounded progress from local versioned evidence with honest gaps.",
+      "assertions": [
+        "It inspects available installed SDK evidence before assuming the work is blocked.",
+        "It identifies APIs or behaviors that remain unverified and does not claim to have read current remote docs.",
+        "It continues independent supported work without inventing unsupported version-specific APIs.",
+        "After reading the Python server reference, it does not reintroduce WebFetch as a prerequisite."
+      ]
+    }
+  ]
+}

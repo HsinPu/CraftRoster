@@ -1,0 +1,5 @@
+[
+  { "sku": "SYNTHETIC-EMPTY", "availableUnits": 0 },
+  { "sku": "SYNTHETIC-REGULAR", "availableUnits": 6 },
+  { "sku": "SYNTHETIC-BULK", "availableUnits": 127 }
+]

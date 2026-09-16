@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "skill_name": "code-review",
+  "cases": [
+    {
+      "id": "working-tree-bug-review",
+      "kind": "positive",
+      "prompt": "請在我提交前，審查此儲存庫已暫存、未暫存與新增的檔案，找出會隨版本交付的具體缺陷。追查受影響的呼叫端與測試，遵守 AGENTS.md，並提供證據及判定。不要修正或暫存任何內容。",
+      "expected_skills": [
+        "code-review"
+      ],
+      "excluded_skills": [
+        "receiving-code-review",
+        "code-change-workflow"
+      ],
+      "allowed_skills": [
+        "terminal-ops",
+        "git-operations"
+      ],
+      "locale": "zh-TW"
+    },
+    {
+      "id": "bounded-javascript-snippet-review",
+      "kind": "positive",
+      "prompt": "Review only this JavaScript snippet for a concrete bug: function getLabel(item) { if (item === null) return item.label; return 'unknown'; }. Passing null is a supported input and should return 'unknown'. Do not edit files or invent callers.",
+      "expected_skills": [
+        "code-review"
+      ],
+      "excluded_skills": [
+        "receiving-code-review",
+        "code-change-workflow",
+        "project-architecture-review"
+      ],
+      "allowed_skills": [
+        "javascript-development"
+      ],
+      "locale": "en"
+    },
+    {
+      "id": "incoming-review-findings-remediation",
+      "kind": "near_match",
+      "prompt": "reviewer 已針對這份 diff 提出 F1、F2 findings。請逐項核對、排除 false positives、實作成立項目的修正，再把回歸測試證據交回該 reviewer。這次工作是 remediation，並非重新進行獨立 review。",
+      "expected_skills": [
+        "receiving-code-review"
+      ],
+      "excluded_skills": [
+        "code-review",
+        "pipeline-review"
+      ],
+      "allowed_skills": [
+        "code-change-workflow",
+        "testing-strategy",
+        "verification-before-completion"
+      ],
+      "locale": "mixed-zh-TW-en"
+    },
+    {
+      "id": "repository-architecture-assessment",
+      "kind": "near_match",
+      "prompt": "Assess the architecture of the entire repository: entry points, module ownership, dependency direction, and cross-service data flow. Compare restructuring options before coding. There is no bounded diff to review.",
+      "expected_skills": [
+        "project-architecture-review"
+      ],
+      "excluded_skills": [
+        "code-review",
+        "code-change-workflow"
+      ],
+      "allowed_skills": [
+        "solution-discovery",
+        "domain-modeling"
+      ],
+      "locale": "en"
+    },
+    {
+      "id": "ambiguous-review-of-formal-spec-document",
+      "kind": "near_match",
+      "prompt": "Review this formal technical specification document for missing required chapters, YAML front matter, inconsistent feature numbering, and incomplete version history. No source code or implementation diff is part of the request.",
+      "expected_skills": [
+        "specification-authoring"
+      ],
+      "excluded_skills": [
+        "code-review",
+        "code-change-workflow"
+      ],
+      "allowed_skills": [
+        "markdown-writer"
+      ],
+      "locale": "en"
+    },
+    {
+      "id": "explain-review-versus-pairing",
+      "kind": "negative",
+      "prompt": "Explain the difference between code review and pair programming in three sentences. Do not inspect a repository, evaluate code, or create a workflow for me.",
+      "expected_skills": [],
+      "excluded_skills": [
+        "code-review",
+        "pipeline-review",
+        "receiving-code-review"
+      ],
+      "allowed_skills": [
+        "answer-writing"
+      ],
+      "locale": "en"
+    },
+    {
+      "id": "authority-read-only-github-pr-review",
+      "kind": "positive",
+      "prompt": "Review pull request 42 in the repository already identified in this conversation using its current diff, existing comments, and check results. This is read-only: return findings here; do not post comments, approve, request changes, push commits, or apply fixes.",
+      "expected_skills": [
+        "code-review",
+        "github-code-review"
+      ],
+      "excluded_skills": [
+        "receiving-code-review",
+        "github-inline-review",
+        "code-change-workflow"
+      ],
+      "allowed_skills": [
+        "github-operations",
+        "git-operations",
+        "terminal-ops"
+      ],
+      "locale": "en"
+    }
+  ]
+}

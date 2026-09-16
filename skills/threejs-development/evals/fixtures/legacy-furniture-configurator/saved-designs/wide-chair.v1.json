@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "chair-wide-02",
+  "name": "Wide walnut chair",
+  "dimensionsMm": {
+    "width": 950,
+    "depth": 760,
+    "seatHeight": 420,
+    "backHeight": 440
+  },
+  "finish": {
+    "frame": "walnut",
+    "upholstery": "sand"
+  },
+  "camera": {
+    "yawDegrees": -35,
+    "pitchDegrees": 22,
+    "distanceMeters": 3.8
+  },
+  "capture": {
+    "seed": 42,
+    "timeSeconds": 1,
+    "durationSeconds": 6,
+    "fps": 30,
+    "label": "Wide chair · walnut",
+    "audioCue": "tone-a"
+  }
+}
+

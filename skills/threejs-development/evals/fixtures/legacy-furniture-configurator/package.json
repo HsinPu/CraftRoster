@@ -1,0 +1,14 @@
+{
+  "name": "fictional-legacy-furniture-configurator",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node tools/build.cjs",
+    "serve": "node tools/serve.cjs"
+  },
+  "dependencies": {
+    "three": "0.152.2"
+  }
+}
+

@@ -1,0 +1,7 @@
+{
+  "name": "fictional-mixed-version-migration",
+  "private": true,
+  "version": "1.0.0",
+  "type": "commonjs",
+  "engines": { "node": ">=22.13" }
+}

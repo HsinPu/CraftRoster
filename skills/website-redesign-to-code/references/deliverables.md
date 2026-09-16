@@ -2,12 +2,53 @@
 
 Use these templates when a full-site redesign needs a durable handoff, multiple implementation slices, or auditable approval. Adapt them to repository conventions rather than creating duplicate documentation systems.
 
+## Authorization Checkpoint Record
+
+Authorization mode is independent of visual/product redesign mode. Resolve each checkpoint against current and prior valid user instructions, with the same preservation and evidence requirements in all modes:
+
+| Situation | Mode and action |
+| --- | --- |
+| "Audit the site and show directions; wait before implementation" | `gated`: complete discovery and the requested presentation, then stop at the reserved review. |
+| "Redesign these three named routes using our current brand, choose layout details, and finish the frontend changes; preserve behavior" | `delegated`: record scope and selected direction, establish readiness, implement an isolated pilot, then apply the verified changes across only those routes. |
+| "Continue site-v3 for the approved route manifest; implementation is approved" | `already-approved`: verify scope/artifact revisions and resume the next eligible slice without reopening satisfied gates. |
+| "Redesign the whole site" with unknown routes or consequential decisions | `gated` only for unresolved scope/design/implementation choices; do independent discovery first. |
+| Earlier delegation followed by "I want to inspect the pilot before other families change" | Keep the new pilot review open until the user releases it. |
+| Pilot passes but candidate globals affect an unapproved family | Keep isolation; seek only the new scope decision, not reapproval of the authorized pilot. |
+| A source Skill is asked for a `parent-receipt` | It returns evidence without editing production, approving a baseline, closing a program gate, or expanding scope. |
+
+Example record below is an unresolved checkpoint, not approval. Delegated/already-approved records must cite the actual user decision, bounded routes/shared surfaces, and selected artifact version. Passing the pilot never authorizes deployment. An explicit human review, missing required evidence, or failed threshold cannot be skipped by changing the mode label.
+
+```json
+{
+  "mode": "gated",
+  "checkpoint": "implementation",
+  "posture": "implementation",
+  "scopeVersion": "scope-to-resolve",
+  "directionVersion": "candidate-to-review",
+  "authorizationEvidence": "user decision still required",
+  "explicitUserCheckpoint": "pending",
+  "implementationAuthorized": false,
+  "requiredEvidence": "missing",
+  "pilotEvidence": "pending",
+  "baselineOwner": "named-project-owner",
+  "baselineAction": "unchanged",
+  "baselineChangeApproval": "not-requested",
+  "externalActionAuthorization": "none",
+  "nextAction": "wait"
+}
+```
+
+The user need not say "Gate 1" or "Gate 4" for a bounded delegation to cover the corresponding decision. Reassess when scope, target, or side effects change. Route/IA/backend/SEO/analytics/data migrations, external publication, destructive changes, and baseline replacement retain their separate authorization boundaries. Honor literal read-only requests and preserve pilot isolation until both evidence and scope permit continuing.
+
+Use `checkpoint: implementation` when readiness permits starting or repairing the isolated pilot; its `pilotEvidence` may still be `pending` or `failed`. Use `pilot-rollout` before applying shared changes or migrating another family: only `pilotEvidence: passed`, complete required evidence, and valid rollout authority permit `proceed`. Record a reserved pilot review in the `pilot-rollout` record; a future review does not forbid an already-authorized pilot implementation. In `read-only` posture the next action remains `read-only` or `wait`; `parent-receipt` returns evidence or waits. A baseline stays `unchanged` or a capture remains a `propose-candidate`; `replace` requires the named owner's separate approval. These fields document decisions and evidence; structural validation does not prove user authorization or runtime success.
+
 ## Redesign Program Ledger
 
 ```markdown
 # Redesign program ledger
 
 - Scope version:
+- Authorization mode and checkpoint record:
 - Active design version:
 - Current gate:
 - Gate authority/evidence:
@@ -140,9 +181,26 @@ Update this ledger only after verified evidence or an explicit decision. It reco
 {
   "id": "website-redesign-to-code.orchestration",
   "part": "deliverable",
-  "version": 1,
+  "version": 2,
   "type": "machine-receipt-template",
   "section": "Rollout and Validation Matrix",
+  "authorizationRecordFields": [
+    "mode",
+    "checkpoint",
+    "posture",
+    "scopeVersion",
+    "directionVersion",
+    "authorizationEvidence",
+    "explicitUserCheckpoint",
+    "implementationAuthorized",
+    "requiredEvidence",
+    "pilotEvidence",
+    "baselineOwner",
+    "baselineAction",
+    "baselineChangeApproval",
+    "externalActionAuthorization",
+    "nextAction"
+  ],
   "machineReceiptFields": [
     "mode",
     "matrixCell",

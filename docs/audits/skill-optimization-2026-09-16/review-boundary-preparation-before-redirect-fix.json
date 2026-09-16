@@ -1,0 +1,468 @@
+{
+  "schema_version": 1,
+  "kind": "offline_review_boundary_fixture_preparation",
+  "created_at": "2026-09-16T08:47:31.168Z",
+  "node": "v24.19.0",
+  "platform": "win32",
+  "status": "not_run",
+  "model_calls": 0,
+  "cases": [
+    {
+      "case_id": "code-review:3",
+      "status": "not_run",
+      "model_calls": 0,
+      "fixture_files": 12,
+      "fixture_manifest": [
+        {
+          "path": "CONTRACT.md",
+          "sha256": "e89f0d5a1791fd738d86c4281222aedbd6882e6df5e238fdad4cd197fdedd474",
+          "bytes": 1823
+        },
+        {
+          "path": "base/src/app.js",
+          "sha256": "b6edc1675ae541cf5f97d5ab9e86dd35c1c5ad137e906377ed3a4ad73eda3ed3",
+          "bytes": 189
+        },
+        {
+          "path": "base/src/callback.js",
+          "sha256": "52b69a4f772d5242f37fe3bf292d1a06dd0177ed58188f2ef477d6eeb7592f01",
+          "bytes": 169
+        },
+        {
+          "path": "base/test/callback.test.js",
+          "sha256": "216ca5dbbbbe0ac5189c9e03b6df60e4faf71d13567f607de9a52fa3a43a5e01",
+          "bytes": 708
+        },
+        {
+          "path": "head/src/app.js",
+          "sha256": "b6edc1675ae541cf5f97d5ab9e86dd35c1c5ad137e906377ed3a4ad73eda3ed3",
+          "bytes": 189
+        },
+        {
+          "path": "head/src/callback.js",
+          "sha256": "dfb28a92d7748e5d5b0d90f2286c9b63c48e78ab69507284c91695f6d12ffadd",
+          "bytes": 243
+        },
+        {
+          "path": "head/test/callback.test.js",
+          "sha256": "216ca5dbbbbe0ac5189c9e03b6df60e4faf71d13567f607de9a52fa3a43a5e01",
+          "bytes": 708
+        },
+        {
+          "path": "package.json",
+          "sha256": "bea87b84c3d159102b622d80e3b7d6ed3f0730ac9c51bbd8aaed7008f190d037",
+          "bytes": 213
+        },
+        {
+          "path": "scenario.json",
+          "sha256": "ebf1789b3ddf17766a43fee2cb270d93634d59f683cd483414b59884f24cf8fe",
+          "bytes": 666
+        },
+        {
+          "path": "shared/deployment.json",
+          "sha256": "1b3c988a6ff321b27f0ed491d051d79dff525099da7a246fdb5f8c9e4607df61",
+          "bytes": 360
+        },
+        {
+          "path": "shared/framework.js",
+          "sha256": "ae1af3d823d25dc348b05467264cec1469a6da09f54287fdeecc68ed8d8d92ae",
+          "bytes": 1807
+        },
+        {
+          "path": "shared/sessions.json",
+          "sha256": "ffd64493cf4f15af0812a06251ded5b415fca313b296b7b9d52738c258260c2c",
+          "bytes": 122
+        }
+      ],
+      "fixture_sha256": "22c34da940985406f12bb3ae97eb03990199003fa6a238be7512e36a54759c59",
+      "corpus_case_sha256": "4410bd45a64d46d9960978878ea09648db6b20ea0601eeaf9d260fa2d5228a58",
+      "public_bundle_sha256": "a83c7b0675eec931fc34c6fd52298fcd1d25e450b6c3c4a817939143fbb03fa9",
+      "skill_packages": 286,
+      "preparation_check": "passed",
+      "scripted_read_only_probe": {
+        "status": "passed",
+        "trace": [
+          {
+            "sequence": 1,
+            "tool": "read_file",
+            "path": "workspace/CONTRACT.md",
+            "request_sha256": "248ee2a999df198b18e7a2e4b794ac76bd50dd2d4fee8c23c6f5ce90cff6b67a",
+            "request_chars": 65,
+            "decision": "accepted",
+            "reason": null,
+            "response_sha256": "b98f0f66375c1873d295a1638a906fcb79728a6cb8124158177d0e80558e7c28"
+          },
+          {
+            "sequence": 2,
+            "tool": "write_file",
+            "path": "workspace/CONTRACT.md",
+            "request_sha256": "be505869afe8a8ec5e5849518793c59ccf06225b4087c1e81c2a004ad5195050",
+            "request_chars": 86,
+            "decision": "denied",
+            "reason": "write_not_granted",
+            "response_sha256": "0bd3a4cd7f51b3d3d386dd72c2352ad721c54316d60840e7470d2c0c337a44eb"
+          }
+        ],
+        "workspace_unchanged": true
+      },
+      "semantic_verdict_graded": false,
+      "host_isolation_enforced": false
+    },
+    {
+      "case_id": "code-review:10",
+      "status": "not_run",
+      "model_calls": 0,
+      "fixture_files": 15,
+      "fixture_manifest": [
+        {
+          "path": "CONTRACT.md",
+          "sha256": "3d5ca3c06e41b2be2444e14ace1b169d02a42ff497dbf8510fcba121faf4ce05",
+          "bytes": 1670
+        },
+        {
+          "path": "base/src/admin-members.js",
+          "sha256": "6978c5b9c685a8c5cb229f17d0632c15f0e2e70aeb53ab6ae5668dd7e74d0951",
+          "bytes": 309
+        },
+        {
+          "path": "base/src/app.js",
+          "sha256": "2471428c19da3360c15178afc104ecd2bf385325e58a2638e93901a3e519b3a2",
+          "bytes": 196
+        },
+        {
+          "path": "base/test/members.test.js",
+          "sha256": "38fbf109439e67c108e4ef844d7da09a208a6f752e73b1350ee4c0a688b80894",
+          "bytes": 641
+        },
+        {
+          "path": "head/src/admin-members.js",
+          "sha256": "18f995e19a9f6bae3122de46a738eaedee96e050170e308331fddddb17603c34",
+          "bytes": 187
+        },
+        {
+          "path": "head/src/app.js",
+          "sha256": "2471428c19da3360c15178afc104ecd2bf385325e58a2638e93901a3e519b3a2",
+          "bytes": 196
+        },
+        {
+          "path": "head/test/members.test.js",
+          "sha256": "38fbf109439e67c108e4ef844d7da09a208a6f752e73b1350ee4c0a688b80894",
+          "bytes": 641
+        },
+        {
+          "path": "package.json",
+          "sha256": "d0a3a871d4c6d057252db0b82b2e0d1c9b8461afc5beb6e3874c98a60d25b0cf",
+          "bytes": 209
+        },
+        {
+          "path": "review-context.json",
+          "sha256": "ecc0bdcf8b635ed48e6de09878e0a7fdaec19f89f3eeedcd11be1254d723df3c",
+          "bytes": 720
+        },
+        {
+          "path": "scenario.json",
+          "sha256": "fe4d12bc9f83bd00af20fd2ea1b90e641319e114bde32b423e4750e1fac37741",
+          "bytes": 557
+        },
+        {
+          "path": "shared/deployment.json",
+          "sha256": "a4bf4a98840547d6876d941bb0da32abfc21d2eb6daeb3c27c12af41dfa880d1",
+          "bytes": 381
+        },
+        {
+          "path": "shared/framework.js",
+          "sha256": "6d16cf8729003476d7ec3a279e53f11ea4b28abaf088c700529a3e535113f050",
+          "bytes": 1004
+        },
+        {
+          "path": "shared/member-store.js",
+          "sha256": "def376f4b3e2fe113423cf7ec8f8dadb056fd494d9953fed41b246ccb0ed1408",
+          "bytes": 244
+        },
+        {
+          "path": "shared/members.json",
+          "sha256": "fc8388e8bd38b4c7538f8b510abbfba7e283723991640cd220d4d5c628312cd3",
+          "bytes": 504
+        },
+        {
+          "path": "shared/sessions.json",
+          "sha256": "6798c331855707bd15acb8ba2d9699676ee64bcf6b796e6733da1363ae28db47",
+          "bytes": 339
+        }
+      ],
+      "fixture_sha256": "fc07009b00d0dde19d9ce36dd162fc66c2e7fedb294bbedbb81f454cb65c57ca",
+      "corpus_case_sha256": "e3816a0e62615b315ef605ece0189a38546f475602d5f781260faf9696f575d8",
+      "public_bundle_sha256": "ab3c53eee669f7d4c274964c8796e6d471260a265a1e6d1650356f8241691958",
+      "skill_packages": 286,
+      "preparation_check": "passed",
+      "scripted_read_only_probe": {
+        "status": "passed",
+        "trace": [
+          {
+            "sequence": 1,
+            "tool": "read_file",
+            "path": "workspace/CONTRACT.md",
+            "request_sha256": "248ee2a999df198b18e7a2e4b794ac76bd50dd2d4fee8c23c6f5ce90cff6b67a",
+            "request_chars": 65,
+            "decision": "accepted",
+            "reason": null,
+            "response_sha256": "8289f547182b37b2a8813454c1271968af232e68e8bc20ebc6b88449bf529344"
+          },
+          {
+            "sequence": 2,
+            "tool": "write_file",
+            "path": "workspace/CONTRACT.md",
+            "request_sha256": "be505869afe8a8ec5e5849518793c59ccf06225b4087c1e81c2a004ad5195050",
+            "request_chars": 86,
+            "decision": "denied",
+            "reason": "write_not_granted",
+            "response_sha256": "0bd3a4cd7f51b3d3d386dd72c2352ad721c54316d60840e7470d2c0c337a44eb"
+          }
+        ],
+        "workspace_unchanged": true
+      },
+      "semantic_verdict_graded": false,
+      "host_isolation_enforced": false
+    },
+    {
+      "case_id": "code-review:11",
+      "status": "not_run",
+      "model_calls": 0,
+      "fixture_files": 15,
+      "fixture_manifest": [
+        {
+          "path": "CONTRACT.md",
+          "sha256": "171005a3561417a743d2d609fcca37d7664fa9c0bd82456e8026534d4c2d79bb",
+          "bytes": 1653
+        },
+        {
+          "path": "base/src/normalize-sku.js",
+          "sha256": "e5b91b780073f6c3cb10d3b2b56d5c0301dc98747a5beb0321b85f88faec396a",
+          "bytes": 197
+        },
+        {
+          "path": "evidence/author-verification.json",
+          "sha256": "5765033d8cd5019bbef3bd49273743ab11d1e25d50e92b4767c399b9a4e48a5c",
+          "bytes": 4895
+        },
+        {
+          "path": "fixture-recipe.json",
+          "sha256": "bf838717d6b9b559c404be3229f0b0e3c771f2f808f04870dbaddf267c6421e0",
+          "bytes": 1735
+        },
+        {
+          "path": "head/src/normalize-sku.js",
+          "sha256": "a6faaeb70c3342c247bb95e11679baca98f6ad4883fee6adeacf6d0efc2ee845",
+          "bytes": 176
+        },
+        {
+          "path": "history/partner-import-history.md",
+          "sha256": "e1322b147c91c42ed9bde78a3ab93a46ee895db17dd2556b3a9863d0f4c640ff",
+          "bytes": 642
+        },
+        {
+          "path": "shared/AGENTS.md",
+          "sha256": "8eb831996e70f8204942921789cf53c076cb6ac25ac96b2c41b377e9321800f9",
+          "bytes": 437
+        },
+        {
+          "path": "shared/README.md",
+          "sha256": "4365ea8f174845221858e8d0db5f945e923361d77dfa902caca80006dc12f5b0",
+          "bytes": 549
+        },
+        {
+          "path": "shared/contracts/partner-feed.md",
+          "sha256": "561a6679e209d1719151a021ef0794848859296e0c3dbced9ac70ebc23dba01e",
+          "bytes": 853
+        },
+        {
+          "path": "shared/fixtures/partner-row.json",
+          "sha256": "68eb8a691f30826692cc66fd763b15199c6357eed80124d8ff9f9856587cc600",
+          "bytes": 45
+        },
+        {
+          "path": "shared/package.json",
+          "sha256": "069b5a1f7af8d52f72434cba3c1c867d02f26f525ebb2c7db73842db13ea1b30",
+          "bytes": 195
+        },
+        {
+          "path": "shared/src/catalog.js",
+          "sha256": "f5ae12663958e002539877bfd938baa7ff9b6bd4f5aef9bd74d5d48ee5b43918",
+          "bytes": 288
+        },
+        {
+          "path": "shared/src/partner-import.js",
+          "sha256": "21be72607765f9a469693326d61b26d09fdc28be554f59bffe58a8c4346ad92d",
+          "bytes": 574
+        },
+        {
+          "path": "shared/test/partner-import.test.js",
+          "sha256": "130e2292e23a1ae83c8478dda94ab4fd1a0a7af09d140549de2b2144cd494898",
+          "bytes": 566
+        },
+        {
+          "path": "shared/test/sku.test.js",
+          "sha256": "bdd96a02da3be93f5619707da004b43b56034aafb3239e58e356f7baa9adc41f",
+          "bytes": 313
+        }
+      ],
+      "fixture_sha256": "095a88b14ccabcb64a102ec200612aa589eb29fc2513418922a2a158bf034ec9",
+      "corpus_case_sha256": "0633a2334382064604882adff5e5f094aecc03119a36361dfe81753b77441899",
+      "public_bundle_sha256": "d1ed5f49b36bef74cde244dfaae8fe64e967ad6906409eed869016943ea74913",
+      "skill_packages": 286,
+      "preparation_check": "passed",
+      "scripted_read_only_probe": {
+        "status": "passed",
+        "trace": [
+          {
+            "sequence": 1,
+            "tool": "read_file",
+            "path": "workspace/CONTRACT.md",
+            "request_sha256": "248ee2a999df198b18e7a2e4b794ac76bd50dd2d4fee8c23c6f5ce90cff6b67a",
+            "request_chars": 65,
+            "decision": "accepted",
+            "reason": null,
+            "response_sha256": "3c260788c9b5d7055b4645d31ede3e5c40f7726f163941f405974b66486bce5a"
+          },
+          {
+            "sequence": 2,
+            "tool": "write_file",
+            "path": "workspace/CONTRACT.md",
+            "request_sha256": "be505869afe8a8ec5e5849518793c59ccf06225b4087c1e81c2a004ad5195050",
+            "request_chars": 86,
+            "decision": "denied",
+            "reason": "write_not_granted",
+            "response_sha256": "0bd3a4cd7f51b3d3d386dd72c2352ad721c54316d60840e7470d2c0c337a44eb"
+          }
+        ],
+        "workspace_unchanged": true
+      },
+      "semantic_verdict_graded": false,
+      "host_isolation_enforced": false
+    },
+    {
+      "case_id": "code-review:12",
+      "status": "not_run",
+      "model_calls": 0,
+      "fixture_files": 10,
+      "fixture_manifest": [
+        {
+          "path": "CONTRACT.md",
+          "sha256": "13a8e60725104370c6fd1a331a9be9fe50e9aa03a39d53d4304ca92f68825d5a",
+          "bytes": 1541
+        },
+        {
+          "path": "base/payment-service.cjs",
+          "sha256": "d21cbb1b42c8b0fb081c7568d3075bf686e1c0e08e41c9803653218837b731df",
+          "bytes": 693
+        },
+        {
+          "path": "docs/acceptance.md",
+          "sha256": "12a412853ff2faf64c5ab0a3a24a246f2a8967a87f9a1f47d2bb818fb2caff9d",
+          "bytes": 1449
+        },
+        {
+          "path": "evidence/author-checks.json",
+          "sha256": "dd84f71dd99af1540125405ffa477cc257fb737a44ff2dcf8f80bc00519c74c4",
+          "bytes": 1735
+        },
+        {
+          "path": "head/payment-service.cjs",
+          "sha256": "8f5835f1904785592e929e03d70b0729368c3e82f7fee507b559d430903870f5",
+          "bytes": 1013
+        },
+        {
+          "path": "shared/checkout.cjs",
+          "sha256": "72bc9634a5ff9f106e318a1b8493680b065d5e030a1c335a9ecf4d8cc2479192",
+          "bytes": 270
+        },
+        {
+          "path": "shared/local-provider.cjs",
+          "sha256": "ff1a14a170509d64d23fee0c031ffd5a6f9333c3a8db0a3f9c6d77e696d79563",
+          "bytes": 1875
+        },
+        {
+          "path": "shared/request.cjs",
+          "sha256": "5fb5708cc8401d78dae95962e38e280cff1c0f290283c0ac61f181ed7d043e4e",
+          "bytes": 462
+        },
+        {
+          "path": "shared/submission-store.cjs",
+          "sha256": "b4402fc6cded990b25a75247135c581bb6733df71623807046c56bfdc96ae835",
+          "bytes": 568
+        },
+        {
+          "path": "test/payment.test.cjs",
+          "sha256": "bf33cf5ad5bfb96fef27645f2ea9598dec315d1f3e00144959cdf7dc32842c48",
+          "bytes": 2349
+        }
+      ],
+      "fixture_sha256": "975f69a1fea919498a1101c9eeac2eeeb1db544752dc4e1ddd89f81772a944f4",
+      "corpus_case_sha256": "dffc57be6fbe0474f59672a08ddf04b6e54354f1ff3d690bb4ec0ba2158a1984",
+      "public_bundle_sha256": "7e1100bed0b3b898d8cb773329092af852e8a84f29f1c5434b50ad97a930a91e",
+      "skill_packages": 286,
+      "preparation_check": "passed",
+      "scripted_read_only_probe": {
+        "status": "passed",
+        "trace": [
+          {
+            "sequence": 1,
+            "tool": "read_file",
+            "path": "workspace/CONTRACT.md",
+            "request_sha256": "248ee2a999df198b18e7a2e4b794ac76bd50dd2d4fee8c23c6f5ce90cff6b67a",
+            "request_chars": 65,
+            "decision": "accepted",
+            "reason": null,
+            "response_sha256": "7fc21b1f4bb9c51e69f660efad9155226f1bba3ad0f37055fbeac48584213a70"
+          },
+          {
+            "sequence": 2,
+            "tool": "write_file",
+            "path": "workspace/CONTRACT.md",
+            "request_sha256": "be505869afe8a8ec5e5849518793c59ccf06225b4087c1e81c2a004ad5195050",
+            "request_chars": 86,
+            "decision": "denied",
+            "reason": "write_not_granted",
+            "response_sha256": "0bd3a4cd7f51b3d3d386dd72c2352ad721c54316d60840e7470d2c0c337a44eb"
+          }
+        ],
+        "workspace_unchanged": true
+      },
+      "semantic_verdict_graded": false,
+      "host_isolation_enforced": false
+    }
+  ],
+  "author_checks": [
+    {
+      "command": "node tests/skill-review-auth-fixtures.test.js",
+      "sha256": "67ef48266cc09a6149048e18047a5de6855680ec620278a478e77539a1c32a65",
+      "exit_code": 0,
+      "checks_passed": 10,
+      "evidence_source": "Observed local execution in this task before recording this report; these are author checks, not evaluated model responses."
+    },
+    {
+      "command": "node tests/skill-review-history-fixtures.test.js",
+      "sha256": "05ec0af1aee3ed6cadcb7a37bf1deeb7e5bb4c114de6a6a6db785942d561f1ab",
+      "exit_code": 0,
+      "checks_passed": 9,
+      "evidence_source": "Observed local execution in this task before recording this report; these are author checks, not evaluated model responses."
+    },
+    {
+      "command": "node tests/skill-review-payment-fixtures.test.js",
+      "sha256": "80ece76853762f637cd7aba8ce8ee6716b77fb2b7b559360467ee828f09b6078",
+      "exit_code": 0,
+      "checks_passed": 7,
+      "evidence_source": "Observed local execution in this task before recording this report; these are author checks, not evaluated model responses."
+    }
+  ],
+  "implementation_sha256": {
+    "scripts/prepare-skill-pilot.js": "7d5036a0f793436be8041eccf2adc3dc5f9e80afab3a2492ec52e50afe5d59b5",
+    "scripts/lib/skill-eval-broker.js": "16254d4f9876c861d67b82441c09d70a0af2407b08e9e2186abe4c1516093679"
+  },
+  "limitations": [
+    "The redirect and guard fixtures exercise a complete synthetic in-memory application boundary, not a real framework, identity provider, browser or production deployment.",
+    "Payment calls operate on local JSON only. The prompt already states the duplicate-submission failure: this tests causal/evidence review, not blind discovery.",
+    "Normalization history requires trusted isolated Git setup before an actual model history review; source folders alone are not a Git workspace.",
+    "No further model calls were made; model selection, activation, semantic verdicts, runtime isolation and cost remain unverified."
+  ]
+}

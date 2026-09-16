@@ -1,0 +1,283 @@
+{
+  "schema_version": 1,
+  "kind": "author_browser_fixture_check",
+  "recorded_at": "2026-09-16T08:32:42.452Z",
+  "case_id": "threejs-development:12",
+  "split": "development",
+  "status": "not_run",
+  "model_execution": false,
+  "model_calls": 0,
+  "author_check_status": "passed",
+  "setup": {
+    "kind": "author_browser_probe_setup",
+    "model_execution": false,
+    "node": "v24.19.0",
+    "platform": "win32",
+    "created_at": "2026-09-16T08:25:40.193Z",
+    "dependency_version": "0.180.0",
+    "lockfile_sha256": "9ed6d3c2abf4de4b621b40928989b04d8308381b8442146ef8831a1bccc4fd04",
+    "runtime_sha256": {
+      "three.module.js": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
+      "three.core.js": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20"
+    },
+    "manifests": {
+      "baseline": [
+        {
+          "path": "index.html",
+          "sha256": "083b2eeee41e58a4f2f5523793281a2a5a04ee163cfb4beab583107b64a0ec85"
+        },
+        {
+          "path": "privacy.html",
+          "sha256": "c4ace5ad8181bd6af9df8d5eb8a361b498fb5b578872eaf0dc6aad5c399cafe0"
+        },
+        {
+          "path": "styles/page.css",
+          "sha256": "ed4bde2ef5997cb4c3e6a748954d912e137d8aee22686ce91b628624d7546c58"
+        },
+        {
+          "path": "styles/viewer.css",
+          "sha256": "f96aed1a82a81f3710f935fe6a1512ea3c318edcfcb7a3749ccfa8153d2a7fa5"
+        },
+        {
+          "path": "styles/footer.css",
+          "sha256": "5e1189503c57fe5e1587fe7850af5bbda0bbfafc31edbc3804b1468777ae9ada"
+        },
+        {
+          "path": "src/viewer.js",
+          "sha256": "24c3ddebe6da31ccacfb9612de3c4c80acc26a41326e7a3cc3086876037af501"
+        }
+      ],
+      "candidate": [
+        {
+          "path": "index.html",
+          "sha256": "00f51cb8dbde24c2f635a8aebdc032a3867a27920ede9371f4410be39d29132c"
+        },
+        {
+          "path": "privacy.html",
+          "sha256": "c4ace5ad8181bd6af9df8d5eb8a361b498fb5b578872eaf0dc6aad5c399cafe0"
+        },
+        {
+          "path": "styles/page.css",
+          "sha256": "ed4bde2ef5997cb4c3e6a748954d912e137d8aee22686ce91b628624d7546c58"
+        },
+        {
+          "path": "styles/viewer.css",
+          "sha256": "f96aed1a82a81f3710f935fe6a1512ea3c318edcfcb7a3749ccfa8153d2a7fa5"
+        },
+        {
+          "path": "styles/footer.css",
+          "sha256": "477e6b00a6b290f7f9406b97afcbae5ac805c618cab6ca229a79b8234121c8b6"
+        },
+        {
+          "path": "src/viewer.js",
+          "sha256": "24c3ddebe6da31ccacfb9612de3c4c80acc26a41326e7a3cc3086876037af501"
+        }
+      ]
+    },
+    "changed_paths": [
+      "index.html",
+      "styles/footer.css"
+    ],
+    "browser_observations": "not_run",
+    "limitation": "Authored local comparison, not a model task outcome; browser observations must be recorded separately."
+  },
+  "browser": {
+    "name": "Codex In-app Browser",
+    "engine_version": null,
+    "gpu_hardware": null,
+    "automation": "cua_repl",
+    "origin": "loopback-only",
+    "viewport_override_reset": true,
+    "temporary_tab_closed": true,
+    "server_process_terminated": true
+  },
+  "observations": [
+    {
+      "variant": "baseline",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "scrollWidth": null,
+      "label": "聯絡我們",
+      "links": [
+        {
+          "href": "mailto:support@example.invalid",
+          "text": "聯絡我們"
+        },
+        {
+          "href": "privacy.html",
+          "text": "隱私說明"
+        }
+      ],
+      "spacing": {
+        "gap": "8px",
+        "paddingTop": "12px",
+        "paddingBottom": "12px"
+      },
+      "canvas": {
+        "x": 300.66668701171875,
+        "y": 232.5625,
+        "width": 678.6666870117188,
+        "height": 240
+      },
+      "viewer": {
+        "state": "ready",
+        "revision": "180",
+        "drawCalls": "1",
+        "geometries": "1",
+        "text": "3D 預覽已就緒"
+      }
+    },
+    {
+      "variant": "candidate",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "scrollWidth": null,
+      "label": "聯絡支援",
+      "links": [
+        {
+          "href": "mailto:support@example.invalid",
+          "text": "聯絡支援"
+        },
+        {
+          "href": "privacy.html",
+          "text": "隱私說明"
+        }
+      ],
+      "spacing": {
+        "gap": "16px",
+        "paddingTop": "24px",
+        "paddingBottom": "24px"
+      },
+      "canvas": {
+        "x": 300.66668701171875,
+        "y": 232.5625,
+        "width": 678.6666870117188,
+        "height": 240
+      },
+      "viewer": {
+        "state": "ready",
+        "revision": "180",
+        "drawCalls": "1",
+        "geometries": "1",
+        "text": "3D 預覽已就緒"
+      }
+    },
+    {
+      "variant": "candidate",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "scrollWidth": 375,
+      "label": "聯絡支援",
+      "links": [
+        {
+          "href": "mailto:support@example.invalid",
+          "text": "聯絡支援"
+        },
+        {
+          "href": "privacy.html",
+          "text": "隱私說明"
+        }
+      ],
+      "spacing": {
+        "gap": "16px",
+        "paddingTop": "24px",
+        "paddingBottom": "24px"
+      },
+      "canvas": {
+        "x": 40.66666793823242,
+        "y": 232.2604217529297,
+        "width": 294,
+        "height": 240
+      },
+      "viewer": {
+        "state": "ready",
+        "revision": "180",
+        "drawCalls": "1",
+        "geometries": "1",
+        "text": "3D 預覽已就緒"
+      }
+    },
+    {
+      "variant": "baseline",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "scrollWidth": 375,
+      "label": "聯絡我們",
+      "links": [
+        {
+          "href": "mailto:support@example.invalid",
+          "text": "聯絡我們"
+        },
+        {
+          "href": "privacy.html",
+          "text": "隱私說明"
+        }
+      ],
+      "spacing": {
+        "gap": "8px",
+        "paddingTop": "12px",
+        "paddingBottom": "12px"
+      },
+      "canvas": {
+        "x": 40.66666793823242,
+        "y": 232.2604217529297,
+        "width": 294,
+        "height": 240
+      },
+      "viewer": {
+        "state": "ready",
+        "revision": "180",
+        "drawCalls": "1",
+        "geometries": "1",
+        "text": "3D 預覽已就緒"
+      }
+    }
+  ],
+  "keyboard": {
+    "candidate_desktop_tab_sequence": [
+      "rotate-viewer",
+      "聯絡支援",
+      "隱私說明"
+    ],
+    "navigation_activated": false
+  },
+  "console": {
+    "levels": [
+      "error",
+      "warn"
+    ],
+    "limit": 20,
+    "entries": [],
+    "scope": "captured tab log after desktop comparison and narrow baseline navigation"
+  },
+  "visual_inspection": {
+    "screenshots_viewed": [
+      "baseline desktop",
+      "candidate narrow"
+    ],
+    "cube_visible": true,
+    "footer_legible": true,
+    "stored_screenshot_artifacts": []
+  },
+  "implementation_sha256": {
+    "tests/skill-footer-fixtures.test.js": "a8594c2f4a7b1830516609c1bc25d2596b8501818d6f5436758c8440ad43c61b",
+    "docs/audits/skill-optimization-2026-09-16/serve-footer-author-probe.cjs": "33ef5e3d437770c1a8692cc95b17b9445fb9ad37664fe8c8a7e6caee37aaa308",
+    "skills/threejs-development/evals/evals.json": "8e7b8c68108983991225312c7144070e3e6762c0a241cb7dd1ef91e1be08897f"
+  },
+  "limitations": [
+    "The candidate was a fixed author edit of temporary fixture copies, not an evaluated model response.",
+    "Source hashes, DOM computed styles, canvas bounds and visible rendering establish fixture observability; they do not establish Skill selection or model task success.",
+    "The 375x812 run is viewport emulation, not a physical mobile device or performance benchmark.",
+    "No memory-leak, GPU performance, repeated lifecycle or full accessibility audit was performed.",
+    "Desktop horizontal overflow was not separately measured.",
+    "The setup receipt predates browser observations and intentionally retains its original not_run field."
+  ]
+}

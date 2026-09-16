@@ -97,10 +97,11 @@ mytool = "mytool.cli:main"
 
 ## Publishing
 
+- Enter this phase only for an authorized publication request; preparation and review finish with artifact evidence instead of an upload.
 - Build locally first.
 - Inspect the artifact before upload.
 - Publish with the documented path, not ad hoc commands.
-- Validate permissions and target index before release.
+- Validate the package version, built artifact, target index, and existing publication authority before release. Do not request the same unchanged authorization again or infer upload permission from a build-only request.
 
 ---
 

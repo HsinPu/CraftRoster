@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "kind": "author_project_checks",
+  "fixture_only": true,
+  "model_execution": false,
+  "model_status": "not_run",
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "win32"
+  },
+  "digest_algorithm": "sha256-utf8-lf",
+  "inputs": {
+    "CONTRACT.md": "13a8e60725104370c6fd1a331a9be9fe50e9aa03a39d53d4304ca92f68825d5a",
+    "base/payment-service.cjs": "d21cbb1b42c8b0fb081c7568d3075bf686e1c0e08e41c9803653218837b731df",
+    "docs/acceptance.md": "12a412853ff2faf64c5ab0a3a24a246f2a8967a87f9a1f47d2bb818fb2caff9d",
+    "head/payment-service.cjs": "8f5835f1904785592e929e03d70b0729368c3e82f7fee507b559d430903870f5",
+    "shared/checkout.cjs": "72bc9634a5ff9f106e318a1b8493680b065d5e030a1c335a9ecf4d8cc2479192",
+    "shared/local-provider.cjs": "ff1a14a170509d64d23fee0c031ffd5a6f9333c3a8db0a3f9c6d77e696d79563",
+    "shared/request.cjs": "5fb5708cc8401d78dae95962e38e280cff1c0f290283c0ac61f181ed7d043e4e",
+    "shared/submission-store.cjs": "b4402fc6cded990b25a75247135c581bb6733df71623807046c56bfdc96ae835",
+    "test/payment.test.cjs": "bf33cf5ad5bfb96fef27645f2ea9598dec315d1f3e00144959cdf7dc32842c48"
+  },
+  "checks": [
+    {
+      "command": "node test/payment.test.cjs base",
+      "executed_at": "2026-09-16T08:42:34.655Z",
+      "invocation": "runPublicChecks in the same Node process",
+      "variant": "base",
+      "checks": 4
+    },
+    {
+      "command": "node test/payment.test.cjs head",
+      "executed_at": "2026-09-16T08:42:34.688Z",
+      "invocation": "runPublicChecks in the same Node process",
+      "variant": "head",
+      "checks": 4
+    }
+  ],
+  "limitation": "Only these four normal project checks per version ran; this is not a complete acceptance result or model review."
+}

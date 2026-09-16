@@ -1,0 +1,12 @@
+{
+  "fictional": true,
+  "applicationVisibility": "public",
+  "routePath": "/admin/members",
+  "routeMethod": "GET",
+  "frameworkWrapper": "requireSession",
+  "edgeRoleFilter": false,
+  "additionalAuthorizationMiddleware": [],
+  "routeSessionSource": "shared/sessions.json synthetic fixture map",
+  "organizationFilterOwner": "shared/member-store.js",
+  "listenerEnabled": false
+}

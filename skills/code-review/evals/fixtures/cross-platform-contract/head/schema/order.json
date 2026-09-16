@@ -1,0 +1,16 @@
+{
+  "title": "FictionalOrder",
+  "type": "object",
+  "required": ["id", "status"],
+  "additionalProperties": true,
+  "properties": {
+    "id": { "type": "string" },
+    "status": { "type": "string", "enum": ["placed", "shipped", "delivered"] },
+    "estimatedDeliveryAtMs": {
+      "type": ["integer", "null"],
+      "minimum": 0,
+      "maximum": 8640000000000000,
+      "description": "Milliseconds since Unix epoch; absent or null means unavailable."
+    }
+  }
+}

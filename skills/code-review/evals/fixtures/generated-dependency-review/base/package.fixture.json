@@ -1,0 +1,5 @@
+{
+  "format": "offline-depot-manifest-v1",
+  "application": "synthetic-depot-browser",
+  "dependency": { "name": "depot-catalog", "version": "1.4.1" }
+}

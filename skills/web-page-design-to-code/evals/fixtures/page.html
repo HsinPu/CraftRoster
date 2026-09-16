@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Plan your next community workshop with Cedar.">
+  <title>Cedar workshops</title>
+  <style>
+    body { font: 16px/1.5 system-ui, sans-serif; margin: 24px; color: #173042; background: #fffdf8; }
+    button { font: inherit; padding: 8px 16px; background: #df6948; color: #173042; border: 2px solid currentColor; }
+    button:focus-visible { outline: 3px solid #173042; outline-offset: 3px; }
+    [hidden] { display: none; }
+  </style>
+</head>
+<body>
+  <header><a href="/welcome">Cedar</a></header>
+  <main>
+    <h1>Make something together</h1>
+    <p>Find a local workshop and learn with your neighbors.</p>
+    <button id="details-toggle" type="button" aria-expanded="false" aria-controls="workshop-details">See workshop details</button>
+    <section id="workshop-details" hidden><h2>Your first workshop</h2><p>Saturday at 10 am. Materials are included.</p></section>
+  </main>
+  <footer><a href="/privacy">Privacy</a></footer>
+  <script>
+    document.querySelector('#details-toggle').addEventListener('click', (event) => {
+      const expanded = event.currentTarget.getAttribute('aria-expanded') === 'true';
+      event.currentTarget.setAttribute('aria-expanded', String(!expanded));
+      document.querySelector('#workshop-details').hidden = expanded;
+    });
+  </script>
+</body>
+</html>

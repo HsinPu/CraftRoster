@@ -1,0 +1,12 @@
+'use strict';
+const assert = require('node:assert/strict');
+const { createBookingService } = require('../src/booking-service');
+const { checkout } = require('../src/checkout');
+const service = createBookingService();
+const request = { requestId: 'synthetic-checkout-1', eventId: 'synthetic-event-1', seats: 1, attendeeName: 'A & B' };
+const response = checkout(service, request);
+assert.equal(response.status, 201);
+assert.equal(response.booking.attendeeName, 'A & B');
+assert.equal(response.receiptHtml, '<p>Reserved for <span>A &amp; B</span>: 1 seats.</p>');
+assert.equal(checkout(service, { ...request, requestId: 'invalid', seats: 5 }).receiptHtml, null);
+console.log('Local checkout and text rendering checks passed.');

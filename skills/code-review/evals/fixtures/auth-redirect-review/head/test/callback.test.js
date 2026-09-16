@@ -1,0 +1,10 @@
+'use strict';
+const assert = require('node:assert/strict');
+const { dispatch } = require('../src/app');
+const { redirect } = require('../../shared/framework');
+const request = { method: 'GET', path: '/auth/callback', headers: { cookie: 'fixture_session=fixture-member-session' } };
+assert.deepEqual(dispatch(request), { status: 303, headers: { location: 'https://documents.example.invalid/account' }, body: '' });
+assert.equal(dispatch({ ...request, headers: {} }).status, 401);
+assert.equal(dispatch({ ...request, method: 'POST' }).status, 404);
+assert.equal(redirect('/orders').headers.location, 'https://documents.example.invalid/orders');
+console.log('Local callback and authentication checks passed.');

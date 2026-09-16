@@ -1,0 +1,9 @@
+{
+  "name": "sample-log-counter",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local CLI that counts log levels from a supplied text file",
+  "bin": { "log-counter": "cli.js" },
+  "scripts": { "test": "node --test" },
+  "engines": { "node": ">=22" }
+}

@@ -1,0 +1,17 @@
+'use strict';
+const assert = require('node:assert/strict');
+const { createBookingService } = require('../src/booking-service');
+const request = { requestId: 'synthetic-request-1', eventId: 'synthetic-event-1', seats: 2, attendeeName: 'Example Attendee' };
+const service = createBookingService();
+const created = service.reserve(request);
+assert.equal(created.status, 201);
+assert.equal(created.replayed, false);
+assert.deepEqual(service.snapshot(), { eventId: 'synthetic-event-1', remaining: 4, receiptCount: 1 });
+assert.equal(service.reserve({ ...request, seats: 3 }).status, 409);
+assert.equal(service.snapshot().remaining, 4);
+for (const seats of [-1, 1.5, 5]) assert.equal(service.reserve({ ...request, requestId: 'invalid-input', seats }).status, 400);
+assert.equal(service.reserve({ ...request, requestId: 'unknown-event', eventId: 'unknown' }).status, 404);
+const exactCapacity = createBookingService({ capacity: 4 });
+assert.equal(exactCapacity.reserve({ ...request, seats: 4 }).status, 201);
+assert.equal(exactCapacity.snapshot().remaining, 0);
+console.log('Local booking contract checks passed.');

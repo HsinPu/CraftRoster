@@ -34,7 +34,7 @@ Make uncertainty visible before making changes.
 - Ask for clarification when missing information changes the correct solution.
 - Present meaningful tradeoffs when there are multiple valid paths.
 - Push back when the requested path appears risky, wasteful, or more complex than needed.
-- Stop and name confusion instead of silently choosing an interpretation.
+- Name material uncertainty and pause only the work that depends on resolving it; use repository-grounded assumptions for low-risk choices.
 
 ### Simplicity First
 
@@ -88,14 +88,11 @@ Turn the task into a verifiable outcome.
 
 ## When To Ask First
 
-Ask before coding when:
+Ask when a consequential requirement still has incompatible interpretations after inspecting available evidence, or a specific next action exceeds the authorization already established for its target, operation, environment, and effects. Explain that decision or missing authority.
 
-- The user request has multiple incompatible interpretations.
-- The change may alter public API behavior, data shape, persistence, security, or billing.
-- Verification requires destructive commands, production access, or external side effects.
-- The obvious implementation conflicts with project rules or existing architecture.
+Public APIs, persistence, security, and billing call for deeper impact analysis, not automatic reconfirmation. Carry forward valid authorization and continue independent inspection, reversible implementation, and safe checks. Do not infer permission for destructive commands, production changes, new credential access, or other external effects from an unrelated coding request.
 
-Do not ask merely to avoid ordinary implementation judgment. If the ambiguity is low-risk, state the assumption and proceed.
+Do not ask merely to avoid ordinary implementation judgment. If the ambiguity is low-risk, state the assumption and proceed; reopen it only when new evidence changes the scope or consequences.
 
 ## Handoff
 

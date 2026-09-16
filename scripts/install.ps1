@@ -24,6 +24,11 @@ $script:LegacyRepository = "HsinPu/Autoverse-Ai-Agent-Skills"
 $script:AllowLegacyRepositoryAlias = -not $PSBoundParameters.ContainsKey("Repo")
 $script:LegacySkillDigestManifestPath = $null
 $script:LegacySkillDigestAllowlist = $null
+$script:JsonStringOptions = @{}
+if ((Get-Command ConvertFrom-Json).Parameters.ContainsKey('DateKind')) {
+    # Ownership timestamps are JSON strings, including on PowerShell 7.5+.
+    $script:JsonStringOptions.DateKind = 'String'
+}
 
 try { [Console]::OutputEncoding = [System.Text.UTF8Encoding]::new() } catch {}
 
@@ -44,6 +49,8 @@ Compatibility aliases:
   -SourceDir installs from a local checkout; otherwise the requested GitHub repo and branch are downloaded.
   -InstallDir is a direct destination for tool targets and the project root for the 'project' target.
   Omit -Name and -Category to install every available component of the selected Type.
+  Skill installs include required dependencies; conditional and optional dependencies are not installed automatically.
+  The source checkout must include scripts/data/install-skill-dependencies.tsv.
 
 Skill targets:
   codex, claude, cursor, vscode, copilot, opencode, project
@@ -69,6 +76,7 @@ Safety:
   'vscode' is an alias for 'copilot' and uses the same ownership metadata.
   Global auto-delegation is opt-in and never overwrites conflicting user instructions.
   Unknown same-named content is blocked unless -Force is provided.
+  -Force also applies to required dependencies in the expanded installation plan.
 "@
 }
 
@@ -410,7 +418,7 @@ function Get-InstallCategoryNames {
     $available = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::Ordinal)
     $selected = [System.Collections.Generic.List[string]]::new()
     for ($index = 1; $index -lt $lines.Count; $index++) {
-        $parts = @($lines[$index] -split "`t", -1)
+        $parts = @($lines[$index] -split "`t", 0)
         if ($parts.Count -ne 3) {
             throw "Install category index row $($index + 1) must contain type, category, and name."
         }
@@ -435,6 +443,99 @@ function Get-InstallCategoryNames {
         throw "Invalid $label category '$CategoryName'. Available $label categories: $availableList"
     }
     return @($selected)
+}
+
+function Get-SkillDependencyRows {
+    param([string]$RepoRoot)
+    $indexPath = Join-Path $RepoRoot "scripts\data\install-skill-dependencies.tsv"
+    if (-not (Test-Path -LiteralPath $indexPath -PathType Leaf) -or
+        ((Get-Item -Force -LiteralPath $indexPath).Attributes -band [System.IO.FileAttributes]::ReparsePoint)) {
+        throw "Skill dependency index not found or not a regular file: $indexPath. Use the installer matching this source checkout."
+    }
+    try {
+        $text = [System.Text.UTF8Encoding]::new($false, $true).GetString([System.IO.File]::ReadAllBytes($indexPath))
+    } catch {
+        throw "Skill dependency index is not valid UTF-8: $indexPath"
+    }
+    $lines = @($text -split "`n")
+    if ($lines.Count -gt 1 -and $lines[-1] -ceq '') { $lines = @($lines[0..($lines.Count - 2)]) }
+    if ($lines.Count -lt 1 -or $lines[0].TrimEnd("`r") -cne "skill`tdependency`tkind`twhen") {
+        throw "Skill dependency index has an invalid header: $indexPath"
+    }
+    $seen = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::Ordinal)
+    $checkedNames = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::Ordinal)
+    $rows = [System.Collections.Generic.List[object]]::new()
+    for ($index = 1; $index -lt $lines.Count; $index++) {
+        $parts = @($lines[$index].TrimEnd("`r") -split "`t", 0)
+        if ($parts.Count -ne 4) { throw "Skill dependency index row $($index + 1) must contain skill, dependency, kind, and when." }
+        $skillName, $dependencyName, $kind, $when = $parts
+        if ($skillName -cnotmatch '^[a-z0-9]+(?:-[a-z0-9]+)*$' -or
+            $dependencyName -cnotmatch '^[a-z0-9]+(?:-[a-z0-9]+)*$' -or
+            $kind -cnotin @('required', 'conditional', 'optional') -or $when -match '[\r\n\x00]' -or
+            ($kind -cne 'conditional' -and $when -cne '-') -or
+            ($kind -ceq 'conditional' -and ([string]::IsNullOrWhiteSpace($when) -or $when -ceq '-'))) {
+            throw "Skill dependency index row $($index + 1) contains an invalid value."
+        }
+        if ($skillName -ceq $dependencyName) { throw "Skill dependency index contains a self dependency: $skillName" }
+        if (-not $seen.Add("$skillName`t$dependencyName")) { throw "Skill dependency index contains duplicate dependency: $skillName -> $dependencyName" }
+        foreach ($componentName in @($skillName, $dependencyName)) {
+            if ($checkedNames.Add($componentName)) { $null = @(Get-SkillSources -RepoRoot $RepoRoot -SkillName $componentName) }
+        }
+        $rows.Add([pscustomobject]@{ Skill = $skillName; Dependency = $dependencyName; Kind = $kind; When = $when })
+    }
+    return @($rows.ToArray())
+}
+
+function Expand-RequiredSkillSources {
+    param([string]$RepoRoot, [object[]]$Sources, [object[]]$DependencyRows)
+    $visiting = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::Ordinal)
+    $visited = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::Ordinal)
+    $selected = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::Ordinal)
+    $ordered = [System.Collections.Generic.List[object]]::new()
+    foreach ($source in $Sources) { $null = $selected.Add($source.Name) }
+    $visit = {
+        param([string]$SkillName, [string[]]$Chain)
+        if ($visited.Contains($SkillName)) { return }
+        if (-not $visiting.Add($SkillName)) { throw "Required Skill dependency cycle: $((@($Chain) + $SkillName) -join ' -> ')" }
+        foreach ($row in $DependencyRows) {
+            if ($row.Skill -ceq $SkillName -and $row.Kind -ceq 'required') {
+                & $visit $row.Dependency (@($Chain) + $SkillName)
+            }
+        }
+        $null = $visiting.Remove($SkillName)
+        $null = $visited.Add($SkillName)
+        $ordered.Add(@(Get-SkillSources -RepoRoot $RepoRoot -SkillName $SkillName)[0])
+    }
+    foreach ($source in $Sources) { & $visit $source.Name @() }
+    Write-Info "Selected $($selected.Count) Skill(s); added $($ordered.Count - $selected.Count) required dependency Skill(s)."
+    foreach ($row in $DependencyRows) {
+        if ($selected.Contains($row.Skill) -and $row.Kind -cne 'required' -and -not $visited.Contains($row.Dependency)) {
+            if ($row.Kind -ceq 'conditional') {
+                Write-Info "Conditional route not auto-installed: $($row.Skill) -> $($row.Dependency) ($($row.When))"
+            } else {
+                Write-Info "Optional dependency not auto-installed: $($row.Skill) -> $($row.Dependency)"
+            }
+        }
+    }
+    return @($ordered.ToArray())
+}
+
+function Assert-SkillDependencyPlan {
+    param([object[]]$Plans, [object[]]$DependencyRows)
+    foreach ($plan in $Plans) {
+        foreach ($row in $DependencyRows) {
+            if ($row.Skill -cne $plan.Source.Name -or $row.Kind -cne 'required') { continue }
+            $dependencyPlan = @($Plans | Where-Object {
+                $_.Source.Name -ceq $row.Dependency -and $_.ProfileIndex -eq $plan.ProfileIndex
+            })
+            if ($dependencyPlan.Count -ne 1) { throw "Required Skill dependency missing from installation plan: $($row.Skill) -> $($row.Dependency)" }
+            $sourceRoot = [System.IO.Path]::GetFullPath($plan.Profile.DestinationRoot).TrimEnd('\', '/')
+            $dependencyRoot = [System.IO.Path]::GetFullPath($dependencyPlan[0].Profile.DestinationRoot).TrimEnd('\', '/')
+            if (-not [string]::Equals($sourceRoot, $dependencyRoot, [System.StringComparison]::OrdinalIgnoreCase)) {
+                throw "Required Skill dependency uses different roots: $($row.Skill) at '$sourceRoot' -> $($row.Dependency) at '$dependencyRoot'. Reconcile the existing Skill roots before installing; no duplicate or migration was created."
+            }
+        }
+    }
 }
 
 function Test-TargetWithinRoot {
@@ -648,7 +749,7 @@ function Get-ExistingMeta {
     try {
         $text = Read-StrictUtf8Text -Path $MetaPath -Label "CraftRoster metadata" -AllowBom
         $null = Assert-StrictJsonText -Text $text -Path $MetaPath
-        $metadata = ConvertFrom-Json -InputObject $text
+        $metadata = ConvertFrom-Json -InputObject $text @JsonStringOptions
         if ($metadata -isnot [System.Management.Automation.PSCustomObject]) {
             throw "metadata root is not a JSON object"
         }
@@ -1507,9 +1608,9 @@ function Install-AtomicSkillDirectory {
 }
 
 function Install-Skill {
-    param([System.IO.DirectoryInfo]$Source, [string]$DestinationRoot, [string]$TargetName, [string[]]$LegacyTargets, [string]$RepoName, [string]$BranchName)
+    param([System.IO.DirectoryInfo]$Source, [string]$DestinationRoot, [string]$TargetName, [string[]]$LegacyTargets, [string]$RepoName, [string]$BranchName, [hashtable]$Plan)
     $targetPath = Join-Path $DestinationRoot $Source.Name
-    $plan = Get-SkillInstallPlan -Source $Source -DestinationRoot $DestinationRoot -TargetName $TargetName -LegacyTargets $LegacyTargets -RepoName $RepoName
+    if (-not $Plan) { $Plan = Get-SkillInstallPlan -Source $Source -DestinationRoot $DestinationRoot -TargetName $TargetName -LegacyTargets $LegacyTargets -RepoName $RepoName }
     if ($DryRun) { Write-Host "DRY-RUN $($plan.Action) Skill $($Source.Name) -> $targetPath"; return }
 
     $now = (Get-Date).ToUniversalTime().ToString("o")
@@ -1764,7 +1865,7 @@ function Assert-StrictJsonText {
             $state.Index = $state.Index + 1
             if ($character -eq '"') {
                 $token = $state.Text.Substring($start, $state.Index - $start)
-                try { $value = ConvertFrom-Json -InputObject $token } catch {
+                try { $value = ConvertFrom-Json -InputObject $token @JsonStringOptions } catch {
                     Throw-StrictJsonError "invalid string at offset $start"
                 }
                 return @{ Type = "string"; Value = [string]$value; Start = $start; End = $state.Index }
@@ -2037,7 +2138,7 @@ function Get-CodexAutoDelegationPlan {
             $managedLabel = if ($isLegacyMigration) { "legacy" } else { "CraftRoster" }
             throw "Refusing to edit $configPath because its $managedLabel managed block has an unexpected structure. Back up config.toml and reconcile the block manually, or rerun without -EnableAutoDelegation. -Force does not bypass this config safety check."
         }
-        if ([regex]::Matches($managedMatch.Value, "(?m)^'''[^\S\r\n]*$").Count -ne 1) {
+        if ([regex]::Matches($managedMatch.Value, "(?m)^'''[^\S\r\n]*\r?$").Count -ne 1) {
             $managedLabel = if ($isLegacyMigration) { "legacy" } else { "CraftRoster" }
             throw "Refusing to edit $configPath because its $managedLabel managed block has an unexpected structure. Back up config.toml and reconcile the block manually, or rerun without -EnableAutoDelegation. -Force does not bypass this config safety check."
         }
@@ -2257,12 +2358,24 @@ try {
             $installCompanionSkill = $isFullInstall -or $EnableAutoDelegation
             $companionSource = $null
             $companionProfiles = @()
+            $companionPlans = @()
             if ($installCompanionSkill) {
                 $companionSource = @(Get-SkillSources -RepoRoot $repoRoot -SkillName "subagent-architecture")[0]
+                $dependencyRows = @(Get-SkillDependencyRows -RepoRoot $repoRoot)
+                $companionSources = @(Expand-RequiredSkillSources -RepoRoot $repoRoot -Sources @($companionSource) -DependencyRows $dependencyRows)
                 $companionInstallDir = if ($Target -eq "project") { $InstallDir } else { $null }
-                $companionProfiles = @(Get-SkillInstallProfiles -TargetName $Target -ComponentName $companionSource.Name -RequestedInstallDir $companionInstallDir -RepoName $Repo -IncomingSkillFile (Join-Path $companionSource.FullName "SKILL.md"))
-                foreach ($profile in $companionProfiles) {
-                    Test-SkillInstall -Source $companionSource -DestinationRoot $profile.DestinationRoot -TargetName $profile.TargetName -LegacyTargets $profile.LegacyTargets -RepoName $Repo
+                foreach ($source in $companionSources) {
+                    $sourceProfiles = @(Get-SkillInstallProfiles -TargetName $Target -ComponentName $source.Name -RequestedInstallDir $companionInstallDir -RepoName $Repo -IncomingSkillFile (Join-Path $source.FullName "SKILL.md"))
+                    if ($source.Name -ceq $companionSource.Name) { $companionProfiles = $sourceProfiles }
+                    for ($profileIndex = 0; $profileIndex -lt $sourceProfiles.Count; $profileIndex++) {
+                        $companionPlans += @{ Source = $source; Profile = $sourceProfiles[$profileIndex]; ProfileIndex = $profileIndex }
+                    }
+                }
+                Assert-SkillDependencyPlan -Plans $companionPlans -DependencyRows $dependencyRows
+                foreach ($companionPlan in $companionPlans) {
+                    $source = $companionPlan.Source
+                    $profile = $companionPlan.Profile
+                    $companionPlan.InstallPlan = Get-SkillInstallPlan -Source $source -DestinationRoot $profile.DestinationRoot -TargetName $profile.TargetName -LegacyTargets $profile.LegacyTargets -RepoName $Repo
                     Write-Info "Companion Skill destination: $($profile.DestinationRoot)"
                 }
             }
@@ -2279,8 +2392,10 @@ try {
             }
 
             if ($installCompanionSkill) {
-                foreach ($profile in $companionProfiles) {
-                    Install-Skill -Source $companionSource -DestinationRoot $profile.DestinationRoot -TargetName $profile.TargetName -LegacyTargets $profile.LegacyTargets -RepoName $Repo -BranchName $Branch
+                foreach ($companionPlan in $companionPlans) {
+                    $source = $companionPlan.Source
+                    $profile = $companionPlan.Profile
+                    Install-Skill -Source $source -DestinationRoot $profile.DestinationRoot -TargetName $profile.TargetName -LegacyTargets $profile.LegacyTargets -RepoName $Repo -BranchName $Branch -Plan $companionPlan.InstallPlan
                 }
             }
             Write-Info "$(if ($DryRun) { 'Planning' } else { 'Installing' }) $($agentPlans.Count) Agent profile(s) for $Target"
@@ -2298,25 +2413,28 @@ try {
                     throw "Skill category '$Category' does not match the available Skill inventory."
                 }
             }
+            $dependencyRows = @(Get-SkillDependencyRows -RepoRoot $repoRoot)
+            $sources = @(Expand-RequiredSkillSources -RepoRoot $repoRoot -Sources $sources -DependencyRows $dependencyRows)
             $skillPlans = @()
             foreach ($source in $sources) {
                 $sourceProfiles = @(Get-SkillInstallProfiles -TargetName $Target -ComponentName $source.Name -RequestedInstallDir $InstallDir -RepoName $Repo -IncomingSkillFile (Join-Path $source.FullName "SKILL.md"))
-                foreach ($profile in $sourceProfiles) {
-                    $skillPlans += @{ Source = $source; Profile = $profile }
+                for ($profileIndex = 0; $profileIndex -lt $sourceProfiles.Count; $profileIndex++) {
+                    $skillPlans += @{ Source = $source; Profile = $sourceProfiles[$profileIndex]; ProfileIndex = $profileIndex }
                 }
             }
+            Assert-SkillDependencyPlan -Plans $skillPlans -DependencyRows $dependencyRows
             @($skillPlans | ForEach-Object { $_.Profile.DestinationRoot } | Sort-Object -Unique) |
                 ForEach-Object { Write-Info "Skill destination: $_" }
             foreach ($skillPlan in $skillPlans) {
                 $source = $skillPlan.Source
                 $profile = $skillPlan.Profile
-                Test-SkillInstall -Source $source -DestinationRoot $profile.DestinationRoot -TargetName $profile.TargetName -LegacyTargets $profile.LegacyTargets -RepoName $Repo
+                $skillPlan.InstallPlan = Get-SkillInstallPlan -Source $source -DestinationRoot $profile.DestinationRoot -TargetName $profile.TargetName -LegacyTargets $profile.LegacyTargets -RepoName $Repo
             }
             Write-Info "$(if ($DryRun) { 'Planning' } else { 'Installing' }) $($skillPlans.Count) Skill profile(s) for $Target"
             foreach ($skillPlan in $skillPlans) {
                 $source = $skillPlan.Source
                 $profile = $skillPlan.Profile
-                Install-Skill -Source $source -DestinationRoot $profile.DestinationRoot -TargetName $profile.TargetName -LegacyTargets $profile.LegacyTargets -RepoName $Repo -BranchName $Branch
+                Install-Skill -Source $source -DestinationRoot $profile.DestinationRoot -TargetName $profile.TargetName -LegacyTargets $profile.LegacyTargets -RepoName $Repo -BranchName $Branch -Plan $skillPlan.InstallPlan
             }
         }
 

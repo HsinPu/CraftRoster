@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Native Windows PowerShell 5.1 host and installer existing full local smoke",
+  "startedAt": "2026-09-16T13:35:26.882Z",
+  "finishedAt": "2026-09-16T13:36:18.755Z",
+  "executable": "C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe",
+  "args": [
+    "-NoProfile",
+    "-NonInteractive",
+    "-ExecutionPolicy",
+    "Bypass",
+    "-File",
+    "C:\\Users\\win10\\Desktop\\github\\CraftRoster\\scripts\\smoke-install.ps1",
+    "-PowerShellExecutable",
+    "C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe"
+  ],
+  "cwd": "C:\\Users\\win10\\Desktop\\github\\CraftRoster",
+  "hostVersion": "5.1.19041.3803",
+  "hostEdition": "Desktop",
+  "hostIs64Bit": true,
+  "installerExecutable": "C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe",
+  "environmentOverrides": {
+    "PSModuleAnalysisCachePath": "NUL",
+    "TEMP": "C:\\Users\\win10\\AppData\\Local\\Temp\\craftroster-native51-audit-cjRu4n",
+    "TMP": "C:\\Users\\win10\\AppData\\Local\\Temp\\craftroster-native51-audit-cjRu4n"
+  },
+  "timeoutMs": 900000,
+  "processId": 1252,
+  "exitCode": 1,
+  "signal": null,
+  "spawnError": null,
+  "timedOut": false,
+  "killResult": null,
+  "passLineCount": 34,
+  "finalSummary": null,
+  "stderrBytes": 5720,
+  "log": "native-powershell51-smoke-v2.log",
+  "logSha256": "eb2f8c28c325f0a65c1306a5ad8737862eb6fdee8232efa0962cd4ea39c59054",
+  "sourceHashesBefore": {
+    "scripts/smoke-install.ps1": "f4b8be27cbf4066659629de9ca0304fa1ff457bddac39f11ba51e935063c593e",
+    "scripts/install.ps1": "038b00a09a2b291f45dddd767f4649c5e7e7524206affc0b642ac61c54e8b70e"
+  },
+  "sourceHashesAfter": {
+    "scripts/smoke-install.ps1": "f4b8be27cbf4066659629de9ca0304fa1ff457bddac39f11ba51e935063c593e",
+    "scripts/install.ps1": "038b00a09a2b291f45dddd767f4649c5e7e7524206affc0b642ac61c54e8b70e"
+  },
+  "sourceHashesUnchanged": true,
+  "cleanup": {
+    "ownedTemp": "C:\\Users\\win10\\AppData\\Local\\Temp\\craftroster-native51-audit-cjRu4n",
+    "remainingEntries": [],
+    "removedEmptyTemp": true
+  },
+  "networkCalls": 0,
+  "modelCalls": 0,
+  "status": "failed"
+}

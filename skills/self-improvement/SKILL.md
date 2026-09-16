@@ -1,6 +1,6 @@
 ---
 name: self-improvement
-description: Continuous improvement workflow for logging learnings, errors, and feature requests into project-local memory files. Use when a command fails, the user corrects an answer, a tool behaves unexpectedly, or a better recurring approach is found.
+description: Capture actionable lessons from recurring failures, verified improvements, or lasting user preferences. Use when a lesson can improve future decisions; separate task-local observations from authorized project memory. A single command failure or one-time correction does not automatically require a persistent entry.
 license: Apache-2.0
 metadata:
   author: "HsinPu"
@@ -13,18 +13,18 @@ Use this skill to capture repeatable lessons and mistakes.
 
 ## Workflow
 
-1. Log the issue or learning while the context is fresh.
-2. Record enough detail to reproduce or apply the lesson later.
-3. Mark the entry with priority, status, and area.
-4. Promote broadly useful lessons into project memory files when appropriate.
-5. Revisit existing entries before repeating a similar task.
+1. Decide whether the observation changes a current or recurring decision. Normal control flow, such as `rg` returning no matches, is not a tool failure.
+2. Keep necessary observations in task-local notes first. Distinguish the observed event, suspected cause, and verified lesson; a single timeout does not establish a general rule.
+3. Before promotion, confirm reproducible evidence or an explicit lasting user preference, define its scope and exceptions, and check existing entries for duplication or supersession.
+4. Persist only through the project's established memory mechanism within the authorized write scope. A read-only task remains read-only; report a useful candidate lesson without creating a memory file.
+5. Record the lesson's evidence, applicable condition, and recheck trigger so later work can revise stale guidance.
 
 ## Rules
 
-- Keep entries specific and searchable.
-- Separate errors, learnings, and feature requests.
-- Link related entries when the same pattern repeats.
-- Promote reusable lessons into long-lived project guidance.
+- Keep entries specific and searchable; do not manufacture a note for every command or correction.
+- Keep secrets, personal data, raw credentials, and unnecessary private logs out of memory.
+- Separate temporary observations, verified lessons, feature requests, and lasting preferences.
+- Link or update an existing lesson rather than accumulating contradictory rules. Task-specific choices do not become universal constraints.
 
 ## Handoff
 

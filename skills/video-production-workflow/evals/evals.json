@@ -3,15 +3,29 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "Turn this rough product paragraph into a polished 90-second launch video. Generate every asset and the final edit now; I do not want to review a script or storyboard first.",
-      "expected_output": "A staged production plan that resolves the brief, creates and gates the script and storyboard before asset generation, tracks rights and cross-scene continuity, and defines editing, audio, captions, technical QA, and final acceptance evidence.",
+      "prompt": "Turn this fictional product paragraph into a 90-second, 16:9 English launch video for day hikers: 'TrailNote keeps a personal checklist and notes for each hiking trip. Users can review saved notes offline and mark packed items before leaving. It does not provide navigation or emergency services.' I authorize the full local creative run, including treatment, script, storyboard, picture lock, and final render selection; do not stop for me to review those same stages. Use editable typography and original local shapes, English captions, and silence rather than licensed music or voice. Keep all stages and evidence. Paid generation, third-party assets, identifiable people, external uploads, and publication are excluded. Verify available rendering capabilities first; if a required capability is missing, prepare the independent artifacts and identify exactly what remains unrendered without claiming a finished video.",
+      "expected_output": "A staged local production that records and honors the exact full-run authorization, preserves script-to-edit continuity and rights boundaries, and delivers the actual verified video when rendering is available; a capability failure leaves a concrete partial handoff and an explicitly unfinished render.",
       "assertions": [
-        "The response resolves audience, message, duration, aspect ratio, channels, and success criteria before production.",
+        "The brief preserves the supplied audience, duration, aspect ratio, language, silence, captions, product capabilities, and navigation/emergency exclusions without inventing claims.",
         "A script, scene plan, and storyboard or shot plan precede asset generation and editing.",
-        "The response preserves required human approval gates instead of treating urgency as approval.",
+        "It records the explicit full-run authorization for the named local creative gates and does not ask for those same approvals again; it does not infer authority for the excluded paid or external actions.",
         "Asset provenance, licensing, character or product continuity, and cross-scene consistency are tracked.",
-        "The delivery plan includes audio, captions, render checks, and a final acceptance review."
-      ]
+        "Any claimed finished deliverable has an actual video artifact and duration, dimensions, caption, and render evidence; a script or plan alone is not described as the completed video.",
+        "If required rendering capability is unavailable, it preserves independently completed artifacts and names the unavailable check or render rather than inventing tool execution."
+      ],
+      "locale": "en"
+    },
+    {
+      "id": 2,
+      "prompt": "請把這段虛構產品說明整理成 90 秒、16:9 的英文上市影片腳本與分鏡：『TrailNote 讓日間健行者保存個人裝備清單和行程筆記，可離線查看筆記並標記已打包物品；它不提供導航或緊急救援。』這次只授權本機文字規畫。我明確保留腳本與分鏡審閱；在我選定前，不要生成媒體素材、呼叫付費服務、開始剪輯或發布。先做出可供我審阅的具體內容。",
+      "expected_output": "A reviewable script and storyboard grounded in the paragraph, with the user's reserved checkpoint still open and dependent media production unstarted.",
+      "assertions": [
+        "It creates concrete timed script and storyboard artifacts before asking for the reserved review, preserving the stated product scope.",
+        "It treats this request as local text planning and does not generate media, edit a video, pay for a service, or publish.",
+        "It records the reserved script/storyboard decision as awaiting approval without claiming the direction or full production run is approved.",
+        "It distinguishes the completed planning artifacts from the unstarted video production and identifies what user decision enables the next stage."
+      ],
+      "locale": "zh-TW"
     }
   ]
 }

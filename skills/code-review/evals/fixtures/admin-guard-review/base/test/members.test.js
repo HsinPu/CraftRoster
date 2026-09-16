@@ -1,0 +1,11 @@
+'use strict';
+const assert = require('node:assert/strict');
+const { dispatch } = require('../src/app');
+const request = { method: 'GET', path: '/admin/members', headers: { cookie: 'fixture_session=fixture-admin-a' } };
+const response = dispatch(request);
+assert.equal(response.status, 200);
+assert.equal(response.body.members.length, 2);
+assert.ok(response.body.members.every((member) => member.organizationId === 'fictional-org-a'));
+assert.equal(dispatch({ ...request, headers: {} }).status, 401);
+assert.equal(dispatch({ ...request, path: '/unknown' }).status, 404);
+console.log('Local administrator and anonymous-route checks passed.');

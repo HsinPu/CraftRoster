@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "fixtureOnly": true,
+  "kind": "working-tree",
+  "origin": "actual isolated local Git and author-test executions; no model, network, or real-repository commit",
+  "digestAlgorithm": "sha256-utf8-lf",
+  "inputs": {
+    "base/AGENTS.md": "90a66f501b57b0bf695359cb340ac343ab900fa8a2e10c26bae8c5232ef54a34",
+    "base/notes/team-schedule.md": "07773b1967685d569ee30e824634501bb720596aaa73141b1f0e6cb7f01c6339",
+    "base/package.json": "7552bd9e0c1e93c740df19f1b741b2355d9cf8c14a40effff2a53b3fa81e2d90",
+    "base/README.md": "f8a421e1cf89f3d629ddbec6abe117da0d5f87fecd724727c282c2b78fb22579",
+    "base/REVIEW_CONTEXT.md": "0c1ec3924b19e8fd2480fb2fc90da5fb18a416d1073844b3e741c44df45abf62",
+    "base/src/order-service.js": "b73bfad957391ff541576fd3eca955c134058d750de0d30111266d2441c70603",
+    "base/src/stock.js": "406a3d4c33741743a05a440d8bdd5a2a944a1d83d8a42a4aca383f2673cfd09b",
+    "base/test/order-service.test.js": "0c0fb47f060295a489f37eda91b4a73f14984834aa175b5c0c36f4d6b7aea9ea",
+    "base/test/stock.test.js": "8fd708ae5e3217131dbfe16655d3e85e4bae5e47152cf79795eb4e519620dc10",
+    "CONTRACT.md": "e63490a9eebd4ba0720568b41e414f599413683eb7a07cb5a4246aab434725d7",
+    "fixture-recipe.json": "a752081c5e9742d8ea304e839e3a23252c43b0d5279bc406025d13ec25cc1262",
+    "index/src/stock.js": "80badac38200188f506eef7a695d6859a3ebb73386096f440a997b818ef5e761",
+    "new/fixtures/order.json": "ee96f2738b0c0de64ad24b57158ca4351cce984de8d1b9de62c18c531408584b",
+    "new/scripts/preview-order.js": "d57090d7320fb8baae15224f161f9e643c92187f42e12d4cdf32571366fd3ae0",
+    "worktree/notes/team-schedule.md": "146913d5c9b0f0f3baa1e196b1300255f6728e522489bd1623f10651ca58cc11",
+    "worktree/src/stock.js": "2f398e4910210c759c6be276673b70ac772fa8da925b1c818b3eb94aa41c6bcb"
+  },
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "win32",
+    "git": "git version 2.53.0.windows.3"
+  },
+  "observations": {
+    "base": "72f61823392a3edbaeb45e679b544ee1b9b50eb6",
+    "head": "72f61823392a3edbaeb45e679b544ee1b9b50eb6",
+    "statusPorcelain": " M notes/team-schedule.md\nMM src/stock.js\n?? fixtures/order.json\n?? scripts/preview-order.js",
+    "stagedPaths": [
+      "src/stock.js"
+    ],
+    "unstagedPaths": [
+      "notes/team-schedule.md",
+      "src/stock.js"
+    ],
+    "untrackedPaths": [
+      "fixtures/order.json",
+      "scripts/preview-order.js"
+    ],
+    "baseToHeadPaths": []
+  },
+  "tests": {
+    "base": [
+      {
+        "command": "node test/stock.test.js",
+        "executedAt": "2026-09-16T08:07:30.163Z",
+        "exitCode": 0,
+        "stdout": "Stock normal-path tests passed."
+      },
+      {
+        "command": "node test/order-service.test.js",
+        "executedAt": "2026-09-16T08:07:30.227Z",
+        "exitCode": 0,
+        "stdout": "Order service normal-path tests passed."
+      }
+    ],
+    "final": [
+      {
+        "command": "node test/stock.test.js",
+        "executedAt": "2026-09-16T08:07:30.340Z",
+        "exitCode": 0,
+        "stdout": "Stock normal-path tests passed."
+      },
+      {
+        "command": "node test/order-service.test.js",
+        "executedAt": "2026-09-16T08:07:30.399Z",
+        "exitCode": 0,
+        "stdout": "Order service normal-path tests passed."
+      }
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "id": "synthetic-grid-1",
+  "limit": 2,
+  "speed": 4,
+  "targets": [[1, 0], [-1, 1], [1, -1]],
+  "colors": { "board": "#d4deec", "player": "#1c63c8", "target": "#de8117", "background": "#edf2f9" }
+}

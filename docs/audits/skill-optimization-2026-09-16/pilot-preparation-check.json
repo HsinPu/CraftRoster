@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "kind": "offline_preparation_check",
+  "created_at": "2026-09-16T07:33:11.717Z",
+  "node": "v24.19.0",
+  "platform": "win32",
+  "status": "not_run",
+  "model_calls": 0,
+  "cases": [
+    {
+      "case_id": "code-change-workflow:1",
+      "mode": "workspace_fixture",
+      "locale": "zh-TW",
+      "status": "not_run",
+      "public_files": 523,
+      "fixture_files": 4,
+      "skill_packages": 286,
+      "public_bundle_sha256": "40543717a18276cb33e5f3cc7c766f55bc52234119e71a9225b2425c306e962d",
+      "fixture_sha256": "c88bbf169bc3f618dcbccd15cae1f4282bb6d9f6d3816ac664a916538b59fd42",
+      "corpus_case_sha256": "fa6fa72b7e2a5100c6687a27b9a0fa37f740ea38ac1623ff1efeaac66797d5d8",
+      "private_record_sha256": "869a8a678d2728330a6dc7636021294e6b3e8c79c13877b2bc2848cb786ca9ad",
+      "host_isolation_enforced": false,
+      "assertions_executed": 0
+    },
+    {
+      "case_id": "javascript-development:6",
+      "mode": "workspace_fixture",
+      "locale": "mixed-zh-TW-en",
+      "status": "not_run",
+      "public_files": 529,
+      "fixture_files": 10,
+      "skill_packages": 286,
+      "public_bundle_sha256": "637c33aa447809f23124a5727b5cb3dbf3235f20cf5b73abe4c4ac9754f8b5f1",
+      "fixture_sha256": "10cd4384434a16a7986ae9c53860a70bea00d1ee903f746a4bdde44d87d3d14a",
+      "corpus_case_sha256": "f0b1aff6c3360ce263cf078b9d33a95c5527a75572e67869e79f62599470a641",
+      "private_record_sha256": "fa869ac85191b17415d45937db3987a75dac0f0e03d5d7289706d581217799a1",
+      "host_isolation_enforced": false,
+      "assertions_executed": 0
+    },
+    {
+      "case_id": "spec-flow:2",
+      "mode": "text_only",
+      "locale": "zh-TW",
+      "status": "not_run",
+      "public_files": 519,
+      "fixture_files": 0,
+      "skill_packages": 286,
+      "public_bundle_sha256": "07fb61151f1e8dc9f75edcc325bce42b0a6e4e87db5261b1929b41869eff00d5",
+      "fixture_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "corpus_case_sha256": "093a841355cb59f6d18f081b84bfd576cf7b56039a27716cdda01a26c29c073a",
+      "private_record_sha256": "b45c04dcd091cbbe6bfe8a9f9cdedfe0b0dad9de094a2859292a151626a26365",
+      "host_isolation_enforced": false,
+      "assertions_executed": 0
+    }
+  ]
+}

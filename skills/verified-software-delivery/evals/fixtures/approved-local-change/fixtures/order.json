@@ -1,0 +1,1 @@
+{ "orderId": "synthetic-order-1", "lines": [{ "sku": "notebook", "quantity": 2, "unitCents": 1250 }, { "sku": "pencil", "quantity": 3, "unitCents": 150 }] }

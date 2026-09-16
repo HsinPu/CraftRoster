@@ -1,0 +1,1 @@
+Synthetic sentinel: the preview must not delete or modify this file.

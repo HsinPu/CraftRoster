@@ -1,0 +1,5 @@
+[
+  { "organizationId": "fictional-org-a", "memberId": "fictional-admin-a", "role": "admin", "disabled": false, "internalNote": "Synthetic administration record A1" },
+  { "organizationId": "fictional-org-a", "memberId": "fictional-member-a", "role": "member", "disabled": false, "internalNote": "Synthetic administration record A2" },
+  { "organizationId": "fictional-org-b", "memberId": "fictional-member-b", "role": "member", "disabled": true, "internalNote": "Synthetic administration record B1" }
+]

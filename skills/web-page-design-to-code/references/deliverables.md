@@ -2,6 +2,46 @@
 
 Use only the sections that improve traceability for the current task. Keep small redesigns in task context; persist these artifacts when another implementer must continue the work or the repository treats design decisions as maintained documentation.
 
+## Authorization Checkpoint Record
+
+Keep this record in task context unless durable documentation is requested or maintained by the project. Authorization mode is separate from visual comparison mode. Resolve each actual decision using the request and prior valid authorization:
+
+| Situation | Mode and action |
+| --- | --- |
+| "Show two mockups; do not change code until I choose" | `gated`: prepare the requested artifacts and stop at the reserved review. |
+| "Redesign this checkout page using our current brand; choose the layout and implement it; preserve payment behavior" | `delegated`: choose and record the direction, satisfy readiness evidence, and implement within the page boundary. |
+| "Implement approved checkout-v3 at /checkout" with desktop/mobile coverage and prior scope approval | `already-approved`: inspect that authority, retain its version, and resume implementation without reapproval. |
+| "Make the page nicer" with consequential scope or design decisions unresolved | `gated` for those decisions; inspect and prepare independently useful evidence first. |
+| Prior delegation followed by "pause coding; show me the mobile version first" | The newer explicit checkpoint controls the dependent work until released. |
+| Approved desktop-only design with missing mobile behavior | Resolve the missing coverage within delegated discretion, or ask only for the undecided mobile choice. Do not reopen the approved desktop decision. |
+| Support Skill receives a bounded `parent-receipt` task | Return the evidence to the parent; do not use the parent's delegation as independent authority to edit or close its gate. |
+
+Example record below describes an unresolved checkpoint, not an approval. A delegated or already-approved record must cite the actual request or decision, scope, and selected artifact revision. Passing checks supplies evidence; it does not grant authority. A valid earlier approval is retained unless the user changes it or the scope/target changes.
+
+```json
+{
+  "mode": "gated",
+  "checkpoint": "implementation",
+  "posture": "implementation",
+  "scopeVersion": "scope-to-resolve",
+  "directionVersion": "candidate-to-review",
+  "authorizationEvidence": "user decision still required",
+  "explicitUserCheckpoint": "pending",
+  "implementationAuthorized": false,
+  "requiredEvidence": "missing",
+  "pilotEvidence": "not-applicable",
+  "baselineOwner": "named-project-owner",
+  "baselineAction": "unchanged",
+  "baselineChangeApproval": "not-requested",
+  "externalActionAuthorization": "none",
+  "nextAction": "wait"
+}
+```
+
+Do not turn a delegated checkpoint into another user question merely because an internal gate name was not mentioned. Do not infer deployment, product migrations, live transactions, external uploads, or baseline replacement from implementation permission. Literal no-write constraints remain binding; continue other authorized work when a particular decision or capability is blocked.
+
+Use `checkpoint: implementation` for page readiness and `pilot-rollout` only when a site orchestrator asks for the pilot handoff. `pilotEvidence: not-applicable` fits a standalone page; the site parent owns rollout. In `read-only` posture the next action remains `read-only` or `wait`; `parent-receipt` returns evidence or waits, without independent production changes. A baseline can remain `unchanged` or a new capture can be a `propose-candidate`; `replace` requires the named owner's separate approval. These fields document the actual decisions and evidence; a structurally valid record is not proof of user authorization or runtime success.
+
 ## Intake and Audit
 
 ```markdown
@@ -59,6 +99,7 @@ Use only the sections that improve traceability for the current task. Keep small
 ## Approval
 
 - Status: proposed | approved | rejected | superseded
+- Authorization mode and checkpoint record:
 - Approved by:
 - Approval evidence:
 - Implementation explicitly authorized: yes | no
@@ -133,9 +174,26 @@ Do not infer approval from silence or from general encouragement.
 {
   "id": "web-page-design-to-code.orchestration",
   "part": "deliverable",
-  "version": 1,
+  "version": 2,
   "type": "machine-receipt-template",
   "section": "Visual QA Report",
+  "authorizationRecordFields": [
+    "mode",
+    "checkpoint",
+    "posture",
+    "scopeVersion",
+    "directionVersion",
+    "authorizationEvidence",
+    "explicitUserCheckpoint",
+    "implementationAuthorized",
+    "requiredEvidence",
+    "pilotEvidence",
+    "baselineOwner",
+    "baselineAction",
+    "baselineChangeApproval",
+    "externalActionAuthorization",
+    "nextAction"
+  ],
   "machineReceiptFields": [
     "mode",
     "matrixCell",

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "skill_name": "systematic-debugging",
+  "cases": [
+    {
+      "id": "launcher-before-runtime",
+      "kind": "positive",
+      "prompt": "A shell wrapper fails before launching the application. Current evidence is a missing executable on PATH; Python and TypeScript services elsewhere never start. Diagnose the failure.",
+      "expected_skills": [
+        "systematic-debugging"
+      ],
+      "excluded_skills": [
+        "python-development",
+        "python-observability-debugging",
+        "typescript-development"
+      ],
+      "allowed_skills": [
+        "terminal-ops"
+      ]
+    },
+    {
+      "id": "unknown-python-timeout",
+      "kind": "positive",
+      "prompt": "A pytest asyncio test times out with an incomplete traceback. Diagnose it first; do not assume task coordination is the cause.",
+      "expected_skills": [
+        "systematic-debugging",
+        "python-observability-debugging"
+      ],
+      "excluded_skills": [
+        "python-concurrency-patterns"
+      ],
+      "allowed_skills": [
+        "python-development",
+        "python-testing-engineering",
+        "terminal-ops"
+      ]
+    },
+    {
+      "id": "known-copy-edit",
+      "kind": "near_match",
+      "prompt": "The implementation is correct. Change only a known misspelling in an existing button label, with no failure to diagnose.",
+      "expected_skills": [
+        "frontend-design"
+      ],
+      "excluded_skills": [
+        "systematic-debugging"
+      ],
+      "allowed_skills": [
+        "code-change-workflow",
+        "css-development",
+        "javascript-development"
+      ]
+    }
+  ]
+}

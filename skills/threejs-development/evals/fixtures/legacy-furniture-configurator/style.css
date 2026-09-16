@@ -1,0 +1,17 @@
+* { box-sizing: border-box; }
+body { margin: 0; background: #f4f0e8; color: #243444; font: 16px/1.5 system-ui, sans-serif; }
+main { max-width: 1000px; margin: auto; padding: 20px; }
+.preview { position: relative; }
+canvas { width: 100%; height: 360px; display: block; border: 1px solid #aab4bd; }
+#product-label { position: absolute; left: 16px; bottom: 8px; max-width: calc(100% - 32px); padding: 6px 10px; background: #ffffffdd; overflow-wrap: anywhere; pointer-events: none; }
+.fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+label { display: block; }
+input, select, textarea, button { font: inherit; max-width: 100%; }
+input, select { display: block; width: 100%; }
+button { padding: 8px 12px; }
+.actions { display: flex; align-items: end; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+textarea { display: block; width: 100%; font: 13px/1.4 monospace; }
+pre { background: white; padding: 16px; white-space: pre-wrap; overflow-wrap: anywhere; }
+audio { max-width: 100%; }
+:focus-visible { outline: 3px solid #9b4e11; outline-offset: 2px; }
+@media (max-width: 640px) { main { padding: 12px; } canvas { height: 300px; } }

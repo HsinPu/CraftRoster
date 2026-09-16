@@ -1,0 +1,155 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Fictional legacy furniture document v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "name",
+    "dimensionsMm",
+    "finish",
+    "camera",
+    "capture"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]{1,48}$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80
+    },
+    "dimensionsMm": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "width",
+        "depth",
+        "seatHeight",
+        "backHeight"
+      ],
+      "properties": {
+        "width": {
+          "type": "integer",
+          "minimum": 500,
+          "maximum": 1000
+        },
+        "depth": {
+          "type": "integer",
+          "minimum": 500,
+          "maximum": 900
+        },
+        "seatHeight": {
+          "type": "integer",
+          "minimum": 300,
+          "maximum": 550
+        },
+        "backHeight": {
+          "type": "integer",
+          "minimum": 250,
+          "maximum": 600
+        }
+      }
+    },
+    "finish": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "frame",
+        "upholstery"
+      ],
+      "properties": {
+        "frame": {
+          "enum": [
+            "oak",
+            "walnut"
+          ]
+        },
+        "upholstery": {
+          "enum": [
+            "teal",
+            "sand"
+          ]
+        }
+      }
+    },
+    "camera": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "yawDegrees",
+        "pitchDegrees",
+        "distanceMeters"
+      ],
+      "properties": {
+        "yawDegrees": {
+          "type": "number",
+          "minimum": -180,
+          "maximum": 180
+        },
+        "pitchDegrees": {
+          "type": "number",
+          "minimum": 5,
+          "maximum": 60
+        },
+        "distanceMeters": {
+          "type": "number",
+          "minimum": 2,
+          "maximum": 6
+        }
+      }
+    },
+    "capture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "seed",
+        "timeSeconds",
+        "durationSeconds",
+        "fps",
+        "label",
+        "audioCue"
+      ],
+      "properties": {
+        "seed": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 4294967295
+        },
+        "timeSeconds": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 60
+        },
+        "durationSeconds": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 60
+        },
+        "fps": {
+          "enum": [
+            24,
+            30,
+            60
+          ]
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "audioCue": {
+          "const": "tone-a"
+        }
+      }
+    }
+  },
+  "$comment": "Additional semantic rule: capture.timeSeconds must be no greater than capture.durationSeconds."
+}
+

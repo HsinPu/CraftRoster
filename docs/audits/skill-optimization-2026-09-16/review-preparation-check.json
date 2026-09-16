@@ -1,0 +1,347 @@
+{
+  "schema_version": 1,
+  "kind": "offline_review_fixture_preparation",
+  "created_at": "2026-09-16T08:10:19.789Z",
+  "node": "v24.19.0",
+  "platform": "win32",
+  "status": "not_run",
+  "model_calls": 0,
+  "implementation_hashes": {
+    "scripts/prepare-skill-pilot.js": "7d5036a0f793436be8041eccf2adc3dc5f9e80afab3a2492ec52e50afe5d59b5",
+    "scripts/lib/skill-eval-broker.js": "16254d4f9876c861d67b82441c09d70a0af2407b08e9e2186abe4c1516093679",
+    "scripts/lib/skill-review-snapshot.js": "12822d8f5d455b0076c1bb7da9094a72e3cb4a00cdd234dfa1a4e3ef1e7847e0",
+    "tests/skill-review-local-fixtures.test.js": "7643a1a6066debf834bd493065416a46f6580749424667cd2d8038a5db8fafb1",
+    "tests/skill-review-pr-fixtures.test.js": "f28fb72720795570c1db65a635df13406bc842273eb78d342183a2bfe1d9247c",
+    "docs/audits/skill-optimization-2026-09-16/run-review-preparation-check.cjs": "b844814d40fb3db59d42a477d973072e1b86f272388772fbbe796d42b9488cde"
+  },
+  "cases": [
+    {
+      "case_id": "code-review:1",
+      "status": "not_run",
+      "split": "development",
+      "corpus_case_sha256": "340c4365b79072a1e3ec2b8e1c99719eed48835669430689b8304d6281df233f",
+      "fixture_sha256": "4132b23ff1ceac490cf216c2bdef0d7d01f55f807d3b8e92f309aa3360e7788c",
+      "public_bundle_sha256": "86419f5c0b37e74f18920c4a34ab7bf6976e03cd75e687cacf6cc2619d296326",
+      "fixture_files": 17,
+      "skill_packages": 286,
+      "assertions_executed": 0,
+      "model_calls": 0,
+      "host_isolation_enforced": false,
+      "preparation_check": "passed",
+      "author_git_receipt": {
+        "sha256": "fe53b53f507d779c8f0801eeeacc0d419eaea24335904f5a8a9d87e27e51109e",
+        "observations": {
+          "base": "72f61823392a3edbaeb45e679b544ee1b9b50eb6",
+          "head": "72f61823392a3edbaeb45e679b544ee1b9b50eb6",
+          "statusPorcelain": " M notes/team-schedule.md\nMM src/stock.js\n?? fixtures/order.json\n?? scripts/preview-order.js",
+          "stagedPaths": [
+            "src/stock.js"
+          ],
+          "unstagedPaths": [
+            "notes/team-schedule.md",
+            "src/stock.js"
+          ],
+          "untrackedPaths": [
+            "fixtures/order.json",
+            "scripts/preview-order.js"
+          ],
+          "baseToHeadPaths": []
+        },
+        "base_test_count": 2,
+        "final_test_count": 2,
+        "limitation": "Saved author receipt only. This preparation does not materialize the Git recipe or execute the reviewed code."
+      },
+      "workspace_unchanged": true
+    },
+    {
+      "case_id": "code-review:2",
+      "status": "not_run",
+      "split": "development",
+      "corpus_case_sha256": "dde5d5ff350befbbc6ed536c1ee4971358d96d60d03600e1d5003844bb88e13d",
+      "fixture_sha256": "fc26dbbf527ca1d8146165fda08b7fb91cdd12ca891ddd40836668731f454dfc",
+      "public_bundle_sha256": "c4821df39b9ca234ddc78820336982be1a07d01e46679b4a4095e34dae4ab4c7",
+      "fixture_files": 11,
+      "skill_packages": 286,
+      "assertions_executed": 0,
+      "model_calls": 0,
+      "host_isolation_enforced": false,
+      "preparation_check": "passed",
+      "author_git_receipt": {
+        "sha256": "8f586cf49203a7459772c9a826fa44cc6676bc25c9d6667dc2e8f79ead66c68e",
+        "observations": {
+          "base": "a7cb505e41f3691480c85ef53a799c83444a9dc6",
+          "head": "385bf629edf8e0ffbb94feb842b0b23414ed355a",
+          "statusPorcelain": "",
+          "stagedPaths": [],
+          "unstagedPaths": [],
+          "untrackedPaths": [],
+          "baseToHeadPaths": [
+            "src/display-name.js"
+          ]
+        },
+        "base_test_count": 2,
+        "final_test_count": 2,
+        "limitation": "Saved author receipt only. This preparation does not materialize the Git recipe or execute the reviewed code."
+      },
+      "workspace_unchanged": true
+    },
+    {
+      "case_id": "code-review:7",
+      "status": "not_run",
+      "split": "development",
+      "corpus_case_sha256": "de369825a07b37a841be5afd31643ca203e3835100e18e244abb8e5825cda0f7",
+      "fixture_sha256": "3d2fbc921257cd6046d5c120d1ac615e82f6ff2a422cca5bb7f6fb264a1148db",
+      "public_bundle_sha256": "d6a6085ed587a91b7f5ce4135a1e8b3a686aa6ecc9fc234869d4fb116a0efca7",
+      "fixture_files": 2,
+      "skill_packages": 286,
+      "assertions_executed": 0,
+      "model_calls": 0,
+      "host_isolation_enforced": false,
+      "preparation_check": "passed",
+      "scripted_service_probe": {
+        "status": "passed",
+        "baseline": {
+          "repository": "fixture-org/review-catalog",
+          "number": 42,
+          "base_sha": "bf0016919e691d35048c6fd39acba1fda2025654",
+          "head_sha": "460d1e26bcc99c14bbed409c9bc47145577a9a68",
+          "merge_base_sha": "bf0016919e691d35048c6fd39acba1fda2025654",
+          "snapshot_sha256": "0a6929a1149a838db5695093ed3b2c34687693d292fcb98e0c987997d4bc3d9c"
+        },
+        "trace": [
+          {
+            "sequence": 1,
+            "operation": "get_pr",
+            "decision": "accepted",
+            "reason": null,
+            "request_sha256": "3ceadce8616258f7ffda9ec996d545f35c5cd069a18e9dae725739300e37ffdf",
+            "request_chars": 130,
+            "response_sha256": "d072ce9e40e4b8932b319cbf1deb79fcacc938924c5358c1e3e3a93cc184594d"
+          },
+          {
+            "sequence": 2,
+            "operation": "get_commits",
+            "decision": "accepted",
+            "reason": null,
+            "request_sha256": "d322b439e8f15562eeb0328ed04ec3d3610aae582c8e441e0cb0e161efd32255",
+            "request_chars": 135,
+            "response_sha256": "9c3479da9af6568b8452d109e56c13d9a07a89d392bbea142f476099b27db391"
+          },
+          {
+            "sequence": 3,
+            "operation": "get_comments",
+            "decision": "accepted",
+            "reason": null,
+            "request_sha256": "8afa03d55b201f6bd2ab45a3a2ca24bed83ba708cd6e199b644f1071d8cde51e",
+            "request_chars": 136,
+            "response_sha256": "cccbb547bdb3b8497cdc2b0e789370c8971a17289a68f99cc09fdc26279707e4"
+          },
+          {
+            "sequence": 4,
+            "operation": "get_checks",
+            "decision": "accepted",
+            "reason": null,
+            "request_sha256": "7149ea5c3df9b859c067bc1b752cc4e8e91e0a64a9531baf22367e0ab760d400",
+            "request_chars": 134,
+            "response_sha256": "d742a137ce0b4098b1f2a754c4cdd427d3ecfa0a747d659b479f9d48e71700ee"
+          },
+          {
+            "sequence": 5,
+            "operation": "get_changed_files",
+            "decision": "accepted",
+            "reason": null,
+            "request_sha256": "3f163a0e8061ab87c9797bf90c11485b379a5190dcc0d85d7f8a4a31b9e55a4c",
+            "request_chars": 141,
+            "response_sha256": "48f33fd7f0d1a19f5c50359ba35acd632a2bc1ccc2ac59562bc1c16b20a47da3"
+          },
+          {
+            "sequence": 6,
+            "operation": "get_review_history",
+            "decision": "accepted",
+            "reason": null,
+            "request_sha256": "9530c17459c222c06b433265934a21d2afe90b1b5b0dee44abbcd226c60cca26",
+            "request_chars": 142,
+            "response_sha256": "fb5e74ed0c824a77cc87966837a0a7f8c950c6e63a39471e0ad672cbb5767c48"
+          },
+          {
+            "sequence": 7,
+            "operation": "get_file",
+            "decision": "accepted",
+            "reason": null,
+            "request_sha256": "446244f860384f0801eba763917526265d18b388a02645248f8692311d2e94c5",
+            "request_chars": 203,
+            "response_sha256": "6ff061d3974456a95ba41953e7c9b6782bcc9111634f177417bcfff352a6a4a8"
+          },
+          {
+            "sequence": 8,
+            "operation": "post_comment",
+            "decision": "denied",
+            "reason": "operation_not_allowed",
+            "request_sha256": "77f153ea884c41bcadbb2944a13909f189644d0cfd0b3ae148d7c9b4ae821332",
+            "request_chars": 136,
+            "response_sha256": "45c4fa833583d908bede240cef5e1836ff9d9094cc38920a9b05e187a934084b"
+          },
+          {
+            "sequence": 9,
+            "operation": "get_pr",
+            "decision": "denied",
+            "reason": "baseline_mismatch",
+            "request_sha256": "6f9b989c64bd91d378641cb212b0c3074d14dc972408959d7dc3333b5e31ca3c",
+            "request_chars": 130,
+            "response_sha256": "73df7bc973c7c7386742d5cba8e3d2bde12fe3b1fd12465e3141cf77f8446eb4"
+          },
+          {
+            "sequence": 10,
+            "operation": "get_file",
+            "decision": "denied",
+            "reason": "invalid_ref_or_path",
+            "request_sha256": "07b273d1b9e648fe88ddc8fd76da2b2f3662fe8b34acf795c8559f2b4a014495",
+            "request_chars": 167,
+            "response_sha256": "2515514b69c098b3bc8d1882ed0f7a36f98e687013852cc2fab48bf715e0273e"
+          }
+        ],
+        "calls_attempted": 10,
+        "calls_not_recorded": 0,
+        "trace_complete": true,
+        "snapshot_sha256": "0a6929a1149a838db5695093ed3b2c34687693d292fcb98e0c987997d4bc3d9c",
+        "model_execution": false,
+        "limitation": "An offline read-only fixture service; no GitHub access, model run, host isolation, or review verdict is asserted.",
+        "semantic_review": "unverified",
+        "finding_dispositions_graded": false
+      },
+      "workspace_unchanged": true
+    },
+    {
+      "case_id": "code-review:14",
+      "status": "not_run",
+      "split": "development",
+      "corpus_case_sha256": "5f47591ec5fdff276d472b99e7c59b0c50cd7427baea7e566a7c8b5019b0ff32",
+      "fixture_sha256": "9fb767faef07eac71ed5b07ccacc6cc81a869699b1c4661285e2360d89b704e2",
+      "public_bundle_sha256": "dcaa13219c22de81f5bedbac1e8ae163ded137f1b98b1105346ab030ad179cb9",
+      "fixture_files": 2,
+      "skill_packages": 286,
+      "assertions_executed": 0,
+      "model_calls": 0,
+      "host_isolation_enforced": false,
+      "preparation_check": "passed",
+      "scripted_service_probe": {
+        "status": "passed",
+        "baseline": {
+          "repository": "fixture-org/review-catalog",
+          "number": 42,
+          "base_sha": "bf0016919e691d35048c6fd39acba1fda2025654",
+          "head_sha": "5017da90a92d0cca97c5460d0989b324ccb9f097",
+          "merge_base_sha": "bf0016919e691d35048c6fd39acba1fda2025654",
+          "snapshot_sha256": "1dd8d40e9114940eb14afdfe91267dca2e1241088f9ab75780967f6f28ab87ca"
+        },
+        "trace": [
+          {
+            "sequence": 1,
+            "operation": "get_pr",
+            "decision": "accepted",
+            "reason": null,
+            "request_sha256": "32b7426c8fd959169b9ebbf57b0dd766fc279d11c814e4780dd6c555f1e305ae",
+            "request_chars": 130,
+            "response_sha256": "78d71d54ad23223495e27d3a8b399f5dea87ecf0138470c49671cc7f50e65185"
+          },
+          {
+            "sequence": 2,
+            "operation": "get_commits",
+            "decision": "accepted",
+            "reason": null,
+            "request_sha256": "3801d14bd85dab97d2923afdc40debdb1adee0c0bc3263072ecc80ecd8c11899",
+            "request_chars": 135,
+            "response_sha256": "32772384467f771fc7a83421e294ad27f2396b37b68d1528a88bc4270e655585"
+          },
+          {
+            "sequence": 3,
+            "operation": "get_comments",
+            "decision": "accepted",
+            "reason": null,
+            "request_sha256": "9546fd761b34fa5a271e679c292b95a6815f44fc3a78b7a2e3b7d8c18727a197",
+            "request_chars": 136,
+            "response_sha256": "9568f2ea60ca0364d17c633c98eff9d0b0b3a5a4d50b59fce0e557624a3b775a"
+          },
+          {
+            "sequence": 4,
+            "operation": "get_checks",
+            "decision": "accepted",
+            "reason": null,
+            "request_sha256": "a68737c90d785af941709d29f304ad03d6e41de1604c98ddf08c96d4a0199947",
+            "request_chars": 134,
+            "response_sha256": "6f9df5f991c470d3c240578b3fd4d014fa58d60eb59517df48deabd3a7f73f28"
+          },
+          {
+            "sequence": 5,
+            "operation": "get_changed_files",
+            "decision": "accepted",
+            "reason": null,
+            "request_sha256": "085961d4a15a28094751dbcd4086b578d2080088a2170ca27e6e22c64e15301a",
+            "request_chars": 141,
+            "response_sha256": "8376987205d5435ecc4f903765ffdf26dd8ef29926a307e63854af19b393e02f"
+          },
+          {
+            "sequence": 6,
+            "operation": "get_review_history",
+            "decision": "accepted",
+            "reason": null,
+            "request_sha256": "ee353ffa8cad13ed4466417436122ace9b76f0f92661f593c5a1452b4d96d670",
+            "request_chars": 142,
+            "response_sha256": "e255fe079706dced426ab98d715c176b5a2737b980a459e8a51a92c694bca8d2"
+          },
+          {
+            "sequence": 7,
+            "operation": "get_file",
+            "decision": "accepted",
+            "reason": null,
+            "request_sha256": "f2a50996030fd3bacb8020bf46d7ecec97c058c67e63fabbea0485fc1f7ec92a",
+            "request_chars": 203,
+            "response_sha256": "6abc0084e414f883dfb3ad5bd44ce408856540170108727340ea0ef7cad376fd"
+          },
+          {
+            "sequence": 8,
+            "operation": "post_comment",
+            "decision": "denied",
+            "reason": "operation_not_allowed",
+            "request_sha256": "a4502687939b17dfb520ac4ef39ac65c9e5e1510c1a63013a6eab529f741ada7",
+            "request_chars": 136,
+            "response_sha256": "45c4fa833583d908bede240cef5e1836ff9d9094cc38920a9b05e187a934084b"
+          },
+          {
+            "sequence": 9,
+            "operation": "get_pr",
+            "decision": "denied",
+            "reason": "baseline_mismatch",
+            "request_sha256": "6f9b989c64bd91d378641cb212b0c3074d14dc972408959d7dc3333b5e31ca3c",
+            "request_chars": 130,
+            "response_sha256": "73df7bc973c7c7386742d5cba8e3d2bde12fe3b1fd12465e3141cf77f8446eb4"
+          },
+          {
+            "sequence": 10,
+            "operation": "get_file",
+            "decision": "denied",
+            "reason": "invalid_ref_or_path",
+            "request_sha256": "082d2a182beaac11be446271c5e0c35f73e7aed736abfdefa1a7be18b9723d69",
+            "request_chars": 167,
+            "response_sha256": "2515514b69c098b3bc8d1882ed0f7a36f98e687013852cc2fab48bf715e0273e"
+          }
+        ],
+        "calls_attempted": 10,
+        "calls_not_recorded": 0,
+        "trace_complete": true,
+        "snapshot_sha256": "1dd8d40e9114940eb14afdfe91267dca2e1241088f9ab75780967f6f28ab87ca",
+        "model_execution": false,
+        "limitation": "An offline read-only fixture service; no GitHub access, model run, host isolation, or review verdict is asserted.",
+        "semantic_review": "unverified",
+        "finding_dispositions_graded": false
+      },
+      "workspace_unchanged": true
+    }
+  ],
+  "limitations": [
+    "These are repository-authored preparation and tool-boundary checks, not model reviews.",
+    "Actual Git and contract-test observations are separately reproduced by the author-fixture test suites.",
+    "The Git recipe still requires trusted isolated setup before any evaluated working-tree review.",
+    "No semantic review grader, effective model, activation, cost, or host isolation is certified."
+  ]
+}

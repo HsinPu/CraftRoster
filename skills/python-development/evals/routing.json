@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "skill_name": "python-development",
+  "cases": [
+    {
+      "id": "python-plan-no-repository",
+      "kind": "positive",
+      "prompt": "No repository is available. Plan a typed Python function that validates unknown JSON and returns a structured result.",
+      "expected_skills": [
+        "python-development"
+      ],
+      "excluded_skills": [
+        "typescript-development",
+        "frontend-design"
+      ],
+      "allowed_skills": [
+        "testing-strategy"
+      ]
+    },
+    {
+      "id": "unrelated-python-backend",
+      "kind": "near_match",
+      "prompt": "The monorepo includes a Python backend. Fix only web/Footer.jsx and footer.css; no Python API, runtime, or build dependency is affected.",
+      "expected_skills": [
+        "frontend-design",
+        "css-development"
+      ],
+      "excluded_skills": [
+        "python-development",
+        "python-backend-development"
+      ],
+      "allowed_skills": [
+        "code-change-workflow",
+        "javascript-development",
+        "react-ui-patterns"
+      ]
+    },
+    {
+      "id": "prose-only-term",
+      "kind": "negative",
+      "prompt": "Explain what the word Python means in the history of programming. Do not plan, review, or write code.",
+      "expected_skills": [],
+      "excluded_skills": [
+        "python-development"
+      ],
+      "allowed_skills": [
+        "answer-writing"
+      ]
+    }
+  ]
+}

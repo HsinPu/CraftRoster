@@ -11,6 +11,88 @@
         "The requested Three.js implementation is not replaced with a generic canvas, CSS imitation, unrelated framework, or raw WebGL.",
         "The single-file module and dependency-loading approach is browser-valid and pins compatible Three.js core and addon versions.",
         "Verification covers model success and failure, resize, pointer input, repeated restart, cleanup, console errors, and the rendered browser result."
+      ],
+      "locale": "en"
+    },
+    {
+      "id": 2,
+      "prompt": "修正 scripts/cleanup.js 這支純 JavaScript 的 Node.js 工具對結束代碼的處理。同一儲存庫的另一個應用程式有 tsconfig 檔案與 typescript 相依套件，但兩者都不影響這支腳本。",
+      "expected_output": "A JavaScript runtime fix with no unrelated TypeScript or frontend route.",
+      "assertions": [
+        "It selects JavaScript runtime and focused script verification.",
+        "It does not load TypeScript solely because another application uses it.",
+        "It does not add frontend-design for this non-UI utility."
+      ],
+      "locale": "zh-TW",
+      "fixture_root": "evals/fixtures/cleanup-cli",
+      "files": [
+        "evals/fixtures/cleanup-cli/CONTRACT.md",
+        "evals/fixtures/cleanup-cli/apps/dashboard/package.json",
+        "evals/fixtures/cleanup-cli/apps/dashboard/src/main.ts",
+        "evals/fixtures/cleanup-cli/apps/dashboard/tsconfig.json",
+        "evals/fixtures/cleanup-cli/cache/example.txt",
+        "evals/fixtures/cleanup-cli/fixtures/invalid-plan.json",
+        "evals/fixtures/cleanup-cli/fixtures/valid-plan.json",
+        "evals/fixtures/cleanup-cli/package.json",
+        "evals/fixtures/cleanup-cli/scripts/cleanup.js",
+        "evals/fixtures/cleanup-cli/test/cleanup.test.js"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Write a single HTML file using the Canvas 2D API to draw a chart. No Three.js or WebGL is requested.",
+      "expected_output": "A browser-valid 2D implementation without the 3D umbrella.",
+      "assertions": [
+        "It does not interpret single-file HTML or canvas as sufficient Three.js activation.",
+        "It preserves the requested 2D API.",
+        "It verifies the chart and any user-facing controls appropriately."
+      ],
+      "locale": "en"
+    },
+    {
+      "id": 4,
+      "prompt": "Implement a downloadable bar chart with Canvas 2D; do not use WebGL or Three.js. Data may be empty and the canvas may resize. Return a code example and its verification plan.",
+      "expected_output": "A true Canvas 2D example with empty state, dimensions, and export handling.",
+      "assertions": [
+        "It uses Canvas 2D and does not replace the explicit technology with Three.js.",
+        "It separates data/resize/export behavior and handles empty data.",
+        "It reports which checks were actually executed instead of claiming browser verification from code alone."
+      ],
+      "locale": "en"
+    },
+    {
+      "id": 5,
+      "prompt": "A Three.js single-file demo fails to load its module. Explain a repair that shows an accessible DOM error state and avoids starting a render loop on failure; preserve resize and disposal responsibilities.",
+      "expected_output": "A coordinated module/error-boundary repair with Three.js owning scene lifecycle.",
+      "assertions": [
+        "It routes renderer and disposal concerns to the Three.js owner rather than attempting a CSS imitation.",
+        "It prevents loop startup when initialization rejects and shows a real user-visible fallback.",
+        "It describes cleanup for listeners and resources that were successfully allocated before failure."
+      ],
+      "locale": "en"
+    },
+    {
+      "id": 6,
+      "prompt": "修正 scripts/cleanup.js 的 exit status：預期的 validation failure 目前卻以 0 結束。monorepo 其他 apps 有 TypeScript，但這支 Node script 是 plain JavaScript。請使用 temporary fixture，不要刪除真實檔案。",
+      "expected_output": "A focused JavaScript CLI fix with success/failure status assertions.",
+      "assertions": [
+        "It does not load TypeScript solely because another app declares it.",
+        "It verifies nonzero status for the intended failure and zero for a valid fixture.",
+        "It keeps filesystem operations within the temporary fixture and does not delete user data."
+      ],
+      "locale": "mixed-zh-TW-en",
+      "fixture_root": "evals/fixtures/cleanup-cli",
+      "files": [
+        "evals/fixtures/cleanup-cli/CONTRACT.md",
+        "evals/fixtures/cleanup-cli/apps/dashboard/package.json",
+        "evals/fixtures/cleanup-cli/apps/dashboard/src/main.ts",
+        "evals/fixtures/cleanup-cli/apps/dashboard/tsconfig.json",
+        "evals/fixtures/cleanup-cli/cache/example.txt",
+        "evals/fixtures/cleanup-cli/fixtures/invalid-plan.json",
+        "evals/fixtures/cleanup-cli/fixtures/valid-plan.json",
+        "evals/fixtures/cleanup-cli/package.json",
+        "evals/fixtures/cleanup-cli/scripts/cleanup.js",
+        "evals/fixtures/cleanup-cli/test/cleanup.test.js"
       ]
     }
   ]

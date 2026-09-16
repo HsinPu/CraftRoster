@@ -1,6 +1,6 @@
 ---
 name: threejs-development
-description: "Build and route Three.js or threejs browser experiences, interactive 3D webpages, canvas scenes, websites, and single-file HTML or JavaScript demos. Use whenever a request mentions Three.js, threejs, a three package or import, WebGL or WebGPU 3D, 3D HTML, or an existing Three.js application; also use for architecture, migration, assets, rendering, interaction, simulation, performance, accessibility, testing, and deployment."
+description: "Build, debug, or evolve Three.js and WebGL/WebGPU 3D experiences, including single-file HTML scenes and affected renderer, asset, interaction, lifecycle, or performance contracts. Use for requested 3D work or evidence tied to an existing scene; exclude plain Canvas 2D and unrelated edits in repositories that merely contain Three.js."
 license: Apache-2.0
 metadata:
   author: "HsinPu"
@@ -17,6 +17,8 @@ Route a Three.js task to the smallest specialist set while preserving one cohere
 ## HTML and Web Page Entry
 
 Treat any request to use Three.js or `three` in an HTML page, website, browser demo, canvas experience, or frontend application as a Three.js task even when `frontend-design`, `css-development`, or `javascript-development` was the initial entry point.
+
+For existing projects, activate this route only when the requested outcome or affected code depends on the scene, renderer, resources, or DOM-to-scene contract. An unrelated footer, plain Canvas 2D chart, or dependency elsewhere is not enough. Inspect a suspected integration boundary before deciding.
 
 1. Determine whether the deliverable is an existing project, a bundled application, or a standalone HTML file. Preserve the existing stack; when none exists, choose the smallest browser setup that satisfies the request and state how Three.js is loaded.
 2. Keep this Skill responsible for renderer, scene, camera, render loop, resize, resources, interaction, visual systems, performance, and Three.js version compatibility.
@@ -59,3 +61,5 @@ Do not let a generic frontend-only workflow replace the Three.js scene and rende
 ## Required Deliverable
 
 Return the selected specialist route, confirmed versions and targets, ownership and data boundaries, scene and render flow, quality budgets, implementation slices, diagnostics, validation evidence, compatibility limits, and remaining risks.
+
+When the user requests implementation, repair, or migration, deliver inspectable source changes and the requested runnable, build, or media artifacts; routing and proposed implementation slices alone do not complete the task. Tie completion claims to those artifacts and executed checks, and identify unfinished work or missing evidence. For analysis, review, or planning-only requests, return the requested findings or plan without expanding into implementation.

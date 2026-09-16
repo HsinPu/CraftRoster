@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "skill_name": "javascript-development",
+  "cases": [
+    {
+      "id": "javascript-in-typescript-monorepo",
+      "kind": "positive",
+      "prompt": "請修正 scripts/cleanup.js 的結束狀態碼處理。另一個無關應用程式有 tsconfig 與 typescript 依賴，但這支純 Node 工具不涉及型別邊界。",
+      "expected_skills": [
+        "javascript-development"
+      ],
+      "excluded_skills": [
+        "typescript-development",
+        "frontend-design"
+      ],
+      "allowed_skills": [
+        "code-change-workflow",
+        "testing-strategy"
+      ],
+      "locale": "zh-TW"
+    },
+    {
+      "id": "canvas-two-dimensional",
+      "kind": "positive",
+      "prompt": "Write vanilla browser JavaScript in one HTML file to draw a chart using Canvas 2D, with an accessible label. Do not use Three.js or WebGL.",
+      "expected_skills": [
+        "javascript-development",
+        "frontend-design"
+      ],
+      "excluded_skills": [
+        "threejs-development"
+      ],
+      "allowed_skills": [
+        "css-development",
+        "accessibility-testing"
+      ],
+      "locale": "en"
+    },
+    {
+      "id": "python-only-script",
+      "kind": "near_match",
+      "prompt": "Write a Python CLI that validates a JSON file and prints a summary. No JavaScript is involved.",
+      "expected_skills": [
+        "python-development",
+        "python-automation-scripting"
+      ],
+      "excluded_skills": [
+        "javascript-development"
+      ],
+      "allowed_skills": [
+        "testing-strategy",
+        "python-testing-engineering"
+      ],
+      "locale": "en"
+    },
+    {
+      "id": "module-error-boundary",
+      "kind": "positive",
+      "prompt": "Fix a rejected module load in a plain browser JavaScript widget, preserving its accessible DOM fallback.",
+      "expected_skills": [
+        "javascript-development"
+      ],
+      "excluded_skills": [],
+      "allowed_skills": [
+        "frontend-design",
+        "code-change-workflow",
+        "systematic-debugging"
+      ],
+      "locale": "en"
+    },
+    {
+      "id": "typed-compiler-config",
+      "kind": "near_match",
+      "prompt": "Fix a TypeScript moduleResolution configuration error in a Node library; no browser UI.",
+      "expected_skills": [
+        "typescript-development"
+      ],
+      "excluded_skills": [
+        "javascript-development",
+        "frontend-design"
+      ],
+      "allowed_skills": [
+        "code-change-workflow",
+        "systematic-debugging"
+      ],
+      "locale": "en"
+    },
+    {
+      "id": "css-only-spacing",
+      "kind": "near_match",
+      "prompt": "只用現有 design token 調整 CSS grid gaps，JavaScript 行為維持不變。",
+      "expected_skills": [
+        "css-development",
+        "frontend-design"
+      ],
+      "excluded_skills": [
+        "javascript-development"
+      ],
+      "allowed_skills": [
+        "code-change-workflow"
+      ],
+      "locale": "mixed-zh-TW-en"
+    },
+    {
+      "id": "document-only-example",
+      "kind": "negative",
+      "prompt": "Proofread this prose paragraph about JavaScript history; do not add code or inspect a repository.",
+      "expected_skills": [],
+      "excluded_skills": [
+        "javascript-development"
+      ],
+      "allowed_skills": [
+        "answer-writing",
+        "humanizer"
+      ],
+      "locale": "en"
+    }
+  ]
+}

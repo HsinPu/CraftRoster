@@ -1,0 +1,9 @@
+{
+  "targetId": "LOCAL-STOCK-MIGRATION",
+  "fictional": true,
+  "kind": "new isolated OS temporary directory with in-process service selection",
+  "stateDestination": "allocated by tools/local-target.cjs; never caller supplied",
+  "authority": { "localSourceEdits": true, "localTests": true, "localRehearsals": true, "localCommitSimulation": true, "localDeploySimulation": true, "realGitCommit": false, "push": false, "externalDeployment": false },
+  "independentReviewAdapter": null,
+  "externalTarget": null
+}

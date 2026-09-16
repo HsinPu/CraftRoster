@@ -1,0 +1,25 @@
+{
+    "schemaVersion":  1,
+    "startedAt":  "2026-09-16T13:42:57.1853640Z",
+    "hostVersion":  "5.1.19041.3803",
+    "executable":  "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "ownedTemp":  "C:\\Users\\win10\\AppData\\Local\\Temp\\craftroster-native51-repro-abfc5c914124483a8e327e7c92cc6e5c",
+    "modelCalls":  0,
+    "networkCalls":  0,
+    "scope":  "Isolated baseline agent install followed by stored target alias refusal only; not a substitute for full smoke",
+    "cleaned":  true,
+    "baselineExit":  0,
+    "baselineOutput":  [
+                           "==\u003e Agent destination (claude): C:\\Users\\win10\\AppData\\Local\\Temp\\craftroster-native51-repro-abfc5c914124483a8e327e7c92cc6e5c",
+                           "==\u003e Installing 1 Agent profile(s) for claude",
+                           "OK  install Agent code-reviewer -\u003e C:\\Users\\win10\\AppData\\Local\\Temp\\craftroster-native51-repro-abfc5c914124483a8e327e7c92cc6e5c\\code-reviewer.md",
+                           "OK  CraftRoster agent install complete."
+                       ],
+    "refusalExit":  1,
+    "refusalOutput":  [
+                          "==\u003e Agent destination (claude): C:\\Users\\win10\\AppData\\Local\\Temp\\craftroster-native51-repro-abfc5c914124483a8e327e7c92cc6e5c",
+                          "Error: Refusing to replace \u0027code-reviewer\u0027 because its ownership metadata does not match component=\u0027agent\u0027, name=\u0027code-reviewer\u0027, target=\u0027claude\u0027, id=\u0027code-reviewer\u0027, and adapter=\u0027claude\u0027. Use -Force to overwrite intentionally."
+                      ],
+    "expectedRefusalObserved":  true,
+    "finishedAt":  "2026-09-16T13:43:00.4451338Z"
+}

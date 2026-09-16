@@ -1,0 +1,1 @@
+{ "eventName": "sync_attempt_summary", "eventSchemaVersion": 1, "clientMajor": 2, "outcome": "conflict", "durationBucket": "1s-to-5s" }

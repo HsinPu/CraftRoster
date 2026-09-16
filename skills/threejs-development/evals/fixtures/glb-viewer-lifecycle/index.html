@@ -1,0 +1,7 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Local GLB route viewer</title><link rel="stylesheet" href="./style.css"></head>
+<body><main><h1>Local GLB route viewer</h1><p>Fictional existing viewer. Blue reference box belongs to the application; orange model belongs to the route.</p>
+<div class="controls"><button id="mount">Mount route</button><button id="unmount">Unmount route</button><button id="repeat">Repeat 6 routes</button><button id="corrupt">Load bounded corrupt texture</button><button id="measure">Measure shader variant</button></div>
+<p id="status" role="status">Starting renderer…</p><canvas id="viewer" aria-label="GLB preview with shared reference box"></canvas>
+<h2>Actual renderer diagnostics</h2><p>Resource object counts and CPU wall-time only. Not GPU bytes or GPU timestamps.</p><pre id="diagnostics" aria-live="off"></pre></main><script src="./app.js"></script></body></html>
+

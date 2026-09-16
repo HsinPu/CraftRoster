@@ -1,0 +1,19 @@
+{
+  "skill_name": "spreadsheet-ops",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "In an isolated output directory, turn sales.csv into an editable xlsx workbook with line totals and a grand total calculated by formulas. Preserve the source and report verification. If workbook creation or recalculation is unavailable, say precisely what remains unverified.",
+      "fixture_root": "evals/fixtures",
+      "files": ["evals/fixtures/sales.csv"],
+      "expected_output": "An editable workbook with three data rows, correct formulas, currency formatting, and recorded file/recalculation evidence or an explicit tool limitation.",
+      "assertions": ["Preserves all source rows including the zero-quantity row.", "Line-total formulas compute 21, 15, and 0, with grand total 36.", "Uses formulas for derived totals rather than only hard-coded numbers.", "Does not overwrite the CSV and does not claim recalculation or successful open without evidence."]
+    },
+    {
+      "id": 2,
+      "prompt": "Read-only review: an exported table has order_id values 0012 and 0013 and amount text 1,234.50. Explain a safe cleanup/import plan that preserves IDs. Do not create or edit files.",
+      "expected_output": "A plan distinguishing identifier text from numeric amounts, specifying parsing assumptions and validation without writes.",
+      "assertions": ["Preserves leading zeros in identifiers.", "States locale and delimiter assumptions before numeric parsing.", "Honors read-only scope and does not claim a cleaned artifact was produced."]
+    }
+  ]
+}

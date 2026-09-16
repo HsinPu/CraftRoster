@@ -1,0 +1,13 @@
+{
+  "scenarioId": "FICTIONAL-AUTH-REDIRECT-REVIEW",
+  "fictional": true,
+  "sourceViews": { "base": "base/src", "head": "head/src", "unchanged": "shared" },
+  "sourceViewIdentifiersAreGitCommits": false,
+  "framework": { "name": "local-fixture-framework", "version": "1.0.0", "implementation": "shared/framework.js" },
+  "runtime": "Node.js CommonJS; standard URL parser; no external dependencies",
+  "changedFiles": ["src/callback.js"],
+  "authorIntent": "Allow the signed-in user to choose the application page to return to.",
+  "networkExecution": "not_run",
+  "modelEvaluation": { "status": "not_run", "attempts": 0 },
+  "realIdentityProviderConnected": false
+}

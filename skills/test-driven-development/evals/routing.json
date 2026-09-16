@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "skill_name": "test-driven-development",
+  "cases": [
+    {
+      "id": "explicit-tdd-rule",
+      "kind": "positive",
+      "prompt": "Implement a new price rule. Repository policy requires a focused failing test before each production increment and a RED-GREEN-REFACTOR cycle.",
+      "expected_skills": [
+        "test-driven-development"
+      ],
+      "excluded_skills": [],
+      "allowed_skills": [
+        "code-change-workflow",
+        "testing-strategy"
+      ]
+    },
+    {
+      "id": "choose-verification-for-inherited-fix",
+      "kind": "near_match",
+      "prompt": "An inherited bug fix already has valid focused regression evidence for the same unchanged baseline. No TDD policy applies. Decide the smallest remaining verification without undoing the fix to recreate RED.",
+      "expected_skills": [
+        "testing-strategy"
+      ],
+      "excluded_skills": [
+        "test-driven-development"
+      ],
+      "allowed_skills": [
+        "verification-before-completion",
+        "code-change-workflow"
+      ]
+    },
+    {
+      "id": "documentation-only-correction",
+      "kind": "negative",
+      "prompt": "Correct one spelling error in README prose. There is no executable behavior or test-policy change.",
+      "expected_skills": [],
+      "excluded_skills": [
+        "test-driven-development"
+      ],
+      "allowed_skills": [
+        "markdown-writer"
+      ]
+    }
+  ]
+}

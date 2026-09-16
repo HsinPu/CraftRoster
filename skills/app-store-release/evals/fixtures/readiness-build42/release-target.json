@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "scenario_id": "field-notes-release-42",
+  "fictional": true,
+  "dataset_split": "development",
+  "snapshot_at": "2026-09-16T09:00:00Z",
+  "subject": {
+    "app_id": "com.example.fieldnotes",
+    "version": "1.4.0",
+    "build": 42,
+    "artifact_ref": "fixture-fieldnotes-1.4.0-42-a",
+    "channel": "app-store-production-submission"
+  },
+  "current_revisions": {
+    "signing": "signing-3",
+    "metadata": "store-copy-7",
+    "backend": "notes-api-12",
+    "privacy_disclosure": "privacy-3",
+    "telemetry_configuration": "telemetry-2"
+  },
+  "features": {
+    "account_creation": true,
+    "in_app_account_deletion": true,
+    "offline_notes": true,
+    "purchases": false,
+    "third_party_advertising": false
+  },
+  "change_context": [
+    "Build 42 changes the confirmation flow for account deletion after sign-in.",
+    "Telemetry configuration 2 adds an opt-in crash diagnostic event; privacy disclosure 3 and store copy 7 are the current review inputs."
+  ],
+  "authority": {
+    "mode": "review",
+    "read_supplied_records": true,
+    "write_files": false,
+    "run_app_or_tests": false,
+    "fetch_external_evidence": false,
+    "update_store_metadata": false,
+    "submit": false,
+    "promote": false
+  },
+  "real_services_connected": false,
+  "model_evaluation": { "status": "not_run", "attempts": 0 }
+}

@@ -5,8 +5,9 @@
       "id": 1,
       "prompt": "Determine what this social-media evidence actually establishes. The attached evidence pack includes an original post, reposts, a screenshot, and a later edit.",
       "expected_output": "A platform source record that identifies the original post and account, groups reposts and the screenshot with their source family, separates the initial and edited observations, and preserves the unresolved screenshot provenance.",
+      "fixture_root": "evals/fixtures",
       "files": [
-        "evals/files/social-post-evidence.md"
+        "evals/fixtures/social-post-evidence.md"
       ],
       "assertions": [
         "The response records the canonical post identifier, account identity evidence, publication or edit time, retrieval state, and an appropriate evidence status.",
@@ -19,8 +20,9 @@
       "id": 2,
       "prompt": "Use the attached video evidence to report exactly what can be attributed to the speaker between 02:10 and 02:35. State whether the wording is suitable for a verbatim quote.",
       "expected_output": "A time-bounded video source record that distinguishes creator captions from automatic captions, preserves ambiguous words and speaker attribution, and refuses to present uncertain automatic-caption text as a verified verbatim quote.",
+      "fixture_root": "evals/fixtures",
       "files": [
-        "evals/files/video-transcript-evidence.md"
+        "evals/fixtures/video-transcript-evidence.md"
       ],
       "assertions": [
         "The response identifies the video, channel, time range, transcript origin, and retrieval date.",
@@ -33,8 +35,9 @@
       "id": 3,
       "prompt": "Assess whether the attached code-hosting and RSS records independently prove that a feature shipped. Do not log in or use private credentials.",
       "expected_output": "A source-family analysis that gives immutable repository evidence priority, distinguishes a release discussion from shipped code, groups the RSS mirror with its canonical release, records the blocked issue as unavailable, and states the evidence needed to prove deployment.",
+      "fixture_root": "evals/fixtures",
       "files": [
-        "evals/files/code-rss-evidence.md"
+        "evals/fixtures/code-rss-evidence.md"
       ],
       "assertions": [
         "The response records repository owner, tag or commit, release URL, feed GUID, and relevant dates or identifiers.",

@@ -59,7 +59,7 @@ curl -fsSL https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/ins
 這會安裝全部 286 個 Skills、237 個 Agents，並為 Codex 啟用全域主動委派。安裝完成後請開啟新的 Codex 工作階段，讓 runtime 重新載入內容。
 
 > [!NOTE]
-> Codex 的初始 Skill metadata 清單最多使用 context window 的 2%，context 大小未知時上限為 8,000 字元；大量全域 Skills 可能先被縮短描述，再有部分項目被省略。檔案仍會保留在安裝目錄，但若需要保證載入，請明確使用 `$skill-name`。例如 Three.js 網頁工作可輸入 `$threejs-development 請用 Three.js 建立單檔 HTML`。CraftRoster 的 `frontend-design`、`css-development` 與 `javascript-development` 也會在偵測到 Three.js 後讀取相鄰的 umbrella Skill。詳見 [OpenAI Build skills](https://learn.chatgpt.com/docs/build-skills.md)。
+> Codex 的初始 Skill metadata 清單最多使用 context window 的 2%，context 大小未知時上限為 8,000 字元；大量全域 Skills 可能先被縮短描述，再有部分項目被省略。檔案仍會保留在安裝目錄，但若需要保證載入，請明確使用 `$skill-name`。例如 Three.js 網頁工作可輸入 `$threejs-development 請用 Three.js 建立單檔 HTML`。CraftRoster 的 frontend、CSS 與 JavaScript 入口會在任務確實涉及 3D 場景或整合邊界時路由至 Three.js；repo 其他位置有 `three` 本身不足以觸發。部分安裝下請先確認條件依賴可用。詳見 [OpenAI Build skills](https://learn.chatgpt.com/docs/build-skills.md)。
 
 > [!TIP]
 > 上述 one-liner 會取用 `main` 當下的 script 與 archive，不是固定且簽章的 release artifact。若需要先審核或固定版本，請 clone 指定 commit、檢查 [`install.ps1`](scripts/install.ps1) 或 [`install.sh`](scripts/install.sh)，再使用[本機 checkout](#從本機-checkout-安裝)。
@@ -90,7 +90,7 @@ curl -fsSL https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/ins
 
 ### 依分類安裝
 
-如果不需要完整 catalog，可以使用 Skill 或 Agent 現有的分類，只安裝該分類內的元件。分類 Agent 安裝不會自動加入 `subagent-architecture`，除非同時指定主動委派。
+如果不需要完整 catalog，可以使用 Skill 或 Agent 現有的分類。Skill 分類安裝會選取該分類元件，再補齊必要依賴（可能跨分類）；條件依賴不自動安裝。分類 Agent 安裝不會自動加入 `subagent-architecture`，除非同時指定主動委派。
 
 Windows PowerShell：
 
@@ -208,7 +208,7 @@ PowerShell 也接受 `-Agent`＝`-Target`、`-Skill`＝`-Name`；Bash 另接受 
 | 功能 | 需求 |
 |---|---|
 | PowerShell installer | Windows PowerShell／PowerShell；只有遠端安裝需要網路 |
-| Bash installer | Bash、`mktemp`、`cksum`、`sha256sum` 或 `shasum`；遠端安裝另需 `curl` 與 `tar` |
+| Bash installer | Bash、`mktemp`、`cksum`、`od`、`sha256sum` 或 `shasum`；遠端安裝另需 `curl` 與 `tar` |
 | OpenCode 既有 JSON 合併 | Python 3 或 Node.js 擇一；新建最小 config 不需要 |
 | Catalog CLI、產生器與驗證 | Node.js 22 或更新版本 |
 | Installer smoke tests | Node.js 22 或更新版本及對應 shell |
@@ -375,7 +375,9 @@ Catalog 來源是 [`skills.json`](skills.json) 與 [`agents.json`](agents.json)�
 | 多 Agent 協作 | [`subagent-architecture`](skills/subagent-architecture/) |
 | 影片製作 | [`video-production-workflow`](skills/video-production-workflow/) |
 
-使用 `node craftroster-cli.js info <skill-name>` 可查看相近能力的選擇原則與替代 Skills。
+使用 `node craftroster-cli.js info <skill-name>` 可查看相近能力的選擇原則、必要依賴與條件依賴。單顆和分類安裝會先補齊必要依賴；條件依賴只提供選用條件，不自動安裝。依賴定義維護於 `scripts/data/skill-catalog.json`，由 `npm run generate:skills` 同步 catalog 與免 Node 安裝 index。
+
+安裝器在任何寫入前檢查完整依賴計畫及 ownership。必要依賴若分散於不同安裝根目錄，會指出衝突並停止，請先整理既有安裝；不會暗中搬移或覆寫本機修改。`Force` 同時適用於展開後的依賴。交易保護以個別 package 為單位，並非整批回滾；新安裝器與 source checkout 必須使用同一版本，不能省略 dependency index。詳見[安裝依賴與評估方法](docs/skill-quality-workflow.md)。
 
 ## 專案架構
 
@@ -455,16 +457,16 @@ npm run audit:agent-originality
 npm run audit:skill-originality
 ```
 
-Skill routing corpus 可以先離線驗證；需要目前 Codex 登入與模型額度時，再執行真實路由評估：
+Skill routing corpus 可以先離線驗證；使用目前 Codex 登入與模型額度時，可執行選用回報實驗：
 
 ```bash
 npm run eval:skill-routing -- --skill solution-discovery --validate-only
-npm run eval:skill-routing -- --skill solution-discovery
+npm run eval:skill-routing -- --skill solution-discovery --max-cases 3 --output routing-run.json
 ```
 
-真實評估會為每個案例啟動暫時性、唯讀的 Codex 執行，回報逐案選擇、目標召回率與誤觸發率；它有模型成本且可能受模型版本影響，因此 CI 只執行 corpus、parser 與 scoring 的決定性測試。
+此實驗為 **routing self-report**，不是實際 Skill activation 或任務成功測試。每個案例啟動暫時性、唯讀 Codex 執行，嚴格解析完整名稱或 `none`；錯誤、未執行與有效失敗分開計算。`--output` 僅建立新 JSON，保存版本、來源雜湊、可見回覆、耗時及可取得的 usage；主機實際載入的 Skills 與有效模型設定仍需另外控制。`--max-cases` 依種類抽樣，數量不足以涵蓋現有種類時拒絕執行。CI 只跑結構與決定性測試，不消耗模型額度。
 
-[`Validate`](.github/workflows/validate.yml) workflow 在 main push、pull request、手動觸發與每週排程執行。CI 涵蓋 Node 22／24 相容性子集、完整 catalog validation、歷史 digest、remote integrity、Windows PowerShell smoke、Ubuntu Bash smoke、macOS quick smoke，以及 main branch 的隔離 macOS Codex 遠端全量安裝。
+[`Validate`](.github/workflows/validate.yml) workflow 在 main push、pull request、手動觸發與每週排程執行。CI 涵蓋 Node 22／24 相容性子集、完整 catalog validation、歷史 digest、remote integrity、Windows PowerShell 5.1／7 smoke、Ubuntu Bash smoke、macOS quick smoke，以及 main branch 的隔離 macOS Codex 遠端全量安裝。
 
 ## 來源、品質與授權
 

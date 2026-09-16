@@ -1,0 +1,10 @@
+{
+  "targetId": "B",
+  "environment": "staging",
+  "fixtureOnly": true,
+  "connected": false,
+  "intendedBuildId": "A",
+  "requiredSmoke": ["Observe the running target's build identity", "Verify the greeting route on target B", "Verify whitespace-only name behavior on target B"],
+  "deploymentAuthorized": false,
+  "smokeExecutionAuthorized": false
+}

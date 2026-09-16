@@ -1,0 +1,53 @@
+{
+    "schemaVersion":  1,
+    "startedAt":  "2026-09-16T13:44:27.9920920Z",
+    "hostVersion":  "5.1.19041.3803",
+    "executable":  "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "ownedTemp":  "C:\\Users\\win10\\AppData\\Local\\Temp\\craftroster-native51-repro-a8eaa5cb8bf14573aa46181634d8dbf0",
+    "modelCalls":  0,
+    "networkCalls":  0,
+    "scope":  "Two isolated child processes with separately captured output; full smoke remains failed",
+    "cleaned":  true,
+    "children":  [
+                     {
+                         "step":  "baseline install",
+                         "startedAt":  "2026-09-16T13:44:28.0464184Z",
+                         "executable":  "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                         "arguments":  "-NoProfile -ExecutionPolicy Bypass -File \"C:\\Users\\win10\\Desktop\\github\\CraftRoster\\scripts\\install.ps1\" -Target claude -Type agent -Name code-reviewer -SourceDir \"C:\\Users\\win10\\Desktop\\github\\CraftRoster\" -InstallDir \"C:\\Users\\win10\\AppData\\Local\\Temp\\craftroster-native51-repro-a8eaa5cb8bf14573aa46181634d8dbf0\"",
+                         "timeoutMs":  60000,
+                         "timeout":  false,
+                         "signal":  null,
+                         "signalBasis":  "Windows Process API exposes exit code; no POSIX signal.",
+                         "processId":  5948,
+                         "closed":  true,
+                         "exitCode":  0,
+                         "exitCodeHex":  "0x00000000",
+                         "stdoutComplete":  true,
+                         "stderrComplete":  true,
+                         "stdout":  "==\u003e Agent destination (claude): C:\\Users\\win10\\AppData\\Local\\Temp\\craftroster-native51-repro-a8eaa5cb8bf14573aa46181634d8dbf0\n==\u003e Installing 1 Agent profile(s) for claude\nOK  install Agent code-reviewer -\u003e C:\\Users\\win10\\AppData\\Local\\Temp\\craftroster-native51-repro-a8eaa5cb8bf14573aa46181634d8dbf0\\code-reviewer.md\nOK  CraftRoster agent install complete.\n",
+                         "stderr":  "",
+                         "finishedAt":  "2026-09-16T13:44:29.5360768Z"
+                     },
+                     {
+                         "step":  "stored input alias target refusal",
+                         "startedAt":  "2026-09-16T13:44:29.6707332Z",
+                         "executable":  "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                         "arguments":  "-NoProfile -ExecutionPolicy Bypass -File \"C:\\Users\\win10\\Desktop\\github\\CraftRoster\\scripts\\install.ps1\" -Target claude -Type agent -Name code-reviewer -SourceDir \"C:\\Users\\win10\\Desktop\\github\\CraftRoster\" -InstallDir \"C:\\Users\\win10\\AppData\\Local\\Temp\\craftroster-native51-repro-a8eaa5cb8bf14573aa46181634d8dbf0\"",
+                         "timeoutMs":  60000,
+                         "timeout":  false,
+                         "signal":  null,
+                         "signalBasis":  "Windows Process API exposes exit code; no POSIX signal.",
+                         "processId":  6360,
+                         "closed":  true,
+                         "exitCode":  1,
+                         "exitCodeHex":  "0x00000001",
+                         "stdoutComplete":  true,
+                         "stderrComplete":  true,
+                         "stdout":  "==\u003e Agent destination (claude): C:\\Users\\win10\\AppData\\Local\\Temp\\craftroster-native51-repro-a8eaa5cb8bf14573aa46181634d8dbf0\nError: Refusing to replace \u0027code-reviewer\u0027 because its ownership metadata does not match component=\u0027agent\u0027, name=\u0027code-reviewer\u0027, target=\u0027claude\u0027, id=\u0027code-reviewer\u0027, and adapter=\u0027claude\u0027. Use -Force to overwrite intentionally.\n",
+                         "stderr":  "",
+                         "finishedAt":  "2026-09-16T13:44:31.1682817Z"
+                     }
+                 ],
+    "expectedRefusalObserved":  true,
+    "finishedAt":  "2026-09-16T13:44:31.2361012Z"
+}

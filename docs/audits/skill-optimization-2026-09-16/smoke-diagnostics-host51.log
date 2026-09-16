@@ -1,0 +1,34 @@
+PASS expected refusal still accepted
+PASS successful child still accepted
+{
+    "hostVersion":  "5.1.19041.3803",
+    "smokeSha256":  "79a66a31dc93102ba6b4cb61613b7d634c7eefaf0719452d0fbc606e94b5466c",
+    "syntheticFailureChecks":  [
+                                   {
+                                       "helper":  "Invoke-InstallerStep",
+                                       "requestedExit":  23,
+                                       "diagnostic":  "synthetic silent failure failed with exit code 23 (0x00000017); captured 0 output line(s)\r\n"
+                                   },
+                                   {
+                                       "helper":  "Invoke-ExpectedFailure",
+                                       "requestedExit":  23,
+                                       "diagnostic":  "synthetic silent failure failed with exit code 23 (0x00000017); captured 0 output line(s) without the expected message \u0027required-marker\u0027:\r\n"
+                                   },
+                                   {
+                                       "helper":  "Invoke-InstallerStep",
+                                       "requestedExit":  -1073741819,
+                                       "diagnostic":  "synthetic silent failure failed with exit code -1073741819 (0xC0000005); captured 0 output line(s)\r\n"
+                                   },
+                                   {
+                                       "helper":  "Invoke-ExpectedFailure",
+                                       "requestedExit":  -1073741819,
+                                       "diagnostic":  "synthetic silent failure failed with exit code -1073741819 (0xC0000005); captured 0 output line(s) without the expected message \u0027required-marker\u0027:\r\n"
+                                   }
+                               ],
+    "expectedRefusalAccepted":  true,
+    "zeroExitRefusalRejected":  true,
+    "successfulChildPreserved":  true,
+    "cleaned":  true,
+    "actualNativeCrashSimulated":  false,
+    "modelCalls":  0
+}

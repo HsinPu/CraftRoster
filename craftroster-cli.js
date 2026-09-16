@@ -587,6 +587,15 @@ function showInfo(skillName) {
   const routingSection = routing.length > 0
     ? `\n相近 Skill 選擇:\n${routing.join('\n')}\n`
     : '';
+  const dependencySection = (skill.dependencies || []).length
+    ? `\n安裝依賴:\n${skill.dependencies.map((dependency) => dependency.kind === 'required'
+      ? `  [必要，自動安裝] ${dependency.name}`
+      : dependency.kind === 'conditional'
+        ? `  [條件，不自動安裝] ${dependency.name}: ${dependency.when}`
+        : dependency.kind === 'optional'
+          ? `  [可選，不自動安裝] ${dependency.name}`
+          : `  [未知依賴類型] ${dependency.name}`).join('\n')}\n`
+    : '';
 
   console.log(`
 ${skill.name}
@@ -597,7 +606,7 @@ ${skill.description}
 來源: ${skill.source}
 授權: ${skill.license}
 標籤: ${skill.tags ? skill.tags.join(', ') : '無'}
-${routingSection}
+${dependencySection}${routingSection}
 
 免 Node 安裝:
   powershell -ExecutionPolicy Bypass -NoProfile -Command '$s = irm https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/install.ps1; & ([scriptblock]::Create($s)) -Agent codex -Skill ${skill.name}'
@@ -671,6 +680,7 @@ Skill 與 Agent targets:
   craftroster list --installed --type agent --target codex
 
 安裝請使用免 Node installer:
+  required（必要）依賴會自動安裝；conditional（條件）與 optional（可選）依賴不自動安裝。
   powershell -ExecutionPolicy Bypass -NoProfile -Command '$s = irm https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/install.ps1; & ([scriptblock]::Create($s)) -Agent codex'
 `);
 }

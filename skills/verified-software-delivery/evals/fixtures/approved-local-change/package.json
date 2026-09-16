@@ -1,0 +1,1 @@
+{ "name": "approved-local-summary-fixture", "private": true, "version": "1.0.0", "type": "commonjs", "scripts": { "test": "node test/unit.test.js", "test:acceptance": "node test/acceptance.test.js" } }

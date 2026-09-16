@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "scenario_id": "field-notes-release-42",
+  "as_of": "2026-09-16T09:00:00Z",
+  "items": [
+    {
+      "id": "Q42-DELETE",
+      "gate_id": "account-deletion",
+      "requested_subject": { "app_id": "com.example.fieldnotes", "version": "1.4.0", "build": 42, "artifact_ref": "fixture-fieldnotes-1.4.0-42-a", "channel": "app-store-production-submission" },
+      "requested_configuration": { "backend": "notes-api-12" },
+      "owner_role": "mobile quality",
+      "state": "queued",
+      "execution_status": "not_run",
+      "receipt_id": null,
+      "note": "Device slot requested for 2026-09-16T13:00:00Z."
+    },
+    {
+      "id": "Q42-PRIVACY",
+      "gate_id": "privacy-reconciliation",
+      "requested_subject": { "app_id": "com.example.fieldnotes", "version": "1.4.0", "build": 42, "artifact_ref": "fixture-fieldnotes-1.4.0-42-a", "channel": "app-store-production-submission" },
+      "requested_configuration": { "metadata": "store-copy-7", "privacy_disclosure": "privacy-3", "telemetry_configuration": "telemetry-2" },
+      "owner_role": "privacy engineering",
+      "state": "awaiting-review",
+      "execution_status": "not_run",
+      "receipt_id": null,
+      "note": "Current event inventory and draft copies are awaiting reconciliation; no completed review receipt is filed in this snapshot."
+    }
+  ]
+}

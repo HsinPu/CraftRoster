@@ -1,0 +1,22 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Legacy furniture configurator</title><link rel="stylesheet" href="style.css"><script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script></head>
+<body><main><h1>Legacy furniture configurator</h1><p>Fictional Three.js 0.152.2 baseline. Static upholstery and raster rendering; modernization features are not implemented.</p>
+<div class="preview"><canvas id="preview" aria-label="Raster chair preview"></canvas><p id="product-label"></p></div>
+<p id="status" role="status">Loading local design…</p>
+<section class="fields" aria-label="Furniture parameters">
+<label>Seat width (mm)<input type="number" min="500" max="1000" step="10" data-section="dimensionsMm" data-key="width" data-numeric="true"></label>
+<label>Seat depth (mm)<input type="number" min="500" max="900" step="10" data-section="dimensionsMm" data-key="depth" data-numeric="true"></label>
+<label>Seat height (mm)<input type="number" min="300" max="550" step="10" data-section="dimensionsMm" data-key="seatHeight" data-numeric="true"></label>
+<label>Back height (mm)<input type="number" min="250" max="600" step="10" data-section="dimensionsMm" data-key="backHeight" data-numeric="true"></label>
+<label>Frame material<select data-section="finish" data-key="frame"><option value="oak">Oak</option><option value="walnut">Walnut</option></select></label>
+<label>Upholstery material<select data-section="finish" data-key="upholstery"><option value="teal">Teal</option><option value="sand">Sand</option></select></label>
+<label>Camera yaw<input type="range" min="-180" max="180" step="1" data-section="camera" data-key="yawDegrees" data-numeric="true"></label>
+<label>Explicit time (seconds)<input type="number" min="0" max="60" step="0.1" data-section="capture" data-key="timeSeconds" data-numeric="true"></label>
+<label>Pattern seed<input type="number" min="0" max="4294967295" step="1" data-section="capture" data-key="seed" data-numeric="true"></label>
+<label>Visible label<input type="text" data-section="capture" data-key="label"></label>
+<label>Raster quality<select id="quality"><option value="auto">Auto raster</option><option value="mobile">Mobile raster</option><option value="desktop">Desktop raster</option></select></label>
+</section>
+<h2>Saved v1 document</h2><div class="actions"><label>Saved sample<select id="sample"><option value="oak-chair.v1.json">Oak chair</option><option value="wide-chair.v1.json">Wide chair</option><option value="invalid-version.json">Invalid version sample</option><option value="invalid-units.json">Invalid units sample</option><option value="invalid-material.json">Invalid material sample</option></select></label><button id="load-sample">Load sample</button><button id="load-json">Load JSON text</button><button id="save-json">Save design JSON</button></div>
+<label for="document">Design JSON</label><textarea id="document" rows="12" spellcheck="false"></textarea>
+<h2>Local audio input</h2><p>First-party tone preview. No encoded video or audiovisual export exists.</p><audio controls preload="metadata" src="assets/tone-a.wav" aria-label="Authored tone preview"></audio>
+<h2>Observed raster diagnostics</h2><p>CPU render submission is not GPU timing or device certification.</p><pre id="diagnostics"></pre>
+</main><script type="module" src="src/app.js"></script></body></html>

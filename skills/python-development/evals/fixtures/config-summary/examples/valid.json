@@ -1,0 +1,5 @@
+{
+  "service_name": "  Notes_API  ",
+  "workers": 4,
+  "comment": "Synthetic extra field that is not part of the printed summary."
+}

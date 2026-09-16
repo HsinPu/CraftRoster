@@ -5,72 +5,118 @@
     {
       "id": "explicit-architecture-options",
       "kind": "positive",
-      "prompt": "We need offline sync but have not chosen local-first, server-first, or CRDT. Compare the approaches and risks before implementation.",
-      "expected_skills": ["solution-discovery"],
-      "excluded_skills": ["spec-flow"]
+      "prompt": "我們需要離線同步，但還沒選擇本機優先、伺服器優先或 CRDT。請在實作前比較這幾種方案及其風險。",
+      "expected_skills": [
+        "solution-discovery"
+      ],
+      "excluded_skills": [
+        "spec-flow"
+      ],
+      "locale": "zh-TW"
     },
     {
       "id": "natural-plan-request",
       "kind": "positive",
       "prompt": "Plan the membership system for me. We should discuss the approach before changing code.",
-      "expected_skills": ["solution-discovery"],
-      "excluded_skills": []
+      "expected_skills": [
+        "solution-discovery"
+      ],
+      "excluded_skills": [],
+      "locale": "en"
     },
     {
       "id": "natural-how-to-build",
       "kind": "positive",
       "prompt": "What is the best way to build this feature? Do not touch the code yet.",
-      "expected_skills": ["solution-discovery"],
-      "excluded_skills": ["code-change-workflow"]
+      "expected_skills": [
+        "solution-discovery"
+      ],
+      "excluded_skills": [
+        "code-change-workflow"
+      ],
+      "locale": "en"
     },
     {
       "id": "scope-not-agreed",
       "kind": "positive",
       "prompt": "We want team sharing, but the product scope and architecture direction are not agreed. Give me real alternatives and recommend one.",
-      "expected_skills": ["solution-discovery"],
-      "excluded_skills": ["spec-flow"]
+      "expected_skills": [
+        "solution-discovery"
+      ],
+      "excluded_skills": [
+        "spec-flow"
+      ],
+      "locale": "en"
     },
     {
       "id": "approved-direction-to-tasks",
       "kind": "near_match",
-      "prompt": "The local-first direction is approved. Turn it into acceptance criteria, vertical work slices, dependencies, rollout, and rollback tasks.",
-      "expected_skills": ["spec-flow"],
-      "excluded_skills": ["solution-discovery"]
+      "prompt": "local-first 方向已經批准。請把它整理成 acceptance criteria、可端到端驗證的工作切片、依賴關係，以及 rollout 和 rollback 任務。",
+      "expected_skills": [
+        "spec-flow"
+      ],
+      "excluded_skills": [
+        "solution-discovery"
+      ],
+      "locale": "mixed-zh-TW-en"
     },
     {
       "id": "explicit-deep-interview",
       "kind": "near_match",
       "prompt": "Interview me one consequential requirement at a time, challenge my assumptions, and record each decision before implementation.",
-      "expected_skills": ["requirements-deep-dive"],
-      "excluded_skills": ["solution-discovery"]
+      "expected_skills": [
+        "requirements-deep-dive"
+      ],
+      "excluded_skills": [
+        "solution-discovery"
+      ],
+      "locale": "en"
     },
     {
       "id": "approved-multi-session-plan",
       "kind": "near_match",
       "prompt": "The solution and specification are approved. Plan three months of milestones, owners, dependencies, handoffs, and replanning triggers.",
-      "expected_skills": ["multi-session-planning"],
-      "excluded_skills": ["solution-discovery"]
+      "expected_skills": [
+        "multi-session-planning"
+      ],
+      "excluded_skills": [
+        "solution-discovery"
+      ],
+      "locale": "en"
     },
     {
       "id": "formal-specification-request",
       "kind": "near_match",
       "prompt": "The architecture decision is final. Write the formal technical specification using our prescribed document structure.",
-      "expected_skills": ["specification-authoring"],
-      "excluded_skills": ["solution-discovery"]
+      "expected_skills": [
+        "specification-authoring"
+      ],
+      "excluded_skills": [
+        "solution-discovery"
+      ],
+      "locale": "en"
     },
     {
       "id": "small-code-change",
       "kind": "negative",
       "prompt": "Change the Sign in button text to Log in and run the focused tests.",
-      "expected_skills": ["code-change-workflow"],
-      "excluded_skills": ["solution-discovery"]
+      "expected_skills": [
+        "code-change-workflow"
+      ],
+      "excluded_skills": [
+        "solution-discovery"
+      ],
+      "locale": "en"
     },
     {
       "id": "conceptual-explanation",
       "kind": "negative",
       "prompt": "Explain the difference between RBAC and ABAC. I only want to understand the concepts, not make a project decision.",
       "expected_skills": [],
-      "excluded_skills": ["solution-discovery"]
+      "excluded_skills": [
+        "solution-discovery"
+      ],
+      "locale": "en"
     }
   ]
 }

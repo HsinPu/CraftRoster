@@ -1,0 +1,35 @@
+{
+  "skill_name": "pipeline-review",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Run a read-only migration release gate. The frozen diff has no demonstrated defect, but the predeclared acceptance policy requires a staging rehearsal that has not run. No exception was granted.",
+      "expected_output": "Zero confirmed findings, a missing required evidence item, and a blocked gate.",
+      "assertions": [
+        "It does not classify the missing rehearsal as a Major defect without a failure scenario.",
+        "It records the affected acceptance claim, baseline, required status, and next check.",
+        "It blocks the gate for the unmet required evidence and stays read-only."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Run a read-only gate review. Required checks pass; an optional browser comparison is unavailable and no concrete defect is established.",
+      "expected_output": "The optional evidence limitation is disclosed without manufacturing a defect or blocker.",
+      "assertions": [
+        "It keeps the unavailable optional evidence outside confirmed findings.",
+        "It does not promote optional evidence to a required gate by preference.",
+        "It preserves the current baseline and reports a verdict consistent with required evidence."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Review this frozen change: a reproducible input deletes another tenant's row. The fix is not present; implementation is owned by a separate agent.",
+      "expected_output": "A supported blocking defect with a stable ID and a separate remediation handoff.",
+      "assertions": [
+        "It reports the concrete failure path and impact as a defect rather than only a verification gap.",
+        "It preserves reviewer read-only ownership and does not apply the fix.",
+        "It requires remediation evidence or an authorized risk decision before passing the gate."
+      ]
+    }
+  ]
+}

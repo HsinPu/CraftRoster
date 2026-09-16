@@ -1,0 +1,7 @@
+body { margin: 0; font: 16px/1.5 system-ui, sans-serif; background: #eef2f8; color: #12243a; }
+main { max-width: 980px; padding: 20px; margin: auto; }
+.controls { display: flex; gap: 8px; flex-wrap: wrap; }
+button { font: inherit; padding: 8px; }
+canvas { display: block; width: 100%; height: 360px; background: #17212d; margin-top: 12px; }
+pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 16px; background: white; font: 13px/1.4 monospace; }
+

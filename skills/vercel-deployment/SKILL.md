@@ -21,20 +21,20 @@ Use this skill when deploying or debugging a web app on Vercel, especially Next.
 
 ## Workflow
 
-1. Identify the framework, build command, output directory, and package manager.
-2. Confirm environment variables for development, preview, and production.
-3. Reproduce deployment issues locally with the project build command or Vercel CLI when available.
-4. Check build logs before changing application code.
+1. Identify whether the request is local preparation, read-only diagnosis or review, or deployment execution; record the authorized project, artifact, preview or production target, and effects. Carry forward valid existing authorization.
+2. Identify the framework, build command, output directory, and package manager.
+3. Check environment-variable names and scope for development, preview, and production without disclosing secret values.
+4. Check existing logs and evidence first. Reproduce locally with the project build or Vercel CLI only when local writes and execution are within scope; otherwise report the needed check.
 5. Verify runtime assumptions: Node.js version, Edge compatibility, file system access, and secrets.
-6. Test preview deployment before promoting or merging to production.
-7. Confirm domain, redirects, headers, analytics, and rollback path after release.
+6. Use available authorized preview evidence before production promotion. Creating a preview, merging, changing settings, or promoting production is a separate external effect that must fit the established authorization; a review request does not authorize it.
+7. End preparation or review with a readiness report. After an authorized release, confirm domain, redirects, headers, analytics, and the recovery path.
 
 ## Environment Rules
 
 - Keep secrets in Vercel environment variables, not source code.
 - Separate preview and production credentials.
 - Use `NEXT_PUBLIC_` only for values that are safe to expose in the browser.
-- Pull local env only into ignored files such as `.env.local`.
+- Pull local env only when needed and within authorized credential and local-write scope, into ignored files such as `.env.local`. A read-only review does not authorize exporting secrets.
 - Watch Edge runtime environment limits when using Middleware or Edge Functions.
 
 ## Deployment Checks
@@ -43,7 +43,7 @@ Use this skill when deploying or debugging a web app on Vercel, especially Next.
 - Check serverless function logs for runtime-only failures.
 - Validate routes that depend on dynamic rendering, caching, ISR, or server actions.
 - Confirm webhooks and callback URLs point at the correct deployment.
-- Use rollback for production regressions instead of hot-editing risky changes.
+- Prefer the established recovery plan for production regressions; execute rollback only within its authorized target and effects.
 
 ## Handoff
 

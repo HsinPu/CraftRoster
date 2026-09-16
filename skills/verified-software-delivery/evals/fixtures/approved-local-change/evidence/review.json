@@ -1,0 +1,19 @@
+{
+  "id": "REVIEW-SUMMARY-1",
+  "revision": "SUMMARY-1",
+  "status": "passed",
+  "origin": "authored evaluation scenario artifact; not an actual independent review of CraftRoster",
+  "reviewerRole": "fixture-independent-reviewer",
+  "implementationOwnerRole": "fixture-implementer",
+  "confirmedFindings": [],
+  "digestAlgorithm": "sha256-utf8-lf",
+  "inputs": {
+    "src/order-summary.js": "073b199026e2915c74de71ce4954ab1da19872b0d10900dc4b945313b077a80a",
+    "test/unit.test.js": "55e4ac07086632a539df6c16712f602fd0f11f854a09a8e9f31d942e280b7b30",
+    "test/acceptance.test.js": "1a69fe21f59ec7234fbc815b022f873b333d32f48f19f9297dceb7a4759dc45e",
+    "fixtures/order.json": "c9215ba7c118da0b04e2d769bbc0544d7713ec981c93c9a60d273fdfa51e8608",
+    "fixtures/order.expected.json": "d46f0c4e9d97d7c267e7bc430cdba21f4986eccb4398c8811daf965240041211",
+    "docs/approved-spec.md": "46106944c3e3bf049eb32b248db2cc5dda77d48c3629235eac809a63e5a3f008"
+  },
+  "scope": "implementation and test design only; missing execution evidence remains a separate completion gate"
+}

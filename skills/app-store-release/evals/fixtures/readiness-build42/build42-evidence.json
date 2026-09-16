@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "scenario_id": "field-notes-release-42",
+  "receipts": [
+    {
+      "id": "R42-ARCHIVE",
+      "gate_id": "archive",
+      "subject": { "app_id": "com.example.fieldnotes", "version": "1.4.0", "build": 42, "artifact_ref": "fixture-fieldnotes-1.4.0-42-a", "channel": "app-store-production-submission" },
+      "configuration": { "signing": "signing-3" },
+      "recorded_at": "2026-09-15T10:00:00Z",
+      "valid_until": "2026-09-23T10:00:00Z",
+      "status": "passed",
+      "owner_role": "release engineering",
+      "observations": { "archive-identity": "passed", "signing-profile": "passed", "processing-complete": "passed" },
+      "note": "Scenario receipt of archive identity/signing inspection and completed processing; no submission recorded."
+    },
+    {
+      "id": "R42-CORE",
+      "gate_id": "core-paths",
+      "subject": { "app_id": "com.example.fieldnotes", "version": "1.4.0", "build": 42, "artifact_ref": "fixture-fieldnotes-1.4.0-42-a", "channel": "app-store-production-submission" },
+      "configuration": { "backend": "notes-api-12" },
+      "recorded_at": "2026-09-15T12:00:00Z",
+      "valid_until": "2026-09-22T12:00:00Z",
+      "status": "passed",
+      "owner_role": "mobile quality",
+      "observations": { "sign-in": "passed", "create-note": "passed", "offline-reopen": "passed" },
+      "note": "Scenario receipt from an iPhone 13 / iOS 18.5 test profile; the listed checks are the full scope of this receipt."
+    },
+    {
+      "id": "R42-ASSETS",
+      "gate_id": "store-assets",
+      "subject": { "app_id": "com.example.fieldnotes", "version": "1.4.0", "build": 42, "artifact_ref": "fixture-fieldnotes-1.4.0-42-a", "channel": "app-store-production-submission" },
+      "configuration": { "metadata": "store-copy-7" },
+      "recorded_at": "2026-09-15T14:00:00Z",
+      "valid_until": "2026-09-22T14:00:00Z",
+      "status": "passed",
+      "owner_role": "release editorial",
+      "observations": { "release-notes": "passed", "screenshots-en-US": "passed", "screenshots-zh-TW": "passed" },
+      "note": "Scenario coverage inspection of the local draft set; this receipt does not record uploading metadata."
+    },
+    {
+      "id": "R42-BACKEND",
+      "gate_id": "backend-compatibility",
+      "subject": { "app_id": "com.example.fieldnotes", "version": "1.4.0", "build": 42, "artifact_ref": "fixture-fieldnotes-1.4.0-42-a", "channel": "app-store-production-submission" },
+      "configuration": { "backend": "notes-api-12" },
+      "recorded_at": "2026-09-15T15:00:00Z",
+      "valid_until": "2026-09-22T15:00:00Z",
+      "status": "passed",
+      "owner_role": "API quality",
+      "observations": { "notes-read-write": "passed", "rollback-contract-window": "passed" },
+      "note": "Scenario contract checks cover note operations and the seven-day backward-compatible API window; no deletion-path observation is included."
+    }
+  ]
+}

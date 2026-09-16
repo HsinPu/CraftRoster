@@ -1,0 +1,1 @@
+{ "name": "fictional-auth-redirect-review", "version": "1.0.0", "private": true, "type": "commonjs", "scripts": { "test:base": "node base/test/callback.test.js", "test:head": "node head/test/callback.test.js" } }

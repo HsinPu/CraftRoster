@@ -1,0 +1,30 @@
+{
+  "kind": "installed-pinned-source-inspection",
+  "inspected_at": "2026-09-16T09:41:50.189Z",
+  "package": "three",
+  "version": "0.180.0",
+  "files": [
+    {
+      "path": "package.json",
+      "sha256": "aa42494664dba4cf76d89c6975ee38321a402f09a048672e190bad6f13beec93"
+    },
+    {
+      "path": "src/renderers/WebGLRenderer.js",
+      "sha256": "35cea4871231c3fddc3517dcd03fc876bdb8f9e73f1a77042b35e3de0498c4cd"
+    },
+    {
+      "path": "src/renderers/webgl/WebGLInfo.js",
+      "sha256": "e6c56a02eaed28924ce31b76a67d7cebc717818f1ab5b87bc07320f975debddd"
+    },
+    {
+      "path": "src/renderers/webgpu/WebGPURenderer.js",
+      "sha256": "53de76bc549a74fb515d914ae6b583bf5bef9edf7f3a43e05d2c893848f88d93"
+    }
+  ],
+  "sources": [
+    "https://github.com/mrdoob/three.js/tree/r180",
+    "https://threejs.org/docs/pages/WebGLRenderer.html",
+    "https://threejs.org/docs/pages/WebGPURenderer.html"
+  ],
+  "scope": "Current docs locate APIs; installed 0.180.0 source is the version authority for this baseline. No WebGPU/TSL compatibility or device test has run."
+}

@@ -1,6 +1,6 @@
 ---
 name: test-driven-development
-description: Test-driven development workflow for implementing observable behavior through strict RED-GREEN-REFACTOR cycles and small verified increments. Use when adding or changing behavior that can be expressed with automated tests, especially regression fixes, public contracts, business rules, and behavior-preserving refactors; skip non-executable documentation and exploratory throwaway work.
+description: Implement observable behavior through RED-GREEN-REFACTOR when the user or repository requires TDD, or a focused failing regression or contract test is the appropriate way to lead the change. Use proportionate verification for other work; skip forced cycles for documentation and exploratory throwaway work.
 license: Apache-2.0
 metadata:
   author: "HsinPu"
@@ -13,6 +13,12 @@ metadata:
 # Test-Driven Development
 
 Let an observable behavior and its failing test lead each implementation increment.
+
+## Choose the Verification Approach
+
+Honor an explicit user or repository TDD requirement. Otherwise use `testing-strategy` to judge whether a new failing test adds confidence beyond existing coverage and evidence. Document a reasoned alternative for low-impact reversible work, an already-covered regression, inherited changes, or a failure that cannot be reproduced automatically; selecting an alternative does not itself require user approval.
+
+An alternative must still prove the affected behavior and disclose limitations. Preserve existing implementation and valid evidence when taking over work; do not undo a correct change or manufacture a failure merely to recreate RED. If strict TDD is required but unavailable, explain the specific unmet requirement and continue independent work without silently waiving it.
 
 ## Red-Green-Refactor Cycle
 
@@ -27,13 +33,13 @@ Let an observable behavior and its failing test lead each implementation increme
 ## Existing-Code Rules
 
 - Add a characterization test before changing poorly documented behavior when preserving it matters.
-- Add a regression test that reproduces a confirmed bug before implementing its fix.
+- For a chosen TDD cycle, add a regression test that reproduces a confirmed bug before implementing its fix. When meaningful coverage already exists or automatic reproduction is unavailable, apply the verification approach above instead of duplicating tests or hiding the gap.
 - Keep one behavior per cycle so a failure identifies the responsible increment.
 - Prefer public outcomes over private implementation details.
 
 ## Guardrails
 
-- Do not write production code before observing the intended test fail unless the work is explicitly exempted.
+- In a required or chosen TDD cycle, observe the intended test fail before writing its production increment. Any alternative must follow the verification approach above and cannot silently override an explicit TDD requirement.
 - Do not weaken assertions, over-mock the behavior under test, or encode the current implementation merely to obtain GREEN.
 - Do not continue when RED has the wrong cause or GREEN cannot be explained.
 - Keep documentation, generated files, exploratory spikes, and non-executable configuration outside a forced TDD cycle.

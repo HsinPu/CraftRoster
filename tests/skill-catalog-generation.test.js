@@ -141,6 +141,21 @@ try {
     run(['--check'], root);
   });
 
+  test('catalog generation preserves optional declarations without converting them to required edges', () => {
+    const root = createFixture('optional-dependency-roundtrip');
+    const config = baseConfig();
+    config.skills['alpha-skill'].dependencies = [{ name: 'beta-skill', kind: 'optional' }];
+    config.skills['beta-skill'].dependencies = [{ name: 'alpha-skill', kind: 'required' }];
+    writeJson(path.join(root, 'scripts', 'data', 'skill-catalog.json'), config);
+    run([], root);
+    const generated = JSON.parse(fs.readFileSync(path.join(root, 'skills.json'), 'utf8'));
+    assert.deepStrictEqual(generated.skills.find(skill => skill.name === 'alpha-skill').dependencies,
+      [{ name: 'beta-skill', kind: 'optional' }]);
+    assert.deepStrictEqual(generated.skills.find(skill => skill.name === 'beta-skill').dependencies,
+      [{ name: 'alpha-skill', kind: 'required' }]);
+    run(['--check'], root);
+  });
+
   test('parses quoted scalars and inline comments without truncating quoted hashes', () => {
     const root = createFixture('quoted-scalars');
     const skillPath = path.join(root, 'skills', 'alpha-skill', 'SKILL.md');

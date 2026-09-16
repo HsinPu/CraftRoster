@@ -1,0 +1,20 @@
+{
+  "fictional": true,
+  "existingBackend": "WebGLRenderer",
+  "threeVersion": "0.180.0",
+  "sourceLinearRgba": [0.25, 0.5, 0.75, 1],
+  "readback": { "format": "RGBA8", "space": "linear-srgb", "toleranceBytes": 1, "api": "Promise<Uint8Array>", "pixels": 1 },
+  "postProcessing": "Invert RGB when enabled; preserve alpha",
+  "displayColorSpace": "srgb",
+  "maxDpr": 2,
+  "maxCanvasDimension": 1024,
+  "lostContext": "Reject readback until restored; retain semantic controls and last accepted post-processing choice",
+  "targets": [
+    { "name": "desktop-WebGL2", "priority": "required", "status": "not_run" },
+    { "name": "mobile-Safari", "priority": "required", "status": "not_run" },
+    { "name": "WebGPU-with-WebGL-fallback", "priority": "proposed", "status": "not_run" },
+    { "name": "immersive-vr-preview", "priority": "optional", "status": "not_run" }
+  ],
+  "performance": { "targetDevice": null, "approvedGpuBudgetMs": null, "status": "not_run" },
+  "modelEvaluation": "not_run"
+}

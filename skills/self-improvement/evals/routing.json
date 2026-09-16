@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "skill_name": "self-improvement",
+  "cases": [
+    {
+      "id": "repeated-verified-lesson",
+      "kind": "positive",
+      "prompt": "We reproduced the same setup failure three times and verified the fix. Capture a scoped reusable lesson in our existing authorized project memory.",
+      "expected_skills": [
+        "self-improvement"
+      ],
+      "excluded_skills": [],
+      "allowed_skills": [
+        "context-governance"
+      ]
+    },
+    {
+      "id": "normal-search-no-matches",
+      "kind": "negative",
+      "prompt": "In this read-only review, rg returned 1 because no files matched. Continue the review; do not write notes or change files.",
+      "expected_skills": [],
+      "excluded_skills": [
+        "self-improvement"
+      ],
+      "allowed_skills": [
+        "code-review"
+      ]
+    },
+    {
+      "id": "one-time-preference",
+      "kind": "negative",
+      "prompt": "For this answer only, keep the explanation to three sentences. This is not a lasting preference; do not update project memory.",
+      "expected_skills": [],
+      "excluded_skills": [
+        "self-improvement",
+        "context-governance"
+      ],
+      "allowed_skills": [
+        "answer-writing"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "fixtureOnly": true,
+  "origin": "Authored evaluation scenario records; no real build, config validation, recovery review, or service check was performed to create this fixture.",
+  "digestAlgorithm": "sha256-utf8-lf",
+  "records": [
+    {
+      "id": "build-A-unit",
+      "kind": "build",
+      "status": "passed",
+      "buildId": "A",
+      "artifactSha256": "3216f3fbf1a30e989e3b4ce3f4e5b41887d4b9de8a6ed8959c8dbe924e2e7471",
+      "recordedAt": "2026-09-16T07:10:00Z",
+      "details": "Recorded unit checks and packaging manifest for A."
+    },
+    {
+      "id": "config-B-r1",
+      "kind": "config-validation",
+      "status": "passed",
+      "targetId": "B",
+      "configRevision": "B-r1",
+      "configSha256": "60142455932bb2bdcadc287a081709ea9704d05f571982c5dcc49836b29eea68",
+      "recordedAt": "2026-09-16T07:20:00Z",
+      "details": "Reference names resolved in the recorded scenario; secret values are absent."
+    },
+    {
+      "id": "recovery-B-r2",
+      "kind": "recovery-plan",
+      "status": "passed",
+      "targetId": "B",
+      "configRevision": "B-r2",
+      "configSha256": "b13dc9901a5a4d54b5cdf046be6ea9a502aa33b8fc31cc243806c7880a4033a0",
+      "recordedAt": "2026-09-16T08:10:00Z",
+      "recovery": {
+        "targetId": "B",
+        "restoreBuildId": "PREVIOUS",
+        "changesDatabase": false,
+        "procedureReference": "fictional-approved-recovery-plan"
+      }
+    },
+    {
+      "id": "smoke-A-B-r2",
+      "kind": "staging-smoke",
+      "status": "not_run",
+      "buildId": "A",
+      "artifactSha256": "3216f3fbf1a30e989e3b4ce3f4e5b41887d4b9de8a6ed8959c8dbe924e2e7471",
+      "targetId": "B",
+      "configRevision": "B-r2",
+      "configSha256": "b13dc9901a5a4d54b5cdf046be6ea9a502aa33b8fc31cc243806c7880a4033a0",
+      "recordedAt": null,
+      "observedBuildId": null,
+      "execution": null
+    },
+    {
+      "id": "smoke-PREVIOUS-B-r1",
+      "kind": "staging-smoke",
+      "status": "passed",
+      "buildId": "PREVIOUS",
+      "artifactSha256": "8b18e541d2795d1c9e8c07488a4397bd26d4d14949d10ee92b793bbc881c7595",
+      "targetId": "B",
+      "configRevision": "B-r1",
+      "configSha256": "60142455932bb2bdcadc287a081709ea9704d05f571982c5dcc49836b29eea68",
+      "recordedAt": "2026-09-15T09:00:00Z",
+      "observedBuildId": "PREVIOUS",
+      "details": "Historical result retained for the previous release."
+    }
+  ]
+}

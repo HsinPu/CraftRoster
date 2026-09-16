@@ -1,0 +1,10 @@
+{
+    "observedAt":  "2026-09-16T13:38:58.8391224Z",
+    "executable":  "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "psVersion":  "5.1.19041.3803",
+    "psEdition":  "Desktop",
+    "clrVersion":  "4.0.30319.42000",
+    "is64BitProcess":  true,
+    "osVersion":  "Microsoft Windows NT 10.0.19045.0",
+    "PSModuleAnalysisCachePath":  "NUL"
+}

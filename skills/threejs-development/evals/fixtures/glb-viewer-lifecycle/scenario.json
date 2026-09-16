@@ -1,0 +1,32 @@
+{
+  "fictional": true,
+  "kind": "existing-source-workspace",
+  "modelEvaluation": {
+    "status": "not_run",
+    "attempts": 0
+  },
+  "browserEvidence": {
+    "status": "not_run"
+  },
+  "sourceAssets": "tools/generate-assets.cjs",
+  "resourceMetrics": "actual renderer.info and dispose events; object counts, not bytes",
+  "networkServices": [],
+  "ownership": {
+    "shared": [
+      "renderer",
+      "reference box geometry/material/texture",
+      "OrbitControls"
+    ],
+    "route": [
+      "GLTF model geometry/material/texture",
+      "render target"
+    ],
+    "absent": [
+      "worker",
+      "skeleton",
+      "animation mixer",
+      "model cache"
+    ]
+  }
+}
+

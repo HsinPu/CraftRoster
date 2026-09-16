@@ -1,0 +1,2977 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-09-16",
+  "baseline_commit": "7acca1fb8865903dc67ee4c76c147d0881cb9e1b",
+  "entry_hash_normalization": "utf8-lf",
+  "scope": "Entry instructions, declared sibling dependencies, and outcome case definitions; inventory-only entries are explicitly deferred. This registry does not certify live model behavior.",
+  "category_representatives": [
+    {
+      "category": "workflow-planning",
+      "skill": "code-change-workflow",
+      "case_id": 1,
+      "status": "definition_only"
+    },
+    {
+      "category": "software-engineering",
+      "skill": "python-development",
+      "case_id": 1,
+      "status": "definition_only"
+    },
+    {
+      "category": "frontend-design",
+      "skill": "frontend-design",
+      "case_id": 1,
+      "status": "definition_only"
+    },
+    {
+      "category": "threejs-graphics",
+      "skill": "threejs-development",
+      "case_id": 1,
+      "status": "definition_only"
+    },
+    {
+      "category": "backend-data",
+      "skill": "api-contract-design",
+      "case_id": 1,
+      "status": "definition_only"
+    },
+    {
+      "category": "ai-llm",
+      "skill": "prompt-engineering",
+      "case_id": 1,
+      "status": "definition_only"
+    },
+    {
+      "category": "mobile-desktop",
+      "skill": "app-store-release",
+      "case_id": 1,
+      "status": "definition_only"
+    },
+    {
+      "category": "testing-quality",
+      "skill": "pipeline-review",
+      "case_id": 1,
+      "status": "definition_only"
+    },
+    {
+      "category": "security-governance",
+      "skill": "threat-modeling",
+      "case_id": 1,
+      "status": "definition_only"
+    },
+    {
+      "category": "cloud-devops",
+      "skill": "deployment-operations",
+      "case_id": 1,
+      "status": "definition_only"
+    },
+    {
+      "category": "agent-skill-tooling",
+      "skill": "mcp-creator-design",
+      "case_id": 1,
+      "status": "definition_only"
+    },
+    {
+      "category": "browser-automation",
+      "skill": "agent-reach-ops",
+      "case_id": 1,
+      "status": "definition_only"
+    },
+    {
+      "category": "media-creative",
+      "skill": "video-production-workflow",
+      "case_id": 1,
+      "status": "definition_only"
+    },
+    {
+      "category": "writing-content",
+      "skill": "git-readme-writer",
+      "case_id": 1,
+      "status": "definition_only"
+    },
+    {
+      "category": "research-product",
+      "skill": "solution-discovery",
+      "case_id": 1,
+      "status": "definition_only"
+    },
+    {
+      "category": "documents-productivity",
+      "skill": "spreadsheet-ops",
+      "case_id": 1,
+      "status": "definition_only"
+    }
+  ],
+  "skills": [
+    {
+      "name": "accessibility-testing",
+      "category": "testing-quality",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "d72d09c627e1254162fba322b6293edbb30d765c8db60cc2259a83cb8ae31c92",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "agent-action-governance",
+      "category": "security-governance",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "已比對直接相鄰 owner 的授權、只讀、finding 或驗證契約；本輪無足夠證據要求改寫。",
+      "next_action": "作相鄰回歸 owner 保留，新增失敗時先建立重現案例。",
+      "entry_sha256": "157dcaa1b1249f17602e70c5749f7c8f08c5e73e877ed97930bf2758600e4899",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "agent-creator-design",
+      "category": "agent-skill-tooling",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "97749325c5238ff7ae6a8676b35e011d3f859b20bc5e875825b2b7e87d78b98e",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "agent-instructions-authoring",
+      "category": "agent-skill-tooling",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "c2f78d0cf4cb1c44bdb49cac66b6bab1d14b9c1a5a03cf8b5089ff38deb0cded",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "agent-introspection-debugging",
+      "category": "agent-skill-tooling",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "d604dc330ac7ca0b51384bc33f5541c937a27dd8309e47fb62b889fc46d463d4",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "agent-reach-ops",
+      "category": "browser-automation",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "c45b1759b735fe489169fab3a10ab2449caee067f62b44670fe5a9e639cfc087",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "agents-sdk-development",
+      "category": "agent-skill-tooling",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "b3b7df3701a96786b03e400a3fc72cae7bfb0996b92829ff3856bfba83716341",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "ai-image-prompt-design",
+      "category": "media-creative",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "31ed01b0a8ea192de428efd9e908fb2576326e35417c48e889f685c0c92c9b90",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "ai-image-prompts-skill",
+      "category": "media-creative",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "b8d964bcbca6f152ed8a2c1c0030fe89a0908d6af98d9b6e74009d09801d7e4e",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "ai-video-generation",
+      "category": "media-creative",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "0be42ac11dae02f8b606d11f73531d90b57034d1f89cf84b69018c82885a2860",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "ai-video-prompting",
+      "category": "media-creative",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "918cf4e5720b3b4ab1b6f5a0adbebb826a090849e60c441d534bdbfb9c47381b",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "animation-best-practices",
+      "category": "frontend-design",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "7780af1023408beee1e84863b2879faf3f95f3b9b2268fc0cf68d319712ea24c",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "answer-writing",
+      "category": "writing-content",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "cbc77c6360bdc05f1ad6f518e15e0364c38bffcb2a6cd5ec0c2f235b3595df3f",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "api-contract-design",
+      "category": "backend-data",
+      "decision": "improve",
+      "review_depth": "eval-design",
+      "reason": "保留既有入口，新增帶具體輸入及可評分結果的分類代表案例。",
+      "next_action": "在隔離環境執行 fixture 任務，保存實際產物與驗證結果。",
+      "entry_sha256": "1281ac48f63d46533aaa2436ccbfea0ba4775c607606ada8356de91893f3b9e8",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "api-contract-testing",
+      "category": "testing-quality",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "4c784161f3f3184de4b7a0dd9ea9825d8c166f75df1789f8cede2114dabe9991",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "api-doc-comments",
+      "category": "writing-content",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "4d02cff80699ade619657176687402efcc0c5168bc3a51dd17915178d48caff2",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "app-store-release",
+      "category": "mobile-desktop",
+      "decision": "improve",
+      "review_depth": "semantic-review",
+      "reason": "已依本輪發現修正入口的決策／授權／觸發或資源邊界；保留既有必要契約。",
+      "next_action": "執行新增正反例與相鄰 owner 的受控行為比較，檢查任務成果及不必要停點。",
+      "entry_sha256": "a50269105f7e8d4336673d1625bf37ef67c186835e2d17498193fc39fe4a37ef",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "article-writing",
+      "category": "writing-content",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "872dd410b216ee39e796fd3a8b9bd6d5670733e7fa48ef235a50443b48b794b5",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "ask-questions-if-underspecified",
+      "category": "workflow-planning",
+      "decision": "improve",
+      "review_depth": "semantic-review",
+      "reason": "已依本輪發現修正入口的決策／授權／觸發或資源邊界；保留既有必要契約。",
+      "next_action": "執行新增正反例與相鄰 owner 的受控行為比較，檢查任務成果及不必要停點。",
+      "entry_sha256": "1b34b0327fc5d6b5aa148ec5e2df5188d492d87bea4822f826aa3891c65fd98d",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "audio-generation",
+      "category": "media-creative",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "f6d582494b7b0a29c77ef83dfc93826f74becb619774b90d3c13653173ce4474",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "audio-transcription",
+      "category": "media-creative",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "70da5519a41bddb154321fc1c854692865260d0a1c6b015cdd100eab9251ac1f",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "auth-integration",
+      "category": "backend-data",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "36ed196f60a8504dbadf1480ec16b69b7e6aeedc98cbcc25c135e88c3df3cccc",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "autoresearch",
+      "category": "research-product",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "a6c4f3930619d88224aac712d4f46b877407340f32fd6cd420597c25808abb35",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "avatar-video-generation",
+      "category": "media-creative",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "775e596cd49c811d99b37312537a79e428445704f324e8f07886f7a561663cdc",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "aws-operations",
+      "category": "cloud-devops",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "a980da10db5292db3131c777cbba613c7cb419ca4d0efb6427ea70fe5f987674",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "baoyu-image-gen",
+      "category": "media-creative",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "6fd5b1fdf6dc309b37bac09e4afc15cdd4490bd550132e30c5f717b7e23b4e43",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "brand-voice",
+      "category": "writing-content",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "ad213fe173c227f1ea4af7fe0335d66f1d6f418bdc2cc450e5506f7ae10ed2ef",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "browser-automation",
+      "category": "browser-automation",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "2f258dc4f8b80ed1cdb3e5b1266bd8f3da083ba888a97222d3e9c2d0b2f54b06",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "browser-compatibility-testing",
+      "category": "testing-quality",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "3b51b46dc9125326cfe7f5e718b6970940ff878e82f9c19482b74896cbb54d9f",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "chrome-devtools-debugging",
+      "category": "testing-quality",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "e92fb207e183934ff57929986554829d4f43a13035549f16a6beff8348babba4",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "cloudflare-development",
+      "category": "cloud-devops",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "63f7081de590ec9a8fc5b41d0e54eb068b1c36b0cb453da78a9b1223978e4727",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "code-change-workflow",
+      "category": "workflow-planning",
+      "decision": "improve",
+      "review_depth": "semantic-review",
+      "reason": "已依本輪發現修正入口的決策／授權／觸發或資源邊界；保留既有必要契約。",
+      "next_action": "執行新增正反例與相鄰 owner 的受控行為比較，檢查任務成果及不必要停點。",
+      "entry_sha256": "c65f417095f626ae89490741846fc5b3d0df7200fcc811bcc1216a63e4362978",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "code-refactoring",
+      "category": "software-engineering",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "6580bbf9e303c3f44c181cf4be4d0cef461546bfbd163765d88a7d34f41d175f",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "code-review",
+      "category": "testing-quality",
+      "decision": "improve",
+      "review_depth": "eval-design",
+      "reason": "保留既有 owner 入口，補齊首批 pilot 的具體任務及相鄰路由案例。",
+      "next_action": "在受控 host/catalog 與隔離 fixture 下執行 A/B，先做小型 smoke 再擴大 trial。",
+      "entry_sha256": "c60d0e51f5ece313f5a3b68f933ab4278ef4ff1472582e53adcc4909e33e9f0c",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "coding-standards",
+      "category": "software-engineering",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "2dd578b895afec64ed9d959445a6ecdc2d64172bd0abb85315a5e43d9c9ba6f0",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "color-font-skill",
+      "category": "frontend-design",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "72e0783383eee0b1ae34ec338d8e10328c00d4328ff8547774f419615a7985e8",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "command-palette",
+      "category": "frontend-design",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "f3d3a730a850bc0e0da3cbcf87aa6a3b3bd9443281de42b5e7d0e584fe048216",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "content-repurposing",
+      "category": "writing-content",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "5d7b03962c90baaff204795b0934cae85c3630c09f500cae0c416fd088efe919",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "context-governance",
+      "category": "workflow-planning",
+      "decision": "improve",
+      "review_depth": "semantic-review",
+      "reason": "已依本輪發現修正入口的決策／授權／觸發或資源邊界；保留既有必要契約。",
+      "next_action": "執行新增正反例與相鄰 owner 的受控行為比較，檢查任務成果及不必要停點。",
+      "entry_sha256": "72aefddb1f1aba0f340894f457e70377c2d2836064b2dd9a351039253bb9f83c",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "css-development",
+      "category": "frontend-design",
+      "decision": "improve",
+      "review_depth": "semantic-review",
+      "reason": "已依本輪發現修正入口的決策／授權／觸發或資源邊界；保留既有必要契約。",
+      "next_action": "執行新增正反例與相鄰 owner 的受控行為比較，檢查任務成果及不必要停點。",
+      "entry_sha256": "5184c5d524e00386574a35ce5619921214e2a31e820a9cc6ce0f718c74661705",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "dashboard-design",
+      "category": "frontend-design",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "5a88b2e33e62e21d6e07bae5596f125b5128990c84c8d1821787526cb11310c5",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "data-organization-system",
+      "category": "documents-productivity",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "9c5af0ac4bd523c91f6a9844b1ee07b0ca25290582092461b3acfa3b6609fb9a",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "data-pipeline-orchestration",
+      "category": "backend-data",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "650c2f63b006fe107eac15b1e2ee34d8550868264baa4ace85b8d0e67ee17bc0",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "database-design",
+      "category": "backend-data",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "5622602021f4eced2d863dccb0aeb93742243c7ce411100e6b11fba95268d9a8",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "database-migration-workflow",
+      "category": "backend-data",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "已比對直接相鄰 owner 的授權、只讀、finding 或驗證契約；本輪無足夠證據要求改寫。",
+      "next_action": "作相鄰回歸 owner 保留，新增失敗時先建立重現案例。",
+      "entry_sha256": "f886f09040ceaa0c220a8c6bf91262600018cfcc10e8c20ba39abff299a4ad02",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "deployment-operations",
+      "category": "cloud-devops",
+      "decision": "improve",
+      "review_depth": "semantic-review",
+      "reason": "已依本輪發現修正入口的決策／授權／觸發或資源邊界；保留既有必要契約。",
+      "next_action": "執行新增正反例與相鄰 owner 的受控行為比較，檢查任務成果及不必要停點。",
+      "entry_sha256": "a3390a08e4b75bb5742a89e92c9218be5b810de4dc67585f2d788f2d50620c26",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "design-consultation",
+      "category": "frontend-design",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "872a986b370ceafb49dc1a077bb31d7aecd4ea0990ae148bf171bac226443d22",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "design-intelligence-search",
+      "category": "research-product",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "2f3de2e7a8bc98fb5a3ffe0a2ef468db2c8b55e03dc316c81fe8f00749aa35d5",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "design-system",
+      "category": "frontend-design",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "5cf12e233caa9c883add03a8e4636756c5122840a82f441b1b3032cb440fa096",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "design-system-patterns",
+      "category": "frontend-design",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "29120e286f03b8215ef381ca19ee18b6dcee4ecb2673bf35cf06ed2fad87d559",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "desktop-development",
+      "category": "mobile-desktop",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "1eadeda83e19a1a4967965ebc2b68ea2a45feb7ce318e7a1466735b8d6764b86",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "docker-development",
+      "category": "cloud-devops",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "43dca2561063cff4a089a9bee6881f526e9df89a8942c7d0d50ad1277bec8cb7",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "document-to-markdown",
+      "category": "documents-productivity",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "275c10f4ec91e3ab79ac24aa5eb27b2a331b70213f95bb2cc305176558557c13",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "domain-modeling",
+      "category": "software-engineering",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "a7db084c562039d72e2827470862d0210c909bed955e385059246b4d6568cfa6",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "downloads-desktop-cleanup",
+      "category": "documents-productivity",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "已比對直接相鄰 owner 的授權、只讀、finding 或驗證契約；本輪無足夠證據要求改寫。",
+      "next_action": "作相鄰回歸 owner 保留，新增失敗時先建立重現案例。",
+      "entry_sha256": "dd8ec522acb58c5d1f8561d85c19c6c2c65c1ba740c411a8d3f3db28f27cb21a",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "drawio-skill",
+      "category": "documents-productivity",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "28cdcd96e1dd8249b1bd0a4474789e966aab55c7270433ce38533eea090cfeab",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "e2e-testing-patterns",
+      "category": "testing-quality",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "b8ae4aa122bdc808ad6a3276f9186f66d11fb163fdf68ac62b574019fd04de08",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "event-sourcing-cqrs",
+      "category": "backend-data",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "e782a3fe4254c2dfc0323c71fd47edad28d0e5f16a8763e6ce71ba98637eec08",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "figma-to-code",
+      "category": "frontend-design",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "93828c13526a075b5700cb3716fa0129eeff8f400eb258f19ca1c66c04c07d3a",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "file-organizer",
+      "category": "documents-productivity",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "已比對直接相鄰 owner 的授權、只讀、finding 或驗證契約；本輪無足夠證據要求改寫。",
+      "next_action": "作相鄰回歸 owner 保留，新增失敗時先建立重現案例。",
+      "entry_sha256": "47017dbe9017cb7c6f22a65dbe29b1d455f78016087e3597533dfbcda7edb484",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "firebase-development",
+      "category": "backend-data",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "fdac5990ddd0d58c8517fe9a3787d9fa5d946e501aacb859f4be59620531f410",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "flutter-development",
+      "category": "mobile-desktop",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "c22fc7bba60ede860ca90b20edc23b9ffb8b038122485808d01e68929019cbe2",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "folder-structure-cleanup",
+      "category": "documents-productivity",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "6cb452ce1aaacc0d123a84b4eb6087b6b9ce0fca0bc736b2d6564b9aaafc42f3",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "frontend-code-review",
+      "category": "testing-quality",
+      "decision": "improve",
+      "review_depth": "dependency-review",
+      "reason": "已審查入口跨 package 連結，宣告必要／條件依賴並納入安裝與資源驗證；未宣稱重寫全部領域規則。",
+      "next_action": "保持單包及分類安裝閉包回歸；依任務證據逐步補領域 outcome 測試。",
+      "entry_sha256": "acbf3d07139181a13845d9df03f9ea86d4914c5fb994a5cf1bc571be0ae7ab63",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "frontend-design",
+      "category": "frontend-design",
+      "decision": "improve",
+      "review_depth": "semantic-review",
+      "reason": "已依本輪發現修正入口的決策／授權／觸發或資源邊界；保留既有必要契約。",
+      "next_action": "執行新增正反例與相鄰 owner 的受控行為比較，檢查任務成果及不必要停點。",
+      "entry_sha256": "606279d41615bf40bc7f668869dfc6c83c39ef8fde4eef2da54bafc9dc0fd5c4",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "frontend-design-review",
+      "category": "testing-quality",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "926e6e4e8e2116cb4d79fbbfc24fd396c24912bc20cef69180eaaa378881eb88",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "frontend-stack-inference",
+      "category": "frontend-design",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "86d6ab4050163f11b512aedc666bed5e3b92e4a0293d1b00c9f48ce214fd75e8",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "frontend-testing",
+      "category": "testing-quality",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "b85fc6770227d8b23e58fcf7bb637a66adced2689941c7fd56ccd55abaad5f38",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "git-advanced",
+      "category": "software-engineering",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "1058a6c45f6b19df7383d4d8cf7ee3691bd8d418bead0ac2fc36a0e79e61397d",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "git-operations",
+      "category": "software-engineering",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "已比對直接相鄰 owner 的授權、只讀、finding 或驗證契約；本輪無足夠證據要求改寫。",
+      "next_action": "作相鄰回歸 owner 保留，新增失敗時先建立重現案例。",
+      "entry_sha256": "88982a9bea187727ddfea96c4f40e367e773ddba79ce91f9ba7e08d0e4d5efd7",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "git-readme-writer",
+      "category": "writing-content",
+      "decision": "improve",
+      "review_depth": "semantic-review",
+      "reason": "已依本輪發現修正入口的決策／授權／觸發或資源邊界；保留既有必要契約。",
+      "next_action": "執行新增正反例與相鄰 owner 的受控行為比較，檢查任務成果及不必要停點。",
+      "entry_sha256": "58aef2d6acec0e6aa971a32ffd83d9b84da87566a4766c879a8b9b21e6f66b54",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "github-actions-ci",
+      "category": "cloud-devops",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "000cd4e1c46c7956378f96184536365337641c4572ca091b53868c6d2b2ffe17",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "github-code-review",
+      "category": "testing-quality",
+      "decision": "improve",
+      "review_depth": "dependency-review",
+      "reason": "已審查入口跨 package 連結，宣告必要／條件依賴並納入安裝與資源驗證；未宣稱重寫全部領域規則。",
+      "next_action": "保持單包及分類安裝閉包回歸；依任務證據逐步補領域 outcome 測試。",
+      "entry_sha256": "5f21cd8946d7b2197b499ed9762b4e82cb823342169cfcc083eac4b3b596fb47",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "github-inline-review",
+      "category": "testing-quality",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "ad9a6d90f7f489e28e4031597474eaddb2153cdb9b8cbf500e1571de00b425f4",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "github-operations",
+      "category": "cloud-devops",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "dc15c1d8a5c36c7b33fb076ca05d3f4c4b341d854193d1a4c9caffb9b472d6fb",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "hotkey",
+      "category": "frontend-design",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "1dc46016919e2be43fe6820090e31daea8ee4c047147a3ab4d574878a8cd7d1b",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "humanizer",
+      "category": "writing-content",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "13e91a409c916101252ef38423f1c1919224e2179a2234061ae6c3ef459a9e49",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "i18n-localization",
+      "category": "software-engineering",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "362675700d7ba0c199d4f355e85a80d07e1be0e50e040b62f78510d3afd4efe9",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "image-to-code",
+      "category": "frontend-design",
+      "decision": "improve",
+      "review_depth": "dependency-review",
+      "reason": "已審查入口跨 package 連結，宣告必要／條件依賴並納入安裝與資源驗證；未宣稱重寫全部領域規則。",
+      "next_action": "保持單包及分類安裝閉包回歸；依任務證據逐步補領域 outcome 測試。",
+      "entry_sha256": "59d68a936c95484bfb657bbda67e54d642e9d3a098dcdbdab133af0ae8e33776",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "image-to-code-assets",
+      "category": "frontend-design",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "8919d045ddcbe0f03d9da788cc5456d9c5ae6c9693b5ed262adc20eb0f44e4e3",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "image-utils",
+      "category": "media-creative",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "31a466be7e456ef06497b31d7a2ef9f0aa8f708eba4bdd6a66486c5e1b877610",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "incident-response-postmortems",
+      "category": "cloud-devops",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "88fab2b1eab1f597697b0c5162583edb6a145b22d5fd8215e287c6fb124c36c9",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "incremental-implementation",
+      "category": "workflow-planning",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "d05621b9693cfde939ecbba810edcd9a3af450de409faf46c757f4299ea83113",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "interaction-patterns",
+      "category": "frontend-design",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "e0c2ae4332b9dbb14dac740d28138c07d1802ae94243e0d23eca075d6628d332",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "ios-architecture",
+      "category": "mobile-desktop",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "e7c935ce06d7d38d1fc17949b1a776070c34b53da57ebf81243ce857d10a6425",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "java-architecture",
+      "category": "software-engineering",
+      "decision": "improve",
+      "review_depth": "dependency-review",
+      "reason": "已審查入口跨 package 連結，宣告必要／條件依賴並納入安裝與資源驗證；未宣稱重寫全部領域規則。",
+      "next_action": "保持單包及分類安裝閉包回歸；依任務證據逐步補領域 outcome 測試。",
+      "entry_sha256": "6b703494d725e4a3577e9d083ba58322882d964af46c9e1b176bbac51ceb2c0b",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "java-development",
+      "category": "software-engineering",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "已比對直接相鄰 owner 的授權、只讀、finding 或驗證契約；本輪無足夠證據要求改寫。",
+      "next_action": "作相鄰回歸 owner 保留，新增失敗時先建立重現案例。",
+      "entry_sha256": "6d060983d3034905e3a943423390a8e827e3ec9bd868a0f0fc8ca0a239fa135a",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "java-testing",
+      "category": "testing-quality",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "已比對直接相鄰 owner 的授權、只讀、finding 或驗證契約；本輪無足夠證據要求改寫。",
+      "next_action": "作相鄰回歸 owner 保留，新增失敗時先建立重現案例。",
+      "entry_sha256": "6742bc9c5d84957baf7148fae3260fc8aed99743da234b2fc3ef292fee45cf94",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "javascript-development",
+      "category": "software-engineering",
+      "decision": "improve",
+      "review_depth": "semantic-review",
+      "reason": "已依本輪發現修正入口的決策／授權／觸發或資源邊界；保留既有必要契約。",
+      "next_action": "執行新增正反例與相鄰 owner 的受控行為比較，檢查任務成果及不必要停點。",
+      "entry_sha256": "1b0db80b276362b34ae0a60a00fc1c89ba0da28951b14a9d13123a5b36b6cfd3",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "jpa-hibernate-development",
+      "category": "backend-data",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "ddf7a77ac128be237bf4b28725c0b0fd1c92012ec3eeeab43d5274a335a88528",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "jquery-4-migration",
+      "category": "software-engineering",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "9e39c2564fa5a4ffb6adf7d6ee8e064f577cca656583c41c347d671155a587ae",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "jquery-development",
+      "category": "software-engineering",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "6cefceeb5819214f0ac6041eaece682957979b6ee6491aa987f4abb8bafc72f9",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "jquery-version-migration",
+      "category": "software-engineering",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "50694ed5a1e63172194f50dad4d7fb1cd037571de4667f2f436005117e3da8de",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "jvm-build-tooling",
+      "category": "software-engineering",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "562cfc86a6aa1de9dc74d048e76c1446f5ec0342765b496c3002229ff1cc69d5",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "karpathy-guidelines",
+      "category": "software-engineering",
+      "decision": "improve",
+      "review_depth": "semantic-review",
+      "reason": "已依本輪發現修正入口的決策／授權／觸發或資源邊界；保留既有必要契約。",
+      "next_action": "執行新增正反例與相鄰 owner 的受控行為比較，檢查任務成果及不必要停點。",
+      "entry_sha256": "8384941e53a5229870d51ce93532c256ee549789423f9657d9d1bed7c0ead03e",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "kubernetes-operations",
+      "category": "cloud-devops",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "aa0a4b1f8f6a48b1bb94085a2c9c45c1fc94288230af951699e5980845a69c3e",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "legacy-frontend-modernization",
+      "category": "frontend-design",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "f245b20c679a3caecaa4f23ed0644f3856f0288ec5bf74b6502bb6a73dfb6c7e",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "llm-application-delivery-workflow",
+      "category": "ai-llm",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "8dd6e8d88ff128f6ebdd5e0bb944a5664d9f5c9098ead40e7e6319110a046b27",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "llm-evals",
+      "category": "ai-llm",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "886d40ceb5f64c98f630667fd3bdd915963078eda7f71c95727b8e4e36c32327",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "lobe-icons-usage",
+      "category": "frontend-design",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "2b91244cf54907b6249be203817c9516e7dcc7f1416a6217569a1680efa8506c",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "lobe-ui-development",
+      "category": "frontend-design",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "f039e981bcebee5b8248b5af1065bae6eb6399a6975dbd0185a3c272e560fb01",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "logging-patterns",
+      "category": "software-engineering",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "1fd4189091289dcb261d932078f8c77fff41f4ddb07b54b8aed74326994f8ea1",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "logo-design",
+      "category": "media-creative",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "5900c1863053481a0ffcb8f5c12d38e1c12287c9dc9ec96df0f39caa1974c072",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "markdown-writer",
+      "category": "writing-content",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "fe92673f1c124932044bb86f02a13dcb83a00af8764354549a19b5bfa3e937bc",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "market-research",
+      "category": "research-product",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "728249409776fc2b459387a9879802e40d674e0e4f54285b1a3920c8e23779be",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "mcp-creator-design",
+      "category": "agent-skill-tooling",
+      "decision": "improve",
+      "review_depth": "semantic-review",
+      "reason": "已依本輪發現修正入口的決策／授權／觸發或資源邊界；保留既有必要契約。",
+      "next_action": "執行新增正反例與相鄰 owner 的受控行為比較，檢查任務成果及不必要停點。",
+      "entry_sha256": "c353c5ff0bbf4231001a54e4878ee47e1a22b98476f7243918f71d511f7bf857",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "mcp-ops",
+      "category": "agent-skill-tooling",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "4cbe10928a8418624914cc4c185602a6c12612e63e14c882d498cd22e0e08e46",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "mobile-app-testing",
+      "category": "testing-quality",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "8385c21b1bafcc357687a0a205ff5cbb1216c184723d1899e44d620ce45dec78",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "mongodb-development",
+      "category": "backend-data",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "eff8e989193701de7095fa5597dc2f4eaf0c57c19be344f7c26f41d5b3a4ebf7",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "multi-session-planning",
+      "category": "workflow-planning",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "602d0887efddf3e11014b1cfe597447f90b2c7af3dca61309671154e3b4715d7",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "mybatis-development",
+      "category": "backend-data",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "102fc67a86eb9df02170202af6fdbdf36fbd0671541fc8fceabac10faed3cfac",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "nextjs-development",
+      "category": "frontend-design",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "6a20aa7bba111b1857b5f22b2e8e9eb6e331731992f97383efab40ae93e4f8c3",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "nuxt-development",
+      "category": "frontend-design",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "cc841bc46c3511128a3218f79f2f071cd8c44be9a58403d265f53d594d5eb003",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "observability-engineering",
+      "category": "cloud-devops",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "5b70044c8697204ad3c73eae52392a52975118c2fa788d9c30767eb7f4577cd6",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "openai-api-development",
+      "category": "ai-llm",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "62398aa63da8bb337dc26d4d4e1d5db7e141b12587fcb7272d84c371beb4209f",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "openapi-spec-generation",
+      "category": "backend-data",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "b10e52e2cc4f5cd66da8837a20b9b6e275deea92aecf42594f77fb877957d5e4",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "pdf-operations",
+      "category": "documents-productivity",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "f32d6ade61bfba3a77e7192ae4bac1104c6226351967ffcd34a78c76f6e14680",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "pinia-state-management",
+      "category": "frontend-design",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "0ceda96b0b40438749987e4b8a02a909b29acb59c498f6fd270db4b5aa84fe21",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "pipeline-review",
+      "category": "testing-quality",
+      "decision": "improve",
+      "review_depth": "semantic-review",
+      "reason": "已依本輪發現修正入口的決策／授權／觸發或資源邊界；保留既有必要契約。",
+      "next_action": "執行新增正反例與相鄰 owner 的受控行為比較，檢查任務成果及不必要停點。",
+      "entry_sha256": "42facf6ffcf7497e3b6c0a4fdf8638b2e2ce84e93f6eb089fac74308ce153123",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "playwright-automation",
+      "category": "browser-automation",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "5669fef85a6694677ec3ad64998a03ece121595fa2a1b528d58dcbfe3ec171e5",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "postgres-operations",
+      "category": "backend-data",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "cf3caae6f29d4bd3cb62a854f602da5a01e68199c4a9914b82304cb726503bb0",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "presentation-ops",
+      "category": "documents-productivity",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "4c9d870905f46f28d39a5662c00071aaf5f013fa1913d1b8b5180352e72fc90f",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "prisma-drizzle",
+      "category": "backend-data",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "ecbda21aeac79fe6428d5c324e85138891a5ac2220f487d662e9462222248103",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "product-experimentation",
+      "category": "research-product",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "379b3f84ede997dd09dda6febe836ed7927171671637d56e6105e46cf01d6ac4",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "product-pitch-writing",
+      "category": "writing-content",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "e3880ca629ee366e094e0b6e4ff1db6bb110b39ccde2afa761c13cee934becdd",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "project-architecture-review",
+      "category": "software-engineering",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "95658e0527fd6b219c05356a241bc0036f83d681e4c53cc1f554f54380376f83",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "prompt-engineering",
+      "category": "ai-llm",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "4e7f21caeef5fd33e32fcce9592908cc50cd188881e9f91f356dc450d94e50e8",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "python-api-client-development",
+      "category": "backend-data",
+      "decision": "improve",
+      "review_depth": "dependency-review",
+      "reason": "已審查入口跨 package 連結，宣告必要／條件依賴並納入安裝與資源驗證；未宣稱重寫全部領域規則。",
+      "next_action": "保持單包及分類安裝閉包回歸；依任務證據逐步補領域 outcome 測試。",
+      "entry_sha256": "cfbd66b32243ff879446152f3a97c71b46f72b9d15dade1ecedc45d471d79fec",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "python-automation-scripting",
+      "category": "software-engineering",
+      "decision": "improve",
+      "review_depth": "dependency-review",
+      "reason": "已審查入口跨 package 連結，宣告必要／條件依賴並納入安裝與資源驗證；未宣稱重寫全部領域規則。",
+      "next_action": "保持單包及分類安裝閉包回歸；依任務證據逐步補領域 outcome 測試。",
+      "entry_sha256": "8c39fbd7cc1638a38562bdc3cea60648160173c3f483d3a957277a800d6e6a6a",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "python-backend-development",
+      "category": "backend-data",
+      "decision": "improve",
+      "review_depth": "dependency-review",
+      "reason": "已審查入口跨 package 連結，宣告必要／條件依賴並納入安裝與資源驗證；未宣稱重寫全部領域規則。",
+      "next_action": "保持單包及分類安裝閉包回歸；依任務證據逐步補領域 outcome 測試。",
+      "entry_sha256": "1f55a5a10e340ad0afcb6819f0206ae002aa5fc3493a023a564b5b63eb5f9040",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "python-concurrency-patterns",
+      "category": "software-engineering",
+      "decision": "improve",
+      "review_depth": "dependency-review",
+      "reason": "已審查入口跨 package 連結，宣告必要／條件依賴並納入安裝與資源驗證；未宣稱重寫全部領域規則。",
+      "next_action": "保持單包及分類安裝閉包回歸；依任務證據逐步補領域 outcome 測試。",
+      "entry_sha256": "9bf46b72324b0eed125ba9d7413896d63c6c6d8d35eb9209722eb747ef32736a",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "python-data-engineering",
+      "category": "backend-data",
+      "decision": "improve",
+      "review_depth": "dependency-review",
+      "reason": "已審查入口跨 package 連結，宣告必要／條件依賴並納入安裝與資源驗證；未宣稱重寫全部領域規則。",
+      "next_action": "保持單包及分類安裝閉包回歸；依任務證據逐步補領域 outcome 測試。",
+      "entry_sha256": "97ddd594e7e9eb467774373dc16b1c27110b56555e9d5e39e264905dc83526c6",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "python-development",
+      "category": "software-engineering",
+      "decision": "improve",
+      "review_depth": "semantic-review",
+      "reason": "已依本輪發現修正入口的決策／授權／觸發或資源邊界；保留既有必要契約。",
+      "next_action": "執行新增正反例與相鄰 owner 的受控行為比較，檢查任務成果及不必要停點。",
+      "entry_sha256": "f1bcf8f4884b16446d3d4816ef71f6bbed2b7a87b3a4072bb8f1bf809ac31b18",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "python-observability-debugging",
+      "category": "testing-quality",
+      "decision": "improve",
+      "review_depth": "dependency-review",
+      "reason": "已審查入口跨 package 連結，宣告必要／條件依賴並納入安裝與資源驗證；未宣稱重寫全部領域規則。",
+      "next_action": "保持單包及分類安裝閉包回歸；依任務證據逐步補領域 outcome 測試。",
+      "entry_sha256": "45ff67ec20810eda60433962843955905146c5026f77068af5dc2d1f2995159b",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "python-packaging-release",
+      "category": "software-engineering",
+      "decision": "improve",
+      "review_depth": "semantic-review",
+      "reason": "已依本輪發現修正入口的決策／授權／觸發或資源邊界；保留既有必要契約。",
+      "next_action": "執行新增正反例與相鄰 owner 的受控行為比較，檢查任務成果及不必要停點。",
+      "entry_sha256": "a9384e3b6e0a27743b9ef3d8c51ba409ec98da740076c8d64cc40ca3d3bc8d87",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "python-security-hardening",
+      "category": "security-governance",
+      "decision": "improve",
+      "review_depth": "dependency-review",
+      "reason": "已審查入口跨 package 連結，宣告必要／條件依賴並納入安裝與資源驗證；未宣稱重寫全部領域規則。",
+      "next_action": "保持單包及分類安裝閉包回歸；依任務證據逐步補領域 outcome 測試。",
+      "entry_sha256": "8ca0e8a02cad2409e695b854e77870f30f1c9aa5eaa098c6451c324a2ec23daa",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "python-testing-engineering",
+      "category": "testing-quality",
+      "decision": "improve",
+      "review_depth": "dependency-review",
+      "reason": "已審查入口跨 package 連結，宣告必要／條件依賴並納入安裝與資源驗證；未宣稱重寫全部領域規則。",
+      "next_action": "保持單包及分類安裝閉包回歸；依任務證據逐步補領域 outcome 測試。",
+      "entry_sha256": "2374177a3fda93bad3b8a447c3d8791a11c6922155dc608b7509509417f0fb26",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "python-web-scraping",
+      "category": "browser-automation",
+      "decision": "improve",
+      "review_depth": "dependency-review",
+      "reason": "已審查入口跨 package 連結，宣告必要／條件依賴並納入安裝與資源驗證；未宣稱重寫全部領域規則。",
+      "next_action": "保持單包及分類安裝閉包回歸；依任務證據逐步補領域 outcome 測試。",
+      "entry_sha256": "a8f6efdd173e0212f717d35b1297f9665ff3f4a8f235077f0e2348d46a779394",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "rag-vector-search",
+      "category": "ai-llm",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "4a8f5ebe979bfebfc71bf58bd724c6eabcae9d4a98357110cfa997f0578e7531",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "react-native-expo",
+      "category": "mobile-desktop",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "182dabf41a2c5cc61338e12a1d6e4a01cb35fde279b53ac0bcf4419c7c70f2b7",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "react-perf",
+      "category": "testing-quality",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "653410c09012b97f78f6336247f7b76576270a0ea293af2177f883883cf85b1e",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "react-ui-patterns",
+      "category": "frontend-design",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "932dadedc5fa9f1a23cd09b53ca4674a2b54d256aa385115a1be778b34975536",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "receiving-code-review",
+      "category": "testing-quality",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "已比對直接相鄰 owner 的授權、只讀、finding 或驗證契約；本輪無足夠證據要求改寫。",
+      "next_action": "作相鄰回歸 owner 保留，新增失敗時先建立重現案例。",
+      "entry_sha256": "19fdc93001ed834245e92387f94966db8f44f42f9e85281b85b73763c2f8891a",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "redis-upstash",
+      "category": "backend-data",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "08c9898c520767a5b2de7f5467bca1cf92595cdb3cd8e4317c2fe60f16b567c4",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "remotion-video-toolkit",
+      "category": "media-creative",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "a43eea7d0e096309fbce74333e2eb29d651eafa134ed0f4642947f4ca1397f39",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "repo-ready",
+      "category": "cloud-devops",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "fea5eab762ae83c1a4de529d871a7d81ab88f6ae603159fdb9eb6f6a13839fa0",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "requirements-deep-dive",
+      "category": "workflow-planning",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "1a71de680f48141feecc597c15e08c3683aa16210c9ffee5f910b7f26e43d8b2",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "responsive-design",
+      "category": "frontend-design",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "e6aa35558fcb320ee65910e0af593ad3cac96623ab079ed56caa2d1aef86b511",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "reverse-engineering",
+      "category": "security-governance",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "0eefee4d4f3c459f8bae8446153e3288bdd42dec7ba2aaeef8f931f591c515b2",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "security-code-review",
+      "category": "security-governance",
+      "decision": "improve",
+      "review_depth": "dependency-review",
+      "reason": "已審查入口跨 package 連結，宣告必要／條件依賴並納入安裝與資源驗證；未宣稱重寫全部領域規則。",
+      "next_action": "保持單包及分類安裝閉包回歸；依任務證據逐步補領域 outcome 測試。",
+      "entry_sha256": "e32840e9c9588102fbd3371d75e8137b0304f646c8d94a13a9ee3cfea05e2513",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "security-scanning",
+      "category": "security-governance",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "88638ccfbca776fceba8ef0ca616bf68982ef30388e3fedb541a643027378b6d",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "self-improvement",
+      "category": "workflow-planning",
+      "decision": "improve",
+      "review_depth": "semantic-review",
+      "reason": "已依本輪發現修正入口的決策／授權／觸發或資源邊界；保留既有必要契約。",
+      "next_action": "執行新增正反例與相鄰 owner 的受控行為比較，檢查任務成果及不必要停點。",
+      "entry_sha256": "336f534316671738dbd9953f35be22bfc5d58287a5454dd09273a5ecd8ed2a22",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "service-mesh-engineering",
+      "category": "cloud-devops",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "73210524d2c62a08ba795daabaa06545d8d5125150c13d7815cea2c5d989f909",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "session-handoff",
+      "category": "workflow-planning",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "b947ce2a8f7397e55bf46cfa17c1b4c92cc15a7d088c51ea933cb566e79e4bc0",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "shadcn-ui",
+      "category": "frontend-design",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "a58d1f73e7e3bde06b7c434942a6d595f6cfbef9c661f595088d72243493c410",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "short-video-script",
+      "category": "media-creative",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "cecacc0dc9562b2458a8275509692ddba885468eaf78d99896c538388c1344e2",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "skill-audit",
+      "category": "agent-skill-tooling",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "317c771ade5fa1b23c3a5060425290ca0e7a73b50532713009ed49cb18a584cc",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "skill-creator-design",
+      "category": "agent-skill-tooling",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "76b170d473923751d542db86052ac59fd1a2086c76c523a23b1d6606f9237dcd",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "skill-executor",
+      "category": "agent-skill-tooling",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "f839ba0224666d6b6b8cfaf2bf992680511048d24783a846e56244bff9e3aa39",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "skill-explorer",
+      "category": "agent-skill-tooling",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "23daf483629027dcfdf2fd95181daa124e300ee1e7ebdf940ceebd22c435dd58",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "skill-gap-analyzer",
+      "category": "agent-skill-tooling",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "ae98d857c49d6649f8d5fedf0d2ff116fdc4d4a333e14994da0d34e98e1dd460",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "skill-lint",
+      "category": "agent-skill-tooling",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "6570264a01ca03d8d67a8909b8ab6afbf57b2c5cecb00d248d5ab8c0f9a86023",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "skill-scan",
+      "category": "agent-skill-tooling",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "65e10a8d331071944a173bb7a00724ecd16f6bf003bd89284cf00bd8346f82c0",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "skill-security-review",
+      "category": "agent-skill-tooling",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "c6a07de291d28f4738bea0825a71b6f25e39d859fd83ba4b906cd0d4a796419e",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "skillctl",
+      "category": "agent-skill-tooling",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "e7fa33ad5d91076eeae10e44a1e12fc9c100128af5f102cd50763bcf6a0a254e",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "skillforge",
+      "category": "agent-skill-tooling",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "09606fed73ba6ae5ae1adef5730583de9ddf72d481d10ec0f00dacd9761d0162",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "solution-discovery",
+      "category": "research-product",
+      "decision": "improve",
+      "review_depth": "eval-design",
+      "reason": "保留既有 owner 入口，補齊首批 pilot 的具體任務及相鄰路由案例。",
+      "next_action": "在受控 host/catalog 與隔離 fixture 下執行 A/B，先做小型 smoke 再擴大 trial。",
+      "entry_sha256": "7bd0002405d5fe382eb0be4ebb48e7d8157ddf39da76060cd0680b793a5b1fde",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "spec-flow",
+      "category": "workflow-planning",
+      "decision": "improve",
+      "review_depth": "eval-design",
+      "reason": "保留既有 owner 入口，補齊首批 pilot 的具體任務及相鄰路由案例。",
+      "next_action": "在受控 host/catalog 與隔離 fixture 下執行 A/B，先做小型 smoke 再擴大 trial。",
+      "entry_sha256": "d9bf218c089185382525f75c8ba39d5ebbb15c4b4f3ebad7cf92fbdeb3ab40f0",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "specification-authoring",
+      "category": "writing-content",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "dd2db97e038bce0342877902dc4d4be958d5d6e8ba73396e2e195c8baaea5c9e",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "spreadsheet-ops",
+      "category": "documents-productivity",
+      "decision": "improve",
+      "review_depth": "eval-design",
+      "reason": "保留既有入口，新增帶具體輸入及可評分結果的分類代表案例。",
+      "next_action": "在隔離環境執行 fixture 任務，保存實際產物與驗證結果。",
+      "entry_sha256": "685e7fd14b407bf40cda6d0432f937cc95b77caaa080bed22112125beac4d5a2",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "spring-cloud-microservices",
+      "category": "backend-data",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "5ea232dfe57600483edffaaba893438537d9cf13635b3c9a5579ca0aa68c34fa",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "spring-development",
+      "category": "backend-data",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "fca637b7c53691c8a44f7ec1f3e49f79664d144e0c378d70dea5e370c98e37c1",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "spring-security",
+      "category": "backend-data",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "01b97c74797ed12dfa89c90796fe5f70cec81f93d227297dfc4874cb2fdfd20e",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "spring-webflux",
+      "category": "backend-data",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "66cf5eb3b19d334531930199a2bb6b2025ba64f18695a9a6ec636d2d71001acf",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "sql-best-practices",
+      "category": "backend-data",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "421387a07fdbe299ece8f320af78f409991872b5164108874fedbb9356b43249",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "stable-diffusion-image-generation",
+      "category": "media-creative",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "5bc85d781c971edbb56658ccdda53e8073baf3927e0b7a1e097f1d61bfa338f5",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "storyboard-creation",
+      "category": "media-creative",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "4a982bc2d64d1e2debe4065f894e3e3a0e25cb28d0e900c705f08cd809824b54",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "stripe-payments",
+      "category": "backend-data",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "ef07275aa9de024cea0e42e13563d74a2d462a7e245dfaa09ef8284f7296a0f7",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "subagent-architecture",
+      "category": "agent-skill-tooling",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "acf4bb97c50f996a1f96baf81107cd5a6b894244b88db59d2fbd549625fc49a7",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "subtitle-captions",
+      "category": "media-creative",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "f151e89bc8fe876c40d63ca4effd039a306e71f3bd6a5aaea51212a1a6fa3547",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "summary-ops",
+      "category": "writing-content",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "71e371bf24e1c40fec657d1e1d805a6e93862b2d65ea794a2354868f7247c65f",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "supabase-development",
+      "category": "backend-data",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "413980cf461a448f9cdb16bf983f4cc2957de0455e3f631ebee57b9248c322f7",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "swift-concurrency",
+      "category": "mobile-desktop",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "023d706fd15f9c2a8cccd2df8026a00c5b578685903f71dec07608e2df071c43",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "swift-testing",
+      "category": "testing-quality",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "a18e7139618044147ee429aa20df41c441668a29898bc9458837fffcf7799c9f",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "swiftui-development",
+      "category": "mobile-desktop",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "b169768242776d274d0625acc6f5bfdcb923bad5626cbc34d4591e3db309e46c",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "systematic-debugging",
+      "category": "testing-quality",
+      "decision": "improve",
+      "review_depth": "semantic-review",
+      "reason": "已依本輪發現修正入口的決策／授權／觸發或資源邊界；保留既有必要契約。",
+      "next_action": "執行新增正反例與相鄰 owner 的受控行為比較，檢查任務成果及不必要停點。",
+      "entry_sha256": "242c7cced56ab2ace281604404403a2ef454b2d097f185d3cab766fbee93545e",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "tailwind-development",
+      "category": "frontend-design",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "c66c37a33aac6b70078a90e563089cfbc60a07283d3439fc26bf1fb4855875ca",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "tailwind-patterns",
+      "category": "frontend-design",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "9dd38314a9d7fdc96f15e01840b84a3bd2d06770d838c356baba3064e3ebb420",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "taste-skill",
+      "category": "frontend-design",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "161e45a218d98cd28e2f6dc22eda725086d78e5cf88cb95fad9df7f7ecde59db",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "temporal-workflow-engineering",
+      "category": "backend-data",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "bedcee6ddcdaa49beba5557513912b90cc3e1364a22fa8a04793644c57a676e4",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "terminal-ops",
+      "category": "cloud-devops",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "e7f1471bacc7048828ac20a7e5d5d607e325e691fb9fa3d38499f57ea2163338",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "terraform-infrastructure",
+      "category": "cloud-devops",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "c85b6b49eb2077420209611cf5001af75c7490ff53fccdf109425105357304bc",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "test-driven-development",
+      "category": "testing-quality",
+      "decision": "improve",
+      "review_depth": "semantic-review",
+      "reason": "已依本輪發現修正入口的決策／授權／觸發或資源邊界；保留既有必要契約。",
+      "next_action": "執行新增正反例與相鄰 owner 的受控行為比較，檢查任務成果及不必要停點。",
+      "entry_sha256": "39e056aa691fbf84b8e0a1e6f73bae2096d81b62cc0e3b4a1a032f677ea5b9b1",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "testing-strategy",
+      "category": "testing-quality",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "已比對直接相鄰 owner 的授權、只讀、finding 或驗證契約；本輪無足夠證據要求改寫。",
+      "next_action": "作相鄰回歸 owner 保留，新增失敗時先建立重現案例。",
+      "entry_sha256": "1458e59e0b3f42498e399a99a48dfc77688fae9bc44da1b094d844397363e00d",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "text-to-speech",
+      "category": "media-creative",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "d2cd6e5245b24842d7e893e3cc4528f9a1d19354440888c030cc852c8b32f392",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threat-modeling",
+      "category": "security-governance",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "39145f766b39e643e9ba565f0162b786a470374f82a79fcc6470b5dc68d97ad0",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-accessibility",
+      "category": "threejs-graphics",
+      "decision": "improve",
+      "review_depth": "dependency-review",
+      "reason": "已審查入口跨 package 連結，宣告必要／條件依賴並納入安裝與資源驗證；未宣稱重寫全部領域規則。",
+      "next_action": "保持單包及分類安裝閉包回歸；依任務證據逐步補領域 outcome 測試。",
+      "entry_sha256": "9acff18351b88f50ee28d9d58b1a7c2818c35d617c098873e0e595860d99e901",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-animation-system",
+      "category": "threejs-graphics",
+      "decision": "improve",
+      "review_depth": "dependency-review",
+      "reason": "已審查入口跨 package 連結，宣告必要／條件依賴並納入安裝與資源驗證；未宣稱重寫全部領域規則。",
+      "next_action": "保持單包及分類安裝閉包回歸；依任務證據逐步補領域 outcome 測試。",
+      "entry_sha256": "82343b641bb67bf39d7edcebfa2aa13420676f24fa28b56b98a7633ea4e4a2ca",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-assets-gltf",
+      "category": "threejs-graphics",
+      "decision": "improve",
+      "review_depth": "dependency-review",
+      "reason": "已審查入口跨 package 連結，宣告必要／條件依賴並納入安裝與資源驗證；未宣稱重寫全部領域規則。",
+      "next_action": "保持單包及分類安裝閉包回歸；依任務證據逐步補領域 outcome 測試。",
+      "entry_sha256": "dd1540bbe4b339d5cdaffd6d7a31d8031db467c954768215503d5efb70f3b415",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-atmosphere-aerial-perspective",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "b1e927812643ef68ba3d2cfb55c728f7fd014fa63492aea40d9028fe9e69847f",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-bloom",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "f73ba8d6453277f1e07cbbb901d0c3c913adfd7d9b523bb9076dc7fcc5b1d925",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-cad-bim",
+      "category": "threejs-graphics",
+      "decision": "improve",
+      "review_depth": "dependency-review",
+      "reason": "已審查入口跨 package 連結，宣告必要／條件依賴並納入安裝與資源驗證；未宣稱重寫全部領域規則。",
+      "next_action": "保持單包及分類安裝閉包回歸；依任務證據逐步補領域 outcome 測試。",
+      "entry_sha256": "bb7be76d7697c464c24e215d3acb0e777f79bbe9ec1ec075687cab1368716586",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-camera-direction",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "0a3eb1790bec5313d23b2fce37aeb61541570276adb0b8d3932c4c2f5d043d6b",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-capture-recording",
+      "category": "threejs-graphics",
+      "decision": "improve",
+      "review_depth": "dependency-review",
+      "reason": "已審查入口跨 package 連結，宣告必要／條件依賴並納入安裝與資源驗證；未宣稱重寫全部領域規則。",
+      "next_action": "保持單包及分類安裝閉包回歸；依任務證據逐步補領域 outcome 測試。",
+      "entry_sha256": "75919a12ae5e332753487ce3f33793d9cacd2e845655777f36e0b3868da55e1b",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-csg-modeling",
+      "category": "threejs-graphics",
+      "decision": "improve",
+      "review_depth": "dependency-review",
+      "reason": "已審查入口跨 package 連結，宣告必要／條件依賴並納入安裝與資源驗證；未宣稱重寫全部領域規則。",
+      "next_action": "保持單包及分類安裝閉包回歸；依任務證據逐步補領域 outcome 測試。",
+      "entry_sha256": "244962ad94de3e24fabcf5b395f272f17059b5120f107f0b14b6d6254d688ea2",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-data-visualization",
+      "category": "threejs-graphics",
+      "decision": "improve",
+      "review_depth": "dependency-review",
+      "reason": "已審查入口跨 package 連結，宣告必要／條件依賴並納入安裝與資源驗證；未宣稱重寫全部領域規則。",
+      "next_action": "保持單包及分類安裝閉包回歸；依任務證據逐步補領域 outcome 測試。",
+      "entry_sha256": "c35a2a92e2de82a80d251ff844fd113972c6dfee95f70dc668c05927bc7dd6ba",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-deformable-simulation",
+      "category": "threejs-graphics",
+      "decision": "improve",
+      "review_depth": "dependency-review",
+      "reason": "已審查入口跨 package 連結，宣告必要／條件依賴並納入安裝與資源驗證；未宣稱重寫全部領域規則。",
+      "next_action": "保持單包及分類安裝閉包回歸；依任務證據逐步補領域 outcome 測試。",
+      "entry_sha256": "f33c879f2809c6427ab1a91657ffa064553b5802919925d9db394e815bc00fba",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-development",
+      "category": "threejs-graphics",
+      "decision": "improve",
+      "review_depth": "semantic-review",
+      "reason": "已修正 task-scoped routing，並使交付條件區分實作產物與分析／規劃答案；保留既有 renderer、ownership、資源與驗證契約。這是靜態歧義修正，未證明模型行為改善。",
+      "next_action": "執行新增正反例與相鄰 owner 的受控行為比較，檢查任務成果及不必要停點。",
+      "entry_sha256": "07beef40a40f9b24feb997700ffb866966632b6fe42468c29fc10f5b8c9b8abe",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-editor-authoring",
+      "category": "threejs-graphics",
+      "decision": "improve",
+      "review_depth": "dependency-review",
+      "reason": "已審查入口跨 package 連結，宣告必要／條件依賴並納入安裝與資源驗證；未宣稱重寫全部領域規則。",
+      "next_action": "保持單包及分類安裝閉包回歸；依任務證據逐步補領域 outcome 測試。",
+      "entry_sha256": "6efee424f9ac5d8e0a3fd179ca7bf3fe16b11477ca207d1c0535a7caa658cfb5",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-exposure-color-grading",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "351403844dfada8131a83574d9e51c518aacef7ece32fac86367a20912764664",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-framework-integrations",
+      "category": "threejs-graphics",
+      "decision": "improve",
+      "review_depth": "dependency-review",
+      "reason": "已審查入口跨 package 連結，宣告必要／條件依賴並納入安裝與資源驗證；未宣稱重寫全部領域規則。",
+      "next_action": "保持單包及分類安裝閉包回歸；依任務證據逐步補領域 outcome 測試。",
+      "entry_sha256": "ef65fb69b0797c9a4462219b7bdc6f681581620c72a254c2732396c5e0e35b79",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-gameplay-systems",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "fa44f0c4be0724af663b8e09c70b049eb4763a1ea562880bcc9d6865935c838b",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-geometry",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "ca4eeb34e664654fd08eb225e6f1e1889d019319c5382f04251a48d3f178053a",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-image-pipeline",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "5269f04fe722aa684e2688378e9380a6039c57ef51cf089b5e5475324fb2c30f",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-interaction-input",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "e6a79cf38b2093473501bf2ec7ede24ed83dbe02f6abddefbb5431d31fc24fbb",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-large-worlds-geospatial",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "cbf51a0965a2e42440e1262876301b5ed9213cbfcc60b96378c8ad3a6f45c640",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-materials-lighting",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "28b7d6e60eab3fb26a47350dd4c1eb207beb254b94a316ad9a709422346f248c",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-math-transforms",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "8c5581045b6bc1390bf1c3b7a0fb8b81e821aa1100072903a1303406359b0af0",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-navigation-crowds",
+      "category": "threejs-graphics",
+      "decision": "improve",
+      "review_depth": "dependency-review",
+      "reason": "已審查入口跨 package 連結，宣告必要／條件依賴並納入安裝與資源驗證；未宣稱重寫全部領域規則。",
+      "next_action": "保持單包及分類安裝閉包回歸；依任務證據逐步補領域 outcome 測試。",
+      "entry_sha256": "4a86f4d0ebe0c4f37f28c766ade1fee2ee313fea4ecbd8c6d93a190f92c09194",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-networked-experiences",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "d301381d1508d5588a27a3aff7ae6a9349b044afa1d6945f8cb42ec1d7a5d960",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-offscreen-workers",
+      "category": "threejs-graphics",
+      "decision": "improve",
+      "review_depth": "dependency-review",
+      "reason": "已審查入口跨 package 連結，宣告必要／條件依賴並納入安裝與資源驗證；未宣稱重寫全部領域規則。",
+      "next_action": "保持單包及分類安裝閉包回歸；依任務證據逐步補領域 outcome 測試。",
+      "entry_sha256": "7eeffdefe587f3234ba9e46ca994e3cace6c64da442dbd335a7925354f8159cb",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-parallax-occlusion-mapping",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "c924f3cbbcc6815de5965cf934d6efb8368626f59f93536930e4d4e55e21c9f2",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-path-tracing",
+      "category": "threejs-graphics",
+      "decision": "improve",
+      "review_depth": "dependency-review",
+      "reason": "已審查入口跨 package 連結，宣告必要／條件依賴並納入安裝與資源驗證；未宣稱重寫全部領域規則。",
+      "next_action": "保持單包及分類安裝閉包回歸；依任務證據逐步補領域 outcome 測試。",
+      "entry_sha256": "52480f1b0e2bd5b75abcf75ddf78181b238a9f5798684b2bbb05191931bd6822",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-performance-memory",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "fdbeeb3c0b1e5a99169c5aed8c76ca96395116a173b7b6261f35702c8300ddb4",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-physics-audio",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "8fbb2fe7915d8e274363d275c22901b3c7a5dba1bdc89075a380c13cee66c3e5",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-physics-simulation",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "80f8bd401d71f80802559a73c17708fb323ea597beb79a74021adaf83dbb4b67",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-point-clouds-splats",
+      "category": "threejs-graphics",
+      "decision": "improve",
+      "review_depth": "dependency-review",
+      "reason": "已審查入口跨 package 連結，宣告必要／條件依賴並納入安裝與資源驗證；未宣稱重寫全部領域規則。",
+      "next_action": "保持單包及分類安裝閉包回歸；依任務證據逐步補領域 outcome 測試。",
+      "entry_sha256": "8957fa94f5ae15d3a211c275cb875e0a4f2ae181b18730da50f8cbd5b25f26fa",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-postprocessing",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "b36bd81052aaf5a6c10792ce464e1e71e7c2ff77ff1e2c356d05c1103d9e8d0c",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-precipitation-surfaces",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "cb699cca4539bfa97237c011730ae6496de9e2d56baad2ab9805c666e5f42297",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-procedural-animation",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "a73c960f496d684d0c1c8f6222430de436a1d6e53e8b657bfcb903a643267d0a",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-procedural-architecture",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "1fe875d6e43f2018592ab079931964ce025e37a5542e499232d84e702f6414c7",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-procedural-characters",
+      "category": "threejs-graphics",
+      "decision": "improve",
+      "review_depth": "dependency-review",
+      "reason": "已審查入口跨 package 連結，宣告必要／條件依賴並納入安裝與資源驗證；未宣稱重寫全部領域規則。",
+      "next_action": "保持單包及分類安裝閉包回歸；依任務證據逐步補領域 outcome 測試。",
+      "entry_sha256": "d22b2444b99803582eb9ed6f3385ea57c1d2c0ef20b10a76ae362af11f2c23b1",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-procedural-fields",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "2ab18c82fb3303b1b8a14e42641a2c3d1b34681d15612937dd9b2134d200874f",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-procedural-geometry",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "b967b3204dfae549903b8c5ea5d1c4c20bf631b09f0d0fff78771bffb0504bcc",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-procedural-materials",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "181be7a1460fe96218a66815cd85e8a47c85d3add35b539051b42bbe55556ad4",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-procedural-planets",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "776b474d6d063aa131835b97adffcd04875921393712c3739d2aabf36e756c6f",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-procedural-vegetation",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "ba14fdb8de6f7a48525106cd36fcdb416b7bfedb8ec94c8f277a79df053a4158",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-procedural-vfx",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "f07d76f1950f7322771a0b968e0010ee2ceeee457048f66a85c85dc5461f84ed",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-project-architecture",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "733eaeda5a25d154e1a8be782b87ecc685777d1705c799b9e8f4d569d6b4ac2f",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-raymarched-space-effects",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "e6988fc39c387cfe9c1116e07f8972f18f240c38381df13fa0ee707beea6b451",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-react-three-fiber",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "fbd4c86f5ccd035441047225503e548429097fd148df0589d47a69e53447ee0d",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-rendering-platforms",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "dc87dde9cabbbb50ab9b6dd02cd2d237f0d94646bef8340cea2c7a66c000f44d",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-scene-lifecycle",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "7fa42447ff821e68cb64e06cde61ea1f4a766c579746a6f8808f05c378dee66b",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-screen-space-ambient-occlusion",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "4cbf8ff856e1a9ac56b95317a9ccfd8dd50b24e0e5088f2a43d157be78d81c92",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-security-deployment",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "2a2b67c44b2c203c475cc9bb26f31472fd74ad49fc44c11247e347d12e98f247",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-shaders",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "3d407fa72e74d70c2ecb9735e19285b37a5f2e83f3bad0bda452769eedd2bbb5",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-shadow-systems",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "0ed1af17d547f867425366051c7f2a21b47c55f3656b6dce76eb85cc36e354b9",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-spatial-audio",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "9a21c55d3eb6334afec6a98c644c6cf8cb7517b625ecc62dfffff457f3e82295",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-spectral-ocean",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "23b7af0f3776f35b38f35f00da9b32311316a890cbe004c5ee7394ae60c70453",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-temporal-surfaces",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "c73566eb2b0af6d7fe3622149c0c49cb17b5bb1000c2f6a5e9c796f013fe86f5",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-testing-debugging",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "0f3669a7648a53c3897e07a4d5e55bc8ad69fbed2575c1fd33e3c9cf19590666",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-ui-overlays",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "290e073705eff6acdec863360c3c09eb32dc155aca304875aa2109fec7b215de",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-version-migration",
+      "category": "threejs-graphics",
+      "decision": "improve",
+      "review_depth": "dependency-review",
+      "reason": "已審查入口跨 package 連結，宣告必要／條件依賴並納入安裝與資源驗證；未宣稱重寫全部領域規則。",
+      "next_action": "保持單包及分類安裝閉包回歸；依任務證據逐步補領域 outcome 測試。",
+      "entry_sha256": "b56e8d54d84926d922983e615b1895ab75edcccd60f4cf39004f868e94479b4c",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-visual-validation",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "03a9d452e03e51ebb04e24da9b1cef973e7387ee47ae5a4fe6c5d0657e5dee54",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-volumetric-clouds",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "31c44274826a83c8a917f21325f1f102f14f783befdc8a3cfd03bb2a6bf5b1aa",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-water-optics",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "277995b3262fdd792fceee2c6d75cee32e88b8d6b0282db6a5f3fd9a7e18c1f1",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-webgpu-tsl",
+      "category": "threejs-graphics",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "0e0a4783a32e79b28886d08a5863f4c38fcdded49daffababa33234fa23f7dfb",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "threejs-webxr-accessibility",
+      "category": "threejs-graphics",
+      "decision": "improve",
+      "review_depth": "dependency-review",
+      "reason": "已審查入口跨 package 連結，宣告必要／條件依賴並納入安裝與資源驗證；未宣稱重寫全部領域規則。",
+      "next_action": "保持單包及分類安裝閉包回歸；依任務證據逐步補領域 outcome 測試。",
+      "entry_sha256": "c436bf5879bdccd085a23be66280be25b5d7421c6e433ea0042a8d6dd7b9dff3",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "throwaway-prototyping",
+      "category": "workflow-planning",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "df6b9094983e3d49a973a871ef736df0c5c237b7b19a32bf7735ac5fd893ec83",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "todo-first",
+      "category": "workflow-planning",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "b99bc8f4a523b84c828c0d54050151bd7f17176c6bf1a901a729d11b7ed5ddea",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "typescript-development",
+      "category": "software-engineering",
+      "decision": "improve",
+      "review_depth": "semantic-review",
+      "reason": "已依本輪發現修正入口的決策／授權／觸發或資源邊界；保留既有必要契約。",
+      "next_action": "執行新增正反例與相鄰 owner 的受控行為比較，檢查任務成果及不必要停點。",
+      "entry_sha256": "f401edaf1134c68e8cfe7b13fcc6adced2a924681970e051278e0db2d7b5dd37",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "ugc-video-ads",
+      "category": "media-creative",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "2849a6371c24e61a778b7238c69612d23a1c12f70db6a82c0b11ec0d0cccfecb",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "ui-styling",
+      "category": "frontend-design",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "99917d92fb0a7437206344d237b17534a8a55f150e30b4fc12cb4f79414c5e46",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "ux-research",
+      "category": "research-product",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "c192839bf1bd8790a0b4558ca59e59ba405ee0bef78f32b1aa02b47370a0f851",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "ux-writing",
+      "category": "writing-content",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "27b681a1daacbcacfa052c7da6379a09239544353f84b3bde0459e7bbc5b6ff3",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "vercel-deployment",
+      "category": "cloud-devops",
+      "decision": "improve",
+      "review_depth": "semantic-review",
+      "reason": "已依本輪發現修正入口的決策／授權／觸發或資源邊界；保留既有必要契約。",
+      "next_action": "執行新增正反例與相鄰 owner 的受控行為比較，檢查任務成果及不必要停點。",
+      "entry_sha256": "56a6f59988c6259c2be6d3988e2ce9a0f28a872bb1e0634c2e4367e29eb8fae8",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "verification-before-completion",
+      "category": "testing-quality",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "已比對直接相鄰 owner 的授權、只讀、finding 或驗證契約；本輪無足夠證據要求改寫。",
+      "next_action": "作相鄰回歸 owner 保留，新增失敗時先建立重現案例。",
+      "entry_sha256": "33dea5fa9053824abb22d7399712c1cb7aa9a9b7bfd2b0c7ab2f4b3744644760",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "verified-software-delivery",
+      "category": "workflow-planning",
+      "decision": "improve",
+      "review_depth": "semantic-review",
+      "reason": "已依本輪發現修正入口的決策／授權／觸發或資源邊界；保留既有必要契約。",
+      "next_action": "執行新增正反例與相鄰 owner 的受控行為比較，檢查任務成果及不必要停點。",
+      "entry_sha256": "14d44d2a85e4f811fc3a9bf9fb15b3667fcb54491f0fc84cdb006527eec89632",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "video-edit",
+      "category": "media-creative",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "b843845a246b4884ec0800d4aef66343d680a4714ccd8a4e3748f840b3e5caab",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "video-production-workflow",
+      "category": "media-creative",
+      "decision": "improve",
+      "review_depth": "eval-design",
+      "reason": "核對入口與 approval reference，修正原案例把明示 full-run 一律評成必須重問的預言，補實際產品段落及保留審閱的反例；入口未改。",
+      "next_action": "在隔離 renderer/stub 環境驗證真實產物、授權延續與保留審閱；沒有 rendering 能力時不得把規畫當影片完成。",
+      "entry_sha256": "ab3e92e25e23858bd763ad07fde2771e188bf2aa78295fc0f85d5d9ce73443fa",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "visual-regression-testing",
+      "category": "testing-quality",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "815a4771b5b9acf8abe264a3ed4c45e0d17de80976f510e9514c37ece4501c04",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "vite",
+      "category": "frontend-design",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "fd8533e3a2f6d992d435d4d46985cb628e4ae5a5e6e9c4b2961cd8da2b155ef7",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "vlog-production",
+      "category": "media-creative",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "da4309ee21a9a9d89b8992eda0b96b502c704947eccecb70ee682d4eac36bd11",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "vue-composition-api",
+      "category": "frontend-design",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "1a9ca0dc850eceedb3679f9d599eca24a71e9096faa6f096aa8fecbee7d572c6",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "vue-debug-guides",
+      "category": "testing-quality",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "dc1f4713fdf5e0bf0774ea4caedd575d15bc46f2b530f641c737d97729d26cd2",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "vue-development",
+      "category": "frontend-design",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "f56f29d3e613a476523c62e1f973b9ca7e99b09c934bfb491293fae809739dd4",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "vue-router-patterns",
+      "category": "frontend-design",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "40e2d05ef581452be01deecba1fe07115cc1cc7ba306579b12e3255bb6ee545b",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "vue-testing",
+      "category": "testing-quality",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "c0be81ac3bf31200c419b9b04c005691e3e0903c201626454804c3f797a7adae",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "vulnerability-variant-analysis",
+      "category": "security-governance",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "a8b6a178bfd17ec3fcfe0038090e4bc1f21f7525afd166487ddd1cc5654071b3",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "web-page-design-to-code",
+      "category": "frontend-design",
+      "decision": "improve",
+      "review_depth": "semantic-review",
+      "reason": "已依本輪發現修正入口的決策／授權／觸發或資源邊界；保留既有必要契約。",
+      "next_action": "執行新增正反例與相鄰 owner 的受控行為比較，檢查任務成果及不必要停點。",
+      "entry_sha256": "64f2625eaa0304d191251b5caf47a3395713c4d758377f565374da47baf24db6",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "web-research-ops",
+      "category": "research-product",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "16274551110dd7f90fd30e7fac4d17a8f21516cce59abb0e364d91ddd980b101",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "webapp-testing",
+      "category": "testing-quality",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "bbcde7330a408791eda9f9ba5715b34fab5c2f2ef73c38fbe03a6af2177520c7",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "website-redesign-to-code",
+      "category": "frontend-design",
+      "decision": "improve",
+      "review_depth": "semantic-review",
+      "reason": "已依本輪發現修正入口的決策／授權／觸發或資源邊界；保留既有必要契約。",
+      "next_action": "執行新增正反例與相鄰 owner 的受控行為比較，檢查任務成果及不必要停點。",
+      "entry_sha256": "f8a3abb113972b2075257a81db96d4cad687b267329847b19e30e5ec45cb7fe6",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "word-document-ops",
+      "category": "documents-productivity",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "e716524fcd0d1f17a016d2a4c6edd92bcec5c24faa7e4e7991cc955ba02c1ad9",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "wordpress-development",
+      "category": "backend-data",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "aa8140a7facf9b0245bece6ed7aa8bbea58175da1928ac7aff9a4c44451392a8",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "workspace-google-ops",
+      "category": "documents-productivity",
+      "decision": "defer",
+      "review_depth": "inventory-only",
+      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
+      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
+      "entry_sha256": "cd4b57b91a9fead2e04760abad3381cb76226459a16854cf6a5d028a494d00c5",
+      "runtime_status": "not_run"
+    }
+  ],
+  "pilot_skills": [
+    "solution-discovery",
+    "spec-flow",
+    "code-change-workflow",
+    "code-review",
+    "verified-software-delivery",
+    "web-page-design-to-code",
+    "javascript-development",
+    "threejs-development"
+  ]
+}

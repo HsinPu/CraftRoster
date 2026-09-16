@@ -100,6 +100,18 @@ const successCases = [
     stdout: /todo-first/,
   },
   {
+    name: 'shows required installation dependencies',
+    args: ['info', 'python-backend-development'],
+    status: 0,
+    stdout: /\[必要，自動安裝\] python-development/,
+  },
+  {
+    name: 'explains conditional dependencies without promising auto-installation',
+    args: ['info', 'image-to-code'],
+    status: 0,
+    stdout: /\[條件，不自動安裝\] image-to-code-assets: Independent asset exports/,
+  },
+  {
     name: 'shows overlap routing for a routed Skill',
     args: ['info', 'image-to-code'],
     status: 0,
@@ -386,6 +398,34 @@ function assertOwnershipFiltering() {
   }
 }
 
+function assertOptionalDependencyInfo() {
+  const fixtureRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'craftroster-cli-optional-'));
+  try {
+    const cliPath = path.join(fixtureRoot, 'craftroster-cli.js');
+    fs.copyFileSync(CLI_PATH, cliPath);
+    fs.writeFileSync(path.join(fixtureRoot, 'skills.json'), JSON.stringify({ routingGroups: [], skills: [{
+      name: 'root-skill', description: 'Isolated optional dependency fixture.', category: 'fixtures',
+      author: 'Fixture', source: 'Fixture/Repository', license: 'Apache-2.0', tags: ['fixture'],
+      dependencies: [{ name: 'base-skill', kind: 'required' },
+        { name: 'conditional-skill', kind: 'conditional', when: 'Only for this feature.' },
+        { name: 'optional-skill', kind: 'optional' }],
+    }] }));
+    const result = runCli(['info', 'root-skill'], { cliPath });
+    assert.equal(result.status, 0, combinedOutput(result));
+    assert.match(result.stdout, /\[必要，自動安裝\] base-skill/);
+    assert.match(result.stdout, /\[條件，不自動安裝\] conditional-skill: Only for this feature\./);
+    assert.match(result.stdout, /\[可選，不自動安裝\] optional-skill/);
+    assert.doesNotMatch(result.stdout, /undefined|\[條件，不自動安裝\] optional-skill/);
+    const help = runCli(['--help'], { cliPath });
+    assert.equal(help.status, 0, combinedOutput(help));
+    assert.match(help.stdout, /required（必要）依賴會自動安裝；conditional（條件）與 optional（可選）依賴不自動安裝/);
+  } finally {
+    const resolved = path.resolve(fixtureRoot);
+    if (path.dirname(resolved) !== path.resolve(os.tmpdir()) || !path.basename(resolved).startsWith('craftroster-cli-optional-')) throw new Error('Unsafe fixture cleanup');
+    fs.rmSync(resolved, { recursive: true, force: true });
+  }
+}
+
 for (const testCase of tests) {
   try {
     assertCliCase(testCase);
@@ -406,9 +446,18 @@ try {
   console.error(error.stack || error.message);
 }
 
+try {
+  assertOptionalDependencyInfo();
+  console.log('PASS distinguishes required, conditional and optional dependencies in an isolated catalog');
+} catch (error) {
+  failures += 1;
+  console.error('FAIL distinguishes required, conditional and optional dependencies in an isolated catalog');
+  console.error(error.stack || error.message);
+}
+
 if (failures > 0) {
-  console.error(`CLI tests failed: ${failures}/${tests.length}`);
+  console.error(`CLI tests failed: ${failures}/${tests.length + 2}`);
   process.exit(1);
 }
 
-console.log(`CLI tests passed: ${tests.length}`);
+console.log(`CLI tests passed: ${tests.length + 2}`);

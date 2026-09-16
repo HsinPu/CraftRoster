@@ -1,0 +1,8 @@
+* { box-sizing: border-box; }
+body { margin: 0; color: #182a43; background: #f2f5fa; font: 16px/1.6 system-ui, sans-serif; }
+.site-header { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding: 18px 24px; background: #fff; border-bottom: 1px solid #d9e1ed; }
+.site-header span { color: #546580; font-size: 14px; }
+.site-main { width: min(760px, 100%); margin: 0 auto; padding: 24px; }
+h1 { font-size: clamp(24px, 4vw, 34px); line-height: 1.25; }
+a { color: #174b9c; }
+:focus-visible { outline: 3px solid #2476df; outline-offset: 4px; }

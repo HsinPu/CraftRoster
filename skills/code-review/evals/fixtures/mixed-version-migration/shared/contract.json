@@ -1,0 +1,18 @@
+{
+  "fictional": true,
+  "migrationId": "002-customer-name",
+  "requiredBehavior": {
+    "mixedClientVersions": [1, 2],
+    "continuousReadsAndWrites": true,
+    "preserveExistingRowsAndNames": true,
+    "publicResponseKeys": ["id", "email", "displayName"],
+    "publicNameType": "string",
+    "emailMustRemainUnique": true,
+    "successfulMigrationRetryIsNoOp": true,
+    "failedSqlRollsBackWithNoMigrationMarker": true
+  },
+  "applicationNameRules": { "nonemptyString": true, "maximumCodeUnits": 100 },
+  "localEvidenceScope": "small in-memory SQLite database; sequential requests",
+  "productionScaleMeasurements": null,
+  "modelResult": "not_run"
+}

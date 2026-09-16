@@ -1,0 +1,8 @@
+{
+  "name": "local-cleanup-monorepo-fixture",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "workspaces": ["apps/*"],
+  "scripts": { "test": "node test/cleanup.test.js" }
+}

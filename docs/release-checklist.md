@@ -7,7 +7,7 @@
 - Node.js 22 或更新版本。
 - Git CLI；Agent 原創性稽核會用它取得固定 revision，最後狀態檢查也需要 Git。
 - Windows smoke 需要 Windows PowerShell／PowerShell。
-- Bash smoke 需要 Bash、`mktemp`、`cksum`，以及 `sha256sum` 或 `shasum`；只有 installer 的遠端下載路徑另需 `curl`、`tar` 與網路連線。
+- Bash smoke 需要 Bash、`mktemp`、`cksum`、`od`，以及 `sha256sum` 或 `shasum`；只有 installer 的遠端下載路徑另需 `curl`、`tar` 與網路連線。
 - 遠端來源與原創性檢查需要 GitHub 網路存取；其餘本機 gates 應可離線執行。
 - 先執行 `git status --short`，辨識並保留不屬於本次發布的使用者變更。
 
@@ -16,6 +16,7 @@
 ```bash
 npm run generate:agents
 npm run generate:skills
+npm run generate:release-baseline
 ```
 
 - `agents/<role>.md` 是 canonical Agent source；`adapters/` 與 `agents.json` 是 generated artifacts。
@@ -33,6 +34,9 @@ npm run test:catalog
 npm run test:skill-catalog
 npm run test:skill-evals
 npm run test:skill-routing
+npm run test:skill-dependencies
+npm run test:release-baseline
+npm run test:skill-review
 npm run test:skill-originality
 npm run test:skill-sources
 npm run test:skill-contracts
@@ -43,16 +47,21 @@ npm run test:package
 
 確認輸出至少符合目前 release baseline；若 catalog 有經核准的新增或刪除，先更新 baseline 與相關 manifest：
 
+<!-- CRAFTROSTER_RELEASE_BASELINE_START -->
 | Evidence | Current baseline |
 |---|---:|
-| Skills | 217 |
+| Skills | 286 |
 | Agents | 237 |
-| Skill categories | 15 |
+| Skill categories | 16 |
 | Agent coverage categories | 31／31 |
-| Required eval packages | 14 |
-| Evals／assertions | 17／82 |
-| Referenced Skills／repositories／paths | 33／12／55 |
-| Provenance lock mappings | 33 Skills／12 repositories／45 path entries |
+| Required eval packages | 116 |
+| Output case definitions／assertions | 284／1209 |
+| Routing case definitions | 80 |
+| Referenced Skills／repositories／paths | 62／18／131 |
+| Provenance lock mappings | 62 Skills／18 repositories／115 path entries |
+<!-- CRAFTROSTER_RELEASE_BASELINE_END -->
+
+這個區塊由 `npm run generate:release-baseline` 從 catalog、來源與評估案例定義產生，`npm run validate` 檢查一致性。案例數量不是實際模型任務成功數；routing self-report、實際 Skill activation 與 task outcome 必須另附執行證據。改動 Skills 或 evals 後請重新產生此區塊，不要更新歷史審查報告。
 
 數量相同不代表驗證完成；mutation tests、exact manifest membership 與 generated parity 仍必須通過。
 
@@ -62,6 +71,8 @@ Windows：
 
 ```powershell
 npm run smoke:install:powershell
+# 也驗證 PowerShell 7 子程序，保留相同隔離 fixtures：
+pwsh -NoProfile -File scripts/smoke-install.ps1 -PowerShellExecutable pwsh
 ```
 
 Linux／macOS 或 Git Bash：

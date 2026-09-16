@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "kind": "author_renderer_baseline_browser_check",
+  "recorded_at": "2026-09-16T09:46:14.529Z",
+  "case_id": "threejs-development:5",
+  "status": "not_run",
+  "model_execution": false,
+  "model_calls": 0,
+  "author_check_status": "passed",
+  "browser": {
+    "provider": "Codex In-app Browser",
+    "engine_version": null,
+    "platform": "win32"
+  },
+  "setup": {
+    "three": "0.180.0",
+    "dependency_method": "Copied previously installed pinned official npm package from the footer author prefix; did not claim a fresh npm ci for this check.",
+    "source_manifest": [
+      {
+        "path": "CONTRACT.md",
+        "sha256": "ddfa05e2cd9ca3fdf486771f9b0de6c77dee32c88e543b7dc42f4cbabe25dbd1"
+      },
+      {
+        "path": "contracts/requirements.json",
+        "sha256": "f3f4770aac7ed5e6898036c5fb9ae0b50e530e02e116151502f116cb61c96ef0"
+      },
+      {
+        "path": "dependency-evidence.json",
+        "sha256": "77d617061d3a13941f3722fe33e3d9ba43896f47cab5106b4ff3163ee9d9479d"
+      },
+      {
+        "path": "index.html",
+        "sha256": "1d8f3fd38ea66dae366448e1a217e18947b277678444a52cbd9d64522a047e44"
+      },
+      {
+        "path": "package-lock.json",
+        "sha256": "ee194b115ea1e948406d0058b3cc22d0d03fdff9eded203662fe826a37560eab"
+      },
+      {
+        "path": "package.json",
+        "sha256": "f45a11ae32904ce4824de9c3bc0e8b8abd0924a00c3319ff221e6284fc00d6a7"
+      },
+      {
+        "path": "src/pixel-contract.js",
+        "sha256": "a3b89174ea50fbdb0c8a453129ab8c921db686ec1645c3ad4b63123df60ad31b"
+      },
+      {
+        "path": "src/probe.js",
+        "sha256": "b173469bd91f81074c8a7eafeac535345bf7084f9d0ba13bccee6a6ae30b62d7"
+      },
+      {
+        "path": "style.css",
+        "sha256": "a4f491d64b751df39c280b4a6c693c2f132e848eb5b49af1d3dfd4f6361a6d4c"
+      },
+      {
+        "path": "tools/build.cjs",
+        "sha256": "023ef788d649fcdff755d5e14fb504e3bc35fa34519bf0567b2c8b4220d74a75"
+      },
+      {
+        "path": "tools/serve.cjs",
+        "sha256": "e1188eea2363959b678abbc2621e7500fb16e1657f4c8b3991eaaf6dd9bde383"
+      }
+    ],
+    "build_manifest": [
+      {
+        "path": "index.html",
+        "sha256": "1d8f3fd38ea66dae366448e1a217e18947b277678444a52cbd9d64522a047e44"
+      },
+      {
+        "path": "src/pixel-contract.js",
+        "sha256": "a3b89174ea50fbdb0c8a453129ab8c921db686ec1645c3ad4b63123df60ad31b"
+      },
+      {
+        "path": "src/probe.js",
+        "sha256": "b173469bd91f81074c8a7eafeac535345bf7084f9d0ba13bccee6a6ae30b62d7"
+      },
+      {
+        "path": "style.css",
+        "sha256": "a4f491d64b751df39c280b4a6c693c2f132e848eb5b49af1d3dfd4f6361a6d4c"
+      },
+      {
+        "path": "vendor/LICENSE",
+        "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+      },
+      {
+        "path": "vendor/three.core.js",
+        "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20"
+      },
+      {
+        "path": "vendor/three.module.js",
+        "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a"
+      }
+    ],
+    "static_build_exit": 0
+  },
+  "observations": [
+    {
+      "check": "normal-readback",
+      "bytes": [
+        64,
+        127,
+        191,
+        255
+      ],
+      "expected": [
+        64,
+        128,
+        191,
+        255
+      ],
+      "tolerance": 1,
+      "matches": true
+    },
+    {
+      "check": "inverted-readback",
+      "bytes": [
+        191,
+        128,
+        64,
+        255
+      ],
+      "expected": [
+        191,
+        128,
+        64,
+        255
+      ],
+      "matches": true
+    },
+    {
+      "check": "lost-context-readback",
+      "context": "lost",
+      "error": "Renderer unavailable until context restored",
+      "controls_remain_available": true
+    },
+    {
+      "check": "restored-readback",
+      "context": "restored",
+      "inverted": true,
+      "bytes": [
+        191,
+        128,
+        64,
+        255
+      ],
+      "matches": true
+    },
+    {
+      "check": "cpu-submission-sample",
+      "count": 60,
+      "median_ms": 0.7000000011175871,
+      "max_ms": 1,
+      "gpu_timer": false
+    },
+    {
+      "check": "xr-capability",
+      "immersive_vr_supported": false,
+      "session_rendered": false
+    },
+    {
+      "check": "narrow-layout",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "document_scroll_width": 360,
+      "canvas_css": {
+        "width": 320,
+        "height": 240
+      },
+      "drawing_buffer": {
+        "width": 319,
+        "height": 239
+      },
+      "horizontal_overflow": false
+    }
+  ],
+  "renderer": {
+    "class": "WebGLRenderer",
+    "revision": "180",
+    "output_color_space": "srgb",
+    "target_color_space": "srgb-linear",
+    "target_type": "UnsignedByteType",
+    "last_frame_draw_calls": 3,
+    "geometry_count": 1,
+    "texture_count": 2,
+    "program_count": 3,
+    "gpu_bytes": null,
+    "gpu_time_ms": null
+  },
+  "captured_console_warnings_and_errors": [],
+  "cleanup": {
+    "viewport_reset": true,
+    "tab_closed": true,
+    "server_stopped": true
+  },
+  "limitations": [
+    "This is a fixed first-party WebGL baseline, not an evaluated model migration or native WebGPU/TSL prototype.",
+    "CPU sample is 60 JavaScript submission durations on one desktop browser provider, not GPU elapsed time, cross-device comparison or an approved performance budget.",
+    "XR availability probing did not enter or render a session; no headset or mobile Safari execution was performed.",
+    "Color readback certifies the linear RGBA8 target path only. No pixel-perfect sRGB display, HDR/HalfFloat target or production-device color audit is claimed.",
+    "Only a CSS narrow viewport was tested; it is not a physical mobile device."
+  ]
+}

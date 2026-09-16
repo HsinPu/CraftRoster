@@ -1,7 +1,10 @@
 # Isolated installer smoke test for Windows and GitHub Actions.
 
+param([string]$PowerShellExecutable = 'powershell.exe', [switch]$DependenciesOnly)
+
 $ErrorActionPreference = "Stop"
 $ProgressPreference = "SilentlyContinue"
+$script:InstallerPowerShell = (Get-Command $PowerShellExecutable -CommandType Application -ErrorAction Stop).Source
 
 function Write-Pass {
     param([string]$Message)
@@ -83,6 +86,13 @@ function Write-Utf8NoBom {
     [System.IO.File]::WriteAllText($Path, $Text, [System.Text.UTF8Encoding]::new($false))
 }
 
+function Write-SkillDependencyIndex {
+    param([string]$SourceRoot, [string]$Rows = '')
+    $dataRoot = Join-Path $SourceRoot "scripts\data"
+    New-Item -ItemType Directory -Force -Path $dataRoot | Out-Null
+    Write-Utf8NoBom -Path (Join-Path $dataRoot "install-skill-dependencies.tsv") -Text ("skill`tdependency`tkind`twhen`n" + $Rows)
+}
+
 function Set-MetadataString {
     param([string]$Path, [string]$Field, [string]$Value)
     $metadata = Get-Content -Raw -LiteralPath $Path | ConvertFrom-Json
@@ -150,13 +160,14 @@ function Assert-NoAtomicSkillArtifacts {
 function Invoke-InstallerStep {
     param([string]$Label, [string[]]$InstallerArgs)
     $output = @(
-        & powershell.exe -NoProfile -ExecutionPolicy Bypass -File $script:Installer @InstallerArgs 2>&1 |
+        & $script:InstallerPowerShell -NoProfile -ExecutionPolicy Bypass -File $script:Installer @InstallerArgs 2>&1 |
             ForEach-Object { $_.ToString() }
     )
     $exitCode = $LASTEXITCODE
     if ($exitCode -ne 0) {
+        $exitCodeHex = '0x{0:X8}' -f [int]$exitCode
         $tail = @($output | Select-Object -Last 12) -join [Environment]::NewLine
-        throw "$Label failed with exit code $exitCode$([Environment]::NewLine)$tail"
+        throw "$Label failed with exit code $exitCode ($exitCodeHex); captured $($output.Count) output line(s)$([Environment]::NewLine)$tail"
     }
     Write-Pass $Label
     return [pscustomobject]@{ Output = $output; ExitCode = $exitCode }
@@ -165,14 +176,15 @@ function Invoke-InstallerStep {
 function Invoke-ExpectedFailure {
     param([string]$Label, [string]$ExpectedMessage, [string[]]$InstallerArgs)
     $output = @(
-        & powershell.exe -NoProfile -ExecutionPolicy Bypass -File $script:Installer @InstallerArgs 2>&1 |
+        & $script:InstallerPowerShell -NoProfile -ExecutionPolicy Bypass -File $script:Installer @InstallerArgs 2>&1 |
             ForEach-Object { $_.ToString() }
     )
     $exitCode = $LASTEXITCODE
     $text = $output -join [Environment]::NewLine
     if ($exitCode -eq 0) { throw "$Label unexpectedly succeeded" }
     if ($text -notmatch [regex]::Escape($ExpectedMessage)) {
-        throw "$Label failed without the expected message '$ExpectedMessage':$([Environment]::NewLine)$text"
+        $exitCodeHex = '0x{0:X8}' -f [int]$exitCode
+        throw "$Label failed with exit code $exitCode ($exitCodeHex); captured $($output.Count) output line(s) without the expected message '$ExpectedMessage':$([Environment]::NewLine)$text"
     }
     Write-Pass $Label
 }
@@ -236,6 +248,7 @@ try {
     $canonicalNestedRoot = Join-Path $canonicalSkillRoot "nested"
     $canonicalDestinationRoot = Join-Path $smokeRoot "canonical-digest-destination"
     New-Item -ItemType Directory -Force -Path $canonicalNestedRoot | Out-Null
+    Write-SkillDependencyIndex -SourceRoot $canonicalSourceRoot
     Write-Utf8NoBom -Path (Join-Path $canonicalSkillRoot "SKILL.md") -Text "---`nname: canonical-digest-fixture`ndescription: Canonical digest fixture.`nlicense: Apache-2.0`n---`n"
     Write-Utf8NoBom -Path (Join-Path $canonicalNestedRoot "plain.txt") -Text "alpha`n"
     $canonicalNonAsciiName = ([char]0x8cc7).ToString() + ([char]0x6599).ToString() + ".txt"
@@ -251,6 +264,144 @@ try {
     $canonicalMetadata = Get-Content -Raw -LiteralPath (Join-Path $canonicalDestinationRoot "canonical-digest-fixture\.skill-meta.json") | ConvertFrom-Json
     Assert-Equal $canonicalMetadata.contentSha256 $canonicalDigestExpected "canonical nested/binary/non-ASCII Skill digest"
     Write-Pass "canonical nested, binary, and non-ASCII Skill digest"
+
+    $dependencySource = Join-Path $smokeRoot "dependency-source"
+    foreach ($fixtureName in @('root-skill', 'left-skill', 'right-skill', 'base-skill', 'conditional-skill', 'optional-skill', 'optional-base')) {
+        $fixtureRoot = Join-Path $dependencySource "skills\$fixtureName"
+        New-Item -ItemType Directory -Force -Path $fixtureRoot | Out-Null
+        Write-Utf8NoBom -Path (Join-Path $fixtureRoot 'SKILL.md') -Text "---`nname: $fixtureName`ndescription: Dependency installation fixture.`nlicense: Apache-2.0`n---`n"
+    }
+    $proofRoot = Join-Path $dependencySource 'skills\base-skill\references'
+    New-Item -ItemType Directory -Path $proofRoot | Out-Null
+    Write-Utf8NoBom -Path (Join-Path $proofRoot 'proof.md') -Text "shared dependency evidence`n"
+    [System.IO.File]::AppendAllText((Join-Path $dependencySource 'skills\left-skill\SKILL.md'), "Read [proof](../base-skill/references/proof.md).`n")
+    $dependencyRows = "conditional-skill`troot-skill`tconditional`tOnly when root orchestration is requested.`nleft-skill`tbase-skill`trequired`t-`noptional-base`troot-skill`toptional`t-`noptional-skill`toptional-base`trequired`t-`nright-skill`tbase-skill`trequired`t-`nroot-skill`tconditional-skill`tconditional`tOnly when conditional output is requested.`nroot-skill`tleft-skill`trequired`t-`nroot-skill`toptional-skill`toptional`t-`nroot-skill`tright-skill`trequired`t-`n"
+    Write-SkillDependencyIndex -SourceRoot $dependencySource -Rows $dependencyRows
+    $dependencyIndexPath = Join-Path $dependencySource 'scripts\data\install-skill-dependencies.tsv'
+    Write-Utf8NoBom -Path (Join-Path $dependencySource 'scripts\data\install-category-index.tsv') -Text "type`tcategory`tname`nskill`tlibrary`tbase-skill`nskill`tlibrary`tconditional-skill`nskill`tlibrary`tleft-skill`nskill`tlibrary`toptional-base`nskill`tlibrary`toptional-skill`nskill`tlibrary`tright-skill`nskill`tchosen`troot-skill`n"
+    $dependencyDryRoot = Join-Path $smokeRoot 'dependency-dry-run'
+    $dependencyDry = Invoke-InstallerStep -Label 'required dependency diamond dry run' -InstallerArgs @(
+        '-Target', 'claude', '-Name', 'root-skill', '-SourceDir', $dependencySource, '-InstallDir', $dependencyDryRoot, '-DryRun'
+    )
+    $dependencyOrder = @($dependencyDry.Output | Where-Object { $_ -match '^DRY-RUN install Skill ' } | ForEach-Object { ($_ -split ' ')[3] })
+    Assert-Equal ($dependencyOrder -join ',') 'base-skill,left-skill,right-skill,root-skill' 'dependency topological order and diamond deduplication'
+    if (($dependencyDry.Output -join "`n") -notmatch 'Optional dependency not auto-installed: root-skill -> optional-skill') { throw 'Optional dependency was not explained in dry run' }
+    if (Test-Path -LiteralPath $dependencyDryRoot) { throw 'Dependency dry run wrote the destination' }
+    $dependencyProject = Join-Path $smokeRoot 'dependency-project'
+    Invoke-InstallerStep -Label 'cross-category required dependencies in both project profiles' -InstallerArgs @(
+        '-Target', 'project', '-Category', 'chosen', '-SourceDir', $dependencySource, '-InstallDir', $dependencyProject
+    ) | Out-Null
+    foreach ($relativeRoot in @('.agents\skills', '.claude\skills')) {
+        $installedRoot = Join-Path $dependencyProject $relativeRoot
+        Assert-Equal @(Get-ChildItem -LiteralPath $installedRoot -Directory).Count 4 'required closure count'
+        Assert-FileContentMatches -ActualPath (Join-Path $installedRoot 'left-skill\..\base-skill\references\proof.md') -ExpectedPath (Join-Path $proofRoot 'proof.md') -Label 'installed sibling resource'
+        foreach ($notSelected in @('conditional-skill', 'optional-skill', 'optional-base')) {
+            if (Test-Path -LiteralPath (Join-Path $installedRoot $notSelected)) { throw "$notSelected was installed automatically" }
+        }
+    }
+    Invoke-InstallerStep -Label 'matching owned dependencies update' -InstallerArgs @(
+        '-Target', 'project', '-Name', 'root-skill', '-SourceDir', $dependencySource, '-InstallDir', $dependencyProject
+    ) | Out-Null
+    $fullDependency = Invoke-InstallerStep -Label 'full dependency inventory remains deduplicated' -InstallerArgs @(
+        '-Target', 'claude', '-SourceDir', $dependencySource, '-InstallDir', $dependencyDryRoot, '-DryRun'
+    )
+    Assert-Equal @($fullDependency.Output | Where-Object { $_ -match '^DRY-RUN install Skill ' }).Count 7 'full dependency inventory count'
+
+    $optionalExplicitRoot = Join-Path $smokeRoot 'optional-explicit'
+    Invoke-InstallerStep -Label 'explicit optional target installs only its own required closure' -InstallerArgs @(
+        '-Target', 'claude', '-Name', 'optional-skill', '-SourceDir', $dependencySource, '-InstallDir', $optionalExplicitRoot
+    ) | Out-Null
+    Assert-Equal @(Get-ChildItem -LiteralPath $optionalExplicitRoot -Directory).Count 2 'explicit optional target and required base count'
+    foreach ($name in @('optional-skill', 'optional-base')) {
+        Assert-FileContentMatches -ActualPath (Join-Path $optionalExplicitRoot "$name\SKILL.md") -ExpectedPath (Join-Path $dependencySource "skills\$name\SKILL.md") -Label "explicit $name"
+    }
+    if (Test-Path -LiteralPath (Join-Path $optionalExplicitRoot 'root-skill')) { throw 'Optional back-edge expanded the root' }
+
+    $optionalForeignRoot = Join-Path $smokeRoot 'optional-foreign'
+    $optionalForeign = Join-Path $optionalForeignRoot 'optional-skill'
+    New-Item -ItemType Directory -Force -Path $optionalForeign | Out-Null
+    Write-Utf8NoBom -Path (Join-Path $optionalForeign 'user.txt') -Text 'foreign optional content'
+    Invoke-InstallerStep -Label 'force on owner preserves unselected optional foreign files' -InstallerArgs @(
+        '-Target', 'claude', '-Name', 'root-skill', '-SourceDir', $dependencySource, '-InstallDir', $optionalForeignRoot, '-Force'
+    ) | Out-Null
+    Assert-Equal ([System.IO.File]::ReadAllText((Join-Path $optionalForeign 'user.txt'))) 'foreign optional content' 'foreign optional content preserved'
+    Assert-Equal @(Get-ChildItem -Force -LiteralPath $optionalForeign).Count 1 'no optional metadata or source written'
+    if (Test-Path -LiteralPath (Join-Path $optionalForeignRoot 'optional-base')) { throw 'Unselected optional required closure was installed' }
+
+    $dependencyForeign = Join-Path $smokeRoot 'dependency-foreign'
+    $foreignBase = Join-Path $dependencyForeign '.claude\skills\base-skill'
+    New-Item -ItemType Directory -Force -Path $foreignBase | Out-Null
+    Write-Utf8NoBom -Path (Join-Path $foreignBase 'user.txt') -Text 'foreign content'
+    Invoke-ExpectedFailure -Label 'foreign dependency blocks every project profile' -ExpectedMessage 'no matching CraftRoster metadata' -InstallerArgs @(
+        '-Target', 'project', '-Name', 'root-skill', '-SourceDir', $dependencySource, '-InstallDir', $dependencyForeign
+    )
+    if (Test-Path -LiteralPath (Join-Path $dependencyForeign '.agents')) { throw 'Foreign dependency left a partial first-profile install' }
+    Assert-Equal ([System.IO.File]::ReadAllText((Join-Path $foreignBase 'user.txt'))) 'foreign content' 'foreign dependency preserved'
+
+    $dependencyModified = Join-Path $smokeRoot 'dependency-modified'
+    Invoke-InstallerStep -Label 'prepare owned dependency' -InstallerArgs @(
+        '-Target', 'claude', '-Name', 'base-skill', '-SourceDir', $dependencySource, '-InstallDir', $dependencyModified
+    ) | Out-Null
+    $modifiedProof = Join-Path $dependencyModified 'base-skill\references\proof.md'
+    Write-Utf8NoBom -Path $modifiedProof -Text 'local change'
+    Invoke-ExpectedFailure -Label 'modified dependency blocks installation' -ExpectedMessage 'installed Skill content has changed since the last CraftRoster install' -InstallerArgs @(
+        '-Target', 'claude', '-Name', 'root-skill', '-SourceDir', $dependencySource, '-InstallDir', $dependencyModified
+    )
+    Assert-Equal @(Get-ChildItem -LiteralPath $dependencyModified -Directory).Count 1 'modified dependency no partial install'
+    Assert-Equal ([System.IO.File]::ReadAllText($modifiedProof)) 'local change' 'modified dependency preserved'
+    Invoke-InstallerStep -Label 'explicit force resets modified dependency' -InstallerArgs @(
+        '-Target', 'claude', '-Name', 'root-skill', '-SourceDir', $dependencySource, '-InstallDir', $dependencyModified, '-Force'
+    ) | Out-Null
+    Assert-FileContentMatches -ActualPath $modifiedProof -ExpectedPath (Join-Path $proofRoot 'proof.md') -Label 'forced dependency restored'
+
+    $dependencyInvalidRoot = Join-Path $smokeRoot 'dependency-invalid'
+    foreach ($invalid in @(
+        @{ Label = 'required dependency cycle'; Rows = $dependencyRows + "base-skill`troot-skill`trequired`t-`n"; Message = 'Required Skill dependency cycle' },
+        @{ Label = 'unknown dependency'; Rows = "root-skill`tmissing-skill`trequired`t-`n"; Message = 'Skill not found in archive: missing-skill' },
+        @{ Label = 'unknown dependency owner'; Rows = "missing-skill`tbase-skill`trequired`t-`n"; Message = 'Skill not found in archive: missing-skill' },
+        @{ Label = 'optional unknown target'; Rows = "root-skill`tmissing-skill`toptional`t-`n"; Message = 'Skill not found in archive: missing-skill' },
+        @{ Label = 'optional condition prohibited'; Rows = "root-skill`toptional-skill`toptional`tSometimes`n"; Message = 'contains an invalid value' },
+        @{ Label = 'unknown dependency kind'; Rows = "root-skill`tbase-skill`trecommended`t-`n"; Message = 'contains an invalid value' },
+        @{ Label = 'self dependency'; Rows = "root-skill`troot-skill`trequired`t-`n"; Message = 'self dependency' },
+        @{ Label = 'duplicate dependency'; Rows = $dependencyRows + "root-skill`tleft-skill`trequired`t-`n"; Message = 'duplicate dependency' },
+        @{ Label = 'malformed dependency row'; Rows = "root-skill`tbase-skill`trequired`n"; Message = 'must contain skill, dependency, kind, and when' },
+        @{ Label = 'extra dependency column'; Rows = "root-skill`tbase-skill`trequired`t-`textra`n"; Message = 'must contain skill, dependency, kind, and when' },
+        @{ Label = 'empty dependency condition'; Rows = "root-skill`tbase-skill`tconditional`t`n"; Message = 'contains an invalid value' },
+        @{ Label = 'invalid dependency condition'; Rows = "root-skill`tbase-skill`tconditional`t-`n"; Message = 'contains an invalid value' }
+    )) {
+        Write-SkillDependencyIndex -SourceRoot $dependencySource -Rows $invalid.Rows
+        Invoke-ExpectedFailure -Label $invalid.Label -ExpectedMessage $invalid.Message -InstallerArgs @(
+            '-Target', 'claude', '-Name', 'root-skill', '-SourceDir', $dependencySource, '-InstallDir', $dependencyInvalidRoot
+        )
+        if (Test-Path -LiteralPath $dependencyInvalidRoot) { throw "$($invalid.Label) wrote to the destination" }
+    }
+    Write-Utf8NoBom -Path $dependencyIndexPath -Text "skill`tdependency`tkind`n"
+    Invoke-ExpectedFailure -Label 'invalid dependency header' -ExpectedMessage 'invalid header' -InstallerArgs @(
+        '-Target', 'claude', '-Name', 'root-skill', '-SourceDir', $dependencySource, '-InstallDir', $dependencyInvalidRoot
+    )
+    if (Test-Path -LiteralPath $dependencyInvalidRoot) { throw 'Invalid dependency header wrote to the destination' }
+    Remove-Item -LiteralPath $dependencyIndexPath
+    Invoke-ExpectedFailure -Label 'missing dependency index refuses incomplete source' -ExpectedMessage 'Skill dependency index not found' -InstallerArgs @(
+        '-Target', 'claude', '-Name', 'root-skill', '-SourceDir', $dependencySource, '-InstallDir', $dependencyInvalidRoot
+    )
+    if (Test-Path -LiteralPath $dependencyInvalidRoot) { throw 'Missing dependency index wrote to the destination' }
+    Write-SkillDependencyIndex -SourceRoot $dependencySource -Rows $dependencyRows
+
+    $alternateDependencyRoot = Join-Path $env:USERPROFILE '.agents\skills'
+    Invoke-InstallerStep -Label 'prepare alternate-root owned dependency' -InstallerArgs @(
+        '-Target', 'codex', '-Name', 'base-skill', '-SourceDir', $dependencySource, '-InstallDir', $alternateDependencyRoot
+    ) | Out-Null
+    Invoke-ExpectedFailure -Label 'required dependency split roots refuse before writes' -ExpectedMessage 'Required Skill dependency uses different roots' -InstallerArgs @(
+        '-Target', 'codex', '-Name', 'root-skill', '-SourceDir', $dependencySource
+    )
+    if (Test-Path -LiteralPath (Join-Path $env:CODEX_HOME 'skills\root-skill')) { throw 'Split-root plan installed the requesting Skill' }
+    if (Test-Path -LiteralPath (Join-Path $env:CODEX_HOME 'skills\base-skill')) { throw 'Split-root plan duplicated its dependency' }
+    Assert-FileContentMatches -ActualPath (Join-Path $alternateDependencyRoot 'base-skill\references\proof.md') -ExpectedPath (Join-Path $proofRoot 'proof.md') -Label 'alternate-root dependency preserved'
+    Write-Pass 'PowerShell dependency closure, references, conditional and optional selection, ownership, and placement'
+    if ($DependenciesOnly) {
+        Write-Host 'PowerShell dependency smoke passed; remaining installer scenarios not run.'
+        return
+    }
 
     $categoryIndex = @(Import-Csv -LiteralPath (Join-Path $repoRoot "scripts\data\install-category-index.tsv") -Delimiter "`t")
     $browserSkillCount = @($categoryIndex | Where-Object { $_.type -ceq "skill" -and $_.category -ceq "browser-automation" }).Count
@@ -282,7 +433,10 @@ try {
         $installedCount = @(Get-ChildItem -LiteralPath (Join-Path $categorySkillRoot $relativeRoot) -Directory | Where-Object {
             Test-Path -LiteralPath (Join-Path $_.FullName "SKILL.md") -PathType Leaf
         }).Count
-        Assert-Equal $installedCount $browserSkillCount "$relativeRoot browser-automation category count"
+        Assert-Equal $installedCount ($browserSkillCount + 1) "$relativeRoot browser-automation category plus required Python baseline count"
+        if (-not (Test-Path -LiteralPath (Join-Path $categorySkillRoot "$relativeRoot\python-development\SKILL.md") -PathType Leaf)) {
+            throw "Browser category did not install the required Python baseline in $relativeRoot"
+        }
     }
 
     Invoke-InstallerStep -Label "project Agent category install" -InstallerArgs @(
@@ -425,7 +579,11 @@ try {
         $skillInstall = Invoke-InstallerStep -Label "$($profile.Label) global Skill install" -InstallerArgs @(
             "-Target", $profile.RequestedTarget, "-Type", "skill", "-Name", $profile.SkillName, "-SourceDir", $repoRoot
         )
-        Assert-Equal @($skillInstall.Output | Where-Object { $_ -match '^OK\s+install Skill ' }).Count 1 "$($profile.Label) Skill install count"
+        $expectedProfileSkillCount = if ($profile.SkillName -ceq 'frontend-code-review') { 2 } else { 1 }
+        Assert-Equal @($skillInstall.Output | Where-Object { $_ -match '^OK\s+install Skill ' }).Count $expectedProfileSkillCount "$($profile.Label) Skill install count including required dependencies"
+        if ($profile.SkillName -ceq 'frontend-code-review') {
+            Assert-FileContentMatches -ActualPath (Join-Path $profile.SkillRoot 'code-review\SKILL.md') -ExpectedPath (Join-Path $repoRoot 'skills\code-review\SKILL.md') -Label 'global frontend review baseline'
+        }
         $globalSkillRoot = Join-Path $profile.SkillRoot $profile.SkillName
         Assert-FileContentMatches `
             -ActualPath (Join-Path $globalSkillRoot "SKILL.md") `
@@ -441,7 +599,7 @@ try {
         $skillUpdate = Invoke-InstallerStep -Label "$($profile.Label) global Skill update" -InstallerArgs @(
             "-Target", $profile.RequestedTarget, "-Type", "skill", "-Name", $profile.SkillName, "-SourceDir", $repoRoot
         )
-        Assert-Equal @($skillUpdate.Output | Where-Object { $_ -match '^OK\s+update Skill ' }).Count 1 "$($profile.Label) Skill update count"
+        Assert-Equal @($skillUpdate.Output | Where-Object { $_ -match '^OK\s+update Skill ' }).Count $expectedProfileSkillCount "$($profile.Label) Skill update count including required dependencies"
         Assert-FileContentMatches `
             -ActualPath (Join-Path $globalSkillRoot "SKILL.md") `
             -ExpectedPath (Join-Path $repoRoot ("skills\" + $profile.SkillName + "\SKILL.md")) `
@@ -905,22 +1063,25 @@ Existing instructions that must remain untouched.
     )
     Assert-Equal (Get-Sha256Hex -Path $configPath) $existingInstructionsHash "Codex existing instructions refusal config hash"
 
-    Write-Utf8NoBom -Path $configPath -Text @"
-# AUTOVERSE_AUTO_DELEGATION_START
-developer_instructions = '''
-Legacy managed guidance that must be replaced.
-'''
-# AUTOVERSE_AUTO_DELEGATION_END
-model = "test-model"
-"@
-    $codexMigration = Invoke-InstallerStep -Label "Codex legacy auto-delegation migration" -InstallerArgs @(
-        "-Target", "codex", "-Type", "agent", "-Name", "debugger", "-SourceDir", $repoRoot, "-EnableAutoDelegation"
-    )
-    Assert-Equal @($codexMigration.Output | Where-Object { $_ -match '^OK\s+migrate-update Codex auto-delegation ' }).Count 1 "Codex legacy auto-delegation migration count"
-    $migratedConfigText = Get-Content -Raw -LiteralPath $configPath
-    Assert-Equal ([regex]::Matches($migratedConfigText, '(?m)^# AUTOVERSE_AUTO_DELEGATION_START\s*$').Count) 0 "Codex legacy marker removal count"
-    Assert-Equal ([regex]::Matches($migratedConfigText, '(?m)^# CRAFTROSTER_AUTO_DELEGATION_START\s*$').Count) 1 "Codex migrated marker count"
-    if ($migratedConfigText -cnotmatch 'model = "test-model"') { throw "Codex auto-delegation migration did not preserve the unmanaged config tail" }
+    foreach ($ending in @(@{ Name = 'LF'; Value = "`n" }, @{ Name = 'CRLF'; Value = "`r`n" })) {
+        $legacyConfigLines = @(
+            '# AUTOVERSE_AUTO_DELEGATION_START',
+            "developer_instructions = '''",
+            'Legacy managed guidance that must be replaced.',
+            "'''",
+            '# AUTOVERSE_AUTO_DELEGATION_END',
+            'model = "test-model"'
+        )
+        Write-Utf8NoBom -Path $configPath -Text ($legacyConfigLines -join $ending.Value)
+        $codexMigration = Invoke-InstallerStep -Label "Codex $($ending.Name) legacy auto-delegation migration" -InstallerArgs @(
+            "-Target", "codex", "-Type", "agent", "-Name", "debugger", "-SourceDir", $repoRoot, "-EnableAutoDelegation"
+        )
+        Assert-Equal @($codexMigration.Output | Where-Object { $_ -match '^OK\s+migrate-update Codex auto-delegation ' }).Count 1 "Codex legacy auto-delegation migration count"
+        $migratedConfigText = Get-Content -Raw -LiteralPath $configPath
+        Assert-Equal ([regex]::Matches($migratedConfigText, '(?m)^# AUTOVERSE_AUTO_DELEGATION_START\s*$').Count) 0 "Codex legacy marker removal count"
+        Assert-Equal ([regex]::Matches($migratedConfigText, '(?m)^# CRAFTROSTER_AUTO_DELEGATION_START\s*$').Count) 1 "Codex migrated marker count"
+        if ($migratedConfigText -cnotmatch 'model = "test-model"') { throw "Codex auto-delegation migration did not preserve the unmanaged config tail" }
+    }
     $codexUpdate = Invoke-InstallerStep -Label "Codex auto-delegation update" -InstallerArgs @(
         "-Target", "codex", "-Type", "agent", "-Name", "debugger", "-SourceDir", $repoRoot, "-EnableAutoDelegation"
     )

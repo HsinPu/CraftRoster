@@ -1,0 +1,8 @@
+{
+  "buildId": "A",
+  "digestAlgorithm": "sha256-utf8-lf",
+  "inputs": {
+    "artifacts/build-A/handler.js": "965dac3b58688b0b459547c48bc026bdb782723a7034903146a3688fc9faf5bc",
+    "artifacts/build-A/manifest.json": "5c27f8910d00cb6624faa69b4f54b30e4dc68bc3eb5354d0c969a887eaec3d6b"
+  }
+}

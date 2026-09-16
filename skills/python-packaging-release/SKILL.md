@@ -31,12 +31,14 @@ Before changing Python packaging or release configuration, read the sibling [`..
 
 ## Workflow
 
-1. Identify the build backend and current packaging state.
+For a read-only review, inspect existing metadata, artifacts, and recorded results; do not build, install, bump versions, or publish. Mark any required new execution as a verification gap. The preparation steps below apply when local changes and execution are part of the request.
+
+1. Identify the requested mode: prepare local artifacts, review existing artifacts without changes, or execute publication. Establish the build backend and current packaging state.
 2. Decide the distribution shape: library, CLI, or service package.
 3. Make entry points and metadata explicit.
 4. Build artifacts locally and inspect what ships.
 5. Validate install, import, and console entry behavior.
-6. Release with the smallest viable change and confirm the published artifact.
+6. In prepare or review mode, return artifact and installability evidence without publishing. In execute mode, publish only the authorized package version and artifact to the authorized index, then verify the published result.
 
 ## Packaging Rules
 
@@ -52,6 +54,8 @@ Before changing Python packaging or release configuration, read the sibling [`..
 - Treat versioning and release notes as part of the change, not an afterthought.
 - Verify that the installed package exposes the expected entry points.
 - Do not publish artifacts without inspecting the built outputs first.
+- Build or readiness requests do not authorize upload, release tags, or registry changes. Carry forward valid publication authority for the same package, version, index, and effects; ask only when a material target or authority is missing or changed.
+- Keep a read-only review read-only; report checks that would require building, installing, or uploading instead of performing them without scope.
 
 ## Handoff
 

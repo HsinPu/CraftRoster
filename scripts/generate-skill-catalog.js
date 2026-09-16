@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { validateDependencies, validateSiblingLinks } = require('./lib/skill-dependencies');
 
 const componentNamePattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const revisionPattern = /^[0-9a-f]{40}$/;
@@ -233,6 +234,7 @@ function validateConfig(config, skillNames) {
   if (unknown.length > 0) throw new Error(`Skill catalog config contains unknown Skills: ${unknown.join(', ')}`);
 
   const usedCategories = new Set();
+  validateDependencies(config.skills);
   for (const name of configuredNames) {
     const entry = config.skills[name];
     if (!entry || typeof entry !== 'object' || Array.isArray(entry)) {
@@ -310,6 +312,7 @@ function buildCatalog(root) {
   }
   const skillNames = new Set(files.map((entry) => entry.name));
   validateConfig(config, skillNames);
+  validateSiblingLinks(root, config.skills);
 
   const skills = files.map(({ name, filePath }) => {
     const fields = parseSkillFrontmatter(filePath);
@@ -333,6 +336,9 @@ function buildCatalog(root) {
       license: fields.license,
       tags: classification.tags
     };
+    if (classification.dependencies && classification.dependencies.length) {
+      skill.dependencies = [...classification.dependencies].sort((a, b) => a.name.localeCompare(b.name));
+    }
 
     const referenceSource = metadata['reference-source'];
     const referenceLicense = metadata['reference-license'];

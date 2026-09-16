@@ -1,0 +1,24 @@
+{
+  "scenarioId": "FICTIONAL-OFFLINE-SYNC-1",
+  "fictional": true,
+  "realWorldApproval": false,
+  "implementationState": "not_implemented_in_fixture",
+  "executionsPerformed": [],
+  "currentDeliverable": "local implementation-ticket plan",
+  "settledDecisions": [
+    { "id": "D-SCOPE", "subject": "offline title/body editing of already-cached existing documents" },
+    { "id": "D-CONFLICT", "subject": "revision check, explicit user conflict choice, immutable retry identity" },
+    { "id": "D-COMPAT", "subject": "additive v2 sync with retained v1 contract and separate outbox namespace" },
+    { "id": "D-PRIVACY", "subject": "bounded event fields without document, account, or device identifiers" },
+    { "id": "D-RECOVERY", "subject": "version containment and recoverable pending drafts before destructive repair" }
+  ],
+  "scenarioLocalWorkAuthority": { "syntheticImplementationAndTests": true, "externalOperations": false },
+  "actualRequestAuthority": { "localPlanning": true, "createExternalIssues": false, "deploy": false, "collectTelemetry": false, "migrateRealData": false },
+  "scope": ["open cached existing documents offline", "edit title and body", "restart-safe local drafts", "durable outbox and retry", "explicit conflict resolution", "visible local-save and server-sync states"],
+  "nonGoals": ["new-document creation", "document deletion", "binary attachments", "live collaborative merging", "shared live cursors", "cross-account draft transfer", "new authentication system"],
+  "laterPhaseCandidates": ["binary attachments", "shared live cursors"],
+  "limits": { "maxCachedDocuments": 50, "maxDocumentUtf8Bytes": 262144, "backgroundSyncAfterLogout": false },
+  "availablePlanningResources": ["local synthetic client-store samples", "sync scenario inputs", "proposed telemetry schema", "fictional product decisions"],
+  "unavailableResources": ["implementation repository", "staging tenancy", "production credentials", "actual device or browser results"],
+  "ownerRoles": ["client engineering", "sync service engineering", "privacy governance", "release commander", "platform operations"]
+}

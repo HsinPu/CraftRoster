@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "kind": "equivalent-refactor",
+  "initialBranch": "fixture-review",
+  "identity": {
+    "name": "Fixture Author",
+    "email": "fixture@example.invalid"
+  },
+  "commitTimestamp": "2026-09-16T00:00:00+00:00",
+  "base": {
+    "message": "Synthetic review baseline",
+    "files": [
+      {
+        "source": "base/AGENTS.md",
+        "destination": "AGENTS.md"
+      },
+      {
+        "source": "base/package.json",
+        "destination": "package.json"
+      },
+      {
+        "source": "base/README.md",
+        "destination": "README.md"
+      },
+      {
+        "source": "base/src/display-name.js",
+        "destination": "src/display-name.js"
+      },
+      {
+        "source": "base/src/greeting.js",
+        "destination": "src/greeting.js"
+      },
+      {
+        "source": "base/test/display-name.test.js",
+        "destination": "test/display-name.test.js"
+      },
+      {
+        "source": "base/test/greeting.test.js",
+        "destination": "test/greeting.test.js"
+      }
+    ]
+  },
+  "head": {
+    "message": "Extract internal display-name helper",
+    "files": [
+      {
+        "source": "head/src/display-name.js",
+        "destination": "src/display-name.js"
+      }
+    ]
+  },
+  "publicTests": [
+    "test/display-name.test.js",
+    "test/greeting.test.js"
+  ]
+}

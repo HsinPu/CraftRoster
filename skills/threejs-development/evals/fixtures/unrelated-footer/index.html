@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Orbit catalogue — fixture</title>
+  <link rel="stylesheet" href="styles/page.css">
+  <link rel="stylesheet" href="styles/viewer.css">
+  <link rel="stylesheet" href="styles/footer.css">
+  <script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js"}}</script>
+</head>
+<body>
+  <header class="site-header"><strong>Orbit catalogue</strong><span>Local evaluation fixture</span></header>
+  <main class="site-main">
+    <h1>一個獨立的 3D 預覽</h1>
+    <p>產品預覽與頁尾是不同的元件。這次編輯只影響頁尾。</p>
+    <section class="viewer-panel" aria-label="產品預覽">
+      <div id="viewer-stage" class="viewer-stage"><canvas id="viewer-canvas" aria-hidden="true"></canvas></div>
+      <div class="viewer-controls">
+        <button id="rotate-viewer" type="button">旋轉預覽</button>
+        <output id="viewer-status" role="status">正在載入預覽</output>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer" aria-label="網站資訊">
+    <a class="support-link" href="mailto:support@example.invalid">聯絡我們</a>
+    <a href="privacy.html">隱私說明</a>
+    <span>Orbit catalogue · Local fixture</span>
+  </footer>
+  <script type="module" src="src/viewer.js"></script>
+</body>
+</html>

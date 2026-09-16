@@ -1,0 +1,15 @@
+[
+  { "id": "missing-name", "config": { "workers": 4 } },
+  { "id": "missing-workers", "config": { "service_name": "notes-api" } },
+  { "id": "blank-name", "config": { "service_name": "  ", "workers": 4 } },
+  { "id": "nonstring-name", "config": { "service_name": 12, "workers": 4 } },
+  { "id": "name-line-break", "config": { "service_name": "notes\napi", "workers": 4 } },
+  { "id": "boolean-workers", "config": { "service_name": "notes-api", "workers": true } },
+  { "id": "string-workers", "config": { "service_name": "notes-api", "workers": "4" } },
+  { "id": "fractional-workers", "config": { "service_name": "notes-api", "workers": 1.5 } },
+  { "id": "floating-token-workers", "config": { "service_name": "notes-api", "workers": 2.0 } },
+  { "id": "zero-workers", "config": { "service_name": "notes-api", "workers": 0 } },
+  { "id": "too-many-workers", "config": { "service_name": "notes-api", "workers": 33 } },
+  { "id": "null-root", "config": null },
+  { "id": "array-root", "config": [] }
+]

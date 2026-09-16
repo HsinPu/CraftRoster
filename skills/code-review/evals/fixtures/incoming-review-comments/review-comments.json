@@ -1,0 +1,44 @@
+{
+  "fictional": true,
+  "reviewedSourceLabel": "HEAD-LOCAL-1",
+  "statementsVerified": false,
+  "comments": [
+    {
+      "id": "REV-101",
+      "reviewer": "fictional-reviewer-a",
+      "location": { "path": "src/booking-service.js", "symbol": "validateRequest" },
+      "comment": "The seat-count validation appears to allow zero. A zero-seat request should be rejected without creating a booking or a receipt. Please check the lower boundary."
+    },
+    {
+      "id": "REV-102",
+      "reviewer": "fictional-reviewer-a",
+      "location": { "path": "src/booking-service.js", "symbol": "reserve" },
+      "comment": "The capacity update seems to happen before returning an existing receipt. Repeating a successful request may consume seats a second time, or fail when the first request filled capacity. Please test the actual retry path."
+    },
+    {
+      "id": "REV-103",
+      "reviewer": "fictional-reviewer-b",
+      "location": { "path": "src/render-receipt.js", "symbol": "renderReceipt" },
+      "comment": "The receipt uses a template literal containing the attendee name. I think this inserts raw user HTML. Remove all angle brackets and ampersands from attendee names before saving them."
+    },
+    {
+      "id": "REV-104",
+      "reviewer": "fictional-reviewer-b",
+      "location": { "path": "src/booking-service.js", "symbol": "reserve" },
+      "comment": "The capacity comparison should reject requests equal to the remaining seat count. Keep at least one seat unbooked by using a greater-than-or-equal comparison."
+    },
+    {
+      "id": "REV-105",
+      "reviewer": "fictional-reviewer-c",
+      "location": { "path": "src/booking-service.js", "symbol": "createBookingService receipt lifetime" },
+      "comment": "I believe production deletes receipts after 24 hours even though offline clients retry for seven days. Set retention to 30 days to prevent duplicate bookings after cleanup.",
+      "referencedEvidence": { "productionSchedulerConfig": null, "cleanupTrace": null, "approvedClientRetryPolicy": null }
+    },
+    {
+      "id": "REV-106",
+      "reviewer": "fictional-reviewer-c",
+      "location": { "path": "src/booking-service.js", "symbol": "reserve" },
+      "comment": "The payload-fingerprint conflict is unnecessary. Whenever a request ID already exists, return its old booking even if the caller changes the event, seat count, or attendee name."
+    }
+  ]
+}

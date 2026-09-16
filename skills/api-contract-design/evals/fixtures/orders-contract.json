@@ -1,0 +1,6 @@
+{
+  "endpoint": "GET /v1/orders",
+  "response": {"items": [{"id": "o1", "total_minor": 1250, "currency": "TWD"}], "next_cursor": "opaque-or-null"},
+  "consumers": ["mobile-v1 reads total_minor as integer", "partner uses next_cursor until null"],
+  "proposal": "Rename total_minor to total and change it to a decimal string; replace cursor pagination with offset."
+}

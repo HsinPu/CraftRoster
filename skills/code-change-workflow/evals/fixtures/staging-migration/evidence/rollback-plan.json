@@ -1,0 +1,7 @@
+{
+  "migration": "A",
+  "snapshot": "evidence/database-snapshot.json",
+  "restoreSchemaVersion": 1,
+  "preserveRecordIds": true,
+  "method": "restore the local JSON snapshot after checking that record IDs match"
+}

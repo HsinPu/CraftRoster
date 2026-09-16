@@ -1,6 +1,6 @@
 ---
 name: systematic-debugging
-description: Generic evidence-first debugging for reproducing failures, tracing root causes, testing hypotheses, and defining the smallest justified fix when the cause is unknown or disputed. Never use it alone when a language specialist exists; for any Python failure, also read python-observability-debugging before diagnosis and python-development before the fix.
+description: Reproduce failures, trace causal paths, test hypotheses, and identify the smallest justified fix when the cause is unknown or disputed. Add a language or framework specialist when the affected path or diagnostic evidence needs its contracts; unrelated repository dependencies do not determine the route.
 license: Apache-2.0
 metadata:
   author: "HsinPu"
@@ -13,6 +13,8 @@ metadata:
 # Systematic Debugging
 
 Establish the causal failure before changing production behavior.
+
+Select specialists from the failing path and evidence, not merely from installed packages. Python exceptions and pytest runtime failures use `python-observability-debugging` for diagnosis and `python-development` for the confirmed fix; add Python testing guidance when implementing tests. A non-Python tool failure in the same repository does not by itself require those Skills.
 
 ## Workflow
 
@@ -48,6 +50,6 @@ Establish the causal failure before changing production behavior.
 - Use `java-development` for Java compiler, exception, concurrency, resource, JVM runtime, or public-API failures; add `java-testing` for JUnit reproduction and `jvm-build-tooling` when the causal boundary is Maven, Gradle, a plugin, dependency resolution, or the toolchain.
 - Use the relevant stack-specific debugging skill for other framework or runtime techniques.
 - Use `code-change-workflow` after the owner path and justified fix are known.
-- Use `test-driven-development` to add the regression test and implement the fix in a red-green cycle.
+- Use `test-driven-development` when a red-green cycle is required or chosen for the confirmed fix; otherwise use `testing-strategy` to retain decisive regression evidence without forcing a meaningless cycle.
 - Use `verification-before-completion` after remediation to prove the original failure and adjacent checks now pass.
 - Use `incident-response-postmortems` when an active production incident requires coordination, recovery, or communications.

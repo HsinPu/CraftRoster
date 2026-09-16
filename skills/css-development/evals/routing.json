@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "skill_name": "css-development",
+  "cases": [
+    {
+      "id": "footer-on-three-page",
+      "kind": "positive",
+      "prompt": "A page has a Three.js hero. Change only the footer padding to an existing CSS token; the footer has no canvas, overlay, input, or stacking dependency.",
+      "expected_skills": [
+        "css-development",
+        "frontend-design"
+      ],
+      "excluded_skills": [
+        "threejs-development"
+      ],
+      "allowed_skills": [
+        "code-change-workflow"
+      ]
+    },
+    {
+      "id": "scene-overlay-sizing",
+      "kind": "positive",
+      "prompt": "Fix CSS sizing and pointer-event boundaries for a Three.js canvas and projected interactive HUD; renderer resize behavior must remain coordinated.",
+      "expected_skills": [
+        "css-development",
+        "frontend-design",
+        "threejs-development"
+      ],
+      "excluded_skills": [],
+      "allowed_skills": [
+        "code-change-workflow",
+        "threejs-ui-overlays",
+        "threejs-scene-lifecycle",
+        "threejs-interaction-input"
+      ]
+    },
+    {
+      "id": "node-script-only",
+      "kind": "near_match",
+      "prompt": "Fix exit-code handling in a Node.js command-line script; no browser or CSS is involved.",
+      "expected_skills": [
+        "javascript-development"
+      ],
+      "excluded_skills": [
+        "css-development",
+        "frontend-design"
+      ],
+      "allowed_skills": [
+        "code-change-workflow",
+        "testing-strategy"
+      ]
+    }
+  ]
+}

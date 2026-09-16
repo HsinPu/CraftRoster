@@ -1,6 +1,6 @@
 ---
 name: css-development
-description: Visible CSS or UI changes require frontend-design plus this CSS specialist. Use for writing, modifying, fixing, reviewing, or refactoring cascade, selectors, layout, responsiveness, tokens, themes, states, canvas shells, and DOM overlays. For Three.js pages, also load threejs-development.
+description: Write, fix, review, or refactor CSS cascade, selectors, layout, responsiveness, tokens, themes, and visual states. Pair visible UI changes with frontend-design; add Three.js guidance only when canvas or scene integration is affected.
 license: Apache-2.0
 metadata:
   author: "HsinPu"
@@ -17,12 +17,14 @@ When CSS work changes a rendered page, component, visual state, theme, responsiv
 
 ## Three.js Routing Gate
 
-When the page uses `Three.js`, `threejs`, the `three` package, WebGL or WebGPU 3D, or an interactive 3D canvas:
+When the CSS change affects a Three.js or WebGL/WebGPU 3D canvas container, renderer resize contract, projected or occluded overlays, scene input, or accessible scene controls:
 
 1. Read the sibling [`../threejs-development/SKILL.md`](../threejs-development/SKILL.md) before proposing a complete solution, even if the runtime did not list that Skill initially.
 2. Keep this Skill responsible for document flow, canvas dimensions, aspect-ratio containers, stacking contexts, pointer-event boundaries, responsive overlays, labels, controls, and accessible DOM alternatives.
 3. Leave renderer sizing, DPR policy, camera, scene lifecycle, raycasting, occlusion, CSS2D or CSS3D integration, resources, and visual effects to `threejs-development` and its selected specialists.
 4. Coordinate CSS breakpoints with the scene's resize contract; do not conceal a renderer or lifecycle defect with styling alone.
+
+An unrelated CSS change on a page that happens to contain a 3D scene does not require this route. Neither a package dependency elsewhere nor plain Canvas 2D is sufficient evidence.
 
 ## Workflow
 
@@ -49,7 +51,7 @@ When the page uses `Three.js`, `threejs`, the `three` package, WebGL or WebGPU 3
 
 ## Handoff
 
-- For any Three.js or 3D canvas page, use `threejs-development` as the scene owner; use `threejs-ui-overlays` when labels, annotations, CSS2D, CSS3D, HTML portals, projection, or occlusion are central.
+- For CSS work that meets the 3D integration gate, use `threejs-development` as the scene owner; add `threejs-ui-overlays` when projection, occlusion, CSS2D, CSS3D, or DOM-to-scene labels are central.
 - For any visible production UI change, load `frontend-design` as the baseline. Use `taste-skill` or `design-consultation` only when direction itself is the requested deliverable or blocks implementation.
 - For Tailwind-specific work, use `tailwind-development` or `tailwind-patterns`.
 - For system-wide token extraction or audit, use `design-system`.

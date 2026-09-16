@@ -1,0 +1,25 @@
+{
+  "skill_name": "context-governance",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Keep context short for this read-only task. A single failed network request later succeeded; do not change repository files.",
+      "expected_output": "Task state is compacted without creating persistent guidance.",
+      "assertions": [
+        "It preserves only decision-relevant context and distinguishes observation from verified lesson.",
+        "It makes no persistent memory or repository changes.",
+        "It does not generalize the transient failure into a tool prohibition."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "We repeatedly verified this project requires a proxy for package downloads. Update the existing authorized project memory with the condition, evidence, and recheck trigger; do not include the proxy password.",
+      "expected_output": "A scoped, evidence-based memory update through the established mechanism.",
+      "assertions": [
+        "It records applicability and a recheck condition rather than an unconditional universal rule.",
+        "It updates or supersedes existing entries instead of duplicating them.",
+        "It excludes the password and unnecessary private logs."
+      ]
+    }
+  ]
+}

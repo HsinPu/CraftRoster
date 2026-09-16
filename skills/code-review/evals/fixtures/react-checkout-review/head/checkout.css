@@ -1,0 +1,19 @@
+* { box-sizing: border-box; }
+body { margin: 0; font: 16px/1.5 system-ui, sans-serif; color: #182838; background: #f7f8fb; }
+main { max-width: 960px; padding: 24px; margin: 0 auto; }
+h1 { margin: 0 0 8px; }
+h2 { margin-top: 0; }
+.notice { color: #44515d; }
+.checkout-grid { display: grid; grid-template-columns: 380px 380px; gap: 24px; }
+section { min-width: 0; padding: 24px; border: 1px solid #bcc6d0; border-radius: 8px; background: white; }
+label, select { display: block; }
+select { width: 100%; margin-top: 8px; padding: 8px; font: inherit; }
+button, .retry-control { padding: 8px 12px; font: inherit; border: 1px solid #31577f; border-radius: 4px; background: #eef4fa; cursor: pointer; }
+button:disabled { opacity: .55; cursor: default; }
+:focus-visible { outline: 3px solid #8d3f00; outline-offset: 3px; }
+.error { margin: 12px 0; padding: 12px; border: 2px solid #a73232; }
+@media (max-width: 640px) {
+  main { padding: 16px; }
+  .checkout-grid { grid-template-columns: 380px 380px; }
+}
+

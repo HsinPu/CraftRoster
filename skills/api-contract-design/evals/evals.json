@@ -1,0 +1,19 @@
+{
+  "skill_name": "api-contract-design",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Review the proposed change in orders-contract.json. Produce a compatible evolution plan and concrete old/new response examples; do not implement or deploy.",
+      "fixture_root": "evals/fixtures",
+      "files": ["evals/fixtures/orders-contract.json"],
+      "expected_output": "Identifies both consumer breaks and proposes a staged, additive or explicitly versioned transition with documented units, types, pagination termination, and consumer verification.",
+      "assertions": ["Names total_minor removal/type change and cursor removal as separate breaking changes.", "Preserves the existing v1 response or specifies a separately versioned incompatible endpoint with a migration window.", "Defines currency and amount units without inventing financial calculations.", "Includes consumer compatibility checks and performs no deployment or writes."]
+    },
+    {
+      "id": 2,
+      "prompt": "For POST /v1/jobs, define idempotency for retried requests: same key and identical payload returns the first result; same key with a different payload must not create a second job. No code or live calls are requested.",
+      "expected_output": "A bounded contract covering key scope, payload identity, replay/conflict semantics, expiry, concurrency, and error examples.",
+      "assertions": ["Specifies same-key same-payload replay and different-payload conflict separately.", "Discusses concurrent requests and key retention rather than promising unlimited deduplication.", "Marks policy choices as assumptions or explicit decisions and avoids live mutations."]
+    }
+  ]
+}

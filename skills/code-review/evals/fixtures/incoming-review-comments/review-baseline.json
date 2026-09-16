@@ -1,0 +1,20 @@
+{
+  "sourceLabel": "HEAD-LOCAL-1",
+  "sourceLabelIsGitCommit": false,
+  "digestAlgorithm": "sha256-utf8-lf",
+  "origin": "source snapshot of fictional review inputs; no review disposition or model result",
+  "inputs": {
+    "CONTRACT.md": "172ace3006b82643ff041091d72a11001f33b3e2099253d1246162fb1252d3d9",
+    "README.md": "0db4a388c9b40418147434c72d9630366c9c023ac096693fc6a3c153da1cb68a",
+    "package.json": "7d3d07fcccb4974650c05ed4434eeb2b09161ad8a859b9df5ef4a90babf7c215",
+    "policy/receipt-retention.json": "dabc30e0d33663466aa7e9dbf531f449ee5b4e3aa6b04535d8adc51c33d1d5f6",
+    "review-comments.json": "547fec9a58455e30af6849857f95212b55e09b61dd83287cd76628a64ffcef1f",
+    "runtime-context.json": "b6459b36ae8bceea51371bc5c3cc64968199d5c33549d1db021d4af2f46d2581",
+    "scenario.json": "0532b7c76fcf6ab1c83d1ab2a6cbba7ee0da0131522600579c2c38235fb2dad8",
+    "src/booking-service.js": "eb0325ff2efa4ff222974759f900d8756b439cc201d21fb46ded211e1b2b9564",
+    "src/checkout.js": "001c9eb00d492b338b480886be32667d73698f79b9c0ea69993a559d4903fd20",
+    "src/render-receipt.js": "2f77112fe6449e01d5f81c479bdd067300d6b67186723a223fc06a9e524ea34d",
+    "test/booking.test.js": "356e1495cb2fb6d318d24de6b6c7df877b75ee996a83d27a7b1d33dbf079f582",
+    "test/checkout.test.js": "c7a4bc173bbde16ce678c5d27a78f765246678c0e3a048888f30ee862481d845"
+  }
+}

@@ -24,8 +24,8 @@ Use this as the default first skill for existing-code changes. It answers: what 
 - Start here for existing-code edits before choosing language, framework, refactoring, or testing details.
 - If the inspection shows the change is broad, risky, or multi-step, add `incremental-implementation` to split the work into verified slices.
 - If the requested change is behavior-preserving cleanup, use `code-refactoring` for the refactor rules after the current behavior and verification path are known.
-- When the target contains Python code, `.py`, `pyproject.toml`, requirements files, Python package metadata, or a Python traceback, read `python-development` before planning the implementation and let its routing gate select the smallest required Python specialist.
-- When the target contains TypeScript code, `.ts`, `.tsx`, `tsconfig*.json`, a `typescript` dependency, or a `tsc` or `vue-tsc` diagnostic, read `typescript-development` before planning the implementation and let its routing gate select the smallest required framework, testing, debugging, or refactoring specialist.
+- When the requested change or diagnostic evidence involves Python code, runtime behavior, package configuration, or a Python traceback, read `python-development` and let its routing gate select the smallest required Python specialist.
+- When the requested change or diagnostic evidence involves TypeScript code, compiler configuration, typed APIs, or a `tsc` or `vue-tsc` diagnostic, read `typescript-development` and let its routing gate select the smallest required specialist. A Python or TypeScript dependency elsewhere in the repository is a discovery signal, not sufficient activation evidence.
 - When the target contains Java source, `.java`, Java source sets, a `javac` diagnostic, or a Java or JVM stack trace, read `java-development` before planning and let its routing gate select the smallest required architecture, framework, persistence, testing, build, debugging, or refactoring specialist. For Maven or Gradle configuration with no Java source or runtime change, use `jvm-build-tooling` without forcing the Java baseline.
 - Use stack-specific skills only after the owner code path is understood.
 - Use `code-review` or `security-code-review` instead when the task is only to review an existing diff.
@@ -69,12 +69,14 @@ Use this as the default first skill for existing-code changes. It answers: what 
 - If tests are missing, use the best available smoke check and state the gap.
 - Do not claim success without naming the verification that passed.
 
-## Stop And Ask When
+## Decisions and Authorization
 
-- The desired behavior is ambiguous and different interpretations require different code paths.
-- The change could be destructive, security-sensitive, billing-related, or migration-heavy.
-- Existing code contradicts the request and the safer direction is not obvious.
-- Verification requires credentials, production access, or irreversible side effects.
+Use security, billing, persistence, and public-contract impact to choose inspection and verification depth. Those domains alone do not require another confirmation.
+
+- Carry forward authorization already established for the target, operation, environment, and material effects. Continue authorized inspection, reversible implementation, and safe verification without asking again.
+- Ask when a material requirement remains unresolved after inspecting available evidence, or the next action exceeds that authority. Name the specific decision or action and what is missing.
+- Keep an unapproved destructive operation, real payment, production mutation, or new credential access pending; continue independent work that does not depend on it.
+- For low-risk ambiguity, state the repository-grounded assumption and proceed. Reassess if evidence changes the scope or consequences.
 
 ## Handoff
 
@@ -82,7 +84,7 @@ Use this as the default first skill for existing-code changes. It answers: what 
 - Use `terminal-ops` for command-driven proof and repo state checks.
 - Use `systematic-debugging` first when the failure is reproducible but its root cause is unknown or disputed.
 - Use `incremental-implementation` when the change needs multiple safe slices, checkpoints, or commits.
-- Use `test-driven-development` when the requested behavior can be expressed through a RED-GREEN-REFACTOR cycle.
+- Use `test-driven-development` when the user or repository requires it, or a failing regression or contract test is the appropriate way to lead the change. Use `testing-strategy` to judge proportionate alternatives; a reasoned exception is not automatically a new approval gate.
 - Use `pipeline-review` after a meaningful implementation stage needs an independent read-only acceptance gate.
 - Use `receiving-code-review` when this edit is remediation for an existing finding or review comment.
 - Use `verification-before-completion` immediately before claiming the requested change is complete.

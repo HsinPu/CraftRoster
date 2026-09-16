@@ -1,0 +1,17 @@
+{
+  "decisionIds": ["D-COMPAT", "D-PRIVACY", "D-RECOVERY"],
+  "stages": [
+    { "id": "local-synthetic", "publicExposurePercent": 0, "environment": "local sandbox", "requires": ["durability/retry/conflict acceptance cases", "local storage failure cases", "synthetic telemetry-schema checks"] },
+    { "id": "mixed-client-staging", "publicExposurePercent": 0, "environment": "fictional-isolated-sync-staging", "requires": ["local-synthetic", "U-STAGING-ACCESS", "U-RELEASE-OWNER", "v1/v2 compatible service support", "bad-client containment and draft recovery rehearsal"] },
+    { "id": "public-canary", "publicExposurePercent": 1, "environment": "production", "requires": ["mixed-client-staging", "U-TELEMETRY-RETENTION", "U-RELEASE-OWNER", "specific production execution grant"] },
+    { "id": "public-expanded", "publicExposurePercent": 10, "environment": "production", "requires": ["public-canary", "advance criteria met", "release owner decision"] },
+    { "id": "public-general", "publicExposurePercent": 100, "environment": "production", "requires": ["public-expanded", "advance criteria met", "release owner decision"] }
+  ],
+  "advanceCriteria": { "minimumObservationHours": 24, "minimumObservedSyncAttempts": 100, "maxNonConflictErrorRate": 0.01, "draftLossEvents": 0, "duplicateApplyEvents": 0, "incorrectAcknowledgementEvents": 0, "recoveryRehearsalMustPass": true },
+  "observedResults": null,
+  "executionAuthorized": false,
+  "containment": { "rejectNewUploadsFromAffectedClientVersion": true, "deletePendingLocalData": false, "pauseReasonVisible": true, "resumeRequiresFixedBuildEvidence": true },
+  "clientRollback": { "oldClientCanRecoverV2OutboxAlone": false, "preserveV2Namespace": true, "backupBeforeDestructiveRepair": true, "requireReadableCopyRecoveryProof": true },
+  "draftRecovery": { "inspectCopyBeforeOriginal": true, "preserveOriginalBytesUntilUserRecoveryConfirmed": true, "replayRequiresCurrentPermissionAndRevisionCheck": true, "telemetryMayContainRecoveredText": false },
+  "schemaContractionRequiresSeparateDecision": true
+}

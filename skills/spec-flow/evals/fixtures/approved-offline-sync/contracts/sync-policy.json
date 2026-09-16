@@ -1,0 +1,14 @@
+{
+  "decisionIds": ["D-SCOPE", "D-CONFLICT"],
+  "documentFields": ["documentId", "title", "body", "revision"],
+  "operationFields": ["schemaVersion", "documentId", "clientMutationId", "baseRevision", "title", "body"],
+  "schemaVersion": 2,
+  "revisionRule": "accept only when baseRevision equals the current server revision",
+  "acceptedRevisionIncrement": 1,
+  "conflict": { "status": 409, "serverDocumentChanges": false, "preserveLocalDraft": true, "preserveServerSnapshot": true, "automaticMerge": false, "lastWriteWins": false, "resolutionChoices": ["use-server-with-explicit-user-choice", "keep-mine-as-new-operation-against-latest-observed-revision"] },
+  "retry": { "key": "clientMutationId", "sameIdSamePayload": "return the original receipt without reapplying", "sameIdDifferentPayload": "reject", "operationImmutableAfterFirstSend": true },
+  "postSendEdits": { "newDraftRequired": true, "predecessorReceiptAcknowledgesNewDraft": false, "predecessorLinkField": "dependsOnMutationId" },
+  "states": ["saved-locally", "queued", "in-flight", "server-acknowledged", "conflict-needs-choice", "permission-rejected", "storage-error"],
+  "saveAcknowledgement": { "requiresDurableWrite": true, "serverAcknowledgementDistinct": true, "storageFailurePreservesLastDurableDraft": true },
+  "permissionRejectionPreservesLocalDraft": true
+}

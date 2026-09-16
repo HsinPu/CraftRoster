@@ -1,0 +1,235 @@
+{
+  "schema_version": 1,
+  "purpose": "Native features list -c configuration acceptance only; not strict exec, authentication, or provider execution evidence",
+  "started_at": "2026-09-16T12:48:42.817Z",
+  "status": "passed_local_config_preflight",
+  "source": {
+    "path": "probe-codex-chatgpt-config.cjs",
+    "sha256": "75281584d68dc26f0a3f78438012e87f535137dba2b78f78b355bfe5b3ffd97c"
+  },
+  "executable": {
+    "path": "C:\\Users\\win10\\AppData\\Local\\OpenAI\\Codex\\bin\\12219cbfbcbddde7\\codex.exe",
+    "expected_sha256": "960c111d47afd61669954b9df9e56083e302edbfa3ef6962d81dcc14a30051dc",
+    "sha256": "960c111d47afd61669954b9df9e56083e302edbfa3ef6962d81dcc14a30051dc",
+    "version": "codex-cli 0.154.0-alpha.6.2",
+    "sha256_after": "960c111d47afd61669954b9df9e56083e302edbfa3ef6962d81dcc14a30051dc",
+    "unchanged": true
+  },
+  "prior_strict_preflight": {
+    "path": "codex-chatgpt-config-preflight.json",
+    "sha256": "99fb8e9d7d9434f1596f68304d6e847bf34cb02cb1449884c943d2e807f4d8fe",
+    "status": "unsupported_or_error",
+    "followup_diagnostic_command": [
+      "--strict-config",
+      "features",
+      "list"
+    ],
+    "followup_diagnostic_exit_code": 1,
+    "followup_diagnostic_stderr": "Error: `--strict-config` is not supported for `codex features`\n",
+    "followup_diagnostic_cleanup": true,
+    "provenance": "Separately observed in a new empty temporary home and sanitized environment before this version; not rerun here"
+  },
+  "official_source": {
+    "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+    "accessed_on": "2026-09-16",
+    "documented_settings": {
+      "forced_login_method": [
+        "chatgpt",
+        "api"
+      ],
+      "model_provider": "Provider id; default openai"
+    }
+  },
+  "commands": [
+    {
+      "label": "version",
+      "args": [
+        "--version"
+      ],
+      "started_at": "2026-09-16T12:48:43.420Z",
+      "finished_at": "2026-09-16T12:48:43.460Z",
+      "elapsed_ms": 40,
+      "exit_code": 0,
+      "signal": null,
+      "process_error_code": null,
+      "stdout_bytes": 28,
+      "stderr_bytes": 0,
+      "feature_line_count": 0,
+      "output_summary": {
+        "has_strict_config_help": false,
+        "has_config_override_help": false,
+        "invalid_forced_login_method": false,
+        "rejected_unknown_argument": false,
+        "auth_or_login_diagnostic": false,
+        "stderr_present": false
+      }
+    },
+    {
+      "label": "native_help",
+      "args": [
+        "--help"
+      ],
+      "started_at": "2026-09-16T12:48:43.460Z",
+      "finished_at": "2026-09-16T12:48:43.498Z",
+      "elapsed_ms": 38,
+      "exit_code": 0,
+      "signal": null,
+      "process_error_code": null,
+      "stdout_bytes": 5748,
+      "stderr_bytes": 0,
+      "feature_line_count": 0,
+      "output_summary": {
+        "has_strict_config_help": true,
+        "has_config_override_help": true,
+        "invalid_forced_login_method": false,
+        "rejected_unknown_argument": false,
+        "auth_or_login_diagnostic": false,
+        "stderr_present": false
+      }
+    },
+    {
+      "label": "valid_chatgpt_openai",
+      "args": [
+        "-c",
+        "cli_auth_credentials_store=\"file\"",
+        "-c",
+        "mcp_oauth_credentials_store=\"file\"",
+        "-c",
+        "analytics.enabled=false",
+        "-c",
+        "feedback.enabled=false",
+        "-c",
+        "check_for_update_on_startup=false",
+        "-c",
+        "otel.exporter=\"none\"",
+        "-c",
+        "otel.trace_exporter=\"none\"",
+        "-c",
+        "otel.metrics_exporter=\"none\"",
+        "-c",
+        "forced_login_method=\"chatgpt\"",
+        "-c",
+        "model_provider=\"openai\"",
+        "features",
+        "list"
+      ],
+      "started_at": "2026-09-16T12:48:43.498Z",
+      "finished_at": "2026-09-16T12:48:43.545Z",
+      "elapsed_ms": 47,
+      "exit_code": 0,
+      "signal": null,
+      "process_error_code": null,
+      "stdout_bytes": 9191,
+      "stderr_bytes": 0,
+      "feature_line_count": 139,
+      "output_summary": {
+        "has_strict_config_help": false,
+        "has_config_override_help": false,
+        "invalid_forced_login_method": false,
+        "rejected_unknown_argument": false,
+        "auth_or_login_diagnostic": false,
+        "stderr_present": false
+      }
+    },
+    {
+      "label": "invalid_login_method_control",
+      "args": [
+        "-c",
+        "cli_auth_credentials_store=\"file\"",
+        "-c",
+        "mcp_oauth_credentials_store=\"file\"",
+        "-c",
+        "analytics.enabled=false",
+        "-c",
+        "feedback.enabled=false",
+        "-c",
+        "check_for_update_on_startup=false",
+        "-c",
+        "otel.exporter=\"none\"",
+        "-c",
+        "otel.trace_exporter=\"none\"",
+        "-c",
+        "otel.metrics_exporter=\"none\"",
+        "-c",
+        "forced_login_method=\"author_invalid\"",
+        "-c",
+        "model_provider=\"openai\"",
+        "features",
+        "list"
+      ],
+      "started_at": "2026-09-16T12:48:43.545Z",
+      "finished_at": "2026-09-16T12:48:43.588Z",
+      "elapsed_ms": 43,
+      "exit_code": 1,
+      "signal": null,
+      "process_error_code": null,
+      "stdout_bytes": 0,
+      "stderr_bytes": 158,
+      "feature_line_count": 0,
+      "output_summary": {
+        "has_strict_config_help": false,
+        "has_config_override_help": false,
+        "invalid_forced_login_method": true,
+        "rejected_unknown_argument": false,
+        "auth_or_login_diagnostic": false,
+        "stderr_present": true
+      }
+    }
+  ],
+  "child_environment_keys": [
+    "ALL_PROXY",
+    "APPDATA",
+    "CODEX_HOME",
+    "DO_NOT_TRACK",
+    "HOME",
+    "HTTPS_PROXY",
+    "HTTP_PROXY",
+    "LOCALAPPDATA",
+    "NO_COLOR",
+    "NO_PROXY",
+    "OTEL_LOGS_EXPORTER",
+    "OTEL_METRICS_EXPORTER",
+    "OTEL_SDK_DISABLED",
+    "OTEL_TRACES_EXPORTER",
+    "PATH",
+    "SystemRoot",
+    "TEMP",
+    "TERM",
+    "TMP",
+    "USERPROFILE",
+    "WINDIR"
+  ],
+  "temporary_home_initially_empty": true,
+  "intended_model_commands": 0,
+  "intended_login_commands": 0,
+  "intended_model_discovery_commands": 0,
+  "real_auth_or_personal_config_read_by_recorder": false,
+  "inherited_credential_environment": false,
+  "effective_authentication": "unverified",
+  "effective_model_provider": "unverified",
+  "strict_exec_configuration": "unverified; features subcommand explicitly rejects --strict-config",
+  "cleanup": {
+    "temporary_directory_removed": true
+  },
+  "limitations": [
+    "features list with -c acceptance proves local parsing only; it does not authenticate or make a model/provider request.",
+    "The native features subcommand rejects --strict-config. Successful -c parsing must not be described as a strict-exec preflight.",
+    "Empty redirected CODEX_HOME, user/profile directories and explicit file credential stores prevent this preflight from intentionally using the real user auth/config store.",
+    "Loopback proxy environment and disabled telemetry/update settings are application controls, not OS network isolation or packet-capture proof.",
+    "Running the real CLI against the original CODEX_HOME may normally write caches/logs and refresh tokens; it must not be described as leaving all host state untouched.",
+    "No provider request cap, model availability, account entitlement, effective model, or token usage is established by this preflight."
+  ],
+  "environment_policy": {
+    "inheritance": "none; fixed allowlist only",
+    "profile_and_state_locations": "new temporary subtree",
+    "proxy": "closed loopback discard port; no forwarding server",
+    "credential_store": "file in empty temporary CODEX_HOME"
+  },
+  "findings": {
+    "version_observed": true,
+    "native_help_documents_strict_config": true,
+    "requested_settings_accepted": true,
+    "invalid_enum_rejected": true
+  },
+  "finished_at": "2026-09-16T12:48:44.202Z"
+}

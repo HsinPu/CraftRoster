@@ -1,0 +1,6 @@
+[project]
+name = "fictional-config-tools"
+version = "0.1.0"
+description = "Small local configuration utility exercise"
+requires-python = ">=3.12"
+dependencies = []

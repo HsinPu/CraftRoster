@@ -1,0 +1,1 @@
+{ "name": "revision-verification-fixture", "private": true, "version": "1.0.0", "type": "commonjs", "scripts": { "test:handler": "node test/handler-baseline.test.js", "test:styles": "node test/styles.test.js" } }

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "fixtureOnly": true,
+  "digestAlgorithm": "sha256-utf8-lf",
+  "scenario": "frozen initial evidence before the evaluated task; verifier runs on new copies do not update these records",
+  "checks": [
+    {
+      "id": "receipt-baseline",
+      "revision": "RECEIPT-BEFORE-REFACTOR",
+      "status": "passed",
+      "inputs": {
+        "package.json": "366af69c430997bf595efdc188b6dcdd5d6675e8b84faf1eb1b6985a523b2ba3",
+        "src/receipt.js": "47cb36cd48a0ba45598552b7cc0529edd1f6e3bae2e0f588e690ea197644ba9f",
+        "test/receipt.test.js": "b8eac077fa1d402ca8593c64ceccd5dec4558514120327a76a038a7810d49970"
+      },
+      "execution": {
+        "command": "node test/receipt.test.js",
+        "executedAt": "2026-09-16T07:52:16.701Z",
+        "exitCode": 0,
+        "stdout": "Receipt public behavior checks passed for both formats.",
+        "environment": {
+          "node": "v24.19.0",
+          "platform": "win32"
+        },
+        "origin": "actual local execution of repository-authored synthetic fixture; no model or external service"
+      }
+    }
+  ]
+}

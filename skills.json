@@ -733,7 +733,7 @@
     },
     {
       "name": "css-development",
-      "description": "Visible CSS or UI changes require frontend-design plus this CSS specialist. Use for writing, modifying, fixing, reviewing, or refactoring cascade, selectors, layout, responsiveness, tokens, themes, states, canvas shells, and DOM overlays. For Three.js pages, also load threejs-development.",
+      "description": "Write, fix, review, or refactor CSS cascade, selectors, layout, responsiveness, tokens, themes, and visual states. Pair visible UI changes with frontend-design; add Three.js guidance only when canvas or scene integration is affected.",
       "category": "frontend-design",
       "author": "HsinPu",
       "source": "HsinPu/CraftRoster",
@@ -749,6 +749,13 @@
         "grid",
         "tokens",
         "architecture"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "conditional",
+          "when": "CSS affects a Three.js canvas, renderer sizing, HUD, projected labels, or pointer integration."
+        }
       ]
     },
     {
@@ -834,7 +841,7 @@
     },
     {
       "name": "deployment-operations",
-      "description": "Production deployment and release verification workflow for shipping builds, managing rollout and rollback, running smoke checks, and confirming post-deploy health. Use when code needs to be deployed to an environment or a release needs operational verification.",
+      "description": "Prepare, review, execute, or verify an environment deployment with artifact checks, rollout, smoke tests, health evidence, and recovery. Match the requested mode and authorized target; a readiness review does not authorize deployment.",
       "category": "cloud-devops",
       "author": "HsinPu",
       "source": "HsinPu/CraftRoster",
@@ -1162,11 +1169,17 @@
         "ui",
         "accessibility",
         "performance"
+      ],
+      "dependencies": [
+        {
+          "name": "code-review",
+          "kind": "required"
+        }
       ]
     },
     {
       "name": "frontend-design",
-      "description": "Mandatory baseline for any request to create, modify, fix, restyle, redesign, or polish visible web UI or frontend code, including HTML, CSS, browser JavaScript, React, Vue, Next.js, Tailwind, pages, components, forms, navigation, responsive layouts, interaction states, and visual bugs. Specialists supplement rather than replace it. Exclude backend-only, data-only, and prose-only work.",
+      "description": "Implement, fix, restyle, or polish visible web interfaces with semantic components, responsive layouts, accessible states, and rendered verification. Use as the baseline for visible UI changes; add only relevant source, framework, styling, or 3D specialists. Exclude backend-only, data-only, and prose-only work.",
       "category": "frontend-design",
       "author": "HsinPu",
       "source": "HsinPu/CraftRoster",
@@ -1182,6 +1195,13 @@
         "ui",
         "state-management",
         "component-architecture"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "conditional",
+          "when": "The requested or affected surface includes a Three.js or 3D scene; unrelated DOM and styling work does not qualify."
+        }
       ]
     },
     {
@@ -1278,6 +1298,13 @@
         "git",
         "github",
         "gerrit"
+      ],
+      "dependencies": [
+        {
+          "name": "markdown-writer",
+          "kind": "conditional",
+          "when": "Markdown syntax or formatting conventions need specialist guidance."
+        }
       ]
     },
     {
@@ -1309,6 +1336,12 @@
         "diff",
         "checks",
         "gh"
+      ],
+      "dependencies": [
+        {
+          "name": "code-review",
+          "kind": "required"
+        }
       ]
     },
     {
@@ -1405,6 +1438,13 @@
         "accessibility",
         "screen-recording",
         "multi-state"
+      ],
+      "dependencies": [
+        {
+          "name": "image-to-code-assets",
+          "kind": "conditional",
+          "when": "Independent asset exports, transparency, density variants, bounding boxes, or a Figma-layer handoff are requested."
+        }
       ],
       "reference": {
         "source": "Leonxlnx/taste-skill",
@@ -1539,6 +1579,18 @@
         "package",
         "module",
         "refactor"
+      ],
+      "dependencies": [
+        {
+          "name": "java-development",
+          "kind": "conditional",
+          "when": "Implementation or migration planning requires this Java baseline or its testing contract; current-state assessment can remain standalone."
+        },
+        {
+          "name": "java-testing",
+          "kind": "conditional",
+          "when": "Implementation or migration planning requires this Java baseline or its testing contract; current-state assessment can remain standalone."
+        }
       ]
     },
     {
@@ -1608,7 +1660,7 @@
     },
     {
       "name": "javascript-development",
-      "description": "Visible browser UI or interaction changes require frontend-design plus this JavaScript specialist. Use for writing, modifying, fixing, reviewing, refactoring, debugging, or testing browser and Node.js JavaScript; Node.js-only work does not require frontend-design. For Three.js code, also load threejs-development.",
+      "description": "Implement, review, debug, or test browser and Node.js JavaScript, including modules, async I/O, cancellation, and errors. Pair visible UI changes with frontend-design; add TypeScript or Three.js only when the affected code or diagnostic evidence involves those contracts.",
       "category": "software-engineering",
       "author": "HsinPu",
       "source": "HsinPu/CraftRoster",
@@ -1623,6 +1675,18 @@
         "async",
         "security",
         "testing"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "conditional",
+          "when": "The affected task requires this TypeScript or Three.js specialist; unrelated repository dependencies do not qualify."
+        },
+        {
+          "name": "typescript-development",
+          "kind": "conditional",
+          "when": "The affected task requires this TypeScript or Three.js specialist; unrelated repository dependencies do not qualify."
+        }
       ]
     },
     {
@@ -2143,6 +2207,12 @@
         "review-loop",
         "read-only"
       ],
+      "dependencies": [
+        {
+          "name": "code-review",
+          "kind": "required"
+        }
+      ],
       "reference": {
         "source": "wshobson/agents",
         "license": "MIT",
@@ -2306,6 +2376,12 @@
         "error-mapping",
         "transport",
         "generated-code"
+      ],
+      "dependencies": [
+        {
+          "name": "python-development",
+          "kind": "required"
+        }
       ]
     },
     {
@@ -2326,6 +2402,12 @@
         "batch",
         "typer",
         "click"
+      ],
+      "dependencies": [
+        {
+          "name": "python-development",
+          "kind": "required"
+        }
       ]
     },
     {
@@ -2346,6 +2428,12 @@
         "migrations",
         "middleware",
         "workers"
+      ],
+      "dependencies": [
+        {
+          "name": "python-development",
+          "kind": "required"
+        }
       ]
     },
     {
@@ -2366,6 +2454,12 @@
         "workers",
         "parallelism",
         "coordination"
+      ],
+      "dependencies": [
+        {
+          "name": "python-development",
+          "kind": "required"
+        }
       ]
     },
     {
@@ -2386,11 +2480,17 @@
         "parquet",
         "jupyter",
         "dataframes"
+      ],
+      "dependencies": [
+        {
+          "name": "python-development",
+          "kind": "required"
+        }
       ]
     },
     {
       "name": "python-development",
-      "description": "Mandatory baseline for any request to plan, write, modify, fix, review, test, debug, or run Python code. Read this skill whenever Python, a `.py` file, a Python project, packaging metadata, or a Python traceback is involved, even for one-file or planning-only work; then add only the relevant Python specialist. Do not use for non-Python tasks.",
+      "description": "Plan, implement, review, test, or diagnose Python code, runtime behavior, typing, packages, and toolchain configuration. Use for Python tasks including small scripts and planning-only requests; add specialists for material concerns. Unrelated Python files elsewhere in a repository do not activate this Skill.",
       "category": "software-engineering",
       "author": "HsinPu",
       "source": "HsinPu/CraftRoster",
@@ -2418,6 +2518,58 @@
         "uv",
         "fastapi",
         "pydantic"
+      ],
+      "dependencies": [
+        {
+          "name": "python-api-client-development",
+          "kind": "conditional",
+          "when": "The requested Python task matches this specialist domain; load only the relevant specialist."
+        },
+        {
+          "name": "python-automation-scripting",
+          "kind": "conditional",
+          "when": "The requested Python task matches this specialist domain; load only the relevant specialist."
+        },
+        {
+          "name": "python-backend-development",
+          "kind": "conditional",
+          "when": "The requested Python task matches this specialist domain; load only the relevant specialist."
+        },
+        {
+          "name": "python-concurrency-patterns",
+          "kind": "conditional",
+          "when": "The requested Python task matches this specialist domain; load only the relevant specialist."
+        },
+        {
+          "name": "python-data-engineering",
+          "kind": "conditional",
+          "when": "The requested Python task matches this specialist domain; load only the relevant specialist."
+        },
+        {
+          "name": "python-observability-debugging",
+          "kind": "conditional",
+          "when": "The requested Python task matches this specialist domain; load only the relevant specialist."
+        },
+        {
+          "name": "python-packaging-release",
+          "kind": "conditional",
+          "when": "The requested Python task matches this specialist domain; load only the relevant specialist."
+        },
+        {
+          "name": "python-security-hardening",
+          "kind": "conditional",
+          "when": "The requested Python task matches this specialist domain; load only the relevant specialist."
+        },
+        {
+          "name": "python-testing-engineering",
+          "kind": "conditional",
+          "when": "The requested Python task matches this specialist domain; load only the relevant specialist."
+        },
+        {
+          "name": "python-web-scraping",
+          "kind": "conditional",
+          "when": "The requested Python task matches this specialist domain; load only the relevant specialist."
+        }
       ]
     },
     {
@@ -2438,6 +2590,13 @@
         "performance",
         "runtime",
         "diagnostics"
+      ],
+      "dependencies": [
+        {
+          "name": "python-development",
+          "kind": "conditional",
+          "when": "Planning or implementing a Python code fix after diagnosis."
+        }
       ]
     },
     {
@@ -2458,6 +2617,12 @@
         "entry-points",
         "build",
         "distribution"
+      ],
+      "dependencies": [
+        {
+          "name": "python-development",
+          "kind": "required"
+        }
       ]
     },
     {
@@ -2478,6 +2643,12 @@
         "filesystem",
         "network",
         "trust-boundaries"
+      ],
+      "dependencies": [
+        {
+          "name": "python-development",
+          "kind": "required"
+        }
       ]
     },
     {
@@ -2498,6 +2669,12 @@
         "coverage",
         "tmp_path",
         "parametrize"
+      ],
+      "dependencies": [
+        {
+          "name": "python-development",
+          "kind": "required"
+        }
       ]
     },
     {
@@ -2518,6 +2695,12 @@
         "lxml",
         "crawling",
         "pagination"
+      ],
+      "dependencies": [
+        {
+          "name": "python-development",
+          "kind": "required"
+        }
       ]
     },
     {
@@ -2721,6 +2904,12 @@
         "xss",
         "injection",
         "auth"
+      ],
+      "dependencies": [
+        {
+          "name": "code-review",
+          "kind": "required"
+        }
       ]
     },
     {
@@ -2740,7 +2929,7 @@
     },
     {
       "name": "self-improvement",
-      "description": "Continuous improvement workflow for logging learnings, errors, and feature requests into project-local memory files. Use when a command fails, the user corrects an answer, a tool behaves unexpectedly, or a better recurring approach is found.",
+      "description": "Capture actionable lessons from recurring failures, verified improvements, or lasting user preferences. Use when a lesson can improve future decisions; separate task-local observations from authorized project memory. A single command failure or one-time correction does not automatically require a persistent entry.",
       "category": "workflow-planning",
       "author": "HsinPu",
       "source": "HsinPu/CraftRoster",
@@ -3325,7 +3514,7 @@
     },
     {
       "name": "systematic-debugging",
-      "description": "Generic evidence-first debugging for reproducing failures, tracing root causes, testing hypotheses, and defining the smallest justified fix when the cause is unknown or disputed. Never use it alone when a language specialist exists; for any Python failure, also read python-observability-debugging before diagnosis and python-development before the fix.",
+      "description": "Reproduce failures, trace causal paths, test hypotheses, and identify the smallest justified fix when the cause is unknown or disputed. Add a language or framework specialist when the affected path or diagnostic evidence needs its contracts; unrelated repository dependencies do not determine the route.",
       "category": "testing-quality",
       "author": "HsinPu",
       "source": "HsinPu/CraftRoster",
@@ -3446,7 +3635,7 @@
     },
     {
       "name": "test-driven-development",
-      "description": "Test-driven development workflow for implementing observable behavior through strict RED-GREEN-REFACTOR cycles and small verified increments. Use when adding or changing behavior that can be expressed with automated tests, especially regression fixes, public contracts, business rules, and behavior-preserving refactors; skip non-executable documentation and exploratory throwaway work.",
+      "description": "Implement observable behavior through RED-GREEN-REFACTOR when the user or repository requires TDD, or a focused failing regression or contract test is the appropriate way to lead the change. Use proportionate verification for other work; skip forced cycles for documentation and exploratory throwaway work.",
       "category": "testing-quality",
       "author": "HsinPu",
       "source": "HsinPu/CraftRoster",
@@ -3521,6 +3710,12 @@
         "screen-reader",
         "reduced-motion",
         "semantic-ui"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
       ]
     },
     {
@@ -3537,6 +3732,13 @@
         "skeletal-animation",
         "morph-targets",
         "inverse-kinematics"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "conditional",
+          "when": "IK, locomotion, procedural animation, navigation, or physics shares pose authority."
+        }
       ]
     },
     {
@@ -3553,6 +3755,13 @@
         "loaders",
         "compression",
         "textures"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "conditional",
+          "when": "Runtime authoring/export or engineering and dense spatial source formats require the shared contracts."
+        }
       ]
     },
     {
@@ -3610,6 +3819,12 @@
         "ifc",
         "measurement",
         "technical-models"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
       ]
     },
     {
@@ -3646,6 +3861,12 @@
         "mediarecorder",
         "webcodecs",
         "deterministic-frames"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
       ]
     },
     {
@@ -3662,6 +3883,12 @@
         "topology",
         "manifold",
         "authoring"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
       ]
     },
     {
@@ -3678,6 +3905,13 @@
         "scientific-visualization",
         "spatial-data",
         "accessibility"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "conditional",
+          "when": "Converting or streaming analytical source data requires shared format contracts."
+        }
       ]
     },
     {
@@ -3694,11 +3928,17 @@
         "soft-body",
         "fluid-simulation",
         "xpbd"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
       ]
     },
     {
       "name": "threejs-development",
-      "description": "Build and route Three.js or threejs browser experiences, interactive 3D webpages, canvas scenes, websites, and single-file HTML or JavaScript demos. Use whenever a request mentions Three.js, threejs, a three package or import, WebGL or WebGPU 3D, 3D HTML, or an existing Three.js application; also use for architecture, migration, assets, rendering, interaction, simulation, performance, accessibility, testing, and deployment.",
+      "description": "Build, debug, or evolve Three.js and WebGL/WebGPU 3D experiences, including single-file HTML scenes and affected renderer, asset, interaction, lifecycle, or performance contracts. Use for requested 3D work or evidence tied to an existing scene; exclude plain Canvas 2D and unrelated edits in repositories that merely contain Three.js.",
       "category": "threejs-graphics",
       "author": "HsinPu",
       "source": "HsinPu/CraftRoster",
@@ -3734,6 +3974,12 @@
         "undo-redo",
         "serialization",
         "export"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
       ]
     },
     {
@@ -3771,6 +4017,12 @@
         "svelte",
         "threlte",
         "frameworks"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
       ]
     },
     {
@@ -3905,6 +4157,12 @@
         "pathfinding",
         "crowds",
         "avoidance"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
       ]
     },
     {
@@ -3937,6 +4195,12 @@
         "worker-rendering",
         "transferables",
         "responsiveness"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
       ]
     },
     {
@@ -3974,6 +4238,12 @@
         "bvh",
         "light-transport",
         "convergence"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
       ]
     },
     {
@@ -4038,6 +4308,12 @@
         "ply",
         "streaming",
         "spatial-data"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
       ]
     },
     {
@@ -4131,6 +4407,12 @@
         "rigging",
         "morphology",
         "inverse-kinematics"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
       ]
     },
     {
@@ -4520,6 +4802,12 @@
         "compatibility",
         "deprecations",
         "rollback"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
       ]
     },
     {
@@ -4614,6 +4902,12 @@
         "ar",
         "accessibility",
         "motion-comfort"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
       ]
     },
     {
@@ -4652,7 +4946,7 @@
     },
     {
       "name": "typescript-development",
-      "description": "Visible .tsx or browser UI changes require frontend-design plus this TypeScript specialist. Use for writing, modifying, fixing, reviewing, refactoring, or type-checking TypeScript, .ts, .tsx, tsconfig, tsc, vue-tsc, strict mode, or typed APIs; server, CLI, and library-only work does not require frontend-design.",
+      "description": "Implement, review, debug, or type-check TypeScript source, compiler configuration, and typed public APIs. Pair visible UI changes with frontend-design; server, CLI, and library-only work does not require it. Unrelated TypeScript dependencies elsewhere do not activate this Skill.",
       "category": "software-engineering",
       "author": "HsinPu",
       "source": "HsinPu/CraftRoster",
@@ -5020,7 +5314,7 @@
     },
     {
       "name": "web-page-design-to-code",
-      "description": "Approval-gated workflow for turning a single web page brief, screenshot, or visual reference into desktop and mobile mockups, an implementation contract, production frontend code in the existing stack, and browser-verified visual evidence. Use when creating or materially redesigning one page and the design must be reviewed before coding; use website-redesign-to-code for multiple routes or a full-site redesign.",
+      "description": "Design and implement one web page through desktop/mobile visual coverage, a scoped implementation contract, and browser verification. Use when a page needs design decisions plus implementation, whether the user reserves approval, delegates those decisions, or resumes an approved design; use website-redesign-to-code for multiple routes and direct source workflows when no page-design work remains.",
       "category": "frontend-design",
       "author": "HsinPu",
       "source": "HsinPu/CraftRoster",
@@ -5073,7 +5367,7 @@
     },
     {
       "name": "website-redesign-to-code",
-      "description": "Approval-gated workflow for redesigning an entire website through route and page-family audit, preservation contracts, shared design systems, representative desktop and mobile mockups, staged frontend implementation, and cross-site verification. Use when a redesign spans multiple routes, templates, navigation, or global UI; use web-page-design-to-code for one isolated page.",
+      "description": "Redesign multiple website routes or page families through scope and preservation contracts, shared design decisions, representative desktop/mobile coverage, isolated pilots, and cross-site verification. Use for multi-route, template, shell, or global UI redesigns with reserved reviews, delegated implementation, or existing approvals; use web-page-design-to-code for one isolated page.",
       "category": "frontend-design",
       "author": "HsinPu",
       "source": "HsinPu/CraftRoster",
@@ -5237,11 +5531,11 @@
     {
       "id": "threejs-html-frontend-entry",
       "title": "Three.js HTML and Frontend Ownership",
-      "decision": "Three.js owns the 3D scene and browser rendering contract; frontend, CSS, and JavaScript Skills support their own DOM and language boundaries and must load the sibling Three.js umbrella when it was omitted from initial metadata.",
+      "decision": "For requested 3D work, Three.js owns the scene and rendering contract. Add frontend, CSS, or JavaScript owners only for affected DOM, integration, and language boundaries; repository presence alone does not activate the 3D route.",
       "skills": [
         {
           "name": "threejs-development",
-          "when": "The request mentions Three.js, threejs, the three package, WebGL or WebGPU 3D, a canvas scene, a 3D webpage, or a single-file HTML or JavaScript demo."
+          "when": "The requested outcome or affected implementation needs Three.js or WebGL/WebGPU 3D, including an explicitly requested single-file HTML 3D scene. Plain Canvas 2D, unrelated DOM edits, and a three dependency elsewhere are insufficient."
         },
         {
           "name": "frontend-design",
@@ -5264,7 +5558,7 @@
       "skills": [
         {
           "name": "threejs-development",
-          "when": "A request mentions Three.js, threejs, the three package, a WebGL or WebGPU 3D page, a canvas scene, a 3D website, or a single-file HTML or JavaScript demo, or spans architecture, rendering, assets, interaction, simulation, quality, or production delivery."
+          "when": "The requested outcome or affected implementation needs Three.js or WebGL/WebGPU 3D, including an explicitly requested single-file HTML 3D scene. Plain Canvas 2D, unrelated DOM edits, and a three dependency elsewhere are insufficient."
         },
         {
           "name": "threejs-version-migration",

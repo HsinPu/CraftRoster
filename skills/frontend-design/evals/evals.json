@@ -66,6 +66,26 @@
         "It keeps ownership within Python backend, validation, persistence, and testing boundaries.",
         "It does not invent a web interface."
       ]
+    },
+    {
+      "id": 7,
+      "prompt": "The repository has a three dependency used by another route. Fix the ordinary login form typography and focus styling; no canvas or scene contract is affected.",
+      "expected_output": "A frontend and CSS task without an unrelated 3D owner.",
+      "assertions": [
+        "It retains frontend-design for visible UI behavior and verification.",
+        "It does not load Three.js Skills based only on dependency presence.",
+        "It preserves the form's behavior and accessibility."
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Build a plain Canvas 2D bar chart with accessible DOM labels. Do not use WebGL or Three.js.",
+      "expected_output": "A semantic frontend implementation with 2D canvas ownership.",
+      "assertions": [
+        "It respects the explicit Canvas 2D requirement.",
+        "It does not route generic canvas wording to Three.js.",
+        "It verifies labels, rendering, and relevant responsive behavior."
+      ]
     }
   ]
 }

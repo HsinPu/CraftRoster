@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "fixtureOnly": true,
+  "digestAlgorithm": "sha256-utf8-lf",
+  "scenario": "frozen initial evidence before the evaluated task; verifier runs on new copies do not update these records",
+  "checks": [
+    {
+      "id": "build-A-unit",
+      "revision": "BUILD-A",
+      "status": "passed",
+      "inputs": {
+        "package.json": "24ba302c439c1e51902b812a0aa116502055663b2a1034aa1d40ebe53a943bf1",
+        "artifacts/build-A/handler.js": "965dac3b58688b0b459547c48bc026bdb782723a7034903146a3688fc9faf5bc",
+        "artifacts/build-A/manifest.json": "5c27f8910d00cb6624faa69b4f54b30e4dc68bc3eb5354d0c969a887eaec3d6b",
+        "test/build-unit.test.js": "d4a7b3f36e8957bb08dc73b94d68570c45dd383165958a54d79016b746347537"
+      },
+      "execution": {
+        "command": "node test/build-unit.test.js",
+        "executedAt": "2026-09-16T07:52:16.778Z",
+        "exitCode": 0,
+        "stdout": "Build A local unit checks passed; no staging request was made.",
+        "environment": {
+          "node": "v24.19.0",
+          "platform": "win32"
+        },
+        "origin": "actual local execution of repository-authored synthetic fixture; no model or external service"
+      }
+    }
+  ]
+}

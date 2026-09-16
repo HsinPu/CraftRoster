@@ -54,6 +54,108 @@ jobs:
       - name: Test Skill routing evaluation
         run: npm run test:skill-routing
 
+      - name: Test release baseline generation
+        run: npm run test:release-baseline
+
+      - name: Test Skill dependency metadata and links
+        run: npm run test:skill-dependencies
+
+      - name: Validate Skill review registry
+        run: npm run validate:skill-review
+
+      - name: Test Skill review registry guards
+        run: npm run test:skill-review
+
+      - name: Test offline Skill pilot packaging
+        run: npm run test:skill-pilot-preparation
+
+      - name: Test Skill pilot fixtures and local tool stubs
+        run: npm run test:skill-pilot-fixtures
+
+      - name: Test delivery fixture evidence and revisions
+        run: npm run test:skill-delivery-fixtures
+
+      - name: Test read-only deployment evidence fixtures
+        run: npm run test:skill-deployment-fixtures
+
+      - name: Test read-only App Store evidence fixtures
+        run: npm run test:skill-app-store-fixtures
+
+      - name: Test Python configuration task fixtures
+        run: npm run test:skill-python-config-fixtures
+
+      - name: Test MCP task material and documentation replay
+        run: npm run test:skill-mcp-fixtures
+
+      - name: Test virtual evaluation tool boundaries and artifact grading
+        run: npm run test:skill-eval-broker
+
+      - name: Test bounded task driver protocol and cancellation
+        run: npm run test:skill-task-driver
+
+      - name: Test Codex transport with offline JSONL fixtures
+        run: npm run test:skill-codex-transport
+
+      - name: Test Responses transport with offline provider fixtures
+        run: npm run test:skill-responses-transport
+
+      - name: Test frozen PR fixtures and read-only review service
+        run: npm run test:skill-review-pr-fixtures
+
+      - name: Test local Git review fixtures
+        run: npm run test:skill-review-local-fixtures
+
+      - name: Test approved planning input consistency
+        run: npm run test:skill-spec-fixtures
+
+      - name: Test unrelated footer fixture boundaries
+        run: npm run test:skill-footer-fixtures
+
+      - name: Test payment retry review fixture evidence
+        run: npm run test:skill-review-payment-fixtures
+
+      - name: Test authentication review evidence and negative controls
+        run: npm run test:skill-review-auth-fixtures
+
+      - name: Test selective Git history and compatibility evidence
+        run: npm run test:skill-review-history-fixtures
+
+      - name: Test mixed-version SQLite migration review evidence
+        run: npm run test:skill-review-migration-fixtures
+
+      - name: Test incoming review comments and bounded remediation
+        run: npm run test:skill-review-comments-fixtures
+
+      - name: Test generated dependency artifact review evidence
+        run: npm run test:skill-review-generated-fixtures
+
+      - name: Test cross-platform review evidence scope
+        run: npm run test:skill-review-platform-fixtures
+
+      - name: Test React checkout review fixture behavior
+        run: npm run test:skill-review-react-fixtures
+
+      - name: Test multi-service migration delivery fixture evidence
+        run: npm run test:skill-delivery-migration-fixtures
+
+      - name: Test pinned Three.js provenance input boundaries
+        run: npm run test:skill-three-provenance-fixtures
+
+      - name: Test GLB viewer lifecycle author inputs
+        run: npm run test:skill-three-viewer-fixtures
+
+      - name: Test R3F migration author inputs
+        run: npm run test:skill-three-r3f-fixtures
+
+      - name: Test renderer feature baseline author inputs
+        run: npm run test:skill-three-renderer-fixtures
+
+      - name: Test legacy furniture configurator author inputs
+        run: npm run test:skill-three-configurator-fixtures
+
+      - name: Test bounded Skill regression planning
+        run: npm run test:skill-regressions
+
       - name: Test Skill originality audit
         run: npm run test:skill-originality
 
@@ -194,9 +296,15 @@ jobs:
           done
 
   installer-powershell:
-    name: Installer smoke (PowerShell)
+    name: Installer smoke (${{ matrix.powershell }})
     runs-on: windows-latest
     timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        powershell:
+          - powershell.exe
+          - pwsh.exe
 
     steps:
       - name: Checkout
@@ -214,8 +322,15 @@ jobs:
           Write-Host "ImageOS=$env:ImageOS"
           Write-Host "ImageVersion=$env:ImageVersion"
 
+      - name: Test Windows Codex executor with fake processes
+        if: matrix.powershell == 'powershell.exe'
+        run: npm run test:skill-codex-executor
+
       - name: Run isolated PowerShell installer smoke test
-        run: npm run smoke:install:powershell
+        shell: powershell
+        run: |
+          $env:PSModuleAnalysisCachePath = 'NUL'
+          & '${{ matrix.powershell }}' -NoProfile -ExecutionPolicy Bypass -File scripts/smoke-install.ps1 -PowerShellExecutable '${{ matrix.powershell }}'
 
   installer-bash:
     name: Installer smoke (Bash)

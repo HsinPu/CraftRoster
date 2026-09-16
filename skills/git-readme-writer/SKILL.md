@@ -157,5 +157,5 @@ find . -name "*.ts" -o -name "*.js" -o -name "*.py" -o -name "*.java" | head -20
 - Research / Demo 範例：見 [reference/readme-example-research-demo.md](reference/readme-example-research-demo.md)
 - Platform Overlay 範例：見 [reference/readme-example-platform-overlays.md](reference/readme-example-platform-overlays.md)
 - Common Section Snippets：見 [reference/readme-example-section-snippets.md](reference/readme-example-section-snippets.md)
-- 參考現有 skill 的 README 結構：[README.md](../../README.md)
+- 可攜式 README 結構：參考內附 [README 類型與骨架](reference/readme-types.md)，並以目前專案內容填入可驗證的資訊。
 - Markdown 撰寫規範：參考 [markdown-writer](../markdown-writer/) skill

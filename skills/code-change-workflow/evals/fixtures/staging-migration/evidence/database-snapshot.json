@@ -1,0 +1,5 @@
+{
+  "target": "staging-db",
+  "schemaVersion": 1,
+  "records": [{ "id": "member-1", "name": "Example Member" }]
+}

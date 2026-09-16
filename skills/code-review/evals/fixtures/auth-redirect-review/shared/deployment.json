@@ -1,0 +1,11 @@
+{
+  "fictional": true,
+  "publicOrigin": "https://documents.example.invalid",
+  "callbackPath": "/auth/callback",
+  "callbackMethod": "GET",
+  "allowedRedirectPaths": ["/account", "/orders", "/settings"],
+  "useRequestHostForRedirects": false,
+  "trustForwardedOrigin": false,
+  "destinationPagesPerformSecondaryRedirects": false,
+  "listenerEnabled": false
+}

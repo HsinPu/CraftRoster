@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "skill_name": "frontend-design",
+  "cases": [
+    {
+      "id": "ordinary-form-with-three-dependency",
+      "kind": "positive",
+      "prompt": "Fix typography and focus styling on an ordinary login form. The three dependency is used by a different route; no canvas or scene is affected.",
+      "expected_skills": [
+        "frontend-design",
+        "css-development"
+      ],
+      "excluded_skills": [
+        "threejs-development"
+      ],
+      "allowed_skills": [
+        "code-change-workflow",
+        "accessibility-testing"
+      ]
+    },
+    {
+      "id": "backend-only-monorepo",
+      "kind": "near_match",
+      "prompt": "The monorepo has a React app. Fix only a FastAPI endpoint's request validation and add an integration test; no UI changes.",
+      "expected_skills": [
+        "python-development",
+        "python-backend-development"
+      ],
+      "excluded_skills": [
+        "frontend-design"
+      ],
+      "allowed_skills": [
+        "code-change-workflow",
+        "python-testing-engineering"
+      ]
+    },
+    {
+      "id": "design-term-explanation",
+      "kind": "negative",
+      "prompt": "Explain what responsive design means in two sentences; do not implement or review an interface.",
+      "expected_skills": [],
+      "excluded_skills": [
+        "frontend-design"
+      ],
+      "allowed_skills": [
+        "answer-writing"
+      ]
+    }
+  ]
+}

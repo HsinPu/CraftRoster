@@ -1,0 +1,4524 @@
+{
+  "schema_version": 1,
+  "evaluation_kind": "public_pinned_skill_source_verification",
+  "started_at": "2026-09-16T12:05:17.897Z",
+  "finished_at": "2026-09-16T12:05:18.384Z",
+  "status": "error",
+  "model_calls": 0,
+  "node_version": "v24.19.0",
+  "environment_keys": [
+    "SystemRoot",
+    "WINDIR"
+  ],
+  "inherited_environment": false,
+  "public_hosts": [
+    "api.github.com",
+    "raw.githubusercontent.com"
+  ],
+  "credentials_supplied": false,
+  "lock_updated": false,
+  "expected_coverage": {
+    "catalog_skills": 286,
+    "referenced_skills": 62,
+    "unreferenced_skills_outside_audit": 224,
+    "repositories": 18,
+    "unique_paths_including_license": 131,
+    "local_text_files": 344,
+    "mapped_upstream_paths": 115,
+    "unique_upstream_files": 114,
+    "comparisons": 734
+  },
+  "input_stability": "unchanged",
+  "before": {
+    "sources": {
+      "sha256": "d88fbb4ca5307e9c05faf2ea8e3bfcfef8e0774b70c4cb2fcb14c229bbf544c9",
+      "files": [
+        {
+          "path": "docs/audits/skill-optimization-2026-09-16/record-remote-skill-verification.cjs",
+          "bytes": 8895,
+          "sha256": "71170f465068195e4abe190b108d01a07f7a4b5056f542ed0fcc6726876e5f00"
+        },
+        {
+          "path": "scripts/audit-skill-originality.js",
+          "bytes": 26237,
+          "sha256": "c28e8c39f5446dc40a4d23ff04e8c0c138c478f690af69ba041ad257e87a8941"
+        },
+        {
+          "path": "scripts/generate-skill-catalog.js",
+          "bytes": 16388,
+          "sha256": "1d389b4751d097408a3d215dde1aab306fa994e9e56da209e22925df9025acf6"
+        },
+        {
+          "path": "scripts/lib/skill-dependencies.js",
+          "bytes": 6122,
+          "sha256": "5feaffbdafd401b349018942b52dbc2813b81694d5ac9640ecae88644100110a"
+        },
+        {
+          "path": "scripts/verify-skill-sources.js",
+          "bytes": 27866,
+          "sha256": "ace6edc8c44ae9d500a562a0331136978df3a515b306288386d418a1d454575a"
+        }
+      ]
+    },
+    "manifests": {
+      "sha256": "3b1dd51f62e66ae48a197ba943ec145cb029b7cba0582076c0963dc8b90384a5",
+      "files": [
+        {
+          "path": "scripts/data/skill-reference-lock.json",
+          "bytes": 198,
+          "sha256": "ef1aa83797a1628b419364543a12467b7014e5d0bb5c8770d59d40e51544b33a"
+        },
+        {
+          "path": "scripts/data/skill-reference-sources.json",
+          "bytes": 22050,
+          "sha256": "607701c72f18f52461bed1a7a71fb52383a1dc18ff96e8514aba3c5d5061cbb1"
+        },
+        {
+          "path": "skills.json",
+          "bytes": 276377,
+          "sha256": "cbe9065f47acd609f8246ca156cdb2e0357719c47359f25fa114f45b4a46c5cc"
+        }
+      ]
+    },
+    "local_packages": {
+      "sha256": "af7a95492e81d2307402903b08d15d2f77e7399aa297cd2065cd4f5262c88112",
+      "files": [
+        {
+          "path": "skills/agent-introspection-debugging/SKILL.md",
+          "bytes": 3674,
+          "sha256": "d604dc330ac7ca0b51384bc33f5541c937a27dd8309e47fb62b889fc46d463d4"
+        },
+        {
+          "path": "skills/agent-introspection-debugging/references/agent-failure-taxonomy.md",
+          "bytes": 3686,
+          "sha256": "55ec7a35063543c5f28436f74246a060e88e99cba6b36fcdf3d29c9ce7833f97"
+        },
+        {
+          "path": "skills/agent-introspection-debugging/references/trace-review-template.md",
+          "bytes": 1495,
+          "sha256": "ff1cf27cc73a70d818790442baf73df4764990bd45125d6bc141137057f5cde8"
+        },
+        {
+          "path": "skills/api-contract-testing/SKILL.md",
+          "bytes": 4073,
+          "sha256": "4c784161f3f3184de4b7a0dd9ea9825d8c166f75df1789f8cede2114dabe9991"
+        },
+        {
+          "path": "skills/api-contract-testing/references/contract-test-patterns.md",
+          "bytes": 4125,
+          "sha256": "b48e533abd5ef6ed926042f7baf29730a9cf7c8d338b60b4e0c0800cb61e5e44"
+        },
+        {
+          "path": "skills/article-writing/SKILL.md",
+          "bytes": 3393,
+          "sha256": "872dd410b216ee39e796fd3a8b9bd6d5670733e7fa48ef235a50443b48b794b5"
+        },
+        {
+          "path": "skills/article-writing/references/article-brief-and-editorial-checklist.md",
+          "bytes": 1942,
+          "sha256": "ed6816beb4145c44bdd3b5a5d6d20e8d558948489612b621400ff5f24f818ae0"
+        },
+        {
+          "path": "skills/autoresearch/SKILL.md",
+          "bytes": 3513,
+          "sha256": "a6c4f3930619d88224aac712d4f46b877407340f32fd6cd420597c25808abb35"
+        },
+        {
+          "path": "skills/autoresearch/references/experiment-protocol.md",
+          "bytes": 2290,
+          "sha256": "af0da3c2477c3fc13f825b77ddb1b56c490216dbaaf54723a91ec800d6a275ee"
+        },
+        {
+          "path": "skills/brand-voice/SKILL.md",
+          "bytes": 3305,
+          "sha256": "ad213fe173c227f1ea4af7fe0335d66f1d6f418bdc2cc450e5506f7ae10ed2ef"
+        },
+        {
+          "path": "skills/brand-voice/references/voice-profile-rubric.md",
+          "bytes": 1861,
+          "sha256": "d39e5a86ad178daf1d24cbee398be76204aa75ec88680ada683cb9e3ac76cfb8"
+        },
+        {
+          "path": "skills/content-repurposing/SKILL.md",
+          "bytes": 3558,
+          "sha256": "5d7b03962c90baaff204795b0934cae85c3630c09f500cae0c416fd088efe919"
+        },
+        {
+          "path": "skills/content-repurposing/references/channel-adaptation-matrix.md",
+          "bytes": 1542,
+          "sha256": "91dbee24a8dd819b4a8726ee36c215cb9168ea00377b0b08216baaea3b65c4d2"
+        },
+        {
+          "path": "skills/database-migration-workflow/SKILL.md",
+          "bytes": 5239,
+          "sha256": "f886f09040ceaa0c220a8c6bf91262600018cfcc10e8c20ba39abff299a4ad02"
+        },
+        {
+          "path": "skills/database-migration-workflow/references/migration-verification-and-recovery.md",
+          "bytes": 3862,
+          "sha256": "4e18006477e5671261ec322a25deff8d17d5eccf4d44ba5eb25e0def87b3165d"
+        },
+        {
+          "path": "skills/database-migration-workflow/references/zero-downtime-migration-patterns.md",
+          "bytes": 4333,
+          "sha256": "20daaaa7045b4ddec09a58335d55cb6c0f28d3d8c439f9b9c546211a96bdda87"
+        },
+        {
+          "path": "skills/design-intelligence-search/SKILL.md",
+          "bytes": 3982,
+          "sha256": "2f3de2e7a8bc98fb5a3ffe0a2ef468db2c8b55e03dc316c81fe8f00749aa35d5"
+        },
+        {
+          "path": "skills/design-intelligence-search/references/design-knowledge.json",
+          "bytes": 15563,
+          "sha256": "7e2b493ace75fe3fed5ef3e14e6a99b89a56982b7ba92c786f47abb3d71ccd8b"
+        },
+        {
+          "path": "skills/design-intelligence-search/references/knowledge-schema.md",
+          "bytes": 2810,
+          "sha256": "967d9fabfc686daea81d42ae9accffd6ca37343cebec111172350944ca8442d7"
+        },
+        {
+          "path": "skills/design-intelligence-search/scripts/search-design-intelligence.mjs",
+          "bytes": 11476,
+          "sha256": "8e468356b2584168bb12bc2f34ebe5902b87c4c229e84ca86ab2ed8d26d31ce4"
+        },
+        {
+          "path": "skills/design-system/SKILL.md",
+          "bytes": 7962,
+          "sha256": "5cf12e233caa9c883add03a8e4636756c5122840a82f441b1b3032cb440fa096"
+        },
+        {
+          "path": "skills/design-system/reference/generate.md",
+          "bytes": 4290,
+          "sha256": "95f8419c0e8a8eef39c254b93b57bc21c876c3ea8c214de260a9b7e7ca84c9ac"
+        },
+        {
+          "path": "skills/design-system/reference/review.md",
+          "bytes": 1918,
+          "sha256": "a49df8fbfb43f2865d98f0721d743572ac236bc6d9cba56b8507b96b2ecbb8fa"
+        },
+        {
+          "path": "skills/design-system/reference/token-extraction-and-drift.md",
+          "bytes": 6611,
+          "sha256": "e888cfcbe82dbed1747218a3fa49d8ece3c1ac1a54cbe8d79b533c390e36ee0f"
+        },
+        {
+          "path": "skills/domain-modeling/SKILL.md",
+          "bytes": 4785,
+          "sha256": "a7db084c562039d72e2827470862d0210c909bed955e385059246b4d6568cfa6"
+        },
+        {
+          "path": "skills/figma-to-code/SKILL.md",
+          "bytes": 9782,
+          "sha256": "93828c13526a075b5700cb3716fa0129eeff8f400eb258f19ca1c66c04c07d3a"
+        },
+        {
+          "path": "skills/figma-to-code/references/figma-evidence-contract.md",
+          "bytes": 6503,
+          "sha256": "864b779a3be734f6ae600ef1a76dea47d6530ab72afcbcb32db20565b37a889c"
+        },
+        {
+          "path": "skills/image-to-code/SKILL.md",
+          "bytes": 16179,
+          "sha256": "59d68a936c95484bfb657bbda67e54d642e9d3a098dcdbdab133af0ae8e33776"
+        },
+        {
+          "path": "skills/image-to-code/evals/evals.json",
+          "bytes": 3138,
+          "sha256": "db6d7c329f750ed81268699a5abad49d7416e15f251fbfe6ca961abf4577cc53"
+        },
+        {
+          "path": "skills/image-to-code/references/image-analysis-contract.md",
+          "bytes": 4487,
+          "sha256": "2f9e4e84850b5782e6894063d2704fee1e017ce8bac149768627cd802cc68158"
+        },
+        {
+          "path": "skills/image-to-code/references/visual-fidelity-checklist.md",
+          "bytes": 2894,
+          "sha256": "638343ce22e92a85a3e19e9b9b6b9df7e43431b770bcfc4c5bbc1731b660f08e"
+        },
+        {
+          "path": "skills/ios-architecture/SKILL.md",
+          "bytes": 5170,
+          "sha256": "e7c935ce06d7d38d1fc17949b1a776070c34b53da57ebf81243ce857d10a6425"
+        },
+        {
+          "path": "skills/ios-architecture/references/architecture-boundaries.md",
+          "bytes": 5140,
+          "sha256": "0d7f58f1918e81896079d806811128518d8e718cfb866ec83071c196b95bb2b8"
+        },
+        {
+          "path": "skills/ios-architecture/references/architecture-selection.md",
+          "bytes": 3855,
+          "sha256": "5e5074df4a18f61e986b6c0f5afb113886f5c857234d3873288a00b1acf5c173"
+        },
+        {
+          "path": "skills/ios-architecture/references/migration-and-review.md",
+          "bytes": 3370,
+          "sha256": "2ed5c4b9a1dbd40b108404653c6c7170e8873646bdb25c3db9d07fac5a78e858"
+        },
+        {
+          "path": "skills/karpathy-guidelines/SKILL.md",
+          "bytes": 5421,
+          "sha256": "8384941e53a5229870d51ce93532c256ee549789423f9657d9d1bed7c0ead03e"
+        },
+        {
+          "path": "skills/karpathy-guidelines/evals/evals.json",
+          "bytes": 1219,
+          "sha256": "40f42ba6e5069fcd9d85f26ad914d72a0e7c037759fc273148f672b1a3732ca7"
+        },
+        {
+          "path": "skills/llm-application-delivery-workflow/SKILL.md",
+          "bytes": 4012,
+          "sha256": "8dd6e8d88ff128f6ebdd5e0bb944a5664d9f5c9098ead40e7e6319110a046b27"
+        },
+        {
+          "path": "skills/llm-application-delivery-workflow/references/delivery-stage-gates.md",
+          "bytes": 3221,
+          "sha256": "69e58f69ca36fd7c59570447fa58da074bd29596caef1ea70000075c577b164b"
+        },
+        {
+          "path": "skills/market-research/SKILL.md",
+          "bytes": 4241,
+          "sha256": "728249409776fc2b459387a9879802e40d674e0e4f54285b1a3920c8e23779be"
+        },
+        {
+          "path": "skills/market-research/evals/evals.json",
+          "bytes": 3007,
+          "sha256": "8d76e4fdfcd73f223be667e9ad3f9b740dedea952fb17c6745028e761afc57d1"
+        },
+        {
+          "path": "skills/market-research/references/research-brief-and-evidence.md",
+          "bytes": 2992,
+          "sha256": "604b6fa5054c8be7d3b0aa1e59d720f724eb229c3b33a06947ec00fbc611a877"
+        },
+        {
+          "path": "skills/multi-session-planning/SKILL.md",
+          "bytes": 4871,
+          "sha256": "602d0887efddf3e11014b1cfe597447f90b2c7af3dca61309671154e3b4715d7"
+        },
+        {
+          "path": "skills/pipeline-review/SKILL.md",
+          "bytes": 6604,
+          "sha256": "42facf6ffcf7497e3b6c0a4fdf8638b2e2ce84e93f6eb089fac74308ce153123"
+        },
+        {
+          "path": "skills/pipeline-review/evals/evals.json",
+          "bytes": 1929,
+          "sha256": "e8044f38ccd01c4050375fd281499f413e0c6d0b53a3bff23950d48ab1f2ad8b"
+        },
+        {
+          "path": "skills/prompt-engineering/SKILL.md",
+          "bytes": 9113,
+          "sha256": "4e7f21caeef5fd33e32fcce9592908cc50cd188881e9f91f356dc450d94e50e8"
+        },
+        {
+          "path": "skills/prompt-engineering/evals/evals.json",
+          "bytes": 3752,
+          "sha256": "27f164476b435817132bc0267ada70886c6453328e2f0ffa985cba03529f5325"
+        },
+        {
+          "path": "skills/prompt-engineering/references/evaluation-and-regression.md",
+          "bytes": 3713,
+          "sha256": "d0f76cf1e157c133b6adef1b507fc860bf32734040aed827efefaa76b45b19d6"
+        },
+        {
+          "path": "skills/prompt-engineering/references/prompt-design.md",
+          "bytes": 5239,
+          "sha256": "931db2a69f23a684941d04b74d01aa6cecd01feda79f061c04a4842db29b53f8"
+        },
+        {
+          "path": "skills/receiving-code-review/SKILL.md",
+          "bytes": 2996,
+          "sha256": "19fdc93001ed834245e92387f94966db8f44f42f9e85281b85b73763c2f8891a"
+        },
+        {
+          "path": "skills/requirements-deep-dive/SKILL.md",
+          "bytes": 4649,
+          "sha256": "1a71de680f48141feecc597c15e08c3683aa16210c9ffee5f910b7f26e43d8b2"
+        },
+        {
+          "path": "skills/session-handoff/SKILL.md",
+          "bytes": 3096,
+          "sha256": "b947ce2a8f7397e55bf46cfa17c1b4c92cc15a7d088c51ea933cb566e79e4bc0"
+        },
+        {
+          "path": "skills/session-handoff/references/handoff-record.md",
+          "bytes": 1041,
+          "sha256": "af293663e70c3d31ed599b0766eea0c95e5a7d39356a83346e8f5e03e8b21278"
+        },
+        {
+          "path": "skills/skill-audit/SKILL.md",
+          "bytes": 5261,
+          "sha256": "317c771ade5fa1b23c3a5060425290ca0e7a73b50532713009ed49cb18a584cc"
+        },
+        {
+          "path": "skills/skill-audit/evals/evals.json",
+          "bytes": 2902,
+          "sha256": "c554643545bc8782534e227c269f6dbcd75e0c0b2727e3a2744e7608a1751a34"
+        },
+        {
+          "path": "skills/skill-audit/references/audit-rubric.md",
+          "bytes": 3702,
+          "sha256": "e52a106740b9a93328a4c0d15b030d01f18f0284ecdd3aa62224ecef5feddfdf"
+        },
+        {
+          "path": "skills/skill-creator-design/SKILL.md",
+          "bytes": 9325,
+          "sha256": "76b170d473923751d542db86052ac59fd1a2086c76c523a23b1d6606f9237dcd"
+        },
+        {
+          "path": "skills/skill-creator-design/evals/evals.json",
+          "bytes": 2877,
+          "sha256": "74ff72f65c56340716391c6ee05bfc0e499a0ae2fcb822463be0edf8fc9fc4d7"
+        },
+        {
+          "path": "skills/skill-explorer/SKILL.md",
+          "bytes": 3583,
+          "sha256": "23daf483629027dcfdf2fd95181daa124e300ee1e7ebdf940ceebd22c435dd58"
+        },
+        {
+          "path": "skills/skill-explorer/evals/evals.json",
+          "bytes": 2363,
+          "sha256": "a1f01b748ca01ddccac862a1be4b4a8be4f12d65995dcab4caf7ccf3abccb3ae"
+        },
+        {
+          "path": "skills/solution-discovery/SKILL.md",
+          "bytes": 3706,
+          "sha256": "7bd0002405d5fe382eb0be4ebb48e7d8157ddf39da76060cd0680b793a5b1fde"
+        },
+        {
+          "path": "skills/solution-discovery/evals/evals.json",
+          "bytes": 6223,
+          "sha256": "62801aed3b9daf7da363064ff158265b51acb0128e5d2e0a04aa4194e222dfcb"
+        },
+        {
+          "path": "skills/solution-discovery/evals/routing.json",
+          "bytes": 3654,
+          "sha256": "eab17e97352b8f8cb0efa50de1db9a5b320c264507f13846acdf4d528f5b34a3"
+        },
+        {
+          "path": "skills/spec-flow/SKILL.md",
+          "bytes": 4271,
+          "sha256": "d9bf218c089185382525f75c8ba39d5ebbb15c4b4f3ebad7cf92fbdeb3ab40f0"
+        },
+        {
+          "path": "skills/spec-flow/evals/evals.json",
+          "bytes": 8166,
+          "sha256": "a3a776cb8ccb8da95e581486b11fbc9e892c536e0ca099d7a7e148fe00965a7c"
+        },
+        {
+          "path": "skills/spec-flow/evals/fixtures/approved-offline-sync/CONTRACT.md",
+          "bytes": 1693,
+          "sha256": "8f8de26bb2930779b07376c1f782659003b486998d7ea9abace6807aa20654e8"
+        },
+        {
+          "path": "skills/spec-flow/evals/fixtures/approved-offline-sync/contracts/schema-compatibility.json",
+          "bytes": 1233,
+          "sha256": "99225f3d257098b6b6d730c9e2f8cc22c3daf3e7c71837f8adf8cf303129c2be"
+        },
+        {
+          "path": "skills/spec-flow/evals/fixtures/approved-offline-sync/contracts/sync-policy.json",
+          "bytes": 1336,
+          "sha256": "d42ffb13f3f1e454d4434f183f4e7788f5880d63104b0e251b50482cb5c6fb34"
+        },
+        {
+          "path": "skills/spec-flow/evals/fixtures/approved-offline-sync/contracts/telemetry-policy.json",
+          "bytes": 804,
+          "sha256": "4d9a63e0abe1c5bc6ff1ccf0a439da3dbd5f7d5b01bfba95bcf274788a514ab7"
+        },
+        {
+          "path": "skills/spec-flow/evals/fixtures/approved-offline-sync/decision.md",
+          "bytes": 5787,
+          "sha256": "3593190973c5b1795988d60340f7f51f9d211bcb88a9d51d1767e86e0cb5952d"
+        },
+        {
+          "path": "skills/spec-flow/evals/fixtures/approved-offline-sync/open-decisions.json",
+          "bytes": 1624,
+          "sha256": "d9ef3ff0b6737709a4d6fbd22002dc7a7b76139e0484dc50b37f8d8c90462c43"
+        },
+        {
+          "path": "skills/spec-flow/evals/fixtures/approved-offline-sync/operations/rollout-recovery.json",
+          "bytes": 2059,
+          "sha256": "0fab8d54da5f5ffa00b8ebf245f3f3a4bc6036c08d9bc2bab03f1c55b6394980"
+        },
+        {
+          "path": "skills/spec-flow/evals/fixtures/approved-offline-sync/samples/client-store-v1.json",
+          "bytes": 225,
+          "sha256": "9dcc4d8e296cad5e370637fab52a0e338c9c222be8bf44b486b22676d6f6eafd"
+        },
+        {
+          "path": "skills/spec-flow/evals/fixtures/approved-offline-sync/samples/client-store-v2.json",
+          "bytes": 466,
+          "sha256": "1419ae1222352cf153934a901fe3991170b3057629c961fa70b832b7e9a78208"
+        },
+        {
+          "path": "skills/spec-flow/evals/fixtures/approved-offline-sync/samples/sync-scenarios.json",
+          "bytes": 2159,
+          "sha256": "4d5e866e03e2968503377b314d6e10e18825740ebbb4563d66aeaa8ac57a93af"
+        },
+        {
+          "path": "skills/spec-flow/evals/fixtures/approved-offline-sync/samples/telemetry-event.json",
+          "bytes": 136,
+          "sha256": "b4db52261daab09264224183944d42c3e485d9b9f956bb1b77e0015511e59f13"
+        },
+        {
+          "path": "skills/spec-flow/evals/fixtures/approved-offline-sync/scenario.json",
+          "bytes": 2115,
+          "sha256": "059afac090b3a06ac074cd2fc244cbe4bd1fa48a8e78b8ac64034688d44b285f"
+        },
+        {
+          "path": "skills/spec-flow/evals/routing.json",
+          "bytes": 4421,
+          "sha256": "035e34b0aeea9c0ab7ee24be2087335b1bf49953e615b15aceb438d2947eb71b"
+        },
+        {
+          "path": "skills/spec-flow/references/task-contract.md",
+          "bytes": 2193,
+          "sha256": "e651f644dba4946aa60a9de1f16bd76932b34c70b89b3a89a91012c6123cf18d"
+        },
+        {
+          "path": "skills/swift-concurrency/SKILL.md",
+          "bytes": 7804,
+          "sha256": "023d706fd15f9c2a8cccd2df8026a00c5b578685903f71dec07608e2df071c43"
+        },
+        {
+          "path": "skills/swift-concurrency/references/configuration-and-migration.md",
+          "bytes": 4856,
+          "sha256": "6a647d35118b6aa5ec7cea07b38b32aa7b1cc0c30fd4e04f0cdf3fb1b83048a1"
+        },
+        {
+          "path": "skills/swift-concurrency/references/isolation-and-sendability.md",
+          "bytes": 5142,
+          "sha256": "97823360b4c73f9bb7aaae42bee8b1cf7821da63cf01202498d95151c51f312c"
+        },
+        {
+          "path": "skills/swift-concurrency/references/tasks-and-streams.md",
+          "bytes": 5485,
+          "sha256": "3e275efaef6f98769a30c08197660d623e46baa0605a8a3e07b76d8e6c5a5a76"
+        },
+        {
+          "path": "skills/swift-concurrency/references/verification-and-performance.md",
+          "bytes": 4349,
+          "sha256": "f05850a11337584d11b5d110b814400928bef26de6865d31b3b801e359a20f4a"
+        },
+        {
+          "path": "skills/swift-testing/SKILL.md",
+          "bytes": 6343,
+          "sha256": "a18e7139618044147ee429aa20df41c441668a29898bc9458837fffcf7799c9f"
+        },
+        {
+          "path": "skills/swift-testing/evals/evals.json",
+          "bytes": 6878,
+          "sha256": "fc75a7886edb30c4b6dc56dfcfc867952c6a09ea7c35beb581d96b61596680c2"
+        },
+        {
+          "path": "skills/swift-testing/references/async-parallel-and-isolation.md",
+          "bytes": 7492,
+          "sha256": "11adc811a856f8f9db4772c376d4717318d58ed61afd34ea87804ab4bf69a797"
+        },
+        {
+          "path": "skills/swift-testing/references/parameterization-traits-and-plans.md",
+          "bytes": 12862,
+          "sha256": "ac0d049dc08300c0aea301017f494aac7351074335aad7c4a60f222f821b7cdc"
+        },
+        {
+          "path": "skills/swift-testing/references/test-structure-and-assertions.md",
+          "bytes": 9759,
+          "sha256": "a3372c73ee691e281f7eb517724bb9aa4d18cbed08b459daa61a32d50d2e9d4a"
+        },
+        {
+          "path": "skills/swift-testing/references/xctest-migration-and-ci.md",
+          "bytes": 9576,
+          "sha256": "870d7fa16f975b46bbaf8035a01afebf73ae4a5eee12a81a59ea6da4d5581c07"
+        },
+        {
+          "path": "skills/swiftui-development/SKILL.md",
+          "bytes": 5046,
+          "sha256": "b169768242776d274d0625acc6f5bfdcb923bad5626cbc34d4591e3db309e46c"
+        },
+        {
+          "path": "skills/swiftui-development/references/quality-and-performance.md",
+          "bytes": 3881,
+          "sha256": "b1b10ea0cadb59518735fb86e62e3e818424bc4250fc2f8784a4caebd956b830"
+        },
+        {
+          "path": "skills/swiftui-development/references/state-and-concurrency.md",
+          "bytes": 3970,
+          "sha256": "5f40819c6cecd2433389c82f0bf5965e3a18244f1fbabd5fc61c918912cc02ce"
+        },
+        {
+          "path": "skills/swiftui-development/references/views-and-navigation.md",
+          "bytes": 3905,
+          "sha256": "1ecac60d9aba5752536062fdef26abf6e930c9c0eaaa7832e5944fee271ad2e0"
+        },
+        {
+          "path": "skills/systematic-debugging/SKILL.md",
+          "bytes": 4287,
+          "sha256": "242c7cced56ab2ace281604404403a2ef454b2d097f185d3cab766fbee93545e"
+        },
+        {
+          "path": "skills/systematic-debugging/evals/evals.json",
+          "bytes": 1264,
+          "sha256": "c5398c2f050eaea8eea64a264c123dc32500258f8ad4a2f1173c57a67ec98dcc"
+        },
+        {
+          "path": "skills/systematic-debugging/evals/routing.json",
+          "bytes": 1625,
+          "sha256": "aec0f69f27d487c2129ff1c85a7fe4c2f306305184df32fdd9762df2c761d6df"
+        },
+        {
+          "path": "skills/taste-skill/SKILL.md",
+          "bytes": 8773,
+          "sha256": "161e45a218d98cd28e2f6dc22eda725086d78e5cf88cb95fad9df7f7ecde59db"
+        },
+        {
+          "path": "skills/taste-skill/references/anti-generic-ui-review.md",
+          "bytes": 2847,
+          "sha256": "464e1697ba7466356b803e108b053363bda099bd07f3402cf6909be52bce571e"
+        },
+        {
+          "path": "skills/taste-skill/references/design-decision-log.md",
+          "bytes": 2010,
+          "sha256": "d7e7ffdd71f110d7ffe4d4a3d747829a6fbae76a36749b62db78033b84d2e9f5"
+        },
+        {
+          "path": "skills/taste-skill/references/design-intent-and-calibration.md",
+          "bytes": 3648,
+          "sha256": "5025d16ee1a7ae114df976e6218e24fbc67b2a5f5826eafe82e17dcef33b61ed"
+        },
+        {
+          "path": "skills/test-driven-development/SKILL.md",
+          "bytes": 4399,
+          "sha256": "39e056aa691fbf84b8e0a1e6f73bae2096d81b62cc0e3b4a1a032f677ea5b9b1"
+        },
+        {
+          "path": "skills/test-driven-development/evals/evals.json",
+          "bytes": 1990,
+          "sha256": "bbeaeb7b80afc570364e5e55c1283b83981d0f4d59a22d2405baa13b1ddbd043"
+        },
+        {
+          "path": "skills/test-driven-development/evals/routing.json",
+          "bytes": 1433,
+          "sha256": "e95c276140c98e96f81dea4c962aa861b8e650e3417299140c3e7957358687bc"
+        },
+        {
+          "path": "skills/threejs-atmosphere-aerial-perspective/SKILL.md",
+          "bytes": 1941,
+          "sha256": "b1e927812643ef68ba3d2cfb55c728f7fd014fa63492aea40d9028fe9e69847f"
+        },
+        {
+          "path": "skills/threejs-atmosphere-aerial-perspective/evals/evals.json",
+          "bytes": 1383,
+          "sha256": "9f986c9b65ccf630b42be0ff742b7fcad97c4dd7d33e0e60a21998dedddd2fb8"
+        },
+        {
+          "path": "skills/threejs-bloom/SKILL.md",
+          "bytes": 1710,
+          "sha256": "f73ba8d6453277f1e07cbbb901d0c3c913adfd7d9b523bb9076dc7fcc5b1d925"
+        },
+        {
+          "path": "skills/threejs-bloom/evals/evals.json",
+          "bytes": 1401,
+          "sha256": "4aaddf9892e88b329f260d682d4209eda0d97ef45e553753629906415f055560"
+        },
+        {
+          "path": "skills/threejs-camera-direction/SKILL.md",
+          "bytes": 1875,
+          "sha256": "0a3eb1790bec5313d23b2fce37aeb61541570276adb0b8d3932c4c2f5d043d6b"
+        },
+        {
+          "path": "skills/threejs-camera-direction/evals/evals.json",
+          "bytes": 1362,
+          "sha256": "5e27cf104fafae4a41534a5ef9e76d18ce22bc62609d9787813c06644c110282"
+        },
+        {
+          "path": "skills/threejs-development/SKILL.md",
+          "bytes": 5829,
+          "sha256": "07beef40a40f9b24feb997700ffb866966632b6fe42468c29fc10f5b8c9b8abe"
+        },
+        {
+          "path": "skills/threejs-development/evals/evals.json",
+          "bytes": 28646,
+          "sha256": "c22f88f5ad7fe3b467df377f2b5420619dffeafc8290dce41d43ca12f3a1ad93"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/glb-viewer-lifecycle/CONTRACT.md",
+          "bytes": 4439,
+          "sha256": "edb8b5d219a6b4f2fa2086f503cb060b3b003bfb77958aa110c1614672c76f3a"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/glb-viewer-lifecycle/index.html",
+          "bytes": 993,
+          "sha256": "2afea0920a8a61a1f1213b533ae9663423912edd643a4cc90c38a8812ead71f9"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/glb-viewer-lifecycle/package-lock.json",
+          "bytes": 14843,
+          "sha256": "1553f3c51037ec00ecd1f62f95d6bb323d6881e9766e5c75d2ec5340623a2b78"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/glb-viewer-lifecycle/package.json",
+          "bytes": 282,
+          "sha256": "98795b5972abf2819dbc3e4c2b53ffe80cf28fd715919abf77b4b5b54ea8a31d"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/glb-viewer-lifecycle/scenario.json",
+          "bytes": 674,
+          "sha256": "f165ca445f419194beb7c68eb31c4597097f6359c285beb5a1e28ed634c7dc85"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/glb-viewer-lifecycle/src/asset-policy.cjs",
+          "bytes": 586,
+          "sha256": "5e74f8f5b81c3ec56035c0bab75963587a06ee1834ee0808747e47ad0f704c0b"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/glb-viewer-lifecycle/src/lifecycle.cjs",
+          "bytes": 119,
+          "sha256": "217444103cc0fc2ae0ea464d0062856b60470eb4382b5579f542a2f8c1806446"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/glb-viewer-lifecycle/src/viewer.js",
+          "bytes": 7707,
+          "sha256": "26b2e49a6697a458a8fa416ddaee89dcd434d673c4f503690710fb528b410a0f"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/glb-viewer-lifecycle/style.css",
+          "bytes": 458,
+          "sha256": "2a995ff9458d51e98010c5d1205040e632f2dfa64516d58c44a853d10993d368"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/glb-viewer-lifecycle/test/assets.test.cjs",
+          "bytes": 1179,
+          "sha256": "95407cb231a4b40e6c7810721e00429019e22ff1eac7a54e595e5a3810148dc3"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/glb-viewer-lifecycle/tools/build.cjs",
+          "bytes": 901,
+          "sha256": "475ad05d501f4c37b62ae65c87ba92cd880c3ea556bf483204857a57cd0ee0ab"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/glb-viewer-lifecycle/tools/generate-assets.cjs",
+          "bytes": 2939,
+          "sha256": "140dc4f134f1d3caa2ebc34ecb0087077641c2d637cef13274993115c51eb914"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/glb-viewer-lifecycle/tools/serve.cjs",
+          "bytes": 1349,
+          "sha256": "ce6305f536151400f2f1ec95d9f209da99a97bb6f742b1566e8d17e1f5ec9fa7"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/CONTRACT.md",
+          "bytes": 3990,
+          "sha256": "b694bef468f9c0d3b08ba0d7df38ab463e10d87e33e5d42e6d614e6e638e07aa"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/assets/audio-cue.json",
+          "bytes": 240,
+          "sha256": "8a1d79dbb9fac12bd375b66e19e5637abd47df358126c2e5afd0801cc1ee1760"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/assets/materials.json",
+          "bytes": 476,
+          "sha256": "814f7e059007d70c6c1d36759e0a29d9c5a7df1c5618e68082195bf983f86b99"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/contracts/saved-design-v1.schema.json",
+          "bytes": 3147,
+          "sha256": "a0016cf3d3e57ad5c88b2368cc905227fd3e4a8e8be2adfcee16af38df28711b"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/contracts/scene-and-capture.json",
+          "bytes": 1478,
+          "sha256": "02f0b723f49f3718384b89eefa9ea69c74d2a5b66b6c5b5aaceb1ca28b532c38"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/index.html",
+          "bytes": 3438,
+          "sha256": "9dd62b85c0ea17a430166b6cb8756964ca2274800b5148f4bf745eded98be570"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/package-lock.json",
+          "bytes": 579,
+          "sha256": "e2c686418b97e82540b9792d9d2e45956d4c5af7b13aeac46ced71de35e55db2"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/package.json",
+          "bytes": 259,
+          "sha256": "db49cfddcb2be6c13d5938b342b4cc43548051a4420ee529c2eb29d7672bcf6e"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/saved-designs/invalid-material.json",
+          "bytes": 519,
+          "sha256": "dded559edd547176cbed93b911b24eb0b7197f54e0b49df66769d81d88b72c34"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/saved-designs/invalid-units.json",
+          "bytes": 503,
+          "sha256": "23f63b229ff39a8cb0774217fea2cfcfa85c0fc646707342d903474b9cd75be2"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/saved-designs/invalid-version.json",
+          "bytes": 500,
+          "sha256": "49ff625eb39950b822f3e77613b7692efdff24d092eaeda97c6978e557bd3497"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/saved-designs/oak-chair.v1.json",
+          "bytes": 500,
+          "sha256": "fa4e06b861d708b71f120a6dd1c0c2d97d5f2a196bf557fa0a5082c5494e411e"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/saved-designs/wide-chair.v1.json",
+          "bytes": 508,
+          "sha256": "9dc587d68612b0f010fc40a5063568820a18629dfad0dc194ff46fd1815a2141"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/src/app.js",
+          "bytes": 3179,
+          "sha256": "ed694087b3a55aa17b30de5fed292cda35bcccffc8ac6852027eb8a8146dda50"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/src/design.js",
+          "bytes": 2707,
+          "sha256": "615c3c9f467ae565049314f29ba247e28eb3e178ec0d75f4aa779acc004dcc61"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/src/model.js",
+          "bytes": 2237,
+          "sha256": "c65f8fb717bf8c6d3820c933fc53e9c42dfc6df0fc0681b5ff386b23644d9487"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/src/renderer.js",
+          "bytes": 3165,
+          "sha256": "274fa58097d8da82678d22176785fedc83dc64604643be39201237983b157e1f"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/style.css",
+          "bytes": 1177,
+          "sha256": "11487ece37c92e4605495b7cc5f0ef7f84f27e034d41a0b47ca9c95aac84f9e9"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/test/designs.test.cjs",
+          "bytes": 1395,
+          "sha256": "819ac923ff875b17f72ae502c364c2fa39ff036e3170dcdbd32425ea0c90a1de"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/tools/audio.cjs",
+          "bytes": 959,
+          "sha256": "7a87893a3f1957e24725ba72a0d4810bfab9908127fc10f94a1ff79589fe2178"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/tools/build.cjs",
+          "bytes": 1456,
+          "sha256": "a147366b9288f4da378b620512d2c821e999bd1fd2cabe9b028510558a5bb0a7"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/tools/serve.cjs",
+          "bytes": 1641,
+          "sha256": "c53f82c2f89cab9f16cc0e9c223d464c4e538a9f605249b27e2862b9934427d6"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/pinned-provenance/CONTEXT.md",
+          "bytes": 1622,
+          "sha256": "2a0b77d2870c7f3821fef238ceadd6aace41a7f370e39d1b9780e3413aaf8d5a"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/pinned-provenance/existing-policy.json",
+          "bytes": 5843,
+          "sha256": "188421028c0fd108d23da8a2e6bba1040d66df00580c04e1119b47c9f3112b9d"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/pinned-provenance/upstream-evidence.json",
+          "bytes": 3367,
+          "sha256": "57188f45454a58b372e10b0eb3d8dbb81b37ae7921d9267e6f998f12919ce3d5"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/renderer-feature-baseline/CONTRACT.md",
+          "bytes": 2418,
+          "sha256": "ddfa05e2cd9ca3fdf486771f9b0de6c77dee32c88e543b7dc42f4cbabe25dbd1"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/renderer-feature-baseline/contracts/requirements.json",
+          "bytes": 994,
+          "sha256": "f3f4770aac7ed5e6898036c5fb9ae0b50e530e02e116151502f116cb61c96ef0"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/renderer-feature-baseline/dependency-evidence.json",
+          "bytes": 1075,
+          "sha256": "77d617061d3a13941f3722fe33e3d9ba43896f47cab5106b4ff3163ee9d9479d"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/renderer-feature-baseline/index.html",
+          "bytes": 1013,
+          "sha256": "1d8f3fd38ea66dae366448e1a217e18947b277678444a52cbd9d64522a047e44"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/renderer-feature-baseline/package-lock.json",
+          "bytes": 567,
+          "sha256": "ee194b115ea1e948406d0058b3cc22d0d03fdff9eded203662fe826a37560eab"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/renderer-feature-baseline/package.json",
+          "bytes": 153,
+          "sha256": "f45a11ae32904ce4824de9c3bc0e8b8abd0924a00c3319ff221e6284fc00d6a7"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/renderer-feature-baseline/src/pixel-contract.js",
+          "bytes": 717,
+          "sha256": "a3b89174ea50fbdb0c8a453129ab8c921db686ec1645c3ad4b63123df60ad31b"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/renderer-feature-baseline/src/probe.js",
+          "bytes": 6253,
+          "sha256": "b173469bd91f81074c8a7eafeac535345bf7084f9d0ba13bccee6a6ae30b62d7"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/renderer-feature-baseline/style.css",
+          "bytes": 541,
+          "sha256": "a4f491d64b751df39c280b4a6c693c2f132e848eb5b49af1d3dfd4f6361a6d4c"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/renderer-feature-baseline/tools/build.cjs",
+          "bytes": 1107,
+          "sha256": "023ef788d649fcdff755d5e14fb504e3bc35fa34519bf0567b2c8b4220d74a75"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/renderer-feature-baseline/tools/serve.cjs",
+          "bytes": 1324,
+          "sha256": "e1188eea2363959b678abbc2621e7500fb16e1657f4c8b3991eaaf6dd9bde383"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/unrelated-footer/CONTRACT.md",
+          "bytes": 1671,
+          "sha256": "88750fec1d3ea32a6e57e1802cc06ee1ca93afec417c0031f8b7030965fc1a4d"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/unrelated-footer/index.html",
+          "bytes": 1425,
+          "sha256": "083b2eeee41e58a4f2f5523793281a2a5a04ee163cfb4beab583107b64a0ec85"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/unrelated-footer/package-lock.json",
+          "bytes": 535,
+          "sha256": "9ed6d3c2abf4de4b621b40928989b04d8308381b8442146ef8831a1bccc4fd04"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/unrelated-footer/package.json",
+          "bytes": 144,
+          "sha256": "874cee245f173796ef834a7f83feb484f29f87310e284ac4f644eb581b0014cc"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/unrelated-footer/privacy.html",
+          "bytes": 315,
+          "sha256": "c4ace5ad8181bd6af9df8d5eb8a361b498fb5b578872eaf0dc6aad5c399cafe0"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/unrelated-footer/src/viewer.js",
+          "bytes": 2076,
+          "sha256": "24c3ddebe6da31ccacfb9612de3c4c80acc26a41326e7a3cc3086876037af501"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/unrelated-footer/styles/footer.css",
+          "bytes": 229,
+          "sha256": "5e1189503c57fe5e1587fe7850af5bbda0bbfafc31edbc3804b1468777ae9ada"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/unrelated-footer/styles/page.css",
+          "bytes": 566,
+          "sha256": "ed4bde2ef5997cb4c3e6a748954d912e137d8aee22686ce91b628624d7546c58"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/unrelated-footer/styles/viewer.css",
+          "bytes": 575,
+          "sha256": "f96aed1a82a81f3710f935fe6a1512ea3c318edcfcb7a3749ccfa8153d2a7fa5"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/vanilla-game-migration/CONTRACT.md",
+          "bytes": 2947,
+          "sha256": "e6919c3681d25bd3e7d486c2f5691dd9b34b7057828366c95dd991cebecc8966"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/vanilla-game-migration/assets/level.json",
+          "bytes": 203,
+          "sha256": "5f332ddc2631c9ee8918aad04ff44f3ef5f596f2469223edb2881e2218f87439"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/vanilla-game-migration/package-lock.json",
+          "bytes": 24790,
+          "sha256": "65d179cdcaec5ba21b6d316c9d95d2af14696541195322fd5557d2e1f1bc0874"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/vanilla-game-migration/package.json",
+          "bytes": 371,
+          "sha256": "ddf73e1c03abe2e491933e999fc4869091f6af1117bb9143eff265d216629362"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/vanilla-game-migration/scenario.json",
+          "bytes": 703,
+          "sha256": "e130be868c6b0706da578414ed97cce2a6fb9de46a5f1528e124a7b40fd20ed5"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/vanilla-game-migration/src/diagnostics.js",
+          "bytes": 2719,
+          "sha256": "1d1be8d47de39672685a6e5ec3b5a958f3e493bf8c1e616d91f47abda2778308"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/vanilla-game-migration/src/game.cjs",
+          "bytes": 2229,
+          "sha256": "ca15ae9495782c3ca6bd1c61f471b2ef7463be20cc227aeaa9dd93a270e5ff14"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/vanilla-game-migration/src/level.cjs",
+          "bytes": 344,
+          "sha256": "412438eca5659cb1bbc58380bda71b3c430a12b4777f69389bb2d5da15f9ac98"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/vanilla-game-migration/src/main.js",
+          "bytes": 2094,
+          "sha256": "b97461aa48e73961cecc024909204f2d1b09d0d08c240bd4569533249d6d4783"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/vanilla-game-migration/src/styles.css",
+          "bytes": 848,
+          "sha256": "968b46f5c35f1c22868944e6dffd934f4a6df5a439209417d4f12b77c677a3f4"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/vanilla-game-migration/src/vanilla.js",
+          "bytes": 4598,
+          "sha256": "78702eb667e46886ffa81c9569aade51dfe7233eebf2a0aa323decc80e869f16"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/vanilla-game-migration/test/game.test.cjs",
+          "bytes": 813,
+          "sha256": "61d422b56538b10b8a3638acf21f6fe9d1fdd291f85ea49635bc248ff8aa992a"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/vanilla-game-migration/tools/build.cjs",
+          "bytes": 937,
+          "sha256": "f54582604a5c740d700e0fdb1fcd1d343bdb9d10f99be9a2eb7363ab935e6a30"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/vanilla-game-migration/tools/serve.cjs",
+          "bytes": 1976,
+          "sha256": "69791cff88eec682337d7532b879f736ee59b1cc0ef9a1631e38778c9b071a95"
+        },
+        {
+          "path": "skills/threejs-development/evals/routing.json",
+          "bytes": 3782,
+          "sha256": "8f88c8607e03e49bfd23ef26baaa4c356a3a42d9bf6aefa1edebbbf059a1ea0f"
+        },
+        {
+          "path": "skills/threejs-development/references/accessibility-contract.md",
+          "bytes": 1999,
+          "sha256": "dacb0fa0c9d50d84a7c2f009edcf32ded88c0d3bdeab57e3015121a3c4ec930a"
+        },
+        {
+          "path": "skills/threejs-development/references/authoring-export.md",
+          "bytes": 2129,
+          "sha256": "ebadb54f0b6acc8a79dc388dcf04f0026e8b187f95e5efb34dd7b21271459373"
+        },
+        {
+          "path": "skills/threejs-development/references/capability-map.md",
+          "bytes": 5969,
+          "sha256": "f56f511a79505b1703fe0a76903816ba358bd66f2383845ca700659c64b1029c"
+        },
+        {
+          "path": "skills/threejs-development/references/capture-recording.md",
+          "bytes": 3501,
+          "sha256": "4baa533fc57a6dd8dd6496717f7a13b71b08c2e642ea6d471773bb23cdd43ac7"
+        },
+        {
+          "path": "skills/threejs-development/references/character-spatial-systems.md",
+          "bytes": 2184,
+          "sha256": "9137695ba512370bb6accc3f8427d77b4318121bbc5531c4c9ee46b0a2ef4603"
+        },
+        {
+          "path": "skills/threejs-development/references/csg-modeling.md",
+          "bytes": 3149,
+          "sha256": "3002d63b3f3863e0251cf1e81c7848c9d32c4b01e64c1fa239d7e57719b0be6e"
+        },
+        {
+          "path": "skills/threejs-development/references/deformable-simulation.md",
+          "bytes": 3514,
+          "sha256": "03f47f9b44c41a7ebc37d982c66cafba8ff19c7c0f3d6fbc8c97f1c59d8aca47"
+        },
+        {
+          "path": "skills/threejs-development/references/framework-integrations.md",
+          "bytes": 2314,
+          "sha256": "0a1f129b9b639c1468fe97ec9a9b12892ff2a19029b3826de015c7d8af37e3c9"
+        },
+        {
+          "path": "skills/threejs-development/references/official-resources.md",
+          "bytes": 3538,
+          "sha256": "75724ff46e648fc41eadc1443c5e3490307948f99df78a493b922b3c66a8f7c5"
+        },
+        {
+          "path": "skills/threejs-development/references/path-tracing.md",
+          "bytes": 3238,
+          "sha256": "9975ff61e500647c232ba980aa0bac25d8b37efb71d622218d45f4ac7d64dad3"
+        },
+        {
+          "path": "skills/threejs-development/references/specialized-data-formats.md",
+          "bytes": 2119,
+          "sha256": "c1e00de9442b3f8c6719414b41e0ef5b2271fbd2117c1042bc16dcd631653e5b"
+        },
+        {
+          "path": "skills/threejs-development/references/version-migration.md",
+          "bytes": 3399,
+          "sha256": "a39107dac1317d01bda7b2ff63efd59daa82afe30305cc826aacd2d952daaea6"
+        },
+        {
+          "path": "skills/threejs-development/references/worker-rendering.md",
+          "bytes": 2081,
+          "sha256": "730db46975d601717b89f9c4c1754611339c8d612e998c91dd78b05cea125bf9"
+        },
+        {
+          "path": "skills/threejs-exposure-color-grading/SKILL.md",
+          "bytes": 1870,
+          "sha256": "351403844dfada8131a83574d9e51c518aacef7ece32fac86367a20912764664"
+        },
+        {
+          "path": "skills/threejs-exposure-color-grading/evals/evals.json",
+          "bytes": 1450,
+          "sha256": "8a17b21c801216a5162f32dea67a2a6ca12691b53cfc6ffaca33bc62af52fb32"
+        },
+        {
+          "path": "skills/threejs-image-pipeline/SKILL.md",
+          "bytes": 2223,
+          "sha256": "5269f04fe722aa684e2688378e9380a6039c57ef51cf089b5e5475324fb2c30f"
+        },
+        {
+          "path": "skills/threejs-image-pipeline/evals/evals.json",
+          "bytes": 1459,
+          "sha256": "1bf5fd8fc74a438dffa7009b1465618d214ba8081b0c02328c0c6290a1d88186"
+        },
+        {
+          "path": "skills/threejs-parallax-occlusion-mapping/SKILL.md",
+          "bytes": 1752,
+          "sha256": "c924f3cbbcc6815de5965cf934d6efb8368626f59f93536930e4d4e55e21c9f2"
+        },
+        {
+          "path": "skills/threejs-parallax-occlusion-mapping/evals/evals.json",
+          "bytes": 1442,
+          "sha256": "04d50fbd08e67e2304331bcaa4060377d3140c41e0cc93773b7081ee2b782234"
+        },
+        {
+          "path": "skills/threejs-precipitation-surfaces/SKILL.md",
+          "bytes": 1852,
+          "sha256": "cb699cca4539bfa97237c011730ae6496de9e2d56baad2ab9805c666e5f42297"
+        },
+        {
+          "path": "skills/threejs-precipitation-surfaces/evals/evals.json",
+          "bytes": 1552,
+          "sha256": "61a27ec77104f7ade9c133aeff4e30ad3315869b9043fe467a9cada2c2928400"
+        },
+        {
+          "path": "skills/threejs-procedural-animation/SKILL.md",
+          "bytes": 1826,
+          "sha256": "a73c960f496d684d0c1c8f6222430de436a1d6e53e8b657bfcb903a643267d0a"
+        },
+        {
+          "path": "skills/threejs-procedural-animation/evals/evals.json",
+          "bytes": 1503,
+          "sha256": "5a15fd7679b516820f2f7febb7f4e374d0aa4086d9533a918b32d1b344df6716"
+        },
+        {
+          "path": "skills/threejs-procedural-architecture/SKILL.md",
+          "bytes": 1819,
+          "sha256": "1fe875d6e43f2018592ab079931964ce025e37a5542e499232d84e702f6414c7"
+        },
+        {
+          "path": "skills/threejs-procedural-architecture/evals/evals.json",
+          "bytes": 1541,
+          "sha256": "727e6622a4b7dc70aab70a9a746990e72db28306e021f4ea0d5a476831320b07"
+        },
+        {
+          "path": "skills/threejs-procedural-fields/SKILL.md",
+          "bytes": 1754,
+          "sha256": "2ab18c82fb3303b1b8a14e42641a2c3d1b34681d15612937dd9b2134d200874f"
+        },
+        {
+          "path": "skills/threejs-procedural-fields/evals/evals.json",
+          "bytes": 1478,
+          "sha256": "9ac4e676d27ce5a2f11df399e27d64bbf5f8d7cd953e8e3269edfaadb173040d"
+        },
+        {
+          "path": "skills/threejs-procedural-geometry/SKILL.md",
+          "bytes": 1807,
+          "sha256": "b967b3204dfae549903b8c5ea5d1c4c20bf631b09f0d0fff78771bffb0504bcc"
+        },
+        {
+          "path": "skills/threejs-procedural-geometry/evals/evals.json",
+          "bytes": 1526,
+          "sha256": "bfaef14a45fb12a3526d311214afedf9c0a623543f2a4bc0c7ed4d52fd953f43"
+        },
+        {
+          "path": "skills/threejs-procedural-materials/SKILL.md",
+          "bytes": 1805,
+          "sha256": "181be7a1460fe96218a66815cd85e8a47c85d3add35b539051b42bbe55556ad4"
+        },
+        {
+          "path": "skills/threejs-procedural-materials/evals/evals.json",
+          "bytes": 1546,
+          "sha256": "1d037e95767d19148706ae9b9f51491bc98ac9424278504d3162ea5ed5008411"
+        },
+        {
+          "path": "skills/threejs-procedural-planets/SKILL.md",
+          "bytes": 1850,
+          "sha256": "776b474d6d063aa131835b97adffcd04875921393712c3739d2aabf36e756c6f"
+        },
+        {
+          "path": "skills/threejs-procedural-planets/evals/evals.json",
+          "bytes": 1566,
+          "sha256": "03a555443de63236d6abac8d690da64fff6373cd8e34549f8aeb752b8a254681"
+        },
+        {
+          "path": "skills/threejs-procedural-vegetation/SKILL.md",
+          "bytes": 1773,
+          "sha256": "ba14fdb8de6f7a48525106cd36fcdb416b7bfedb8ec94c8f277a79df053a4158"
+        },
+        {
+          "path": "skills/threejs-procedural-vegetation/evals/evals.json",
+          "bytes": 1513,
+          "sha256": "226a64bb16405ee7c470e5e89eb31d1886dc77542fea66e26f55507749e831f1"
+        },
+        {
+          "path": "skills/threejs-procedural-vfx/SKILL.md",
+          "bytes": 1703,
+          "sha256": "f07d76f1950f7322771a0b968e0010ee2ceeee457048f66a85c85dc5461f84ed"
+        },
+        {
+          "path": "skills/threejs-procedural-vfx/evals/evals.json",
+          "bytes": 1555,
+          "sha256": "c2cf6af9a3cfab127f799bed150b9223711bb491b834471ff4951caab4204b9d"
+        },
+        {
+          "path": "skills/threejs-raymarched-space-effects/SKILL.md",
+          "bytes": 1801,
+          "sha256": "e6988fc39c387cfe9c1116e07f8972f18f240c38381df13fa0ee707beea6b451"
+        },
+        {
+          "path": "skills/threejs-raymarched-space-effects/evals/evals.json",
+          "bytes": 1549,
+          "sha256": "f7e5c6088437f9bf9d8a8ef977f1a5d174b879f5c62715f2a2c41ba23f13197a"
+        },
+        {
+          "path": "skills/threejs-screen-space-ambient-occlusion/SKILL.md",
+          "bytes": 1756,
+          "sha256": "4cbf8ff856e1a9ac56b95317a9ccfd8dd50b24e0e5088f2a43d157be78d81c92"
+        },
+        {
+          "path": "skills/threejs-screen-space-ambient-occlusion/evals/evals.json",
+          "bytes": 1425,
+          "sha256": "26399912ba341abda5f42174ff0e8260f369a0f21533ab277c42c28015d0b446"
+        },
+        {
+          "path": "skills/threejs-shadow-systems/SKILL.md",
+          "bytes": 1871,
+          "sha256": "0ed1af17d547f867425366051c7f2a21b47c55f3656b6dce76eb85cc36e354b9"
+        },
+        {
+          "path": "skills/threejs-shadow-systems/evals/evals.json",
+          "bytes": 1476,
+          "sha256": "3f32b7e673a1cb0d1be4344db76000a90e4954a20c998b7ce6b26bac45e93bcb"
+        },
+        {
+          "path": "skills/threejs-spectral-ocean/SKILL.md",
+          "bytes": 1960,
+          "sha256": "23b7af0f3776f35b38f35f00da9b32311316a890cbe004c5ee7394ae60c70453"
+        },
+        {
+          "path": "skills/threejs-spectral-ocean/evals/evals.json",
+          "bytes": 1555,
+          "sha256": "75ec3b978c4456a7916cebad5463ccdef22495b31368ac5ce227c1980d187250"
+        },
+        {
+          "path": "skills/threejs-temporal-surfaces/SKILL.md",
+          "bytes": 1801,
+          "sha256": "c73566eb2b0af6d7fe3622149c0c49cb17b5bb1000c2f6a5e9c796f013fe86f5"
+        },
+        {
+          "path": "skills/threejs-temporal-surfaces/evals/evals.json",
+          "bytes": 1581,
+          "sha256": "8e6ab16bd688c1dc08978139e8588ce4173b18a8fa7d6938b930f6a681bb5c7f"
+        },
+        {
+          "path": "skills/threejs-visual-validation/SKILL.md",
+          "bytes": 2277,
+          "sha256": "03a9d452e03e51ebb04e24da9b1cef973e7387ee47ae5a4fe6c5d0657e5dee54"
+        },
+        {
+          "path": "skills/threejs-visual-validation/evals/evals.json",
+          "bytes": 1515,
+          "sha256": "cb6775177d18b83f4aa3972e1333881aa4e4ad6125bf5863fb16e1d7513a4098"
+        },
+        {
+          "path": "skills/threejs-volumetric-clouds/SKILL.md",
+          "bytes": 1823,
+          "sha256": "31c44274826a83c8a917f21325f1f102f14f783befdc8a3cfd03bb2a6bf5b1aa"
+        },
+        {
+          "path": "skills/threejs-volumetric-clouds/evals/evals.json",
+          "bytes": 1595,
+          "sha256": "b6978af5a5956359d5c2efa53e41e5d385b6ff2d6ae3489226df4ac3fb8099b4"
+        },
+        {
+          "path": "skills/threejs-water-optics/SKILL.md",
+          "bytes": 1908,
+          "sha256": "277995b3262fdd792fceee2c6d75cee32e88b8d6b0282db6a5f3fd9a7e18c1f1"
+        },
+        {
+          "path": "skills/threejs-water-optics/evals/evals.json",
+          "bytes": 1587,
+          "sha256": "80a7d71e4c2052ac4c2baa90bfb0ebb5464ca7092247338380678521d75ccc70"
+        },
+        {
+          "path": "skills/throwaway-prototyping/SKILL.md",
+          "bytes": 4629,
+          "sha256": "df6b9094983e3d49a973a871ef736df0c5c237b7b19a32bf7735ac5fd893ec83"
+        },
+        {
+          "path": "skills/verification-before-completion/SKILL.md",
+          "bytes": 2661,
+          "sha256": "33dea5fa9053824abb22d7399712c1cb7aa9a9b7bfd2b0c7ab2f4b3744644760"
+        },
+        {
+          "path": "skills/verified-software-delivery/SKILL.md",
+          "bytes": 4527,
+          "sha256": "14d44d2a85e4f811fc3a9bf9fb15b3667fcb54491f0fc84cdb006527eec89632"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/evals.json",
+          "bytes": 10020,
+          "sha256": "0db92a0e54ef7a786d6b7a3d069e1da28cbf73116fb3d177e9d514c059d04c7a"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/approved-local-change/CONTRACT.md",
+          "bytes": 1558,
+          "sha256": "43dbcc3e94db32371eb4f78cbdab2f5e7c650f0b95a10fd3977a47ac8d060db8"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/approved-local-change/docs/approved-spec.md",
+          "bytes": 1007,
+          "sha256": "46106944c3e3bf049eb32b248db2cc5dda77d48c3629235eac809a63e5a3f008"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/approved-local-change/evidence/checks.json",
+          "bytes": 1776,
+          "sha256": "cdf88681d03928cd70c003ef14944114a1c60992c42cb8e5aefc09bad2002b25"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/approved-local-change/evidence/review.json",
+          "bytes": 1065,
+          "sha256": "4a6b289e2589b81806791e5e003519342a5283a59ad19a3c0c49a0f5f4be07d5"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/approved-local-change/fixtures/order.expected.json",
+          "bytes": 39,
+          "sha256": "d46f0c4e9d97d7c267e7bc430cdba21f4986eccb4398c8811daf965240041211"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/approved-local-change/fixtures/order.json",
+          "bytes": 157,
+          "sha256": "c9215ba7c118da0b04e2d769bbc0544d7713ec981c93c9a60d273fdfa51e8608"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/approved-local-change/package.json",
+          "bytes": 202,
+          "sha256": "0a3c2dafc16b32c0729719a097ba5ccaba16f6a5223eb0e36e9949d0c4fcfd1e"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/approved-local-change/src/order-summary.js",
+          "bytes": 501,
+          "sha256": "073b199026e2915c74de71ce4954ab1da19872b0d10900dc4b945313b077a80a"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/approved-local-change/test/acceptance.test.js",
+          "bytes": 349,
+          "sha256": "1a69fe21f59ec7234fbc815b022f873b333d32f48f19f9297dceb7a4759dc45e"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/approved-local-change/test/unit.test.js",
+          "bytes": 532,
+          "sha256": "55e4ac07086632a539df6c16712f602fd0f11f854a09a8e9f31d942e280b7b30"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/approved-local-change/tools/inspect-evidence.js",
+          "bytes": 1138,
+          "sha256": "3b432da0655958f4cd4023395e517c3a25ca449a8666a48e3597d309b173c427"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/build-readiness/CONTRACT.md",
+          "bytes": 1297,
+          "sha256": "820ad71eb47a70b006cd176c158b306aab4056ede7ea4ee17c2c31ba040f2639"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/build-readiness/artifacts/build-A/handler.js",
+          "bytes": 189,
+          "sha256": "965dac3b58688b0b459547c48bc026bdb782723a7034903146a3688fc9faf5bc"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/build-readiness/artifacts/build-A/manifest.json",
+          "bytes": 126,
+          "sha256": "5c27f8910d00cb6624faa69b4f54b30e4dc68bc3eb5354d0c969a887eaec3d6b"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/build-readiness/evidence/build-A-checksums.json",
+          "bytes": 289,
+          "sha256": "a059d4952364baeb4a8e2ec800855b0fc9dff90d1d17580b96da3429cf9379c1"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/build-readiness/evidence/checks.json",
+          "bytes": 1212,
+          "sha256": "8684b590a0e50430971965cce2cd190d030e22bfd4927c3ab0811a10fe2e912d"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/build-readiness/evidence/staging-B-smoke.json",
+          "bytes": 529,
+          "sha256": "893497251bb81926c7d07e0174d9c6577fde4ff6619537bdb927cfa315a130bd"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/build-readiness/package.json",
+          "bytes": 150,
+          "sha256": "24ba302c439c1e51902b812a0aa116502055663b2a1034aa1d40ebe53a943bf1"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/build-readiness/staging/B.json",
+          "bytes": 352,
+          "sha256": "2f731dff6705a43ee0f9405bf8b2f20b3e853899e55fd73290e7d1eef2a9e23c"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/build-readiness/test/build-unit.test.js",
+          "bytes": 482,
+          "sha256": "d4a7b3f36e8957bb08dc73b94d68570c45dd383165958a54d79016b746347537"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/build-readiness/tools/inspect-evidence.js",
+          "bytes": 1138,
+          "sha256": "3b432da0655958f4cd4023395e517c3a25ca449a8666a48e3597d309b173c427"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/multi-service-api-migration/CONTRACT.md",
+          "bytes": 2374,
+          "sha256": "eb2acc914a7a687df035d96afa106f398eca465400fad7985e15a8c12b2c20a1"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/multi-service-api-migration/README.md",
+          "bytes": 2644,
+          "sha256": "b8c8c86ccba0dadebf9aa2ce9cc4eea5883eb50494a2ea1d15662b772586c0de"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/multi-service-api-migration/contracts/acceptance.json",
+          "bytes": 777,
+          "sha256": "5d2082a62c8879c3c098a3547b29e03bbe0e50bdcf700679c21bfe89d3e30349"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/multi-service-api-migration/contracts/stock-api.md",
+          "bytes": 1269,
+          "sha256": "392dded9fa16dc20e1b776b6c433a3e710acdf995acdc43d6fc105efbe527893"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/multi-service-api-migration/decisions/approved-direction.md",
+          "bytes": 1078,
+          "sha256": "701bd1c82c255dfbbec4c3ccc082002d19bb895bc1b4816ac4676bfaef5271e3"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/multi-service-api-migration/evidence/initial-checks.json",
+          "bytes": 3128,
+          "sha256": "ba430532e97eb4c52f32037f7c90f521b706ab8e352e03e1c187b3f77b14479e"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/multi-service-api-migration/evidence/review.json",
+          "bytes": 271,
+          "sha256": "1ebdc37f28f62aa99c2e8d810fef85b5ce809478de117d130f53123ec54480da"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/multi-service-api-migration/fixtures/stock.json",
+          "bytes": 165,
+          "sha256": "bdef5d3f17b83670cc5daf5baea8838b3a34354275a0620311fc8d56be3f584a"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/multi-service-api-migration/package.json",
+          "bytes": 177,
+          "sha256": "a296921c792d8f7c4e5c38ce0f64f18cb50a8817926c4db4fd91250d157fd9fc"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/multi-service-api-migration/services/allocation-worker/current.cjs",
+          "bytes": 354,
+          "sha256": "a6f5477418d652a6df0b6eadf38243d40ba547e66a16b434abbfc02e8705216c"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/multi-service-api-migration/services/inventory-api/current.cjs",
+          "bytes": 349,
+          "sha256": "50eec4766effb0669d60997acf40de6227f84c63713ec02163ca51ece2c7a46e"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/multi-service-api-migration/services/inventory-api/legacy.cjs",
+          "bytes": 329,
+          "sha256": "24864138d7d9a63c9c3bc3ddfb8234c1d597a524da380a62fe1335c7c3e345e2"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/multi-service-api-migration/services/planning-worker/current.cjs",
+          "bytes": 460,
+          "sha256": "82dc2a924d5c1a6312a03a4d6db843c102c5f22e43ce1f2dfadb0ac422607ce0"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/multi-service-api-migration/targets/local.json",
+          "bytes": 512,
+          "sha256": "be10ccf7a20bd8529fba596a58abdf4021c3a5685a242e060f55ddcbf1ec5d8d"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/multi-service-api-migration/test/happy-path.test.cjs",
+          "bytes": 536,
+          "sha256": "b303e4a0a46768b99f1a206321c880ea7066fc713a193b5ed5742deb2bd173e9"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/multi-service-api-migration/tools/local-target.cjs",
+          "bytes": 4309,
+          "sha256": "914bdb4dde72e5a38fda79b53593a51e4d49dd20b4ab88b41d199d4a9c367566"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/multi-service-api-migration/tools/service-harness.cjs",
+          "bytes": 720,
+          "sha256": "189f03d9b8adcad507ef4a4c1f0e990c82e03f6fedf9f7cefe550012edf57c6f"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/multi-service-api-migration/tools/source-scope.cjs",
+          "bytes": 1250,
+          "sha256": "35f6d25c0cdb68261f264dbf25ccce69246acfd08004c35894c8b774a0d0cb74"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/review-waived-refactor/CONTRACT.md",
+          "bytes": 1242,
+          "sha256": "35ee575534cee32310530c1a59fc9dfba3ba6369683fac8077edb1963b5534f9"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/review-waived-refactor/evidence/checks.json",
+          "bytes": 1094,
+          "sha256": "3ffebde34a0b0a6cb2d322642bdcd5c2a70736a245ab83f72531305d66ec6001"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/review-waived-refactor/evidence/review-exception.json",
+          "bytes": 480,
+          "sha256": "fa674681482542ab3ca8479521e2a42e0e4a67fafe5e4ecf56e9cc8c025bfb11"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/review-waived-refactor/package.json",
+          "bytes": 153,
+          "sha256": "366af69c430997bf595efdc188b6dcdd5d6675e8b84faf1eb1b6985a523b2ba3"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/review-waived-refactor/src/receipt.js",
+          "bytes": 738,
+          "sha256": "47cb36cd48a0ba45598552b7cc0529edd1f6e3bae2e0f588e690ea197644ba9f"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/review-waived-refactor/test/receipt.test.js",
+          "bytes": 857,
+          "sha256": "b8eac077fa1d402ca8593c64ceccd5dec4558514120327a76a038a7810d49970"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/review-waived-refactor/tools/inspect-evidence.js",
+          "bytes": 1138,
+          "sha256": "3b432da0655958f4cd4023395e517c3a25ca449a8666a48e3597d309b173c427"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/revision-verification/CONTRACT.md",
+          "bytes": 1455,
+          "sha256": "89ceabd7d6809a362ee2662cbc63df1bb96842a0dd2ba3fd7e1669a716853010"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/revision-verification/docs/approved-spec.md",
+          "bytes": 532,
+          "sha256": "74b5c58aa3bb927769a385a5c99b85d9e74299c1ca746ca5ffe249527fb7f74a"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/revision-verification/evidence/checks.json",
+          "bytes": 2470,
+          "sha256": "60140359083e4bb848b80001226d1c108c97fc321890c8df71e040ab1d6899e7"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/revision-verification/evidence/review.json",
+          "bytes": 1058,
+          "sha256": "4be31e7de85f87216bd497ac7f47b86d1e1f5f0322cec2cf501f24627cc486c5"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/revision-verification/evidence/revisions.json",
+          "bytes": 1336,
+          "sha256": "9b1278a3a8bffea340a960e097e93e7ef35e6ebbc999a50d67e10cab26ae66ce"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/revision-verification/history/R1/package.json",
+          "bytes": 213,
+          "sha256": "27f71633f691c4cde254838924412def19f3eca7cdc18e328b33ac250c0a1068"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/revision-verification/history/R1/src/request-handler.js",
+          "bytes": 379,
+          "sha256": "8f08eeb514e0b982559c44f00e3106afa550fc93bfeb2d9486d560a22c002267"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/revision-verification/history/R1/styles/ui.css",
+          "bytes": 101,
+          "sha256": "7a3644de7870de5627653f66c636083bbdcc01cc1b19759b7cac9a55890a75b3"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/revision-verification/history/R1/test/handler-baseline.test.js",
+          "bytes": 517,
+          "sha256": "9e2f01febadd7673b616949dc676e648b8cfd230184c1b27f30e4774140db6f4"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/revision-verification/history/R1/test/styles.test.js",
+          "bytes": 459,
+          "sha256": "cb3cbb78e9c22d63d0641459f09ccae64a140a3249eff398ef99523b465dfa99"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/revision-verification/package.json",
+          "bytes": 213,
+          "sha256": "27f71633f691c4cde254838924412def19f3eca7cdc18e328b33ac250c0a1068"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/revision-verification/src/request-handler.js",
+          "bytes": 386,
+          "sha256": "678ffff32e0c0cfc51fc41018313e26f8b85a3f6d55b536eb2a6a482ccc6dd20"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/revision-verification/styles/ui.css",
+          "bytes": 101,
+          "sha256": "7a3644de7870de5627653f66c636083bbdcc01cc1b19759b7cac9a55890a75b3"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/revision-verification/test/handler-acceptance.test.js",
+          "bytes": 445,
+          "sha256": "2c0a7266798bd6f476c6e554b7292464c78fa04e4e5b3efc58e8f02b80ef77fa"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/revision-verification/test/handler-baseline.test.js",
+          "bytes": 517,
+          "sha256": "9e2f01febadd7673b616949dc676e648b8cfd230184c1b27f30e4774140db6f4"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/revision-verification/test/styles.test.js",
+          "bytes": 459,
+          "sha256": "cb3cbb78e9c22d63d0641459f09ccae64a140a3249eff398ef99523b465dfa99"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/revision-verification/tools/inspect-evidence.js",
+          "bytes": 1138,
+          "sha256": "3b432da0655958f4cd4023395e517c3a25ca449a8666a48e3597d309b173c427"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/routing.json",
+          "bytes": 3348,
+          "sha256": "2f0683068f2063abe4650329b581f2d09482003534df8cc1df0b3707ca90b5e6"
+        },
+        {
+          "path": "skills/video-production-workflow/SKILL.md",
+          "bytes": 14879,
+          "sha256": "ab3e92e25e23858bd763ad07fde2771e188bf2aa78295fc0f85d5d9ce73443fa"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/accessibility-plan.md",
+          "bytes": 1326,
+          "sha256": "7955721b147dc2362ba7be4c3d23b92fd1e946d6701c0333cbd2fc066af4594c"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/assets/manifest.md",
+          "bytes": 667,
+          "sha256": "96a43b40e09ddc9ccdaf40e9b5aacdf146221b6bdf3d8fa66cc6e316c1c4f8d8"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/brief.md",
+          "bytes": 756,
+          "sha256": "ae67e85a8d0809ba575cccca783296c74e55fb875a888171810b6d22ef1ec4ef"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/call-sheet.md",
+          "bytes": 1161,
+          "sha256": "4b34b2138a30e9ffe9df4c2859753ccfe01b96259fec33afbc27863fcd443904"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/camera-lighting-plan.md",
+          "bytes": 1019,
+          "sha256": "0b9c355a92b0546afb484da1da13f642e3f1851b37cf9e55927f6436f2de6d7e"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/casting-dossier.md",
+          "bytes": 1055,
+          "sha256": "827a359447a59f350b3603c68648bde08082f5ade927dd5950bb06310e0ba808"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/color-finishing-plan.md",
+          "bytes": 1417,
+          "sha256": "b47ec8cbd6751b56a234d5ad4767fa5dc4467404367339f5a23394d4c4120e9a"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/continuity-bible.md",
+          "bytes": 741,
+          "sha256": "eca6d841550d22c8583158d35ac7a920ecb06579acf9bd19363813d520437d50"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/creative-treatment.md",
+          "bytes": 922,
+          "sha256": "6c250af0ade98a96f2f1a25fa09949336c5a9b4a29ec87d9395ad1c159dca2b3"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/daily-production-report.md",
+          "bytes": 1208,
+          "sha256": "e59266d1abc8862d7ec25ca331dfa1f63bd4a7bcd38fc71bafedff46d3bda657"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/delivery-manifest.md",
+          "bytes": 1439,
+          "sha256": "36a3eea2d12c93a81d3a71d568c6dba94118937390a4dc3ccd1ffda6c0b1bfda"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/edit-plan.md",
+          "bytes": 967,
+          "sha256": "177a3b64d4604e2dfbb64b76725c26815bce5a2c6f00ffeb5c60d1a30b84ffdd"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/localization-manifest.md",
+          "bytes": 1056,
+          "sha256": "7cedd4a06a1a3964afde017d390f9964f0926066095f2dd8b97a9d69a5734888"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/location-dossier.md",
+          "bytes": 1144,
+          "sha256": "51a34528622ca6151d2bb5fc2b86f675c98e64fe4b923ba384e6e7b15a1ac04a"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/media-ingest-ledger.md",
+          "bytes": 1855,
+          "sha256": "1a289491b99e47362100c1da44c8878b47ce14a2619738929c214a1a3dd5f68b"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/media-library-shortlist.md",
+          "bytes": 1038,
+          "sha256": "0ecbc91a52dc42cc534caa689d306823327044a43a0e4955e7585a91411099a8"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/motion-graphics-plan.md",
+          "bytes": 1499,
+          "sha256": "1f6a48673a40b742a4c38b39be6524e1f63038c2168f4efbc89dc233885fe8f2"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/music-plan.md",
+          "bytes": 1551,
+          "sha256": "0752a639371ab8d5da27dd3c900bff990b40a9d2f20162558848ca7357d82ca6"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/production-design-bible.md",
+          "bytes": 1024,
+          "sha256": "e743743b055c56e6eec9670b5ac88fd1634037e514ede504cbd27e3f29c938bc"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/production-plan.md",
+          "bytes": 923,
+          "sha256": "e5054517cf514fb6dcf77045de09e7f6f3d0c61e103bdd58560ec2420d92677d"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/production-sound-report.md",
+          "bytes": 933,
+          "sha256": "6162520e8529484bdd5b3f51499a531c731cb43f95e63e2bb61d7f401d33f408"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/project-state.md",
+          "bytes": 1347,
+          "sha256": "239f2feb79334b08ad424170f8b1664708d6288a6c92114dd4604735c10a4cd7"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/review-report.md",
+          "bytes": 1763,
+          "sha256": "0584680ba394ca09ffcf1da427e8af78d188ad4d144cad2c19c6341d2dea6082"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/script.md",
+          "bytes": 576,
+          "sha256": "aff4096d472d4468ad0112b27f1f333779ad7fa7aa9ca7cc0e1c4e81c6e00ea1"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/shooting-plan.md",
+          "bytes": 1317,
+          "sha256": "06e63eabd08d3115a7d6122aff07a847cf724de8148870ec7c1604034a4cb709"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/shot-list.md",
+          "bytes": 557,
+          "sha256": "ea675ef5835b30109516d60f2428276fe8f90b8a2a05483b470cf718d92eae8a"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/sound-plan.md",
+          "bytes": 1184,
+          "sha256": "38cf48c17343f95348fe71fdc25af272737727bafd9b45f69630a2ef82afa5d9"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/storyboard.md",
+          "bytes": 506,
+          "sha256": "55d27b0b0d2bef72584083d514e101dc04de432250e5df14d1489df09cff22fe"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/take-log.md",
+          "bytes": 1011,
+          "sha256": "84b3e2271ed230403542aaecadc5d06bf5cc65ea478738579d79bc1c67a4815a"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/vfx-plan.md",
+          "bytes": 1336,
+          "sha256": "391b2927f7affabba35741094bdf1dea4c49dfd6d3e73a05858879e567e1a275"
+        },
+        {
+          "path": "skills/video-production-workflow/evals/evals.json",
+          "bytes": 3735,
+          "sha256": "c3258c0d8ca031d01219d77f3d386d30321c8efcc1fd05fb1b739dc8c4b27b3a"
+        },
+        {
+          "path": "skills/video-production-workflow/references/artifact-contracts.md",
+          "bytes": 9667,
+          "sha256": "0fa8c7597157bace05788deb08f3e0d6c89e25c92df9e938d5c7bf383154a727"
+        },
+        {
+          "path": "skills/video-production-workflow/references/routing-and-approvals.md",
+          "bytes": 10552,
+          "sha256": "957efe002829316c53a67c14d843d5d40d33c75b28bb36b9a9dedc5bc290a402"
+        },
+        {
+          "path": "skills/video-production-workflow/references/source-notes.md",
+          "bytes": 6156,
+          "sha256": "980180963e60c300eb86db847fd567d624d6be37229b47b0d4a25ac49c849203"
+        },
+        {
+          "path": "skills/visual-regression-testing/SKILL.md",
+          "bytes": 7289,
+          "sha256": "815a4771b5b9acf8abe264a3ed4c45e0d17de80976f510e9514c37ece4501c04"
+        },
+        {
+          "path": "skills/visual-regression-testing/evals/evals.json",
+          "bytes": 999,
+          "sha256": "80615c37a3fbdc32d90a1ee2b882ff29ab691425f8378cf437d82cf434ab107e"
+        },
+        {
+          "path": "skills/visual-regression-testing/references/machine-visual-gate.md",
+          "bytes": 7237,
+          "sha256": "00a679c91ea25ad0dcbe2062641ceeda5ab0ef126b85b58ad66baaaba6824692"
+        }
+      ]
+    }
+  },
+  "after": {
+    "sources": {
+      "sha256": "d88fbb4ca5307e9c05faf2ea8e3bfcfef8e0774b70c4cb2fcb14c229bbf544c9",
+      "files": [
+        {
+          "path": "docs/audits/skill-optimization-2026-09-16/record-remote-skill-verification.cjs",
+          "bytes": 8895,
+          "sha256": "71170f465068195e4abe190b108d01a07f7a4b5056f542ed0fcc6726876e5f00"
+        },
+        {
+          "path": "scripts/audit-skill-originality.js",
+          "bytes": 26237,
+          "sha256": "c28e8c39f5446dc40a4d23ff04e8c0c138c478f690af69ba041ad257e87a8941"
+        },
+        {
+          "path": "scripts/generate-skill-catalog.js",
+          "bytes": 16388,
+          "sha256": "1d389b4751d097408a3d215dde1aab306fa994e9e56da209e22925df9025acf6"
+        },
+        {
+          "path": "scripts/lib/skill-dependencies.js",
+          "bytes": 6122,
+          "sha256": "5feaffbdafd401b349018942b52dbc2813b81694d5ac9640ecae88644100110a"
+        },
+        {
+          "path": "scripts/verify-skill-sources.js",
+          "bytes": 27866,
+          "sha256": "ace6edc8c44ae9d500a562a0331136978df3a515b306288386d418a1d454575a"
+        }
+      ]
+    },
+    "manifests": {
+      "sha256": "3b1dd51f62e66ae48a197ba943ec145cb029b7cba0582076c0963dc8b90384a5",
+      "files": [
+        {
+          "path": "scripts/data/skill-reference-lock.json",
+          "bytes": 198,
+          "sha256": "ef1aa83797a1628b419364543a12467b7014e5d0bb5c8770d59d40e51544b33a"
+        },
+        {
+          "path": "scripts/data/skill-reference-sources.json",
+          "bytes": 22050,
+          "sha256": "607701c72f18f52461bed1a7a71fb52383a1dc18ff96e8514aba3c5d5061cbb1"
+        },
+        {
+          "path": "skills.json",
+          "bytes": 276377,
+          "sha256": "cbe9065f47acd609f8246ca156cdb2e0357719c47359f25fa114f45b4a46c5cc"
+        }
+      ]
+    },
+    "local_packages": {
+      "sha256": "af7a95492e81d2307402903b08d15d2f77e7399aa297cd2065cd4f5262c88112",
+      "files": [
+        {
+          "path": "skills/agent-introspection-debugging/SKILL.md",
+          "bytes": 3674,
+          "sha256": "d604dc330ac7ca0b51384bc33f5541c937a27dd8309e47fb62b889fc46d463d4"
+        },
+        {
+          "path": "skills/agent-introspection-debugging/references/agent-failure-taxonomy.md",
+          "bytes": 3686,
+          "sha256": "55ec7a35063543c5f28436f74246a060e88e99cba6b36fcdf3d29c9ce7833f97"
+        },
+        {
+          "path": "skills/agent-introspection-debugging/references/trace-review-template.md",
+          "bytes": 1495,
+          "sha256": "ff1cf27cc73a70d818790442baf73df4764990bd45125d6bc141137057f5cde8"
+        },
+        {
+          "path": "skills/api-contract-testing/SKILL.md",
+          "bytes": 4073,
+          "sha256": "4c784161f3f3184de4b7a0dd9ea9825d8c166f75df1789f8cede2114dabe9991"
+        },
+        {
+          "path": "skills/api-contract-testing/references/contract-test-patterns.md",
+          "bytes": 4125,
+          "sha256": "b48e533abd5ef6ed926042f7baf29730a9cf7c8d338b60b4e0c0800cb61e5e44"
+        },
+        {
+          "path": "skills/article-writing/SKILL.md",
+          "bytes": 3393,
+          "sha256": "872dd410b216ee39e796fd3a8b9bd6d5670733e7fa48ef235a50443b48b794b5"
+        },
+        {
+          "path": "skills/article-writing/references/article-brief-and-editorial-checklist.md",
+          "bytes": 1942,
+          "sha256": "ed6816beb4145c44bdd3b5a5d6d20e8d558948489612b621400ff5f24f818ae0"
+        },
+        {
+          "path": "skills/autoresearch/SKILL.md",
+          "bytes": 3513,
+          "sha256": "a6c4f3930619d88224aac712d4f46b877407340f32fd6cd420597c25808abb35"
+        },
+        {
+          "path": "skills/autoresearch/references/experiment-protocol.md",
+          "bytes": 2290,
+          "sha256": "af0da3c2477c3fc13f825b77ddb1b56c490216dbaaf54723a91ec800d6a275ee"
+        },
+        {
+          "path": "skills/brand-voice/SKILL.md",
+          "bytes": 3305,
+          "sha256": "ad213fe173c227f1ea4af7fe0335d66f1d6f418bdc2cc450e5506f7ae10ed2ef"
+        },
+        {
+          "path": "skills/brand-voice/references/voice-profile-rubric.md",
+          "bytes": 1861,
+          "sha256": "d39e5a86ad178daf1d24cbee398be76204aa75ec88680ada683cb9e3ac76cfb8"
+        },
+        {
+          "path": "skills/content-repurposing/SKILL.md",
+          "bytes": 3558,
+          "sha256": "5d7b03962c90baaff204795b0934cae85c3630c09f500cae0c416fd088efe919"
+        },
+        {
+          "path": "skills/content-repurposing/references/channel-adaptation-matrix.md",
+          "bytes": 1542,
+          "sha256": "91dbee24a8dd819b4a8726ee36c215cb9168ea00377b0b08216baaea3b65c4d2"
+        },
+        {
+          "path": "skills/database-migration-workflow/SKILL.md",
+          "bytes": 5239,
+          "sha256": "f886f09040ceaa0c220a8c6bf91262600018cfcc10e8c20ba39abff299a4ad02"
+        },
+        {
+          "path": "skills/database-migration-workflow/references/migration-verification-and-recovery.md",
+          "bytes": 3862,
+          "sha256": "4e18006477e5671261ec322a25deff8d17d5eccf4d44ba5eb25e0def87b3165d"
+        },
+        {
+          "path": "skills/database-migration-workflow/references/zero-downtime-migration-patterns.md",
+          "bytes": 4333,
+          "sha256": "20daaaa7045b4ddec09a58335d55cb6c0f28d3d8c439f9b9c546211a96bdda87"
+        },
+        {
+          "path": "skills/design-intelligence-search/SKILL.md",
+          "bytes": 3982,
+          "sha256": "2f3de2e7a8bc98fb5a3ffe0a2ef468db2c8b55e03dc316c81fe8f00749aa35d5"
+        },
+        {
+          "path": "skills/design-intelligence-search/references/design-knowledge.json",
+          "bytes": 15563,
+          "sha256": "7e2b493ace75fe3fed5ef3e14e6a99b89a56982b7ba92c786f47abb3d71ccd8b"
+        },
+        {
+          "path": "skills/design-intelligence-search/references/knowledge-schema.md",
+          "bytes": 2810,
+          "sha256": "967d9fabfc686daea81d42ae9accffd6ca37343cebec111172350944ca8442d7"
+        },
+        {
+          "path": "skills/design-intelligence-search/scripts/search-design-intelligence.mjs",
+          "bytes": 11476,
+          "sha256": "8e468356b2584168bb12bc2f34ebe5902b87c4c229e84ca86ab2ed8d26d31ce4"
+        },
+        {
+          "path": "skills/design-system/SKILL.md",
+          "bytes": 7962,
+          "sha256": "5cf12e233caa9c883add03a8e4636756c5122840a82f441b1b3032cb440fa096"
+        },
+        {
+          "path": "skills/design-system/reference/generate.md",
+          "bytes": 4290,
+          "sha256": "95f8419c0e8a8eef39c254b93b57bc21c876c3ea8c214de260a9b7e7ca84c9ac"
+        },
+        {
+          "path": "skills/design-system/reference/review.md",
+          "bytes": 1918,
+          "sha256": "a49df8fbfb43f2865d98f0721d743572ac236bc6d9cba56b8507b96b2ecbb8fa"
+        },
+        {
+          "path": "skills/design-system/reference/token-extraction-and-drift.md",
+          "bytes": 6611,
+          "sha256": "e888cfcbe82dbed1747218a3fa49d8ece3c1ac1a54cbe8d79b533c390e36ee0f"
+        },
+        {
+          "path": "skills/domain-modeling/SKILL.md",
+          "bytes": 4785,
+          "sha256": "a7db084c562039d72e2827470862d0210c909bed955e385059246b4d6568cfa6"
+        },
+        {
+          "path": "skills/figma-to-code/SKILL.md",
+          "bytes": 9782,
+          "sha256": "93828c13526a075b5700cb3716fa0129eeff8f400eb258f19ca1c66c04c07d3a"
+        },
+        {
+          "path": "skills/figma-to-code/references/figma-evidence-contract.md",
+          "bytes": 6503,
+          "sha256": "864b779a3be734f6ae600ef1a76dea47d6530ab72afcbcb32db20565b37a889c"
+        },
+        {
+          "path": "skills/image-to-code/SKILL.md",
+          "bytes": 16179,
+          "sha256": "59d68a936c95484bfb657bbda67e54d642e9d3a098dcdbdab133af0ae8e33776"
+        },
+        {
+          "path": "skills/image-to-code/evals/evals.json",
+          "bytes": 3138,
+          "sha256": "db6d7c329f750ed81268699a5abad49d7416e15f251fbfe6ca961abf4577cc53"
+        },
+        {
+          "path": "skills/image-to-code/references/image-analysis-contract.md",
+          "bytes": 4487,
+          "sha256": "2f9e4e84850b5782e6894063d2704fee1e017ce8bac149768627cd802cc68158"
+        },
+        {
+          "path": "skills/image-to-code/references/visual-fidelity-checklist.md",
+          "bytes": 2894,
+          "sha256": "638343ce22e92a85a3e19e9b9b6b9df7e43431b770bcfc4c5bbc1731b660f08e"
+        },
+        {
+          "path": "skills/ios-architecture/SKILL.md",
+          "bytes": 5170,
+          "sha256": "e7c935ce06d7d38d1fc17949b1a776070c34b53da57ebf81243ce857d10a6425"
+        },
+        {
+          "path": "skills/ios-architecture/references/architecture-boundaries.md",
+          "bytes": 5140,
+          "sha256": "0d7f58f1918e81896079d806811128518d8e718cfb866ec83071c196b95bb2b8"
+        },
+        {
+          "path": "skills/ios-architecture/references/architecture-selection.md",
+          "bytes": 3855,
+          "sha256": "5e5074df4a18f61e986b6c0f5afb113886f5c857234d3873288a00b1acf5c173"
+        },
+        {
+          "path": "skills/ios-architecture/references/migration-and-review.md",
+          "bytes": 3370,
+          "sha256": "2ed5c4b9a1dbd40b108404653c6c7170e8873646bdb25c3db9d07fac5a78e858"
+        },
+        {
+          "path": "skills/karpathy-guidelines/SKILL.md",
+          "bytes": 5421,
+          "sha256": "8384941e53a5229870d51ce93532c256ee549789423f9657d9d1bed7c0ead03e"
+        },
+        {
+          "path": "skills/karpathy-guidelines/evals/evals.json",
+          "bytes": 1219,
+          "sha256": "40f42ba6e5069fcd9d85f26ad914d72a0e7c037759fc273148f672b1a3732ca7"
+        },
+        {
+          "path": "skills/llm-application-delivery-workflow/SKILL.md",
+          "bytes": 4012,
+          "sha256": "8dd6e8d88ff128f6ebdd5e0bb944a5664d9f5c9098ead40e7e6319110a046b27"
+        },
+        {
+          "path": "skills/llm-application-delivery-workflow/references/delivery-stage-gates.md",
+          "bytes": 3221,
+          "sha256": "69e58f69ca36fd7c59570447fa58da074bd29596caef1ea70000075c577b164b"
+        },
+        {
+          "path": "skills/market-research/SKILL.md",
+          "bytes": 4241,
+          "sha256": "728249409776fc2b459387a9879802e40d674e0e4f54285b1a3920c8e23779be"
+        },
+        {
+          "path": "skills/market-research/evals/evals.json",
+          "bytes": 3007,
+          "sha256": "8d76e4fdfcd73f223be667e9ad3f9b740dedea952fb17c6745028e761afc57d1"
+        },
+        {
+          "path": "skills/market-research/references/research-brief-and-evidence.md",
+          "bytes": 2992,
+          "sha256": "604b6fa5054c8be7d3b0aa1e59d720f724eb229c3b33a06947ec00fbc611a877"
+        },
+        {
+          "path": "skills/multi-session-planning/SKILL.md",
+          "bytes": 4871,
+          "sha256": "602d0887efddf3e11014b1cfe597447f90b2c7af3dca61309671154e3b4715d7"
+        },
+        {
+          "path": "skills/pipeline-review/SKILL.md",
+          "bytes": 6604,
+          "sha256": "42facf6ffcf7497e3b6c0a4fdf8638b2e2ce84e93f6eb089fac74308ce153123"
+        },
+        {
+          "path": "skills/pipeline-review/evals/evals.json",
+          "bytes": 1929,
+          "sha256": "e8044f38ccd01c4050375fd281499f413e0c6d0b53a3bff23950d48ab1f2ad8b"
+        },
+        {
+          "path": "skills/prompt-engineering/SKILL.md",
+          "bytes": 9113,
+          "sha256": "4e7f21caeef5fd33e32fcce9592908cc50cd188881e9f91f356dc450d94e50e8"
+        },
+        {
+          "path": "skills/prompt-engineering/evals/evals.json",
+          "bytes": 3752,
+          "sha256": "27f164476b435817132bc0267ada70886c6453328e2f0ffa985cba03529f5325"
+        },
+        {
+          "path": "skills/prompt-engineering/references/evaluation-and-regression.md",
+          "bytes": 3713,
+          "sha256": "d0f76cf1e157c133b6adef1b507fc860bf32734040aed827efefaa76b45b19d6"
+        },
+        {
+          "path": "skills/prompt-engineering/references/prompt-design.md",
+          "bytes": 5239,
+          "sha256": "931db2a69f23a684941d04b74d01aa6cecd01feda79f061c04a4842db29b53f8"
+        },
+        {
+          "path": "skills/receiving-code-review/SKILL.md",
+          "bytes": 2996,
+          "sha256": "19fdc93001ed834245e92387f94966db8f44f42f9e85281b85b73763c2f8891a"
+        },
+        {
+          "path": "skills/requirements-deep-dive/SKILL.md",
+          "bytes": 4649,
+          "sha256": "1a71de680f48141feecc597c15e08c3683aa16210c9ffee5f910b7f26e43d8b2"
+        },
+        {
+          "path": "skills/session-handoff/SKILL.md",
+          "bytes": 3096,
+          "sha256": "b947ce2a8f7397e55bf46cfa17c1b4c92cc15a7d088c51ea933cb566e79e4bc0"
+        },
+        {
+          "path": "skills/session-handoff/references/handoff-record.md",
+          "bytes": 1041,
+          "sha256": "af293663e70c3d31ed599b0766eea0c95e5a7d39356a83346e8f5e03e8b21278"
+        },
+        {
+          "path": "skills/skill-audit/SKILL.md",
+          "bytes": 5261,
+          "sha256": "317c771ade5fa1b23c3a5060425290ca0e7a73b50532713009ed49cb18a584cc"
+        },
+        {
+          "path": "skills/skill-audit/evals/evals.json",
+          "bytes": 2902,
+          "sha256": "c554643545bc8782534e227c269f6dbcd75e0c0b2727e3a2744e7608a1751a34"
+        },
+        {
+          "path": "skills/skill-audit/references/audit-rubric.md",
+          "bytes": 3702,
+          "sha256": "e52a106740b9a93328a4c0d15b030d01f18f0284ecdd3aa62224ecef5feddfdf"
+        },
+        {
+          "path": "skills/skill-creator-design/SKILL.md",
+          "bytes": 9325,
+          "sha256": "76b170d473923751d542db86052ac59fd1a2086c76c523a23b1d6606f9237dcd"
+        },
+        {
+          "path": "skills/skill-creator-design/evals/evals.json",
+          "bytes": 2877,
+          "sha256": "74ff72f65c56340716391c6ee05bfc0e499a0ae2fcb822463be0edf8fc9fc4d7"
+        },
+        {
+          "path": "skills/skill-explorer/SKILL.md",
+          "bytes": 3583,
+          "sha256": "23daf483629027dcfdf2fd95181daa124e300ee1e7ebdf940ceebd22c435dd58"
+        },
+        {
+          "path": "skills/skill-explorer/evals/evals.json",
+          "bytes": 2363,
+          "sha256": "a1f01b748ca01ddccac862a1be4b4a8be4f12d65995dcab4caf7ccf3abccb3ae"
+        },
+        {
+          "path": "skills/solution-discovery/SKILL.md",
+          "bytes": 3706,
+          "sha256": "7bd0002405d5fe382eb0be4ebb48e7d8157ddf39da76060cd0680b793a5b1fde"
+        },
+        {
+          "path": "skills/solution-discovery/evals/evals.json",
+          "bytes": 6223,
+          "sha256": "62801aed3b9daf7da363064ff158265b51acb0128e5d2e0a04aa4194e222dfcb"
+        },
+        {
+          "path": "skills/solution-discovery/evals/routing.json",
+          "bytes": 3654,
+          "sha256": "eab17e97352b8f8cb0efa50de1db9a5b320c264507f13846acdf4d528f5b34a3"
+        },
+        {
+          "path": "skills/spec-flow/SKILL.md",
+          "bytes": 4271,
+          "sha256": "d9bf218c089185382525f75c8ba39d5ebbb15c4b4f3ebad7cf92fbdeb3ab40f0"
+        },
+        {
+          "path": "skills/spec-flow/evals/evals.json",
+          "bytes": 8166,
+          "sha256": "a3a776cb8ccb8da95e581486b11fbc9e892c536e0ca099d7a7e148fe00965a7c"
+        },
+        {
+          "path": "skills/spec-flow/evals/fixtures/approved-offline-sync/CONTRACT.md",
+          "bytes": 1693,
+          "sha256": "8f8de26bb2930779b07376c1f782659003b486998d7ea9abace6807aa20654e8"
+        },
+        {
+          "path": "skills/spec-flow/evals/fixtures/approved-offline-sync/contracts/schema-compatibility.json",
+          "bytes": 1233,
+          "sha256": "99225f3d257098b6b6d730c9e2f8cc22c3daf3e7c71837f8adf8cf303129c2be"
+        },
+        {
+          "path": "skills/spec-flow/evals/fixtures/approved-offline-sync/contracts/sync-policy.json",
+          "bytes": 1336,
+          "sha256": "d42ffb13f3f1e454d4434f183f4e7788f5880d63104b0e251b50482cb5c6fb34"
+        },
+        {
+          "path": "skills/spec-flow/evals/fixtures/approved-offline-sync/contracts/telemetry-policy.json",
+          "bytes": 804,
+          "sha256": "4d9a63e0abe1c5bc6ff1ccf0a439da3dbd5f7d5b01bfba95bcf274788a514ab7"
+        },
+        {
+          "path": "skills/spec-flow/evals/fixtures/approved-offline-sync/decision.md",
+          "bytes": 5787,
+          "sha256": "3593190973c5b1795988d60340f7f51f9d211bcb88a9d51d1767e86e0cb5952d"
+        },
+        {
+          "path": "skills/spec-flow/evals/fixtures/approved-offline-sync/open-decisions.json",
+          "bytes": 1624,
+          "sha256": "d9ef3ff0b6737709a4d6fbd22002dc7a7b76139e0484dc50b37f8d8c90462c43"
+        },
+        {
+          "path": "skills/spec-flow/evals/fixtures/approved-offline-sync/operations/rollout-recovery.json",
+          "bytes": 2059,
+          "sha256": "0fab8d54da5f5ffa00b8ebf245f3f3a4bc6036c08d9bc2bab03f1c55b6394980"
+        },
+        {
+          "path": "skills/spec-flow/evals/fixtures/approved-offline-sync/samples/client-store-v1.json",
+          "bytes": 225,
+          "sha256": "9dcc4d8e296cad5e370637fab52a0e338c9c222be8bf44b486b22676d6f6eafd"
+        },
+        {
+          "path": "skills/spec-flow/evals/fixtures/approved-offline-sync/samples/client-store-v2.json",
+          "bytes": 466,
+          "sha256": "1419ae1222352cf153934a901fe3991170b3057629c961fa70b832b7e9a78208"
+        },
+        {
+          "path": "skills/spec-flow/evals/fixtures/approved-offline-sync/samples/sync-scenarios.json",
+          "bytes": 2159,
+          "sha256": "4d5e866e03e2968503377b314d6e10e18825740ebbb4563d66aeaa8ac57a93af"
+        },
+        {
+          "path": "skills/spec-flow/evals/fixtures/approved-offline-sync/samples/telemetry-event.json",
+          "bytes": 136,
+          "sha256": "b4db52261daab09264224183944d42c3e485d9b9f956bb1b77e0015511e59f13"
+        },
+        {
+          "path": "skills/spec-flow/evals/fixtures/approved-offline-sync/scenario.json",
+          "bytes": 2115,
+          "sha256": "059afac090b3a06ac074cd2fc244cbe4bd1fa48a8e78b8ac64034688d44b285f"
+        },
+        {
+          "path": "skills/spec-flow/evals/routing.json",
+          "bytes": 4421,
+          "sha256": "035e34b0aeea9c0ab7ee24be2087335b1bf49953e615b15aceb438d2947eb71b"
+        },
+        {
+          "path": "skills/spec-flow/references/task-contract.md",
+          "bytes": 2193,
+          "sha256": "e651f644dba4946aa60a9de1f16bd76932b34c70b89b3a89a91012c6123cf18d"
+        },
+        {
+          "path": "skills/swift-concurrency/SKILL.md",
+          "bytes": 7804,
+          "sha256": "023d706fd15f9c2a8cccd2df8026a00c5b578685903f71dec07608e2df071c43"
+        },
+        {
+          "path": "skills/swift-concurrency/references/configuration-and-migration.md",
+          "bytes": 4856,
+          "sha256": "6a647d35118b6aa5ec7cea07b38b32aa7b1cc0c30fd4e04f0cdf3fb1b83048a1"
+        },
+        {
+          "path": "skills/swift-concurrency/references/isolation-and-sendability.md",
+          "bytes": 5142,
+          "sha256": "97823360b4c73f9bb7aaae42bee8b1cf7821da63cf01202498d95151c51f312c"
+        },
+        {
+          "path": "skills/swift-concurrency/references/tasks-and-streams.md",
+          "bytes": 5485,
+          "sha256": "3e275efaef6f98769a30c08197660d623e46baa0605a8a3e07b76d8e6c5a5a76"
+        },
+        {
+          "path": "skills/swift-concurrency/references/verification-and-performance.md",
+          "bytes": 4349,
+          "sha256": "f05850a11337584d11b5d110b814400928bef26de6865d31b3b801e359a20f4a"
+        },
+        {
+          "path": "skills/swift-testing/SKILL.md",
+          "bytes": 6343,
+          "sha256": "a18e7139618044147ee429aa20df41c441668a29898bc9458837fffcf7799c9f"
+        },
+        {
+          "path": "skills/swift-testing/evals/evals.json",
+          "bytes": 6878,
+          "sha256": "fc75a7886edb30c4b6dc56dfcfc867952c6a09ea7c35beb581d96b61596680c2"
+        },
+        {
+          "path": "skills/swift-testing/references/async-parallel-and-isolation.md",
+          "bytes": 7492,
+          "sha256": "11adc811a856f8f9db4772c376d4717318d58ed61afd34ea87804ab4bf69a797"
+        },
+        {
+          "path": "skills/swift-testing/references/parameterization-traits-and-plans.md",
+          "bytes": 12862,
+          "sha256": "ac0d049dc08300c0aea301017f494aac7351074335aad7c4a60f222f821b7cdc"
+        },
+        {
+          "path": "skills/swift-testing/references/test-structure-and-assertions.md",
+          "bytes": 9759,
+          "sha256": "a3372c73ee691e281f7eb517724bb9aa4d18cbed08b459daa61a32d50d2e9d4a"
+        },
+        {
+          "path": "skills/swift-testing/references/xctest-migration-and-ci.md",
+          "bytes": 9576,
+          "sha256": "870d7fa16f975b46bbaf8035a01afebf73ae4a5eee12a81a59ea6da4d5581c07"
+        },
+        {
+          "path": "skills/swiftui-development/SKILL.md",
+          "bytes": 5046,
+          "sha256": "b169768242776d274d0625acc6f5bfdcb923bad5626cbc34d4591e3db309e46c"
+        },
+        {
+          "path": "skills/swiftui-development/references/quality-and-performance.md",
+          "bytes": 3881,
+          "sha256": "b1b10ea0cadb59518735fb86e62e3e818424bc4250fc2f8784a4caebd956b830"
+        },
+        {
+          "path": "skills/swiftui-development/references/state-and-concurrency.md",
+          "bytes": 3970,
+          "sha256": "5f40819c6cecd2433389c82f0bf5965e3a18244f1fbabd5fc61c918912cc02ce"
+        },
+        {
+          "path": "skills/swiftui-development/references/views-and-navigation.md",
+          "bytes": 3905,
+          "sha256": "1ecac60d9aba5752536062fdef26abf6e930c9c0eaaa7832e5944fee271ad2e0"
+        },
+        {
+          "path": "skills/systematic-debugging/SKILL.md",
+          "bytes": 4287,
+          "sha256": "242c7cced56ab2ace281604404403a2ef454b2d097f185d3cab766fbee93545e"
+        },
+        {
+          "path": "skills/systematic-debugging/evals/evals.json",
+          "bytes": 1264,
+          "sha256": "c5398c2f050eaea8eea64a264c123dc32500258f8ad4a2f1173c57a67ec98dcc"
+        },
+        {
+          "path": "skills/systematic-debugging/evals/routing.json",
+          "bytes": 1625,
+          "sha256": "aec0f69f27d487c2129ff1c85a7fe4c2f306305184df32fdd9762df2c761d6df"
+        },
+        {
+          "path": "skills/taste-skill/SKILL.md",
+          "bytes": 8773,
+          "sha256": "161e45a218d98cd28e2f6dc22eda725086d78e5cf88cb95fad9df7f7ecde59db"
+        },
+        {
+          "path": "skills/taste-skill/references/anti-generic-ui-review.md",
+          "bytes": 2847,
+          "sha256": "464e1697ba7466356b803e108b053363bda099bd07f3402cf6909be52bce571e"
+        },
+        {
+          "path": "skills/taste-skill/references/design-decision-log.md",
+          "bytes": 2010,
+          "sha256": "d7e7ffdd71f110d7ffe4d4a3d747829a6fbae76a36749b62db78033b84d2e9f5"
+        },
+        {
+          "path": "skills/taste-skill/references/design-intent-and-calibration.md",
+          "bytes": 3648,
+          "sha256": "5025d16ee1a7ae114df976e6218e24fbc67b2a5f5826eafe82e17dcef33b61ed"
+        },
+        {
+          "path": "skills/test-driven-development/SKILL.md",
+          "bytes": 4399,
+          "sha256": "39e056aa691fbf84b8e0a1e6f73bae2096d81b62cc0e3b4a1a032f677ea5b9b1"
+        },
+        {
+          "path": "skills/test-driven-development/evals/evals.json",
+          "bytes": 1990,
+          "sha256": "bbeaeb7b80afc570364e5e55c1283b83981d0f4d59a22d2405baa13b1ddbd043"
+        },
+        {
+          "path": "skills/test-driven-development/evals/routing.json",
+          "bytes": 1433,
+          "sha256": "e95c276140c98e96f81dea4c962aa861b8e650e3417299140c3e7957358687bc"
+        },
+        {
+          "path": "skills/threejs-atmosphere-aerial-perspective/SKILL.md",
+          "bytes": 1941,
+          "sha256": "b1e927812643ef68ba3d2cfb55c728f7fd014fa63492aea40d9028fe9e69847f"
+        },
+        {
+          "path": "skills/threejs-atmosphere-aerial-perspective/evals/evals.json",
+          "bytes": 1383,
+          "sha256": "9f986c9b65ccf630b42be0ff742b7fcad97c4dd7d33e0e60a21998dedddd2fb8"
+        },
+        {
+          "path": "skills/threejs-bloom/SKILL.md",
+          "bytes": 1710,
+          "sha256": "f73ba8d6453277f1e07cbbb901d0c3c913adfd7d9b523bb9076dc7fcc5b1d925"
+        },
+        {
+          "path": "skills/threejs-bloom/evals/evals.json",
+          "bytes": 1401,
+          "sha256": "4aaddf9892e88b329f260d682d4209eda0d97ef45e553753629906415f055560"
+        },
+        {
+          "path": "skills/threejs-camera-direction/SKILL.md",
+          "bytes": 1875,
+          "sha256": "0a3eb1790bec5313d23b2fce37aeb61541570276adb0b8d3932c4c2f5d043d6b"
+        },
+        {
+          "path": "skills/threejs-camera-direction/evals/evals.json",
+          "bytes": 1362,
+          "sha256": "5e27cf104fafae4a41534a5ef9e76d18ce22bc62609d9787813c06644c110282"
+        },
+        {
+          "path": "skills/threejs-development/SKILL.md",
+          "bytes": 5829,
+          "sha256": "07beef40a40f9b24feb997700ffb866966632b6fe42468c29fc10f5b8c9b8abe"
+        },
+        {
+          "path": "skills/threejs-development/evals/evals.json",
+          "bytes": 28646,
+          "sha256": "c22f88f5ad7fe3b467df377f2b5420619dffeafc8290dce41d43ca12f3a1ad93"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/glb-viewer-lifecycle/CONTRACT.md",
+          "bytes": 4439,
+          "sha256": "edb8b5d219a6b4f2fa2086f503cb060b3b003bfb77958aa110c1614672c76f3a"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/glb-viewer-lifecycle/index.html",
+          "bytes": 993,
+          "sha256": "2afea0920a8a61a1f1213b533ae9663423912edd643a4cc90c38a8812ead71f9"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/glb-viewer-lifecycle/package-lock.json",
+          "bytes": 14843,
+          "sha256": "1553f3c51037ec00ecd1f62f95d6bb323d6881e9766e5c75d2ec5340623a2b78"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/glb-viewer-lifecycle/package.json",
+          "bytes": 282,
+          "sha256": "98795b5972abf2819dbc3e4c2b53ffe80cf28fd715919abf77b4b5b54ea8a31d"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/glb-viewer-lifecycle/scenario.json",
+          "bytes": 674,
+          "sha256": "f165ca445f419194beb7c68eb31c4597097f6359c285beb5a1e28ed634c7dc85"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/glb-viewer-lifecycle/src/asset-policy.cjs",
+          "bytes": 586,
+          "sha256": "5e74f8f5b81c3ec56035c0bab75963587a06ee1834ee0808747e47ad0f704c0b"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/glb-viewer-lifecycle/src/lifecycle.cjs",
+          "bytes": 119,
+          "sha256": "217444103cc0fc2ae0ea464d0062856b60470eb4382b5579f542a2f8c1806446"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/glb-viewer-lifecycle/src/viewer.js",
+          "bytes": 7707,
+          "sha256": "26b2e49a6697a458a8fa416ddaee89dcd434d673c4f503690710fb528b410a0f"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/glb-viewer-lifecycle/style.css",
+          "bytes": 458,
+          "sha256": "2a995ff9458d51e98010c5d1205040e632f2dfa64516d58c44a853d10993d368"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/glb-viewer-lifecycle/test/assets.test.cjs",
+          "bytes": 1179,
+          "sha256": "95407cb231a4b40e6c7810721e00429019e22ff1eac7a54e595e5a3810148dc3"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/glb-viewer-lifecycle/tools/build.cjs",
+          "bytes": 901,
+          "sha256": "475ad05d501f4c37b62ae65c87ba92cd880c3ea556bf483204857a57cd0ee0ab"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/glb-viewer-lifecycle/tools/generate-assets.cjs",
+          "bytes": 2939,
+          "sha256": "140dc4f134f1d3caa2ebc34ecb0087077641c2d637cef13274993115c51eb914"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/glb-viewer-lifecycle/tools/serve.cjs",
+          "bytes": 1349,
+          "sha256": "ce6305f536151400f2f1ec95d9f209da99a97bb6f742b1566e8d17e1f5ec9fa7"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/CONTRACT.md",
+          "bytes": 3990,
+          "sha256": "b694bef468f9c0d3b08ba0d7df38ab463e10d87e33e5d42e6d614e6e638e07aa"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/assets/audio-cue.json",
+          "bytes": 240,
+          "sha256": "8a1d79dbb9fac12bd375b66e19e5637abd47df358126c2e5afd0801cc1ee1760"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/assets/materials.json",
+          "bytes": 476,
+          "sha256": "814f7e059007d70c6c1d36759e0a29d9c5a7df1c5618e68082195bf983f86b99"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/contracts/saved-design-v1.schema.json",
+          "bytes": 3147,
+          "sha256": "a0016cf3d3e57ad5c88b2368cc905227fd3e4a8e8be2adfcee16af38df28711b"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/contracts/scene-and-capture.json",
+          "bytes": 1478,
+          "sha256": "02f0b723f49f3718384b89eefa9ea69c74d2a5b66b6c5b5aaceb1ca28b532c38"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/index.html",
+          "bytes": 3438,
+          "sha256": "9dd62b85c0ea17a430166b6cb8756964ca2274800b5148f4bf745eded98be570"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/package-lock.json",
+          "bytes": 579,
+          "sha256": "e2c686418b97e82540b9792d9d2e45956d4c5af7b13aeac46ced71de35e55db2"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/package.json",
+          "bytes": 259,
+          "sha256": "db49cfddcb2be6c13d5938b342b4cc43548051a4420ee529c2eb29d7672bcf6e"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/saved-designs/invalid-material.json",
+          "bytes": 519,
+          "sha256": "dded559edd547176cbed93b911b24eb0b7197f54e0b49df66769d81d88b72c34"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/saved-designs/invalid-units.json",
+          "bytes": 503,
+          "sha256": "23f63b229ff39a8cb0774217fea2cfcfa85c0fc646707342d903474b9cd75be2"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/saved-designs/invalid-version.json",
+          "bytes": 500,
+          "sha256": "49ff625eb39950b822f3e77613b7692efdff24d092eaeda97c6978e557bd3497"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/saved-designs/oak-chair.v1.json",
+          "bytes": 500,
+          "sha256": "fa4e06b861d708b71f120a6dd1c0c2d97d5f2a196bf557fa0a5082c5494e411e"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/saved-designs/wide-chair.v1.json",
+          "bytes": 508,
+          "sha256": "9dc587d68612b0f010fc40a5063568820a18629dfad0dc194ff46fd1815a2141"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/src/app.js",
+          "bytes": 3179,
+          "sha256": "ed694087b3a55aa17b30de5fed292cda35bcccffc8ac6852027eb8a8146dda50"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/src/design.js",
+          "bytes": 2707,
+          "sha256": "615c3c9f467ae565049314f29ba247e28eb3e178ec0d75f4aa779acc004dcc61"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/src/model.js",
+          "bytes": 2237,
+          "sha256": "c65f8fb717bf8c6d3820c933fc53e9c42dfc6df0fc0681b5ff386b23644d9487"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/src/renderer.js",
+          "bytes": 3165,
+          "sha256": "274fa58097d8da82678d22176785fedc83dc64604643be39201237983b157e1f"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/style.css",
+          "bytes": 1177,
+          "sha256": "11487ece37c92e4605495b7cc5f0ef7f84f27e034d41a0b47ca9c95aac84f9e9"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/test/designs.test.cjs",
+          "bytes": 1395,
+          "sha256": "819ac923ff875b17f72ae502c364c2fa39ff036e3170dcdbd32425ea0c90a1de"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/tools/audio.cjs",
+          "bytes": 959,
+          "sha256": "7a87893a3f1957e24725ba72a0d4810bfab9908127fc10f94a1ff79589fe2178"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/tools/build.cjs",
+          "bytes": 1456,
+          "sha256": "a147366b9288f4da378b620512d2c821e999bd1fd2cabe9b028510558a5bb0a7"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/legacy-furniture-configurator/tools/serve.cjs",
+          "bytes": 1641,
+          "sha256": "c53f82c2f89cab9f16cc0e9c223d464c4e538a9f605249b27e2862b9934427d6"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/pinned-provenance/CONTEXT.md",
+          "bytes": 1622,
+          "sha256": "2a0b77d2870c7f3821fef238ceadd6aace41a7f370e39d1b9780e3413aaf8d5a"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/pinned-provenance/existing-policy.json",
+          "bytes": 5843,
+          "sha256": "188421028c0fd108d23da8a2e6bba1040d66df00580c04e1119b47c9f3112b9d"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/pinned-provenance/upstream-evidence.json",
+          "bytes": 3367,
+          "sha256": "57188f45454a58b372e10b0eb3d8dbb81b37ae7921d9267e6f998f12919ce3d5"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/renderer-feature-baseline/CONTRACT.md",
+          "bytes": 2418,
+          "sha256": "ddfa05e2cd9ca3fdf486771f9b0de6c77dee32c88e543b7dc42f4cbabe25dbd1"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/renderer-feature-baseline/contracts/requirements.json",
+          "bytes": 994,
+          "sha256": "f3f4770aac7ed5e6898036c5fb9ae0b50e530e02e116151502f116cb61c96ef0"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/renderer-feature-baseline/dependency-evidence.json",
+          "bytes": 1075,
+          "sha256": "77d617061d3a13941f3722fe33e3d9ba43896f47cab5106b4ff3163ee9d9479d"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/renderer-feature-baseline/index.html",
+          "bytes": 1013,
+          "sha256": "1d8f3fd38ea66dae366448e1a217e18947b277678444a52cbd9d64522a047e44"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/renderer-feature-baseline/package-lock.json",
+          "bytes": 567,
+          "sha256": "ee194b115ea1e948406d0058b3cc22d0d03fdff9eded203662fe826a37560eab"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/renderer-feature-baseline/package.json",
+          "bytes": 153,
+          "sha256": "f45a11ae32904ce4824de9c3bc0e8b8abd0924a00c3319ff221e6284fc00d6a7"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/renderer-feature-baseline/src/pixel-contract.js",
+          "bytes": 717,
+          "sha256": "a3b89174ea50fbdb0c8a453129ab8c921db686ec1645c3ad4b63123df60ad31b"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/renderer-feature-baseline/src/probe.js",
+          "bytes": 6253,
+          "sha256": "b173469bd91f81074c8a7eafeac535345bf7084f9d0ba13bccee6a6ae30b62d7"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/renderer-feature-baseline/style.css",
+          "bytes": 541,
+          "sha256": "a4f491d64b751df39c280b4a6c693c2f132e848eb5b49af1d3dfd4f6361a6d4c"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/renderer-feature-baseline/tools/build.cjs",
+          "bytes": 1107,
+          "sha256": "023ef788d649fcdff755d5e14fb504e3bc35fa34519bf0567b2c8b4220d74a75"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/renderer-feature-baseline/tools/serve.cjs",
+          "bytes": 1324,
+          "sha256": "e1188eea2363959b678abbc2621e7500fb16e1657f4c8b3991eaaf6dd9bde383"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/unrelated-footer/CONTRACT.md",
+          "bytes": 1671,
+          "sha256": "88750fec1d3ea32a6e57e1802cc06ee1ca93afec417c0031f8b7030965fc1a4d"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/unrelated-footer/index.html",
+          "bytes": 1425,
+          "sha256": "083b2eeee41e58a4f2f5523793281a2a5a04ee163cfb4beab583107b64a0ec85"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/unrelated-footer/package-lock.json",
+          "bytes": 535,
+          "sha256": "9ed6d3c2abf4de4b621b40928989b04d8308381b8442146ef8831a1bccc4fd04"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/unrelated-footer/package.json",
+          "bytes": 144,
+          "sha256": "874cee245f173796ef834a7f83feb484f29f87310e284ac4f644eb581b0014cc"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/unrelated-footer/privacy.html",
+          "bytes": 315,
+          "sha256": "c4ace5ad8181bd6af9df8d5eb8a361b498fb5b578872eaf0dc6aad5c399cafe0"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/unrelated-footer/src/viewer.js",
+          "bytes": 2076,
+          "sha256": "24c3ddebe6da31ccacfb9612de3c4c80acc26a41326e7a3cc3086876037af501"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/unrelated-footer/styles/footer.css",
+          "bytes": 229,
+          "sha256": "5e1189503c57fe5e1587fe7850af5bbda0bbfafc31edbc3804b1468777ae9ada"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/unrelated-footer/styles/page.css",
+          "bytes": 566,
+          "sha256": "ed4bde2ef5997cb4c3e6a748954d912e137d8aee22686ce91b628624d7546c58"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/unrelated-footer/styles/viewer.css",
+          "bytes": 575,
+          "sha256": "f96aed1a82a81f3710f935fe6a1512ea3c318edcfcb7a3749ccfa8153d2a7fa5"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/vanilla-game-migration/CONTRACT.md",
+          "bytes": 2947,
+          "sha256": "e6919c3681d25bd3e7d486c2f5691dd9b34b7057828366c95dd991cebecc8966"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/vanilla-game-migration/assets/level.json",
+          "bytes": 203,
+          "sha256": "5f332ddc2631c9ee8918aad04ff44f3ef5f596f2469223edb2881e2218f87439"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/vanilla-game-migration/package-lock.json",
+          "bytes": 24790,
+          "sha256": "65d179cdcaec5ba21b6d316c9d95d2af14696541195322fd5557d2e1f1bc0874"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/vanilla-game-migration/package.json",
+          "bytes": 371,
+          "sha256": "ddf73e1c03abe2e491933e999fc4869091f6af1117bb9143eff265d216629362"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/vanilla-game-migration/scenario.json",
+          "bytes": 703,
+          "sha256": "e130be868c6b0706da578414ed97cce2a6fb9de46a5f1528e124a7b40fd20ed5"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/vanilla-game-migration/src/diagnostics.js",
+          "bytes": 2719,
+          "sha256": "1d1be8d47de39672685a6e5ec3b5a958f3e493bf8c1e616d91f47abda2778308"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/vanilla-game-migration/src/game.cjs",
+          "bytes": 2229,
+          "sha256": "ca15ae9495782c3ca6bd1c61f471b2ef7463be20cc227aeaa9dd93a270e5ff14"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/vanilla-game-migration/src/level.cjs",
+          "bytes": 344,
+          "sha256": "412438eca5659cb1bbc58380bda71b3c430a12b4777f69389bb2d5da15f9ac98"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/vanilla-game-migration/src/main.js",
+          "bytes": 2094,
+          "sha256": "b97461aa48e73961cecc024909204f2d1b09d0d08c240bd4569533249d6d4783"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/vanilla-game-migration/src/styles.css",
+          "bytes": 848,
+          "sha256": "968b46f5c35f1c22868944e6dffd934f4a6df5a439209417d4f12b77c677a3f4"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/vanilla-game-migration/src/vanilla.js",
+          "bytes": 4598,
+          "sha256": "78702eb667e46886ffa81c9569aade51dfe7233eebf2a0aa323decc80e869f16"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/vanilla-game-migration/test/game.test.cjs",
+          "bytes": 813,
+          "sha256": "61d422b56538b10b8a3638acf21f6fe9d1fdd291f85ea49635bc248ff8aa992a"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/vanilla-game-migration/tools/build.cjs",
+          "bytes": 937,
+          "sha256": "f54582604a5c740d700e0fdb1fcd1d343bdb9d10f99be9a2eb7363ab935e6a30"
+        },
+        {
+          "path": "skills/threejs-development/evals/fixtures/vanilla-game-migration/tools/serve.cjs",
+          "bytes": 1976,
+          "sha256": "69791cff88eec682337d7532b879f736ee59b1cc0ef9a1631e38778c9b071a95"
+        },
+        {
+          "path": "skills/threejs-development/evals/routing.json",
+          "bytes": 3782,
+          "sha256": "8f88c8607e03e49bfd23ef26baaa4c356a3a42d9bf6aefa1edebbbf059a1ea0f"
+        },
+        {
+          "path": "skills/threejs-development/references/accessibility-contract.md",
+          "bytes": 1999,
+          "sha256": "dacb0fa0c9d50d84a7c2f009edcf32ded88c0d3bdeab57e3015121a3c4ec930a"
+        },
+        {
+          "path": "skills/threejs-development/references/authoring-export.md",
+          "bytes": 2129,
+          "sha256": "ebadb54f0b6acc8a79dc388dcf04f0026e8b187f95e5efb34dd7b21271459373"
+        },
+        {
+          "path": "skills/threejs-development/references/capability-map.md",
+          "bytes": 5969,
+          "sha256": "f56f511a79505b1703fe0a76903816ba358bd66f2383845ca700659c64b1029c"
+        },
+        {
+          "path": "skills/threejs-development/references/capture-recording.md",
+          "bytes": 3501,
+          "sha256": "4baa533fc57a6dd8dd6496717f7a13b71b08c2e642ea6d471773bb23cdd43ac7"
+        },
+        {
+          "path": "skills/threejs-development/references/character-spatial-systems.md",
+          "bytes": 2184,
+          "sha256": "9137695ba512370bb6accc3f8427d77b4318121bbc5531c4c9ee46b0a2ef4603"
+        },
+        {
+          "path": "skills/threejs-development/references/csg-modeling.md",
+          "bytes": 3149,
+          "sha256": "3002d63b3f3863e0251cf1e81c7848c9d32c4b01e64c1fa239d7e57719b0be6e"
+        },
+        {
+          "path": "skills/threejs-development/references/deformable-simulation.md",
+          "bytes": 3514,
+          "sha256": "03f47f9b44c41a7ebc37d982c66cafba8ff19c7c0f3d6fbc8c97f1c59d8aca47"
+        },
+        {
+          "path": "skills/threejs-development/references/framework-integrations.md",
+          "bytes": 2314,
+          "sha256": "0a1f129b9b639c1468fe97ec9a9b12892ff2a19029b3826de015c7d8af37e3c9"
+        },
+        {
+          "path": "skills/threejs-development/references/official-resources.md",
+          "bytes": 3538,
+          "sha256": "75724ff46e648fc41eadc1443c5e3490307948f99df78a493b922b3c66a8f7c5"
+        },
+        {
+          "path": "skills/threejs-development/references/path-tracing.md",
+          "bytes": 3238,
+          "sha256": "9975ff61e500647c232ba980aa0bac25d8b37efb71d622218d45f4ac7d64dad3"
+        },
+        {
+          "path": "skills/threejs-development/references/specialized-data-formats.md",
+          "bytes": 2119,
+          "sha256": "c1e00de9442b3f8c6719414b41e0ef5b2271fbd2117c1042bc16dcd631653e5b"
+        },
+        {
+          "path": "skills/threejs-development/references/version-migration.md",
+          "bytes": 3399,
+          "sha256": "a39107dac1317d01bda7b2ff63efd59daa82afe30305cc826aacd2d952daaea6"
+        },
+        {
+          "path": "skills/threejs-development/references/worker-rendering.md",
+          "bytes": 2081,
+          "sha256": "730db46975d601717b89f9c4c1754611339c8d612e998c91dd78b05cea125bf9"
+        },
+        {
+          "path": "skills/threejs-exposure-color-grading/SKILL.md",
+          "bytes": 1870,
+          "sha256": "351403844dfada8131a83574d9e51c518aacef7ece32fac86367a20912764664"
+        },
+        {
+          "path": "skills/threejs-exposure-color-grading/evals/evals.json",
+          "bytes": 1450,
+          "sha256": "8a17b21c801216a5162f32dea67a2a6ca12691b53cfc6ffaca33bc62af52fb32"
+        },
+        {
+          "path": "skills/threejs-image-pipeline/SKILL.md",
+          "bytes": 2223,
+          "sha256": "5269f04fe722aa684e2688378e9380a6039c57ef51cf089b5e5475324fb2c30f"
+        },
+        {
+          "path": "skills/threejs-image-pipeline/evals/evals.json",
+          "bytes": 1459,
+          "sha256": "1bf5fd8fc74a438dffa7009b1465618d214ba8081b0c02328c0c6290a1d88186"
+        },
+        {
+          "path": "skills/threejs-parallax-occlusion-mapping/SKILL.md",
+          "bytes": 1752,
+          "sha256": "c924f3cbbcc6815de5965cf934d6efb8368626f59f93536930e4d4e55e21c9f2"
+        },
+        {
+          "path": "skills/threejs-parallax-occlusion-mapping/evals/evals.json",
+          "bytes": 1442,
+          "sha256": "04d50fbd08e67e2304331bcaa4060377d3140c41e0cc93773b7081ee2b782234"
+        },
+        {
+          "path": "skills/threejs-precipitation-surfaces/SKILL.md",
+          "bytes": 1852,
+          "sha256": "cb699cca4539bfa97237c011730ae6496de9e2d56baad2ab9805c666e5f42297"
+        },
+        {
+          "path": "skills/threejs-precipitation-surfaces/evals/evals.json",
+          "bytes": 1552,
+          "sha256": "61a27ec77104f7ade9c133aeff4e30ad3315869b9043fe467a9cada2c2928400"
+        },
+        {
+          "path": "skills/threejs-procedural-animation/SKILL.md",
+          "bytes": 1826,
+          "sha256": "a73c960f496d684d0c1c8f6222430de436a1d6e53e8b657bfcb903a643267d0a"
+        },
+        {
+          "path": "skills/threejs-procedural-animation/evals/evals.json",
+          "bytes": 1503,
+          "sha256": "5a15fd7679b516820f2f7febb7f4e374d0aa4086d9533a918b32d1b344df6716"
+        },
+        {
+          "path": "skills/threejs-procedural-architecture/SKILL.md",
+          "bytes": 1819,
+          "sha256": "1fe875d6e43f2018592ab079931964ce025e37a5542e499232d84e702f6414c7"
+        },
+        {
+          "path": "skills/threejs-procedural-architecture/evals/evals.json",
+          "bytes": 1541,
+          "sha256": "727e6622a4b7dc70aab70a9a746990e72db28306e021f4ea0d5a476831320b07"
+        },
+        {
+          "path": "skills/threejs-procedural-fields/SKILL.md",
+          "bytes": 1754,
+          "sha256": "2ab18c82fb3303b1b8a14e42641a2c3d1b34681d15612937dd9b2134d200874f"
+        },
+        {
+          "path": "skills/threejs-procedural-fields/evals/evals.json",
+          "bytes": 1478,
+          "sha256": "9ac4e676d27ce5a2f11df399e27d64bbf5f8d7cd953e8e3269edfaadb173040d"
+        },
+        {
+          "path": "skills/threejs-procedural-geometry/SKILL.md",
+          "bytes": 1807,
+          "sha256": "b967b3204dfae549903b8c5ea5d1c4c20bf631b09f0d0fff78771bffb0504bcc"
+        },
+        {
+          "path": "skills/threejs-procedural-geometry/evals/evals.json",
+          "bytes": 1526,
+          "sha256": "bfaef14a45fb12a3526d311214afedf9c0a623543f2a4bc0c7ed4d52fd953f43"
+        },
+        {
+          "path": "skills/threejs-procedural-materials/SKILL.md",
+          "bytes": 1805,
+          "sha256": "181be7a1460fe96218a66815cd85e8a47c85d3add35b539051b42bbe55556ad4"
+        },
+        {
+          "path": "skills/threejs-procedural-materials/evals/evals.json",
+          "bytes": 1546,
+          "sha256": "1d037e95767d19148706ae9b9f51491bc98ac9424278504d3162ea5ed5008411"
+        },
+        {
+          "path": "skills/threejs-procedural-planets/SKILL.md",
+          "bytes": 1850,
+          "sha256": "776b474d6d063aa131835b97adffcd04875921393712c3739d2aabf36e756c6f"
+        },
+        {
+          "path": "skills/threejs-procedural-planets/evals/evals.json",
+          "bytes": 1566,
+          "sha256": "03a555443de63236d6abac8d690da64fff6373cd8e34549f8aeb752b8a254681"
+        },
+        {
+          "path": "skills/threejs-procedural-vegetation/SKILL.md",
+          "bytes": 1773,
+          "sha256": "ba14fdb8de6f7a48525106cd36fcdb416b7bfedb8ec94c8f277a79df053a4158"
+        },
+        {
+          "path": "skills/threejs-procedural-vegetation/evals/evals.json",
+          "bytes": 1513,
+          "sha256": "226a64bb16405ee7c470e5e89eb31d1886dc77542fea66e26f55507749e831f1"
+        },
+        {
+          "path": "skills/threejs-procedural-vfx/SKILL.md",
+          "bytes": 1703,
+          "sha256": "f07d76f1950f7322771a0b968e0010ee2ceeee457048f66a85c85dc5461f84ed"
+        },
+        {
+          "path": "skills/threejs-procedural-vfx/evals/evals.json",
+          "bytes": 1555,
+          "sha256": "c2cf6af9a3cfab127f799bed150b9223711bb491b834471ff4951caab4204b9d"
+        },
+        {
+          "path": "skills/threejs-raymarched-space-effects/SKILL.md",
+          "bytes": 1801,
+          "sha256": "e6988fc39c387cfe9c1116e07f8972f18f240c38381df13fa0ee707beea6b451"
+        },
+        {
+          "path": "skills/threejs-raymarched-space-effects/evals/evals.json",
+          "bytes": 1549,
+          "sha256": "f7e5c6088437f9bf9d8a8ef977f1a5d174b879f5c62715f2a2c41ba23f13197a"
+        },
+        {
+          "path": "skills/threejs-screen-space-ambient-occlusion/SKILL.md",
+          "bytes": 1756,
+          "sha256": "4cbf8ff856e1a9ac56b95317a9ccfd8dd50b24e0e5088f2a43d157be78d81c92"
+        },
+        {
+          "path": "skills/threejs-screen-space-ambient-occlusion/evals/evals.json",
+          "bytes": 1425,
+          "sha256": "26399912ba341abda5f42174ff0e8260f369a0f21533ab277c42c28015d0b446"
+        },
+        {
+          "path": "skills/threejs-shadow-systems/SKILL.md",
+          "bytes": 1871,
+          "sha256": "0ed1af17d547f867425366051c7f2a21b47c55f3656b6dce76eb85cc36e354b9"
+        },
+        {
+          "path": "skills/threejs-shadow-systems/evals/evals.json",
+          "bytes": 1476,
+          "sha256": "3f32b7e673a1cb0d1be4344db76000a90e4954a20c998b7ce6b26bac45e93bcb"
+        },
+        {
+          "path": "skills/threejs-spectral-ocean/SKILL.md",
+          "bytes": 1960,
+          "sha256": "23b7af0f3776f35b38f35f00da9b32311316a890cbe004c5ee7394ae60c70453"
+        },
+        {
+          "path": "skills/threejs-spectral-ocean/evals/evals.json",
+          "bytes": 1555,
+          "sha256": "75ec3b978c4456a7916cebad5463ccdef22495b31368ac5ce227c1980d187250"
+        },
+        {
+          "path": "skills/threejs-temporal-surfaces/SKILL.md",
+          "bytes": 1801,
+          "sha256": "c73566eb2b0af6d7fe3622149c0c49cb17b5bb1000c2f6a5e9c796f013fe86f5"
+        },
+        {
+          "path": "skills/threejs-temporal-surfaces/evals/evals.json",
+          "bytes": 1581,
+          "sha256": "8e6ab16bd688c1dc08978139e8588ce4173b18a8fa7d6938b930f6a681bb5c7f"
+        },
+        {
+          "path": "skills/threejs-visual-validation/SKILL.md",
+          "bytes": 2277,
+          "sha256": "03a9d452e03e51ebb04e24da9b1cef973e7387ee47ae5a4fe6c5d0657e5dee54"
+        },
+        {
+          "path": "skills/threejs-visual-validation/evals/evals.json",
+          "bytes": 1515,
+          "sha256": "cb6775177d18b83f4aa3972e1333881aa4e4ad6125bf5863fb16e1d7513a4098"
+        },
+        {
+          "path": "skills/threejs-volumetric-clouds/SKILL.md",
+          "bytes": 1823,
+          "sha256": "31c44274826a83c8a917f21325f1f102f14f783befdc8a3cfd03bb2a6bf5b1aa"
+        },
+        {
+          "path": "skills/threejs-volumetric-clouds/evals/evals.json",
+          "bytes": 1595,
+          "sha256": "b6978af5a5956359d5c2efa53e41e5d385b6ff2d6ae3489226df4ac3fb8099b4"
+        },
+        {
+          "path": "skills/threejs-water-optics/SKILL.md",
+          "bytes": 1908,
+          "sha256": "277995b3262fdd792fceee2c6d75cee32e88b8d6b0282db6a5f3fd9a7e18c1f1"
+        },
+        {
+          "path": "skills/threejs-water-optics/evals/evals.json",
+          "bytes": 1587,
+          "sha256": "80a7d71e4c2052ac4c2baa90bfb0ebb5464ca7092247338380678521d75ccc70"
+        },
+        {
+          "path": "skills/throwaway-prototyping/SKILL.md",
+          "bytes": 4629,
+          "sha256": "df6b9094983e3d49a973a871ef736df0c5c237b7b19a32bf7735ac5fd893ec83"
+        },
+        {
+          "path": "skills/verification-before-completion/SKILL.md",
+          "bytes": 2661,
+          "sha256": "33dea5fa9053824abb22d7399712c1cb7aa9a9b7bfd2b0c7ab2f4b3744644760"
+        },
+        {
+          "path": "skills/verified-software-delivery/SKILL.md",
+          "bytes": 4527,
+          "sha256": "14d44d2a85e4f811fc3a9bf9fb15b3667fcb54491f0fc84cdb006527eec89632"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/evals.json",
+          "bytes": 10020,
+          "sha256": "0db92a0e54ef7a786d6b7a3d069e1da28cbf73116fb3d177e9d514c059d04c7a"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/approved-local-change/CONTRACT.md",
+          "bytes": 1558,
+          "sha256": "43dbcc3e94db32371eb4f78cbdab2f5e7c650f0b95a10fd3977a47ac8d060db8"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/approved-local-change/docs/approved-spec.md",
+          "bytes": 1007,
+          "sha256": "46106944c3e3bf049eb32b248db2cc5dda77d48c3629235eac809a63e5a3f008"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/approved-local-change/evidence/checks.json",
+          "bytes": 1776,
+          "sha256": "cdf88681d03928cd70c003ef14944114a1c60992c42cb8e5aefc09bad2002b25"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/approved-local-change/evidence/review.json",
+          "bytes": 1065,
+          "sha256": "4a6b289e2589b81806791e5e003519342a5283a59ad19a3c0c49a0f5f4be07d5"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/approved-local-change/fixtures/order.expected.json",
+          "bytes": 39,
+          "sha256": "d46f0c4e9d97d7c267e7bc430cdba21f4986eccb4398c8811daf965240041211"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/approved-local-change/fixtures/order.json",
+          "bytes": 157,
+          "sha256": "c9215ba7c118da0b04e2d769bbc0544d7713ec981c93c9a60d273fdfa51e8608"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/approved-local-change/package.json",
+          "bytes": 202,
+          "sha256": "0a3c2dafc16b32c0729719a097ba5ccaba16f6a5223eb0e36e9949d0c4fcfd1e"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/approved-local-change/src/order-summary.js",
+          "bytes": 501,
+          "sha256": "073b199026e2915c74de71ce4954ab1da19872b0d10900dc4b945313b077a80a"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/approved-local-change/test/acceptance.test.js",
+          "bytes": 349,
+          "sha256": "1a69fe21f59ec7234fbc815b022f873b333d32f48f19f9297dceb7a4759dc45e"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/approved-local-change/test/unit.test.js",
+          "bytes": 532,
+          "sha256": "55e4ac07086632a539df6c16712f602fd0f11f854a09a8e9f31d942e280b7b30"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/approved-local-change/tools/inspect-evidence.js",
+          "bytes": 1138,
+          "sha256": "3b432da0655958f4cd4023395e517c3a25ca449a8666a48e3597d309b173c427"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/build-readiness/CONTRACT.md",
+          "bytes": 1297,
+          "sha256": "820ad71eb47a70b006cd176c158b306aab4056ede7ea4ee17c2c31ba040f2639"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/build-readiness/artifacts/build-A/handler.js",
+          "bytes": 189,
+          "sha256": "965dac3b58688b0b459547c48bc026bdb782723a7034903146a3688fc9faf5bc"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/build-readiness/artifacts/build-A/manifest.json",
+          "bytes": 126,
+          "sha256": "5c27f8910d00cb6624faa69b4f54b30e4dc68bc3eb5354d0c969a887eaec3d6b"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/build-readiness/evidence/build-A-checksums.json",
+          "bytes": 289,
+          "sha256": "a059d4952364baeb4a8e2ec800855b0fc9dff90d1d17580b96da3429cf9379c1"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/build-readiness/evidence/checks.json",
+          "bytes": 1212,
+          "sha256": "8684b590a0e50430971965cce2cd190d030e22bfd4927c3ab0811a10fe2e912d"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/build-readiness/evidence/staging-B-smoke.json",
+          "bytes": 529,
+          "sha256": "893497251bb81926c7d07e0174d9c6577fde4ff6619537bdb927cfa315a130bd"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/build-readiness/package.json",
+          "bytes": 150,
+          "sha256": "24ba302c439c1e51902b812a0aa116502055663b2a1034aa1d40ebe53a943bf1"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/build-readiness/staging/B.json",
+          "bytes": 352,
+          "sha256": "2f731dff6705a43ee0f9405bf8b2f20b3e853899e55fd73290e7d1eef2a9e23c"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/build-readiness/test/build-unit.test.js",
+          "bytes": 482,
+          "sha256": "d4a7b3f36e8957bb08dc73b94d68570c45dd383165958a54d79016b746347537"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/build-readiness/tools/inspect-evidence.js",
+          "bytes": 1138,
+          "sha256": "3b432da0655958f4cd4023395e517c3a25ca449a8666a48e3597d309b173c427"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/multi-service-api-migration/CONTRACT.md",
+          "bytes": 2374,
+          "sha256": "eb2acc914a7a687df035d96afa106f398eca465400fad7985e15a8c12b2c20a1"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/multi-service-api-migration/README.md",
+          "bytes": 2644,
+          "sha256": "b8c8c86ccba0dadebf9aa2ce9cc4eea5883eb50494a2ea1d15662b772586c0de"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/multi-service-api-migration/contracts/acceptance.json",
+          "bytes": 777,
+          "sha256": "5d2082a62c8879c3c098a3547b29e03bbe0e50bdcf700679c21bfe89d3e30349"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/multi-service-api-migration/contracts/stock-api.md",
+          "bytes": 1269,
+          "sha256": "392dded9fa16dc20e1b776b6c433a3e710acdf995acdc43d6fc105efbe527893"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/multi-service-api-migration/decisions/approved-direction.md",
+          "bytes": 1078,
+          "sha256": "701bd1c82c255dfbbec4c3ccc082002d19bb895bc1b4816ac4676bfaef5271e3"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/multi-service-api-migration/evidence/initial-checks.json",
+          "bytes": 3128,
+          "sha256": "ba430532e97eb4c52f32037f7c90f521b706ab8e352e03e1c187b3f77b14479e"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/multi-service-api-migration/evidence/review.json",
+          "bytes": 271,
+          "sha256": "1ebdc37f28f62aa99c2e8d810fef85b5ce809478de117d130f53123ec54480da"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/multi-service-api-migration/fixtures/stock.json",
+          "bytes": 165,
+          "sha256": "bdef5d3f17b83670cc5daf5baea8838b3a34354275a0620311fc8d56be3f584a"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/multi-service-api-migration/package.json",
+          "bytes": 177,
+          "sha256": "a296921c792d8f7c4e5c38ce0f64f18cb50a8817926c4db4fd91250d157fd9fc"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/multi-service-api-migration/services/allocation-worker/current.cjs",
+          "bytes": 354,
+          "sha256": "a6f5477418d652a6df0b6eadf38243d40ba547e66a16b434abbfc02e8705216c"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/multi-service-api-migration/services/inventory-api/current.cjs",
+          "bytes": 349,
+          "sha256": "50eec4766effb0669d60997acf40de6227f84c63713ec02163ca51ece2c7a46e"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/multi-service-api-migration/services/inventory-api/legacy.cjs",
+          "bytes": 329,
+          "sha256": "24864138d7d9a63c9c3bc3ddfb8234c1d597a524da380a62fe1335c7c3e345e2"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/multi-service-api-migration/services/planning-worker/current.cjs",
+          "bytes": 460,
+          "sha256": "82dc2a924d5c1a6312a03a4d6db843c102c5f22e43ce1f2dfadb0ac422607ce0"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/multi-service-api-migration/targets/local.json",
+          "bytes": 512,
+          "sha256": "be10ccf7a20bd8529fba596a58abdf4021c3a5685a242e060f55ddcbf1ec5d8d"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/multi-service-api-migration/test/happy-path.test.cjs",
+          "bytes": 536,
+          "sha256": "b303e4a0a46768b99f1a206321c880ea7066fc713a193b5ed5742deb2bd173e9"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/multi-service-api-migration/tools/local-target.cjs",
+          "bytes": 4309,
+          "sha256": "914bdb4dde72e5a38fda79b53593a51e4d49dd20b4ab88b41d199d4a9c367566"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/multi-service-api-migration/tools/service-harness.cjs",
+          "bytes": 720,
+          "sha256": "189f03d9b8adcad507ef4a4c1f0e990c82e03f6fedf9f7cefe550012edf57c6f"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/multi-service-api-migration/tools/source-scope.cjs",
+          "bytes": 1250,
+          "sha256": "35f6d25c0cdb68261f264dbf25ccce69246acfd08004c35894c8b774a0d0cb74"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/review-waived-refactor/CONTRACT.md",
+          "bytes": 1242,
+          "sha256": "35ee575534cee32310530c1a59fc9dfba3ba6369683fac8077edb1963b5534f9"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/review-waived-refactor/evidence/checks.json",
+          "bytes": 1094,
+          "sha256": "3ffebde34a0b0a6cb2d322642bdcd5c2a70736a245ab83f72531305d66ec6001"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/review-waived-refactor/evidence/review-exception.json",
+          "bytes": 480,
+          "sha256": "fa674681482542ab3ca8479521e2a42e0e4a67fafe5e4ecf56e9cc8c025bfb11"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/review-waived-refactor/package.json",
+          "bytes": 153,
+          "sha256": "366af69c430997bf595efdc188b6dcdd5d6675e8b84faf1eb1b6985a523b2ba3"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/review-waived-refactor/src/receipt.js",
+          "bytes": 738,
+          "sha256": "47cb36cd48a0ba45598552b7cc0529edd1f6e3bae2e0f588e690ea197644ba9f"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/review-waived-refactor/test/receipt.test.js",
+          "bytes": 857,
+          "sha256": "b8eac077fa1d402ca8593c64ceccd5dec4558514120327a76a038a7810d49970"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/review-waived-refactor/tools/inspect-evidence.js",
+          "bytes": 1138,
+          "sha256": "3b432da0655958f4cd4023395e517c3a25ca449a8666a48e3597d309b173c427"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/revision-verification/CONTRACT.md",
+          "bytes": 1455,
+          "sha256": "89ceabd7d6809a362ee2662cbc63df1bb96842a0dd2ba3fd7e1669a716853010"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/revision-verification/docs/approved-spec.md",
+          "bytes": 532,
+          "sha256": "74b5c58aa3bb927769a385a5c99b85d9e74299c1ca746ca5ffe249527fb7f74a"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/revision-verification/evidence/checks.json",
+          "bytes": 2470,
+          "sha256": "60140359083e4bb848b80001226d1c108c97fc321890c8df71e040ab1d6899e7"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/revision-verification/evidence/review.json",
+          "bytes": 1058,
+          "sha256": "4be31e7de85f87216bd497ac7f47b86d1e1f5f0322cec2cf501f24627cc486c5"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/revision-verification/evidence/revisions.json",
+          "bytes": 1336,
+          "sha256": "9b1278a3a8bffea340a960e097e93e7ef35e6ebbc999a50d67e10cab26ae66ce"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/revision-verification/history/R1/package.json",
+          "bytes": 213,
+          "sha256": "27f71633f691c4cde254838924412def19f3eca7cdc18e328b33ac250c0a1068"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/revision-verification/history/R1/src/request-handler.js",
+          "bytes": 379,
+          "sha256": "8f08eeb514e0b982559c44f00e3106afa550fc93bfeb2d9486d560a22c002267"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/revision-verification/history/R1/styles/ui.css",
+          "bytes": 101,
+          "sha256": "7a3644de7870de5627653f66c636083bbdcc01cc1b19759b7cac9a55890a75b3"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/revision-verification/history/R1/test/handler-baseline.test.js",
+          "bytes": 517,
+          "sha256": "9e2f01febadd7673b616949dc676e648b8cfd230184c1b27f30e4774140db6f4"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/revision-verification/history/R1/test/styles.test.js",
+          "bytes": 459,
+          "sha256": "cb3cbb78e9c22d63d0641459f09ccae64a140a3249eff398ef99523b465dfa99"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/revision-verification/package.json",
+          "bytes": 213,
+          "sha256": "27f71633f691c4cde254838924412def19f3eca7cdc18e328b33ac250c0a1068"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/revision-verification/src/request-handler.js",
+          "bytes": 386,
+          "sha256": "678ffff32e0c0cfc51fc41018313e26f8b85a3f6d55b536eb2a6a482ccc6dd20"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/revision-verification/styles/ui.css",
+          "bytes": 101,
+          "sha256": "7a3644de7870de5627653f66c636083bbdcc01cc1b19759b7cac9a55890a75b3"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/revision-verification/test/handler-acceptance.test.js",
+          "bytes": 445,
+          "sha256": "2c0a7266798bd6f476c6e554b7292464c78fa04e4e5b3efc58e8f02b80ef77fa"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/revision-verification/test/handler-baseline.test.js",
+          "bytes": 517,
+          "sha256": "9e2f01febadd7673b616949dc676e648b8cfd230184c1b27f30e4774140db6f4"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/revision-verification/test/styles.test.js",
+          "bytes": 459,
+          "sha256": "cb3cbb78e9c22d63d0641459f09ccae64a140a3249eff398ef99523b465dfa99"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/fixtures/revision-verification/tools/inspect-evidence.js",
+          "bytes": 1138,
+          "sha256": "3b432da0655958f4cd4023395e517c3a25ca449a8666a48e3597d309b173c427"
+        },
+        {
+          "path": "skills/verified-software-delivery/evals/routing.json",
+          "bytes": 3348,
+          "sha256": "2f0683068f2063abe4650329b581f2d09482003534df8cc1df0b3707ca90b5e6"
+        },
+        {
+          "path": "skills/video-production-workflow/SKILL.md",
+          "bytes": 14879,
+          "sha256": "ab3e92e25e23858bd763ad07fde2771e188bf2aa78295fc0f85d5d9ce73443fa"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/accessibility-plan.md",
+          "bytes": 1326,
+          "sha256": "7955721b147dc2362ba7be4c3d23b92fd1e946d6701c0333cbd2fc066af4594c"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/assets/manifest.md",
+          "bytes": 667,
+          "sha256": "96a43b40e09ddc9ccdaf40e9b5aacdf146221b6bdf3d8fa66cc6e316c1c4f8d8"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/brief.md",
+          "bytes": 756,
+          "sha256": "ae67e85a8d0809ba575cccca783296c74e55fb875a888171810b6d22ef1ec4ef"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/call-sheet.md",
+          "bytes": 1161,
+          "sha256": "4b34b2138a30e9ffe9df4c2859753ccfe01b96259fec33afbc27863fcd443904"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/camera-lighting-plan.md",
+          "bytes": 1019,
+          "sha256": "0b9c355a92b0546afb484da1da13f642e3f1851b37cf9e55927f6436f2de6d7e"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/casting-dossier.md",
+          "bytes": 1055,
+          "sha256": "827a359447a59f350b3603c68648bde08082f5ade927dd5950bb06310e0ba808"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/color-finishing-plan.md",
+          "bytes": 1417,
+          "sha256": "b47ec8cbd6751b56a234d5ad4767fa5dc4467404367339f5a23394d4c4120e9a"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/continuity-bible.md",
+          "bytes": 741,
+          "sha256": "eca6d841550d22c8583158d35ac7a920ecb06579acf9bd19363813d520437d50"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/creative-treatment.md",
+          "bytes": 922,
+          "sha256": "6c250af0ade98a96f2f1a25fa09949336c5a9b4a29ec87d9395ad1c159dca2b3"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/daily-production-report.md",
+          "bytes": 1208,
+          "sha256": "e59266d1abc8862d7ec25ca331dfa1f63bd4a7bcd38fc71bafedff46d3bda657"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/delivery-manifest.md",
+          "bytes": 1439,
+          "sha256": "36a3eea2d12c93a81d3a71d568c6dba94118937390a4dc3ccd1ffda6c0b1bfda"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/edit-plan.md",
+          "bytes": 967,
+          "sha256": "177a3b64d4604e2dfbb64b76725c26815bce5a2c6f00ffeb5c60d1a30b84ffdd"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/localization-manifest.md",
+          "bytes": 1056,
+          "sha256": "7cedd4a06a1a3964afde017d390f9964f0926066095f2dd8b97a9d69a5734888"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/location-dossier.md",
+          "bytes": 1144,
+          "sha256": "51a34528622ca6151d2bb5fc2b86f675c98e64fe4b923ba384e6e7b15a1ac04a"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/media-ingest-ledger.md",
+          "bytes": 1855,
+          "sha256": "1a289491b99e47362100c1da44c8878b47ce14a2619738929c214a1a3dd5f68b"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/media-library-shortlist.md",
+          "bytes": 1038,
+          "sha256": "0ecbc91a52dc42cc534caa689d306823327044a43a0e4955e7585a91411099a8"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/motion-graphics-plan.md",
+          "bytes": 1499,
+          "sha256": "1f6a48673a40b742a4c38b39be6524e1f63038c2168f4efbc89dc233885fe8f2"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/music-plan.md",
+          "bytes": 1551,
+          "sha256": "0752a639371ab8d5da27dd3c900bff990b40a9d2f20162558848ca7357d82ca6"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/production-design-bible.md",
+          "bytes": 1024,
+          "sha256": "e743743b055c56e6eec9670b5ac88fd1634037e514ede504cbd27e3f29c938bc"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/production-plan.md",
+          "bytes": 923,
+          "sha256": "e5054517cf514fb6dcf77045de09e7f6f3d0c61e103bdd58560ec2420d92677d"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/production-sound-report.md",
+          "bytes": 933,
+          "sha256": "6162520e8529484bdd5b3f51499a531c731cb43f95e63e2bb61d7f401d33f408"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/project-state.md",
+          "bytes": 1347,
+          "sha256": "239f2feb79334b08ad424170f8b1664708d6288a6c92114dd4604735c10a4cd7"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/review-report.md",
+          "bytes": 1763,
+          "sha256": "0584680ba394ca09ffcf1da427e8af78d188ad4d144cad2c19c6341d2dea6082"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/script.md",
+          "bytes": 576,
+          "sha256": "aff4096d472d4468ad0112b27f1f333779ad7fa7aa9ca7cc0e1c4e81c6e00ea1"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/shooting-plan.md",
+          "bytes": 1317,
+          "sha256": "06e63eabd08d3115a7d6122aff07a847cf724de8148870ec7c1604034a4cb709"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/shot-list.md",
+          "bytes": 557,
+          "sha256": "ea675ef5835b30109516d60f2428276fe8f90b8a2a05483b470cf718d92eae8a"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/sound-plan.md",
+          "bytes": 1184,
+          "sha256": "38cf48c17343f95348fe71fdc25af272737727bafd9b45f69630a2ef82afa5d9"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/storyboard.md",
+          "bytes": 506,
+          "sha256": "55d27b0b0d2bef72584083d514e101dc04de432250e5df14d1489df09cff22fe"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/take-log.md",
+          "bytes": 1011,
+          "sha256": "84b3e2271ed230403542aaecadc5d06bf5cc65ea478738579d79bc1c67a4815a"
+        },
+        {
+          "path": "skills/video-production-workflow/assets/project-template/vfx-plan.md",
+          "bytes": 1336,
+          "sha256": "391b2927f7affabba35741094bdf1dea4c49dfd6d3e73a05858879e567e1a275"
+        },
+        {
+          "path": "skills/video-production-workflow/evals/evals.json",
+          "bytes": 3735,
+          "sha256": "c3258c0d8ca031d01219d77f3d386d30321c8efcc1fd05fb1b739dc8c4b27b3a"
+        },
+        {
+          "path": "skills/video-production-workflow/references/artifact-contracts.md",
+          "bytes": 9667,
+          "sha256": "0fa8c7597157bace05788deb08f3e0d6c89e25c92df9e938d5c7bf383154a727"
+        },
+        {
+          "path": "skills/video-production-workflow/references/routing-and-approvals.md",
+          "bytes": 10552,
+          "sha256": "957efe002829316c53a67c14d843d5d40d33c75b28bb36b9a9dedc5bc290a402"
+        },
+        {
+          "path": "skills/video-production-workflow/references/source-notes.md",
+          "bytes": 6156,
+          "sha256": "980180963e60c300eb86db847fd567d624d6be37229b47b0d4a25ac49c849203"
+        },
+        {
+          "path": "skills/visual-regression-testing/SKILL.md",
+          "bytes": 7289,
+          "sha256": "815a4771b5b9acf8abe264a3ed4c45e0d17de80976f510e9514c37ece4501c04"
+        },
+        {
+          "path": "skills/visual-regression-testing/evals/evals.json",
+          "bytes": 999,
+          "sha256": "80615c37a3fbdc32d90a1ee2b882ff29ab691425f8378cf437d82cf434ab107e"
+        },
+        {
+          "path": "skills/visual-regression-testing/references/machine-visual-gate.md",
+          "bytes": 7237,
+          "sha256": "00a679c91ea25ad0dcbe2062641ceeda5ab0ef126b85b58ad66baaaba6824692"
+        }
+      ]
+    }
+  },
+  "pinned_sources": [
+    {
+      "repository": "AvdLee/Swift-Concurrency-Agent-Skill",
+      "commit": "0d472de78225d2875283c35eaca1c060c493bdb3",
+      "tree": "85ddc35a108abf030a0bf14241d7fcecf77e3058",
+      "license": "MIT",
+      "license_evidence": {
+        "kind": "license-file",
+        "path": "LICENSE",
+        "blob": "cbf908dde987497fbba144909493e3a3e96f890b"
+      },
+      "skills": [
+        "swift-concurrency"
+      ],
+      "mapped_evidence": [
+        {
+          "kind": "license-file",
+          "path": "LICENSE",
+          "blob": "cbf908dde987497fbba144909493e3a3e96f890b"
+        },
+        {
+          "path": "swift-concurrency/SKILL.md",
+          "blob": "f10d8e651b939d57f6bfdf58792d46787f95cae9"
+        },
+        {
+          "path": "swift-concurrency/references/_index.md",
+          "blob": "e37c8dbb378d311216b6cc292b016b59570e539a"
+        },
+        {
+          "path": "swift-concurrency/references/actors.md",
+          "blob": "0efaa4c3723c9ad56cef6c679dd6b406194e394d"
+        },
+        {
+          "path": "swift-concurrency/references/async-algorithms.md",
+          "blob": "0dd545af772946da2679a5b663c336606ace3a64"
+        },
+        {
+          "path": "swift-concurrency/references/async-await-basics.md",
+          "blob": "cd9c928286048e15804fc5e32e5db52f328f3249"
+        },
+        {
+          "path": "swift-concurrency/references/async-sequences.md",
+          "blob": "24fdfdae26f14e670b6778fb9ca4a834fe521324"
+        },
+        {
+          "path": "swift-concurrency/references/core-data.md",
+          "blob": "72840c6d9c53e1c66d916bf7208853ab1517e0b3"
+        },
+        {
+          "path": "swift-concurrency/references/glossary.md",
+          "blob": "f38ed0d2d03b6a23d7d494b3ea15d808bddaaf2c"
+        },
+        {
+          "path": "swift-concurrency/references/linting.md",
+          "blob": "e0129b2c1a817ff3f685e529a7c56b29912b74f9"
+        },
+        {
+          "path": "swift-concurrency/references/memory-management.md",
+          "blob": "b33b99cd5390b6b5c157873e3f446de7143fb97d"
+        },
+        {
+          "path": "swift-concurrency/references/migration.md",
+          "blob": "2416573cab9cfcfe49807a069f7435d1aaff5cc1"
+        },
+        {
+          "path": "swift-concurrency/references/performance.md",
+          "blob": "76996336b8a2b4cc29e058a27e975766c409b85f"
+        },
+        {
+          "path": "swift-concurrency/references/sendable.md",
+          "blob": "5a4414fcbf124ea043cd7f798029fe95ba6e9259"
+        },
+        {
+          "path": "swift-concurrency/references/tasks.md",
+          "blob": "961d6182e02049029f535dc01bac7878b8d50510"
+        },
+        {
+          "path": "swift-concurrency/references/testing.md",
+          "blob": "65d4ffa70d4fe59bf36699be2bbb7bfe7c72e92f"
+        },
+        {
+          "path": "swift-concurrency/references/threading.md",
+          "blob": "06c520ff3a50575008c4364afa1bfb47c31539ed"
+        }
+      ]
+    },
+    {
+      "repository": "AvdLee/Swift-Testing-Agent-Skill",
+      "commit": "798e9b1a2bcac164d4f0c781908199e754f0bab6",
+      "tree": "dcaa4cdc482b886f48819d779ba96cc90e59481d",
+      "license": "MIT",
+      "license_evidence": {
+        "kind": "license-file",
+        "path": "LICENSE",
+        "blob": "cbf908dde987497fbba144909493e3a3e96f890b"
+      },
+      "skills": [
+        "swift-testing"
+      ],
+      "mapped_evidence": [
+        {
+          "kind": "license-file",
+          "path": "LICENSE",
+          "blob": "cbf908dde987497fbba144909493e3a3e96f890b"
+        },
+        {
+          "path": "swift-testing-expert/SKILL.md",
+          "blob": "a5c7d8cf59ee6ba5f13ffaef951127a94cb17bd1"
+        },
+        {
+          "path": "swift-testing-expert/references/_index.md",
+          "blob": "8ef1d7fc0f5e4f2aabaafcffa6e1e4cf918733ae"
+        },
+        {
+          "path": "swift-testing-expert/references/async-testing-and-waiting.md",
+          "blob": "077399a0b5461ef08c678957eb075ac7982a678c"
+        },
+        {
+          "path": "swift-testing-expert/references/expectations.md",
+          "blob": "5227706f8edecc19406edb98bdf4cc1a1eedb8f5"
+        },
+        {
+          "path": "swift-testing-expert/references/fundamentals.md",
+          "blob": "f8fc55895ddbe7adb11424355b95a3a6a93e7ee4"
+        },
+        {
+          "path": "swift-testing-expert/references/migration-from-xctest.md",
+          "blob": "d831f4eb2092965c89482a9149d1f8347f42d940"
+        },
+        {
+          "path": "swift-testing-expert/references/parallelization-and-isolation.md",
+          "blob": "d25a39e149530b87709724c578467b2047d77969"
+        },
+        {
+          "path": "swift-testing-expert/references/parameterized-testing.md",
+          "blob": "4ac34fea171a8485af4d3604b49b8921a4f1ec3c"
+        },
+        {
+          "path": "swift-testing-expert/references/performance-and-best-practices.md",
+          "blob": "13c7fddb8e5a8fb4a6dd07c0f9c0d5bbaef3a658"
+        },
+        {
+          "path": "swift-testing-expert/references/traits-and-tags.md",
+          "blob": "5ab1eb8b7281ff4b802a286df49b51fc992c915a"
+        },
+        {
+          "path": "swift-testing-expert/references/xcode-workflows.md",
+          "blob": "fb5fe2018d616a29125dde2830a0ce8174a0474c"
+        }
+      ]
+    },
+    {
+      "repository": "AvdLee/SwiftUI-Agent-Skill",
+      "commit": "f06d1437a3fbec7df6cdce93f77004e5409b31ee",
+      "tree": "0e522f1b1361fb656f3047adafc0049714497768",
+      "license": "MIT",
+      "license_evidence": {
+        "kind": "license-file",
+        "path": "LICENSE",
+        "blob": "cbf908dde987497fbba144909493e3a3e96f890b"
+      },
+      "skills": [
+        "swiftui-development"
+      ],
+      "mapped_evidence": [
+        {
+          "kind": "license-file",
+          "path": "LICENSE",
+          "blob": "cbf908dde987497fbba144909493e3a3e96f890b"
+        },
+        {
+          "path": "swiftui-expert-skill/SKILL.md",
+          "blob": "52743c7c932977fa3a6bb94c54f866669caec1d7"
+        },
+        {
+          "path": "swiftui-expert-skill/references/accessibility-patterns.md",
+          "blob": "6f0ea0c1275696c5fbddccbf1d7a07b13ee03dbf"
+        },
+        {
+          "path": "swiftui-expert-skill/references/latest-apis.md",
+          "blob": "9feec03d4cccce8ea4bf38c8915a5c7145aa5de3"
+        },
+        {
+          "path": "swiftui-expert-skill/references/performance-patterns.md",
+          "blob": "8a283c7fe87bf319c80a2723212173b5491abd0e"
+        },
+        {
+          "path": "swiftui-expert-skill/references/sheet-navigation-patterns.md",
+          "blob": "d06b38782f587146718f14081284545b5ce6498e"
+        },
+        {
+          "path": "swiftui-expert-skill/references/state-management.md",
+          "blob": "cd1de367b46f561c7e24343c3e90aa9a51870bf5"
+        },
+        {
+          "path": "swiftui-expert-skill/references/view-structure.md",
+          "blob": "e3fe2cbf5c3a40802df03a068a39b233b889b449"
+        }
+      ]
+    },
+    {
+      "repository": "Leonxlnx/taste-skill",
+      "commit": "b17742737e796305d829b3ad39eda3add0d79060",
+      "tree": "4b3d831cc39162fe585b21068019d295338707b4",
+      "license": "MIT",
+      "license_evidence": {
+        "kind": "license-file",
+        "path": "LICENSE",
+        "blob": "48a2f6640b81ff8eca9ce7f6a96337692713ef5b"
+      },
+      "skills": [
+        "image-to-code",
+        "taste-skill"
+      ],
+      "mapped_evidence": [
+        {
+          "kind": "license-file",
+          "path": "LICENSE",
+          "blob": "48a2f6640b81ff8eca9ce7f6a96337692713ef5b"
+        },
+        {
+          "path": "skills/image-to-code-skill/SKILL.md",
+          "blob": "d19f8de112252ea88724c540647cad85b7653d46"
+        },
+        {
+          "path": "skills/taste-skill/SKILL.md",
+          "blob": "b72132fcd466da605623ffe96e370b3991fc5285"
+        }
+      ]
+    },
+    {
+      "repository": "affaan-m/ECC",
+      "commit": "ed387446052dfbc6b52de149406b70efa65edc59",
+      "tree": "2dad6752ce430188745484648a52f12f6b923f4d",
+      "license": "MIT",
+      "license_evidence": {
+        "kind": "license-file",
+        "path": "LICENSE",
+        "blob": "b832b6f642312312367c07688dc7426db40a82ed"
+      },
+      "skills": [
+        "agent-introspection-debugging",
+        "article-writing",
+        "brand-voice",
+        "content-repurposing",
+        "market-research"
+      ],
+      "mapped_evidence": [
+        {
+          "kind": "license-file",
+          "path": "LICENSE",
+          "blob": "b832b6f642312312367c07688dc7426db40a82ed"
+        },
+        {
+          "path": ".agents/skills/agent-introspection-debugging/SKILL.md",
+          "blob": "fb668bcc9a811438aef819c97fabcffd1a43b695"
+        },
+        {
+          "path": ".agents/skills/article-writing/SKILL.md",
+          "blob": "2f17b3e67942fb02aa0a06757940e24b080a907d"
+        },
+        {
+          "path": ".agents/skills/brand-voice/SKILL.md",
+          "blob": "0ade4fc0d677e45e58a2c5f4311a48a801fcdaef"
+        },
+        {
+          "path": ".agents/skills/content-engine/SKILL.md",
+          "blob": "5c9e2e3f257b0e659c108efdf2ced61dcf31e62c"
+        },
+        {
+          "path": ".agents/skills/crosspost/SKILL.md",
+          "blob": "db4e9dc001f32789034c89688574c97b6f2ba653"
+        },
+        {
+          "path": ".agents/skills/market-research/SKILL.md",
+          "blob": "10c7a7643fd2b0adf33504149eacd356a55bb562"
+        }
+      ]
+    },
+    {
+      "repository": "amitpatole/agent-vision",
+      "commit": "83f5abdfe76c97fbc47af451a340f5eb5683f547",
+      "tree": "16ba224c18d03c5bad0426a22b6e6bc41a828a06",
+      "license": "MIT",
+      "license_evidence": {
+        "kind": "license-file",
+        "path": "LICENSE",
+        "blob": "8c070a3b74304b5b79f024a051aefca58fcd5511"
+      },
+      "skills": [
+        "visual-regression-testing"
+      ],
+      "mapped_evidence": [
+        {
+          "kind": "license-file",
+          "path": "LICENSE",
+          "blob": "8c070a3b74304b5b79f024a051aefca58fcd5511"
+        },
+        {
+          "path": "skill/SKILL.md",
+          "blob": "57bd7d735829f7038854a6f2b823c9de01047eba"
+        }
+      ]
+    },
+    {
+      "repository": "calesthio/OpenMontage",
+      "commit": "f8d94632ea9bd0057da31904acca1cefecf005dd",
+      "tree": "e96a900e92cd90e7d8d2722c1443f61748b22159",
+      "license": "AGPL-3.0",
+      "license_evidence": {
+        "kind": "license-file",
+        "path": "LICENSE",
+        "blob": "be3f7b28e564e7dd05eaf59d64adba1a4065ac0e"
+      },
+      "skills": [
+        "video-production-workflow"
+      ],
+      "mapped_evidence": [
+        {
+          "kind": "license-file",
+          "path": "LICENSE",
+          "blob": "be3f7b28e564e7dd05eaf59d64adba1a4065ac0e"
+        },
+        {
+          "path": "AGENT_GUIDE.md",
+          "blob": "2a0b6bd5c1d8b30c5daf4a0d5e7dd74a5cfc7393"
+        },
+        {
+          "path": "schemas/artifacts/proposal_packet.schema.json",
+          "blob": "1f47f24e3977298da5c87634ef8b0039792fb0f7"
+        },
+        {
+          "path": "schemas/artifacts/scene_plan.schema.json",
+          "blob": "751665bfe28152207c00ecbd3bcacc51f7d8a6fc"
+        },
+        {
+          "path": "schemas/artifacts/script.schema.json",
+          "blob": "dfa66ccef1c1f5c461d813d827cccf8065a57a0d"
+        }
+      ]
+    },
+    {
+      "repository": "design-tokens/community-group",
+      "commit": "191bf0b157cd9d254e992975471a64f90d960a78",
+      "tree": "f7b1d9e6f01b13673b724b3d14604c949f4100db",
+      "license": "W3C Software and Document License",
+      "license_evidence": {
+        "kind": "license-file",
+        "path": "LICENSE.md",
+        "blob": "aa8ea5ea13f89efb19ffd000d99153dff85a1ddb"
+      },
+      "skills": [
+        "design-system"
+      ],
+      "mapped_evidence": [
+        {
+          "kind": "license-file",
+          "path": "LICENSE.md",
+          "blob": "aa8ea5ea13f89efb19ffd000d99153dff85a1ddb"
+        },
+        {
+          "path": "technical-reports/format/design-token.md",
+          "blob": "db240d656075a2e9f1be5e97b7e724e08702f1fe"
+        }
+      ]
+    },
+    {
+      "repository": "efremidze/swift-architecture-skill",
+      "commit": "4b9700786471acdda88fbe24adec69a1a17ceba4",
+      "tree": "ba7120981ab7f4390b5c21d19455995665758f3d",
+      "license": "MIT",
+      "license_evidence": {
+        "kind": "license-file",
+        "path": "LICENSE",
+        "blob": "c4d10a911286a883a373f10ee5e9a4216367b0aa"
+      },
+      "skills": [
+        "ios-architecture"
+      ],
+      "mapped_evidence": [
+        {
+          "kind": "license-file",
+          "path": "LICENSE",
+          "blob": "c4d10a911286a883a373f10ee5e9a4216367b0aa"
+        },
+        {
+          "path": "swift-architecture-skill/SKILL.md",
+          "blob": "d65b42f65932020eaeac87c150abc885392238ae"
+        },
+        {
+          "path": "swift-architecture-skill/references/_index.md",
+          "blob": "020a259e5e5df6171ae01710b59a4bbd09f1bc5c"
+        },
+        {
+          "path": "swift-architecture-skill/references/clean-architecture.md",
+          "blob": "90c40bbc6add891fed30cec7a13452aa2830eb00"
+        },
+        {
+          "path": "swift-architecture-skill/references/coordinator.md",
+          "blob": "78f34ea5d81723ceba2e0bb190ec6a4bd5068ed2"
+        },
+        {
+          "path": "swift-architecture-skill/references/mvi.md",
+          "blob": "85fbb0e67ce7fca4c6af6e00acd8efd4f963c415"
+        },
+        {
+          "path": "swift-architecture-skill/references/mvp.md",
+          "blob": "9410650478ade080da7bd36e5b36a2b40c70c02a"
+        },
+        {
+          "path": "swift-architecture-skill/references/mvvm.md",
+          "blob": "011e5bf193f3aa9fa19479e78e80ab34c3413804"
+        },
+        {
+          "path": "swift-architecture-skill/references/reactive.md",
+          "blob": "8284018424793b862c33df5240ab9476e2451afa"
+        },
+        {
+          "path": "swift-architecture-skill/references/selection-guide.md",
+          "blob": "842558aa0a001c353d4f4d1e859ae4a5fc07cd3f"
+        },
+        {
+          "path": "swift-architecture-skill/references/tca.md",
+          "blob": "67f9646ab999437adef37609fd19d8d135877c9f"
+        },
+        {
+          "path": "swift-architecture-skill/references/viper.md",
+          "blob": "95ca94a08fd1e725e34ea96eeff4cfad01234e4d"
+        }
+      ]
+    },
+    {
+      "repository": "figma/mcp-server-guide",
+      "commit": "07316dd2920d61303ca0e52812b31f5f341e7b15",
+      "tree": "8c1f4eb3279ac5e113ef66a0186b314f9a668518",
+      "license": "No repository-wide OSS license; governed by Figma Developer Terms",
+      "license_evidence": {
+        "kind": "terms",
+        "path": "README.md",
+        "blob": "31fc37c7628b48805588ca89d1123166eab875c0"
+      },
+      "skills": [
+        "figma-to-code"
+      ],
+      "mapped_evidence": [
+        {
+          "kind": "terms",
+          "path": "README.md",
+          "blob": "31fc37c7628b48805588ca89d1123166eab875c0"
+        },
+        {
+          "path": "skills/figma-design-to-code/SKILL.md",
+          "blob": "1e55d56ca8c170e6e238b241bf20dc1f1964f2cd"
+        }
+      ]
+    },
+    {
+      "repository": "github/awesome-copilot",
+      "commit": "2c2461a7fa383f664bb75546f03a2c6087f3819d",
+      "tree": "f78bac4743fe4c315308a5bf1135c1e3e1a3223c",
+      "license": "MIT",
+      "license_evidence": {
+        "kind": "license-file",
+        "path": "LICENSE",
+        "blob": "89bc5e962c9944cdb050887062afdaaf89be504a"
+      },
+      "skills": [
+        "api-contract-testing",
+        "autoresearch",
+        "llm-application-delivery-workflow"
+      ],
+      "mapped_evidence": [
+        {
+          "kind": "license-file",
+          "path": "LICENSE",
+          "blob": "89bc5e962c9944cdb050887062afdaaf89be504a"
+        },
+        {
+          "path": "skills/typespec-api-operations/SKILL.md",
+          "blob": "0c9c31734f64c3c231ad97772de95d4ab9431ddd"
+        },
+        {
+          "path": "skills/webapp-testing/SKILL.md",
+          "blob": "281fff4e9d0b10cccb695f283ea6d8136a75ba56"
+        },
+        {
+          "path": "skills/autoresearch/SKILL.md",
+          "blob": "ad54af302bb47c0c3ac7848271d610bf268c9661"
+        },
+        {
+          "path": "skills/agentic-eval/SKILL.md",
+          "blob": "3cb14203efaf62af98065bd599600ba808f0ef31"
+        },
+        {
+          "path": "skills/eval-driven-dev/SKILL.md",
+          "blob": "53b80589bab58082caf4985ebd477104963bb28c"
+        },
+        {
+          "path": "skills/ai-team-orchestration/SKILL.md",
+          "blob": "a5685467555032c42af32270b6ec173e90e1450b"
+        }
+      ]
+    },
+    {
+      "repository": "mattpocock/skills",
+      "commit": "e9fcdf95b402d360f90f1db8d776d5dd450f9234",
+      "tree": "a180ae588876bfd3dd50e0ea5556dadefca180a8",
+      "license": "MIT",
+      "license_evidence": {
+        "kind": "license-file",
+        "path": "LICENSE",
+        "blob": "f1dd2c09108dde1a5f56097cee8461b3ea834499"
+      },
+      "skills": [
+        "domain-modeling",
+        "multi-session-planning",
+        "requirements-deep-dive",
+        "session-handoff",
+        "skill-audit",
+        "skill-creator-design",
+        "skill-explorer",
+        "spec-flow",
+        "throwaway-prototyping"
+      ],
+      "mapped_evidence": [
+        {
+          "kind": "license-file",
+          "path": "LICENSE",
+          "blob": "f1dd2c09108dde1a5f56097cee8461b3ea834499"
+        },
+        {
+          "path": "skills/engineering/domain-modeling/SKILL.md",
+          "blob": "d0f7e1a5ccb06a7184056ff9af02b67bc77f9dda"
+        },
+        {
+          "path": "skills/engineering/wayfinder/SKILL.md",
+          "blob": "42e3644cc57e41a1b87482754f25b4d9462d4bbc"
+        },
+        {
+          "path": "skills/productivity/grilling/SKILL.md",
+          "blob": "52d8eb3cadd2dca62634d5dccfa73ea6b725b117"
+        },
+        {
+          "path": "skills/engineering/grill-with-docs/SKILL.md",
+          "blob": "bed05d2bd3245306267cea57cd696b5dd94d50fe"
+        },
+        {
+          "path": "skills/productivity/handoff/SKILL.md",
+          "blob": "043d9e13dc7eca3002a47d3ab9865c568f647863"
+        },
+        {
+          "path": "skills/productivity/writing-great-skills/SKILL.md",
+          "blob": "82abd0dce264eecb3ed461b3eac17bdafb52f84b"
+        },
+        {
+          "path": "skills/productivity/writing-great-skills/SKILL.md",
+          "blob": "82abd0dce264eecb3ed461b3eac17bdafb52f84b"
+        },
+        {
+          "path": "skills/engineering/ask-matt/SKILL.md",
+          "blob": "70b807b35f85859b0c6cced1919f56e024e6a753"
+        },
+        {
+          "path": "skills/engineering/to-tickets/SKILL.md",
+          "blob": "23140c577f71c98993523f0dbec74f250561b708"
+        },
+        {
+          "path": "skills/engineering/prototype/SKILL.md",
+          "blob": "e75d5331ceffd9b2c5a9554c3db124d848afa054"
+        }
+      ]
+    },
+    {
+      "repository": "multica-ai/andrej-karpathy-skills",
+      "commit": "2c606141936f1eeef17fa3043a72095b4765b9c2",
+      "tree": "02718e4654045f25a518093899502c8ee932eaf1",
+      "license": "MIT",
+      "license_evidence": {
+        "kind": "frontmatter",
+        "path": "skills/karpathy-guidelines/SKILL.md",
+        "blob": "6a62d0441753157ca6ca50479e490c2948033adb"
+      },
+      "skills": [
+        "karpathy-guidelines"
+      ],
+      "mapped_evidence": [
+        {
+          "kind": "frontmatter",
+          "path": "skills/karpathy-guidelines/SKILL.md",
+          "blob": "6a62d0441753157ca6ca50479e490c2948033adb"
+        },
+        {
+          "path": "skills/karpathy-guidelines/SKILL.md",
+          "blob": "6a62d0441753157ca6ca50479e490c2948033adb"
+        }
+      ]
+    },
+    {
+      "repository": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "commit": "f8ac5e1266dba8354ea96e19994d9f4345e7ec31",
+      "tree": "621a9432f550d77ccbd43ac1e8feea110edf5679",
+      "license": "MIT",
+      "license_evidence": {
+        "kind": "license-file",
+        "path": "LICENSE",
+        "blob": "1e71cbf26660f31903807d099fe902c098fc7e4c"
+      },
+      "skills": [
+        "design-intelligence-search"
+      ],
+      "mapped_evidence": [
+        {
+          "kind": "license-file",
+          "path": "LICENSE",
+          "blob": "1e71cbf26660f31903807d099fe902c098fc7e4c"
+        },
+        {
+          "path": ".claude/skills/ui-ux-pro-max/SKILL.md",
+          "blob": "5fffe0c83d03189af7c9eed0622de006fb1ae68e"
+        },
+        {
+          "path": ".claude/skills/ui-ux-pro-max/scripts/search.py",
+          "blob": "2b7562b6515691602cdaa9e096b3b93168e7de1e"
+        },
+        {
+          "path": ".claude/skills/ui-ux-pro-max/data/ux-guidelines.csv",
+          "blob": "49f89c9d0c8b1305b80ac010a36780a8169d65cc"
+        }
+      ]
+    },
+    {
+      "repository": "nidhinjs/prompt-master",
+      "commit": "d15eabbe5d2122eedc060bae8a771381e9873d1b",
+      "tree": "bcecd8f8d43f899e58d5eb94c7e8ad06f3c4b02a",
+      "license": "MIT",
+      "license_evidence": {
+        "kind": "license-file",
+        "path": "LICENSE",
+        "blob": "03fd69c267451c91f3e02715247c3e9e91af41d6"
+      },
+      "skills": [
+        "prompt-engineering"
+      ],
+      "mapped_evidence": [
+        {
+          "kind": "license-file",
+          "path": "LICENSE",
+          "blob": "03fd69c267451c91f3e02715247c3e9e91af41d6"
+        },
+        {
+          "path": "SKILL.md",
+          "blob": "85225a687af3745ef5a1fdb0a0d669400dbc73cd"
+        }
+      ]
+    },
+    {
+      "repository": "obra/superpowers",
+      "commit": "d884ae04edebef577e82ff7c4e143debd0bbec99",
+      "tree": "795caed14920f27a1d2d152a09b4720194f64472",
+      "license": "MIT",
+      "license_evidence": {
+        "kind": "license-file",
+        "path": "LICENSE",
+        "blob": "abf0390320aa14406af7a520b9b0739fdda9bf08"
+      },
+      "skills": [
+        "receiving-code-review",
+        "solution-discovery",
+        "systematic-debugging",
+        "test-driven-development",
+        "verification-before-completion",
+        "verified-software-delivery"
+      ],
+      "mapped_evidence": [
+        {
+          "kind": "license-file",
+          "path": "LICENSE",
+          "blob": "abf0390320aa14406af7a520b9b0739fdda9bf08"
+        },
+        {
+          "path": "skills/receiving-code-review/SKILL.md",
+          "blob": "4c77a10ee338fb7bddec6f5acf3455c8f2e4465a"
+        },
+        {
+          "path": "skills/brainstorming/SKILL.md",
+          "blob": "b0d52b258929b75d408fa4292b3f078a1104f078"
+        },
+        {
+          "path": "skills/systematic-debugging/SKILL.md",
+          "blob": "b0eca38b3cf9523ea86c9211e96949c8e69d1d1c"
+        },
+        {
+          "path": "skills/test-driven-development/SKILL.md",
+          "blob": "60d2609ca56c7177a98f462fb71af77844ce92af"
+        },
+        {
+          "path": "skills/verification-before-completion/SKILL.md",
+          "blob": "2f14076e59e6ce5cd6f88007421a85f0bd772520"
+        },
+        {
+          "path": "skills/subagent-driven-development/SKILL.md",
+          "blob": "d8ca081570c1ae7cc86e15f125c2b6063000f755"
+        },
+        {
+          "path": "skills/executing-plans/SKILL.md",
+          "blob": "075a1038f1b98181c54193df1b6bcf0ac8b302f0"
+        }
+      ]
+    },
+    {
+      "repository": "scottstts/Threejs-Awesome-Graphics-Agent-Skills",
+      "commit": "e43dcb03020cae5b08983a828bc1817dd6c0c40a",
+      "tree": "d0036d0ac9d07e3a7bc7b28fd6096b84d4c1b503",
+      "license": "MIT",
+      "license_evidence": {
+        "kind": "license-file",
+        "path": "LICENSE",
+        "blob": "f5edb1a90ba350596268a7f2e0f2c36002700fa6"
+      },
+      "skills": [
+        "threejs-atmosphere-aerial-perspective",
+        "threejs-bloom",
+        "threejs-camera-direction",
+        "threejs-development",
+        "threejs-exposure-color-grading",
+        "threejs-image-pipeline",
+        "threejs-parallax-occlusion-mapping",
+        "threejs-precipitation-surfaces",
+        "threejs-procedural-animation",
+        "threejs-procedural-architecture",
+        "threejs-procedural-fields",
+        "threejs-procedural-geometry",
+        "threejs-procedural-materials",
+        "threejs-procedural-planets",
+        "threejs-procedural-vegetation",
+        "threejs-procedural-vfx",
+        "threejs-raymarched-space-effects",
+        "threejs-screen-space-ambient-occlusion",
+        "threejs-shadow-systems",
+        "threejs-spectral-ocean",
+        "threejs-temporal-surfaces",
+        "threejs-visual-validation",
+        "threejs-volumetric-clouds",
+        "threejs-water-optics"
+      ],
+      "mapped_evidence": [
+        {
+          "kind": "license-file",
+          "path": "LICENSE",
+          "blob": "f5edb1a90ba350596268a7f2e0f2c36002700fa6"
+        },
+        {
+          "path": "skills/threejs-atmosphere-aerial-perspective/SKILL.md",
+          "blob": "70c9452ca04bb3013aa4b1634e84f453482ca07c"
+        },
+        {
+          "path": "skills/threejs-bloom/SKILL.md",
+          "blob": "f01ecb22200be5d763ba158b483ce0d748c165ed"
+        },
+        {
+          "path": "skills/threejs-camera-direction/SKILL.md",
+          "blob": "5d5671f5b2b16d79b95217cde6f76d9e5857ade3"
+        },
+        {
+          "path": "skills/threejs-skill-router/SKILL.md",
+          "blob": "cf52ea5883474da81b4be30dd4dc01757813cc4f"
+        },
+        {
+          "path": "skills/threejs-exposure-color-grading/SKILL.md",
+          "blob": "cb3d96f614f02a22f2fe984894edded19c935090"
+        },
+        {
+          "path": "skills/threejs-image-pipeline/SKILL.md",
+          "blob": "814afb7bf8a781c94250b13ca910913e2f6f5abf"
+        },
+        {
+          "path": "skills/threejs-parallax-occlusion-mapping/SKILL.md",
+          "blob": "be797cfd17c9cef1ed356f3eea5a42a36a60f3a9"
+        },
+        {
+          "path": "skills/threejs-precipitation-surfaces/SKILL.md",
+          "blob": "40e902e03d60b13f5de8c8ce57bf5c89bbeb9a8a"
+        },
+        {
+          "path": "skills/threejs-procedural-animation/SKILL.md",
+          "blob": "09cbfeee54cfddbbe29f5f8ebea2170bbb749ba5"
+        },
+        {
+          "path": "skills/threejs-procedural-architecture/SKILL.md",
+          "blob": "35de8e2cb15518ac451160b9c2f77069a3e6f86d"
+        },
+        {
+          "path": "skills/threejs-procedural-fields/SKILL.md",
+          "blob": "22271c9cb67674aee53d749ef9fad1d671201061"
+        },
+        {
+          "path": "skills/threejs-procedural-geometry/SKILL.md",
+          "blob": "7c2a454c2da417973152af1ab422992033e672cc"
+        },
+        {
+          "path": "skills/threejs-procedural-materials/SKILL.md",
+          "blob": "14779e1b3b8d5470c62460ff59e759f21ad486e1"
+        },
+        {
+          "path": "skills/threejs-procedural-planets/SKILL.md",
+          "blob": "2fa3ae71f0c326d947d1521371a505c99fa2e591"
+        },
+        {
+          "path": "skills/threejs-procedural-vegetation/SKILL.md",
+          "blob": "694519a4654aee6edac7cc5ff9dcfa9b28fd2823"
+        },
+        {
+          "path": "skills/threejs-procedural-vfx/SKILL.md",
+          "blob": "e8f6f1f8027d62e44682395eb874cbcf61bdd83f"
+        },
+        {
+          "path": "skills/threejs-raymarched-space-effects/SKILL.md",
+          "blob": "2adae39212dec3230126fb5b89b6e9939a657a2c"
+        },
+        {
+          "path": "skills/threejs-screen-space-ambient-occlusion/SKILL.md",
+          "blob": "901f99f83d2d87ab9b834cad5d1bfaf4e6912d25"
+        },
+        {
+          "path": "skills/threejs-shadow-systems/SKILL.md",
+          "blob": "7f285547bd453945872301f03c9ea04ccd04690c"
+        },
+        {
+          "path": "skills/threejs-spectral-ocean/SKILL.md",
+          "blob": "57b5ea3c23dde38b99a85bf871d80f5f3ed7241f"
+        },
+        {
+          "path": "skills/threejs-temporal-surfaces/SKILL.md",
+          "blob": "97a47fd8fc4190d4dca0c95ada03145560e25d10"
+        },
+        {
+          "path": "skills/threejs-visual-validation/SKILL.md",
+          "blob": "378aef36135e97343d294da312305c1acfda89a0"
+        },
+        {
+          "path": "skills/threejs-volumetric-clouds/SKILL.md",
+          "blob": "93a16ad8232bf44c344bbadf4d6b44ef650515ca"
+        },
+        {
+          "path": "skills/threejs-water-optics/SKILL.md",
+          "blob": "be4adabc8d7a342adcdabf266546be54ef1ec17b"
+        }
+      ]
+    },
+    {
+      "repository": "wshobson/agents",
+      "commit": "b6af3711058190e4b5c5274b9758498fe626ec5a",
+      "tree": "36cad93774bba4e4e2e702aff34b32aaf746e201",
+      "license": "MIT",
+      "license_evidence": {
+        "kind": "license-file",
+        "path": "LICENSE",
+        "blob": "326f0a55c96e672fedf9d807ca043c00df05ba0e"
+      },
+      "skills": [
+        "database-migration-workflow",
+        "pipeline-review"
+      ],
+      "mapped_evidence": [
+        {
+          "kind": "license-file",
+          "path": "LICENSE",
+          "blob": "326f0a55c96e672fedf9d807ca043c00df05ba0e"
+        },
+        {
+          "path": "plugins/database-migrations/commands/sql-migrations.md",
+          "blob": "aee79070521fda22d809608d2d5d8434012d9a01"
+        },
+        {
+          "path": "plugins/database-migrations/commands/migration-observability.md",
+          "blob": "83f0773b80f59468a4b3177725cb16e1b785bd28"
+        },
+        {
+          "path": "plugins/comprehensive-review/commands/full-review.md",
+          "blob": "6d607a1544ed505e6e869ae6eb18d81a1b00fe28"
+        }
+      ]
+    }
+  ],
+  "runs": [
+    {
+      "name": "pinned_sources",
+      "executable": "C:\\Users\\win10\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+      "arguments": [
+        "scripts/verify-skill-sources.js",
+        "--remote"
+      ],
+      "started_at": "2026-09-16T12:05:18.208Z",
+      "finished_at": "2026-09-16T12:05:18.209Z",
+      "elapsed_ms": 1,
+      "timeout_ms": 300000,
+      "exit_code": null,
+      "signal": null,
+      "process_error_code": "EPERM",
+      "status": "error",
+      "stdout": "",
+      "stderr": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "completed_coverage": null,
+      "local_manifest_coverage": null
+    },
+    {
+      "name": "originality",
+      "executable": "C:\\Users\\win10\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+      "arguments": [
+        "scripts/audit-skill-originality.js"
+      ],
+      "started_at": "2026-09-16T12:05:18.210Z",
+      "finished_at": "2026-09-16T12:05:18.210Z",
+      "elapsed_ms": 0,
+      "timeout_ms": 300000,
+      "exit_code": null,
+      "signal": null,
+      "process_error_code": "EPERM",
+      "status": "error",
+      "stdout": "",
+      "stderr": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "completed_coverage": null,
+      "reported_suspicious_overlap_count": null
+    }
+  ],
+  "limitations": [
+    "Coverage is limited to referenced Skills and manifest-mapped pinned sources; unreferenced Skills and arbitrary upstream repositories are outside this audit.",
+    "The verifier reads public commit/tree metadata and license blobs; a recursive tree response is metadata, not a checkout or execution of repository code.",
+    "Originality compares every decoded text file in each referenced local Skill package with that Skill's mapped upstream raw files, including local evals. Unknown binary formats are excluded.",
+    "The overlap heuristic uses normalized lines of at least 60 characters, exact 12-word phrases, or 32 CJK characters, with structural frontmatter and boilerplate exclusions. No finding is not a proof of originality or a legal license determination.",
+    "Built-in scripts may retry transient requests at most three times; the recorder imposes a five-minute process timeout per run. HTTP, network, rate-limit and timeout failures are errors, never skipped passes.",
+    "A failed CLI does not report partial remote coverage; completed_coverage is null unless its full success summary and zero exit are observed. Error text is retained as actual stdout/stderr.",
+    "Source, manifest and audited local-package hashes are compared before/after. Network responses are not archived; Git object identities are checked by the existing verifier and pinned raw URLs by the existing originality auditor."
+  ]
+}

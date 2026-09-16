@@ -1,0 +1,8 @@
+{
+  "fixtureOnly": true,
+  "clientMajor": 2,
+  "namespaces": {
+    "document-cache-v1": [{ "documentId": "synthetic-doc-1", "title": "Invented field notes", "body": "Only synthetic text for planning.", "revision": 7 }],
+    "offline-outbox-v2": [{ "schemaVersion": 2, "documentId": "synthetic-doc-1", "clientMutationId": "synthetic-mutation-1", "baseRevision": 7, "title": "Invented field notes", "body": "Synthetic offline draft preserved across restart." }]
+  }
+}

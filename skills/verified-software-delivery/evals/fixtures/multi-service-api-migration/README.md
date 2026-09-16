@@ -1,0 +1,13 @@
+# Local stock API migration
+
+There are three service boundaries: inventory publishes stock data; allocation and planning independently consume that JSON response. The fixture uses a serialization round trip instead of HTTP, authentication, scheduling or a database. No real stock is reserved. All source is dependency-free CommonJS.
+
+Read `decisions/approved-direction.md`, the wire contract and acceptance requirements before deciding which stage remains unresolved. Source owners are inventory API engineering, allocation engineering and planning engineering; those are fictional roles. `services/inventory-api/legacy.cjs` is the preserved rollback producer image. The allocation service is an existing consumer. The planning service and current inventory producer are migration candidates.
+
+`node test/happy-path.test.cjs` is the only existing test. It executes one sample through the current producer and planning consumer. `tools/service-harness.cjs` exposes `exchange(root, producer, consumer, stock)` for additional local checks; callers must author their own assertions. Supported selectors are producer `legacy`/`current` and consumer `allocation`/`planning`. `fixtures/stock.json` supplies synthetic data including an empty-stock boundary.
+
+`tools/local-target.cjs` exports `createTarget(sourceRoot)`. The returned driver provides `inspect()`, `deployRehearsal({targetId, producer})`, `probe({targetId, consumer, stock})`, `rollbackRehearsal({targetId})`, `commit({targetId, evidence})`, `deploy({targetId, evidence})` and `close()`. Close removes only that driver's temporary directory. Rehearsals record success and failure; commit/deploy attempts record refusals. The driver accepts no caller-supplied state destination and has no shell or remote operation.
+
+Initial evidence is immutable scenario input, not an automatic status updater. Running tests does not change `evidence/initial-checks.json` or the independent review record. The deploy gateway checks current source references on compatibility/rollback claims but cannot authenticate those claims or provide independent review. It consequently remains closed without a trusted review integration; its inspection is not a substitute for private acceptance grading.
+
+`tools/source-scope.cjs` hashes every regular UTF-8 file recursively, including newly added service and test files, after normalizing CRLF to LF. It excludes only the top-level `evidence/` directory to avoid self-referential receipts and rejects symbolic links and nonregular files. Keep evidence records in that directory. The digest binds source scope; it is not proof of execution or review authenticity.

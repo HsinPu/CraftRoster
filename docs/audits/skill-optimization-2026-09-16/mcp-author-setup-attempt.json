@@ -1,0 +1,21 @@
+{
+  "root": "C:\\Users\\win10\\AppData\\Local\\Temp\\craftroster-mcp-author-rZ7gv6",
+  "node": "v24.19.0",
+  "command": [
+    "C:\\Users\\win10\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "C:/Users/win10/AppData/Local/OpenAI/Codex/runtimes/cua_node/6f12e0ef1c6e5061/bin/node_modules/npm/bin/npm-cli.js",
+    "install",
+    "--ignore-scripts",
+    "--no-audit",
+    "--no-fund",
+    "--registry=https://registry.npmjs.org",
+    "--cache=C:\\Users\\win10\\AppData\\Local\\Temp\\craftroster-mcp-author-rZ7gv6\\cache",
+    "--userconfig=C:\\Users\\win10\\AppData\\Local\\Temp\\craftroster-mcp-author-rZ7gv6\\user.npmrc",
+    "--globalconfig=C:\\Users\\win10\\AppData\\Local\\Temp\\craftroster-mcp-author-rZ7gv6\\global.npmrc"
+  ],
+  "exit": null,
+  "error": "EPERM",
+  "stdout": "",
+  "stderr": "",
+  "model_calls": 0
+}

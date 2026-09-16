@@ -13,14 +13,15 @@ EXPECTED_SKILLS="$(node -e "console.log(require(process.argv[1]).skills.length)"
 EXPECTED_AGENTS="$(node -e "console.log(require(process.argv[1]).agents.length)" "$REPO_ROOT/agents.json")"
 
 if [[ "$#" -gt 1 ]]; then
-  fail "Usage: scripts/smoke-install.sh [--full|--quick]"
+  fail "Usage: scripts/smoke-install.sh [--full|--quick|--dependencies]"
 fi
 
 case "${1:-}" in
   "") SMOKE_MODE="${CRAFTROSTER_SMOKE_MODE:-full}" ;;
   --full) SMOKE_MODE="full" ;;
   --quick) SMOKE_MODE="quick" ;;
-  *) fail "Unknown option: $1. Usage: scripts/smoke-install.sh [--full|--quick]" ;;
+  --dependencies) SMOKE_MODE="dependencies" ;;
+  *) fail "Unknown option: $1. Usage: scripts/smoke-install.sh [--full|--quick|--dependencies]" ;;
 esac
 
 case "$SMOKE_MODE" in
@@ -28,11 +29,11 @@ case "$SMOKE_MODE" in
     EXPECTED_PROJECT_SKILLS="$EXPECTED_SKILLS"
     EXPECTED_PROJECT_AGENTS="$EXPECTED_AGENTS"
     ;;
-  quick)
+  quick|dependencies)
     EXPECTED_PROJECT_SKILLS=1
     EXPECTED_PROJECT_AGENTS=1
     ;;
-  *) fail "CRAFTROSTER_SMOKE_MODE must be full or quick" ;;
+  *) fail "CRAFTROSTER_SMOKE_MODE must be full, quick, or dependencies" ;;
 esac
 TEMP_BASE="$(cd "${TMPDIR:-/tmp}" && pwd -P)"
 SMOKE_ROOT="$(mktemp -d "$TEMP_BASE/craftroster-install-smoke-XXXXXXXX")"
@@ -127,6 +128,12 @@ expect_failure() {
 assert_equal() {
   local actual="$1" expected="$2" label="$3"
   [[ "$actual" == "$expected" ]] || fail "$label expected $expected, got $actual"
+}
+
+write_skill_dependency_index() {
+  local source_root="$1" rows="${2:-}"
+  mkdir -p "$source_root/scripts/data"
+  printf 'skill\tdependency\tkind\twhen\n%s' "$rows" > "$source_root/scripts/data/install-skill-dependencies.tsv"
 }
 
 mutate_json_string() {
@@ -333,6 +340,7 @@ CANONICAL_SKILL_ROOT="$CANONICAL_SOURCE_ROOT/skills/canonical-digest-fixture"
 CANONICAL_DESTINATION_ROOT="$SMOKE_ROOT/canonical-digest-destination"
 CANONICAL_NONASCII_NAME="$(printf '\350\263\207\346\226\231.txt')"
 mkdir -p "$CANONICAL_SKILL_ROOT/nested"
+write_skill_dependency_index "$CANONICAL_SOURCE_ROOT"
 printf '%s\n' '---' 'name: canonical-digest-fixture' 'description: Canonical digest fixture.' 'license: Apache-2.0' '---' > "$CANONICAL_SKILL_ROOT/SKILL.md"
 printf 'alpha\n' > "$CANONICAL_SKILL_ROOT/nested/plain.txt"
 printf '\350\267\250\345\271\263\345\217\260\n' > "$CANONICAL_SKILL_ROOT/nested/$CANONICAL_NONASCII_NAME"
@@ -342,6 +350,137 @@ run_installer "canonical cross-platform Skill digest fixture" \
 CANONICAL_DIGEST_ACTUAL="$(node -e 'const fs=require("fs"); console.log(JSON.parse(fs.readFileSync(process.argv[1], "utf8")).contentSha256)' "$CANONICAL_DESTINATION_ROOT/canonical-digest-fixture/.skill-meta.json")"
 assert_equal "$CANONICAL_DIGEST_ACTUAL" "$CANONICAL_DIGEST_EXPECTED" "canonical nested/binary/non-ASCII Skill digest"
 log_pass "canonical nested, binary, and non-ASCII Skill digest"
+
+DEPENDENCY_SOURCE="$SMOKE_ROOT/dependency-source"
+for fixture_name in root-skill left-skill right-skill base-skill conditional-skill optional-skill optional-base; do
+  mkdir -p "$DEPENDENCY_SOURCE/skills/$fixture_name"
+  printf '%s\n' '---' "name: $fixture_name" 'description: Dependency installation fixture.' 'license: Apache-2.0' '---' > "$DEPENDENCY_SOURCE/skills/$fixture_name/SKILL.md"
+done
+mkdir -p "$DEPENDENCY_SOURCE/skills/base-skill/references"
+printf 'shared dependency evidence\n' > "$DEPENDENCY_SOURCE/skills/base-skill/references/proof.md"
+printf 'Read [proof](../base-skill/references/proof.md).\n' >> "$DEPENDENCY_SOURCE/skills/left-skill/SKILL.md"
+DEPENDENCY_ROWS=$'conditional-skill\troot-skill\tconditional\tOnly when root orchestration is requested.\nleft-skill\tbase-skill\trequired\t-\noptional-base\troot-skill\toptional\t-\noptional-skill\toptional-base\trequired\t-\nright-skill\tbase-skill\trequired\t-\nroot-skill\tconditional-skill\tconditional\tOnly when conditional output is requested.\nroot-skill\tleft-skill\trequired\t-\nroot-skill\toptional-skill\toptional\t-\nroot-skill\tright-skill\trequired\t-\n'
+write_skill_dependency_index "$DEPENDENCY_SOURCE" "$DEPENDENCY_ROWS"
+printf 'type\tcategory\tname\nskill\tlibrary\tbase-skill\nskill\tlibrary\tconditional-skill\nskill\tlibrary\tleft-skill\nskill\tlibrary\toptional-base\nskill\tlibrary\toptional-skill\nskill\tlibrary\tright-skill\nskill\tchosen\troot-skill\n' > "$DEPENDENCY_SOURCE/scripts/data/install-category-index.tsv"
+DEPENDENCY_DRY_ROOT="$SMOKE_ROOT/dependency-dry-run"
+run_installer "required dependency diamond dry run" \
+  --target claude --name root-skill --source-dir "$DEPENDENCY_SOURCE" --dir "$DEPENDENCY_DRY_ROOT" --dry-run
+DEPENDENCY_ORDER="$(printf '%s\n' "$LAST_OUTPUT" | awk '/^DRY-RUN install Skill / { printf "%s%s", separator, $4; separator="," }')"
+assert_equal "$DEPENDENCY_ORDER" 'base-skill,left-skill,right-skill,root-skill' 'dependency topological order and diamond deduplication'
+[[ "$LAST_OUTPUT" == *'Optional dependency not auto-installed: root-skill -> optional-skill'* ]] || fail 'Optional dependency was not explained in dry run'
+[[ ! -e "$DEPENDENCY_DRY_ROOT" ]] || fail 'Dependency dry run wrote the destination'
+DEPENDENCY_PROJECT="$SMOKE_ROOT/dependency-project"
+run_installer "cross-category required dependencies in both project profiles" \
+  --target project --category chosen --source-dir "$DEPENDENCY_SOURCE" --dir "$DEPENDENCY_PROJECT"
+for relative_root in .agents/skills .claude/skills; do
+  installed_root="$DEPENDENCY_PROJECT/$relative_root"
+  assert_equal "$(count_skill_dirs "$installed_root")" 4 'required closure count'
+  cmp -s "$installed_root/left-skill/../base-skill/references/proof.md" "$DEPENDENCY_SOURCE/skills/base-skill/references/proof.md" || fail 'Installed sibling resource is missing or changed'
+  for not_selected in conditional-skill optional-skill optional-base; do
+    [[ ! -e "$installed_root/$not_selected" ]] || fail "$not_selected was installed automatically"
+  done
+done
+run_installer "matching owned dependencies update" \
+  --target project --name root-skill --source-dir "$DEPENDENCY_SOURCE" --dir "$DEPENDENCY_PROJECT"
+run_installer "full dependency inventory remains deduplicated" \
+  --target claude --source-dir "$DEPENDENCY_SOURCE" --dir "$DEPENDENCY_DRY_ROOT" --dry-run
+assert_equal "$(count_output_lines '^DRY-RUN install Skill ')" 7 'full dependency inventory count'
+
+OPTIONAL_EXPLICIT_ROOT="$SMOKE_ROOT/optional-explicit"
+run_installer 'explicit optional target installs only its own required closure' \
+  --target claude --name optional-skill --source-dir "$DEPENDENCY_SOURCE" --dir "$OPTIONAL_EXPLICIT_ROOT"
+assert_equal "$(count_skill_dirs "$OPTIONAL_EXPLICIT_ROOT")" 2 'explicit optional target and required base count'
+for fixture_name in optional-skill optional-base; do
+  cmp -s "$OPTIONAL_EXPLICIT_ROOT/$fixture_name/SKILL.md" "$DEPENDENCY_SOURCE/skills/$fixture_name/SKILL.md" || fail "Explicit $fixture_name source differs"
+done
+[[ ! -e "$OPTIONAL_EXPLICIT_ROOT/root-skill" ]] || fail 'Optional back-edge expanded the root'
+
+OPTIONAL_FOREIGN_ROOT="$SMOKE_ROOT/optional-foreign"
+OPTIONAL_FOREIGN="$OPTIONAL_FOREIGN_ROOT/optional-skill"
+mkdir -p "$OPTIONAL_FOREIGN"
+printf 'foreign optional content' > "$OPTIONAL_FOREIGN/user.txt"
+run_installer 'force on owner preserves unselected optional foreign files' \
+  --target claude --name root-skill --source-dir "$DEPENDENCY_SOURCE" --dir "$OPTIONAL_FOREIGN_ROOT" --force
+assert_equal "$(cat "$OPTIONAL_FOREIGN/user.txt")" 'foreign optional content' 'foreign optional content preserved'
+[[ ! -e "$OPTIONAL_FOREIGN/SKILL.md" && ! -e "$OPTIONAL_FOREIGN/.skill-meta.json" ]] || fail 'Optional source or metadata was written'
+[[ ! -e "$OPTIONAL_FOREIGN_ROOT/optional-base" ]] || fail 'Unselected optional required closure was installed'
+
+DEPENDENCY_FOREIGN="$SMOKE_ROOT/dependency-foreign"
+FOREIGN_BASE="$DEPENDENCY_FOREIGN/.claude/skills/base-skill"
+mkdir -p "$FOREIGN_BASE"
+printf 'foreign content' > "$FOREIGN_BASE/user.txt"
+expect_failure 'foreign dependency blocks every project profile' 'no matching CraftRoster metadata' \
+  --target project --name root-skill --source-dir "$DEPENDENCY_SOURCE" --dir "$DEPENDENCY_FOREIGN"
+[[ ! -e "$DEPENDENCY_FOREIGN/.agents" ]] || fail 'Foreign dependency left a partial first-profile install'
+assert_equal "$(cat "$FOREIGN_BASE/user.txt")" 'foreign content' 'foreign dependency preserved'
+
+DEPENDENCY_MODIFIED="$SMOKE_ROOT/dependency-modified"
+run_installer 'prepare owned dependency' \
+  --target claude --name base-skill --source-dir "$DEPENDENCY_SOURCE" --dir "$DEPENDENCY_MODIFIED"
+MODIFIED_PROOF="$DEPENDENCY_MODIFIED/base-skill/references/proof.md"
+printf 'local change' > "$MODIFIED_PROOF"
+expect_failure 'modified dependency blocks installation' 'installed Skill content has changed since the last CraftRoster install' \
+  --target claude --name root-skill --source-dir "$DEPENDENCY_SOURCE" --dir "$DEPENDENCY_MODIFIED"
+assert_equal "$(count_skill_dirs "$DEPENDENCY_MODIFIED")" 1 'modified dependency no partial install'
+assert_equal "$(cat "$MODIFIED_PROOF")" 'local change' 'modified dependency preserved'
+run_installer 'explicit force resets modified dependency' \
+  --target claude --name root-skill --source-dir "$DEPENDENCY_SOURCE" --dir "$DEPENDENCY_MODIFIED" --force
+cmp -s "$MODIFIED_PROOF" "$DEPENDENCY_SOURCE/skills/base-skill/references/proof.md" || fail 'Forced dependency not restored'
+
+DEPENDENCY_INVALID_ROOT="$SMOKE_ROOT/dependency-invalid"
+for invalid_case in cycle unknown owner optional-unknown optional-condition kind self duplicate malformed extra empty condition nul; do
+  case "$invalid_case" in
+    cycle) invalid_rows="$DEPENDENCY_ROWS"$'base-skill\troot-skill\trequired\t-\n'; expected_message='Required Skill dependency cycle' ;;
+    unknown) invalid_rows=$'root-skill\tmissing-skill\trequired\t-\n'; expected_message='Skill not found in archive: missing-skill' ;;
+    owner) invalid_rows=$'missing-skill\tbase-skill\trequired\t-\n'; expected_message='Skill not found in archive: missing-skill' ;;
+    optional-unknown) invalid_rows=$'root-skill\tmissing-skill\toptional\t-\n'; expected_message='Skill not found in archive: missing-skill' ;;
+    optional-condition) invalid_rows=$'root-skill\toptional-skill\toptional\tSometimes\n'; expected_message='contains an invalid value' ;;
+    kind) invalid_rows=$'root-skill\tbase-skill\trecommended\t-\n'; expected_message='contains an invalid value' ;;
+    self) invalid_rows=$'root-skill\troot-skill\trequired\t-\n'; expected_message='self dependency' ;;
+    duplicate) invalid_rows="$DEPENDENCY_ROWS"$'root-skill\tleft-skill\trequired\t-\n'; expected_message='duplicate dependency' ;;
+    malformed) invalid_rows=$'root-skill\tbase-skill\trequired\n'; expected_message='must contain skill, dependency, kind, and when' ;;
+    extra) invalid_rows=$'root-skill\tbase-skill\trequired\t-\textra\n'; expected_message='contains an invalid value' ;;
+    empty) invalid_rows=$'root-skill\tbase-skill\tconditional\t\n'; expected_message='contains an invalid value' ;;
+    condition) invalid_rows=$'root-skill\tbase-skill\tconditional\t-\n'; expected_message='contains an invalid value' ;;
+    nul) invalid_rows="$DEPENDENCY_ROWS"; expected_message='contains a NUL byte' ;;
+  esac
+  write_skill_dependency_index "$DEPENDENCY_SOURCE" "$invalid_rows"
+  if [[ "$invalid_case" == "nul" ]]; then printf '\0' >> "$DEPENDENCY_SOURCE/scripts/data/install-skill-dependencies.tsv"; fi
+  expect_failure "invalid dependency $invalid_case" "$expected_message" \
+    --target claude --name root-skill --source-dir "$DEPENDENCY_SOURCE" --dir "$DEPENDENCY_INVALID_ROOT"
+  [[ ! -e "$DEPENDENCY_INVALID_ROOT" ]] || fail "Invalid dependency $invalid_case wrote to the destination"
+done
+printf 'skill\tdependency\tkind\n' > "$DEPENDENCY_SOURCE/scripts/data/install-skill-dependencies.tsv"
+expect_failure 'invalid dependency header' 'invalid header' \
+  --target claude --name root-skill --source-dir "$DEPENDENCY_SOURCE" --dir "$DEPENDENCY_INVALID_ROOT"
+[[ ! -e "$DEPENDENCY_INVALID_ROOT" ]] || fail 'Invalid dependency header wrote to the destination'
+rm -- "$DEPENDENCY_SOURCE/scripts/data/install-skill-dependencies.tsv"
+expect_failure 'missing dependency index refuses incomplete source' 'Skill dependency index not found' \
+  --target claude --name root-skill --source-dir "$DEPENDENCY_SOURCE" --dir "$DEPENDENCY_INVALID_ROOT"
+[[ ! -e "$DEPENDENCY_INVALID_ROOT" ]] || fail 'Missing dependency index wrote to the destination'
+write_skill_dependency_index "$DEPENDENCY_SOURCE" "$DEPENDENCY_ROWS"
+
+BYTE_READER_FAILURE_BIN="$SMOKE_ROOT/byte-reader-failure-bin"
+mkdir -p "$BYTE_READER_FAILURE_BIN"
+printf '#!/bin/sh\nexit 71\n' > "$BYTE_READER_FAILURE_BIN/od"
+chmod +x "$BYTE_READER_FAILURE_BIN/od"
+PATH="$BYTE_READER_FAILURE_BIN:$PATH" expect_failure 'dependency byte inspection failure' 'Cannot inspect Skill dependency index bytes' \
+  --target claude --name root-skill --source-dir "$DEPENDENCY_SOURCE" --dir "$DEPENDENCY_INVALID_ROOT"
+[[ ! -e "$DEPENDENCY_INVALID_ROOT" ]] || fail 'Dependency byte inspection failure wrote to the destination'
+
+ALTERNATE_DEPENDENCY_ROOT="$HOME/.agents/skills"
+run_installer 'prepare alternate-root owned dependency' \
+  --target codex --name base-skill --source-dir "$DEPENDENCY_SOURCE" --dir "$ALTERNATE_DEPENDENCY_ROOT"
+expect_failure 'required dependency split roots refuse before writes' 'Required Skill dependency uses different roots' \
+  --target codex --name root-skill --source-dir "$DEPENDENCY_SOURCE"
+[[ ! -e "$CODEX_HOME/skills/root-skill" ]] || fail 'Split-root plan installed the requesting Skill'
+[[ ! -e "$CODEX_HOME/skills/base-skill" ]] || fail 'Split-root plan duplicated its dependency'
+cmp -s "$ALTERNATE_DEPENDENCY_ROOT/base-skill/references/proof.md" "$DEPENDENCY_SOURCE/skills/base-skill/references/proof.md" || fail 'Alternate-root dependency changed'
+log_pass 'Bash dependency closure, references, conditional and optional selection, ownership, and placement'
+if [[ "$SMOKE_MODE" == "dependencies" ]]; then
+  log_pass 'Bash dependency smoke passed; remaining installer scenarios not run.'
+  exit 0
+fi
 
 CATEGORY_INDEX="$REPO_ROOT/scripts/data/install-category-index.tsv"
 BROWSER_SKILL_COUNT="$(awk -F '\t' '$1 == "skill" && $2 == "browser-automation" { count++ } END { print count + 0 }' "$CATEGORY_INDEX")"
@@ -363,7 +502,8 @@ run_installer "project Skill category dry run" \
 run_installer "project Skill category install" \
   --target project --type skill --category browser-automation --source-dir "$REPO_ROOT" --dir "$CATEGORY_SKILL_ROOT"
 for root in "$CATEGORY_SKILL_ROOT/.agents/skills" "$CATEGORY_SKILL_ROOT/.claude/skills"; do
-  assert_equal "$(count_skill_dirs "$root")" "$BROWSER_SKILL_COUNT" "$root browser-automation category count"
+  assert_equal "$(count_skill_dirs "$root")" "$((BROWSER_SKILL_COUNT + 1))" "$root browser-automation category plus required Python baseline count"
+  [[ -f "$root/python-development/SKILL.md" ]] || fail "Browser category did not install the required Python baseline in $root"
 done
 
 run_installer "project Agent category install" \
@@ -542,6 +682,7 @@ grep -Fq LOCAL_DRIFT_SENTINEL "$LEGACY_SKILL_TARGET/SKILL.md" || fail "legacy Sk
 cp "$LEGACY_SKILL_FIXTURE/SKILL.md" "$LEGACY_SKILL_TARGET/SKILL.md"
 CRLF_SOURCE_ROOT="$SMOKE_ROOT/crlf-legacy-manifest-source"
 mkdir -p "$CRLF_SOURCE_ROOT/skills" "$CRLF_SOURCE_ROOT/scripts/data"
+write_skill_dependency_index "$CRLF_SOURCE_ROOT"
 cp -R "$REPO_ROOT/skills/terminal-ops" "$CRLF_SOURCE_ROOT/skills/"
 awk '{ sub(/\r$/, ""); printf "%s\r\n", $0 }' \
   "$REPO_ROOT/scripts/data/legacy-skill-content-sha256.tsv" \
@@ -747,6 +888,7 @@ fi
 FIFO_SOURCE_ROOT="$SMOKE_ROOT/fifo-source"
 FIFO_DESTINATION_ROOT="$SMOKE_ROOT/fifo-destination"
 mkdir -p "$FIFO_SOURCE_ROOT/skills"
+write_skill_dependency_index "$FIFO_SOURCE_ROOT"
 cp -R "$REPO_ROOT/skills/terminal-ops" "$FIFO_SOURCE_ROOT/skills/"
 if command -v mkfifo >/dev/null 2>&1 && mkfifo "$FIFO_SOURCE_ROOT/skills/terminal-ops/non-regular.fifo" 2>/dev/null; then
   expect_failure "Skill FIFO source refusal" "non-regular Skill content" \

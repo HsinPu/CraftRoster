@@ -1,0 +1,7 @@
+{
+  "fixtureOnly": true,
+  "clientMajor": 1,
+  "namespaces": {
+    "document-cache-v1": [{ "documentId": "synthetic-doc-1", "title": "Invented field notes", "body": "Only synthetic text for planning.", "revision": 7 }]
+  }
+}

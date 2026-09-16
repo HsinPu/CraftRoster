@@ -1,0 +1,1 @@
+{ "name": "build-readiness-fixture", "private": true, "version": "1.0.0", "type": "commonjs", "scripts": { "test": "node test/build-unit.test.js" } }

@@ -1,0 +1,10 @@
+{
+  "fictional": true,
+  "policyId": "RECEIPT-RETENTION-PENDING",
+  "state": "undecided",
+  "ownerRole": "fictional booking product owner and data governance",
+  "assignedDecisionOwner": null,
+  "retentionHours": null,
+  "minimumSupportedRetryWindowHours": null,
+  "productionCleanupAuthorized": false
+}

@@ -38,6 +38,35 @@ const MACHINE_CONTRACT_FIELDS = {
   policy: ['channels', 'thresholds', 'warnHandling', 'errorHandling', 'retention', 'cache', 'networkEgress'],
 };
 
+// Authorization is independent of visual/product scope and machine comparison mode.
+// These invariants supplement canonical prose hashes; changing a gate's text must
+// not silently change who can authorize implementation or external effects.
+const GATE_AUTHORIZATION_POLICY = {
+  modes: ['gated', 'delegated', 'already-approved'],
+  defaultMode: 'gated',
+  delegatedRequires: ['bounded-scope', 'direction-or-design-choice', 'implementation'],
+  alreadyApprovedRequires: ['same-scope', 'versioned-design-authority', 'implementation'],
+  explicitUserCheckpointBinding: true,
+  existingAuthorizationSatisfiesGate: true,
+  requiresInternalGateName: false,
+  readOnlyOverridesModes: true,
+  preservationAppliesToAllModes: true,
+  evidenceRequiredInAllModes: true,
+  isolatedSitePilotRequired: true,
+  baselineOwnerApprovalRequired: true,
+  productMigrationAuthorizationSeparate: true,
+  externalActionAuthorizationSeparate: true,
+  changedScopeRequiresReassessment: true,
+  supportMayCloseGate: false,
+};
+
+const AUTHORIZATION_RECORD_FIELDS = [
+  'mode', 'checkpoint', 'posture', 'scopeVersion', 'directionVersion', 'authorizationEvidence',
+  'explicitUserCheckpoint', 'implementationAuthorized', 'requiredEvidence',
+  'pilotEvidence', 'baselineOwner', 'baselineAction', 'baselineChangeApproval',
+  'externalActionAuthorization', 'nextAction',
+];
+
 const EXPECTED_BLOCKS = [
   {
     file: 'skills/figma-to-code/SKILL.md',
@@ -242,10 +271,11 @@ const EXPECTED_BLOCKS = [
     value: {
       id: 'web-page-design-to-code.orchestration',
       part: 'orchestration',
-      version: 1,
+      version: 2,
       type: 'approval-orchestrator',
       section: '4. Draft the Implementation Contract',
       owner: 'top-level',
+      authorization: GATE_AUTHORIZATION_POLICY,
       supportMode: 'parent-receipt',
       supportMayEditProductionBeforeGate: false,
       supportMayCloseGate: false,
@@ -257,6 +287,10 @@ const EXPECTED_BLOCKS = [
         'visual-regression-testing.machine-gate',
       ],
       textParts: {
+        authorization: {
+          section: 'Choose the Authorization Mode',
+          sha256: '14da6f7945a59a2b14a41b809bd728627e56f244193198b6b9201dda2848f07b',
+        },
         'source-boundary': {
           section: 'Route the Request',
           sha256: '184bf95606468e357f27e135087b094b18826296b2392f8e8057151dd067a616',
@@ -265,11 +299,15 @@ const EXPECTED_BLOCKS = [
           section: '4. Draft the Implementation Contract',
           sha256: '73a688b27ff9d79b7a9b92d2444641be9debb0c63460103eacdd56b2093563d8',
         },
+        'implementation-authorization': {
+          section: '5. Resolve the Implementation Approval Gate',
+          sha256: '1007ab97bb45d10eee7312d5a2a47d6ab424eb4841f05def91f379a30ed7c4ed',
+        },
       },
       machineContract: 'visual-regression-testing.machine-gate',
       phaseBoundaries: {
         lockMachineContract: '4. Draft the Implementation Contract',
-        implementationGate: '5. Stop at the Implementation Approval Gate',
+        implementationGate: '5. Resolve the Implementation Approval Gate',
         consumeMachineResult: '7. Render, Compare, and Repair',
       },
     },
@@ -279,9 +317,10 @@ const EXPECTED_BLOCKS = [
     value: {
       id: 'web-page-design-to-code.orchestration',
       part: 'deliverable',
-      version: 1,
+      version: 2,
       type: 'machine-receipt-template',
       section: 'Visual QA Report',
+      authorizationRecordFields: AUTHORIZATION_RECORD_FIELDS,
       machineReceiptFields: MACHINE_RECEIPT_FIELDS,
       machineContractFields: MACHINE_CONTRACT_FIELDS,
     },
@@ -291,10 +330,11 @@ const EXPECTED_BLOCKS = [
     value: {
       id: 'website-redesign-to-code.orchestration',
       part: 'orchestration',
-      version: 1,
+      version: 2,
       type: 'approval-orchestrator',
       section: 'Gate 3: Confirm Implementation Readiness',
       owner: 'top-level',
+      authorization: GATE_AUTHORIZATION_POLICY,
       supportMode: 'parent-receipt',
       supportMayEditProductionBeforeGate: false,
       supportMayCloseGate: false,
@@ -306,13 +346,29 @@ const EXPECTED_BLOCKS = [
         'visual-regression-testing.machine-gate',
       ],
       textParts: {
+        authorization: {
+          section: 'Choose the Authorization Mode',
+          sha256: '14da6f7945a59a2b14a41b809bd728627e56f244193198b6b9201dda2848f07b',
+        },
         'source-boundary': {
           section: 'Choose the Redesign Mode',
           sha256: '9bc057412790e5416ff23fd470a75d4ae715776ef0aedb25f924fe99d8dd5438',
         },
+        'scope-authorization': {
+          section: 'Gate 1: Freeze Scope',
+          sha256: '39c4f88c6275e86ac7f1e3bf2fd266994a97681653d39aa759371769a26d69ef',
+        },
+        'direction-authorization': {
+          section: 'Gate 2: Approve the Visual Direction',
+          sha256: '82c06fe6659ebf2e04d0d060a2e524d58fad02ea093fff5bcaf47ab19a63b0b9',
+        },
         gate3: {
           section: 'Gate 3: Confirm Implementation Readiness',
-          sha256: 'fff1dbff4f1c124d3fe84c320345948636d70f3c99f7fff2095f9bf342517296',
+          sha256: '842586b442531636449f01f730c9763f6915ef0bcee9172538830f4f39d58e70',
+        },
+        'pilot-authorization': {
+          section: 'Gate 4: Accept the Pilot',
+          sha256: '24c87856f8cdc75f3ea8490c281ab4d6bdaef077b2acdf34fb7e4e6854dbe132',
         },
       },
       machineContract: 'visual-regression-testing.machine-gate',
@@ -328,9 +384,10 @@ const EXPECTED_BLOCKS = [
     value: {
       id: 'website-redesign-to-code.orchestration',
       part: 'deliverable',
-      version: 1,
+      version: 2,
       type: 'machine-receipt-template',
       section: 'Rollout and Validation Matrix',
+      authorizationRecordFields: AUTHORIZATION_RECORD_FIELDS,
       machineReceiptFields: MACHINE_RECEIPT_FIELDS,
       machineContractFields: MACHINE_CONTRACT_FIELDS,
     },
@@ -1066,6 +1123,60 @@ function validateDeliverableContract(skillName, text) {
   if (!expected) return [`${skillName}: no canonical deliverable contract is registered`];
   const section = findMarkdownSection(text, expected.value.section);
   if (!section) errors.push(`${skillName}: missing deliverable section ${expected.value.section}`);
+  const authorization = findMarkdownSection(text, 'Authorization Checkpoint Record');
+  const example = authorization && authorization.match(/```json\s*([\s\S]*?)```/i);
+  if (!example) {
+    errors.push(`${skillName}: missing Authorization Checkpoint Record JSON example`);
+  } else {
+    try {
+      const record = JSON.parse(example[1]);
+      errors.push(...validateAuthorizationRecord(record, `${skillName} authorization record`));
+    } catch {
+      errors.push(`${skillName}: Authorization Checkpoint Record JSON is invalid`);
+    }
+  }
+  return errors;
+}
+
+function validateAuthorizationRecord(record, label = 'authorization record') {
+  const errors = [];
+  if (!record || typeof record !== 'object' || Array.isArray(record)) return [`${label} must be an object`];
+  validateFieldSet(errors, `${label} fields`, Object.keys(record), AUTHORIZATION_RECORD_FIELDS);
+  for (const field of AUTHORIZATION_RECORD_FIELDS.filter((name) => name !== 'implementationAuthorized')) {
+    if (typeof record[field] !== 'string' || !record[field].trim()) errors.push(`${label}.${field} must be a non-empty string`);
+  }
+  if (typeof record.implementationAuthorized !== 'boolean') errors.push(`${label}.implementationAuthorized must be boolean`);
+  validateEnumValue(errors, `${label}.mode`, record.mode, GATE_AUTHORIZATION_POLICY.modes);
+  validateEnumValue(errors, `${label}.checkpoint`, record.checkpoint, ['implementation', 'pilot-rollout']);
+  validateEnumValue(errors, `${label}.posture`, record.posture, ['implementation', 'read-only', 'parent-receipt']);
+  validateEnumValue(errors, `${label}.explicitUserCheckpoint`, record.explicitUserCheckpoint, ['pending', 'released', 'none']);
+  validateEnumValue(errors, `${label}.requiredEvidence`, record.requiredEvidence, ['complete', 'missing', 'failed']);
+  validateEnumValue(errors, `${label}.pilotEvidence`, record.pilotEvidence, ['not-applicable', 'pending', 'passed', 'failed']);
+  validateEnumValue(errors, `${label}.baselineAction`, record.baselineAction, ['unchanged', 'propose-candidate', 'replace']);
+  validateEnumValue(errors, `${label}.baselineChangeApproval`, record.baselineChangeApproval, ['not-requested', 'pending', 'approved']);
+  validateEnumValue(errors, `${label}.externalActionAuthorization`, record.externalActionAuthorization, ['none', 'separately-authorized']);
+  validateEnumValue(errors, `${label}.nextAction`, record.nextAction, ['wait', 'proceed', 'read-only', 'return-receipt']);
+  if (record.nextAction === 'proceed' && (record.explicitUserCheckpoint === 'pending'
+    || record.implementationAuthorized !== true || record.requiredEvidence !== 'complete'
+    || record.posture !== 'implementation')) {
+    errors.push(`${label}: proceed requires implementation authority, complete evidence, implementation posture, and no pending user checkpoint`);
+  }
+  if (record.nextAction === 'proceed' && record.checkpoint === 'pilot-rollout' && record.pilotEvidence !== 'passed') {
+    errors.push(`${label}: pilot rollout requires passed pilot evidence`);
+  }
+  if (record.posture === 'read-only' && !['read-only', 'wait'].includes(record.nextAction)) {
+    errors.push(`${label}: read-only posture requires read-only work or waiting`);
+  }
+  if (record.posture === 'parent-receipt' && !['return-receipt', 'wait'].includes(record.nextAction)) {
+    errors.push(`${label}: parent-receipt posture must return evidence or wait, never close a parent gate`);
+  }
+  if (record.nextAction === 'return-receipt' && record.posture !== 'parent-receipt') {
+    errors.push(`${label}: return-receipt requires parent-receipt posture`);
+  }
+  if (record.baselineAction === 'replace' && (record.baselineChangeApproval !== 'approved'
+    || record.posture !== 'implementation' || record.nextAction !== 'proceed')) {
+    errors.push(`${label}: baseline replacement requires its owner's approval and an authorized implementation action`);
+  }
   return errors;
 }
 
@@ -1162,6 +1273,8 @@ function main() {
 if (require.main === module) main();
 
 module.exports = {
+  AUTHORIZATION_RECORD_FIELDS,
+  GATE_AUTHORIZATION_POLICY,
   CONTRACT_FILES,
   EXPECTED_BLOCKS,
   canonicalTextSha256,
@@ -1171,6 +1284,7 @@ module.exports = {
   parseMarkdownTables,
   splitMarkdownTableRow,
   validateApprovalOrchestrator,
+  validateAuthorizationRecord,
   validateContractDocuments,
   validateDesignSystemContract,
   validateFigmaFallbackContract,

@@ -1,0 +1,36 @@
+{
+  "scenarioId": "FICTIONAL-OFFLINE-SYNC-1",
+  "items": [
+    {
+      "id": "U-TELEMETRY-RETENTION",
+      "state": "unresolved",
+      "ownerRole": "privacy governance",
+      "assignedOwner": null,
+      "question": "Choose a seven-day or thirty-day live event-retention limit and identify the accountable approver.",
+      "optionsDays": [7, 30],
+      "selectedDays": null,
+      "requiredFor": ["live telemetry collection", "public rollout using telemetry gates"],
+      "doesNotPrevent": ["local event-schema validation", "synthetic redaction checks"]
+    },
+    {
+      "id": "U-RELEASE-OWNER",
+      "state": "unassigned",
+      "ownerRole": "release commander",
+      "assignedOwner": null,
+      "question": "Assign the owner who may accept staged-release evidence and authorize exposure changes or recovery actions.",
+      "requiredFor": ["staging release acceptance", "public exposure changes", "production rollback decision"],
+      "doesNotPrevent": ["local recovery rehearsal design", "local durability and conflict tests"]
+    },
+    {
+      "id": "U-STAGING-ACCESS",
+      "state": "unavailable",
+      "ownerRole": "platform operations",
+      "assignedOwner": "fictional platform operations team",
+      "question": "Provide an isolated staging tenancy that can run v1 and v2 clients against a compatible sync service.",
+      "environmentId": "fictional-isolated-sync-staging",
+      "available": false,
+      "requiredFor": ["mixed-client staging rehearsal", "bad-client version-containment rehearsal"],
+      "doesNotPrevent": ["synthetic protocol cases", "local persisted-outbox tests"]
+    }
+  ]
+}

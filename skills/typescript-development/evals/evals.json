@@ -66,6 +66,26 @@
         "It preserves the public contract and replaces any with an explicit validated or narrowed boundary rather than hiding the diagnostic.",
         "It adds a regression test and limits refactoring to the proven causal path."
       ]
+    },
+    {
+      "id": 7,
+      "prompt": "Fix a tsconfig moduleResolution setting that breaks exported types. No production .ts source change is needed.",
+      "expected_output": "A TypeScript configuration diagnosis despite no source edit.",
+      "assertions": [
+        "It selects typescript-development because compiler configuration is the affected contract.",
+        "It checks installed TypeScript and package resolution evidence.",
+        "It verifies the exported-type failure without broad unrelated changes."
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Only repair a plain JavaScript utility's exit code. The monorepo has an unrelated TypeScript application and no typed boundary is affected.",
+      "expected_output": "No TypeScript activation from unrelated project presence.",
+      "assertions": [
+        "It does not load typescript-development solely from unrelated configuration or dependencies.",
+        "It routes to JavaScript runtime behavior.",
+        "It keeps the fix and verification scoped to the utility."
+      ]
     }
   ]
 }

@@ -1,6 +1,6 @@
 ---
 name: typescript-development
-description: Visible .tsx or browser UI changes require frontend-design plus this TypeScript specialist. Use for writing, modifying, fixing, reviewing, refactoring, or type-checking TypeScript, .ts, .tsx, tsconfig, tsc, vue-tsc, strict mode, or typed APIs; server, CLI, and library-only work does not require frontend-design.
+description: Implement, review, debug, or type-check TypeScript source, compiler configuration, and typed public APIs. Pair visible UI changes with frontend-design; server, CLI, and library-only work does not require it. Unrelated TypeScript dependencies elsewhere do not activate this Skill.
 license: Apache-2.0
 metadata:
   author: "HsinPu"
@@ -13,7 +13,7 @@ Use this skill as the baseline for TypeScript implementation, review, type desig
 
 ## TypeScript Routing Gate
 
-Read this skill before planning when the target includes `.ts`, `.tsx`, `tsconfig*.json`, a `typescript` dependency, a `tsc` or `vue-tsc` diagnostic, strict-mode type errors, or an explicit TypeScript request, even if this skill was omitted from the runtime's initial metadata list.
+Read this skill when the requested outcome, affected code path, or diagnostic evidence involves TypeScript source, compiler configuration, typed public APIs, or type errors. TypeScript implementation planning and configuration-only compiler fixes count even when no `.ts` file changes. A dependency or `tsconfig` in an unrelated part of the repository is only a discovery signal.
 
 Keep this skill responsible for supported TypeScript versions, compiler configuration, domain types, module and package boundaries, public APIs, runtime-validation boundaries, type narrowing, and general TypeScript implementation. Add only the specialist that owns a material part of the task:
 

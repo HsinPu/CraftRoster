@@ -1,0 +1,2 @@
+.site-footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; border-top: 1px solid #d9e1ed; background: #fff; }
+.site-footer span { color: #546580; font-size: 14px; }

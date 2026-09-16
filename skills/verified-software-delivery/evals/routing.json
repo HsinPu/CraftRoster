@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "skill_name": "verified-software-delivery",
+  "cases": [
+    {
+      "id": "approved-multistage-delivery",
+      "kind": "positive",
+      "prompt": "請完成已批准的跨服務遷移，依序進行實作、獨立審查、問題修正，並以證據支持完成判定；外部發布不在範圍內。",
+      "expected_skills": [
+        "verified-software-delivery"
+      ],
+      "excluded_skills": [],
+      "allowed_skills": [
+        "spec-flow",
+        "code-change-workflow",
+        "incremental-implementation",
+        "pipeline-review",
+        "verification-before-completion",
+        "todo-first",
+        "subagent-architecture"
+      ],
+      "locale": "zh-TW"
+    },
+    {
+      "id": "resume-multistage-delivery",
+      "kind": "positive",
+      "prompt": "Resume our approved multi-stage feature delivery with valid discovery/spec artifacts; finish unresolved implementation, review and verification stages.",
+      "expected_skills": [
+        "verified-software-delivery"
+      ],
+      "excluded_skills": [
+        "solution-discovery"
+      ],
+      "allowed_skills": [
+        "code-change-workflow",
+        "pipeline-review",
+        "incremental-implementation",
+        "verification-before-completion",
+        "todo-first"
+      ],
+      "locale": "en"
+    },
+    {
+      "id": "single-typo",
+      "kind": "near_match",
+      "prompt": "Correct one typo in an existing code comment.",
+      "expected_skills": [
+        "code-change-workflow"
+      ],
+      "excluded_skills": [
+        "verified-software-delivery"
+      ],
+      "allowed_skills": [
+        "coding-standards"
+      ],
+      "locale": "en"
+    },
+    {
+      "id": "review-only",
+      "kind": "near_match",
+      "prompt": "只要 review 既有 diff，找出能證實的 bugs。不要實作，也不要啟動完整的 delivery orchestration。",
+      "expected_skills": [
+        "code-review"
+      ],
+      "excluded_skills": [
+        "verified-software-delivery"
+      ],
+      "allowed_skills": [
+        "pipeline-review"
+      ],
+      "locale": "mixed-zh-TW-en"
+    },
+    {
+      "id": "unclear-direction",
+      "kind": "near_match",
+      "prompt": "We need team sharing but have not chosen scope or architecture. Compare options with me before any implementation.",
+      "expected_skills": [
+        "solution-discovery"
+      ],
+      "excluded_skills": [
+        "verified-software-delivery"
+      ],
+      "allowed_skills": [
+        "requirements-deep-dive"
+      ],
+      "locale": "en"
+    },
+    {
+      "id": "prose-summary",
+      "kind": "negative",
+      "prompt": "Summarize the provided meeting notes into three bullets.",
+      "expected_skills": [],
+      "excluded_skills": [
+        "verified-software-delivery"
+      ],
+      "allowed_skills": [
+        "summary-ops",
+        "answer-writing"
+      ],
+      "locale": "en"
+    },
+    {
+      "id": "release-readiness-only",
+      "kind": "negative",
+      "prompt": "Read-only check of release readiness for artifact A. No code changes, new deployment, or end-to-end delivery work.",
+      "expected_skills": [
+        "deployment-operations"
+      ],
+      "excluded_skills": [
+        "verified-software-delivery"
+      ],
+      "allowed_skills": [
+        "verification-before-completion"
+      ],
+      "locale": "en"
+    }
+  ]
+}

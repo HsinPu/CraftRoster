@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "fixtureOnly": true,
+  "kind": "equivalent-refactor",
+  "origin": "actual isolated local Git and author-test executions; no model, network, or real-repository commit",
+  "digestAlgorithm": "sha256-utf8-lf",
+  "inputs": {
+    "base/AGENTS.md": "106d607cfeaf831d2dd17587699b6f00b59159affe354dbc1e732a30e3d0a44a",
+    "base/package.json": "ccedee9dfc60750b2761aafa9d730ce52777c91a6825c0645160546e1c46c159",
+    "base/README.md": "c0ef795188255d758e7c5a76193a5d48630248a1565176518194043c3287bb0d",
+    "base/src/display-name.js": "3f8f10afee32356907c8024c0b7e08c6c0fc2d4e1f8564cd1141568d8ccbefcd",
+    "base/src/greeting.js": "0c2b5182713974c20b4443b02f97b8fd3622e4c729109a69eebc1a98311fb02e",
+    "base/test/display-name.test.js": "22b2022f7f2b88d9fc541493d00e7f00273d0d3f9763fa4f474e63cc8399ffe0",
+    "base/test/greeting.test.js": "af0ace0417bc6d5f5cfd9307e089b356cc7e685a7bb89a4757d69b13ccda5332",
+    "CONTRACT.md": "fc8eba24a3b335583493e1bf32e35c197e808bae955543c1db61a739714c5a37",
+    "fixture-recipe.json": "0746d5a880819b4696190bf10351affec5015812cb18b2c10908679e9ee42dbb",
+    "head/src/display-name.js": "74eacec4fd1565fb9484899cabc502d2f151770d0f696da22d336f334a9e62bd"
+  },
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "win32",
+    "git": "git version 2.53.0.windows.3"
+  },
+  "observations": {
+    "base": "a7cb505e41f3691480c85ef53a799c83444a9dc6",
+    "head": "385bf629edf8e0ffbb94feb842b0b23414ed355a",
+    "statusPorcelain": "",
+    "stagedPaths": [],
+    "unstagedPaths": [],
+    "untrackedPaths": [],
+    "baseToHeadPaths": [
+      "src/display-name.js"
+    ]
+  },
+  "tests": {
+    "base": [
+      {
+        "command": "node test/display-name.test.js",
+        "executedAt": "2026-09-16T08:07:31.113Z",
+        "exitCode": 0,
+        "stdout": "Display-name public behavior tests passed."
+      },
+      {
+        "command": "node test/greeting.test.js",
+        "executedAt": "2026-09-16T08:07:31.177Z",
+        "exitCode": 0,
+        "stdout": "Greeting caller behavior tests passed."
+      }
+    ],
+    "final": [
+      {
+        "command": "node test/display-name.test.js",
+        "executedAt": "2026-09-16T08:07:31.391Z",
+        "exitCode": 0,
+        "stdout": "Display-name public behavior tests passed."
+      },
+      {
+        "command": "node test/greeting.test.js",
+        "executedAt": "2026-09-16T08:07:31.452Z",
+        "exitCode": 0,
+        "stdout": "Greeting caller behavior tests passed."
+      }
+    ]
+  }
+}

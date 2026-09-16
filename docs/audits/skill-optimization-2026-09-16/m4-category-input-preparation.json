@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "evaluation_kind": "offline_priority_category_input_preparation",
+  "recorded_at": "2026-09-16T13:13:29.775Z",
+  "status": "not_run",
+  "model_calls": 0,
+  "runtime": {
+    "node": "v24.19.0",
+    "platform": "win32",
+    "arch": "x64"
+  },
+  "preparation_implementation": {
+    "path": "scripts/prepare-skill-pilot.js",
+    "sha256": "7d5036a0f793436be8041eccf2adc3dc5f9e80afab3a2492ec52e50afe5d59b5"
+  },
+  "cases": [
+    {
+      "category": "backend-data",
+      "case_id": "api-contract-design:1",
+      "preparation_status": "prepared",
+      "task_outcome": "not_run",
+      "split": "development",
+      "mode": "workspace_fixture",
+      "corpus_case_sha256": "7ade997a3306cbfaeaf27eb730c25e1d6d918df1e1ff7e39a85148d181db038d",
+      "prompt_sha256": "11df0ff6856a715a647eb401547c57238c2fe86a48376926233311477cae8fec",
+      "fixture_sha256": "a5f9464de39214b0643f3e4826b5b4966bc48dc770dbd7db89686e91ac92746d",
+      "fixture_manifest": [
+        {
+          "path": "orders-contract.json",
+          "sha256": "dfc603c7b0d668967654efd4b255af04bf248193535e500fb058d273d2418672",
+          "bytes": 366
+        }
+      ],
+      "runtime_catalog_sha256": "bf4dbd270ed5bd8c09ede9d7bf4b2a9104c7aaeb51088427bf765c9110bdc213",
+      "runtime_packages": 286,
+      "public_files": 520,
+      "public_bundle_sha256": "7a0a0bc3cc20d730a8f7d5a16286c4bea57f9f35ac86fff5055bb174a8b52d2c",
+      "private_oracle_excluded": true,
+      "model_effective": null,
+      "activation_observed": false,
+      "assertion_results": "not_run",
+      "reproduce": [
+        "npm",
+        "run",
+        "prepare:skill-pilot",
+        "--",
+        "--skill",
+        "api-contract-design",
+        "--case",
+        "1",
+        "--output",
+        "<new-isolated-directory>"
+      ]
+    },
+    {
+      "category": "cloud-devops",
+      "case_id": "deployment-operations:1",
+      "preparation_status": "prepared",
+      "task_outcome": "not_run",
+      "split": "development",
+      "mode": "workspace_fixture",
+      "corpus_case_sha256": "bc5568504f0ce1be7ca81458ed52e40185d69371540246f0b71ef99f81e7467f",
+      "prompt_sha256": "c7dced3d6c7cfc4fb3576391601ea3827aa640265b38e9923def9a59126f3c13",
+      "fixture_sha256": "0ea184fa31daefaee27607b41b8f770fb733591b637a6f15e3f39a9219a1556a",
+      "fixture_manifest": [
+        {
+          "path": "CONTRACT.md",
+          "sha256": "0c899ca53ad97cb619acf04c731192624cb15c5d3c3e70196b267bc0ee2ffa86",
+          "bytes": 1925
+        },
+        {
+          "path": "artifacts/A.json",
+          "sha256": "3216f3fbf1a30e989e3b4ce3f4e5b41887d4b9de8a6ed8959c8dbe924e2e7471",
+          "bytes": 161
+        },
+        {
+          "path": "config/staging-B.json",
+          "sha256": "b13dc9901a5a4d54b5cdf046be6ea9a502aa33b8fc31cc243806c7880a4033a0",
+          "bytes": 260
+        },
+        {
+          "path": "history/staging-B-r1.json",
+          "sha256": "60142455932bb2bdcadc287a081709ea9704d05f571982c5dcc49836b29eea68",
+          "bytes": 261
+        },
+        {
+          "path": "release.json",
+          "sha256": "244ecf29f4b1c69e94127ec9d4ca83b6a739941cb416789a81f10816027b96d8",
+          "bytes": 742
+        },
+        {
+          "path": "evidence/checks.json",
+          "sha256": "e1c705f0655d0c82f5952403f58dc517a05b97374caf297df72c1a8ab190b9f6",
+          "bytes": 2410
+        }
+      ],
+      "runtime_catalog_sha256": "bf4dbd270ed5bd8c09ede9d7bf4b2a9104c7aaeb51088427bf765c9110bdc213",
+      "runtime_packages": 286,
+      "public_files": 525,
+      "public_bundle_sha256": "24890cc73c579a0177dd95724b4a5e31fdeddc05a3add1a5aca50965f68fa99d",
+      "private_oracle_excluded": true,
+      "model_effective": null,
+      "activation_observed": false,
+      "assertion_results": "not_run",
+      "reproduce": [
+        "npm",
+        "run",
+        "prepare:skill-pilot",
+        "--",
+        "--skill",
+        "deployment-operations",
+        "--case",
+        "1",
+        "--output",
+        "<new-isolated-directory>"
+      ]
+    },
+    {
+      "category": "mobile-desktop",
+      "case_id": "app-store-release:1",
+      "preparation_status": "prepared",
+      "task_outcome": "not_run",
+      "split": "development",
+      "mode": "workspace_fixture",
+      "corpus_case_sha256": "b4c87b447d0efd4ca5e84a37d58d3e7daf2f92a691965ab9f2b0f3aa3028dce2",
+      "prompt_sha256": "77488933751239394e58f40fa6b34c653bb8387d1eb8a436fee4babe6f9f937a",
+      "fixture_sha256": "35d5d2f5b6cb25459c5e9a6aaa6251433ca24e0a07cda58c309be7fadc83add3",
+      "fixture_manifest": [
+        {
+          "path": "CONTRACT.md",
+          "sha256": "923de637a5bf78d82196f30a4decd08a2136823b74723fac0b19d82713b83dd8",
+          "bytes": 2418
+        },
+        {
+          "path": "release-target.json",
+          "sha256": "00e52b6660aea0b7116d6a64becd2e4d479b96190f8c0f36b9f50c14311a3ab0",
+          "bytes": 1348
+        },
+        {
+          "path": "release-gates.json",
+          "sha256": "976b6748cadc7617a35e968574d7225c115b467ccb182ad890ec8ec1832da4df",
+          "bytes": 2115
+        },
+        {
+          "path": "build42-evidence.json",
+          "sha256": "37bd7a1bd86b779e7f04c158ddadf9185dc219501be9504babbc698ab978fe11",
+          "bytes": 2906
+        },
+        {
+          "path": "historical-evidence.json",
+          "sha256": "1edd2bb6f645b78949dbe4e39dcf4f32e734093ec67e41b08683c4e8553953fc",
+          "bytes": 1616
+        },
+        {
+          "path": "open-checks.json",
+          "sha256": "346f50009636c2a9fb5db8392bdf390591a763390e2471d79c62f49342437797",
+          "bytes": 1347
+        }
+      ],
+      "runtime_catalog_sha256": "bf4dbd270ed5bd8c09ede9d7bf4b2a9104c7aaeb51088427bf765c9110bdc213",
+      "runtime_packages": 286,
+      "public_files": 525,
+      "public_bundle_sha256": "ac9e7930b142a4a50eefcc3397d6c44161296c27bdac4ef184185fdfc8049f85",
+      "private_oracle_excluded": true,
+      "model_effective": null,
+      "activation_observed": false,
+      "assertion_results": "not_run",
+      "reproduce": [
+        "npm",
+        "run",
+        "prepare:skill-pilot",
+        "--",
+        "--skill",
+        "app-store-release",
+        "--case",
+        "1",
+        "--output",
+        "<new-isolated-directory>"
+      ]
+    },
+    {
+      "category": "documents-productivity",
+      "case_id": "spreadsheet-ops:1",
+      "preparation_status": "prepared",
+      "task_outcome": "not_run",
+      "split": "development",
+      "mode": "workspace_fixture",
+      "corpus_case_sha256": "547335f964ff5976f72b2c1308ea684821089c45fe1cfa3441cc7c2abceebcfa",
+      "prompt_sha256": "b81d2ce13c1bc5f8f90d5c9ddd07a1f6573d73243c8638f18a69feb8509853ce",
+      "fixture_sha256": "bf0809cba41819e89d993e134e21a3305da2de9863eff8fb58ac58fc1f0e070a",
+      "fixture_manifest": [
+        {
+          "path": "sales.csv",
+          "sha256": "0de8af7d96639ac2e1fa695675ecea5bba5c614988ffbee7887799968f2b1a9e",
+          "bytes": 73
+        }
+      ],
+      "runtime_catalog_sha256": "bf4dbd270ed5bd8c09ede9d7bf4b2a9104c7aaeb51088427bf765c9110bdc213",
+      "runtime_packages": 286,
+      "public_files": 520,
+      "public_bundle_sha256": "dde04aa795af325ffebbc2853dd1ca046bee31078030abac9cfbb796525e6613",
+      "private_oracle_excluded": true,
+      "model_effective": null,
+      "activation_observed": false,
+      "assertion_results": "not_run",
+      "reproduce": [
+        "npm",
+        "run",
+        "prepare:skill-pilot",
+        "--",
+        "--skill",
+        "spreadsheet-ops",
+        "--case",
+        "1",
+        "--output",
+        "<new-isolated-directory>"
+      ]
+    }
+  ],
+  "limitations": [
+    "Four priority category representatives only; this does not establish all 16 category task outcomes.",
+    "All cases are development data; no held-out or model trial ran.",
+    "Release evidence is authored fictional scenario data, not actual CI, staging, device or store verification.",
+    "Only data packaging and exact-string oracle exclusions were checked here. Host/tool isolation and manual semantic grading remain required.",
+    "Existing Codex comparison authorization is still pending; this record does not change its scope or authorize execution."
+  ]
+}

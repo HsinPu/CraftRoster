@@ -1,0 +1,1 @@
+{ "name": "equivalent-refactor-review-fixture", "version": "1.0.0", "private": true, "type": "commonjs", "scripts": { "test": "node test/display-name.test.js && node test/greeting.test.js" } }

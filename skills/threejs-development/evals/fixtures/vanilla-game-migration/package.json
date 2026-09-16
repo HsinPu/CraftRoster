@@ -1,0 +1,8 @@
+{
+  "name": "synthetic-vanilla-game-migration",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": { "test": "node test/game.test.cjs", "build": "node tools/build.cjs", "serve": "node tools/serve.cjs 0" },
+  "dependencies": { "three": "0.180.0", "react": "19.1.1", "react-dom": "19.1.1", "@react-three/fiber": "9.3.0" },
+  "devDependencies": { "esbuild": "0.25.9" }
+}

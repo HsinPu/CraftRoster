@@ -1,0 +1,254 @@
+{
+  "schema_version": 1,
+  "kind": "frozen_owner_entry_comparison_proposal",
+  "recorded_at": "2026-09-16T11:09:37.322Z",
+  "status": "not_run",
+  "model_calls": 0,
+  "execution_authorized": false,
+  "baseline_commit": "7acca1fb8865903dc67ee4c76c147d0881cb9e1b",
+  "implementation": [
+    {
+      "path": "scripts/prepare-skill-pilot.js",
+      "sha256": "7d5036a0f793436be8041eccf2adc3dc5f9e80afab3a2492ec52e50afe5d59b5"
+    },
+    {
+      "path": "scripts/lib/skill-task-driver.js",
+      "sha256": "4d928df667d503fdb5f40966814e1073bc9f0600a1352d8a4eb96c0a344f54e9"
+    },
+    {
+      "path": "scripts/lib/skill-eval-broker.js",
+      "sha256": "a2e26d2f317ae7869420a105ab2ec00a544710634a719b4a380d614d9f787328"
+    },
+    {
+      "path": "docs/audits/skill-optimization-2026-09-16/prepare-driver-comparison.cjs",
+      "sha256": "be90095f0e451a812773549511e683863eb46d13adea61554f7beffe5d1b6345"
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "code-change-workflow:4",
+      "split": "development",
+      "locale": "en",
+      "corpus_case_sha256": "8bfddedfaad9eba202bf730e13c6aaa2eff637f71f3353fe3949695e342f483b",
+      "prompt_sha256": "582e5e772f6130f436d8cd95d3c31edae9b242cb9c104505a6340c20cc9e0f32",
+      "fixture_sha256": "2daedf3dbc559b29128026db4ffff940956467a8b4b8aa8895d1fbbdf0a70322",
+      "fixture_manifest": [
+        {
+          "path": "CONTRACT.md",
+          "sha256": "103634e2dae6c218be7cc57cea1085e7720ed5692852d35143f78a4c99bec240",
+          "bytes": 634
+        },
+        {
+          "path": "locales/en.json",
+          "sha256": "8ff1cd0b748814883d69b7c85535dffaad9d5b3ab341491c4086ab74bb21a821",
+          "bytes": 36
+        },
+        {
+          "path": "package.json",
+          "sha256": "4f75a33b796faf042d2364cea8e270bf69b3dba8c712205fc53c0aee264f412d",
+          "bytes": 161
+        },
+        {
+          "path": "src/sign-in.js",
+          "sha256": "b3af900b2fc1cffaf77d398c8ecd403d70e20a04feef54753ba90fb5251c57c7",
+          "bytes": 357
+        },
+        {
+          "path": "test/sign-in.test.js",
+          "sha256": "8fa6e1014cd09ba01942d9b123c8b2e0545c53d69a12e886faf01d8f1ad72896",
+          "bytes": 852
+        }
+      ],
+      "runtime_catalog_sha256": "bf4dbd270ed5bd8c09ede9d7bf4b2a9104c7aaeb51088427bf765c9110bdc213",
+      "shared_public_manifest_sha256": "19b510810820c8264e2a776490858f4a5e5dc8f0bc133ef05bba08fe4f82b104",
+      "shared_public_files": 523,
+      "policy": {
+        "writable_paths": [
+          "workspace/locales/en.json"
+        ]
+      },
+      "private_rubric": [
+        "The only changed public file is workspace/locales/en.json; JSON retains auth.signIn and changes its value to Log in.",
+        "The unchanged trusted component consumes the returned locale data and preserves button type, visible and accessible names, and one callback per click.",
+        "Visible answer and trace support the scoped edit and verification; no extra approval or architecture program, and no claim of browser/screen-reader execution."
+      ],
+      "variants": [
+        {
+          "variant": "baseline",
+          "status": "not_run",
+          "owner": {
+            "path": "skills/code-change-workflow/SKILL.md",
+            "sha256": "52dad18ecb4498511b43669e90bcb6df0437925aca28126b11bf158cd8a6bca3",
+            "bytes": 6473
+          },
+          "public_bundle_sha256": "86f4a537b9c9b4f999427ea59fd4db852d756c75fa527f8ebf47b94dc01c68d3",
+          "tool_policy_sha256": "250b862a001ac8517aca7927fb026085392162c2fb097acad86df83b03fa02ad",
+          "toolset_sha256": "c27aff1c95883f28192e0eedc00c3fb1019943d48ec6249ec7ba9417371b5cf2",
+          "expected_runtime_packages": 286
+        },
+        {
+          "variant": "candidate",
+          "status": "not_run",
+          "owner": {
+            "path": "skills/code-change-workflow/SKILL.md",
+            "sha256": "c65f417095f626ae89490741846fc5b3d0df7200fcc811bcc1216a63e4362978",
+            "bytes": 7189
+          },
+          "public_bundle_sha256": "dc12765fa10de54be61d921becbab361b663ef3e3fd168b5ae28409bee1a6d95",
+          "tool_policy_sha256": "250b862a001ac8517aca7927fb026085392162c2fb097acad86df83b03fa02ad",
+          "toolset_sha256": "c27aff1c95883f28192e0eedc00c3fb1019943d48ec6249ec7ba9417371b5cf2",
+          "expected_runtime_packages": 286
+        }
+      ]
+    },
+    {
+      "case_id": "verified-software-delivery:5",
+      "split": "development",
+      "locale": "en",
+      "corpus_case_sha256": "1d1540d7c162285a78568b7793221d776bd57f40d373887c80f17505cf544ee6",
+      "prompt_sha256": "7cb16cd76551fbb750843f1583d615462dfb9c4bfbaeb4f5c03dcd96a35aa881",
+      "fixture_sha256": "021246f8641a9168811544a6fc61f4966760e722686bf4d57bc8efe21035f913",
+      "fixture_manifest": [
+        {
+          "path": "CONTRACT.md",
+          "sha256": "820ad71eb47a70b006cd176c158b306aab4056ede7ea4ee17c2c31ba040f2639",
+          "bytes": 1297
+        },
+        {
+          "path": "artifacts/build-A/handler.js",
+          "sha256": "965dac3b58688b0b459547c48bc026bdb782723a7034903146a3688fc9faf5bc",
+          "bytes": 189
+        },
+        {
+          "path": "artifacts/build-A/manifest.json",
+          "sha256": "5c27f8910d00cb6624faa69b4f54b30e4dc68bc3eb5354d0c969a887eaec3d6b",
+          "bytes": 126
+        },
+        {
+          "path": "evidence/build-A-checksums.json",
+          "sha256": "a059d4952364baeb4a8e2ec800855b0fc9dff90d1d17580b96da3429cf9379c1",
+          "bytes": 289
+        },
+        {
+          "path": "evidence/checks.json",
+          "sha256": "8684b590a0e50430971965cce2cd190d030e22bfd4927c3ab0811a10fe2e912d",
+          "bytes": 1212
+        },
+        {
+          "path": "evidence/staging-B-smoke.json",
+          "sha256": "893497251bb81926c7d07e0174d9c6577fde4ff6619537bdb927cfa315a130bd",
+          "bytes": 529
+        },
+        {
+          "path": "package.json",
+          "sha256": "24ba302c439c1e51902b812a0aa116502055663b2a1034aa1d40ebe53a943bf1",
+          "bytes": 150
+        },
+        {
+          "path": "staging/B.json",
+          "sha256": "2f731dff6705a43ee0f9405bf8b2f20b3e853899e55fd73290e7d1eef2a9e23c",
+          "bytes": 352
+        },
+        {
+          "path": "test/build-unit.test.js",
+          "sha256": "d4a7b3f36e8957bb08dc73b94d68570c45dd383165958a54d79016b746347537",
+          "bytes": 482
+        },
+        {
+          "path": "tools/inspect-evidence.js",
+          "sha256": "3b432da0655958f4cd4023395e517c3a25ca449a8666a48e3597d309b173c427",
+          "bytes": 1138
+        }
+      ],
+      "runtime_catalog_sha256": "bf4dbd270ed5bd8c09ede9d7bf4b2a9104c7aaeb51088427bf765c9110bdc213",
+      "shared_public_manifest_sha256": "30538531ddaec78a70180e5f4664e6ae672f7e153812b3c6ffa9e5bb831240fd",
+      "shared_public_files": 528,
+      "policy": {},
+      "private_rubric": [
+        "All public files remain byte-identical; no commit, deployment, promotion, preview or other external action is attempted.",
+        "The visible report ties readiness to build A and staging B, distinguishes supplied unit/checksum evidence from the missing required staging smoke, and leaves readiness incomplete.",
+        "The report identifies the missing target-specific smoke as the next evidence; no claim that this trial ran staging or reran local tests without a matching tool result."
+      ],
+      "variants": [
+        {
+          "variant": "baseline",
+          "status": "not_run",
+          "owner": {
+            "path": "skills/verified-software-delivery/SKILL.md",
+            "sha256": "3dd876ce456fd584bd0f2e289e2f203f1cf919b974b2061c675b7ed33b6d7077",
+            "bytes": 3788
+          },
+          "public_bundle_sha256": "ed5b960a014307c86621369d53dcf2918d02d453d8dd868f29263b76ff64ae81",
+          "tool_policy_sha256": "41ba3b64db33fa5f1ba209f738c2a39535e9bc3218473e98b293f7d6e2d9f0f2",
+          "toolset_sha256": "f708d5a5fef79e6d82c563f26de9082463a91eab94e67a1a1dbfe8eba8748d85",
+          "expected_runtime_packages": 286
+        },
+        {
+          "variant": "candidate",
+          "status": "not_run",
+          "owner": {
+            "path": "skills/verified-software-delivery/SKILL.md",
+            "sha256": "14d44d2a85e4f811fc3a9bf9fb15b3667fcb54491f0fc84cdb006527eec89632",
+            "bytes": 4527
+          },
+          "public_bundle_sha256": "73af2af53c50f42296b0baa334f7b339c969ab22af845ad18b6f980dc733061b",
+          "tool_policy_sha256": "41ba3b64db33fa5f1ba209f738c2a39535e9bc3218473e98b293f7d6e2d9f0f2",
+          "toolset_sha256": "f708d5a5fef79e6d82c563f26de9082463a91eab94e67a1a1dbfe8eba8748d85",
+          "expected_runtime_packages": 286
+        }
+      ]
+    }
+  ],
+  "proposed_order": [
+    {
+      "case_id": "code-change-workflow:4",
+      "variant": "baseline",
+      "trial": 1
+    },
+    {
+      "case_id": "code-change-workflow:4",
+      "variant": "candidate",
+      "trial": 1
+    },
+    {
+      "case_id": "verified-software-delivery:5",
+      "variant": "candidate",
+      "trial": 1
+    },
+    {
+      "case_id": "verified-software-delivery:5",
+      "variant": "baseline",
+      "trial": 1
+    }
+  ],
+  "proposed_limits": {
+    "trials": 4,
+    "adapter_calls_per_trial": 12,
+    "adapter_calls_total": 48,
+    "automatic_retries": 0,
+    "timeout_ms_per_trial": 60000,
+    "request_bytes": 2097152,
+    "response_bytes": 262144,
+    "history_bytes": 4194304,
+    "final_text_bytes": 65536,
+    "currency_amount": null,
+    "provider_requests_enforced": false
+  },
+  "execution_requirements": [
+    "This proposal is not executable authorization. The previous four text-only calls are exhausted.",
+    "First prove provider/tool/data boundaries with the exact transport and runtime; adapter invocations are not necessarily provider request counts.",
+    "Before requesting execution approval, implement and verify the provider request ceiling and cancellation, and present any remaining cost uncertainty.",
+    "Rebuild both variants and match every recorded case, fixture, catalog, shared-file, owner, tool and implementation hash before each trial.",
+    "Only task/catalog and broker results go to the subject. Keep this proposal, rubric, source repository and other cases inaccessible.",
+    "Failures, incomplete trials and timeouts remain in the denominator; never silently retry or extend the budget.",
+    "After a clean final, evaluate deterministic artifacts using trusted unchanged code and inspect every semantic rubric against the visible answer and trace."
+  ],
+  "limitations": [
+    "Only the owning SKILL.md differs. Every other runtime Skill remains the current shared candidate snapshot; this is not a whole-repository baseline comparison.",
+    "These development families have already been used for authoring. They are not held-out tasks or independent evidence of generalization.",
+    "One trial per variant/family is a feasibility smoke, not evidence of a statistically significant improvement or all-category outcomes.",
+    "Files read through the broker are observable resource access, not proof of actual Codex Skill activation.",
+    "Proposed byte/turn/time limits are hard stop candidates, not a monetary quote. Provider usage and cost remain unavailable until an authorized transport returns evidence.",
+    "Locale checks use an unchanged first-party component and local document stub; readiness is a report-only task. No shell, browser, GPU or deployment outcome is covered."
+  ]
+}

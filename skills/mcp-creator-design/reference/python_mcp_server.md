@@ -61,7 +61,7 @@ async def tool_function(params: InputModel) -> str:
 - 以 Pydantic model 做輸入驗證
 - 以 `@mcp.tool` 裝飾器註冊 tool
 
-**完整 SDK 文件請以 WebFetch 載入：**
+使用目前可用且已授權的文件擷取能力核對 SDK 文件；不要求特定工具名稱。下列 main README 是導航起點，應優先對照專案使用的 release/tag。遠端不可用時可查本地已安裝 SDK source，標明版本與未核對之處，繼續有證據支持的工作：
 `https://raw.githubusercontent.com/modelcontextprotocol/python-sdk/main/README.md`
 
 ## 伺服器命名規範（Server Naming Convention）

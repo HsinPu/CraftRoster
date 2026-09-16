@@ -1,0 +1,9 @@
+{
+  "targetId": "B",
+  "environment": "staging",
+  "revision": "B-r2",
+  "publicEndpoint": "https://staging-b.example.invalid",
+  "secretReferences": ["fixture-ref://orders/staging/database"],
+  "featureFlags": { "asyncReceipt": true },
+  "connected": false
+}

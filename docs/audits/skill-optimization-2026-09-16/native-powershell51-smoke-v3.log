@@ -1,0 +1,111 @@
+PASS PowerShell strict repository coordinate
+PASS PowerShell strict branch name
+PASS canonical cross-platform Skill digest fixture
+PASS canonical nested, binary, and non-ASCII Skill digest
+PASS required dependency diamond dry run
+PASS cross-category required dependencies in both project profiles
+PASS matching owned dependencies update
+PASS full dependency inventory remains deduplicated
+PASS explicit optional target installs only its own required closure
+PASS force on owner preserves unselected optional foreign files
+PASS foreign dependency blocks every project profile
+PASS prepare owned dependency
+PASS modified dependency blocks installation
+PASS explicit force resets modified dependency
+PASS required dependency cycle
+PASS unknown dependency
+PASS unknown dependency owner
+PASS optional unknown target
+PASS optional condition prohibited
+PASS unknown dependency kind
+PASS self dependency
+PASS duplicate dependency
+PASS malformed dependency row
+PASS extra dependency column
+PASS empty dependency condition
+PASS invalid dependency condition
+PASS invalid dependency header
+PASS missing dependency index refuses incomplete source
+PASS prepare alternate-root owned dependency
+PASS required dependency split roots refuse before writes
+PASS PowerShell dependency closure, references, conditional and optional selection, ownership, and placement
+PASS Skill category and name conflict
+PASS invalid Skill category
+PASS project Skill category dry run
+PASS project Skill category install
+PASS project Agent category install
+PASS PowerShell Skill and Agent category installs
+PASS project all Skills install
+PASS project all Agents install
+PASS project profile counts, ownership metadata, and adapter content
+PASS project Skill update
+PASS project Agent update
+PASS project Agent repair
+PASS Codex global Skill install
+PASS Codex global Skill update
+PASS Codex global Agent install
+PASS Codex global Agent update
+PASS Claude global Skill install
+PASS Claude global Skill update
+PASS Claude global Agent install
+PASS Claude global Agent update
+PASS Cursor global Skill install
+PASS Cursor global Skill update
+PASS Cursor global Agent install
+PASS Cursor global Agent update
+PASS VS Code alias global Skill install
+PASS VS Code alias global Skill update
+PASS VS Code alias global Agent install
+PASS VS Code alias global Agent update
+PASS Copilot global Skill install
+PASS Copilot global Skill update
+PASS Copilot global Agent install
+PASS Copilot global Agent update
+PASS OpenCode global Skill install
+PASS OpenCode global Skill update
+PASS OpenCode global Agent install
+PASS OpenCode global Agent update
+PASS global Skill and Agent install/update matrix
+PASS project Skill ownership collision
+PASS project Agent ownership collision
+PASS Skill ownership matrix baseline install
+PASS Skill ownership repo mismatch
+PASS Skill ownership repo case mismatch
+PASS Skill ownership component mismatch
+PASS Skill ownership component case mismatch
+PASS Skill ownership name mismatch
+PASS Skill ownership stored input alias target
+PASS Skill unverified missing content digest refusal
+PASS Skill legacy digest namespace migration
+PASS Skill legacy repository migration
+PASS Skill explicit repository disables transition
+PASS Skill malformed ownership metadata
+PASS Skill explicit force replacement
+PASS Skill local content drift refusal
+PASS Skill local drift force reset
+PASS Skill fault injection strict gate
+PASS Skill atomic rollback after backup
+PASS Skill final-check replacement preserves foreign backup
+PASS Skill destination race preserves newcomer
+PASS fresh Skill post-move failure cleans only transaction
+PASS Skill stage collision preserves newcomer
+PASS Skill digest, local drift refusal, force reset, and atomic rollback
+PASS legacy Skill schema local drift refusal
+PASS legacy Skill schema migration
+PASS Agent ownership matrix baseline install
+PASS Agent legacy repository and sidecar migration
+PASS Agent explicit repository disables transition
+PASS Agent transition after explicit repository refusal
+PASS Agent canonical repository legacy sidecar migration
+PASS Agent verified duplicate legacy sidecar cleanup
+PASS Agent ownership repo mismatch
+PASS Agent ownership repo case mismatch
+Agent ownership stored input alias target failed without the expected message 'ownership metadata does not match':
+¦ì©ó C:\Users\win10\Desktop\github\CraftRoster\scripts\smoke-install.ps1:185 ¦r¤¸:9
++         throw "$Label failed without the expected message '$ExpectedM ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Agent ownership...s not match':
+:String) [], RuntimeException
+    + FullyQualifiedErrorId : Agent ownership stored input alias target failed without the expected message 'ownership 
+    metadata does not match':
+ 

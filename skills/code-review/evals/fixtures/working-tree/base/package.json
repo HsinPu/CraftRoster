@@ -1,0 +1,1 @@
+{ "name": "working-tree-review-fixture", "version": "1.0.0", "private": true, "type": "commonjs", "scripts": { "test": "node test/stock.test.js && node test/order-service.test.js" } }

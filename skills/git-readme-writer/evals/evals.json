@@ -1,0 +1,19 @@
+{
+  "skill_name": "git-readme-writer",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Draft a README for the provided private Node CLI package. The only known invocation is node cli.js ./sample.log; its output is a JSON object counting levels. There is no release, screenshot, hosted demo, or confirmed license file. Return draft text without changing files.",
+      "fixture_root": "evals/fixtures",
+      "files": ["evals/fixtures/package.json"],
+      "expected_output": "A concise CLI README with verified Node requirement, local invocation, input/output explanation, test command, and explicit gaps.",
+      "assertions": ["Chooses a CLI structure and uses Node >=22 and node --test from the fixture.", "Does not invent an npm installation command for the private unpublished package.", "Does not fabricate badges, license, demo, screenshots, or repository URLs.", "Includes a grounded invocation and keeps unsupported setup details explicit."]
+    },
+    {
+      "id": 2,
+      "prompt": "The README's install section alone is outdated. Update its wording using the supplied command pnpm install --frozen-lockfile; preserve the product overview, license wording, and existing custom sections. Only return the replacement install paragraph.",
+      "expected_output": "A bounded replacement paragraph using the exact supplied command without redesigning the whole README.",
+      "assertions": ["Preserves the exact supplied installation command.", "Returns only the scoped paragraph and does not invent or replace other sections.", "Does not demand access to the CraftRoster repository README as a prerequisite."]
+    }
+  ]
+}

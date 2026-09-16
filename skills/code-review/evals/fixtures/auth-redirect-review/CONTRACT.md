@@ -1,0 +1,9 @@
+# Fictional authentication-redirect source review
+
+These files describe a fictional local application and two source views, `base` and `head`. They are ordinary files, not Git commits, a live deployment, real identities, or observations from a browser or authentication service. `shared` contains unchanged executable framework and middleware code, configuration, and synthetic sessions used by both views. No network listener, outbound request, dependency installation, or external system is involved.
+
+The callback may redirect an authenticated user only to the configured HTTPS origin and one of the configured application paths. The original callback returns to `/account`; the head callback accepts the request's `next` query value and otherwise uses `/account`. The caller must use the framework redirect API. Unsupported destinations return status 400 with no Location header. A missing or unknown synthetic session returns 401 before the callback. The configured deployment origin is authoritative; request Host or forwarded headers do not change it.
+
+Allowed destination pages are static account, order, and settings screens in this scenario. They do not reinterpret a query string as a second redirect. The current destination contract does not accept query strings, fragments, user-info, or non-HTTPS schemes. Inspect the actual parsing, origin/path checks, middleware ordering, and route before reaching a review conclusion.
+
+Run ordinary local checks with `node base/test/callback.test.js` and `node head/test/callback.test.js`. These call the in-memory dispatcher and do not launch a server. Review only the supplied source boundary; unavailable browser, real identity-provider, or deployment behavior remains a scope limit. No review verdict or grading answers are included, and no model evaluation has run.

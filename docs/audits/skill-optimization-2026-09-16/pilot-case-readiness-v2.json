@@ -1,0 +1,688 @@
+{
+  "schema_version": 1,
+  "kind": "manual_input_and_capability_readiness_audit",
+  "audited_at": "2026-09-16T08:33:48.002Z",
+  "split": "development",
+  "runtime_status": "not_run",
+  "model_calls": 0,
+  "counts": {
+    "self-contained-text": 15,
+    "fixture-present": 34,
+    "fixture-missing": 15,
+    "declared_files_cases": 23
+  },
+  "method": "Read every pilot output prompt, expected outcome, assertion and declared input. Distinguish self-contained planning from implementation; missing existing source is different from a greenfield task. Capabilities are requirements, not observed availability.",
+  "limitations": [
+    "All cases still require a controlled host, complete tool trace and appropriate private/semantic grading.",
+    "fixture-present means enough starting material or a greenfield brief, not completed implementation, tool availability or model success.",
+    "Local Git source views require trusted isolated setup before an actual working-tree review.",
+    "Browser/GPU measurements cannot be replaced by planning prose or asserted numbers.",
+    "Three.js case 9 assumes synthetic demonstration assets may be selected or generated; no customer dataset is certified.",
+    "New observations or corpus changes require this dated manual audit to be revisited; it is not an automatic readiness gate."
+  ],
+  "columns": [
+    "case_id",
+    "input_status",
+    "missing_inputs",
+    "required_capabilities"
+  ],
+  "rows": [
+    [
+      "solution-discovery:1",
+      "self-contained-text",
+      [],
+      []
+    ],
+    [
+      "solution-discovery:2",
+      "self-contained-text",
+      [],
+      []
+    ],
+    [
+      "solution-discovery:3",
+      "self-contained-text",
+      [],
+      []
+    ],
+    [
+      "solution-discovery:4",
+      "self-contained-text",
+      [],
+      []
+    ],
+    [
+      "solution-discovery:5",
+      "self-contained-text",
+      [],
+      []
+    ],
+    [
+      "solution-discovery:6",
+      "self-contained-text",
+      [],
+      []
+    ],
+    [
+      "spec-flow:1",
+      "fixture-present",
+      [],
+      []
+    ],
+    [
+      "spec-flow:2",
+      "self-contained-text",
+      [],
+      []
+    ],
+    [
+      "spec-flow:3",
+      "self-contained-text",
+      [],
+      []
+    ],
+    [
+      "spec-flow:4",
+      "self-contained-text",
+      [],
+      []
+    ],
+    [
+      "spec-flow:5",
+      "self-contained-text",
+      [],
+      []
+    ],
+    [
+      "spec-flow:6",
+      "self-contained-text",
+      [],
+      []
+    ],
+    [
+      "code-change-workflow:1",
+      "fixture-present",
+      [],
+      [
+        "workspace-read-write",
+        "isolated-node-tests"
+      ]
+    ],
+    [
+      "code-change-workflow:2",
+      "fixture-present",
+      [],
+      [
+        "workspace-read",
+        "stateful-fake-db",
+        "ordered-tool-trace"
+      ]
+    ],
+    [
+      "code-change-workflow:3",
+      "fixture-present",
+      [],
+      [
+        "workspace-read-write",
+        "isolated-node-tests"
+      ]
+    ],
+    [
+      "code-change-workflow:4",
+      "fixture-present",
+      [],
+      [
+        "workspace-read-write",
+        "isolated-node-tests"
+      ]
+    ],
+    [
+      "code-change-workflow:5",
+      "fixture-present",
+      [],
+      [
+        "workspace-read",
+        "stateful-fake-db",
+        "ordered-tool-trace"
+      ]
+    ],
+    [
+      "code-change-workflow:6",
+      "fixture-present",
+      [],
+      [
+        "workspace-read-write",
+        "isolated-node-tests"
+      ]
+    ],
+    [
+      "code-review:1",
+      "fixture-present",
+      [],
+      [
+        "trusted-git-fixture-setup",
+        "readonly-git-index-worktree-untracked",
+        "isolated-author-tests"
+      ]
+    ],
+    [
+      "code-review:2",
+      "fixture-present",
+      [],
+      [
+        "trusted-git-fixture-setup",
+        "readonly-base-head-review",
+        "isolated-author-tests"
+      ]
+    ],
+    [
+      "code-review:3",
+      "fixture-missing",
+      [
+        "redirect diff",
+        "caller route/middleware",
+        "allowlist 與 framework 版本／配置"
+      ],
+      [
+        "readonly-source-review",
+        "isolated-security-reproduction"
+      ]
+    ],
+    [
+      "code-review:4",
+      "fixture-missing",
+      [
+        "React checkout base/head",
+        "狀態、事件與請求處理程式",
+        "CSS 與既有測試"
+      ],
+      [
+        "readonly-source-review",
+        "browser-if-runtime-findings-are-claimed"
+      ]
+    ],
+    [
+      "code-review:5",
+      "fixture-missing",
+      [
+        "migration scripts/schema",
+        "old/new readers-writers",
+        "deploy order、backfill、rollback 契約與測試資料"
+      ],
+      [
+        "readonly-source-review",
+        "isolated-migration-or-fake-db-tests"
+      ]
+    ],
+    [
+      "code-review:6",
+      "fixture-present",
+      [],
+      []
+    ],
+    [
+      "code-review:7",
+      "fixture-present",
+      [],
+      [
+        "readonly-public-snapshot-read",
+        "optional-frozen-pr-adapter"
+      ]
+    ],
+    [
+      "code-review:8",
+      "fixture-missing",
+      [
+        "六則 review comments 與 IDs",
+        "對應 diff/source/contracts",
+        "可執行回歸測試"
+      ],
+      [
+        "workspace-read-write",
+        "isolated-tests",
+        "independent-rereview-channel"
+      ]
+    ],
+    [
+      "code-review:9",
+      "fixture-missing",
+      [
+        "canonical manifest before/after",
+        "generated dependency artifact 與生成關係",
+        "passing package-test evidence"
+      ],
+      [
+        "readonly-source-review",
+        "package-generator-or-recorded-reproducibility-evidence"
+      ]
+    ],
+    [
+      "code-review:10",
+      "fixture-missing",
+      [
+        "移除 guard 的 diff",
+        "endpoint/middleware/framework protection",
+        "角色與 resource ownership 契約",
+        "deployment context"
+      ],
+      [
+        "readonly-source-review",
+        "isolated-authorization-negative-tests"
+      ]
+    ],
+    [
+      "code-review:11",
+      "fixture-missing",
+      [
+        "normalization removal diff",
+        "相關歷史 commit",
+        "consumer contract 與代表輸入",
+        "目前 tests"
+      ],
+      [
+        "readonly-git-history",
+        "isolated-base-head-tests"
+      ]
+    ],
+    [
+      "code-review:12",
+      "fixture-missing",
+      [
+        "retry/idempotency implementation",
+        "timeout/persistence 行為",
+        "新測試與 no-duplicate acceptance contract"
+      ],
+      [
+        "readonly-source-review",
+        "stateful-payment-stub",
+        "deterministic-timeout-reproduction"
+      ]
+    ],
+    [
+      "code-review:13",
+      "fixture-missing",
+      [
+        "shared API schema/diff",
+        "generated clients 與 generator 關係",
+        "web implementation",
+        "iOS 範圍及不可用 runtime 說明"
+      ],
+      [
+        "readonly-source-review",
+        "available-platform-tests"
+      ]
+    ],
+    [
+      "code-review:14",
+      "fixture-present",
+      [],
+      [
+        "readonly-public-snapshot-read",
+        "optional-frozen-pr-adapter"
+      ]
+    ],
+    [
+      "verified-software-delivery:1",
+      "fixture-missing",
+      [
+        "services 與 breaking API diff/spec",
+        "consumer compatibility fixtures",
+        "existing happy-path test",
+        "rollback materials",
+        "確切 commit/deployment target"
+      ],
+      [
+        "workspace-read-write",
+        "multi-service-tests",
+        "independent-review",
+        "isolated-git",
+        "deployment-stub"
+      ]
+    ],
+    [
+      "verified-software-delivery:2",
+      "fixture-present",
+      [],
+      [
+        "workspace-read",
+        "isolated-node-tests",
+        "source-hash-verification"
+      ]
+    ],
+    [
+      "verified-software-delivery:3",
+      "self-contained-text",
+      [],
+      []
+    ],
+    [
+      "verified-software-delivery:4",
+      "fixture-present",
+      [],
+      [
+        "workspace-read-write",
+        "isolated-node-tests",
+        "source-hash-verification"
+      ]
+    ],
+    [
+      "verified-software-delivery:5",
+      "fixture-present",
+      [],
+      [
+        "readonly-public-evidence-read",
+        "source-hash-verification"
+      ]
+    ],
+    [
+      "verified-software-delivery:6",
+      "fixture-present",
+      [],
+      [
+        "workspace-read",
+        "isolated-node-tests",
+        "revision-scoped-hash-verification"
+      ]
+    ],
+    [
+      "web-page-design-to-code:1",
+      "fixture-present",
+      [],
+      [
+        "separate-preview-artifact-write",
+        "desktop-mobile-preview-rendering"
+      ]
+    ],
+    [
+      "web-page-design-to-code:2",
+      "fixture-present",
+      [],
+      [
+        "workspace-read-write",
+        "browser-dom-layout-interaction-or-explicit-unverified-result"
+      ]
+    ],
+    [
+      "web-page-design-to-code:3",
+      "fixture-present",
+      [],
+      [
+        "workspace-read-write",
+        "browser-dom-layout-interaction-or-explicit-unverified-result"
+      ]
+    ],
+    [
+      "web-page-design-to-code:4",
+      "fixture-present",
+      [],
+      [
+        "readonly-public-file-read"
+      ]
+    ],
+    [
+      "web-page-design-to-code:5",
+      "fixture-present",
+      [],
+      [
+        "readonly-public-file-read"
+      ]
+    ],
+    [
+      "web-page-design-to-code:6",
+      "self-contained-text",
+      [],
+      []
+    ],
+    [
+      "web-page-design-to-code:7",
+      "self-contained-text",
+      [],
+      []
+    ],
+    [
+      "javascript-development:1",
+      "fixture-present",
+      [],
+      [
+        "artifact-write",
+        "pinned-threejs-runtime",
+        "local-model-asset-generation-or-staging",
+        "browser-webgl",
+        "loading-failure-and-restart-tests"
+      ]
+    ],
+    [
+      "javascript-development:2",
+      "fixture-present",
+      [],
+      [
+        "workspace-read-write",
+        "isolated-node-tests"
+      ]
+    ],
+    [
+      "javascript-development:3",
+      "fixture-present",
+      [],
+      [
+        "artifact-write",
+        "browser-canvas2d-verification"
+      ]
+    ],
+    [
+      "javascript-development:4",
+      "fixture-present",
+      [],
+      [
+        "code-example-generation"
+      ]
+    ],
+    [
+      "javascript-development:5",
+      "self-contained-text",
+      [],
+      []
+    ],
+    [
+      "javascript-development:6",
+      "fixture-present",
+      [],
+      [
+        "workspace-read-write",
+        "isolated-node-tests"
+      ]
+    ],
+    [
+      "threejs-development:1",
+      "fixture-present",
+      [],
+      [
+        "artifact-write",
+        "pinned-react-three-fiber-runtime",
+        "glb-asset-generation-or-staging",
+        "browser-webgl",
+        "webxr-or-explicit-support-boundary",
+        "performance-measurement",
+        "visual-regression",
+        "cdn-deployment-stub"
+      ]
+    ],
+    [
+      "threejs-development:2",
+      "fixture-missing",
+      [
+        "現有 GLB viewer 與依賴版本",
+        "route mount/unmount 程式",
+        "有效／損壞 asset fixtures",
+        "可重現記憶體與 shader 問題的場景"
+      ],
+      [
+        "workspace-read-write",
+        "browser-webgl",
+        "gpu-resource-and-timing-measurement",
+        "repeatable-route-transitions"
+      ]
+    ],
+    [
+      "threejs-development:3",
+      "fixture-present",
+      [],
+      [
+        "artifact-write",
+        "pinned-threejs-runtime",
+        "browser-gpu",
+        "deterministic-camera-and-seed-sweeps",
+        "rendering-performance-and-memory-measurement"
+      ]
+    ],
+    [
+      "threejs-development:4",
+      "fixture-missing",
+      [
+        "現有 vanilla game",
+        "目前依賴版本",
+        "行為／資源 ownership baseline",
+        "可對照的 routes/assets/tests"
+      ],
+      [
+        "workspace-read-write",
+        "react-three-fiber-runtime",
+        "browser-webgl",
+        "mount-unmount-and-frame-loop-tests"
+      ]
+    ],
+    [
+      "threejs-development:5",
+      "fixture-missing",
+      [
+        "installed Three.js/package evidence",
+        "現有 renderer 與實際 feature usage",
+        "support matrix 與 baseline"
+      ],
+      [
+        "workspace-read-write",
+        "version-matched-documentation",
+        "webgl-webgpu-capability-matrix",
+        "postprocessing-readback-xr-tests-or-explicit-unsupported-results"
+      ]
+    ],
+    [
+      "threejs-development:6",
+      "fixture-missing",
+      [
+        "pinned upstream 各路徑 license／third-party notices",
+        "既有批准的 reference/import scope 與 provenance evidence"
+      ],
+      [
+        "readonly-pinned-source-evidence"
+      ]
+    ],
+    [
+      "threejs-development:7",
+      "fixture-present",
+      [],
+      [
+        "artifact-write",
+        "pinned-vue-tresjs-runtime",
+        "browser-offscreen-canvas-workers",
+        "ssr-build",
+        "glb-roundtrip-tests",
+        "persistence-and-remount-tests"
+      ]
+    ],
+    [
+      "threejs-development:8",
+      "fixture-present",
+      [],
+      [
+        "artifact-write",
+        "seeded-character-and-level-generation",
+        "browser-gpu-workers",
+        "physics-navigation-animation-runtime",
+        "web-audio",
+        "density-and-frame-rate-measurement"
+      ]
+    ],
+    [
+      "threejs-development:9",
+      "fixture-present",
+      [],
+      [
+        "artifact-write",
+        "controlled-ifc-pointcloud-splat-sample-generation-or-staging",
+        "format-decoders",
+        "browser-gpu-workers",
+        "measurement-reference-checks",
+        "semantic-accessibility-tests",
+        "streaming-and-memory-measurement"
+      ]
+    ],
+    [
+      "threejs-development:10",
+      "fixture-missing",
+      [
+        "現有 configurator 與舊版依賴",
+        "saved-design schema／代表存檔",
+        "模型／材質／upholstery inputs",
+        "mobile raster 與輸出 baseline"
+      ],
+      [
+        "workspace-read-write",
+        "version-migration-tooling",
+        "browser-gpu",
+        "csg-and-deformable-runtime",
+        "path-tracing",
+        "deterministic-media-capture",
+        "saved-design-compatibility-tests"
+      ]
+    ],
+    [
+      "threejs-development:11",
+      "fixture-present",
+      [],
+      [
+        "artifact-write",
+        "pinned-threejs-runtime",
+        "browser-webgl",
+        "resize-keyboard-reduced-motion-cleanup-tests"
+      ]
+    ],
+    [
+      "threejs-development:12",
+      "fixture-present",
+      [],
+      [
+        "workspace-read-write",
+        "focused-ui-verification"
+      ]
+    ],
+    [
+      "threejs-development:13",
+      "fixture-present",
+      [],
+      [
+        "artifact-write",
+        "browser-canvas2d-verification"
+      ]
+    ]
+  ],
+  "corpus_bound_at": "2026-09-16T08:33:48.002Z",
+  "digest_algorithm": "sha256-bytes",
+  "corpus_sha256": {
+    "skills/solution-discovery/evals/evals.json": "62801aed3b9daf7da363064ff158265b51acb0128e5d2e0a04aa4194e222dfcb",
+    "skills/spec-flow/evals/evals.json": "a3a776cb8ccb8da95e581486b11fbc9e892c536e0ca099d7a7e148fe00965a7c",
+    "skills/code-change-workflow/evals/evals.json": "6ca0e4d9bc6a93e6e431bec3f0d8b5d7f0bb50a214ee006ed35cb1f131fb15a4",
+    "skills/code-review/evals/evals.json": "d7494f54f9ad159bd79244d1cf04130a78d0dd355566a691f1fd7fb5781f946a",
+    "skills/verified-software-delivery/evals/evals.json": "350820b9d2f6b5557bd89dca964d444b21f66fde3b4a760c9a2ddc1e17c40286",
+    "skills/web-page-design-to-code/evals/evals.json": "81ff19ba8fe95e7ac57db30868897415f9f947093a5208b5192ae90cfbfda192",
+    "skills/javascript-development/evals/evals.json": "5bc21763494a19fb51e218c9f7ffd7ecb4884a19994a6b9d8c720bb370106d43",
+    "skills/threejs-development/evals/evals.json": "8e7b8c68108983991225312c7144070e3e6762c0a241cb7dd1ef91e1be08897f"
+  },
+  "grading_followup": "Three.js cases 1, 3, 7, 8 and 9 were corrected after this input audit to require implementation and observed evidence. Their input classifications are unchanged; the hashes here include that grading update.",
+  "supersedes": "pilot-case-readiness.json",
+  "update_scope": "Added declared public sources for spec-flow:1 and threejs-development:12, verified bundling, and separately observed the authored footer fixture in a browser. Other classifications and capability requirements retain the earlier manual audit.",
+  "related_author_evidence": [
+    "spec-footer-preparation-check.json",
+    "footer-browser-check.json"
+  ]
+}

@@ -3,13 +3,24 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "Write a Python program that reads a JSON configuration file, validates two required fields, and prints a concise summary. Add a focused test and keep it compatible with the Python version already declared by the project.",
-      "expected_output": "A repository-aware Python implementation that inspects the supported runtime and existing layout, uses python-development as the implementation baseline, preserves explicit validation and error behavior, and adds the smallest focused test.",
+      "prompt": "Write a Python program that reads a JSON configuration file, validates two required fields, and prints a concise summary. Add a focused test and keep it compatible with the Python version already declared by the project. The supplied config-summary project starts at CONTRACT.md and pyproject.toml (under workspace/ in a prepared bundle). Follow its service_name/workers and CLI contract, add src/config_tools/summary.py and a focused unittest, and preserve the existing label utility and test. Use only the standard library; no package installation or external services are needed.",
+      "expected_output": "A repository-aware Python implementation that inspects the declared Python >=3.12 runtime and existing src/unittest layout, uses python-development as the implementation baseline, adds the requested runnable program and focused test, and implements the supplied two-field normalization, validation, stdout/stderr, and exit-code contract. It reports which tests actually ran and any unavailable runtime honestly; a plan or unexecuted test claim alone does not complete the implementation task.",
       "assertions": [
-        "The response treats the request as Python implementation work even though no framework or specialist domain is named.",
-        "It inspects or asks for the supported Python version, project layout, and existing test conventions before choosing structure or dependencies.",
-        "It does not replace Python-specific decisions with generic coding advice or another language.",
+        "The response treats the request as Python implementation work even though no framework or specialist domain is named, adding the requested program and focused test rather than only a plan.",
+        "It inspects the supplied Python version, project layout, and unittest conventions before choosing structure, keeps the existing utility/test intact, and introduces no third-party dependency.",
+        "It does not replace Python-specific decisions with generic coding advice or another language; the program validates service_name and workers and follows the declared summary/error/exit contract, with focused verification and honest test-execution reporting.",
         "It does not load unrelated Python specialists merely because they are available."
+      ],
+      "fixture_root": "evals/fixtures/config-summary",
+      "files": [
+        "evals/fixtures/config-summary/CONTRACT.md",
+        "evals/fixtures/config-summary/pyproject.toml",
+        "evals/fixtures/config-summary/src/config_tools/__init__.py",
+        "evals/fixtures/config-summary/src/config_tools/labels.py",
+        "evals/fixtures/config-summary/tests/test_labels.py",
+        "evals/fixtures/config-summary/examples/valid.json",
+        "evals/fixtures/config-summary/examples/invalid-cases.json",
+        "evals/fixtures/config-summary/examples/malformed.json"
       ]
     },
     {
@@ -87,6 +98,16 @@
         "It does not select python-concurrency-patterns solely because asyncio and a timeout are mentioned.",
         "It selects python-testing-engineering for the deterministic pytest regression test and python-development for the confirmed production-code change.",
         "It reproduces and isolates the timeout before proposing a fix, then verifies the original failing path."
+      ]
+    },
+    {
+      "id": 9,
+      "prompt": "This monorepo contains a Python backend. Fix only web/Footer.jsx and footer.css; the affected UI has no Python API, runtime, or build dependency.",
+      "expected_output": "The unrelated backend does not activate Python guidance.",
+      "assertions": [
+        "It keeps the work within the affected frontend files.",
+        "It does not load python-development or Python specialists solely because the repository contains Python.",
+        "It verifies the requested UI behavior without inventing backend changes."
       ]
     }
   ]

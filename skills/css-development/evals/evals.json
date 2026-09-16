@@ -12,6 +12,16 @@
         "Projected labels, CSS2D or CSS3D behavior, and occlusion are routed to threejs-ui-overlays when required.",
         "Verification checks viewport changes, zoom, touch targets, keyboard focus, reduced motion, DOM-to-canvas interaction, and browser rendering."
       ]
+    },
+    {
+      "id": 2,
+      "prompt": "A page contains a Three.js hero, but this task only changes footer padding to the existing spacing token. The footer does not affect canvas sizing, overlays, scene input, or stacking.",
+      "expected_output": "A bounded CSS and frontend change that does not activate the 3D integration gate.",
+      "assertions": [
+        "It does not load threejs-development merely because the page contains a scene.",
+        "It preserves scene and renderer behavior.",
+        "It checks the affected footer layout with proportionate UI evidence."
+      ]
     }
   ]
 }

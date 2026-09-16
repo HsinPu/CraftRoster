@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "kind": "normalization-history",
+  "initialBranch": "fixture-review",
+  "identity": { "name": "Fixture Author", "email": "fixture@example.invalid" },
+  "commitTimestamp": "2026-09-16T00:00:00+00:00",
+  "publicTests": ["test/sku.test.js", "test/partner-import.test.js"],
+  "seed": {
+    "message": "Add partner catalogue importer",
+    "files": [
+      { "source": "shared/AGENTS.md", "destination": "AGENTS.md" },
+      { "source": "shared/README.md", "destination": "README.md" },
+      { "source": "shared/package.json", "destination": "package.json" },
+      { "source": "shared/contracts/partner-feed.md", "destination": "contracts/partner-feed.md" },
+      { "source": "shared/fixtures/partner-row.json", "destination": "fixtures/partner-row.json" },
+      { "source": "shared/src/catalog.js", "destination": "src/catalog.js" },
+      { "source": "shared/src/partner-import.js", "destination": "src/partner-import.js" },
+      { "source": "head/src/normalize-sku.js", "destination": "src/normalize-sku.js" },
+      { "source": "shared/test/sku.test.js", "destination": "test/sku.test.js" },
+      { "source": "shared/test/partner-import.test.js", "destination": "test/partner-import.test.js" }
+    ]
+  },
+  "normalization": {
+    "message": "Preserve older partner CSV compatibility after import incident",
+    "files": [
+      { "source": "base/src/normalize-sku.js", "destination": "src/normalize-sku.js" },
+      { "source": "history/partner-import-history.md", "destination": "docs/partner-import-history.md" }
+    ]
+  },
+  "head": {
+    "message": "Remove apparently redundant SKU normalization",
+    "files": [{ "source": "head/src/normalize-sku.js", "destination": "src/normalize-sku.js" }]
+  }
+}

@@ -11,11 +11,32 @@
         "Every reported finding contains a precise location, reachable failure scenario, impact, focused remediation direction, and confidence.",
         "Style preferences and theoretical risks are omitted or clearly separated from actionable defects.",
         "The response remains read-only and ends with block, needs follow-up, or no actionable findings."
+      ],
+      "locale": "en",
+      "fixture_root": "evals/fixtures/working-tree",
+      "files": [
+        "evals/fixtures/working-tree/CONTRACT.md",
+        "evals/fixtures/working-tree/base/AGENTS.md",
+        "evals/fixtures/working-tree/base/README.md",
+        "evals/fixtures/working-tree/base/REVIEW_CONTEXT.md",
+        "evals/fixtures/working-tree/base/notes/team-schedule.md",
+        "evals/fixtures/working-tree/base/package.json",
+        "evals/fixtures/working-tree/base/src/order-service.js",
+        "evals/fixtures/working-tree/base/src/stock.js",
+        "evals/fixtures/working-tree/base/test/order-service.test.js",
+        "evals/fixtures/working-tree/base/test/stock.test.js",
+        "evals/fixtures/working-tree/evidence/author-verification.json",
+        "evals/fixtures/working-tree/fixture-recipe.json",
+        "evals/fixtures/working-tree/index/src/stock.js",
+        "evals/fixtures/working-tree/new/fixtures/order.json",
+        "evals/fixtures/working-tree/new/scripts/preview-order.js",
+        "evals/fixtures/working-tree/worktree/notes/team-schedule.md",
+        "evals/fixtures/working-tree/worktree/src/stock.js"
       ]
     },
     {
       "id": 2,
-      "prompt": "Review this small validated refactor. The tests and behavior are unchanged; if you cannot find a real defect, say so instead of inventing suggestions.",
+      "prompt": "審查這個已驗證的小型重構。測試與行為皆未改變；若找不到真正的缺陷，請直接說明，不要憑空提出建議。",
       "expected_output": "A concise review that checks the affected contract and evidence, explicitly reports no actionable findings when none qualify, and identifies only material verification limits.",
       "assertions": [
         "The response does not manufacture a finding merely to make the review appear useful.",
@@ -23,6 +44,21 @@
         "Cosmetic preferences, generic best practices, and speculative future risks are not reported as defects.",
         "Any unavailable runtime path or missing evidence is listed as a verification gap rather than a confirmed issue.",
         "The final verdict is no actionable findings when no concrete defect is supported."
+      ],
+      "locale": "zh-TW",
+      "fixture_root": "evals/fixtures/equivalent-refactor",
+      "files": [
+        "evals/fixtures/equivalent-refactor/CONTRACT.md",
+        "evals/fixtures/equivalent-refactor/base/AGENTS.md",
+        "evals/fixtures/equivalent-refactor/base/README.md",
+        "evals/fixtures/equivalent-refactor/base/package.json",
+        "evals/fixtures/equivalent-refactor/base/src/display-name.js",
+        "evals/fixtures/equivalent-refactor/base/src/greeting.js",
+        "evals/fixtures/equivalent-refactor/base/test/display-name.test.js",
+        "evals/fixtures/equivalent-refactor/base/test/greeting.test.js",
+        "evals/fixtures/equivalent-refactor/evidence/author-verification.json",
+        "evals/fixtures/equivalent-refactor/fixture-recipe.json",
+        "evals/fixtures/equivalent-refactor/head/src/display-name.js"
       ]
     },
     {
@@ -35,6 +71,22 @@
         "A medium-confidence suspicion is placed under needs verification rather than reported as a confirmed blocker.",
         "Any confirmed finding explains attacker outcome, affected trust boundary, evidence path, impact, and confidence.",
         "The verdict follows verified exploitability and impact instead of treating every security-related pattern as Critical."
+      ],
+      "locale": "en",
+      "fixture_root": "evals/fixtures/auth-redirect-review",
+      "files": [
+        "evals/fixtures/auth-redirect-review/CONTRACT.md",
+        "evals/fixtures/auth-redirect-review/base/src/app.js",
+        "evals/fixtures/auth-redirect-review/base/src/callback.js",
+        "evals/fixtures/auth-redirect-review/base/test/callback.test.js",
+        "evals/fixtures/auth-redirect-review/head/src/app.js",
+        "evals/fixtures/auth-redirect-review/head/src/callback.js",
+        "evals/fixtures/auth-redirect-review/head/test/callback.test.js",
+        "evals/fixtures/auth-redirect-review/package.json",
+        "evals/fixtures/auth-redirect-review/scenario.json",
+        "evals/fixtures/auth-redirect-review/shared/deployment.json",
+        "evals/fixtures/auth-redirect-review/shared/framework.js",
+        "evals/fixtures/auth-redirect-review/shared/sessions.json"
       ]
     },
     {
@@ -47,6 +99,26 @@
         "Findings that depend on runtime layout or interaction require browser evidence or are disclosed as unverified.",
         "Frontend findings return to the common evidence, severity, deduplication, and verdict contract.",
         "Missing browser or E2E coverage is reported as a test gap unless a concrete regression is demonstrated."
+      ],
+      "locale": "en",
+      "fixture_root": "evals/fixtures/react-checkout-review",
+      "files": [
+        "evals/fixtures/react-checkout-review/CONTRACT.md",
+        "evals/fixtures/react-checkout-review/base/Checkout.jsx",
+        "evals/fixtures/react-checkout-review/base/checkout.css",
+        "evals/fixtures/react-checkout-review/base/controller.cjs",
+        "evals/fixtures/react-checkout-review/base/main.jsx",
+        "evals/fixtures/react-checkout-review/head/Checkout.jsx",
+        "evals/fixtures/react-checkout-review/head/checkout.css",
+        "evals/fixtures/react-checkout-review/head/controller.cjs",
+        "evals/fixtures/react-checkout-review/head/main.jsx",
+        "evals/fixtures/react-checkout-review/package-lock.json",
+        "evals/fixtures/react-checkout-review/package.json",
+        "evals/fixtures/react-checkout-review/scenario.json",
+        "evals/fixtures/react-checkout-review/shared/fake-quotes.cjs",
+        "evals/fixtures/react-checkout-review/shared/test/controller.test.cjs",
+        "evals/fixtures/react-checkout-review/tools/build.cjs",
+        "evals/fixtures/react-checkout-review/tools/serve.cjs"
       ]
     },
     {
@@ -59,11 +131,29 @@
         "Public API, schema, serialization, and deployment compatibility are traced through known producers and consumers.",
         "A finding names the exact rollout sequence or data state that fails rather than stating that migrations are generally risky.",
         "Unverified production scale or operational assumptions remain verification gaps and are not promoted into defects."
+      ],
+      "locale": "en",
+      "fixture_root": "evals/fixtures/mixed-version-migration",
+      "files": [
+        "evals/fixtures/mixed-version-migration/CONTRACT.md",
+        "evals/fixtures/mixed-version-migration/base/down.sql",
+        "evals/fixtures/mixed-version-migration/base/up.sql",
+        "evals/fixtures/mixed-version-migration/head/down.sql",
+        "evals/fixtures/mixed-version-migration/head/up.sql",
+        "evals/fixtures/mixed-version-migration/package.json",
+        "evals/fixtures/mixed-version-migration/shared/app-v1.cjs",
+        "evals/fixtures/mixed-version-migration/shared/app-v2.cjs",
+        "evals/fixtures/mixed-version-migration/shared/contract.json",
+        "evals/fixtures/mixed-version-migration/shared/deploy-plan.json",
+        "evals/fixtures/mixed-version-migration/shared/initial.sql",
+        "evals/fixtures/mixed-version-migration/shared/lab.cjs",
+        "evals/fixtures/mixed-version-migration/shared/serializer.cjs",
+        "evals/fixtures/mixed-version-migration/test/migration.test.cjs"
       ]
     },
     {
       "id": 6,
-      "prompt": "Review this pasted asynchronous JavaScript function for bugs. You do not have its callers, package versions, configuration, tests, or repository.",
+      "prompt": "請檢查貼上的 async JavaScript function 有沒有 bug。你目前沒有它的 callers、package versions、configuration、tests 或 repository。\n\nasync function fetchProfile(fetchImpl, userId) {\n  const response = await fetchImpl(\"/profiles/\" + encodeURIComponent(userId));\n  if (!response.ok) throw new Error(\"Profile request failed\");\n  return response.json();\n}",
       "expected_output": "A bounded snippet review that analyzes what the supplied code proves, loads JavaScript guidance when useful, avoids invented repository context, and states which conclusions require callers or runtime evidence.",
       "assertions": [
         "The response treats the pasted snippet as the full authorized scope and uses a supplied symbol, quoted expression, or clearly labeled snippet-relative location instead of inventing a repository path.",
@@ -71,7 +161,8 @@
         "JavaScript async, cancellation, error, cleanup, and concurrency behavior is checked when relevant.",
         "Speculative integration concerns are listed as questions or scope limitations instead of confirmed findings.",
         "The output still uses concrete failure scenarios, impact, direction, confidence, and a clear verdict."
-      ]
+      ],
+      "locale": "mixed-zh-TW-en"
     },
     {
       "id": 7,
@@ -83,6 +174,12 @@
         "The response does not post comments, approve, request changes, or mutate the pull request.",
         "Failing checks are investigated and correlated with the changed behavior instead of merely repeated.",
         "Findings remain precise, deduplicated, confidence-rated, and ordered by severity."
+      ],
+      "locale": "en",
+      "fixture_root": "evals/fixtures/pull-request-review",
+      "files": [
+        "evals/fixtures/pull-request-review/CONTRACT.md",
+        "evals/fixtures/pull-request-review/github-snapshot.json"
       ]
     },
     {
@@ -95,6 +192,23 @@
         "The original code-review role is not used to both author and independently approve its own fixes.",
         "Accepted fixes require focused implementation and regression evidence before re-review.",
         "The handoff preserves finding identity, resolution status, remaining uncertainty, and an independent re-review step."
+      ],
+      "locale": "en",
+      "fixture_root": "evals/fixtures/incoming-review-comments",
+      "files": [
+        "evals/fixtures/incoming-review-comments/CONTRACT.md",
+        "evals/fixtures/incoming-review-comments/README.md",
+        "evals/fixtures/incoming-review-comments/package.json",
+        "evals/fixtures/incoming-review-comments/policy/receipt-retention.json",
+        "evals/fixtures/incoming-review-comments/review-baseline.json",
+        "evals/fixtures/incoming-review-comments/review-comments.json",
+        "evals/fixtures/incoming-review-comments/runtime-context.json",
+        "evals/fixtures/incoming-review-comments/scenario.json",
+        "evals/fixtures/incoming-review-comments/src/booking-service.js",
+        "evals/fixtures/incoming-review-comments/src/checkout.js",
+        "evals/fixtures/incoming-review-comments/src/render-receipt.js",
+        "evals/fixtures/incoming-review-comments/test/booking.test.js",
+        "evals/fixtures/incoming-review-comments/test/checkout.test.js"
       ]
     },
     {
@@ -107,6 +221,23 @@
         "Packaging, dependency, compatibility, and reproducibility effects are checked where relevant.",
         "Passing tests inform confidence but do not replace review of the changed package contract.",
         "The coverage ledger marks the manifest as reviewed and the generated artifact as derived."
+      ],
+      "locale": "en",
+      "fixture_root": "evals/fixtures/generated-dependency-review",
+      "files": [
+        "evals/fixtures/generated-dependency-review/CONTRACT.md",
+        "evals/fixtures/generated-dependency-review/base/dependency-graph.jsonl",
+        "evals/fixtures/generated-dependency-review/base/package.fixture.json",
+        "evals/fixtures/generated-dependency-review/contracts/package-api.md",
+        "evals/fixtures/generated-dependency-review/head/dependency-graph.jsonl",
+        "evals/fixtures/generated-dependency-review/head/package.fixture.json",
+        "evals/fixtures/generated-dependency-review/registry/depot-seed.json",
+        "evals/fixtures/generated-dependency-review/registry/index.json",
+        "evals/fixtures/generated-dependency-review/registry/sources/depot-catalog-1.4.1.cjs",
+        "evals/fixtures/generated-dependency-review/registry/sources/depot-catalog-1.4.2.cjs",
+        "evals/fixtures/generated-dependency-review/shared/src/catalog-client.cjs",
+        "evals/fixtures/generated-dependency-review/shared/test/package.test.cjs",
+        "evals/fixtures/generated-dependency-review/tools/generate-artifact.cjs"
       ]
     },
     {
@@ -119,6 +250,25 @@
         "Independent validation is used when available and permitted; otherwise the missing cross-validation is disclosed.",
         "Reviewer agreement or disagreement does not determine severity or whether the finding survives.",
         "The final finding is confirmed, rejected, or placed under needs verification from concrete reachability and impact evidence."
+      ],
+      "locale": "en",
+      "fixture_root": "evals/fixtures/admin-guard-review",
+      "files": [
+        "evals/fixtures/admin-guard-review/CONTRACT.md",
+        "evals/fixtures/admin-guard-review/base/src/admin-members.js",
+        "evals/fixtures/admin-guard-review/base/src/app.js",
+        "evals/fixtures/admin-guard-review/base/test/members.test.js",
+        "evals/fixtures/admin-guard-review/head/src/admin-members.js",
+        "evals/fixtures/admin-guard-review/head/src/app.js",
+        "evals/fixtures/admin-guard-review/head/test/members.test.js",
+        "evals/fixtures/admin-guard-review/package.json",
+        "evals/fixtures/admin-guard-review/review-context.json",
+        "evals/fixtures/admin-guard-review/scenario.json",
+        "evals/fixtures/admin-guard-review/shared/deployment.json",
+        "evals/fixtures/admin-guard-review/shared/framework.js",
+        "evals/fixtures/admin-guard-review/shared/member-store.js",
+        "evals/fixtures/admin-guard-review/shared/members.json",
+        "evals/fixtures/admin-guard-review/shared/sessions.json"
       ]
     },
     {
@@ -131,6 +281,25 @@
         "The earlier invariant and affected consumers are checked against current code and conditions.",
         "Commit messages and authorship are treated as context that must be corroborated by behavior or tests.",
         "A compatibility finding requires a concrete input, consumer, failure path, and current impact."
+      ],
+      "locale": "en",
+      "fixture_root": "evals/fixtures/normalization-history",
+      "files": [
+        "evals/fixtures/normalization-history/CONTRACT.md",
+        "evals/fixtures/normalization-history/base/src/normalize-sku.js",
+        "evals/fixtures/normalization-history/evidence/author-verification.json",
+        "evals/fixtures/normalization-history/fixture-recipe.json",
+        "evals/fixtures/normalization-history/head/src/normalize-sku.js",
+        "evals/fixtures/normalization-history/history/partner-import-history.md",
+        "evals/fixtures/normalization-history/shared/AGENTS.md",
+        "evals/fixtures/normalization-history/shared/README.md",
+        "evals/fixtures/normalization-history/shared/contracts/partner-feed.md",
+        "evals/fixtures/normalization-history/shared/fixtures/partner-row.json",
+        "evals/fixtures/normalization-history/shared/package.json",
+        "evals/fixtures/normalization-history/shared/src/catalog.js",
+        "evals/fixtures/normalization-history/shared/src/partner-import.js",
+        "evals/fixtures/normalization-history/shared/test/partner-import.test.js",
+        "evals/fixtures/normalization-history/shared/test/sku.test.js"
       ]
     },
     {
@@ -143,6 +312,20 @@
         "Passing tests do not override an authoritative acceptance criterion they fail to represent.",
         "Any finding gives the exact timeout and retry sequence that creates a duplicate payment and its impact.",
         "The review profile is elevated because value transfer, retries, and irreversible side effects are involved."
+      ],
+      "locale": "en",
+      "fixture_root": "evals/fixtures/payment-retry-review",
+      "files": [
+        "evals/fixtures/payment-retry-review/CONTRACT.md",
+        "evals/fixtures/payment-retry-review/base/payment-service.cjs",
+        "evals/fixtures/payment-retry-review/docs/acceptance.md",
+        "evals/fixtures/payment-retry-review/evidence/author-checks.json",
+        "evals/fixtures/payment-retry-review/head/payment-service.cjs",
+        "evals/fixtures/payment-retry-review/shared/checkout.cjs",
+        "evals/fixtures/payment-retry-review/shared/local-provider.cjs",
+        "evals/fixtures/payment-retry-review/shared/request.cjs",
+        "evals/fixtures/payment-retry-review/shared/submission-store.cjs",
+        "evals/fixtures/payment-retry-review/test/payment.test.cjs"
       ]
     },
     {
@@ -155,6 +338,25 @@
         "Any intentionally excluded area is marked skipped with a scope reason rather than silently omitted.",
         "The unavailable iOS runtime path is identified with its effect on confidence and verdict.",
         "The response does not claim complete platform coverage beyond the frozen baseline and available evidence."
+      ],
+      "locale": "en",
+      "fixture_root": "evals/fixtures/cross-platform-contract",
+      "files": [
+        "evals/fixtures/cross-platform-contract/CONTRACT.md",
+        "evals/fixtures/cross-platform-contract/base/generated/OrdersClient.swift",
+        "evals/fixtures/cross-platform-contract/base/generated/orders-client.cjs",
+        "evals/fixtures/cross-platform-contract/base/schema/order.json",
+        "evals/fixtures/cross-platform-contract/base/web/order-view.cjs",
+        "evals/fixtures/cross-platform-contract/head/generated/OrdersClient.swift",
+        "evals/fixtures/cross-platform-contract/head/generated/orders-client.cjs",
+        "evals/fixtures/cross-platform-contract/head/schema/order.json",
+        "evals/fixtures/cross-platform-contract/head/web/order-view.cjs",
+        "evals/fixtures/cross-platform-contract/shared/fixtures/order.json",
+        "evals/fixtures/cross-platform-contract/shared/generate-clients.cjs",
+        "evals/fixtures/cross-platform-contract/shared/ios/OrderRow.swift",
+        "evals/fixtures/cross-platform-contract/shared/ios/build-context.json",
+        "evals/fixtures/cross-platform-contract/shared/legacy-export/export.cjs",
+        "evals/fixtures/cross-platform-contract/shared/test/contract-smoke.cjs"
       ]
     },
     {
@@ -167,6 +369,12 @@
         "Stable finding IDs are preserved when the root cause remains the same.",
         "The dismissed finding is not repeated unless new evidence shows the current head still violates its acceptance criterion.",
         "The response remains read-only and emits one deduplicated verdict without posting or changing GitHub state."
+      ],
+      "locale": "en",
+      "fixture_root": "evals/fixtures/pull-request-rereview",
+      "files": [
+        "evals/fixtures/pull-request-rereview/CONTRACT.md",
+        "evals/fixtures/pull-request-rereview/github-snapshot.json"
       ]
     }
   ]

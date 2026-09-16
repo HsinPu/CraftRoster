@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "fictional": true,
+  "decision": "decisions/approved-direction.md",
+  "implementationSlices": null,
+  "requiredCompatibility": [
+    { "producer": "legacy", "consumer": "allocation" },
+    { "producer": "legacy", "consumer": "planning" },
+    { "producer": "current", "consumer": "allocation" },
+    { "producer": "current", "consumer": "planning" }
+  ],
+  "requiredEvidence": ["consumer-compatibility", "independent-review", "rollback-rehearsal", "final-source-verification"],
+  "requiredBoundaries": ["zero and positive counts", "unchanged count units", "unsupported units rejected", "malformed counts rejected"],
+  "rollbackProducer": "legacy",
+  "reviewRequired": true,
+  "reviewMayBeSelfApproved": false,
+  "legacyContractionAuthorized": false
+}

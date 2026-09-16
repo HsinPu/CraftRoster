@@ -1,0 +1,294 @@
+{
+  "schema_version": 1,
+  "kind": "offline_virtual_tool_and_delivery_preparation_check",
+  "created_at": "2026-09-16T07:55:58.145Z",
+  "node": "v24.19.0",
+  "platform": "win32",
+  "status": "not_run",
+  "model_calls": 0,
+  "host_isolation_enforced": false,
+  "implementation_hashes": {
+    "scripts/prepare-skill-pilot.js": "7d5036a0f793436be8041eccf2adc3dc5f9e80afab3a2492ec52e50afe5d59b5",
+    "scripts/lib/skill-eval-broker.js": "16254d4f9876c861d67b82441c09d70a0af2407b08e9e2186abe4c1516093679",
+    "docs/audits/skill-optimization-2026-09-16/run-local-tool-probe.cjs": "fc644d2785d47179f051727156feb0fb76027d954114749833d9fb42781cc022"
+  },
+  "scripted_probe": {
+    "case_id": "code-change-workflow:4",
+    "corpus_case_sha256": "8bfddedfaad9eba202bf730e13c6aaa2eff637f71f3353fe3949695e342f483b",
+    "fixture_sha256": "2daedf3dbc559b29128026db4ffff940956467a8b4b8aa8895d1fbbdf0a70322",
+    "actions_sha256": "dd7005c45a541b90b4d955f5b57ce419e810f1672649f33d3a41bdf7b72868c6",
+    "schema_version": 1,
+    "evaluation_kind": "scripted_virtual_tool_probe",
+    "status": "not_run",
+    "model_execution": false,
+    "model_effective": null,
+    "cost": null,
+    "artifact_grading": {
+      "status": "unverified",
+      "checks": [
+        {
+          "id": "label-value",
+          "status": "passed",
+          "evidence": {
+            "artifact_sha256": "1a9cf098674c4e55380d72dd1fcf3080eb6fad99a92151a03d38e77fe43a4eca",
+            "matched": true
+          }
+        },
+        {
+          "id": "handler-preserved",
+          "status": "passed",
+          "evidence": "b3af900b2fc1cffaf77d398c8ecd403d70e20a04feef54753ba90fb5251c57c7"
+        },
+        {
+          "id": "skill-preserved",
+          "status": "passed",
+          "evidence": "c65f417095f626ae89490741846fc5b3d0df7200fcc811bcc1216a63e4362978"
+        },
+        {
+          "id": "exact-tool-decisions",
+          "status": "passed",
+          "evidence": [
+            {
+              "tool": "read_file",
+              "path": "skills/code-change-workflow/SKILL.md",
+              "decision": "accepted",
+              "reason": null
+            },
+            {
+              "tool": "read_file",
+              "path": "workspace/locales/en.json",
+              "decision": "accepted",
+              "reason": null
+            },
+            {
+              "tool": "read_file",
+              "path": "private/record.json",
+              "decision": "denied",
+              "reason": "invalid_or_private_path"
+            },
+            {
+              "tool": "write_file",
+              "path": "workspace/src/sign-in.js",
+              "decision": "denied",
+              "reason": "write_not_granted"
+            },
+            {
+              "tool": "shell",
+              "path": null,
+              "decision": "denied",
+              "reason": "unknown_tool"
+            },
+            {
+              "tool": "write_file",
+              "path": "workspace/locales/en.json",
+              "decision": "accepted",
+              "reason": null
+            }
+          ]
+        },
+        {
+          "id": "remaining-semantic-rubric",
+          "status": "unverified",
+          "evidence": null
+        }
+      ]
+    },
+    "trace": [
+      {
+        "sequence": 1,
+        "tool": "read_file",
+        "path": "skills/code-change-workflow/SKILL.md",
+        "request_sha256": "8378d0dea4a3d2e44edd6db153e039dacf6ffd2bd2ff5e08b35f49e9cb7054e2",
+        "request_chars": 80,
+        "decision": "accepted",
+        "reason": null,
+        "response_sha256": "f6a289295fbf186a70a0cd3cd5be63ff396b0c9056cb214ea65cd642d2828e7f"
+      },
+      {
+        "sequence": 2,
+        "tool": "read_file",
+        "path": "workspace/locales/en.json",
+        "request_sha256": "0f025a1b653b28cd2240f1fe2a49c4e5bf64d692b3c48ae53e9aa7ffe0f9cd4e",
+        "request_chars": 69,
+        "decision": "accepted",
+        "reason": null,
+        "response_sha256": "d28e211b795dbd2e3418a6e3401a99cd079a297754505d745b2efd4f1110991b"
+      },
+      {
+        "sequence": 3,
+        "tool": "read_file",
+        "path": "private/record.json",
+        "request_sha256": "5d26223a0c10ab04c9b319b98b11c7282d0e97edeaf5e7bbb5e1aecbec174eaa",
+        "request_chars": 63,
+        "decision": "denied",
+        "reason": "invalid_or_private_path",
+        "response_sha256": "bb883fdedb6e790a589ad38e0d69271ad96df48b20e108b749918aa2c945a81d"
+      },
+      {
+        "sequence": 4,
+        "tool": "write_file",
+        "path": "workspace/src/sign-in.js",
+        "request_sha256": "bba28e3df67d572162683f5009f29b51b05761bf9c26916abe58e3cad1439bae",
+        "request_chars": 112,
+        "decision": "denied",
+        "reason": "write_not_granted",
+        "response_sha256": "0bd3a4cd7f51b3d3d386dd72c2352ad721c54316d60840e7470d2c0c337a44eb"
+      },
+      {
+        "sequence": 5,
+        "tool": "shell",
+        "path": null,
+        "request_sha256": "9159a492eabf7da03cb081552c2bce3afcd1a4b5718b81f394db85bdcafb63fd",
+        "request_chars": 68,
+        "decision": "denied",
+        "reason": "unknown_tool",
+        "response_sha256": "742e5aa547ad991492a843f8b6ff3ddb2eb8e242a00a8187a515fa6a537e43fd"
+      },
+      {
+        "sequence": 6,
+        "tool": "write_file",
+        "path": "workspace/locales/en.json",
+        "request_sha256": "adca557fce60eef984827d28e1397f4a0c52035858732f6a86e6b5dfebbc8b8a",
+        "request_chars": 125,
+        "decision": "accepted",
+        "reason": null,
+        "response_sha256": "dff870c92166e397845e370724bc9d47518b4c85cb233bb9d296404492ae16ff"
+      }
+    ],
+    "calls_attempted": 6,
+    "calls_not_recorded": 0,
+    "trace_complete": true,
+    "loaded_skill_entries": [
+      "skills/code-change-workflow/SKILL.md"
+    ],
+    "activation_observed": false,
+    "policy": {
+      "writable_paths": [
+        "workspace/locales/en.json"
+      ],
+      "writable_roots": [],
+      "limits": {
+        "max_file_bytes": 4194304,
+        "max_total_bytes": 67108864,
+        "max_calls": 1000
+      }
+    },
+    "toolset_sha256": "c27aff1c95883f28192e0eedc00c3fb1019943d48ec6249ec7ba9417371b5cf2",
+    "public_bundle_sha256": "8fb9b8d78cadae9a494d1144b2d091797a565fe94e4aaa10b1d3d1913cd1baa3",
+    "limitations": [
+      "Scripted actions are authored harness checks, not model output or proof of task success.",
+      "This virtual file service has no shell, network, browser, Git, or arbitrary code execution.",
+      "Only a future adapter exposing call() exclusively can make this a model tool boundary; no host isolation has been verified.",
+      "A successful Skill file read records access only, not automatic routing or instruction adherence.",
+      "Deterministic artifact checks do not replace the remaining semantic/manual rubric."
+    ],
+    "initial_workspace_manifest": [
+      {
+        "path": "workspace/CONTRACT.md",
+        "sha256": "103634e2dae6c218be7cc57cea1085e7720ed5692852d35143f78a4c99bec240",
+        "bytes": 634
+      },
+      {
+        "path": "workspace/locales/en.json",
+        "sha256": "8ff1cd0b748814883d69b7c85535dffaad9d5b3ab341491c4086ab74bb21a821",
+        "bytes": 36
+      },
+      {
+        "path": "workspace/package.json",
+        "sha256": "4f75a33b796faf042d2364cea8e270bf69b3dba8c712205fc53c0aee264f412d",
+        "bytes": 161
+      },
+      {
+        "path": "workspace/src/sign-in.js",
+        "sha256": "b3af900b2fc1cffaf77d398c8ecd403d70e20a04feef54753ba90fb5251c57c7",
+        "bytes": 357
+      },
+      {
+        "path": "workspace/test/sign-in.test.js",
+        "sha256": "8fa6e1014cd09ba01942d9b123c8b2e0545c53d69a12e886faf01d8f1ad72896",
+        "bytes": 852
+      }
+    ],
+    "final_workspace_manifest": [
+      {
+        "path": "workspace/CONTRACT.md",
+        "sha256": "103634e2dae6c218be7cc57cea1085e7720ed5692852d35143f78a4c99bec240",
+        "bytes": 634
+      },
+      {
+        "path": "workspace/locales/en.json",
+        "sha256": "1a9cf098674c4e55380d72dd1fcf3080eb6fad99a92151a03d38e77fe43a4eca",
+        "bytes": 35
+      },
+      {
+        "path": "workspace/package.json",
+        "sha256": "4f75a33b796faf042d2364cea8e270bf69b3dba8c712205fc53c0aee264f412d",
+        "bytes": 161
+      },
+      {
+        "path": "workspace/src/sign-in.js",
+        "sha256": "b3af900b2fc1cffaf77d398c8ecd403d70e20a04feef54753ba90fb5251c57c7",
+        "bytes": 357
+      },
+      {
+        "path": "workspace/test/sign-in.test.js",
+        "sha256": "8fa6e1014cd09ba01942d9b123c8b2e0545c53d69a12e886faf01d8f1ad72896",
+        "bytes": 852
+      }
+    ]
+  },
+  "delivery_preparations": [
+    {
+      "case_id": "verified-software-delivery:2",
+      "status": "not_run",
+      "public_files": 530,
+      "fixture_files": 11,
+      "skill_packages": 286,
+      "fixture_sha256": "f24588bdd5d1f5579133f8704af941a5cf2272707cf662d36235c7778c05aa63",
+      "corpus_case_sha256": "2c7527fe150c7c31d6db85f0d2d16cafb8159c486984c9d1657160fa94c825be",
+      "public_bundle_sha256": "f126e75cbe6f51359474cb48de866a1cd8cb39829729a87739f585e440a36eee",
+      "broker_initialization": "passed",
+      "model_calls": 0,
+      "assertions_executed": 0
+    },
+    {
+      "case_id": "verified-software-delivery:4",
+      "status": "not_run",
+      "public_files": 526,
+      "fixture_files": 7,
+      "skill_packages": 286,
+      "fixture_sha256": "53b8935f1158527a86d5b30f515b28aecba94865be1634bf335e51663ebc11b8",
+      "corpus_case_sha256": "484adf6deff2c394fd12174f6c3cf5eeb2064ad0518722243682df2ce0e44475",
+      "public_bundle_sha256": "b497817ef1df255dfca7224af27ffb41f1ffc2827ab1cf4027f3817c5aca4007",
+      "broker_initialization": "passed",
+      "model_calls": 0,
+      "assertions_executed": 0
+    },
+    {
+      "case_id": "verified-software-delivery:5",
+      "status": "not_run",
+      "public_files": 529,
+      "fixture_files": 10,
+      "skill_packages": 286,
+      "fixture_sha256": "021246f8641a9168811544a6fc61f4966760e722686bf4d57bc8efe21035f913",
+      "corpus_case_sha256": "1d1540d7c162285a78568b7793221d776bd57f40d373887c80f17505cf544ee6",
+      "public_bundle_sha256": "3196dc79259c0e573f8e31404f2968f0cdc08892797ae91617ce7bfd3cbbf6d4",
+      "broker_initialization": "passed",
+      "model_calls": 0,
+      "assertions_executed": 0
+    },
+    {
+      "case_id": "verified-software-delivery:6",
+      "status": "not_run",
+      "public_files": 536,
+      "fixture_files": 17,
+      "skill_packages": 286,
+      "fixture_sha256": "2c69a2ecbc061338c7e7bbef00e07f62174fafb5735f77b2e35b821b14f028cb",
+      "corpus_case_sha256": "f405203dfbbb1df0252faede13c122d096956c99f3ad26479aafad856dd6303a",
+      "public_bundle_sha256": "4c64b4c3bf6f1531660b9d0d4d0aee9c4cacc24ee6f78eabf7de7718fbb18434",
+      "broker_initialization": "passed",
+      "model_calls": 0,
+      "assertions_executed": 0
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "skill_name": "test-driven-development",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Repository policy requires TDD. Add one new observable price rule using its current test harness.",
+      "expected_output": "An actual intended RED precedes the production increment.",
+      "assertions": [
+        "It runs a focused contract test and confirms failure for the intended reason before implementation.",
+        "It implements the minimum increment and verifies GREEN plus relevant checks.",
+        "It does not silently waive the explicit TDD requirement for convenience."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Take over this local bug fix after implementation. A relevant regression test passed on the same code, configuration, dependencies, and environment; no policy requires TDD. Verify remaining acceptance claims and finish.",
+      "expected_output": "Valid existing evidence is preserved without undoing the fix to recreate RED.",
+      "assertions": [
+        "It does not revert a correct inherited change or manufacture a failure solely to reenact the cycle.",
+        "It checks the existing evidence's scope and validity and closes real gaps.",
+        "It records the reasoned verification approach without requesting an automatic TDD-exemption approval."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Fix a high-risk bug whose production symptom cannot yet be reproduced automatically. No policy requires a strict TDD cycle; use safe fixtures and explain the remaining uncertainty.",
+      "expected_output": "A bounded evidence-building approach rather than unverified completion or forced meaningless RED.",
+      "assertions": [
+        "It seeks the smallest safe discriminating reproduction or verification path.",
+        "It does not claim the bug is fixed without sufficient evidence or weaken required checks.",
+        "It distinguishes a reasoned TDD alternative from permission to skip acceptance evidence."
+      ]
+    }
+  ]
+}

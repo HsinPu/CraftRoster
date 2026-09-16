@@ -1,0 +1,9 @@
+{
+  "approved": true,
+  "target": "staging-db",
+  "migration": "A",
+  "script": "tools/fake-db.js",
+  "operations": ["compatibility", "recovery", "migrate", "status", "rollback"],
+  "requiredChecks": ["compatibility", "recovery"],
+  "productionAuthorized": false
+}

@@ -1,6 +1,6 @@
 ---
 name: python-development
-description: Mandatory baseline for any request to plan, write, modify, fix, review, test, debug, or run Python code. Read this skill whenever Python, a `.py` file, a Python project, packaging metadata, or a Python traceback is involved, even for one-file or planning-only work; then add only the relevant Python specialist. Do not use for non-Python tasks.
+description: Plan, implement, review, test, or diagnose Python code, runtime behavior, typing, packages, and toolchain configuration. Use for Python tasks including small scripts and planning-only requests; add specialists for material concerns. Unrelated Python files elsewhere in a repository do not activate this Skill.
 license: Apache-2.0
 metadata:
   author: "HsinPu"
@@ -9,7 +9,7 @@ metadata:
 
 # Python 開發（Python Development）
 
-**只要工作涉及 Python 程式碼、Python 專案或 Python runtime failure，先讀取本 skill；即使只要求規劃、一個小腳本或短答案也一樣。**
+**當要求的成果、受影響程式路徑或診斷證據涉及 Python 時，使用本 skill；小腳本及 Python 實作規劃也適用。repo 其他位置有 Python 檔案本身不足以觸發。**
 
 設計 Python 專案架構、設定工具鏈、撰寫或重構 Python 程式碼時，依需要查閱下方參考資料，以符合架構、程式碼風格、設計原則與常見現代工作流。
 
@@ -17,7 +17,7 @@ metadata:
 
 ## Python Routing Gate
 
-When the request asks to plan or perform Python work, or the repository or supplied artifact contains Python code, `.py` files, `pyproject.toml`, `requirements*.txt`, `setup.py`, `setup.cfg`, `tox.ini`, `pytest.ini`, or a Python traceback:
+When the requested outcome, affected code path, or diagnostic evidence requires Python-specific decisions, including Python implementation plans, `.py` changes, package or toolchain configuration, or Python failures:
 
 1. Read this skill before planning or editing, even when it was omitted from the runtime's initial Skill metadata.
 2. Keep this skill responsible for Python language conventions, package and module boundaries, typing, resource lifetime, errors, general implementation, and toolchain fit.

@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "kind": "working-tree",
+  "initialBranch": "fixture-review",
+  "identity": {
+    "name": "Fixture Author",
+    "email": "fixture@example.invalid"
+  },
+  "commitTimestamp": "2026-09-16T00:00:00+00:00",
+  "base": {
+    "message": "Synthetic review baseline",
+    "files": [
+      {
+        "source": "base/AGENTS.md",
+        "destination": "AGENTS.md"
+      },
+      {
+        "source": "base/notes/team-schedule.md",
+        "destination": "notes/team-schedule.md"
+      },
+      {
+        "source": "base/package.json",
+        "destination": "package.json"
+      },
+      {
+        "source": "base/README.md",
+        "destination": "README.md"
+      },
+      {
+        "source": "base/REVIEW_CONTEXT.md",
+        "destination": "REVIEW_CONTEXT.md"
+      },
+      {
+        "source": "base/src/order-service.js",
+        "destination": "src/order-service.js"
+      },
+      {
+        "source": "base/src/stock.js",
+        "destination": "src/stock.js"
+      },
+      {
+        "source": "base/test/order-service.test.js",
+        "destination": "test/order-service.test.js"
+      },
+      {
+        "source": "base/test/stock.test.js",
+        "destination": "test/stock.test.js"
+      }
+    ]
+  },
+  "staged": {
+    "files": [
+      {
+        "source": "index/src/stock.js",
+        "destination": "src/stock.js"
+      }
+    ]
+  },
+  "unstaged": {
+    "files": [
+      {
+        "source": "worktree/notes/team-schedule.md",
+        "destination": "notes/team-schedule.md"
+      },
+      {
+        "source": "worktree/src/stock.js",
+        "destination": "src/stock.js"
+      }
+    ]
+  },
+  "untracked": {
+    "files": [
+      {
+        "source": "new/fixtures/order.json",
+        "destination": "fixtures/order.json"
+      },
+      {
+        "source": "new/scripts/preview-order.js",
+        "destination": "scripts/preview-order.js"
+      }
+    ]
+  },
+  "publicTests": [
+    "test/stock.test.js",
+    "test/order-service.test.js"
+  ]
+}

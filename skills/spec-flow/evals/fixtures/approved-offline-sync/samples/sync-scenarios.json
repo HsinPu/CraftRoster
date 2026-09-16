@@ -1,0 +1,31 @@
+{
+  "fixtureOnly": true,
+  "executionPerformed": false,
+  "cases": [
+    {
+      "id": "first-upload",
+      "server": { "documentId": "synthetic-doc-1", "title": "Invented field notes", "body": "Original synthetic text.", "revision": 7 },
+      "requests": [{ "schemaVersion": 2, "documentId": "synthetic-doc-1", "clientMutationId": "synthetic-mutation-1", "baseRevision": 7, "title": "Invented field notes", "body": "New synthetic draft." }]
+    },
+    {
+      "id": "response-lost-and-retry",
+      "transportCondition": "first server response is lost after application",
+      "server": { "documentId": "synthetic-doc-1", "title": "Invented field notes", "body": "Original synthetic text.", "revision": 7 },
+      "requests": [
+        { "schemaVersion": 2, "documentId": "synthetic-doc-1", "clientMutationId": "synthetic-mutation-1", "baseRevision": 7, "title": "Invented field notes", "body": "New synthetic draft." },
+        { "schemaVersion": 2, "documentId": "synthetic-doc-1", "clientMutationId": "synthetic-mutation-1", "baseRevision": 7, "title": "Invented field notes", "body": "New synthetic draft." }
+      ]
+    },
+    {
+      "id": "concurrent-server-edit",
+      "server": { "documentId": "synthetic-doc-1", "title": "Invented field notes", "body": "Another synthetic client already changed this text.", "revision": 9 },
+      "requests": [{ "schemaVersion": 2, "documentId": "synthetic-doc-1", "clientMutationId": "synthetic-mutation-1", "baseRevision": 7, "title": "Invented field notes", "body": "New synthetic draft." }]
+    },
+    {
+      "id": "edited-after-send",
+      "server": { "documentId": "synthetic-doc-1", "title": "Invented field notes", "body": "Original synthetic text.", "revision": 7 },
+      "requests": [{ "schemaVersion": 2, "documentId": "synthetic-doc-1", "clientMutationId": "synthetic-mutation-1", "baseRevision": 7, "title": "Invented field notes", "body": "First synthetic edit already sent." }],
+      "newerLocalDraft": { "clientMutationId": "synthetic-mutation-2", "dependsOnMutationId": "synthetic-mutation-1", "title": "Invented field notes", "body": "Second edit while first is in flight." }
+    }
+  ]
+}

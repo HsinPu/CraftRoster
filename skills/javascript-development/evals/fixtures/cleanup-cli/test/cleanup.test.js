@@ -1,0 +1,14 @@
+'use strict';
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const { spawnSync } = require('node:child_process');
+const root = path.resolve(__dirname, '..');
+const sentinel = path.join(root, 'cache/example.txt');
+const before = fs.readFileSync(sentinel, 'utf8');
+const result = spawnSync(process.execPath, ['scripts/cleanup.js', 'fixtures/valid-plan.json'], { cwd: root, encoding: 'utf8', timeout: 10000 });
+assert.ifError(result.error);
+assert.equal(result.status, 0, result.stderr);
+assert.deepEqual(JSON.parse(result.stdout), { mode: 'dry-run', paths: ['cache/example.txt'], deleted: 0 });
+assert.equal(fs.readFileSync(sentinel, 'utf8'), before);
+console.log('Valid cleanup preview and unchanged sentinel passed.');

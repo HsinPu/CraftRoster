@@ -22,7 +22,7 @@ Use this workflow to separate implementation from acceptance. Keep the reviewer 
 
 ## Roles
 
-- **Implementer:** supplies the completed change, intent, test evidence, and known limitations; fixes accepted findings in a later turn.
+- **Implementer:** supplies the completed change, intent, test evidence, and known limitations; fixes accepted findings in a separate remediation pass.
 - **Reviewer:** independently inspects current files, diffs, contracts, and tests; produces findings without editing the change.
 - **Coordinator:** preserves the report, routes findings, and starts another review after remediation.
 - **Decision owner:** accepts residual risk or authorizes a gate exception. Neither reviewer nor implementer may self-approve an exception.
@@ -50,15 +50,21 @@ If material inputs are missing, record a verification gap instead of guessing.
 7. Return the structured report with a coverage ledger. Have the coordinator persist it as the agreed `review-report` artifact.
 8. Route accepted findings to an implementer. Do not let the reviewer apply fixes.
 9. Re-review the updated baseline, verify each prior finding, inspect remediation regressions, and append a new review round.
-10. Pass the gate only when blocking findings are resolved or the decision owner records an explicit risk exception.
+10. Pass the gate only when blocking findings are resolved and required acceptance evidence is satisfied, or the decision owner records an explicit risk exception for the outstanding item.
 
 ## Finding levels
 
 - **Blocker:** likely correctness, security, data-loss, compatibility, or release failure. The gate is closed.
-- **Major:** material defect or verification gap that can harm users or operations. The gate stays closed unless the decision owner records a reasoned, time-bounded exception.
+- **Major:** a supported material defect that can harm users or operations. The gate stays closed unless the decision owner records a reasoned, time-bounded exception.
 - **Advisory:** useful non-blocking improvement. It must not be promoted to a gate failure by preference alone.
 
 Each finding must include location, evidence, failure scenario, impact, acceptance criterion, and confidence. Keep questions and unverified risks outside the finding list.
+
+## Gate Evidence
+
+Keep missing evidence separate from confirmed defects. Record each material gap against the acceptance claim it limits, its required or optional status, the current baseline, and the smallest check that would resolve it. A predeclared required check that is missing or unavailable can block the gate with zero confirmed findings; do not relabel that gap as a Major defect. Optional evidence does not become a blocker by preference alone.
+
+Use `satisfied`, `missing`, or `unavailable` for required evidence. Preserve the decision owner's reason and expiry for any accepted exception. Review the actual evidence after remediation instead of changing the acceptance requirement to obtain a pass.
 
 ## `review-report` artifact
 
@@ -81,6 +87,9 @@ Use this stable structure in the response or in a coordinator-owned file:
 |---|---|---|---|---|---|
 
 ## Verification gaps
+
+| Acceptance claim | Required? | Evidence status | Baseline | Next check or exception |
+|---|---|---|---|---|
 
 ## Review coverage
 

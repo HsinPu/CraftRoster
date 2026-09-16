@@ -1,0 +1,242 @@
+{
+  "schema_version": 1,
+  "kind": "author_browser_fixture_check",
+  "recorded_at": "2026-09-16T09:26:46.980Z",
+  "case_id": "code-review:4",
+  "split": "development",
+  "status": "not_run",
+  "model_execution": false,
+  "model_calls": 0,
+  "author_check_status": "passed",
+  "browser": {
+    "provider": "Codex In-app Browser",
+    "engine_version": null,
+    "platform": "win32"
+  },
+  "setup": {
+    "source_views_are_git_commits": false,
+    "temp_source_matches_canonical": true,
+    "dependency_versions": {
+      "react": "19.1.1",
+      "react-dom": "19.1.1",
+      "esbuild": "0.25.9"
+    },
+    "source_manifest": [
+      {
+        "path": "CONTRACT.md",
+        "sha256": "b23a1a95e8c2cab0a7e3b65125639c36b368f6b761ff651954ed77ac874d3715"
+      },
+      {
+        "path": "base/Checkout.jsx",
+        "sha256": "a913bc7f4ffb373253f256b0a9199fdaef9ca86936b6500cc59f8332a2967cf2"
+      },
+      {
+        "path": "base/checkout.css",
+        "sha256": "7d108a812a999360ba164e63fbf6bd06ec0d273c2afe25bf74453f9e63ac2c58"
+      },
+      {
+        "path": "base/controller.cjs",
+        "sha256": "7a5fdc638d01a7bbeea0560e3dde336772ed1837148d5e1bb044585c8c3130b7"
+      },
+      {
+        "path": "base/main.jsx",
+        "sha256": "aa733a09ee8af03fe5d5c18f42eda07a33b2688ddfe11c4528e706474e61eb88"
+      },
+      {
+        "path": "head/Checkout.jsx",
+        "sha256": "6792cda47fd4340c42f26716a83cc928ad9f3aaaa87529aed90e8899218ac489"
+      },
+      {
+        "path": "head/checkout.css",
+        "sha256": "f77cf1048835f24b3933c559903b16aa6b6d1aee2f1d007be2b05aed9ec838d2"
+      },
+      {
+        "path": "head/controller.cjs",
+        "sha256": "681693c981d6b3b1a37795a82e5a9b8d7442968e91ec72aa36b9337940f02558"
+      },
+      {
+        "path": "head/main.jsx",
+        "sha256": "aa733a09ee8af03fe5d5c18f42eda07a33b2688ddfe11c4528e706474e61eb88"
+      },
+      {
+        "path": "package-lock.json",
+        "sha256": "0b79bc0b2d770d409756d24dade04349c2a7b0be231b47db20038da6cbb5e5f2"
+      },
+      {
+        "path": "package.json",
+        "sha256": "51331f6639a32e6e63e93f2720765f6adce760435e84cc7be80f833c1f3db965"
+      },
+      {
+        "path": "scenario.json",
+        "sha256": "17fe5e29923df2a35870fd5cc0ae0c77f653b902db9d6495826144febe7ac40e"
+      },
+      {
+        "path": "shared/fake-quotes.cjs",
+        "sha256": "143f6fc1ab533ccf6336b49a00210eb468497d1802989d04a94376b683370917"
+      },
+      {
+        "path": "shared/test/controller.test.cjs",
+        "sha256": "a53715caf453e23e75249a41d21e3b67aec783f728b3eed0264b8ac4a4c896d2"
+      },
+      {
+        "path": "tools/build.cjs",
+        "sha256": "81da1c10257b57a7235d9209371f54049b3e9be16d4ebd746d4ba5a742a735aa"
+      },
+      {
+        "path": "tools/serve.cjs",
+        "sha256": "12d90c3ee58f1024df01eefe1a0ece38525dedc1491845b9702554f32223fc77"
+      }
+    ],
+    "build_sha256": {
+      "base": {
+        "index.html": "f059270f75f0102c3c956954154f2a1a2e53c30e5de46300a8a7a7882f86d30b",
+        "app.js": "6b232eb22c121924ad03a11febafbeff2634a8e89ffc5025b18e54e65ae61c05",
+        "app.css": "b0d392d213e93573f7b210f377c210f7d79331ede8dddea7000c12d068b56091",
+        "app.js.map": "a589d397593b3fec95c54e0de77c1a42aab78190be658324c9439d2210e56fcf"
+      },
+      "head": {
+        "index.html": "094bc176ff141ea4c66d32b275475fa2e7334c77c7579c95c81c68d39cb8d39a",
+        "app.js": "d32601ea72a2cee128553095d77be42a4814c8e9bb0682b69a1077f7a288025e",
+        "app.css": "36a0b33d596ce374a0c967bb1c0039f245e78764f2706f636f6fdab2553298aa",
+        "app.js.map": "10f5a6c6906bc9b25f1b6b5b0c1b5cab9a127c413a05b160182206bec528f73e"
+      }
+    },
+    "build_mode": "development",
+    "server": "loopback only; fixed author source, no evaluated model code"
+  },
+  "observations": [
+    {
+      "check": "initial-loading",
+      "method": "AX snapshots on navigation",
+      "base": {
+        "loading": true,
+        "confirm_disabled": true
+      },
+      "head": {
+        "loading": true,
+        "confirm_disabled": true
+      }
+    },
+    {
+      "check": "quick-switch-settled",
+      "method": "Click Quick switch: Standard then Express; inspect after both fixed timers finish",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "base": {
+        "selected": "express",
+        "quote_method": "express",
+        "total": "18.00"
+      },
+      "head": {
+        "selected": "express",
+        "quote_method": "standard",
+        "total": "12.00"
+      }
+    },
+    {
+      "check": "mismatched-confirmation",
+      "method": "Click Confirm local order after the head race",
+      "head": {
+        "visible_text": "Confirmed express: $ 12.00",
+        "external_order_sent": false
+      }
+    },
+    {
+      "check": "error-focus",
+      "method": "Click Simulate quote error and inspect focused DOM element",
+      "base": {
+        "active_role": "alert",
+        "active_tabindex": -1
+      },
+      "head": {
+        "active_element": "button",
+        "active_text": "Simulate quote error"
+      }
+    },
+    {
+      "check": "keyboard-retry",
+      "method": "Tab to Retry quote; press Return. In head also press space. Inspect AX and DOM.",
+      "base": {
+        "enter": "quote ready, express 18.00"
+      },
+      "head": {
+        "enter": "error remains; confirmation disabled",
+        "space": "error remains; confirmation disabled",
+        "active_role": "button",
+        "active_tag": "div"
+      }
+    },
+    {
+      "check": "pointer-retry",
+      "method": "Click head Retry quote after ineffective keyboard attempts",
+      "head": {
+        "status": "Quote ready",
+        "quote_method": "express",
+        "total": "18.00"
+      }
+    },
+    {
+      "check": "narrow-layout",
+      "method": "Actual viewport override, DOM bounds and screenshot inspection",
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "base": {
+        "document_scroll_width": 360,
+        "sections": [
+          {
+            "name": "shipping",
+            "x": 16,
+            "y": 192,
+            "width": 328,
+            "height": 338.5833435058594
+          },
+          {
+            "name": "summary",
+            "x": 16,
+            "y": 554.5833740234375,
+            "width": 328,
+            "height": 266.5833435058594
+          }
+        ],
+        "horizontal_overflow": false
+      },
+      "head": {
+        "document_scroll_width": 800,
+        "sections": [
+          {
+            "name": "shipping",
+            "x": 16,
+            "y": 192,
+            "width": 380,
+            "height": 314.5833435058594
+          },
+          {
+            "name": "summary",
+            "x": 420,
+            "y": 192,
+            "width": 380,
+            "height": 314.5833435058594
+          }
+        ],
+        "horizontal_overflow": true
+      }
+    }
+  ],
+  "captured_console_warnings_and_errors": [],
+  "cleanup": {
+    "viewport_reset": true,
+    "tab_closed": true,
+    "server_stopped": true
+  },
+  "limitations": [
+    "Prescribed author comparison of fictional source views, not a model review or Skill activation result.",
+    "One desktop browser provider with CSS viewport overrides; no physical mobile device, Safari, assistive technology, GPU or performance certification.",
+    "Initial loading and exercised paths were observed; React StrictMode remount, exhaustive cancellation and every intermediate loading transition were not browser-tested.",
+    "No real payment, persistence, network quote provider or order service exists; local confirmation records only component state.",
+    "Compiled development artifacts were tested, not a production deployment."
+  ]
+}

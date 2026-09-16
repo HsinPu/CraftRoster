@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "skill_name": "web-page-design-to-code",
+  "cases": [
+    {
+      "id": "positive-delegated-one-page",
+      "kind": "positive",
+      "prompt": "請沿用目前品牌，只重新設計 /welcome。版面由你決定，涵蓋桌面與行動版，並在保留既有行為的前提下完成前端實作。",
+      "expected_skills": [
+        "web-page-design-to-code"
+      ],
+      "excluded_skills": [
+        "website-redesign-to-code",
+        "image-to-code"
+      ],
+      "allowed_skills": [
+        "frontend-design",
+        "responsive-design"
+      ],
+      "locale": "zh-TW"
+    },
+    {
+      "id": "positive-review-before-page-code",
+      "kind": "positive",
+      "prompt": "Give our one checkout page two visual directions for desktop and mobile. I must review the chosen mockup before you change production UI.",
+      "expected_skills": [
+        "web-page-design-to-code"
+      ],
+      "excluded_skills": [
+        "website-redesign-to-code"
+      ],
+      "allowed_skills": [
+        "design-consultation",
+        "frontend-design"
+      ],
+      "locale": "en"
+    },
+    {
+      "id": "neighbor-multiple-route-families",
+      "kind": "near_match",
+      "prompt": "Redesign our storefront home, product, category, account, and checkout route families together, including the shared navigation and global design system, while preserving URLs and behavior.",
+      "expected_skills": [
+        "website-redesign-to-code"
+      ],
+      "excluded_skills": [
+        "web-page-design-to-code"
+      ],
+      "allowed_skills": [
+        "design-system",
+        "frontend-design"
+      ],
+      "locale": "en"
+    },
+    {
+      "id": "neighbor-approved-image-translation",
+      "kind": "near_match",
+      "prompt": "請把外部提供且已批准的 desktop 和 mobile screenshots 直接實作到既有 frontend。目前沒有尚待處理的 page-design workflow 或 review gate；這些 screenshots 就是確切的設計依據，而且實作已獲授權。",
+      "expected_skills": [
+        "image-to-code"
+      ],
+      "excluded_skills": [
+        "web-page-design-to-code",
+        "website-redesign-to-code"
+      ],
+      "allowed_skills": [
+        "frontend-design",
+        "responsive-design"
+      ],
+      "locale": "mixed-zh-TW-en"
+    },
+    {
+      "id": "ambiguous-single-page-design-direction",
+      "kind": "positive",
+      "prompt": "The /welcome page feels cluttered. Help redesign that page; I have not decided whether to keep the hero illustration or replace it. Inspect what is there and prepare a concrete recommendation before resolving that visual choice.",
+      "expected_skills": [
+        "web-page-design-to-code"
+      ],
+      "excluded_skills": [
+        "website-redesign-to-code",
+        "image-to-code"
+      ],
+      "allowed_skills": [
+        "design-consultation"
+      ],
+      "locale": "en"
+    },
+    {
+      "id": "negative-copy-only-fix",
+      "kind": "negative",
+      "prompt": "On /welcome, change the button text from See workshop details to View workshop details. Keep its styling and behavior unchanged and run the existing focused check.",
+      "expected_skills": [
+        "code-change-workflow"
+      ],
+      "excluded_skills": [
+        "web-page-design-to-code",
+        "website-redesign-to-code",
+        "image-to-code"
+      ],
+      "allowed_skills": [
+        "frontend-design",
+        "javascript-development",
+        "i18n-localization",
+        "verification-before-completion"
+      ],
+      "locale": "en"
+    },
+    {
+      "id": "authorization-resume-existing-page-owner",
+      "kind": "positive",
+      "prompt": "Resume the page-design workflow that produced welcome-v3 for /welcome. Its desktop and mobile designs and implementation contract are approved. Implementation is authorized; finish from the current checkpoint without regenerating the mockups.",
+      "expected_skills": [
+        "web-page-design-to-code"
+      ],
+      "excluded_skills": [
+        "website-redesign-to-code",
+        "image-to-code"
+      ],
+      "allowed_skills": [
+        "frontend-design",
+        "responsive-design"
+      ],
+      "locale": "en"
+    }
+  ]
+}

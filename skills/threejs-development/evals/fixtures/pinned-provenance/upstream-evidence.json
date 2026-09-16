@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "kind": "selected_primary_metadata_observations",
+  "observed_at": "2026-09-16T09:15:58.709Z",
+  "repository": "scottstts/Threejs-Awesome-Graphics-Agent-Skills",
+  "revision": "e43dcb03020cae5b08983a828bc1817dd6c0c40a",
+  "tree_from_local_manifest": "d0036d0ac9d07e3a7bc7b28fd6096b84d4c1b503",
+  "source_files": [
+    {
+      "path": "package.json",
+      "url": "https://raw.githubusercontent.com/scottstts/Threejs-Awesome-Graphics-Agent-Skills/e43dcb03020cae5b08983a828bc1817dd6c0c40a/package.json",
+      "status": 200,
+      "bytes": 2267,
+      "sha256": "cff45f3d4efc5406e83151e6c46ef11754f69f1621f24d9b36f3e0ef8db2c400",
+      "git_blob": "187b74705aa04c00cd518cc51d57d044d280a490"
+    },
+    {
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/scottstts/Threejs-Awesome-Graphics-Agent-Skills/e43dcb03020cae5b08983a828bc1817dd6c0c40a/LICENSE",
+      "status": 200,
+      "bytes": 1066,
+      "sha256": "f1bda038ede2d9c31d1dfd57db6e064f91f06862a31e36cfce78c351658ea397",
+      "git_blob": "f5edb1a90ba350596268a7f2e0f2c36002700fa6"
+    },
+    {
+      "path": "source_materials/THIRD_PARTY_NOTICES.md",
+      "url": "https://raw.githubusercontent.com/scottstts/Threejs-Awesome-Graphics-Agent-Skills/e43dcb03020cae5b08983a828bc1817dd6c0c40a/source_materials/THIRD_PARTY_NOTICES.md",
+      "status": 200,
+      "bytes": 6998,
+      "sha256": "c0af7878479c12122969dccb6355277a73e3ee426fca3af0605893697ce4925b",
+      "git_blob": "182e52c0d706e388575e541b8d925840e2ade996"
+    }
+  ],
+  "declarations": {
+    "root_license": "MIT",
+    "root_license_git_blob_verified": true,
+    "package_name": "threejs-awesome-graphics-agent-skills",
+    "package_version": "0.4.4",
+    "package_license": "MIT AND GPL-3.0-only",
+    "package_published_paths": [
+      "bin/",
+      "skills/",
+      "LICENSE",
+      "source_materials/GPL-3.0.txt",
+      "source_materials/THIRD_PARTY_NOTICES.md",
+      "source_materials/trace-manifest.json",
+      "!source_materials/README.md",
+      "README.md"
+    ],
+    "selected_notices": [
+      {
+        "source": "Faraz-Portfolio/demo-2023-rain-puddle",
+        "declared_license": "GPL-3.0",
+        "paths": [
+          "skills/threejs-precipitation-surfaces/examples/wet-puddle-rain/",
+          "skills/threejs-precipitation-surfaces/assets/wet-puddle-rain/Splash.png",
+          "skills/threejs-precipitation-surfaces/assets/wet-puddle-rain/road/"
+        ]
+      },
+      {
+        "source": "momentchan/r3f-gist",
+        "observed_upstream_license": null,
+        "publisher_treatment": "MIT by project rule",
+        "paths": [
+          "skills/threejs-procedural-vegetation/examples/gpu-computed-grass/"
+        ]
+      },
+      {
+        "source": "rocksdanister/rain",
+        "observed_upstream_license": null,
+        "publisher_treatment": "MIT by project rule",
+        "paths": [
+          "skills/threejs-temporal-surfaces/examples/refractive-window-rain/"
+        ]
+      }
+    ]
+  },
+  "limits": [
+    "Selected declarations, not a complete upstream tree or path-level clearance.",
+    "Underlying third-party repositories were not independently fetched in this observation.",
+    "No source, example, texture, model, LUT, installer or vendor file was imported.",
+    "This metadata check does not execute the separate remote integrity or originality audit."
+  ]
+}

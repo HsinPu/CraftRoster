@@ -1,0 +1,50 @@
+skill	dependency	kind	when
+css-development	threejs-development	conditional	CSS affects a Three.js canvas, renderer sizing, HUD, projected labels, or pointer integration.
+frontend-code-review	code-review	required	-
+frontend-design	threejs-development	conditional	The requested or affected surface includes a Three.js or 3D scene; unrelated DOM and styling work does not qualify.
+git-readme-writer	markdown-writer	conditional	Markdown syntax or formatting conventions need specialist guidance.
+github-code-review	code-review	required	-
+image-to-code	image-to-code-assets	conditional	Independent asset exports, transparency, density variants, bounding boxes, or a Figma-layer handoff are requested.
+java-architecture	java-development	conditional	Implementation or migration planning requires this Java baseline or its testing contract; current-state assessment can remain standalone.
+java-architecture	java-testing	conditional	Implementation or migration planning requires this Java baseline or its testing contract; current-state assessment can remain standalone.
+javascript-development	threejs-development	conditional	The affected task requires this TypeScript or Three.js specialist; unrelated repository dependencies do not qualify.
+javascript-development	typescript-development	conditional	The affected task requires this TypeScript or Three.js specialist; unrelated repository dependencies do not qualify.
+pipeline-review	code-review	required	-
+python-api-client-development	python-development	required	-
+python-automation-scripting	python-development	required	-
+python-backend-development	python-development	required	-
+python-concurrency-patterns	python-development	required	-
+python-data-engineering	python-development	required	-
+python-development	python-api-client-development	conditional	The requested Python task matches this specialist domain; load only the relevant specialist.
+python-development	python-automation-scripting	conditional	The requested Python task matches this specialist domain; load only the relevant specialist.
+python-development	python-backend-development	conditional	The requested Python task matches this specialist domain; load only the relevant specialist.
+python-development	python-concurrency-patterns	conditional	The requested Python task matches this specialist domain; load only the relevant specialist.
+python-development	python-data-engineering	conditional	The requested Python task matches this specialist domain; load only the relevant specialist.
+python-development	python-observability-debugging	conditional	The requested Python task matches this specialist domain; load only the relevant specialist.
+python-development	python-packaging-release	conditional	The requested Python task matches this specialist domain; load only the relevant specialist.
+python-development	python-security-hardening	conditional	The requested Python task matches this specialist domain; load only the relevant specialist.
+python-development	python-testing-engineering	conditional	The requested Python task matches this specialist domain; load only the relevant specialist.
+python-development	python-web-scraping	conditional	The requested Python task matches this specialist domain; load only the relevant specialist.
+python-observability-debugging	python-development	conditional	Planning or implementing a Python code fix after diagnosis.
+python-packaging-release	python-development	required	-
+python-security-hardening	python-development	required	-
+python-testing-engineering	python-development	required	-
+python-web-scraping	python-development	required	-
+security-code-review	code-review	required	-
+threejs-accessibility	threejs-development	required	-
+threejs-animation-system	threejs-development	conditional	IK, locomotion, procedural animation, navigation, or physics shares pose authority.
+threejs-assets-gltf	threejs-development	conditional	Runtime authoring/export or engineering and dense spatial source formats require the shared contracts.
+threejs-cad-bim	threejs-development	required	-
+threejs-capture-recording	threejs-development	required	-
+threejs-csg-modeling	threejs-development	required	-
+threejs-data-visualization	threejs-development	conditional	Converting or streaming analytical source data requires shared format contracts.
+threejs-deformable-simulation	threejs-development	required	-
+threejs-editor-authoring	threejs-development	required	-
+threejs-framework-integrations	threejs-development	required	-
+threejs-navigation-crowds	threejs-development	required	-
+threejs-offscreen-workers	threejs-development	required	-
+threejs-path-tracing	threejs-development	required	-
+threejs-point-clouds-splats	threejs-development	required	-
+threejs-procedural-characters	threejs-development	required	-
+threejs-version-migration	threejs-development	required	-
+threejs-webxr-accessibility	threejs-development	required	-

@@ -1,0 +1,7 @@
+{
+  "buildId": "A",
+  "sourceRevision": "fixture-revision-A",
+  "imageTag": "orders:fixture-A",
+  "targetPlatform": "linux-amd64",
+  "schemaMigration": "none"
+}

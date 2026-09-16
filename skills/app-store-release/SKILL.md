@@ -21,13 +21,15 @@ Use this skill when preparing, reviewing, or troubleshooting mobile app releases
 
 ## Workflow
 
-1. Confirm release target: internal test, beta, phased rollout, production, or hotfix.
+Select the requested mode before acting: **prepare** produces local release artifacts and a readiness record; **review** inspects available evidence without mutations; **execute** performs the authorized submission or rollout. Carry forward an existing grant for the exact app, build, track, and effects; do not ask again for the same unchanged authorization. Preparing or reviewing a release does not authorize submission, metadata updates, track promotion, or production rollout.
+
+1. Identify the mode and release target: internal test, beta, phased rollout, production, or hotfix.
 2. Verify app identifier, signing, version, build number, release notes, and target backend.
-3. Complete store metadata, screenshots, privacy policy, data disclosures, and permission declarations.
-4. Test the exact build from TestFlight or Google Play testing track.
+3. Prepare or inspect store metadata, screenshots, privacy policy, data disclosures, and permission declarations. Write to the store only within the authorized execute scope.
+4. Inspect exact-build test evidence in review mode. Run tests against the local build or an existing testing track only when execution and its effects are within scope.
 5. Review platform policies and high-risk features before submission.
-6. Submit, monitor review status, and keep a rejection response plan ready.
-7. Roll out gradually when risk is meaningful and monitor crashes, reviews, analytics, and backend errors.
+6. In prepare or review mode, return readiness evidence and remaining gaps. In execute mode, submit only the authorized build to the authorized track, monitor status, and keep a rejection response plan ready.
+7. Roll out only within the authorized release scope, gradually when risk is meaningful, and monitor crashes, reviews, analytics, and backend errors. An internal-test submission does not authorize production promotion.
 
 ## Apple Checklist
 

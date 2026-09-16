@@ -1,0 +1,634 @@
+{
+  "schema_version": 1,
+  "evaluation_kind": "offline_category_input_readiness",
+  "recorded_at": "2026-09-16T13:23:20.520Z",
+  "status": "not_run",
+  "model_calls": 0,
+  "classification": "human audit of task and material requirements; not a model grade",
+  "runtime": {
+    "node": "v24.19.0",
+    "platform": "win32",
+    "arch": "x64"
+  },
+  "sources": [
+    {
+      "path": "docs/skill-review-registry.json",
+      "sha256": "96579b3b0ce4e3b5e36a901fbaa67296ce87f0005090a8279111fe684eb637e7"
+    },
+    {
+      "path": "scripts/prepare-skill-pilot.js",
+      "sha256": "7d5036a0f793436be8041eccf2adc3dc5f9e80afab3a2492ec52e50afe5d59b5"
+    },
+    {
+      "path": "docs/audits/skill-optimization-2026-09-16/record-category-readiness.cjs",
+      "sha256": "00e6ea2e63e7502d245d19b7e0d9e221a5e0eb76437a1e37ff86e7ee991b2fa9"
+    }
+  ],
+  "summary": {
+    "categories": 16,
+    "fixture_packaged": 8,
+    "brief_packaged": 7,
+    "missing_inputs": 1,
+    "model_task_outcomes": 0
+  },
+  "cases": [
+    {
+      "category": "workflow-planning",
+      "case_id": "code-change-workflow:1",
+      "task_form": "modify-artifact",
+      "corpus_case_sha256": "fa6fa72b7e2a5100c6687a27b9a0fa37f740ea38ac1623ff1efeaac66797d5d8",
+      "input_status": "fixture_packaged",
+      "preparation": {
+        "mode": "workspace_fixture",
+        "split": "development",
+        "fixture_sha256": "c88bbf169bc3f618dcbccd15cae1f4282bb6d9f6d3816ac664a916538b59fd42",
+        "fixture_manifest": [
+          {
+            "path": "CONTRACT.md",
+            "sha256": "ff279c98d2c0e86ab1771b133dd46c39135fa1832a7dee7003cc85cf4140f105",
+            "bytes": 940
+          },
+          {
+            "path": "lib/discount.js",
+            "sha256": "45aedb5aff0fafdc77a91b84a85a748783b5341e583f21c5fe7c128aacf82f98",
+            "bytes": 608
+          },
+          {
+            "path": "package.json",
+            "sha256": "e16837b6f326a99dc41fcd61075f60ad9c0386a3dd5220e22f58e50a95b2892d",
+            "bytes": 157
+          },
+          {
+            "path": "test/discount.test.js",
+            "sha256": "2aba6a140044c2beb7a8a5fc45e169d49f0deb525e78f62a81623c5b2833ab48",
+            "bytes": 517
+          }
+        ],
+        "runtime_packages": 286,
+        "runtime_catalog_sha256": "bf4dbd270ed5bd8c09ede9d7bf4b2a9104c7aaeb51088427bf765c9110bdc213",
+        "public_files": 523,
+        "public_bundle_sha256": "d006457fff939f323e25254f87860b75b9b4a33cacc7395363c750155d6cc66d",
+        "private_oracle_excluded": true
+      },
+      "required_capabilities": [
+        "isolated file writes",
+        "Node regression execution"
+      ],
+      "task_outcome": "not_run",
+      "model_effective": null,
+      "activation_observed": false,
+      "execution_readiness": "requires_approved_host_and_grading",
+      "limitations": []
+    },
+    {
+      "category": "software-engineering",
+      "case_id": "python-development:1",
+      "task_form": "create-artifact",
+      "corpus_case_sha256": "fd9f2189bae01ae466bda0ddaa8cb05c46580f93613799a55e67b4c96672dc08",
+      "input_status": "fixture_packaged",
+      "preparation": {
+        "mode": "workspace_fixture",
+        "split": "development",
+        "fixture_sha256": "7fcf63fc83b1816c8994344a1e21cecade660c77282aad7ed8ba2597bdb9395e",
+        "fixture_manifest": [
+          {
+            "path": "CONTRACT.md",
+            "sha256": "96bd6fdbddf43de67a9f582bca08bdabba69b1fcc20d45abbf07f98b6a9dff1c",
+            "bytes": 3057
+          },
+          {
+            "path": "pyproject.toml",
+            "sha256": "922154df061b72a5f5f8b234831e3530c67f4c227021ebb1e5b569083f87b86b",
+            "bytes": 164
+          },
+          {
+            "path": "src/config_tools/__init__.py",
+            "sha256": "865ac57dc1f8f548833eba182559dbcc27708a04f8d15187d0d6f073e6196128",
+            "bytes": 82
+          },
+          {
+            "path": "src/config_tools/labels.py",
+            "sha256": "dded854edd008963cd11dd7ce35da41c2d6a9deda7a58ea3fcac5e960c053028",
+            "bytes": 216
+          },
+          {
+            "path": "tests/test_labels.py",
+            "sha256": "96c7d36b1aad9218533dcb9497c5c9e2e9b68219ec69696349b42ca775a6231f",
+            "bytes": 559
+          },
+          {
+            "path": "examples/valid.json",
+            "sha256": "771750a69c2fddef2d1fd15aec74ecf85606335a18cc83d13cf2bb76db10eab4",
+            "bytes": 133
+          },
+          {
+            "path": "examples/invalid-cases.json",
+            "sha256": "8517a5b90135d2312cea323b29687f7865b54ada9d4f6d65d225a1684f28dcc4",
+            "bytes": 1002
+          },
+          {
+            "path": "examples/malformed.json",
+            "sha256": "7ea38a70a8459b8e8e9ee1ee6baf86e1ea51fbdd575091cbbce5303d4e3e63cd",
+            "bytes": 44
+          }
+        ],
+        "runtime_packages": 286,
+        "runtime_catalog_sha256": "bf4dbd270ed5bd8c09ede9d7bf4b2a9104c7aaeb51088427bf765c9110bdc213",
+        "public_files": 527,
+        "public_bundle_sha256": "9f27557bdcb1a0e01a08b9c8f33ee6a98f3da9082182d9be52d91f9c4c20edd6",
+        "private_oracle_excluded": true
+      },
+      "required_capabilities": [
+        "isolated file writes",
+        "declared Python runtime",
+        "focused unittest execution"
+      ],
+      "task_outcome": "not_run",
+      "model_effective": null,
+      "activation_observed": false,
+      "execution_readiness": "requires_approved_host_and_grading",
+      "limitations": []
+    },
+    {
+      "category": "frontend-design",
+      "case_id": "frontend-design:1",
+      "task_form": "create-artifact",
+      "corpus_case_sha256": "b707a59058df6e38c2fe503cc08177caecfdd8dfaa203a511692810aa19f0063",
+      "input_status": "self_contained_brief_packaged",
+      "preparation": {
+        "mode": "text_only",
+        "split": "development",
+        "fixture_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "fixture_manifest": [],
+        "runtime_packages": 286,
+        "runtime_catalog_sha256": "bf4dbd270ed5bd8c09ede9d7bf4b2a9104c7aaeb51088427bf765c9110bdc213",
+        "public_files": 519,
+        "public_bundle_sha256": "b6d7f50fdd7c6a9aa1ba91a459558bac998637f480d1e2aca6c73f5b2d71387f",
+        "private_oracle_excluded": true
+      },
+      "required_capabilities": [
+        "local HTML/CSS/JavaScript authoring",
+        "Three.js dependencies",
+        "browser and responsive verification"
+      ],
+      "task_outcome": "not_run",
+      "model_effective": null,
+      "activation_observed": false,
+      "execution_readiness": "requires_approved_host_and_grading",
+      "limitations": [
+        "Text-only is the input packaging mode. The task still requires created, verified artifacts; a plan or routed outline is not completion."
+      ]
+    },
+    {
+      "category": "threejs-graphics",
+      "case_id": "threejs-development:1",
+      "task_form": "create-artifact",
+      "corpus_case_sha256": "7ee36bb2b4357585648771bf7d67fc3f6e5596dc4fa30e2995e06d4df7b42b86",
+      "input_status": "self_contained_brief_packaged",
+      "preparation": {
+        "mode": "text_only",
+        "split": "development",
+        "fixture_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "fixture_manifest": [],
+        "runtime_packages": 286,
+        "runtime_catalog_sha256": "bf4dbd270ed5bd8c09ede9d7bf4b2a9104c7aaeb51088427bf765c9110bdc213",
+        "public_files": 519,
+        "public_bundle_sha256": "65dab50d7116b58c539aa4d8413ef70dbc047149bae4945a4bae406d8f980f4d",
+        "private_oracle_excluded": true
+      },
+      "required_capabilities": [
+        "React Three Fiber build",
+        "GLB assets",
+        "browser/device/XR checks",
+        "visual regression",
+        "scoped CDN delivery capability"
+      ],
+      "task_outcome": "not_run",
+      "model_effective": null,
+      "activation_observed": false,
+      "execution_readiness": "requires_approved_host_and_grading",
+      "limitations": [
+        "Text-only is the input packaging mode. The task still requires created, verified artifacts; a plan or routed outline is not completion."
+      ]
+    },
+    {
+      "category": "backend-data",
+      "case_id": "api-contract-design:1",
+      "task_form": "read-only-analysis",
+      "corpus_case_sha256": "7ade997a3306cbfaeaf27eb730c25e1d6d918df1e1ff7e39a85148d181db038d",
+      "input_status": "fixture_packaged",
+      "preparation": {
+        "mode": "workspace_fixture",
+        "split": "development",
+        "fixture_sha256": "a5f9464de39214b0643f3e4826b5b4966bc48dc770dbd7db89686e91ac92746d",
+        "fixture_manifest": [
+          {
+            "path": "orders-contract.json",
+            "sha256": "dfc603c7b0d668967654efd4b255af04bf248193535e500fb058d273d2418672",
+            "bytes": 366
+          }
+        ],
+        "runtime_packages": 286,
+        "runtime_catalog_sha256": "bf4dbd270ed5bd8c09ede9d7bf4b2a9104c7aaeb51088427bf765c9110bdc213",
+        "public_files": 520,
+        "public_bundle_sha256": "7a0a0bc3cc20d730a8f7d5a16286c4bea57f9f35ac86fff5055bb174a8b52d2c",
+        "private_oracle_excluded": true
+      },
+      "required_capabilities": [
+        "supplied contract inspection",
+        "manual compatibility rubric"
+      ],
+      "task_outcome": "not_run",
+      "model_effective": null,
+      "activation_observed": false,
+      "execution_readiness": "requires_approved_host_and_grading",
+      "limitations": []
+    },
+    {
+      "category": "ai-llm",
+      "case_id": "prompt-engineering:1",
+      "task_form": "text-deliverable",
+      "corpus_case_sha256": "3aa6e60e25f64153ca558c223b6809be9dd473a755f17b83aea8e975836a9ca4",
+      "input_status": "self_contained_brief_packaged",
+      "preparation": {
+        "mode": "text_only",
+        "split": "development",
+        "fixture_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "fixture_manifest": [],
+        "runtime_packages": 286,
+        "runtime_catalog_sha256": "bf4dbd270ed5bd8c09ede9d7bf4b2a9104c7aaeb51088427bf765c9110bdc213",
+        "public_files": 519,
+        "public_bundle_sha256": "2263f2ae01696d740133ffa1e40f89e6329415c3d9987aeb142371152f2dddf0",
+        "private_oracle_excluded": true
+      },
+      "required_capabilities": [
+        "manual reusable-prompt rubric"
+      ],
+      "task_outcome": "not_run",
+      "model_effective": null,
+      "activation_observed": false,
+      "execution_readiness": "requires_approved_host_and_grading",
+      "limitations": []
+    },
+    {
+      "category": "mobile-desktop",
+      "case_id": "app-store-release:1",
+      "task_form": "read-only-analysis",
+      "corpus_case_sha256": "b4c87b447d0efd4ca5e84a37d58d3e7daf2f92a691965ab9f2b0f3aa3028dce2",
+      "input_status": "fixture_packaged",
+      "preparation": {
+        "mode": "workspace_fixture",
+        "split": "development",
+        "fixture_sha256": "35d5d2f5b6cb25459c5e9a6aaa6251433ca24e0a07cda58c309be7fadc83add3",
+        "fixture_manifest": [
+          {
+            "path": "CONTRACT.md",
+            "sha256": "923de637a5bf78d82196f30a4decd08a2136823b74723fac0b19d82713b83dd8",
+            "bytes": 2418
+          },
+          {
+            "path": "release-target.json",
+            "sha256": "00e52b6660aea0b7116d6a64becd2e4d479b96190f8c0f36b9f50c14311a3ab0",
+            "bytes": 1348
+          },
+          {
+            "path": "release-gates.json",
+            "sha256": "976b6748cadc7617a35e968574d7225c115b467ccb182ad890ec8ec1832da4df",
+            "bytes": 2115
+          },
+          {
+            "path": "build42-evidence.json",
+            "sha256": "37bd7a1bd86b779e7f04c158ddadf9185dc219501be9504babbc698ab978fe11",
+            "bytes": 2906
+          },
+          {
+            "path": "historical-evidence.json",
+            "sha256": "1edd2bb6f645b78949dbe4e39dcf4f32e734093ec67e41b08683c4e8553953fc",
+            "bytes": 1616
+          },
+          {
+            "path": "open-checks.json",
+            "sha256": "346f50009636c2a9fb5db8392bdf390591a763390e2471d79c62f49342437797",
+            "bytes": 1347
+          }
+        ],
+        "runtime_packages": 286,
+        "runtime_catalog_sha256": "bf4dbd270ed5bd8c09ede9d7bf4b2a9104c7aaeb51088427bf765c9110bdc213",
+        "public_files": 525,
+        "public_bundle_sha256": "ac9e7930b142a4a50eefcc3397d6c44161296c27bdac4ef184185fdfc8049f85",
+        "private_oracle_excluded": true
+      },
+      "required_capabilities": [
+        "supplied receipt inspection",
+        "manual evidence rubric"
+      ],
+      "task_outcome": "not_run",
+      "model_effective": null,
+      "activation_observed": false,
+      "execution_readiness": "requires_approved_host_and_grading",
+      "limitations": [
+        "Passed receipts are authored fictional records, not executed store/device/staging evidence."
+      ]
+    },
+    {
+      "category": "testing-quality",
+      "case_id": "pipeline-review:1",
+      "task_form": "text-premise-reasoning",
+      "corpus_case_sha256": "22f6f67ce76ce390f063ab7ee13590960774013cfd36e2698432f8955094a0ae",
+      "input_status": "self_contained_brief_packaged",
+      "preparation": {
+        "mode": "text_only",
+        "split": "development",
+        "fixture_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "fixture_manifest": [],
+        "runtime_packages": 286,
+        "runtime_catalog_sha256": "bf4dbd270ed5bd8c09ede9d7bf4b2a9104c7aaeb51088427bf765c9110bdc213",
+        "public_files": 519,
+        "public_bundle_sha256": "7d6516f258b02a9f4970ce2dd2ea863d6d16400631bd66a0845b4c5a7b50daf1",
+        "private_oracle_excluded": true
+      },
+      "required_capabilities": [
+        "manual findings/evidence separation rubric"
+      ],
+      "task_outcome": "not_run",
+      "model_effective": null,
+      "activation_observed": false,
+      "execution_readiness": "requires_approved_host_and_grading",
+      "limitations": [
+        "The prompt supplies the no-defect/missing-evidence premise. This is a text reasoning case, not independent defect discovery in a supplied repository."
+      ]
+    },
+    {
+      "category": "security-governance",
+      "case_id": "threat-modeling:1",
+      "task_form": "text-deliverable",
+      "corpus_case_sha256": "30e3e7464f41c4e479a05d2a0de7c7df7f01af30a02cd7dc743b14a571739496",
+      "input_status": "self_contained_brief_packaged",
+      "preparation": {
+        "mode": "text_only",
+        "split": "development",
+        "fixture_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "fixture_manifest": [],
+        "runtime_packages": 286,
+        "runtime_catalog_sha256": "bf4dbd270ed5bd8c09ede9d7bf4b2a9104c7aaeb51088427bf765c9110bdc213",
+        "public_files": 519,
+        "public_bundle_sha256": "5bd3f066bbe747995f4cbf823ba4dc4a18d0c461344d90d2d89c6a1af4eb07ce",
+        "private_oracle_excluded": true
+      },
+      "required_capabilities": [
+        "assumption-aware architecture analysis",
+        "manual threat-model rubric"
+      ],
+      "task_outcome": "not_run",
+      "model_effective": null,
+      "activation_observed": false,
+      "execution_readiness": "requires_approved_host_and_grading",
+      "limitations": [
+        "The short architecture description supports an assumption-aware model, not validation of a complete real system."
+      ]
+    },
+    {
+      "category": "cloud-devops",
+      "case_id": "deployment-operations:1",
+      "task_form": "read-only-analysis",
+      "corpus_case_sha256": "bc5568504f0ce1be7ca81458ed52e40185d69371540246f0b71ef99f81e7467f",
+      "input_status": "fixture_packaged",
+      "preparation": {
+        "mode": "workspace_fixture",
+        "split": "development",
+        "fixture_sha256": "0ea184fa31daefaee27607b41b8f770fb733591b637a6f15e3f39a9219a1556a",
+        "fixture_manifest": [
+          {
+            "path": "CONTRACT.md",
+            "sha256": "0c899ca53ad97cb619acf04c731192624cb15c5d3c3e70196b267bc0ee2ffa86",
+            "bytes": 1925
+          },
+          {
+            "path": "artifacts/A.json",
+            "sha256": "3216f3fbf1a30e989e3b4ce3f4e5b41887d4b9de8a6ed8959c8dbe924e2e7471",
+            "bytes": 161
+          },
+          {
+            "path": "config/staging-B.json",
+            "sha256": "b13dc9901a5a4d54b5cdf046be6ea9a502aa33b8fc31cc243806c7880a4033a0",
+            "bytes": 260
+          },
+          {
+            "path": "history/staging-B-r1.json",
+            "sha256": "60142455932bb2bdcadc287a081709ea9704d05f571982c5dcc49836b29eea68",
+            "bytes": 261
+          },
+          {
+            "path": "release.json",
+            "sha256": "244ecf29f4b1c69e94127ec9d4ca83b6a739941cb416789a81f10816027b96d8",
+            "bytes": 742
+          },
+          {
+            "path": "evidence/checks.json",
+            "sha256": "e1c705f0655d0c82f5952403f58dc517a05b97374caf297df72c1a8ab190b9f6",
+            "bytes": 2410
+          }
+        ],
+        "runtime_packages": 286,
+        "runtime_catalog_sha256": "bf4dbd270ed5bd8c09ede9d7bf4b2a9104c7aaeb51088427bf765c9110bdc213",
+        "public_files": 525,
+        "public_bundle_sha256": "24890cc73c579a0177dd95724b4a5e31fdeddc05a3add1a5aca50965f68fa99d",
+        "private_oracle_excluded": true
+      },
+      "required_capabilities": [
+        "supplied release-record inspection",
+        "manual scope and evidence rubric"
+      ],
+      "task_outcome": "not_run",
+      "model_effective": null,
+      "activation_observed": false,
+      "execution_readiness": "requires_approved_host_and_grading",
+      "limitations": [
+        "Passed receipts are authored fictional records, not executed store/device/staging evidence."
+      ]
+    },
+    {
+      "category": "agent-skill-tooling",
+      "case_id": "mcp-creator-design:1",
+      "task_form": "create-artifact",
+      "corpus_case_sha256": "a339c71d6b83096792524b6e9f06937845650c1122ae268d4517c7a023d9c3c9",
+      "input_status": "missing_project_contract_and_versioned_evidence",
+      "preparation": null,
+      "required_capabilities": [
+        "installed versioned SDK project",
+        "official-document retrieval stub",
+        "concrete server/tool contract",
+        "isolated TypeScript execution"
+      ],
+      "task_outcome": "not_run",
+      "model_effective": null,
+      "activation_observed": false,
+      "execution_readiness": "missing_inputs",
+      "limitations": [
+        "The prompt refers to an installed SDK and a retrieval capability, but supplies no project/version, tool behavior contract or retrieval response. Do not treat a generic server plan as the requested implementation."
+      ]
+    },
+    {
+      "category": "browser-automation",
+      "case_id": "agent-reach-ops:1",
+      "task_form": "read-only-analysis",
+      "corpus_case_sha256": "1ca8df3c7409eade0e0b49bfa03def84e0fea9c9c699551d566060d28aaa8c57",
+      "input_status": "fixture_packaged",
+      "preparation": {
+        "mode": "workspace_fixture",
+        "split": "development",
+        "fixture_sha256": "73d7114701ac35577d8b6ca025e6911e82833bfbae6deaade30347974ea577ac",
+        "fixture_manifest": [
+          {
+            "path": "social-post-evidence.md",
+            "sha256": "f4cc538250880dcabf4de594168b35a03b9fc8b7f8e4bac5ea48679baa660420",
+            "bytes": 888
+          }
+        ],
+        "runtime_packages": 286,
+        "runtime_catalog_sha256": "bf4dbd270ed5bd8c09ede9d7bf4b2a9104c7aaeb51088427bf765c9110bdc213",
+        "public_files": 520,
+        "public_bundle_sha256": "f52d3d4223d570dc11b591b3b8bd43df57e4fb23ce3d61c1331f851d4e8d8ee3",
+        "private_oracle_excluded": true
+      },
+      "required_capabilities": [
+        "supplied platform-evidence inspection",
+        "manual provenance and injection rubric"
+      ],
+      "task_outcome": "not_run",
+      "model_effective": null,
+      "activation_observed": false,
+      "execution_readiness": "requires_approved_host_and_grading",
+      "limitations": []
+    },
+    {
+      "category": "media-creative",
+      "case_id": "video-production-workflow:1",
+      "task_form": "create-artifact",
+      "corpus_case_sha256": "a62c4e55cfa54d279526e25c595b47bf603699e30c9ecee5f839c75e7fcda81b",
+      "input_status": "self_contained_brief_packaged",
+      "preparation": {
+        "mode": "text_only",
+        "split": "development",
+        "fixture_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "fixture_manifest": [],
+        "runtime_packages": 286,
+        "runtime_catalog_sha256": "bf4dbd270ed5bd8c09ede9d7bf4b2a9104c7aaeb51088427bf765c9110bdc213",
+        "public_files": 519,
+        "public_bundle_sha256": "b8b204a5ec38d016876693202ad9e1359b7f7405489410cbb1ab7d6e3f226805",
+        "private_oracle_excluded": true
+      },
+      "required_capabilities": [
+        "local editable creative artifacts",
+        "video renderer",
+        "frame/caption/render verification"
+      ],
+      "task_outcome": "not_run",
+      "model_effective": null,
+      "activation_observed": false,
+      "execution_readiness": "requires_approved_host_and_grading",
+      "limitations": [
+        "Text-only is the input packaging mode. The task still requires created, verified artifacts; a plan or routed outline is not completion."
+      ]
+    },
+    {
+      "category": "writing-content",
+      "case_id": "git-readme-writer:1",
+      "task_form": "text-deliverable",
+      "corpus_case_sha256": "fc9b1f5999b4513512489f0ee65227ff5f9672ad8be43a22c95973b3a7b13095",
+      "input_status": "fixture_packaged",
+      "preparation": {
+        "mode": "workspace_fixture",
+        "split": "development",
+        "fixture_sha256": "10f1980c2ce2f1fb339355994d7c931e626b7c8d6893c91a86d409db680e7668",
+        "fixture_manifest": [
+          {
+            "path": "package.json",
+            "sha256": "d041fd44bba7cc3a7bab441f887e1f172dbd8e80ba0062d5db136501b7ed9853",
+            "bytes": 266
+          }
+        ],
+        "runtime_packages": 286,
+        "runtime_catalog_sha256": "bf4dbd270ed5bd8c09ede9d7bf4b2a9104c7aaeb51088427bf765c9110bdc213",
+        "public_files": 520,
+        "public_bundle_sha256": "0bd2156fcb8bc6610e2fcd07b52d761b0ce3241f02c804bef0abe25334195064",
+        "private_oracle_excluded": true
+      },
+      "required_capabilities": [
+        "supplied package inspection",
+        "manual factuality and scope rubric"
+      ],
+      "task_outcome": "not_run",
+      "model_effective": null,
+      "activation_observed": false,
+      "execution_readiness": "requires_approved_host_and_grading",
+      "limitations": []
+    },
+    {
+      "category": "research-product",
+      "case_id": "solution-discovery:1",
+      "task_form": "text-deliverable",
+      "corpus_case_sha256": "a55843b37d988da2af4057b50b8db33d94ff80e18cf59e125b2dfc0732a1d501",
+      "input_status": "self_contained_brief_packaged",
+      "preparation": {
+        "mode": "text_only",
+        "split": "development",
+        "fixture_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "fixture_manifest": [],
+        "runtime_packages": 286,
+        "runtime_catalog_sha256": "bf4dbd270ed5bd8c09ede9d7bf4b2a9104c7aaeb51088427bf765c9110bdc213",
+        "public_files": 519,
+        "public_bundle_sha256": "e11efa4eff135d2ac0eb17533c157d1113747497b1495cc2cf46a58529d42129",
+        "private_oracle_excluded": true
+      },
+      "required_capabilities": [
+        "manual options and decision-boundary rubric"
+      ],
+      "task_outcome": "not_run",
+      "model_effective": null,
+      "activation_observed": false,
+      "execution_readiness": "requires_approved_host_and_grading",
+      "limitations": []
+    },
+    {
+      "category": "documents-productivity",
+      "case_id": "spreadsheet-ops:1",
+      "task_form": "create-artifact",
+      "corpus_case_sha256": "547335f964ff5976f72b2c1308ea684821089c45fe1cfa3441cc7c2abceebcfa",
+      "input_status": "fixture_packaged",
+      "preparation": {
+        "mode": "workspace_fixture",
+        "split": "development",
+        "fixture_sha256": "bf0809cba41819e89d993e134e21a3305da2de9863eff8fb58ac58fc1f0e070a",
+        "fixture_manifest": [
+          {
+            "path": "sales.csv",
+            "sha256": "0de8af7d96639ac2e1fa695675ecea5bba5c614988ffbee7887799968f2b1a9e",
+            "bytes": 73
+          }
+        ],
+        "runtime_packages": 286,
+        "runtime_catalog_sha256": "bf4dbd270ed5bd8c09ede9d7bf4b2a9104c7aaeb51088427bf765c9110bdc213",
+        "public_files": 520,
+        "public_bundle_sha256": "dde04aa795af325ffebbc2853dd1ca046bee31078030abac9cfbb796525e6613",
+        "private_oracle_excluded": true
+      },
+      "required_capabilities": [
+        "isolated workbook output",
+        "formula recalculation",
+        "workbook readback verification"
+      ],
+      "task_outcome": "not_run",
+      "model_effective": null,
+      "activation_observed": false,
+      "execution_readiness": "requires_approved_host_and_grading",
+      "limitations": []
+    }
+  ],
+  "limitations": [
+    "Input preparation does not certify runtime availability, isolation, activation or task success.",
+    "All cases are development data; no held-out trials ran.",
+    "Required capabilities and text-versus-artifact distinctions preserve each original task; they are not execution grants.",
+    "There is no new model authorization or separate paid API execution."
+  ]
+}

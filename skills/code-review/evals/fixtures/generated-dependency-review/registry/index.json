@@ -1,0 +1,17 @@
+{
+  "format": "offline-depot-registry-v1",
+  "releases": [
+    {
+      "version": "1.4.1",
+      "source": "registry/sources/depot-catalog-1.4.1.cjs",
+      "sha256": "24ae538fd5da1b4a1e5d0a3d9bf9addb3d8c09669bde37ff9bf9b437555503fc",
+      "apiVersion": 1
+    },
+    {
+      "version": "1.4.2",
+      "source": "registry/sources/depot-catalog-1.4.2.cjs",
+      "sha256": "d78a62bc0727c6550e07f962ec75aa73c1d1361dc8e7417dfdf0b409592c9c17",
+      "apiVersion": 1
+    }
+  ]
+}

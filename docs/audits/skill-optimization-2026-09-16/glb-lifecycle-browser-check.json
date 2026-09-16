@@ -1,0 +1,224 @@
+{
+  "schema_version": 1,
+  "kind": "author_glb_lifecycle_browser_check",
+  "recorded_at": "2026-09-16T09:54:37.510Z",
+  "case_id": "threejs-development:2",
+  "status": "not_run",
+  "model_execution": false,
+  "model_calls": 0,
+  "author_check_status": "partial",
+  "browser": {
+    "provider": "Codex In-app Browser",
+    "engine_version": null,
+    "platform": "win32"
+  },
+  "setup": {
+    "three": "0.180.0",
+    "dependency_method": "Private author --stage-browser ran npm ci --ignore-scripts and real esbuild in isolated original/fixed directories. Fixed scope is route-owned resource disposal only.",
+    "source_manifest": [
+      {
+        "path": "CONTRACT.md",
+        "sha256": "edb8b5d219a6b4f2fa2086f503cb060b3b003bfb77958aa110c1614672c76f3a"
+      },
+      {
+        "path": "index.html",
+        "sha256": "2afea0920a8a61a1f1213b533ae9663423912edd643a4cc90c38a8812ead71f9"
+      },
+      {
+        "path": "package-lock.json",
+        "sha256": "1553f3c51037ec00ecd1f62f95d6bb323d6881e9766e5c75d2ec5340623a2b78"
+      },
+      {
+        "path": "package.json",
+        "sha256": "98795b5972abf2819dbc3e4c2b53ffe80cf28fd715919abf77b4b5b54ea8a31d"
+      },
+      {
+        "path": "scenario.json",
+        "sha256": "f165ca445f419194beb7c68eb31c4597097f6359c285beb5a1e28ed634c7dc85"
+      },
+      {
+        "path": "src/asset-policy.cjs",
+        "sha256": "5e74f8f5b81c3ec56035c0bab75963587a06ee1834ee0808747e47ad0f704c0b"
+      },
+      {
+        "path": "src/lifecycle.cjs",
+        "sha256": "217444103cc0fc2ae0ea464d0062856b60470eb4382b5579f542a2f8c1806446"
+      },
+      {
+        "path": "src/viewer.js",
+        "sha256": "26b2e49a6697a458a8fa416ddaee89dcd434d673c4f503690710fb528b410a0f"
+      },
+      {
+        "path": "style.css",
+        "sha256": "2a995ff9458d51e98010c5d1205040e632f2dfa64516d58c44a853d10993d368"
+      },
+      {
+        "path": "test/assets.test.cjs",
+        "sha256": "95407cb231a4b40e6c7810721e00429019e22ff1eac7a54e595e5a3810148dc3"
+      },
+      {
+        "path": "tools/build.cjs",
+        "sha256": "475ad05d501f4c37b62ae65c87ba92cd880c3ea556bf483204857a57cd0ee0ab"
+      },
+      {
+        "path": "tools/generate-assets.cjs",
+        "sha256": "140dc4f134f1d3caa2ebc34ecb0087077641c2d637cef13274993115c51eb914"
+      },
+      {
+        "path": "tools/serve.cjs",
+        "sha256": "ce6305f536151400f2f1ec95d9f209da99a97bb6f742b1566e8d17e1f5ec9fa7"
+      }
+    ],
+    "private_test_sha256": "a79d79437348eb2c45e8d56bc6ca31e6b613d7173d6c1ba77f52189bbe749f9c",
+    "fixed_changed_files": [
+      {
+        "path": "src/lifecycle.cjs",
+        "original_sha256": "217444103cc0fc2ae0ea464d0062856b60470eb4382b5579f542a2f8c1806446",
+        "fixed_sha256": "d646a5e558730b51742b9edcafbb94f938b50cee68572b229a3fd1b925508ad6"
+      }
+    ],
+    "original_build_manifest": [
+      {
+        "path": "app.js",
+        "sha256": "156496590850e489da7a881f6a7b9fc64f20496eed4e54ebbe814d54ab46a143"
+      },
+      {
+        "path": "app.js.map",
+        "sha256": "b2d939a4661b1c2844c94b1864a2d8415b7cc9f916d16abe7e89a3cacf229ad1"
+      },
+      {
+        "path": "assets/corrupt-texture.glb",
+        "sha256": "c93f9a552a98d25880c5aed36f1b1081e652fa0795574f9319de9148d1e1566d"
+      },
+      {
+        "path": "assets/triangle.glb",
+        "sha256": "0f4069000d7b4d1b581cd65bef3bed30396b882a7e331da061066daa9f9f88f3"
+      },
+      {
+        "path": "index.html",
+        "sha256": "2afea0920a8a61a1f1213b533ae9663423912edd643a4cc90c38a8812ead71f9"
+      },
+      {
+        "path": "style.css",
+        "sha256": "2a995ff9458d51e98010c5d1205040e632f2dfa64516d58c44a853d10993d368"
+      }
+    ],
+    "fixed_build_manifest": [
+      {
+        "path": "app.js",
+        "sha256": "ba0a148a3b8ea25d7068302a17543cf1ea5279524f8b6a72bcde2976c3d0ba5e"
+      },
+      {
+        "path": "app.js.map",
+        "sha256": "22e4304385207741b03622d8ea6ff42d24bae45e45820b6f5e0b1e29e782e6a2"
+      },
+      {
+        "path": "assets/corrupt-texture.glb",
+        "sha256": "c93f9a552a98d25880c5aed36f1b1081e652fa0795574f9319de9148d1e1566d"
+      },
+      {
+        "path": "assets/triangle.glb",
+        "sha256": "0f4069000d7b4d1b581cd65bef3bed30396b882a7e331da061066daa9f9f88f3"
+      },
+      {
+        "path": "index.html",
+        "sha256": "2afea0920a8a61a1f1213b533ae9663423912edd643a4cc90c38a8812ead71f9"
+      },
+      {
+        "path": "style.css",
+        "sha256": "2a995ff9458d51e98010c5d1205040e632f2dfa64516d58c44a853d10993d368"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "label": "original-initial",
+      "frames": 139,
+      "renderer": {
+        "geometries": 1,
+        "textures": 1,
+        "programs": 1
+      },
+      "actual_dispose_events": 0
+    },
+    {
+      "label": "original-during-first-repeat6",
+      "completed_unmounts_observed": 2,
+      "busy": true,
+      "renderer": {
+        "geometries": 3,
+        "textures": 5,
+        "programs": 4
+      },
+      "actual_dispose_events": 0,
+      "first_route_render_cpu_wall_ms": 76.8
+    },
+    {
+      "label": "original-next-observation-failed",
+      "outcome": "The browser reported This page crashed before the next diagnostics read. The first 6-cycle batch completion and a second batch were not observed.",
+      "cause": "unknown",
+      "bounded_corrupt_sample_had_been_loaded": false
+    },
+    {
+      "label": "fixed-after6",
+      "busy": false,
+      "renderer": {
+        "geometries": 1,
+        "textures": 1,
+        "programs": 2
+      },
+      "route_created_each_kind": 6,
+      "actual_route_dispose_events": 24,
+      "actual_shared_dispose_events": 0
+    },
+    {
+      "label": "fixed-after12",
+      "busy": false,
+      "renderer": {
+        "geometries": 1,
+        "textures": 1,
+        "programs": 2
+      },
+      "route_created_each_kind": 12,
+      "actual_route_dispose_events": 48,
+      "actual_shared_dispose_events": 0
+    },
+    {
+      "label": "fixed-bounded-corrupt-texture",
+      "route_mounted": false,
+      "busy": false,
+      "embedded_image_errors": 1,
+      "parse_decode_cpu_wall_ms": 3.4,
+      "renderer": {
+        "geometries": 1,
+        "textures": 1,
+        "programs": 2
+      },
+      "visible_message": "Bounded texture decode failed; no route was mounted. This is not a tab-crash reproduction."
+    },
+    {
+      "label": "fixed-subsequent-mount-shader-measurement",
+      "parse_decode_cpu_wall_ms": 5.8,
+      "first_route_render_cpu_wall_ms": 28.2,
+      "variant_compile_cpu_wall_ms": 1.9,
+      "variant_first_render_cpu_wall_ms": 33.4
+    },
+    {
+      "label": "fixed-visual-inspection",
+      "shared_blue_box_visible": true,
+      "orange_gltf_triangle_visible": true
+    }
+  ],
+  "console": {
+    "fixed_expected_error": "THREE.GLTFLoader: Couldn't load texture blob:http://127.0.0.1:4175/...",
+    "reason": "The bounded invalid PNG was deliberately loaded; this is not a clean-console claim."
+  },
+  "limitations": [
+    "The original browser crash cause is unverified; it cannot be attributed to asset decode, allocation growth or the host without more evidence.",
+    "Original batch completion was not observed. Fixed 12-cycle stabilization is separate author evidence, not a complete successful A/B run.",
+    "renderer.info is object counts, not GPU bytes. performance.now is CPU wall-time, not GPU timing or a production benchmark.",
+    "50ms is a fictional observed threshold; a production freeze and shader optimization improvement were not established.",
+    "Only route-owned disposal was repaired in the private copy. Full hostile asset validation, whole-page teardown, controls and animation-loop cleanup remain task work.",
+    "No model evaluation, native mobile/GPU matrix or production asset security certification was performed."
+  ]
+}

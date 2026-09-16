@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "purpose": "One full native PowerShell 5.1 host and installer smoke after failure diagnostics update",
+  "startedAt": "2026-09-16T13:51:53.185Z",
+  "finishedAt": "2026-09-16T13:56:07.055Z",
+  "executable": "C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe",
+  "executableSha256": "64dd55e1c2373deed25c2776f553c632e58c45e56a0e4639dfd54ee97eab9c19",
+  "args": [
+    "-NoProfile",
+    "-NonInteractive",
+    "-ExecutionPolicy",
+    "Bypass",
+    "-File",
+    "C:\\Users\\win10\\Desktop\\github\\CraftRoster\\scripts\\smoke-install.ps1",
+    "-PowerShellExecutable",
+    "C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe"
+  ],
+  "cwd": "C:\\Users\\win10\\Desktop\\github\\CraftRoster",
+  "hostVersion": "5.1.19041.3803",
+  "hostEdition": "Desktop",
+  "hostIs64Bit": true,
+  "hostProbe": "native-powershell51-host.json",
+  "installerExecutable": "C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe",
+  "environmentOverrides": {
+    "PSModuleAnalysisCachePath": "NUL"
+  },
+  "timeoutMs": 900000,
+  "processId": 17372,
+  "exitCode": 0,
+  "signal": null,
+  "spawnError": null,
+  "timedOut": false,
+  "killResult": null,
+  "passLineCount": 113,
+  "finalSummary": "PowerShell installer smoke passed: 286 Skills, 237 Agents.",
+  "stdoutBytes": 4801,
+  "stderrBytes": 0,
+  "diagnosticMatches": [],
+  "log": "native-powershell51-smoke-v4.log",
+  "logSha256": "89d84ef7b01a420113dd100700cd5d44db9288238f2152463ad0f69a132e9be7",
+  "sourceHashesBefore": {
+    "scripts/smoke-install.ps1": "79a66a31dc93102ba6b4cb61613b7d634c7eefaf0719452d0fbc606e94b5466c",
+    "scripts/install.ps1": "038b00a09a2b291f45dddd767f4649c5e7e7524206affc0b642ac61c54e8b70e"
+  },
+  "sourceHashesAfter": {
+    "scripts/smoke-install.ps1": "79a66a31dc93102ba6b4cb61613b7d634c7eefaf0719452d0fbc606e94b5466c",
+    "scripts/install.ps1": "038b00a09a2b291f45dddd767f4649c5e7e7524206affc0b642ac61c54e8b70e"
+  },
+  "sourceHashesUnchanged": true,
+  "sourceReview": {
+    "functions": [
+      "Invoke-InstallerStep",
+      "Invoke-ExpectedFailure"
+    ],
+    "invocationAndAcceptanceCriteria": "Manually inspected, unchanged from prior read; diagnostics add signed/hex exit and captured line count.",
+    "previousSourceHashes": {
+      "scripts/smoke-install.ps1": "f4b8be27cbf4066659629de9ca0304fa1ff457bddac39f11ba51e935063c593e",
+      "scripts/install.ps1": "038b00a09a2b291f45dddd767f4649c5e7e7524206affc0b642ac61c54e8b70e"
+    },
+    "rawInverseGate": "An additional prelaunch raw-byte inverse-hash check did not match and aborted before child launch. Mixed line endings were observed in the current checkout, but the cause of the inverse-hash mismatch was not established. Current function inspection and new source hashes were recorded independently. No prior v4 smoke attempt ran."
+  },
+  "cleanup": {
+    "tempRoot": "C:\\Users\\win10\\AppData\\Local\\Temp",
+    "existingRoots": [
+      "craftroster-install-smoke-20bec8701b0f46dd8f310f3e71f5799e"
+    ],
+    "observedNewRoots": [
+      "craftroster-install-smoke-5dce5553f350438ab1c23f6df0d15884"
+    ],
+    "remainingNewRoots": [],
+    "allObservedRootsRemoved": true
+  },
+  "networkCalls": 0,
+  "modelCalls": 0,
+  "networkCountBasis": "All installer invocations use local SourceDir; download branch is not selected. No network packet tracing was performed.",
+  "status": "passed"
+}

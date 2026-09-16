@@ -1,0 +1,16 @@
+{
+  "name": "fictional-glb-viewer-lifecycle",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node tools/build.cjs",
+    "serve": "node tools/serve.cjs"
+  },
+  "dependencies": {
+    "three": "0.180.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.9"
+  }
+}
+

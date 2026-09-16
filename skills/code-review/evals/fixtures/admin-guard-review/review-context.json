@@ -1,0 +1,10 @@
+{
+  "fictional": true,
+  "statementsVerified": false,
+  "authorRationale": "Remove duplicate access-check code; the route is already registered through the framework wrapper.",
+  "comments": [
+    { "id": "COMMENT-A", "reviewer": "fictional-reviewer-a", "path": "src/admin-members.js", "sourceView": "head", "text": "The framework wrapper already protects this endpoint, so I believe the removed check is redundant." },
+    { "id": "COMMENT-B", "reviewer": "fictional-reviewer-b", "path": "src/admin-members.js", "sourceView": "head", "text": "I think this removal lets an ordinary signed-in member read administrator-only membership records. Please trace the role check through the wrapper." }
+  ],
+  "verdict": null
+}

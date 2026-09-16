@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cedar welcome-v3 approved non-raster prototype</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { font: 18px/1.5 system-ui, sans-serif; margin: 0; color: #173042; background: #fffdf8; }
+    .frame { max-width: 1120px; margin: auto; padding: 24px 32px; }
+    header, footer { border-bottom: 1px solid #173042; }
+    main { min-height: 65vh; display: grid; grid-template-columns: 3fr 2fr; gap: 48px; align-items: center; }
+    h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin: 0 0 24px; }
+    .visual { background: #df6948; min-height: 300px; border-radius: 32px; padding: 32px; }
+    button { font: inherit; padding: 12px 20px; border: 2px solid #173042; background: #173042; color: #fffdf8; border-radius: 8px; }
+    button:focus-visible, a:focus-visible { outline: 3px solid #df6948; outline-offset: 4px; }
+    footer { border-top: 1px solid #173042; border-bottom: 0; }
+    [hidden] { display: none; }
+    @media (max-width: 700px) {
+      .frame { padding: 20px; }
+      main { grid-template-columns: 1fr; gap: 24px; }
+      .visual { min-height: 160px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="frame"><a href="/welcome">Cedar</a></header>
+  <main class="frame">
+    <div>
+      <h1>Make something together</h1>
+      <p>Find a local workshop and learn with your neighbors.</p>
+      <button id="details-toggle" type="button" aria-expanded="false" aria-controls="workshop-details">See workshop details</button>
+      <section id="workshop-details" hidden><h2>Your first workshop</h2><p>Saturday at 10 am. Materials are included.</p></section>
+    </div>
+    <aside class="visual" aria-label="Workshop overview"><p>Hands-on learning.</p><p>Neighbors welcome.</p></aside>
+  </main>
+  <footer class="frame"><a href="/privacy">Privacy</a></footer>
+  <script>
+    document.querySelector('#details-toggle').addEventListener('click', (event) => {
+      const expanded = event.currentTarget.getAttribute('aria-expanded') === 'true';
+      event.currentTarget.setAttribute('aria-expanded', String(!expanded));
+      document.querySelector('#workshop-details').hidden = expanded;
+    });
+  </script>
+</body>
+</html>

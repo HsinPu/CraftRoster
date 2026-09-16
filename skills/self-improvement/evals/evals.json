@@ -1,0 +1,35 @@
+{
+  "skill_name": "self-improvement",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "During a read-only review, rg returns exit code 1 because there are no matches. The rest of the review succeeds.",
+      "expected_output": "No error lesson or persistent memory is manufactured from normal control flow.",
+      "assertions": [
+        "It does not label no matches as a tool failure.",
+        "It does not create or modify memory files during the read-only task.",
+        "It keeps only observations that change a decision."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "A document fetch times out once and succeeds on retry. No recurring cause is established.",
+      "expected_output": "A transient observation is not promoted into a permanent restriction.",
+      "assertions": [
+        "It distinguishes the observed timeout from an unproven cause.",
+        "It does not create a rule that always avoids the working tool.",
+        "It avoids unnecessary persistent notes and sensitive raw logs."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "For this project going forward, use pnpm; the repository configuration already agrees. Update our existing project guidance file, preserve unrelated instructions, and record why this preference applies.",
+      "expected_output": "An authorized lasting preference is recorded with project scope and evidence.",
+      "assertions": [
+        "It checks the existing guidance for duplication or contradiction.",
+        "It updates only the authorized project guidance with the scoped preference and supporting evidence.",
+        "It does not turn the project preference into a global rule or persist credentials."
+      ]
+    }
+  ]
+}

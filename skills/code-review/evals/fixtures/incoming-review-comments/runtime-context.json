@@ -1,0 +1,12 @@
+{
+  "fictional": true,
+  "suppliedRuntime": "Node.js CommonJS in-memory library; no external dependencies",
+  "localReceiptStore": "Map owned by each createBookingService instance",
+  "productionStorageBackend": null,
+  "productionSchedulerConfiguration": null,
+  "productionReceiptExpiryLogs": null,
+  "approvedProductionRetryWindowHours": null,
+  "retentionDecisionSource": "policy/receipt-retention.json",
+  "productionObservationsPerformed": false,
+  "externalAccessAuthorized": false
+}

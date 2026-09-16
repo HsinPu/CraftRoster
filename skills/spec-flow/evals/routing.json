@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "skill_name": "spec-flow",
+  "cases": [
+    {
+      "id": "approved-reservation-to-vertical-slices",
+      "kind": "positive",
+      "prompt": "座位預約方向已批准：接受 1 到 4 個座位、剩餘容量不足時拒絕，並依請求識別碼避免重試產生重複預約。請整理驗收條件、具依賴關係且可端到端驗證的工作項目，以及第一個可開始的切片。先不要實作。",
+      "expected_skills": [
+        "spec-flow"
+      ],
+      "excluded_skills": [
+        "solution-discovery",
+        "specification-authoring",
+        "code-change-workflow"
+      ],
+      "allowed_skills": [
+        "api-contract-design",
+        "testing-strategy",
+        "todo-first"
+      ],
+      "locale": "zh-TW"
+    },
+    {
+      "id": "approved-mixed-version-migration-plan",
+      "kind": "positive",
+      "prompt": "The customers.display_name to full_name migration is approved. Old clients run for a week and rollback must work. Produce expand-migrate-contract work items, prerequisites, and acceptance evidence; no execution or deployment.",
+      "expected_skills": [
+        "spec-flow"
+      ],
+      "excluded_skills": [
+        "solution-discovery",
+        "code-change-workflow"
+      ],
+      "allowed_skills": [
+        "database-migration-workflow",
+        "api-contract-design",
+        "testing-strategy",
+        "todo-first"
+      ],
+      "locale": "en"
+    },
+    {
+      "id": "prescribed-formal-specification",
+      "kind": "near_match",
+      "prompt": "The architecture and work breakdown are final. Write only the formal technical specification using our prescribed YAML front matter, chapter structure, feature numbering, and Mermaid sections. Do not create a delivery queue or new tasks.",
+      "expected_skills": [
+        "specification-authoring"
+      ],
+      "excluded_skills": [
+        "spec-flow",
+        "solution-discovery"
+      ],
+      "allowed_skills": [],
+      "locale": "en"
+    },
+    {
+      "id": "execute-one-scoped-ticket",
+      "kind": "near_match",
+      "prompt": "API-7 ticket 和 acceptance test 都已批准。請修正既有 JavaScript 驗證函式的 off-by-one 上限錯誤，並執行對應的 focused test；不需要重新規劃、新增 tickets 或作設計決策。",
+      "expected_skills": [
+        "code-change-workflow",
+        "javascript-development"
+      ],
+      "excluded_skills": [
+        "spec-flow",
+        "solution-discovery"
+      ],
+      "allowed_skills": [
+        "testing-strategy",
+        "verification-before-completion",
+        "test-driven-development"
+      ],
+      "locale": "mixed-zh-TW-en"
+    },
+    {
+      "id": "ambiguous-plan-with-unsettled-sharing-direction",
+      "kind": "near_match",
+      "prompt": "Plan team sharing for us. We have not chosen whether users share only inside one workspace or invite people across organizations. Compare those product and access-boundary options before choosing an approach; do not write implementation tickets yet.",
+      "expected_skills": [
+        "solution-discovery"
+      ],
+      "excluded_skills": [
+        "spec-flow",
+        "code-change-workflow"
+      ],
+      "allowed_skills": [
+        "domain-modeling",
+        "auth-integration"
+      ],
+      "locale": "en"
+    },
+    {
+      "id": "definition-of-acceptance-criteria",
+      "kind": "negative",
+      "prompt": "Explain in two sentences what acceptance criteria mean. This is a vocabulary question, not a request to plan a project or create tasks.",
+      "expected_skills": [],
+      "excluded_skills": [
+        "spec-flow",
+        "solution-discovery",
+        "specification-authoring"
+      ],
+      "allowed_skills": [
+        "answer-writing"
+      ],
+      "locale": "en"
+    },
+    {
+      "id": "authority-local-plan-already-approved",
+      "kind": "positive",
+      "prompt": "I already approved the reservation design, task IDs, granularity, and dependencies. Update only the local task plan with acceptance evidence and ready/blocked status. Carry forward those decisions; creating external tracker issues and changing code are not authorized.",
+      "expected_skills": [
+        "spec-flow"
+      ],
+      "excluded_skills": [
+        "solution-discovery",
+        "code-change-workflow"
+      ],
+      "allowed_skills": [
+        "testing-strategy",
+        "todo-first"
+      ],
+      "locale": "en"
+    }
+  ]
+}

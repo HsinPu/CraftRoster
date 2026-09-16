@@ -1,0 +1,93 @@
+PASS PowerShell strict repository coordinate
+PASS PowerShell strict branch name
+PASS canonical cross-platform Skill digest fixture
+PASS canonical nested, binary, and non-ASCII Skill digest
+PASS required dependency diamond dry run
+PASS cross-category required dependencies in both project profiles
+PASS matching owned dependencies update
+PASS full dependency inventory remains deduplicated
+PASS explicit optional target installs only its own required closure
+PASS force on owner preserves unselected optional foreign files
+PASS foreign dependency blocks every project profile
+PASS prepare owned dependency
+PASS modified dependency blocks installation
+PASS explicit force resets modified dependency
+PASS required dependency cycle
+PASS unknown dependency
+PASS unknown dependency owner
+PASS optional unknown target
+PASS optional condition prohibited
+PASS unknown dependency kind
+PASS self dependency
+PASS duplicate dependency
+PASS malformed dependency row
+PASS extra dependency column
+PASS empty dependency condition
+PASS invalid dependency condition
+PASS invalid dependency header
+PASS missing dependency index refuses incomplete source
+PASS prepare alternate-root owned dependency
+PASS required dependency split roots refuse before writes
+PASS PowerShell dependency closure, references, conditional and optional selection, ownership, and placement
+PASS Skill category and name conflict
+PASS invalid Skill category
+PASS project Skill category dry run
+project Skill category install failed with exit code 1
+==> Selected 4 skill component(s) from category 'browser-automation'
+==> Selected 4 Skill(s); added 1 required dependency Skill(s).
+==> Skill destination: C:\Users\win10\AppData\Local\Temp\craftroster-native51-audit-cjRu4n\craftroster-install-smoke-98
+67a2f11f6e4eb39b91bc4561e7e124\category-skill-project\.agents\skills
+==> Skill destination: C:\Users\win10\AppData\Local\Temp\craftroster-native51-audit-cjRu4n\craftroster-install-smoke-98
+67a2f11f6e4eb39b91bc4561e7e124\category-skill-project\.claude\skills
+==> Installing 10 Skill profile(s) for project
+OK  install Skill agent-reach-ops -> C:\Users\win10\AppData\Local\Temp\craftroster-native51-audit-cjRu4n\craftroster-in
+stall-smoke-9867a2f11f6e4eb39b91bc4561e7e124\category-skill-project\.agents\skills\agent-reach-ops
+OK  install Skill agent-reach-ops -> C:\Users\win10\AppData\Local\Temp\craftroster-native51-audit-cjRu4n\craftroster-in
+stall-smoke-9867a2f11f6e4eb39b91bc4561e7e124\category-skill-project\.claude\skills\agent-reach-ops
+OK  install Skill browser-automation -> C:\Users\win10\AppData\Local\Temp\craftroster-native51-audit-cjRu4n\craftroster
+-install-smoke-9867a2f11f6e4eb39b91bc4561e7e124\category-skill-project\.agents\skills\browser-automation
+OK  install Skill browser-automation -> C:\Users\win10\AppData\Local\Temp\craftroster-native51-audit-cjRu4n\craftroster
+-install-smoke-9867a2f11f6e4eb39b91bc4561e7e124\category-skill-project\.claude\skills\browser-automation
+OK  install Skill playwright-automation -> C:\Users\win10\AppData\Local\Temp\craftroster-native51-audit-cjRu4n\craftros
+ter-install-smoke-9867a2f11f6e4eb39b91bc4561e7e124\category-skill-project\.agents\skills\playwright-automation
+OK  install Skill playwright-automation -> C:\Users\win10\AppData\Local\Temp\craftroster-native51-audit-cjRu4n\craftros
+ter-install-smoke-9867a2f11f6e4eb39b91bc4561e7e124\category-skill-project\.claude\skills\playwright-automation
+Error: Could not find a part of the path 'C:\Users\win10\AppData\Local\Temp\craftroster-native51-audit-cjRu4n\craftrost
+er-install-smoke-9867a2f11f6e4eb39b91bc4561e7e124\category-skill-project\.agents\skills\.cr-s-b52c92445ba64478968cf65aa
+54bb04c\evals\fixtures\config-summary\examples\invalid-cases.json'. Cleanup error: Manual recovery required: refusing t
+o clean an unrecognized or changed atomic Skill stage at 'C:\Users\win10\AppData\Local\Temp\craftroster-native51-audit-
+cjRu4n\craftroster-install-smoke-9867a2f11f6e4eb39b91bc4561e7e124\category-skill-project\.agents\skills\.cr-s-b52c92445
+ba64478968cf65aa54bb04c'.
+¦ì©ó C:\Users\win10\Desktop\github\CraftRoster\scripts\smoke-install.ps1:169 ¦r¤¸:9
++         throw "$Label failed with exit code $exitCode$([Environment]: ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (project Skill c...cf65aa54bb04c'.:String) [], RuntimeException
+    + FullyQualifiedErrorId : project Skill category install failed with exit code 1
+==> Selected 4 skill component(s) from category 'browser-automation'
+==> Selected 4 Skill(s); added 1 required dependency Skill(s).
+    ==> Skill destination: C:\Users\win10\AppData\Local\Temp\craftroster-native51-audit-cjRu4n\craftroster-install-smo 
+   ke-9867a2f11f6e4eb39b91bc4561e7e124\category-skill-project\.agents\skills
+    ==> Skill destination: C:\Users\win10\AppData\Local\Temp\craftroster-native51-audit-cjRu4n\craftroster-install-smo 
+   ke-9867a2f11f6e4eb39b91bc4561e7e124\category-skill-project\.claude\skills
+==> Installing 10 Skill profile(s) for project
+    OK  install Skill agent-reach-ops -> C:\Users\win10\AppData\Local\Temp\craftroster-native51-audit-cjRu4n\craftrost 
+   er-install-smoke-9867a2f11f6e4eb39b91bc4561e7e124\category-skill-project\.agents\skills\agent-reach-ops
+    OK  install Skill agent-reach-ops -> C:\Users\win10\AppData\Local\Temp\craftroster-native51-audit-cjRu4n\craftrost 
+   er-install-smoke-9867a2f11f6e4eb39b91bc4561e7e124\category-skill-project\.claude\skills\agent-reach-ops
+    OK  install Skill browser-automation -> C:\Users\win10\AppData\Local\Temp\craftroster-native51-audit-cjRu4n\craftr 
+   oster-install-smoke-9867a2f11f6e4eb39b91bc4561e7e124\category-skill-project\.agents\skills\browser-automation
+    OK  install Skill browser-automation -> C:\Users\win10\AppData\Local\Temp\craftroster-native51-audit-cjRu4n\craftr 
+   oster-install-smoke-9867a2f11f6e4eb39b91bc4561e7e124\category-skill-project\.claude\skills\browser-automation
+    OK  install Skill playwright-automation -> C:\Users\win10\AppData\Local\Temp\craftroster-native51-audit-cjRu4n\cra 
+   ftroster-install-smoke-9867a2f11f6e4eb39b91bc4561e7e124\category-skill-project\.agents\skills\playwright-automatio  
+  n
+    OK  install Skill playwright-automation -> C:\Users\win10\AppData\Local\Temp\craftroster-native51-audit-cjRu4n\cra 
+   ftroster-install-smoke-9867a2f11f6e4eb39b91bc4561e7e124\category-skill-project\.claude\skills\playwright-automatio  
+  n
+    Error: Could not find a part of the path 'C:\Users\win10\AppData\Local\Temp\craftroster-native51-audit-cjRu4n\craf 
+   troster-install-smoke-9867a2f11f6e4eb39b91bc4561e7e124\category-skill-project\.agents\skills\.cr-s-b52c92445ba6447  
+  8968cf65aa54bb04c\evals\fixtures\config-summary\examples\invalid-cases.json'. Cleanup error: Manual recovery requi   
+ red: refusing to clean an unrecognized or changed atomic Skill stage at 'C:\Users\win10\AppData\Local\Temp\craftro    
+ster-native51-audit-cjRu4n\craftroster-install-smoke-9867a2f11f6e4eb39b91bc4561e7e124\category-skill-project\.agen    t
+s\skills\.cr-s-b52c92445ba64478968cf65aa54bb04c'.
+ 

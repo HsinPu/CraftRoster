@@ -1,0 +1,13 @@
+{
+  "decisionIds": ["D-COMPAT", "D-RECOVERY"],
+  "v1": { "clientMajor": 1, "documentFields": ["documentId", "title", "body", "revision"], "storageNamespace": "document-cache-v1", "onlineContractPreserved": true, "canReadV2Outbox": false },
+  "v2": { "clientMajor": 2, "documentFields": ["documentId", "title", "body", "revision"], "storageNamespace": "document-cache-v1", "outboxNamespace": "offline-outbox-v2", "operationSchemaVersion": 2 },
+  "serverSupportsDuringRollout": [1, 2],
+  "compatibilitySupportBeforeV2ClientExposure": true,
+  "minimumRollbackWindowDays": 7,
+  "windowStartsAt": "first v2 public exposure",
+  "destructiveV1NamespaceRewriteAllowed": false,
+  "v2OutboxDeletionOnClientDowngradeAllowed": false,
+  "contractionPrerequisites": ["minimum rollback window elapsed", "evidence that v1 clients no longer require the old contract", "no unrecovered pending v2 drafts", "successful recovery rehearsal", "explicit schema-contraction decision"],
+  "requiredCases": ["v1 reads after v2 acknowledged writes", "v1 and v2 concurrent writes use revision checks", "v2 retries after a lost response", "client rollback preserves unreadable v2 pending drafts", "repeated local-store migration preserves all original fields"]
+}

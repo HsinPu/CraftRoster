@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "kind": "offline_fixture_preparation",
+  "created_at": "2026-09-16T08:33:07.966Z",
+  "status": "not_run",
+  "model_calls": 0,
+  "node": "v24.19.0",
+  "platform": "win32",
+  "cases": [
+    {
+      "case_id": "spec-flow:1",
+      "status": "not_run",
+      "model_calls": 0,
+      "preparation_check": "passed",
+      "corpus_case_sha256": "ac949a36073ca7b0889e93f96afac333837591270f2bfdf2c9f5ecc65124ad8c",
+      "fixture_sha256": "6e76d0b2a488fba7b3a5efac4e6a8e70ad63df38fa89fb9137cf4c112c786d28",
+      "public_bundle_sha256": "05c17dbbdf32bb30e0752892b7d770fe61c6ed137c192612f0737f01dc031283",
+      "fixture_manifest": [
+        {
+          "path": "CONTRACT.md",
+          "sha256": "8f8de26bb2930779b07376c1f782659003b486998d7ea9abace6807aa20654e8",
+          "bytes": 1693
+        },
+        {
+          "path": "contracts/schema-compatibility.json",
+          "sha256": "99225f3d257098b6b6d730c9e2f8cc22c3daf3e7c71837f8adf8cf303129c2be",
+          "bytes": 1233
+        },
+        {
+          "path": "contracts/sync-policy.json",
+          "sha256": "d42ffb13f3f1e454d4434f183f4e7788f5880d63104b0e251b50482cb5c6fb34",
+          "bytes": 1336
+        },
+        {
+          "path": "contracts/telemetry-policy.json",
+          "sha256": "4d9a63e0abe1c5bc6ff1ccf0a439da3dbd5f7d5b01bfba95bcf274788a514ab7",
+          "bytes": 804
+        },
+        {
+          "path": "decision.md",
+          "sha256": "3593190973c5b1795988d60340f7f51f9d211bcb88a9d51d1767e86e0cb5952d",
+          "bytes": 5787
+        },
+        {
+          "path": "open-decisions.json",
+          "sha256": "d9ef3ff0b6737709a4d6fbd22002dc7a7b76139e0484dc50b37f8d8c90462c43",
+          "bytes": 1624
+        },
+        {
+          "path": "operations/rollout-recovery.json",
+          "sha256": "0fab8d54da5f5ffa00b8ebf245f3f3a4bc6036c08d9bc2bab03f1c55b6394980",
+          "bytes": 2059
+        },
+        {
+          "path": "samples/client-store-v1.json",
+          "sha256": "9dcc4d8e296cad5e370637fab52a0e338c9c222be8bf44b486b22676d6f6eafd",
+          "bytes": 225
+        },
+        {
+          "path": "samples/client-store-v2.json",
+          "sha256": "1419ae1222352cf153934a901fe3991170b3057629c961fa70b832b7e9a78208",
+          "bytes": 466
+        },
+        {
+          "path": "samples/sync-scenarios.json",
+          "sha256": "4d5e866e03e2968503377b314d6e10e18825740ebbb4563d66aeaa8ac57a93af",
+          "bytes": 2159
+        },
+        {
+          "path": "samples/telemetry-event.json",
+          "sha256": "b4db52261daab09264224183944d42c3e485d9b9f956bb1b77e0015511e59f13",
+          "bytes": 136
+        },
+        {
+          "path": "scenario.json",
+          "sha256": "059afac090b3a06ac074cd2fc244cbe4bd1fa48a8e78b8ac64034688d44b285f",
+          "bytes": 2115
+        }
+      ],
+      "skill_packages": 286
+    },
+    {
+      "case_id": "threejs-development:12",
+      "status": "not_run",
+      "model_calls": 0,
+      "preparation_check": "passed",
+      "corpus_case_sha256": "edec6236f1eaee57d457086dfd5273a9bdc00977e2114cabd97b861721728b0e",
+      "fixture_sha256": "1e2a14c3c6983ad067e19d9a0505a591557b702aa675aad1bbf9fb5b71eafdb9",
+      "public_bundle_sha256": "49c7d55925e2a2443f9833dc0741758bb9dce39bdb687c390d810aadef0d5fe2",
+      "fixture_manifest": [
+        {
+          "path": "CONTRACT.md",
+          "sha256": "88750fec1d3ea32a6e57e1802cc06ee1ca93afec417c0031f8b7030965fc1a4d",
+          "bytes": 1671
+        },
+        {
+          "path": "index.html",
+          "sha256": "083b2eeee41e58a4f2f5523793281a2a5a04ee163cfb4beab583107b64a0ec85",
+          "bytes": 1425
+        },
+        {
+          "path": "package-lock.json",
+          "sha256": "9ed6d3c2abf4de4b621b40928989b04d8308381b8442146ef8831a1bccc4fd04",
+          "bytes": 535
+        },
+        {
+          "path": "package.json",
+          "sha256": "874cee245f173796ef834a7f83feb484f29f87310e284ac4f644eb581b0014cc",
+          "bytes": 144
+        },
+        {
+          "path": "privacy.html",
+          "sha256": "c4ace5ad8181bd6af9df8d5eb8a361b498fb5b578872eaf0dc6aad5c399cafe0",
+          "bytes": 315
+        },
+        {
+          "path": "src/viewer.js",
+          "sha256": "24c3ddebe6da31ccacfb9612de3c4c80acc26a41326e7a3cc3086876037af501",
+          "bytes": 2076
+        },
+        {
+          "path": "styles/footer.css",
+          "sha256": "5e1189503c57fe5e1587fe7850af5bbda0bbfafc31edbc3804b1468777ae9ada",
+          "bytes": 229
+        },
+        {
+          "path": "styles/page.css",
+          "sha256": "ed4bde2ef5997cb4c3e6a748954d912e137d8aee22686ce91b628624d7546c58",
+          "bytes": 566
+        },
+        {
+          "path": "styles/viewer.css",
+          "sha256": "f96aed1a82a81f3710f935fe6a1512ea3c318edcfcb7a3749ccfa8153d2a7fa5",
+          "bytes": 575
+        }
+      ],
+      "skill_packages": 286
+    }
+  ],
+  "limitations": [
+    "Public fixture bundling only; no model execution, host isolation or semantic grading.",
+    "Browser fixture author observations are separately recorded in footer-browser-check.json."
+  ]
+}

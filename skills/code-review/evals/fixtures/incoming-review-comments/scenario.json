@@ -1,0 +1,12 @@
+{
+  "scenarioId": "FICTIONAL-INCOMING-REVIEW-COMMENTS",
+  "fictional": true,
+  "sourceLabel": "HEAD-LOCAL-1",
+  "sourceLabelIsGitCommit": false,
+  "reviewInput": "review-comments.json",
+  "currentRole": "implementer validating incoming feedback",
+  "independentReviewPerformed": false,
+  "modelEvaluation": { "status": "not_run", "attempts": 0 },
+  "realServiceConnected": false,
+  "authority": { "localSourceEdits": true, "localTests": true, "localHandoff": true, "postReview": false, "resolveThreads": false, "approveReview": false, "commit": false, "deploy": false }
+}

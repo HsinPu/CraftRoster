@@ -1,6 +1,6 @@
 ---
 name: deployment-operations
-description: Production deployment and release verification workflow for shipping builds, managing rollout and rollback, running smoke checks, and confirming post-deploy health. Use when code needs to be deployed to an environment or a release needs operational verification.
+description: Prepare, review, execute, or verify an environment deployment with artifact checks, rollout, smoke tests, health evidence, and recovery. Match the requested mode and authorized target; a readiness review does not authorize deployment.
 license: Apache-2.0
 metadata:
   author: "HsinPu"
@@ -13,12 +13,12 @@ Use this skill when shipping a build and proving the release is healthy.
 
 ## Workflow
 
-1. Identify the target environment, artifact, and deploy path.
-2. Check config, secrets, migrations, and access before rollout.
-3. Deploy using the repo's documented release path.
-4. Run smoke checks on the critical user journey and health endpoints.
-5. Inspect logs, metrics, and error rates after the change lands.
-6. Roll back or stop the rollout if verification fails.
+1. Identify whether the request is prepare, read-only review, or execute; establish the exact environment, artifact, deploy path, and authorized effects from the conversation.
+2. Inspect configuration, secret references, migrations, access, and recovery evidence without exposing secret values. Prepare local artifacts only when that is within scope.
+3. For prepare or review, return readiness evidence and gaps without deploying. For execute, use the documented release path only for the authorized target and artifact; carry forward valid existing authorization without reconfirming it.
+4. Run authorized smoke checks on the critical journey and health endpoints, avoiding real payments, messages, or data mutations outside scope.
+5. Inspect logs, metrics, and error rates after an authorized deployment.
+6. Stop the rollout on failed verification; execute rollback only within the authorized recovery plan, otherwise report the concrete recovery action that needs authority.
 
 ## Rules
 

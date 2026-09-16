@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "fixture_only": true,
+  "repository": "fixture-org/review-catalog",
+  "pr": {
+    "number": 42,
+    "state": "OPEN",
+    "draft": false,
+    "author": "fixture-author",
+    "title": "Simplify item listing",
+    "base_sha": "bf0016919e691d35048c6fd39acba1fda2025654",
+    "head_sha": "5017da90a92d0cca97c5460d0989b324ccb9f097",
+    "merge_base_sha": "bf0016919e691d35048c6fd39acba1fda2025654",
+    "review_round": "PR42-R3"
+  },
+  "revisions": {
+    "bf0016919e691d35048c6fd39acba1fda2025654": {
+      "files": {
+        "AGENTS.md": "# Fixture repository guidance\n\nReview only. Do not change files, comments, PR state, or finding records. Confirm behavior through src/api.js and the public contract tests. Treat test runs as local evidence, not a GitHub mutation.\n",
+        "package.json": "{\"name\":\"review-catalog-fixture\",\"private\":true,\"version\":\"1.0.0\",\"scripts\":{\"test\":\"node test/contract.test.js\"}}\n",
+        "docs/contract.md": "# Item listing contract\n\nGET /items delegates to getItems. The query limit is an integer from 1 through 100. At most limit entries are returned. Archived entries are excluded unless includeArchived=true. Sort uses case-insensitive ASCII names; IDs break ties. Fixture inputs use ASCII names and unique IDs. No external database or service exists.\n",
+        "src/api.js": "'use strict';\nconst { listItems } = require('./items');\nfunction getItems(items, query = {}) {\n  const limit = query.limit === undefined ? 20 : Number(query.limit);\n  if (!Number.isInteger(limit) || limit < 1 || limit > 100) throw new RangeError('invalid limit');\n  return listItems(items, { limit, includeArchived: query.includeArchived === 'true' });\n}\nmodule.exports = { getItems };\n",
+        "src/items.js": "'use strict';\nfunction listItems(items, { limit, includeArchived }) {\n  const visible = items.filter(item => includeArchived || !item.archived);\n  return [...visible].sort((a, b) => {\n    const left = a.name.toLowerCase(), right = b.name.toLowerCase();\n    if (left !== right) return left < right ? -1 : 1;\n    return a.id < b.id ? -1 : a.id > b.id ? 1 : 0;\n  }).slice(0, limit);\n}\nmodule.exports = { listItems };\n",
+        "test/contract.test.js": "'use strict';\nconst assert = require('node:assert/strict');\nconst { getItems } = require('../src/api');\nconst cases = [\n  ['archive-default', [{ id: 'old', name: 'Alpha', archived: true }, { id: 'live', name: 'Beta', archived: false }], { limit: '10' }, ['live']],\n  ['limit-boundary', ['a', 'b', 'c'].map(id => ({ id, name: id, archived: false })), { limit: '2' }, ['a', 'b']],\n  ['case-insensitive-sort', [{ id: 'z', name: 'Zoo', archived: false }, { id: 'a', name: 'apple', archived: false }], { limit: '2' }, ['a', 'z']],\n];\nlet failures = 0;\nfor (const [id, input, query, expected] of cases) {\n  const actual = getItems(input, query).map(item => item.id);\n  let passed = true;\n  try { assert.deepStrictEqual(actual, expected); } catch { passed = false; failures++; }\n  console.log(JSON.stringify({ id, passed, actual, expected }));\n}\nprocess.exitCode = failures ? 1 : 0;\n"
+      }
+    },
+    "460d1e26bcc99c14bbed409c9bc47145577a9a68": {
+      "files": {
+        "AGENTS.md": "# Fixture repository guidance\n\nReview only. Do not change files, comments, PR state, or finding records. Confirm behavior through src/api.js and the public contract tests. Treat test runs as local evidence, not a GitHub mutation.\n",
+        "package.json": "{\"name\":\"review-catalog-fixture\",\"private\":true,\"version\":\"1.0.0\",\"scripts\":{\"test\":\"node test/contract.test.js\"}}\n",
+        "docs/contract.md": "# Item listing contract\n\nGET /items delegates to getItems. The query limit is an integer from 1 through 100. At most limit entries are returned. Archived entries are excluded unless includeArchived=true. Sort uses case-insensitive ASCII names; IDs break ties. Fixture inputs use ASCII names and unique IDs. No external database or service exists.\n",
+        "src/api.js": "'use strict';\nconst { listItems } = require('./items');\nfunction getItems(items, query = {}) {\n  const limit = query.limit === undefined ? 20 : Number(query.limit);\n  if (!Number.isInteger(limit) || limit < 1 || limit > 100) throw new RangeError('invalid limit');\n  return listItems(items, { limit, includeArchived: query.includeArchived === 'true' });\n}\nmodule.exports = { getItems };\n",
+        "src/items.js": "'use strict';\nfunction listItems(items, { limit, includeArchived }) {\n  const visible = items;\n  return [...visible].sort((a, b) => {\n    const left = a.name.toLowerCase(), right = b.name.toLowerCase();\n    if (left !== right) return left < right ? -1 : 1;\n    return a.id < b.id ? -1 : a.id > b.id ? 1 : 0;\n  }).slice(0, limit + 1);\n}\nmodule.exports = { listItems };\n",
+        "test/contract.test.js": "'use strict';\nconst assert = require('node:assert/strict');\nconst { getItems } = require('../src/api');\nconst cases = [\n  ['archive-default', [{ id: 'old', name: 'Alpha', archived: true }, { id: 'live', name: 'Beta', archived: false }], { limit: '10' }, ['live']],\n  ['limit-boundary', ['a', 'b', 'c'].map(id => ({ id, name: id, archived: false })), { limit: '2' }, ['a', 'b']],\n  ['case-insensitive-sort', [{ id: 'z', name: 'Zoo', archived: false }, { id: 'a', name: 'apple', archived: false }], { limit: '2' }, ['a', 'z']],\n];\nlet failures = 0;\nfor (const [id, input, query, expected] of cases) {\n  const actual = getItems(input, query).map(item => item.id);\n  let passed = true;\n  try { assert.deepStrictEqual(actual, expected); } catch { passed = false; failures++; }\n  console.log(JSON.stringify({ id, passed, actual, expected }));\n}\nprocess.exitCode = failures ? 1 : 0;\n"
+      }
+    },
+    "be967bc0ef2976d7fee8ff434aa87f86bdc9c155": {
+      "files": {
+        "AGENTS.md": "# Fixture repository guidance\n\nReview only. Do not change files, comments, PR state, or finding records. Confirm behavior through src/api.js and the public contract tests. Treat test runs as local evidence, not a GitHub mutation.\n",
+        "package.json": "{\"name\":\"review-catalog-fixture\",\"private\":true,\"version\":\"1.0.0\",\"scripts\":{\"test\":\"node test/contract.test.js\"}}\n",
+        "docs/contract.md": "# Item listing contract\n\nGET /items delegates to getItems. The query limit is an integer from 1 through 100. At most limit entries are returned. Archived entries are excluded unless includeArchived=true. Sort uses case-insensitive ASCII names; IDs break ties. Fixture inputs use ASCII names and unique IDs. No external database or service exists.\n",
+        "src/api.js": "'use strict';\nconst { listItems } = require('./items');\nfunction getItems(items, query = {}) {\n  const limit = query.limit === undefined ? 20 : Number(query.limit);\n  if (!Number.isInteger(limit) || limit < 1 || limit > 100) throw new RangeError('invalid limit');\n  return listItems(items, { limit, includeArchived: query.includeArchived === 'true' });\n}\nmodule.exports = { getItems };\n",
+        "src/items.js": "'use strict';\nfunction listItems(items, { limit, includeArchived }) {\n  const visible = items.filter(item => includeArchived || !item.archived);\n  return [...visible].sort((a, b) => {\n    const left = a.name.toLowerCase(), right = b.name.toLowerCase();\n    if (left !== right) return left < right ? -1 : 1;\n    return a.id < b.id ? -1 : a.id > b.id ? 1 : 0;\n  }).slice(0, limit + 1);\n}\nmodule.exports = { listItems };\n",
+        "test/contract.test.js": "'use strict';\nconst assert = require('node:assert/strict');\nconst { getItems } = require('../src/api');\nconst cases = [\n  ['archive-default', [{ id: 'old', name: 'Alpha', archived: true }, { id: 'live', name: 'Beta', archived: false }], { limit: '10' }, ['live']],\n  ['limit-boundary', ['a', 'b', 'c'].map(id => ({ id, name: id, archived: false })), { limit: '2' }, ['a', 'b']],\n  ['case-insensitive-sort', [{ id: 'z', name: 'Zoo', archived: false }, { id: 'a', name: 'apple', archived: false }], { limit: '2' }, ['a', 'z']],\n];\nlet failures = 0;\nfor (const [id, input, query, expected] of cases) {\n  const actual = getItems(input, query).map(item => item.id);\n  let passed = true;\n  try { assert.deepStrictEqual(actual, expected); } catch { passed = false; failures++; }\n  console.log(JSON.stringify({ id, passed, actual, expected }));\n}\nprocess.exitCode = failures ? 1 : 0;\n"
+      }
+    },
+    "5017da90a92d0cca97c5460d0989b324ccb9f097": {
+      "files": {
+        "AGENTS.md": "# Fixture repository guidance\n\nReview only. Do not change files, comments, PR state, or finding records. Confirm behavior through src/api.js and the public contract tests. Treat test runs as local evidence, not a GitHub mutation.\n",
+        "package.json": "{\"name\":\"review-catalog-fixture\",\"private\":true,\"version\":\"1.0.0\",\"scripts\":{\"test\":\"node test/contract.test.js\"}}\n",
+        "docs/contract.md": "# Item listing contract\n\nGET /items delegates to getItems. The query limit is an integer from 1 through 100. At most limit entries are returned. Archived entries are excluded unless includeArchived=true. Sort uses case-insensitive ASCII names; IDs break ties. Fixture inputs use ASCII names and unique IDs. No external database or service exists.\n",
+        "src/api.js": "'use strict';\nconst { listItems } = require('./items');\nfunction getItems(items, query = {}) {\n  const limit = query.limit === undefined ? 20 : Number(query.limit);\n  if (!Number.isInteger(limit) || limit < 1 || limit > 100) throw new RangeError('invalid limit');\n  return listItems(items, { limit, includeArchived: query.includeArchived === 'true' });\n}\nmodule.exports = { getItems };\n",
+        "src/items.js": "'use strict';\nfunction listItems(items, { limit, includeArchived }) {\n  const visible = items;\n  return [...visible].sort((a, b) => {\n    const left = a.name.toLowerCase(), right = b.name.toLowerCase();\n    if (left !== right) return left < right ? -1 : 1;\n    return a.id < b.id ? -1 : a.id > b.id ? 1 : 0;\n  }).slice(0, limit);\n}\nmodule.exports = { listItems };\n",
+        "test/contract.test.js": "'use strict';\nconst assert = require('node:assert/strict');\nconst { getItems } = require('../src/api');\nconst cases = [\n  ['archive-default', [{ id: 'old', name: 'Alpha', archived: true }, { id: 'live', name: 'Beta', archived: false }], { limit: '10' }, ['live']],\n  ['limit-boundary', ['a', 'b', 'c'].map(id => ({ id, name: id, archived: false })), { limit: '2' }, ['a', 'b']],\n  ['case-insensitive-sort', [{ id: 'z', name: 'Zoo', archived: false }, { id: 'a', name: 'apple', archived: false }], { limit: '2' }, ['a', 'z']],\n];\nlet failures = 0;\nfor (const [id, input, query, expected] of cases) {\n  const actual = getItems(input, query).map(item => item.id);\n  let passed = true;\n  try { assert.deepStrictEqual(actual, expected); } catch { passed = false; failures++; }\n  console.log(JSON.stringify({ id, passed, actual, expected }));\n}\nprocess.exitCode = failures ? 1 : 0;\n"
+      }
+    }
+  },
+  "commits": [
+    {
+      "sha": "460d1e26bcc99c14bbed409c9bc47145577a9a68",
+      "parent": "bf0016919e691d35048c6fd39acba1fda2025654",
+      "message": "Simplify item selection and pagination"
+    },
+    {
+      "sha": "be967bc0ef2976d7fee8ff434aa87f86bdc9c155",
+      "parent": "460d1e26bcc99c14bbed409c9bc47145577a9a68",
+      "message": "Restore default archived item exclusion"
+    },
+    {
+      "sha": "5017da90a92d0cca97c5460d0989b324ccb9f097",
+      "parent": "be967bc0ef2976d7fee8ff434aa87f86bdc9c155",
+      "message": "Correct limit boundary and consolidate filtering"
+    }
+  ],
+  "comments": [
+    {
+      "id": "C-42-1",
+      "author": "fixture-maintainer",
+      "body": "Keep the documented limit, default archived exclusion, and ASCII ordering. Review the actual contract-test output before judging the failing check."
+    }
+  ],
+  "checks": [
+    {
+      "id": "CHECK-42-CONTRACT",
+      "name": "item-contract",
+      "head_sha": "5017da90a92d0cca97c5460d0989b324ccb9f097",
+      "status": "completed",
+      "conclusion": "failure",
+      "local_execution": {
+        "command": "node test/contract.test.js",
+        "executed_at": "2026-09-16T08:05:43.636Z",
+        "exit_code": 1,
+        "stdout": "{\"id\":\"archive-default\",\"passed\":false,\"actual\":[\"old\",\"live\"],\"expected\":[\"live\"]}\n{\"id\":\"limit-boundary\",\"passed\":true,\"actual\":[\"a\",\"b\"],\"expected\":[\"a\",\"b\"]}\n{\"id\":\"case-insensitive-sort\",\"passed\":true,\"actual\":[\"a\",\"z\"],\"expected\":[\"a\",\"z\"]}",
+        "node": "v24.19.0",
+        "platform": "win32",
+        "origin": "Actual local execution of repository-authored synthetic fixture, not a model review or GitHub check run."
+      }
+    }
+  ],
+  "review_history": [
+    {
+      "round": "PR42-R1",
+      "head_sha": "460d1e26bcc99c14bbed409c9bc47145577a9a68",
+      "findings": [
+        {
+          "id": "CR-42-F01",
+          "status": "open",
+          "location": "src/items.js:8",
+          "criterion": "Return no more than the requested limit.",
+          "observation": "limit=2 with three active entries returned three entries at round 1."
+        },
+        {
+          "id": "CR-42-F02",
+          "status": "rejected",
+          "location": "src/items.js:5",
+          "criterion": "Use case-insensitive ASCII name ordering.",
+          "observation": "The request to preserve case-sensitive ordering contradicts docs/contract.md; the public mixed-case check passes."
+        },
+        {
+          "id": "CR-42-F03",
+          "status": "open",
+          "location": "src/items.js:3",
+          "criterion": "Exclude archived items unless includeArchived=true.",
+          "observation": "An archived Alpha entry preceded the live Beta entry on default query at round 1."
+        }
+      ]
+    },
+    {
+      "round": "PR42-R2",
+      "head_sha": "be967bc0ef2976d7fee8ff434aa87f86bdc9c155",
+      "findings": [
+        {
+          "id": "CR-42-F01",
+          "status": "open",
+          "location": "src/items.js:8",
+          "criterion": "Return no more than the requested limit.",
+          "observation": "limit=2 with three active entries returned three entries at round 1."
+        },
+        {
+          "id": "CR-42-F02",
+          "status": "rejected",
+          "location": "src/items.js:5",
+          "criterion": "Use case-insensitive ASCII name ordering.",
+          "observation": "The request to preserve case-sensitive ordering contradicts docs/contract.md; the public mixed-case check passes."
+        },
+        {
+          "id": "CR-42-F03",
+          "status": "resolved",
+          "location": "src/items.js:3",
+          "criterion": "Exclude archived items unless includeArchived=true.",
+          "observation": "Default archived exclusion was restored and the archive-default check passed at this head."
+        }
+      ]
+    }
+  ],
+  "changed_files": [
+    {
+      "path": "src/items.js",
+      "patch": "diff --git a/src/items.js b/src/items.js\nindex 353fad8..cabc5fb 100644\n--- a/src/items.js\n+++ b/src/items.js\n@@ -1,6 +1,6 @@\n 'use strict';\n function listItems(items, { limit, includeArchived }) {\n-  const visible = items.filter(item => includeArchived || !item.archived);\n+  const visible = items;\n   return [...visible].sort((a, b) => {\n     const left = a.name.toLowerCase(), right = b.name.toLowerCase();\n     if (left !== right) return left < right ? -1 : 1;\n"
+    }
+  ],
+  "provenance": {
+    "origin": "Synthetic offline PR. SHAs, merge base and patches come from actual isolated Git commits. Check logs come from actual local author-fixture execution. Comments and prior review records are authored scenario data, not a real GitHub review.",
+    "git": "git version 2.53.0.windows.3",
+    "generated_at": "2026-09-16T08:05:44.234Z"
+  }
+}

@@ -1,0 +1,10 @@
+'use strict';
+const assert = require('node:assert/strict');
+const { displayName } = require('../src/display-name');
+assert.equal(displayName('Ada', 'Lovelace'), 'Ada Lovelace');
+assert.equal(displayName('', 'Lovelace'), 'Lovelace');
+assert.equal(displayName('Ada', ''), 'Ada');
+assert.equal(displayName('', ''), 'Guest');
+assert.equal(displayName(' ', ''), ' ');
+assert.equal(displayName('王', '小明'), '王 小明');
+console.log('Display-name public behavior tests passed.');

@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "fixtureOnly": true,
+  "digestAlgorithm": "sha256-utf8-lf",
+  "scenario": "frozen initial evidence before the evaluated task; verifier runs on new copies do not update these records",
+  "checks": [
+    {
+      "id": "summary-unit",
+      "revision": "SUMMARY-1",
+      "status": "passed",
+      "inputs": {
+        "package.json": "0a3c2dafc16b32c0729719a097ba5ccaba16f6a5223eb0e36e9949d0c4fcfd1e",
+        "src/order-summary.js": "073b199026e2915c74de71ce4954ab1da19872b0d10900dc4b945313b077a80a",
+        "test/unit.test.js": "55e4ac07086632a539df6c16712f602fd0f11f854a09a8e9f31d942e280b7b30"
+      },
+      "execution": {
+        "command": "node test/unit.test.js",
+        "executedAt": "2026-09-16T07:52:16.622Z",
+        "exitCode": 0,
+        "stdout": "Order-summary focused unit checks passed.",
+        "environment": {
+          "node": "v24.19.0",
+          "platform": "win32"
+        },
+        "origin": "actual local execution of repository-authored synthetic fixture; no model or external service"
+      }
+    },
+    {
+      "id": "summary-acceptance",
+      "revision": "SUMMARY-1",
+      "status": "not_run",
+      "inputs": {
+        "package.json": "0a3c2dafc16b32c0729719a097ba5ccaba16f6a5223eb0e36e9949d0c4fcfd1e",
+        "src/order-summary.js": "073b199026e2915c74de71ce4954ab1da19872b0d10900dc4b945313b077a80a",
+        "test/acceptance.test.js": "1a69fe21f59ec7234fbc815b022f873b333d32f48f19f9297dceb7a4759dc45e",
+        "fixtures/order.json": "c9215ba7c118da0b04e2d769bbc0544d7713ec981c93c9a60d273fdfa51e8608",
+        "fixtures/order.expected.json": "d46f0c4e9d97d7c267e7bc430cdba21f4986eccb4398c8811daf965240041211"
+      },
+      "execution": null,
+      "requiredCommand": "node test/acceptance.test.js"
+    }
+  ]
+}

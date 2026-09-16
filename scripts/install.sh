@@ -51,6 +51,8 @@ Compatibility aliases:
   --agent is an alias for --target; --skill selects a Skill by name.
   --source-dir installs from a local checkout; otherwise the requested GitHub repo and branch are downloaded.
   Omit --name and --category to install every available component of the selected Type.
+  Skill installs include required dependencies; conditional and optional dependencies are not installed automatically.
+  The source checkout must include scripts/data/install-skill-dependencies.tsv.
 
 Skill targets:
   codex, claude, cursor, vscode, copilot, opencode, project
@@ -75,6 +77,7 @@ Safety:
   The project target uses the current directory as its project root; --dir overrides that root.
   Global auto-delegation is opt-in and never overwrites conflicting user instructions.
   Unknown same-named content is blocked unless --force is provided.
+  --force also applies to required dependencies in the expanded installation plan.
 EOF
 }
 
@@ -2625,6 +2628,184 @@ load_install_category_names() {
   fi
 }
 
+skill_source_path() {
+  local skill_name="$1" candidate="$REPO_ROOT/skills/$1"
+  [[ -f "$candidate/SKILL.md" ]] || candidate="$REPO_ROOT/$skill_name"
+  if [[ ! -f "$candidate/SKILL.md" ]]; then
+    log_error "Skill not found in archive: $skill_name"
+    return 1
+  fi
+  printf '%s' "$candidate"
+}
+
+load_skill_dependency_rows() {
+  local index_path="$REPO_ROOT/scripts/data/install-skill-dependencies.tsv"
+  local line line_number=0 row_skill row_dependency row_kind row_when remainder key component_name index_bytes
+  local seen_keys=$'\n' checked_names=$'\n'
+  DEPENDENCY_SKILLS=()
+  DEPENDENCY_NAMES=()
+  DEPENDENCY_KINDS=()
+  DEPENDENCY_WHENS=()
+  [[ -f "$index_path" && ! -L "$index_path" ]] || {
+    log_error "Skill dependency index not found or not a regular file: $index_path. Use the installer matching this source checkout."
+    return 1
+  }
+  if ! index_bytes="$(LC_ALL=C od -An -v -tx1 "$index_path")"; then
+    log_error "Cannot inspect Skill dependency index bytes (od is required): $index_path"
+    return 1
+  fi
+  if [[ "$index_bytes" =~ (^|[[:space:]])00([[:space:]]|$) ]]; then
+    log_error "Skill dependency index contains a NUL byte: $index_path"
+    return 1
+  fi
+  while IFS= read -r line || [[ -n "$line" ]]; do
+    line_number=$((line_number + 1))
+    line="${line%$'\r'}"
+    if [[ "$line_number" -eq 1 ]]; then
+      [[ "$line" == $'skill\tdependency\tkind\twhen' ]] || {
+        log_error "Skill dependency index has an invalid header: $index_path"
+        return 1
+      }
+      continue
+    fi
+    remainder="$line"
+    if [[ "$remainder" != *$'\t'* ]]; then log_error "Skill dependency index row $line_number must contain skill, dependency, kind, and when."; return 1; fi
+    row_skill="${remainder%%$'\t'*}"
+    remainder="${remainder#*$'\t'}"
+    if [[ "$remainder" != *$'\t'* ]]; then log_error "Skill dependency index row $line_number must contain skill, dependency, kind, and when."; return 1; fi
+    row_dependency="${remainder%%$'\t'*}"
+    remainder="${remainder#*$'\t'}"
+    if [[ "$remainder" != *$'\t'* ]]; then log_error "Skill dependency index row $line_number must contain skill, dependency, kind, and when."; return 1; fi
+    row_kind="${remainder%%$'\t'*}"
+    row_when="${remainder#*$'\t'}"
+    if [[ ! "$row_skill" =~ ^[a-z0-9]+(-[a-z0-9]+)*$ || ! "$row_dependency" =~ ^[a-z0-9]+(-[a-z0-9]+)*$ ||
+          ( "$row_kind" != "required" && "$row_kind" != "conditional" && "$row_kind" != "optional" ) || "$row_when" == *$'\t'* || "$row_when" == *$'\r'* ||
+          ( "$row_kind" != "conditional" && "$row_when" != "-" ) ||
+          ( "$row_kind" == "conditional" && ( -z "${row_when//[[:space:]]/}" || "$row_when" == "-" ) ) ]]; then
+      log_error "Skill dependency index row $line_number contains an invalid value."
+      return 1
+    fi
+    if [[ "$row_skill" == "$row_dependency" ]]; then log_error "Skill dependency index contains a self dependency: $row_skill"; return 1; fi
+    key="$row_skill:$row_dependency"
+    case "$seen_keys" in
+      *$'\n'"$key"$'\n'*) log_error "Skill dependency index contains duplicate dependency: $row_skill -> $row_dependency"; return 1 ;;
+    esac
+    seen_keys+="$key"$'\n'
+    for component_name in "$row_skill" "$row_dependency"; do
+      case "$checked_names" in
+        *$'\n'"$component_name"$'\n'*) ;;
+        *) skill_source_path "$component_name" >/dev/null || return 1; checked_names+="$component_name"$'\n' ;;
+      esac
+    done
+    DEPENDENCY_SKILLS+=("$row_skill")
+    DEPENDENCY_NAMES+=("$row_dependency")
+    DEPENDENCY_KINDS+=("$row_kind")
+    DEPENDENCY_WHENS+=("$row_when")
+  done < "$index_path"
+  if [[ "$line_number" -eq 0 ]]; then log_error "Skill dependency index has an invalid header: $index_path"; return 1; fi
+}
+
+visit_required_skill() {
+  local skill_name="$1" chain="${2:-}" row_index source_path
+  case "$DEPENDENCY_VISITED" in *$'\n'"$skill_name"$'\n'*) return ;; esac
+  case "$DEPENDENCY_VISITING" in
+    *$'\n'"$skill_name"$'\n'*) log_error "Required Skill dependency cycle: $chain$skill_name"; return 1 ;;
+  esac
+  DEPENDENCY_VISITING+="$skill_name"$'\n'
+  for ((row_index = 0; row_index < ${#DEPENDENCY_SKILLS[@]}; row_index++)); do
+    if [[ "${DEPENDENCY_SKILLS[$row_index]}" == "$skill_name" && "${DEPENDENCY_KINDS[$row_index]}" == "required" ]]; then
+      visit_required_skill "${DEPENDENCY_NAMES[$row_index]}" "$chain$skill_name -> " || return 1
+    fi
+  done
+  DEPENDENCY_VISITING="${DEPENDENCY_VISITING%"$skill_name"$'\n'}"
+  DEPENDENCY_VISITED+="$skill_name"$'\n'
+  source_path="$(skill_source_path "$skill_name")" || return 1
+  EXPANDED_SKILL_SOURCES+=("$source_path")
+}
+
+expand_required_skill_sources() {
+  local src skill_name row_index selected_names=$'\n' selected_count=0
+  EXPANDED_SKILL_SOURCES=()
+  DEPENDENCY_VISITED=$'\n'
+  DEPENDENCY_VISITING=$'\n'
+  for src in "$@"; do
+    skill_name="$(basename "$src")"
+    case "$selected_names" in
+      *$'\n'"$skill_name"$'\n'*) ;;
+      *) selected_names+="$skill_name"$'\n'; selected_count=$((selected_count + 1)) ;;
+    esac
+    visit_required_skill "$skill_name" || return 1
+  done
+  log_info "Selected $selected_count Skill(s); added $((${#EXPANDED_SKILL_SOURCES[@]} - selected_count)) required dependency Skill(s)."
+  for ((row_index = 0; row_index < ${#DEPENDENCY_SKILLS[@]}; row_index++)); do
+    [[ "${DEPENDENCY_KINDS[$row_index]}" != "required" ]] || continue
+    case "$selected_names" in *$'\n'"${DEPENDENCY_SKILLS[$row_index]}"$'\n'*) ;; *) continue ;; esac
+    case "$DEPENDENCY_VISITED" in *$'\n'"${DEPENDENCY_NAMES[$row_index]}"$'\n'*) continue ;; esac
+    if [[ "${DEPENDENCY_KINDS[$row_index]}" == "conditional" ]]; then
+      log_info "Conditional route not auto-installed: ${DEPENDENCY_SKILLS[$row_index]} -> ${DEPENDENCY_NAMES[$row_index]} (${DEPENDENCY_WHENS[$row_index]})"
+    else
+      log_info "Optional dependency not auto-installed: ${DEPENDENCY_SKILLS[$row_index]} -> ${DEPENDENCY_NAMES[$row_index]}"
+    fi
+  done
+}
+
+build_skill_jobs() {
+  local src skill_name profile_index destination
+  SKILL_JOB_SOURCES=()
+  SKILL_JOB_NAMES=()
+  SKILL_JOB_DESTINATIONS=()
+  SKILL_JOB_PROFILE_INDEXES=()
+  for src in "$@"; do
+    skill_name="$(basename "$src")"
+    for ((profile_index = 0; profile_index < ${#SKILL_DESTINATIONS[@]}; profile_index++)); do
+      destination="$(resolve_skill_profile_destination "${SKILL_DESTINATIONS[$profile_index]}" "$skill_name" "${SKILL_CODEX_LEGACY_CHECKS[$profile_index]}" "$src/SKILL.md")" || return 1
+      SKILL_JOB_SOURCES+=("$src")
+      SKILL_JOB_NAMES+=("$skill_name")
+      SKILL_JOB_DESTINATIONS+=("$destination")
+      SKILL_JOB_PROFILE_INDEXES+=("$profile_index")
+    done
+  done
+}
+
+assert_skill_dependency_jobs() {
+  local job_index row_index dependency_index found source_key dependency_key
+  for ((job_index = 0; job_index < ${#SKILL_JOB_SOURCES[@]}; job_index++)); do
+    for ((row_index = 0; row_index < ${#DEPENDENCY_SKILLS[@]}; row_index++)); do
+      [[ "${DEPENDENCY_SKILLS[$row_index]}" == "${SKILL_JOB_NAMES[$job_index]}" && "${DEPENDENCY_KINDS[$row_index]}" == "required" ]] || continue
+      found=0
+      for ((dependency_index = 0; dependency_index < ${#SKILL_JOB_SOURCES[@]}; dependency_index++)); do
+        [[ "${SKILL_JOB_NAMES[$dependency_index]}" == "${DEPENDENCY_NAMES[$row_index]}" && "${SKILL_JOB_PROFILE_INDEXES[$dependency_index]}" == "${SKILL_JOB_PROFILE_INDEXES[$job_index]}" ]] || continue
+        found=1
+        source_key="$(path_identity_key "${SKILL_JOB_DESTINATIONS[$job_index]}")" || return 1
+        dependency_key="$(path_identity_key "${SKILL_JOB_DESTINATIONS[$dependency_index]}")" || return 1
+        if [[ "$source_key" != "$dependency_key" ]]; then
+          log_error "Required Skill dependency uses different roots: ${SKILL_JOB_NAMES[$job_index]} at '${SKILL_JOB_DESTINATIONS[$job_index]}' -> ${DEPENDENCY_NAMES[$row_index]} at '${SKILL_JOB_DESTINATIONS[$dependency_index]}'. Reconcile the existing Skill roots before installing; no duplicate or migration was created."
+          return 1
+        fi
+        break
+      done
+      if [[ "$found" -eq 0 ]]; then log_error "Required Skill dependency missing from installation plan: ${SKILL_JOB_NAMES[$job_index]} -> ${DEPENDENCY_NAMES[$row_index]}"; return 1; fi
+    done
+  done
+}
+
+preflight_skill_jobs() {
+  local job_index profile_index
+  assert_skill_dependency_jobs || return 1
+  for ((job_index = 0; job_index < ${#SKILL_JOB_SOURCES[@]}; job_index++)); do
+    profile_index="${SKILL_JOB_PROFILE_INDEXES[$job_index]}"
+    preflight_skill "${SKILL_JOB_SOURCES[$job_index]}" "${SKILL_JOB_DESTINATIONS[$job_index]}" "${SKILL_OWNERSHIP_TARGETS[$profile_index]}" "${SKILL_LEGACY_TARGETS[$profile_index]}" || return 1
+  done
+}
+
+install_skill_jobs() {
+  local job_index profile_index
+  for ((job_index = 0; job_index < ${#SKILL_JOB_SOURCES[@]}; job_index++)); do
+    profile_index="${SKILL_JOB_PROFILE_INDEXES[$job_index]}"
+    install_skill "${SKILL_JOB_SOURCES[$job_index]}" "${SKILL_JOB_DESTINATIONS[$job_index]}" "${SKILL_OWNERSHIP_TARGETS[$profile_index]}" "${SKILL_LEGACY_TARGETS[$profile_index]}"
+  done
+}
+
 if [[ -n "$CATEGORY" ]]; then
   load_install_category_names
   log_info "Selected ${#CATEGORY_NAMES[@]} $TYPE component(s) from category '$CATEGORY'"
@@ -2717,13 +2898,15 @@ if [[ "$TYPE" == "agent" ]]; then
     COMPANION_SOURCE="$REPO_ROOT/skills/subagent-architecture"
     if [[ ! -f "$COMPANION_SOURCE/SKILL.md" ]]; then log_error "Companion Skill not found in archive: subagent-architecture"; exit 1; fi
     configure_skill_profiles 0
-    for ((profile_index = 0; profile_index < ${#SKILL_DESTINATIONS[@]}; profile_index++)); do
-      COMPANION_DESTINATION="$(resolve_skill_profile_destination "${SKILL_DESTINATIONS[$profile_index]}" "subagent-architecture" "${SKILL_CODEX_LEGACY_CHECKS[$profile_index]}" "$COMPANION_SOURCE/SKILL.md")"
-      COMPANION_DESTINATIONS+=("$COMPANION_DESTINATION")
-      COMPANION_OWNERSHIP_TARGETS+=("${SKILL_OWNERSHIP_TARGETS[$profile_index]}")
-      COMPANION_LEGACY_TARGETS+=("${SKILL_LEGACY_TARGETS[$profile_index]}")
-      preflight_skill "$COMPANION_SOURCE" "$COMPANION_DESTINATION" "${SKILL_OWNERSHIP_TARGETS[$profile_index]}" "${SKILL_LEGACY_TARGETS[$profile_index]}"
-      log_info "Companion Skill destination: $COMPANION_DESTINATION"
+    load_skill_dependency_rows
+    expand_required_skill_sources "$COMPANION_SOURCE"
+    build_skill_jobs "${EXPANDED_SKILL_SOURCES[@]}"
+    preflight_skill_jobs
+    for ((job_index = 0; job_index < ${#SKILL_JOB_SOURCES[@]}; job_index++)); do
+      log_info "Companion Skill destination: ${SKILL_JOB_DESTINATIONS[$job_index]}"
+      if [[ "${SKILL_JOB_NAMES[$job_index]}" == "subagent-architecture" ]]; then
+        COMPANION_DESTINATIONS+=("${SKILL_JOB_DESTINATIONS[$job_index]}")
+      fi
     done
   fi
 
@@ -2743,9 +2926,7 @@ if [[ "$TYPE" == "agent" ]]; then
   fi
 
   if [[ "$INSTALL_COMPANION_SKILL" -eq 1 ]]; then
-    for ((profile_index = 0; profile_index < ${#COMPANION_DESTINATIONS[@]}; profile_index++)); do
-      install_skill "$COMPANION_SOURCE" "${COMPANION_DESTINATIONS[$profile_index]}" "${COMPANION_OWNERSHIP_TARGETS[$profile_index]}" "${COMPANION_LEGACY_TARGETS[$profile_index]}"
-    done
+    install_skill_jobs
   fi
   log_info "$(if [[ "$DRY_RUN" -eq 1 ]]; then printf Planning; else printf Installing; fi) ${#AGENT_JOB_SOURCES[@]} Agent profile file(s) across ${#AGENT_PLATFORMS[@]} destination(s) for $TARGET"
   for ((job_index = 0; job_index < ${#AGENT_JOB_SOURCES[@]}; job_index++)); do
@@ -2783,21 +2964,12 @@ else
     while IFS= read -r dir; do SOURCES+=("$dir"); done < <(find "$SCAN_ROOT" -mindepth 1 -maxdepth 1 -type d -exec test -f '{}/SKILL.md' ';' -print | sort)
   fi
   if [[ "${#SOURCES[@]}" -eq 0 ]]; then log_error "No Skill folders with SKILL.md were found in archive."; exit 1; fi
-  for ((profile_index = 0; profile_index < ${#SKILL_DESTINATIONS[@]}; profile_index++)); do
-    for src in "${SOURCES[@]}"; do
-      SKILL_NAME="$(basename "$src")"
-      SKILL_DESTINATION="$(resolve_skill_profile_destination "${SKILL_DESTINATIONS[$profile_index]}" "$SKILL_NAME" "${SKILL_CODEX_LEGACY_CHECKS[$profile_index]}" "$src/SKILL.md")"
-      preflight_skill "$src" "$SKILL_DESTINATION" "${SKILL_OWNERSHIP_TARGETS[$profile_index]}" "${SKILL_LEGACY_TARGETS[$profile_index]}"
-    done
-  done
-  log_info "$(if [[ "$DRY_RUN" -eq 1 ]]; then printf Planning; else printf Installing; fi) ${#SOURCES[@]} Skill(s) across ${#SKILL_DESTINATIONS[@]} destination(s) for $TARGET"
-  for ((profile_index = 0; profile_index < ${#SKILL_DESTINATIONS[@]}; profile_index++)); do
-    for src in "${SOURCES[@]}"; do
-      SKILL_NAME="$(basename "$src")"
-      SKILL_DESTINATION="$(resolve_skill_profile_destination "${SKILL_DESTINATIONS[$profile_index]}" "$SKILL_NAME" "${SKILL_CODEX_LEGACY_CHECKS[$profile_index]}" "$src/SKILL.md")"
-      install_skill "$src" "$SKILL_DESTINATION" "${SKILL_OWNERSHIP_TARGETS[$profile_index]}" "${SKILL_LEGACY_TARGETS[$profile_index]}"
-    done
-  done
+  load_skill_dependency_rows
+  expand_required_skill_sources "${SOURCES[@]}"
+  build_skill_jobs "${EXPANDED_SKILL_SOURCES[@]}"
+  preflight_skill_jobs
+  log_info "$(if [[ "$DRY_RUN" -eq 1 ]]; then printf Planning; else printf Installing; fi) ${#EXPANDED_SKILL_SOURCES[@]} Skill(s) across ${#SKILL_DESTINATIONS[@]} destination(s) for $TARGET"
+  install_skill_jobs
 fi
 
 if [[ "$DRY_RUN" -eq 1 ]]; then log_success "Dry run complete."; else log_success "CraftRoster $TYPE install complete."; fi

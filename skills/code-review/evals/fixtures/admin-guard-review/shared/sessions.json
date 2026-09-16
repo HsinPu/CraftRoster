@@ -1,0 +1,5 @@
+{
+  "fixture-admin-a": { "userId": "fictional-admin-a", "role": "admin", "organizationId": "fictional-org-a" },
+  "fixture-member-a": { "userId": "fictional-member-a", "role": "member", "organizationId": "fictional-org-a" },
+  "fixture-member-b": { "userId": "fictional-member-b", "role": "member", "organizationId": "fictional-org-b" }
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "scenario_id": "field-notes-release-42",
+  "receipts": [
+    {
+      "id": "R41-DELETE",
+      "gate_id": "account-deletion",
+      "subject": { "app_id": "com.example.fieldnotes", "version": "1.4.0", "build": 41, "artifact_ref": "fixture-fieldnotes-1.4.0-41-a", "channel": "app-store-production-submission" },
+      "configuration": { "backend": "notes-api-12" },
+      "recorded_at": "2026-09-14T12:00:00Z",
+      "valid_until": "2026-09-21T12:00:00Z",
+      "status": "passed",
+      "owner_role": "mobile quality",
+      "observations": { "deletion-confirmation": "passed", "post-deletion-sign-in": "passed" },
+      "note": "Scenario device receipt from an iPhone 13 / iOS 18.5 test profile, retained with its original artifact identity."
+    },
+    {
+      "id": "R42-PRIVACY-OLD",
+      "gate_id": "privacy-reconciliation",
+      "subject": { "app_id": "com.example.fieldnotes", "version": "1.4.0", "build": 42, "artifact_ref": "fixture-fieldnotes-1.4.0-42-a", "channel": "app-store-production-submission" },
+      "configuration": { "metadata": "store-copy-6", "privacy_disclosure": "privacy-2", "telemetry_configuration": "telemetry-1" },
+      "recorded_at": "2026-09-14T16:00:00Z",
+      "valid_until": "2026-09-15T16:00:00Z",
+      "status": "passed",
+      "owner_role": "privacy engineering",
+      "observations": { "event-inventory": "passed", "disclosure-mapping": "passed", "opt-in-behavior": "passed" },
+      "note": "Scenario reconciliation receipt for the runtime configuration and draft revisions named above; retained unchanged after the draft update."
+    }
+  ]
+}

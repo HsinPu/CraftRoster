@@ -518,6 +518,13 @@
         "grid",
         "tokens",
         "architecture"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "conditional",
+          "when": "CSS affects a Three.js canvas, renderer sizing, HUD, projected labels, or pointer integration."
+        }
       ]
     },
     "dashboard-design": {
@@ -786,6 +793,12 @@
         "ui",
         "accessibility",
         "performance"
+      ],
+      "dependencies": [
+        {
+          "name": "code-review",
+          "kind": "required"
+        }
       ]
     },
     "frontend-design": {
@@ -801,6 +814,13 @@
         "ui",
         "state-management",
         "component-architecture"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "conditional",
+          "when": "The requested or affected surface includes a Three.js or 3D scene; unrelated DOM and styling work does not qualify."
+        }
       ]
     },
     "frontend-design-review": {
@@ -867,6 +887,13 @@
         "git",
         "github",
         "gerrit"
+      ],
+      "dependencies": [
+        {
+          "name": "markdown-writer",
+          "kind": "conditional",
+          "when": "Markdown syntax or formatting conventions need specialist guidance."
+        }
       ]
     },
     "github-actions-ci": {
@@ -888,6 +915,12 @@
         "diff",
         "checks",
         "gh"
+      ],
+      "dependencies": [
+        {
+          "name": "code-review",
+          "kind": "required"
+        }
       ]
     },
     "github-inline-review": {
@@ -954,6 +987,13 @@
         "accessibility",
         "screen-recording",
         "multi-state"
+      ],
+      "dependencies": [
+        {
+          "name": "image-to-code-assets",
+          "kind": "conditional",
+          "when": "Independent asset exports, transparency, density variants, bounding boxes, or a Figma-layer handoff are requested."
+        }
       ]
     },
     "image-to-code-assets": {
@@ -1043,6 +1083,18 @@
         "package",
         "module",
         "refactor"
+      ],
+      "dependencies": [
+        {
+          "name": "java-development",
+          "kind": "conditional",
+          "when": "Implementation or migration planning requires this Java baseline or its testing contract; current-state assessment can remain standalone."
+        },
+        {
+          "name": "java-testing",
+          "kind": "conditional",
+          "when": "Implementation or migration planning requires this Java baseline or its testing contract; current-state assessment can remain standalone."
+        }
       ]
     },
     "java-development": {
@@ -1112,6 +1164,18 @@
         "async",
         "security",
         "testing"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "conditional",
+          "when": "The affected task requires this TypeScript or Three.js specialist; unrelated repository dependencies do not qualify."
+        },
+        {
+          "name": "typescript-development",
+          "kind": "conditional",
+          "when": "The affected task requires this TypeScript or Three.js specialist; unrelated repository dependencies do not qualify."
+        }
       ]
     },
     "jpa-hibernate-development": {
@@ -1461,6 +1525,12 @@
         "review-report",
         "review-loop",
         "read-only"
+      ],
+      "dependencies": [
+        {
+          "name": "code-review",
+          "kind": "required"
+        }
       ]
     },
     "playwright-automation": {
@@ -1570,6 +1640,12 @@
         "error-mapping",
         "transport",
         "generated-code"
+      ],
+      "dependencies": [
+        {
+          "name": "python-development",
+          "kind": "required"
+        }
       ]
     },
     "python-automation-scripting": {
@@ -1585,6 +1661,12 @@
         "batch",
         "typer",
         "click"
+      ],
+      "dependencies": [
+        {
+          "name": "python-development",
+          "kind": "required"
+        }
       ]
     },
     "python-backend-development": {
@@ -1600,6 +1682,12 @@
         "migrations",
         "middleware",
         "workers"
+      ],
+      "dependencies": [
+        {
+          "name": "python-development",
+          "kind": "required"
+        }
       ]
     },
     "python-concurrency-patterns": {
@@ -1615,6 +1703,12 @@
         "workers",
         "parallelism",
         "coordination"
+      ],
+      "dependencies": [
+        {
+          "name": "python-development",
+          "kind": "required"
+        }
       ]
     },
     "python-data-engineering": {
@@ -1630,6 +1724,12 @@
         "parquet",
         "jupyter",
         "dataframes"
+      ],
+      "dependencies": [
+        {
+          "name": "python-development",
+          "kind": "required"
+        }
       ]
     },
     "python-development": {
@@ -1657,6 +1757,58 @@
         "uv",
         "fastapi",
         "pydantic"
+      ],
+      "dependencies": [
+        {
+          "name": "python-api-client-development",
+          "kind": "conditional",
+          "when": "The requested Python task matches this specialist domain; load only the relevant specialist."
+        },
+        {
+          "name": "python-automation-scripting",
+          "kind": "conditional",
+          "when": "The requested Python task matches this specialist domain; load only the relevant specialist."
+        },
+        {
+          "name": "python-backend-development",
+          "kind": "conditional",
+          "when": "The requested Python task matches this specialist domain; load only the relevant specialist."
+        },
+        {
+          "name": "python-concurrency-patterns",
+          "kind": "conditional",
+          "when": "The requested Python task matches this specialist domain; load only the relevant specialist."
+        },
+        {
+          "name": "python-data-engineering",
+          "kind": "conditional",
+          "when": "The requested Python task matches this specialist domain; load only the relevant specialist."
+        },
+        {
+          "name": "python-observability-debugging",
+          "kind": "conditional",
+          "when": "The requested Python task matches this specialist domain; load only the relevant specialist."
+        },
+        {
+          "name": "python-packaging-release",
+          "kind": "conditional",
+          "when": "The requested Python task matches this specialist domain; load only the relevant specialist."
+        },
+        {
+          "name": "python-security-hardening",
+          "kind": "conditional",
+          "when": "The requested Python task matches this specialist domain; load only the relevant specialist."
+        },
+        {
+          "name": "python-testing-engineering",
+          "kind": "conditional",
+          "when": "The requested Python task matches this specialist domain; load only the relevant specialist."
+        },
+        {
+          "name": "python-web-scraping",
+          "kind": "conditional",
+          "when": "The requested Python task matches this specialist domain; load only the relevant specialist."
+        }
       ]
     },
     "python-observability-debugging": {
@@ -1672,6 +1824,13 @@
         "performance",
         "runtime",
         "diagnostics"
+      ],
+      "dependencies": [
+        {
+          "name": "python-development",
+          "kind": "conditional",
+          "when": "Planning or implementing a Python code fix after diagnosis."
+        }
       ]
     },
     "python-packaging-release": {
@@ -1687,6 +1846,12 @@
         "entry-points",
         "build",
         "distribution"
+      ],
+      "dependencies": [
+        {
+          "name": "python-development",
+          "kind": "required"
+        }
       ]
     },
     "python-security-hardening": {
@@ -1702,6 +1867,12 @@
         "filesystem",
         "network",
         "trust-boundaries"
+      ],
+      "dependencies": [
+        {
+          "name": "python-development",
+          "kind": "required"
+        }
       ]
     },
     "python-testing-engineering": {
@@ -1717,6 +1888,12 @@
         "coverage",
         "tmp_path",
         "parametrize"
+      ],
+      "dependencies": [
+        {
+          "name": "python-development",
+          "kind": "required"
+        }
       ]
     },
     "python-web-scraping": {
@@ -1732,6 +1909,12 @@
         "lxml",
         "crawling",
         "pagination"
+      ],
+      "dependencies": [
+        {
+          "name": "python-development",
+          "kind": "required"
+        }
       ]
     },
     "rag-vector-search": {
@@ -1865,6 +2048,12 @@
         "xss",
         "injection",
         "auth"
+      ],
+      "dependencies": [
+        {
+          "name": "code-review",
+          "kind": "required"
+        }
       ]
     },
     "security-scanning": {
@@ -2360,6 +2549,12 @@
         "screen-reader",
         "reduced-motion",
         "semantic-ui"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
       ]
     },
     "threejs-animation-system": {
@@ -2371,6 +2566,13 @@
         "skeletal-animation",
         "morph-targets",
         "inverse-kinematics"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "conditional",
+          "when": "IK, locomotion, procedural animation, navigation, or physics shares pose authority."
+        }
       ]
     },
     "threejs-assets-gltf": {
@@ -2382,6 +2584,13 @@
         "loaders",
         "compression",
         "textures"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "conditional",
+          "when": "Runtime authoring/export or engineering and dense spatial source formats require the shared contracts."
+        }
       ]
     },
     "threejs-cad-bim": {
@@ -2393,6 +2602,12 @@
         "ifc",
         "measurement",
         "technical-models"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
       ]
     },
     "threejs-atmosphere-aerial-perspective": {
@@ -2435,6 +2650,12 @@
         "mediarecorder",
         "webcodecs",
         "deterministic-frames"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
       ]
     },
     "threejs-csg-modeling": {
@@ -2446,6 +2667,12 @@
         "topology",
         "manifold",
         "authoring"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
       ]
     },
     "threejs-data-visualization": {
@@ -2457,6 +2684,13 @@
         "scientific-visualization",
         "spatial-data",
         "accessibility"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "conditional",
+          "when": "Converting or streaming analytical source data requires shared format contracts."
+        }
       ]
     },
     "threejs-deformable-simulation": {
@@ -2468,6 +2702,12 @@
         "soft-body",
         "fluid-simulation",
         "xpbd"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
       ]
     },
     "threejs-development": {
@@ -2493,6 +2733,12 @@
         "undo-redo",
         "serialization",
         "export"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
       ]
     },
     "threejs-exposure-color-grading": {
@@ -2515,6 +2761,12 @@
         "svelte",
         "threlte",
         "frameworks"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
       ]
     },
     "threejs-gameplay-systems": {
@@ -2604,6 +2856,12 @@
         "pathfinding",
         "crowds",
         "avoidance"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
       ]
     },
     "threejs-networked-experiences": {
@@ -2626,6 +2884,12 @@
         "worker-rendering",
         "transferables",
         "responsiveness"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
       ]
     },
     "threejs-parallax-occlusion-mapping": {
@@ -2648,6 +2912,12 @@
         "bvh",
         "light-transport",
         "convergence"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
       ]
     },
     "threejs-performance-memory": {
@@ -2692,6 +2962,12 @@
         "ply",
         "streaming",
         "spatial-data"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
       ]
     },
     "threejs-postprocessing": {
@@ -2745,6 +3021,12 @@
         "rigging",
         "morphology",
         "inverse-kinematics"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
       ]
     },
     "threejs-procedural-fields": {
@@ -2974,6 +3256,12 @@
         "compatibility",
         "deprecations",
         "rollback"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
       ]
     },
     "threejs-visual-validation": {
@@ -3028,6 +3316,12 @@
         "ar",
         "accessibility",
         "motion-comfort"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
       ]
     },
     "threat-modeling": {
@@ -3496,11 +3790,11 @@
     {
       "id": "threejs-html-frontend-entry",
       "title": "Three.js HTML and Frontend Ownership",
-      "decision": "Three.js owns the 3D scene and browser rendering contract; frontend, CSS, and JavaScript Skills support their own DOM and language boundaries and must load the sibling Three.js umbrella when it was omitted from initial metadata.",
+      "decision": "For requested 3D work, Three.js owns the scene and rendering contract. Add frontend, CSS, or JavaScript owners only for affected DOM, integration, and language boundaries; repository presence alone does not activate the 3D route.",
       "skills": [
         {
           "name": "threejs-development",
-          "when": "The request mentions Three.js, threejs, the three package, WebGL or WebGPU 3D, a canvas scene, a 3D webpage, or a single-file HTML or JavaScript demo."
+          "when": "The requested outcome or affected implementation needs Three.js or WebGL/WebGPU 3D, including an explicitly requested single-file HTML 3D scene. Plain Canvas 2D, unrelated DOM edits, and a three dependency elsewhere are insufficient."
         },
         {
           "name": "frontend-design",
@@ -3523,7 +3817,7 @@
       "skills": [
         {
           "name": "threejs-development",
-          "when": "A request mentions Three.js, threejs, the three package, a WebGL or WebGPU 3D page, a canvas scene, a 3D website, or a single-file HTML or JavaScript demo, or spans architecture, rendering, assets, interaction, simulation, quality, or production delivery."
+          "when": "The requested outcome or affected implementation needs Three.js or WebGL/WebGPU 3D, including an explicitly requested single-file HTML 3D scene. Plain Canvas 2D, unrelated DOM edits, and a three dependency elsewhere are insufficient."
         },
         {
           "name": "threejs-version-migration",

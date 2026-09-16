@@ -1,0 +1,8 @@
+{
+  "migration": "A",
+  "sourceSchemaVersion": 1,
+  "destinationSchemaVersion": 2,
+  "readerAcceptedSchemaVersions": [1, 2],
+  "requiredRecordFields": ["id", "name"],
+  "newOptionalField": "profileLabel"
+}

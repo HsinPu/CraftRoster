@@ -4,61 +4,123 @@
     {
       "id": 1,
       "prompt": "Build a production Three.js product configurator from scratch. It needs GLB assets, touch and keyboard controls, React Three Fiber, WebXR preview, accessible non-XR purchase controls, mobile performance tiers, visual regression, and CDN deployment.",
-      "expected_output": "A routed end-to-end plan that starts with the product and renderer contract, assigns architecture and lifecycle ownership, and selects the asset, interaction, React Three Fiber, WebXR accessibility, performance, validation, security, and deployment specialists in dependency order.",
+      "expected_output": "An implemented, runnable React Three Fiber product configurator with the requested GLB, input, WebXR, accessible non-XR, mobile-quality, visual-regression, and CDN-delivery paths. The product/renderer contract and specialist routing support concrete source and build artifacts, measured acceptance evidence, and the actual delivery status; a routed plan alone does not complete the task.",
       "assertions": [
         "The response uses threejs-development as the cross-cutting route instead of treating the request as one rendering effect.",
         "Architecture, scene lifecycle, renderer, asset, and color ownership are established before optional advanced effects.",
         "The WebXR experience has a usable non-XR and accessible path for essential product and purchase actions.",
         "Mobile frame, memory, asset, DPR, and quality budgets are explicit and measured.",
-        "The plan includes fixed visual evidence, production asset delivery, security controls, rollout, and rollback."
-      ]
+        "The implementation and evidence cover fixed visual baselines, production asset delivery, security controls, rollout, and rollback; proposed checks are distinguished from executed results.",
+        "It provides inspectable source/build artifacts implementing the requested configurator features and ties evidence to the actual artifact, commands, runtime/device, and observations, including mobile frame, memory, asset, DPR, and quality measurements.",
+        "Routing, pseudocode, a test plan, or unsupported claims of execution cannot earn a full task pass. Missing implementation or unavailable browser, GPU, XR, or authorized CDN-target evidence is reported as partial or blocked, with the specific unfinished requirements; it does not declare the configurator fully delivered or invent a deployment."
+      ],
+      "locale": "en"
     },
     {
       "id": 2,
       "prompt": "Our GLB viewer leaks GPU memory every time the route changes, first interaction freezes while shaders compile, and corrupt customer-uploaded textures can crash the tab. Just increase the cache and keep all models alive.",
-      "expected_output": "A causal route through assets, lifecycle, performance, testing, and security that rejects unbounded caching, traces shared ownership and disposal, measures shader warm-up, validates hostile asset limits, and proves stable repeated route transitions.",
+      "expected_output": "An implemented repair of the supplied GLB viewer with inspectable source changes, bounded resource ownership and asset handling, and measured first-interaction/compilation behavior. It rejects unbounded caching and ties repeated route-transition observations to the actual artifact and runtime; a causal route or proposed test plan alone is incomplete.",
       "assertions": [
         "The response rejects keeping every model alive or growing the cache without bounds.",
         "It distinguishes scene removal from disposal and traces shared geometry, material, texture, skeleton, controls, worker, and render-target ownership.",
-        "It profiles shader compilation and proposes measured warm-up or scheduling rather than hiding the stall.",
+        "It measures compilation and first-interaction behavior on the supplied viewer and validates any chosen warm-up or scheduling change. CPU submission time is not labeled GPU time, and an unreproduced stall is identified rather than invented.",
         "Customer assets are validated for type, size, dimensions, counts, compression ratio, extensions, and parse or upload budgets.",
-        "Repeated mount and unmount tests show stable renderer and browser resource evidence."
+        "Repeated mount and unmount tests show stable renderer and browser resource evidence.",
+        "It supplies source changes for the existing viewer, preserves shared resources while their owners remain active, and records actual inputs, commands, artifact identity and observed disposal/asset-failure behavior.",
+        "A route, advice, fabricated counters or a replacement demo cannot earn full task pass. Missing original inputs, unimplemented repairs, unavailable runtime evidence or unreproduced production symptoms remain explicit partial or blocked requirements."
+      ],
+      "locale": "en",
+      "fixture_root": "evals/fixtures/glb-viewer-lifecycle",
+      "files": [
+        "evals/fixtures/glb-viewer-lifecycle/CONTRACT.md",
+        "evals/fixtures/glb-viewer-lifecycle/index.html",
+        "evals/fixtures/glb-viewer-lifecycle/package-lock.json",
+        "evals/fixtures/glb-viewer-lifecycle/package.json",
+        "evals/fixtures/glb-viewer-lifecycle/scenario.json",
+        "evals/fixtures/glb-viewer-lifecycle/src/asset-policy.cjs",
+        "evals/fixtures/glb-viewer-lifecycle/src/lifecycle.cjs",
+        "evals/fixtures/glb-viewer-lifecycle/src/viewer.js",
+        "evals/fixtures/glb-viewer-lifecycle/style.css",
+        "evals/fixtures/glb-viewer-lifecycle/test/assets.test.cjs",
+        "evals/fixtures/glb-viewer-lifecycle/tools/build.cjs",
+        "evals/fixtures/glb-viewer-lifecycle/tools/generate-assets.cjs",
+        "evals/fixtures/glb-viewer-lifecycle/tools/serve.cjs"
       ]
     },
     {
       "id": 3,
       "prompt": "Create an ocean planet viewed from orbit, through atmospheric entry, down to an underwater camera. Include FFT waves, whitecaps, volumetric clouds, aerial perspective, caustics, rain, bloom, adaptive exposure, and stable large-world shadows.",
-      "expected_output": "A coordinated advanced-graphics route that establishes planetary scale and precision, shared world fields and camera envelope, then integrates planets, ocean and water optics, atmosphere, clouds, precipitation, shadows, image pipeline, exposure, bloom, performance tiers, and fixed-view validation.",
+      "expected_output": "An implemented ocean-planet scene with inspectable rendering code and a runnable orbit-to-atmosphere-to-underwater camera path, integrating the requested effects under shared scale, precision, lifecycle, and image-pipeline contracts. Specialist routing supports the implementation; recorded visual, temporal, GPU-time, and memory evidence establishes which acceptance paths actually ran and which remain incomplete.",
       "assertions": [
         "The response routes to the specific planet, spectral ocean, water optics, atmosphere, cloud, precipitation, shadow, image, exposure, bloom, and validation Skills.",
         "Planet radius, elevation, wavelength, optical distance, atmosphere, shadow, and floating-origin units share one scale contract.",
         "Pass ordering tone-maps and encodes once and resets temporal histories at cuts, origin shifts, resize, and surface transitions.",
         "Each expensive volume, FFT, shadow, and post stage has diagnostics and a lower-cost tier.",
-        "Acceptance includes orbit-to-surface and above-to-underwater camera paths, seed sweeps, temporal stability, GPU time, and memory."
-      ]
+        "Executed acceptance evidence identifies the actual artifact and covers orbit-to-surface and above-to-underwater camera paths, seed sweeps, temporal stability, GPU time, and memory; unexecuted paths or measurements are explicitly listed as missing.",
+        "It supplies runnable source or build artifacts for the requested FFT waves, whitecaps, volumetric clouds, aerial perspective, caustics, rain, bloom, adaptive exposure, and large-world shadows; placeholders, omitted effects, or sketches are identified as unfinished rather than represented as implemented.",
+        "A coordinated route, proposed pass graph, diagnostics plan, or unsubstantiated measurement claim cannot complete this creation task. Missing browser/GPU support or other unavailable execution evidence produces an honest partial or blocked result, with runtime/device, camera/seed conditions, and actual observations recorded for checks that did run."
+      ],
+      "locale": "en"
     },
     {
       "id": 4,
       "prompt": "Move our vanilla Three.js game into React Three Fiber. Keep calling setState from useFrame for every object's transform, set dispose={null} at the app root, and use continuous rendering even when the scene is idle.",
-      "expected_output": "A React Three Fiber migration boundary that preserves behavior while rejecting per-frame React state churn, global disposal opt-out, and unnecessary continuous rendering; it assigns mutable frame state, shared resources, loader caches, lifecycle, and demand rendering deliberately.",
+      "expected_output": "An implemented migration of the supplied vanilla game into React Three Fiber, with inspectable source/build artifacts and behavior comparison against the original game. It rejects per-frame React state churn and global disposal opt-out, assigns shared ownership and frame scheduling deliberately, and distinguishes actual StrictMode, route, loading, cleanup and performance observations from proposed checks.",
       "assertions": [
         "The response routes to threejs-react-three-fiber plus architecture, lifecycle, and performance concerns.",
         "Transient per-frame transforms stay in mutable render state rather than React state updates.",
         "Any dispose={null} use is narrow and paired with an explicit resource owner.",
         "The frame-loop policy is chosen from actual motion and uses demand or invalidation for idle scenes where suitable.",
-        "The migration proceeds in verified slices with loading, strict-mode, route transition, cleanup, and performance tests."
+        "The migration proceeds in verified slices with loading, strict-mode, route transition, cleanup, and performance tests.",
+        "It supplies runnable React Three Fiber source/build artifacts preserving the supplied game state, input, loading, error and reset behavior, with recorded baseline/candidate comparisons tied to the actual versions and artifact.",
+        "Routing, component sketches, a migration plan or an unrelated replacement game cannot complete the task. Missing source, unimplemented slices or unobserved StrictMode/browser/resource/performance requirements remain explicit partial or blocked work."
+      ],
+      "locale": "en",
+      "fixture_root": "evals/fixtures/vanilla-game-migration",
+      "files": [
+        "evals/fixtures/vanilla-game-migration/CONTRACT.md",
+        "evals/fixtures/vanilla-game-migration/package.json",
+        "evals/fixtures/vanilla-game-migration/package-lock.json",
+        "evals/fixtures/vanilla-game-migration/scenario.json",
+        "evals/fixtures/vanilla-game-migration/assets/level.json",
+        "evals/fixtures/vanilla-game-migration/src/game.cjs",
+        "evals/fixtures/vanilla-game-migration/src/level.cjs",
+        "evals/fixtures/vanilla-game-migration/src/diagnostics.js",
+        "evals/fixtures/vanilla-game-migration/src/vanilla.js",
+        "evals/fixtures/vanilla-game-migration/src/main.js",
+        "evals/fixtures/vanilla-game-migration/src/styles.css",
+        "evals/fixtures/vanilla-game-migration/test/game.test.cjs",
+        "evals/fixtures/vanilla-game-migration/tools/build.cjs",
+        "evals/fixtures/vanilla-game-migration/tools/serve.cjs"
       ]
     },
     {
       "id": 5,
       "prompt": "Use WebGPURenderer and TSL everywhere because they are newer. We do not need to inspect the installed Three.js version or test WebGL fallback, mobile Safari, post-processing, readback, or XR.",
-      "expected_output": "A version- and capability-aware renderer decision that refuses novelty-based migration, builds a feature matrix, prototypes the risky TSL, post, readback, and XR paths, and defines a tested fallback or explicit support boundary.",
+      "expected_output": "A renderer decision grounded in the supplied installed versions and application contract, with an executed prototype for the risky TSL, post-processing and readback paths where the environment permits. It may decline an unsupported wholesale migration; any adopted migration has inspectable code changes and a verified fallback or explicit support boundary. Source inspection, executed observations and unavailable browser/device/XR evidence remain distinct.",
       "assertions": [
         "The installed Three.js and ecosystem versions are inspected before selecting APIs.",
         "WebGL and WebGPU feature, device, browser, post-processing, readback, and XR parity are recorded.",
         "Renderer-specific code is isolated behind an application-facing contract.",
         "Fallback is tested or the unsupported browser and device boundary is stated explicitly.",
-        "Output color, render-target precision, context or device loss, production build, and performance are verified."
+        "Output color, render-target precision, context or device loss, production build, and performance are verified.",
+        "It identifies the initialized backend rather than inferring native WebGPU from the WebGPURenderer class name, and binds prototype results or adopted source changes to versions, artifacts, devices and actual commands.",
+        "A planned feature matrix or current documentation alone is not prototype or device evidence. Unavailable native WebGPU, mobile Safari, XR, device-loss or GPU-performance checks remain unverified; a supported decision not to migrate is valid without inventing parity or claiming an unimplemented migration."
+      ],
+      "locale": "en",
+      "fixture_root": "evals/fixtures/renderer-feature-baseline",
+      "files": [
+        "evals/fixtures/renderer-feature-baseline/CONTRACT.md",
+        "evals/fixtures/renderer-feature-baseline/contracts/requirements.json",
+        "evals/fixtures/renderer-feature-baseline/dependency-evidence.json",
+        "evals/fixtures/renderer-feature-baseline/index.html",
+        "evals/fixtures/renderer-feature-baseline/package-lock.json",
+        "evals/fixtures/renderer-feature-baseline/package.json",
+        "evals/fixtures/renderer-feature-baseline/src/pixel-contract.js",
+        "evals/fixtures/renderer-feature-baseline/src/probe.js",
+        "evals/fixtures/renderer-feature-baseline/style.css",
+        "evals/fixtures/renderer-feature-baseline/tools/build.cjs",
+        "evals/fixtures/renderer-feature-baseline/tools/serve.cjs"
       ]
     },
     {
@@ -69,61 +131,105 @@
         "The response does not treat the entire upstream package as MIT.",
         "It identifies the published mixed license and third-party provenance as a blocking import risk.",
         "Only the pinned upstream SKILL.md paths may remain reference evidence under the recorded MIT root license.",
-        "CraftRoster guidance remains first-party and passes originality comparison instead of copying upstream text.",
+        "CraftRoster guidance remains first-party instead of copying upstream text. It only claims an originality comparison passed when that comparison actually ran with traceable evidence; otherwise it identifies the comparison as not_run and states the evidence still needed.",
         "Any future code or asset import requires path-level license evidence, compatibility review, and an explicit re-audit."
+      ],
+      "locale": "en",
+      "fixture_root": "evals/fixtures/pinned-provenance",
+      "files": [
+        "evals/fixtures/pinned-provenance/CONTEXT.md",
+        "evals/fixtures/pinned-provenance/existing-policy.json",
+        "evals/fixtures/pinned-provenance/upstream-evidence.json"
       ]
     },
     {
       "id": 7,
       "prompt": "Build a Vue/TresJS browser scene editor that renders through OffscreenCanvas. It needs gizmos, undo and redo, autosave, GLB export, SSR for the surrounding page, mobile fallback, and stable route remounts.",
-      "expected_output": "A routed plan using project architecture, editor authoring, framework integration, offscreen workers, scene lifecycle, assets, rendering platforms, performance, testing, accessibility, security, and deployment in an order that establishes document, renderer, framework, protocol, and fallback ownership first.",
+      "expected_output": "An implemented Vue/TresJS editor with inspectable source/build artifacts for document editing, gizmos, undo/redo, autosave, GLB export, SSR boundaries, OffscreenCanvas worker rendering, accessible controls, mobile fallback, and stable remounts. Explicit ownership and specialist routing support working behavior and recorded verification; a routed architecture plan alone is incomplete.",
       "assertions": [
         "The response routes to threejs-editor-authoring, threejs-framework-integrations, and threejs-offscreen-workers rather than hiding those boundaries in generic architecture.",
         "Document, editor-session, framework, renderer-worker, DOM, asset, and shared-resource ownership are explicit.",
         "Undo, migration, autosave recovery, exporter loss, worker protocol, SSR guards, and mobile fallback are independently defined.",
         "Semantic non-canvas controls remain usable before, without, and after the worker renderer.",
-        "Round trips, worker failure, route remount, production asset URLs, performance, stable cleanup, rollout, and rollback are verified."
-      ]
+        "Round trips, worker failure, route remount, production asset URL resolution, performance, and stable cleanup are checked against the implementation. Rollout/rollback and recovery checks stay within local build/fallback verification unless a specific external operation is authorized.",
+        "It provides a runnable editor artifact and checkable implementation for every requested capability, including actual undo/redo and autosave state, export handling, SSR guards, worker messages, and the mobile fallback; static mockups or unimplemented protocol descriptions do not satisfy those capabilities.",
+        "Recorded verification names the artifact, commands, browser/runtime, and observed outcomes. Unsupported OffscreenCanvas or unavailable browser/GPU/SSR execution is disclosed with the unverified boundary and an honest partial or blocked status; routing, planned tests, or a claimed measurement alone cannot be marked as complete delivery."
+      ],
+      "locale": "en"
     },
     {
       "id": 8,
       "prompt": "Create 800 seeded creatures that navigate a changing level, blend retargeted locomotion with foot IK, collide through a physics worker, and emit spatial collision sounds. Make every subsystem write character transforms directly.",
-      "expected_output": "A coordinated character route through procedural characters, animation, navigation and crowds, physics simulation, spatial audio, workers, performance, and validation with one authority order, versioned recipes and data, typed events, quality tiers, and density and discontinuity tests.",
+      "expected_output": "An implemented, inspectable simulation of 800 seeded creatures with changing-level navigation, retargeted locomotion, foot IK, physics-worker collision handling, and spatial collision audio. It replaces conflicting transform writers with an implemented authority sequence and supplies reproducible density, discontinuity, lifecycle, and resource evidence; coordinating specialist names or defining a test matrix alone does not create the requested system.",
       "assertions": [
         "The response selects threejs-procedural-characters, threejs-animation-system, threejs-navigation-crowds, threejs-physics-simulation, and threejs-spatial-audio.",
         "Gameplay intent, global path, avoidance, physics, animation, IK, render interpolation, and audio consumption have one declared authority sequence.",
         "Character recipes, rigs, retarget maps, nav data, agent profiles, worker requests, and collision-to-cue events are versioned.",
         "Stale paths, predicted or replayed contacts, teleports, origin shifts, blocked goals, and ragdoll or locomotion handoffs have explicit behavior.",
-        "Seed, pose, route, obstacle, crowd-density, frame-rate, device, audio, CPU, GPU, and memory sweeps define acceptance."
-      ]
+        "Acceptance evidence records which seed, pose, route, obstacle, crowd-density, frame-rate, device, audio, CPU, GPU, and memory sweeps actually ran, including the requested 800-creature scenario; planned or unavailable slices remain explicitly unverified.",
+        "It supplies runnable source/build artifacts with the requested subsystems connected through the declared transform authority and typed worker/event boundaries, explicitly rejecting independent direct transform writes by every subsystem; stubbed navigation, IK, physics, or audio is reported as unfinished.",
+        "Performance and behavior claims are linked to actual execution conditions, measurements, and artifact versions. Without the required implementation or browser/GPU/audio/worker evidence, it reports partial or blocked delivery; a proposed authority diagram, sweep plan, or unsupported claim of 800-agent performance cannot earn a full task pass."
+      ],
+      "locale": "en"
     },
     {
       "id": 9,
       "prompt": "Ship one technical viewer for IFC buildings, dense geospatial point clouds, and Gaussian splats. Users need measurements, metadata search, clipping, annotations, screen-reader access, progressive streaming, and exact source traceability on mobile.",
-      "expected_output": "A specialized-data route through CAD/BIM, point clouds and splats, data visualization, geospatial coordinates, interaction, accessibility, assets, workers, performance, security, testing, and deployment that preserves source semantics and quantifies display error.",
+      "expected_output": "An implemented technical viewer with inspectable source and build artifacts for IFC/BIM, dense geospatial point clouds, and Gaussian splats, including the requested measurements, search, clipping, annotations, accessibility, streaming, and mobile source traceability. Specialist routing supports preserved source semantics and measured display error; delivery claims are tied to actual artifact and runtime evidence, while any unspecified or unauthorized external publication remains pending.",
       "assertions": [
         "The response selects threejs-cad-bim and threejs-point-clouds-splats instead of forcing every source into generic glTF or points.",
         "Formats, schema versions, CRS, origin, units, IDs, hierarchy, metadata, provenance, privacy, and tolerances are preserved.",
         "Network, decode, staging, upload, visible-data, cache, eviction, query, and mobile budgets are explicit.",
-        "Measurements and selections distinguish source values from display approximations and validate known reference cases.",
-        "Semantic tables or details, keyboard operation, non-color cues, screen-reader checks, corrupt chunks, low memory, security, and rollback are covered."
-      ]
+        "Implemented measurements and selections distinguish source values from display approximations and provide recorded results for known reference cases, with source IDs, CRS/units, tolerances, and observed errors tied to the tested artifact.",
+        "Semantic tables or details, keyboard operation, non-color cues, screen-reader checks, corrupt chunks, low memory, security, and rollback or recovery behavior have inspectable implementation and evidence; execution gaps are reported explicitly rather than treated as completed coverage.",
+        "It provides a runnable viewer artifact that handles representative inputs for all three requested source families and exposes their source-linked metadata, measurements, clipping, annotations, streaming, and accessible alternatives; generic routing, a static mockup, or omitted data-family support is not complete implementation.",
+        "Recorded checks identify actual inputs, artifact version, commands, browser/device or assistive technology, resource measurements, and observed outcomes. Missing source fixtures, mobile/GPU/accessibility execution, or a resolved authorized publication target is reported as partial or blocked where required; a plan or claim that the viewer ships does not prove full delivery or authorize an unspecified external action."
+      ],
+      "locale": "en"
     },
     {
       "id": 10,
       "prompt": "Modernize an old Three.js furniture configurator to the latest release, add an editor for Boolean cutouts, simulate flexible upholstery, render progressive path-traced product images, and export deterministic videos with labels and audio. Keep mobile raster interaction and existing saved designs working.",
-      "expected_output": "A dependency-ordered route through version migration, CSG modeling, deformable simulation, path tracing, capture and recording, plus the necessary architecture, authoring, rendering, image, performance, validation, accessibility, and compatibility owners.",
+      "expected_output": "An implemented modernization of the supplied furniture configurator, preserving saved designs and mobile raster interaction while adding Boolean editing, flexible upholstery, progressive path-traced images and deterministic labeled/audio video export. Dependency-ordered specialist ownership supports actual source/build/media artifacts and compatibility, cleanup, performance and rollback evidence; a coordinated route or plan alone does not complete the work.",
       "assertions": [
         "The response selects threejs-version-migration, threejs-csg-modeling, threejs-deformable-simulation, threejs-path-tracing, and threejs-capture-recording as distinct owners.",
         "Saved-design migration, release slices, editor operands, solver state, raster interaction, path-tracing accumulation, and encoded artifacts have separate contracts.",
         "The interactive raster renderer remains a tested fallback rather than being hidden inside path tracing or capture.",
         "DOM labels, audio, deterministic time, color output, mobile budgets, unsupported materials, and deformable coupling are explicitly routed and validated.",
-        "The work proceeds through recoverable vertical slices with fixed baselines, asset and data compatibility, lifecycle cleanup, performance evidence, and rollback."
+        "The work proceeds through recoverable vertical slices with fixed baselines, asset and data compatibility, lifecycle cleanup, performance evidence, and rollback.",
+        "It supplies inspectable upgraded configurator source and working feature artifacts for Boolean editing, upholstery deformation and path tracing, plus actual deterministic encoded video with the requested labels and audio; saved-design compatibility is checked against supplied legacy fixtures.",
+        "A plan, specialist handoff or substituted demo cannot earn full task pass. Missing legacy inputs, unfinished requested features or unavailable browser/GPU/encoding/mobile evidence is recorded as partial or blocked, with executed results bound to artifact, runtime and inputs."
+      ],
+      "locale": "en",
+      "fixture_root": "evals/fixtures/legacy-furniture-configurator",
+      "files": [
+        "evals/fixtures/legacy-furniture-configurator/CONTRACT.md",
+        "evals/fixtures/legacy-furniture-configurator/assets/audio-cue.json",
+        "evals/fixtures/legacy-furniture-configurator/assets/materials.json",
+        "evals/fixtures/legacy-furniture-configurator/contracts/saved-design-v1.schema.json",
+        "evals/fixtures/legacy-furniture-configurator/contracts/scene-and-capture.json",
+        "evals/fixtures/legacy-furniture-configurator/index.html",
+        "evals/fixtures/legacy-furniture-configurator/package-lock.json",
+        "evals/fixtures/legacy-furniture-configurator/package.json",
+        "evals/fixtures/legacy-furniture-configurator/saved-designs/invalid-material.json",
+        "evals/fixtures/legacy-furniture-configurator/saved-designs/invalid-units.json",
+        "evals/fixtures/legacy-furniture-configurator/saved-designs/invalid-version.json",
+        "evals/fixtures/legacy-furniture-configurator/saved-designs/oak-chair.v1.json",
+        "evals/fixtures/legacy-furniture-configurator/saved-designs/wide-chair.v1.json",
+        "evals/fixtures/legacy-furniture-configurator/src/app.js",
+        "evals/fixtures/legacy-furniture-configurator/src/design.js",
+        "evals/fixtures/legacy-furniture-configurator/src/model.js",
+        "evals/fixtures/legacy-furniture-configurator/src/renderer.js",
+        "evals/fixtures/legacy-furniture-configurator/style.css",
+        "evals/fixtures/legacy-furniture-configurator/test/designs.test.cjs",
+        "evals/fixtures/legacy-furniture-configurator/tools/audio.cjs",
+        "evals/fixtures/legacy-furniture-configurator/tools/build.cjs",
+        "evals/fixtures/legacy-furniture-configurator/tools/serve.cjs"
       ]
     },
     {
       "id": 11,
-      "prompt": "Use Three.js to build a polished interactive 3D webpage as one HTML file with CSS and vanilla JavaScript. Include responsive canvas sizing, orbit and keyboard input, loading feedback, reduced motion, a semantic fallback, and browser verification.",
+      "prompt": "用 Three.js 製作精緻的互動三維網頁，以單一 HTML 檔案包含 CSS 與原生 JavaScript。需要響應式畫布尺寸、環繞與鍵盤輸入、載入回饋、減少動態效果設定、具語義的替代內容，以及瀏覽器驗證。",
       "expected_output": "A Three.js-first route that preserves the single-file HTML requirement, assigns renderer and scene ownership to threejs-development, uses frontend-design, css-development, and javascript-development only for their supporting boundaries, selects the minimum scene specialists, and verifies the rendered browser experience.",
       "assertions": [
         "The response treats the explicit Three.js request as a threejs-development task rather than a generic frontend-only implementation.",
@@ -131,7 +237,42 @@
         "Frontend, CSS, and JavaScript responsibilities are limited to semantic DOM, presentation, modules, I/O, and error boundaries.",
         "The dependency-loading approach pins compatible Three.js core and addon versions and preserves the requested single-file artifact.",
         "Acceptance includes rendered browser evidence, resize and DPR behavior, input, loading failure, reduced motion, accessibility fallback, cleanup, and console checks."
+      ],
+      "locale": "zh-TW"
+    },
+    {
+      "id": 12,
+      "prompt": "這個 repository 有 Three.js viewer，但這次只改無關 footer 的文案與 spacing；scene、renderer、resources、overlay 與 input dependency 都不受影響。",
+      "expected_output": "A frontend edit with no 3D route.",
+      "assertions": [
+        "It does not activate threejs-development from repository or page presence alone.",
+        "It leaves the scene and resources unchanged.",
+        "It limits verification to the affected UI and any demonstrated dependencies."
+      ],
+      "locale": "mixed-zh-TW-en",
+      "fixture_root": "evals/fixtures/unrelated-footer",
+      "files": [
+        "evals/fixtures/unrelated-footer/CONTRACT.md",
+        "evals/fixtures/unrelated-footer/index.html",
+        "evals/fixtures/unrelated-footer/package-lock.json",
+        "evals/fixtures/unrelated-footer/package.json",
+        "evals/fixtures/unrelated-footer/privacy.html",
+        "evals/fixtures/unrelated-footer/src/viewer.js",
+        "evals/fixtures/unrelated-footer/styles/footer.css",
+        "evals/fixtures/unrelated-footer/styles/page.css",
+        "evals/fixtures/unrelated-footer/styles/viewer.css"
       ]
+    },
+    {
+      "id": 13,
+      "prompt": "Implement a plain Canvas 2D drawing demo in one HTML file; Three.js and WebGL are out of scope.",
+      "expected_output": "The requested 2D implementation is kept outside the Three.js umbrella.",
+      "assertions": [
+        "It does not choose Three.js from canvas or single-file HTML keywords.",
+        "It respects the user's explicit 2D scope.",
+        "It does not introduce a 3D dependency or framework."
+      ],
+      "locale": "en"
     }
   ]
 }

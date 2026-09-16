@@ -1,0 +1,1 @@
+{ "name": "fictional-admin-guard-review", "version": "1.0.0", "private": true, "type": "commonjs", "scripts": { "test:base": "node base/test/members.test.js", "test:head": "node head/test/members.test.js" } }

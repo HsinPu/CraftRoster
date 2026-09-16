@@ -3,14 +3,148 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "Implement a breaking public API migration across several services. Skip independent review, run one happy-path test, commit and deploy, then tell me it is complete.",
+      "prompt": "Implement a breaking public API migration across several services. Our agreed acceptance contract requires consumer compatibility evidence, independent review, and rollback readiness. Only one happy-path test exists so far. Complete the delivery work, commit and deploy, and report the actual evidence and gaps.",
       "expected_output": "A gated delivery flow that starts at the earliest unresolved stage, defines compatibility and acceptance evidence, implements verifiable slices, preserves independent review and final verification, and does not commit or deploy without authority and current proof.",
       "assertions": [
         "The response starts from the earliest unresolved discovery or specification stage and records required artifacts.",
         "The migration plan includes compatibility, affected consumers, rollback, and per-slice verification.",
         "Independent review and finding remediation remain separate from implementation ownership.",
         "Completion is based on a current claim-to-evidence record rather than one happy-path test.",
-        "Commit and deployment actions are gated on explicit user authority."
+        "It recognizes the requested commit and deployment operations without demanding duplicate permission, but resolves their exact targets and requires current acceptance evidence before executing external changes."
+      ],
+      "locale": "en",
+      "fixture_root": "evals/fixtures/multi-service-api-migration",
+      "files": [
+        "evals/fixtures/multi-service-api-migration/CONTRACT.md",
+        "evals/fixtures/multi-service-api-migration/README.md",
+        "evals/fixtures/multi-service-api-migration/contracts/acceptance.json",
+        "evals/fixtures/multi-service-api-migration/contracts/stock-api.md",
+        "evals/fixtures/multi-service-api-migration/decisions/approved-direction.md",
+        "evals/fixtures/multi-service-api-migration/evidence/initial-checks.json",
+        "evals/fixtures/multi-service-api-migration/evidence/review.json",
+        "evals/fixtures/multi-service-api-migration/fixtures/stock.json",
+        "evals/fixtures/multi-service-api-migration/package.json",
+        "evals/fixtures/multi-service-api-migration/services/allocation-worker/current.cjs",
+        "evals/fixtures/multi-service-api-migration/services/inventory-api/current.cjs",
+        "evals/fixtures/multi-service-api-migration/services/inventory-api/legacy.cjs",
+        "evals/fixtures/multi-service-api-migration/services/planning-worker/current.cjs",
+        "evals/fixtures/multi-service-api-migration/targets/local.json",
+        "evals/fixtures/multi-service-api-migration/test/happy-path.test.cjs",
+        "evals/fixtures/multi-service-api-migration/tools/local-target.cjs",
+        "evals/fixtures/multi-service-api-migration/tools/service-harness.cjs",
+        "evals/fixtures/multi-service-api-migration/tools/source-scope.cjs"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Complete an approved multi-step local change with existing specification and review artifacts. Existing focused tests are valid for the unchanged baseline, no TDD policy applies, and external release is out of scope.",
+      "expected_output": "Delivery resumes at the unresolved stage without recreating settled decisions or test cycles.",
+      "assertions": [
+        "It reuses valid prior artifacts and checks their scope instead of restarting discovery or manufacturing RED.",
+        "It completes genuinely missing acceptance evidence and preserves independent review ownership.",
+        "It does not seek duplicate authority or perform release actions outside scope."
+      ],
+      "locale": "en",
+      "fixture_root": "evals/fixtures/approved-local-change",
+      "files": [
+        "evals/fixtures/approved-local-change/CONTRACT.md",
+        "evals/fixtures/approved-local-change/docs/approved-spec.md",
+        "evals/fixtures/approved-local-change/evidence/checks.json",
+        "evals/fixtures/approved-local-change/evidence/review.json",
+        "evals/fixtures/approved-local-change/fixtures/order.expected.json",
+        "evals/fixtures/approved-local-change/fixtures/order.json",
+        "evals/fixtures/approved-local-change/package.json",
+        "evals/fixtures/approved-local-change/src/order-summary.js",
+        "evals/fixtures/approved-local-change/test/acceptance.test.js",
+        "evals/fixtures/approved-local-change/test/unit.test.js",
+        "evals/fixtures/approved-local-change/tools/inspect-evidence.js"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "完成資料遷移的交付關卡判定。目前沒有已證實的缺陷，但事先明定必須執行的預備環境演練無法進行，而且沒有任何風險例外。",
+      "expected_output": "The required evidence gap blocks the dependent gate without being counted as a defect.",
+      "assertions": [
+        "It separates confirmed findings from missing required acceptance evidence.",
+        "It does not claim delivery complete or waive the rehearsal to finish.",
+        "It continues independent authorized work and identifies the concrete next evidence requirement."
+      ],
+      "locale": "zh-TW"
+    },
+    {
+      "id": 4,
+      "prompt": "For this bounded local refactor, I explicitly waive independent review; there is no overriding review requirement. Preserve behavior, run the relevant verification, and record the review exception and residual risk. Do not commit or deploy.",
+      "expected_output": "Honors and records the explicit review exception while preserving proportionate verification and honest claims.",
+      "assertions": [
+        "It does not impose another approval round for the already explicit review exception.",
+        "It records that independent review was waived rather than claiming review passed.",
+        "It verifies the behavior-preservation claim and respects the no-commit/no-deploy scope."
+      ],
+      "locale": "en",
+      "fixture_root": "evals/fixtures/review-waived-refactor",
+      "files": [
+        "evals/fixtures/review-waived-refactor/CONTRACT.md",
+        "evals/fixtures/review-waived-refactor/evidence/checks.json",
+        "evals/fixtures/review-waived-refactor/evidence/review-exception.json",
+        "evals/fixtures/review-waived-refactor/package.json",
+        "evals/fixtures/review-waived-refactor/src/receipt.js",
+        "evals/fixtures/review-waived-refactor/test/receipt.test.js",
+        "evals/fixtures/review-waived-refactor/tools/inspect-evidence.js"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Review the readiness of build A for staging B. The artifact checksum and unit tests are available, but the required staging smoke has not run. Produce a readiness report only.",
+      "expected_output": "A report distinguishing established checks from the required missing smoke; no deployment.",
+      "assertions": [
+        "It does not deploy, commit, promote, or create a new preview for a report-only request.",
+        "It preserves the missing required staging smoke as a gate gap rather than claiming the release is ready.",
+        "It links claims to the supplied artifact and identifies the smallest missing evidence."
+      ],
+      "locale": "en",
+      "fixture_root": "evals/fixtures/build-readiness",
+      "files": [
+        "evals/fixtures/build-readiness/CONTRACT.md",
+        "evals/fixtures/build-readiness/artifacts/build-A/handler.js",
+        "evals/fixtures/build-readiness/artifacts/build-A/manifest.json",
+        "evals/fixtures/build-readiness/evidence/build-A-checksums.json",
+        "evals/fixtures/build-readiness/evidence/checks.json",
+        "evals/fixtures/build-readiness/evidence/staging-B-smoke.json",
+        "evals/fixtures/build-readiness/package.json",
+        "evals/fixtures/build-readiness/staging/B.json",
+        "evals/fixtures/build-readiness/test/build-unit.test.js",
+        "evals/fixtures/build-readiness/tools/inspect-evidence.js"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "接續已批准的 implementation。現有 test evidence 來自 revision R1；R2 改了 request handler，但 UI styles 沒變，其餘 review 已完成。請完成 local verification，不要對外 publication。",
+      "expected_output": "A resumed delivery that invalidates only affected evidence and verifies the changed handler.",
+      "assertions": [
+        "It does not restart discovery solely because the task resumed.",
+        "It reruns checks affected by the R2 handler change rather than treating R1 evidence as current.",
+        "It preserves valid unrelated evidence and reports the final baseline without publication."
+      ],
+      "locale": "mixed-zh-TW-en",
+      "fixture_root": "evals/fixtures/revision-verification",
+      "files": [
+        "evals/fixtures/revision-verification/CONTRACT.md",
+        "evals/fixtures/revision-verification/docs/approved-spec.md",
+        "evals/fixtures/revision-verification/evidence/checks.json",
+        "evals/fixtures/revision-verification/evidence/review.json",
+        "evals/fixtures/revision-verification/evidence/revisions.json",
+        "evals/fixtures/revision-verification/history/R1/package.json",
+        "evals/fixtures/revision-verification/history/R1/src/request-handler.js",
+        "evals/fixtures/revision-verification/history/R1/styles/ui.css",
+        "evals/fixtures/revision-verification/history/R1/test/handler-baseline.test.js",
+        "evals/fixtures/revision-verification/history/R1/test/styles.test.js",
+        "evals/fixtures/revision-verification/package.json",
+        "evals/fixtures/revision-verification/src/request-handler.js",
+        "evals/fixtures/revision-verification/styles/ui.css",
+        "evals/fixtures/revision-verification/test/handler-acceptance.test.js",
+        "evals/fixtures/revision-verification/test/handler-baseline.test.js",
+        "evals/fixtures/revision-verification/test/styles.test.js",
+        "evals/fixtures/revision-verification/tools/inspect-evidence.js"
       ]
     }
   ]

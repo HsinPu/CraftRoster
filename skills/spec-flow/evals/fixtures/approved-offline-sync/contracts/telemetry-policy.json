@@ -1,0 +1,15 @@
+{
+  "decisionIds": ["D-PRIVACY"],
+  "eventName": "sync_attempt_summary",
+  "allowedFields": ["eventName", "eventSchemaVersion", "clientMajor", "outcome", "durationBucket"],
+  "eventSchemaVersion": 1,
+  "allowedClientMajors": [1, 2],
+  "outcomes": ["acknowledged", "conflict", "permission-rejected", "network-failed", "storage-failed"],
+  "durationBuckets": ["under-1s", "1s-to-5s", "over-5s"],
+  "additionalFieldsAllowed": false,
+  "forbiddenData": ["document title", "document body", "content hash", "document ID", "mutation ID", "account ID", "device ID", "email address", "URL", "exception stack", "free-text message"],
+  "retentionDays": null,
+  "liveCollectionPrerequisites": ["U-TELEMETRY-RETENTION"],
+  "localSyntheticValidationRequiresLiveCollection": false,
+  "liveCollectionPerformed": false
+}

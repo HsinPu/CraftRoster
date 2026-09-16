@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "skill_name": "typescript-development",
+  "cases": [
+    {
+      "id": "compiler-configuration-only",
+      "kind": "positive",
+      "prompt": "Fix tsconfig moduleResolution because package type exports fail. The problem is compiler configuration; no production .ts file change is needed.",
+      "expected_skills": [
+        "typescript-development"
+      ],
+      "excluded_skills": [
+        "frontend-design"
+      ],
+      "allowed_skills": [
+        "code-change-workflow",
+        "systematic-debugging"
+      ]
+    },
+    {
+      "id": "unrelated-typescript-dependency",
+      "kind": "near_match",
+      "prompt": "Only fix a plain Node.js utility's exit codes. TypeScript exists in another application and no typed API or compiler configuration is affected.",
+      "expected_skills": [
+        "javascript-development"
+      ],
+      "excluded_skills": [
+        "typescript-development",
+        "frontend-design"
+      ],
+      "allowed_skills": [
+        "code-change-workflow",
+        "testing-strategy"
+      ]
+    },
+    {
+      "id": "typescript-history-prose",
+      "kind": "negative",
+      "prompt": "In two sentences, explain why TypeScript was created. Do not inspect a project or propose implementation.",
+      "expected_skills": [],
+      "excluded_skills": [
+        "typescript-development"
+      ],
+      "allowed_skills": [
+        "answer-writing"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "skill_name": "code-change-workflow",
+  "cases": [
+    {
+      "id": "local-discount-fix",
+      "kind": "positive",
+      "prompt": "請修正既有本機折扣輔助函式的捨入問題，並新增對應的回歸測試；不要進行外部付款或部署。",
+      "expected_skills": [
+        "code-change-workflow"
+      ],
+      "excluded_skills": [
+        "deployment-operations"
+      ],
+      "allowed_skills": [
+        "testing-strategy",
+        "test-driven-development",
+        "verification-before-completion",
+        "karpathy-guidelines"
+      ],
+      "locale": "zh-TW"
+    },
+    {
+      "id": "bounded-label-edit",
+      "kind": "positive",
+      "prompt": "In the existing web app change only the visible Sign in label to Log in while preserving its handler.",
+      "expected_skills": [
+        "code-change-workflow"
+      ],
+      "excluded_skills": [
+        "solution-discovery"
+      ],
+      "allowed_skills": [
+        "frontend-design",
+        "javascript-development",
+        "i18n-localization",
+        "verification-before-completion"
+      ],
+      "locale": "en"
+    },
+    {
+      "id": "read-only-diff-review",
+      "kind": "near_match",
+      "prompt": "請 review 這份既有 diff，只找有具體修正依據的正確性缺陷。保持 read-only，不要修改。",
+      "expected_skills": [
+        "code-review"
+      ],
+      "excluded_skills": [
+        "code-change-workflow"
+      ],
+      "allowed_skills": [
+        "pipeline-review"
+      ],
+      "locale": "mixed-zh-TW-en"
+    },
+    {
+      "id": "compare-unselected-architecture",
+      "kind": "near_match",
+      "prompt": "Compare offline sync architectures before we select a direction; do not implement yet.",
+      "expected_skills": [
+        "solution-discovery"
+      ],
+      "excluded_skills": [
+        "code-change-workflow"
+      ],
+      "allowed_skills": [
+        "requirements-deep-dive"
+      ],
+      "locale": "en"
+    },
+    {
+      "id": "unknown-failure-first",
+      "kind": "near_match",
+      "prompt": "The app crashes intermittently and no root cause is known. Reproduce and diagnose before choosing a code change.",
+      "expected_skills": [
+        "systematic-debugging"
+      ],
+      "excluded_skills": [
+        "code-change-workflow"
+      ],
+      "locale": "en"
+    },
+    {
+      "id": "conceptual-prose-only",
+      "kind": "negative",
+      "prompt": "Explain the difference between a stack and a queue in plain prose; no code or repository work.",
+      "expected_skills": [],
+      "excluded_skills": [
+        "code-change-workflow"
+      ],
+      "allowed_skills": [
+        "answer-writing"
+      ],
+      "locale": "en"
+    },
+    {
+      "id": "literal-read-only-audit",
+      "kind": "negative",
+      "prompt": "Read-only: report which existing function owns the login redirect. Do not fix, refactor, run the app, or edit files.",
+      "expected_skills": [],
+      "excluded_skills": [
+        "code-change-workflow"
+      ],
+      "allowed_skills": [
+        "project-architecture-review"
+      ],
+      "locale": "en"
+    }
+  ]
+}

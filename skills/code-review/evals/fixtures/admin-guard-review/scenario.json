@@ -1,0 +1,12 @@
+{
+  "scenarioId": "FICTIONAL-ADMIN-GUARD-REVIEW",
+  "fictional": true,
+  "sourceViews": { "base": "base/src", "head": "head/src", "unchanged": "shared" },
+  "sourceViewIdentifiersAreGitCommits": false,
+  "framework": { "name": "local-fixture-framework", "version": "1.0.0", "implementation": "shared/framework.js" },
+  "runtime": "Node.js CommonJS; no external dependencies",
+  "changedFiles": ["src/admin-members.js"],
+  "networkExecution": "not_run",
+  "modelEvaluation": { "status": "not_run", "attempts": 0 },
+  "realIdentityProviderConnected": false
+}

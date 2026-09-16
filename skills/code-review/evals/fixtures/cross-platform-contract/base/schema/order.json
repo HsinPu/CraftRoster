@@ -1,0 +1,10 @@
+{
+  "title": "FictionalOrder",
+  "type": "object",
+  "required": ["id", "status"],
+  "additionalProperties": true,
+  "properties": {
+    "id": { "type": "string" },
+    "status": { "type": "string", "enum": ["placed", "shipped", "delivered"] }
+  }
+}

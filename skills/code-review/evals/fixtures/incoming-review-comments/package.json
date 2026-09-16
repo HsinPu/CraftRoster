@@ -1,0 +1,1 @@
+{ "name": "fictional-incoming-review-remediation", "version": "1.0.0", "private": true, "type": "commonjs", "scripts": { "test": "node test/booking.test.js && node test/checkout.test.js" } }

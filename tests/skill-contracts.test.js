@@ -8,6 +8,7 @@ const {
   extractContractBlocks,
   findMarkdownSection,
   splitMarkdownTableRow,
+  validateAuthorizationRecord,
   validateContractDocuments,
   validateMachineResultInstance,
   validateMarkdownTables,
@@ -39,6 +40,39 @@ function mutateDocument(file, before, after) {
   return {
     ...documents,
     [file]: replaceOnce(documents[file], before, after),
+  };
+}
+
+function mutateContract(file, part, mutate) {
+  const block = extractContractBlocks(documents[file], file).blocks.find((entry) => entry.value.part === part);
+  assert.ok(block, `missing ${part} contract in ${file}`);
+  const changed = structuredClone(block.value);
+  mutate(changed);
+  const text = documents[file];
+  const marker = text.indexOf('<!-- CRAFTROSTER_CONTRACT\n', block.index);
+  assert.notEqual(marker, -1);
+  const end = text.indexOf('-->', marker) + 3;
+  return { ...documents, [file]: `${text.slice(0, marker)}<!-- CRAFTROSTER_CONTRACT\n${JSON.stringify(changed, null, 2)}\n-->${text.slice(end)}` };
+}
+
+function authorizationRecord(overrides = {}) {
+  return {
+    mode: 'delegated',
+    checkpoint: 'implementation',
+    posture: 'implementation',
+    scopeVersion: 'routes-v2',
+    directionVersion: 'brand-v3-desktop-mobile',
+    authorizationEvidence: 'user-request-42: choose layout details and implement named routes',
+    explicitUserCheckpoint: 'none',
+    implementationAuthorized: true,
+    requiredEvidence: 'complete',
+    pilotEvidence: 'pending',
+    baselineOwner: 'project-owner',
+    baselineAction: 'unchanged',
+    baselineChangeApproval: 'not-requested',
+    externalActionAuthorization: 'none',
+    nextAction: 'proceed',
+    ...overrides,
   };
 }
 
@@ -342,7 +376,7 @@ for (const [name, result, expected] of [
 
 const orchestratorMutations = [
   ['page support edits enabled', 'skills/web-page-design-to-code/SKILL.md', '"supportMayEditProductionBeforeGate": false', '"supportMayEditProductionBeforeGate": true', /supportMayEditProductionBeforeGate must be false/],
-  ['page support gate closure enabled', 'skills/web-page-design-to-code/SKILL.md', '"supportMayCloseGate": false', '"supportMayCloseGate": true', /supportMayCloseGate must be false/],
+  ['page support gate closure enabled', 'skills/web-page-design-to-code/SKILL.md', '\n  "supportMayCloseGate": false,', '\n  "supportMayCloseGate": true,', /supportMayCloseGate must be false/],
   ['site support scope expansion enabled', 'skills/website-redesign-to-code/SKILL.md', '"supportMayExpandScope": false', '"supportMayExpandScope": true', /supportMayExpandScope must be false/],
 ];
 
@@ -375,6 +409,133 @@ test('rejects a deliverable contract that drops a machine receipt field', () => 
     '    "referenceId",\n    "verdict",'
   );
   assert.match(joined(validateContractDocuments(changed)), /machineReceiptFields must contain 7 items/);
+});
+
+for (const skill of ['web-page-design-to-code', 'website-redesign-to-code']) {
+  const file = `skills/${skill}/SKILL.md`;
+  for (const [field, value] of [
+    ['existingAuthorizationSatisfiesGate', false],
+    ['requiresInternalGateName', true],
+    ['explicitUserCheckpointBinding', false],
+    ['readOnlyOverridesModes', false],
+    ['preservationAppliesToAllModes', false],
+    ['evidenceRequiredInAllModes', false],
+    ['isolatedSitePilotRequired', false],
+    ['baselineOwnerApprovalRequired', false],
+    ['productMigrationAuthorizationSeparate', false],
+    ['externalActionAuthorizationSeparate', false],
+    ['changedScopeRequiresReassessment', false],
+    ['supportMayCloseGate', true],
+  ]) {
+    test(`rejects ${skill} authorization-policy mutation: ${field}`, () => {
+      const changed = mutateContract(file, 'orchestration', (contract) => { contract.authorization[field] = value; });
+      assert.match(joined(validateContractDocuments(changed)), new RegExp(`authorization\\.${field} must be`));
+    });
+  }
+
+  for (const [name, before, after] of [
+    ['requires a gate name despite delegation', 'The user need not name an internal gate.', 'The user must name every internal gate.'],
+    ['reopens existing approval', 'do not ask again for a decision already covered by that authorization', 'ask again for every decision even when already authorized'],
+    ['skips a user-reserved checkpoint', 'An explicit user review or no-code checkpoint remains binding until that user releases it.', 'Delegation skips all user review and no-code checkpoints.'],
+    ['ignores read-only', 'Literal read-only/no-write instructions override every mode.', 'Delegated implementation overrides literal read-only instructions.'],
+    ['lets support close the gate', "A support Skill in `parent-receipt` mode returns evidence and cannot close the parent's gate or expand scope.", 'A support Skill may close the parent gate and expand scope.'],
+    ['treats silence as authority', 'Silence, general encouragement, and a broad redesign request alone do not establish the missing permissions.', 'Silence and general encouragement establish all missing permissions.'],
+  ]) {
+    test(`rejects ${skill} authorization prose that ${name}`, () => {
+      assert.match(joined(validateContractDocuments(mutateDocument(file, before, after))), /canonical text SHA-256 must be/);
+    });
+  }
+
+  test(`rejects ${skill} missing authorization-record fields`, () => {
+    const changed = mutateContract(`skills/${skill}/references/deliverables.md`, 'deliverable', (contract) => {
+      contract.authorizationRecordFields = contract.authorizationRecordFields.filter((field) => field !== 'posture');
+    });
+    assert.match(joined(validateContractDocuments(changed)), /authorizationRecordFields must contain/);
+  });
+}
+
+test('rejects removal of the page implementation authorization checkpoint', () => {
+  const changed = mutateDocument(
+    'skills/web-page-design-to-code/SKILL.md',
+    'In `gated` mode, present the review package and stop at the user\'s reserved checkpoint or the unresolved decision.',
+    'Start production implementation immediately in every mode.'
+  );
+  assert.match(joined(validateContractDocuments(changed)), /canonical text SHA-256 must be/);
+});
+
+test('rejects site rollout before pilot evidence or outside delegated scope', () => {
+  for (const [before, after] of [
+    ['Keep candidate globals isolated until the pilot evidence and rollout authorization are both satisfied.', 'Enable candidate globals before reviewing pilot evidence.'],
+    ['Proceed only after the pilot meets the Gate 3 thresholds and the existing bounded authorization covers the remaining page families and shared surfaces.', 'Proceed to every page family as soon as any pilot renders.'],
+    ['Honor any explicit user-reserved pilot review before continuing.', 'Skip any user-reserved pilot review when delegated.'],
+    ['A changed capture remains a candidate until the named owner approves it.', 'Automatically accept a changed capture as the new baseline.'],
+  ]) {
+    const changed = mutateDocument('skills/website-redesign-to-code/SKILL.md', before, after);
+    assert.match(joined(validateContractDocuments(changed)), /canonical text SHA-256 must be/);
+  }
+});
+
+test('rejects redundant scope and visual approvals in a delegated site flow', () => {
+  for (const [before, after] of [
+    ['Otherwise record how the existing bounded authorization covers this inventory and proceed when preservation and access evidence are sufficient.', 'Otherwise stop until the user explicitly approves Gate 1 again.'],
+    ['In `delegated` mode select within the authorized brand/direction and record the version; in `already-approved` mode reuse the approved authority.', 'In every mode obtain another user approval before choosing or reusing any direction.'],
+  ]) {
+    const changed = mutateDocument('skills/website-redesign-to-code/SKILL.md', before, after);
+    assert.match(joined(validateContractDocuments(changed)), /canonical text SHA-256 must be/);
+  }
+});
+
+test('allows implementation to start an isolated pilot before pilot acceptance', () => {
+  assert.deepEqual(validateAuthorizationRecord(authorizationRecord()), []);
+  assert.deepEqual(validateAuthorizationRecord(authorizationRecord({ pilotEvidence: 'failed' })), []);
+});
+
+test('accepts already-approved page work and delegated site rollout without a new checkpoint', () => {
+  assert.deepEqual(validateAuthorizationRecord(authorizationRecord({ mode: 'already-approved', pilotEvidence: 'not-applicable' })), []);
+  assert.deepEqual(validateAuthorizationRecord(authorizationRecord({ checkpoint: 'pilot-rollout', pilotEvidence: 'passed' })), []);
+  assert.deepEqual(validateAuthorizationRecord(authorizationRecord({ mode: 'gated', explicitUserCheckpoint: 'released' })), []);
+});
+
+test('allows waiting, read-only evidence, and parent receipts while preserving their posture', () => {
+  assert.deepEqual(validateAuthorizationRecord(authorizationRecord({ implementationAuthorized: false, explicitUserCheckpoint: 'pending', requiredEvidence: 'missing', nextAction: 'wait' })), []);
+  assert.deepEqual(validateAuthorizationRecord(authorizationRecord({ posture: 'read-only', nextAction: 'read-only' })), []);
+  assert.deepEqual(validateAuthorizationRecord(authorizationRecord({ posture: 'parent-receipt', nextAction: 'return-receipt' })), []);
+});
+
+for (const [name, overrides, expected] of [
+  ['missing implementation permission', { implementationAuthorized: false }, /proceed requires implementation authority/],
+  ['user-reserved review', { explicitUserCheckpoint: 'pending' }, /no pending user checkpoint/],
+  ['missing readiness evidence', { requiredEvidence: 'missing' }, /complete evidence/],
+  ['failed readiness evidence', { requiredEvidence: 'failed' }, /complete evidence/],
+  ['read-only mode cannot implement', { posture: 'read-only' }, /implementation posture/],
+  ['support cannot close parent gate', { posture: 'parent-receipt' }, /parent-receipt posture must return evidence or wait/],
+  ['rollout with pending pilot', { checkpoint: 'pilot-rollout' }, /pilot rollout requires passed pilot evidence/],
+  ['rollout with failed pilot', { checkpoint: 'pilot-rollout', pilotEvidence: 'failed' }, /pilot rollout requires passed pilot evidence/],
+  ['rollout without pilot', { checkpoint: 'pilot-rollout', pilotEvidence: 'not-applicable' }, /pilot rollout requires passed pilot evidence/],
+  ['baseline replacement without owner approval', { baselineAction: 'replace' }, /baseline replacement requires its owner's approval/],
+  ['support replaces baseline after owner approval', { posture: 'parent-receipt', nextAction: 'return-receipt', baselineAction: 'replace', baselineChangeApproval: 'approved' }, /authorized implementation action/],
+  ['deployment is not an inferred next action', { nextAction: 'deploy' }, /nextAction must be one of/],
+  ['unknown authorization mode', { mode: 'autonomous' }, /mode must be one of/],
+  ['missing evidence citation', { authorizationEvidence: ' ' }, /authorizationEvidence must be a non-empty string/],
+]) {
+  test(`rejects inconsistent authorization record: ${name}`, () => {
+    assert.match(joined(validateAuthorizationRecord(authorizationRecord(overrides))), expected);
+  });
+}
+
+test('allows proposing a baseline candidate and separately approved replacement', () => {
+  assert.deepEqual(validateAuthorizationRecord(authorizationRecord({ baselineAction: 'propose-candidate' })), []);
+  assert.deepEqual(validateAuthorizationRecord(authorizationRecord({ baselineAction: 'replace', baselineChangeApproval: 'approved' })), []);
+});
+
+test('validates authorization records in the deliverable examples', () => {
+  const file = 'skills/website-redesign-to-code/references/deliverables.md';
+  const changed = mutateDocument(file, '"nextAction": "wait"', '"nextAction": "proceed"');
+  assert.match(joined(validateContractDocuments(changed)), /proceed requires implementation authority/);
+  const record = authorizationRecord();
+  delete record.checkpoint;
+  assert.match(joined(validateAuthorizationRecord(record)), /fields is missing checkpoint/);
+  assert.match(joined(validateAuthorizationRecord({ ...record, approvedByAgent: true })), /unexpected field approvedByAgent/);
 });
 
 let failures = 0;

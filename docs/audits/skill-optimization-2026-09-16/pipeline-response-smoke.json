@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "evaluation_kind": "inline_skill_text_outcome_smoke",
+  "started_at": "2026-09-16T07:14:31.239Z",
+  "finished_at": "2026-09-16T07:15:05.265Z",
+  "baseline_commit": "7acca1fb8865903dc67ee4c76c147d0881cb9e1b",
+  "harness_sha256": "10a118a1abcb2ac3523a3b369e2dfaeee8e29f890d06a4d124f8f56001ddbc47",
+  "host": {
+    "cli": "codex-cli 0.154.0-alpha.6.2",
+    "node": "v24.19.0",
+    "platform": "win32",
+    "arch": "x64"
+  },
+  "model_requested": null,
+  "model_effective": null,
+  "effort_effective": null,
+  "activation_observed": false,
+  "host_catalog_controlled": false,
+  "user_config_ignored": true,
+  "authorization": "User explicitly approved these four calls and transmission of the two pipeline-review versions, shared code-review entry, and fixed fixtures on 2026-09-16.",
+  "limitations": [
+    "Inline Skill text conditioning; not installed-Skill discovery or activation.",
+    "One trial per variant and fixture; no statistical improvement claim.",
+    "Host/system instructions and effective model are not fully controlled or observed.",
+    "Tools are prohibited in the prompt; read-only sandbox also applies. Observed tool use invalidates the trial.",
+    "Only visible final response and aggregate usage retained; no hidden reasoning or raw tool payloads."
+  ],
+  "cases": [
+    {
+      "case_id": "missing-required-evidence",
+      "variant": "baseline",
+      "trial": 1,
+      "status": "passed",
+      "expected": {
+        "confirmedDefectCount": 0,
+        "requiredEvidenceStatus": "missing",
+        "gate": "blocked"
+      },
+      "actual": {
+        "confirmedDefectCount": 0,
+        "requiredEvidenceStatus": "missing",
+        "gate": "blocked",
+        "reason": "No implementation defect is supported by the packet. The predeclared staging migration rehearsal was not run, and no decision owner granted an exception. The change and supporting references were not supplied for independent verification."
+      },
+      "visible_response": "{\"confirmedDefectCount\":0,\"requiredEvidenceStatus\":\"missing\",\"gate\":\"blocked\",\"reason\":\"No implementation defect is supported by the packet. The predeclared staging migration rehearsal was not run, and no decision owner granted an exception. The change and supporting references were not supplied for independent verification.\"}",
+      "skill_sha256": "6713a86ec6300d437fd6022068517425970aba81c11921c372c4aaa756325ba2",
+      "shared_skill_sha256": "c60d0e51f5ece313f5a3b68f933ab4278ef4ff1472582e53adcc4909e33e9f0c",
+      "fixture_sha256": "2b90371a67b369795c4c59b3805b2b3836ef6116a9f3569eef809bdd79917c52",
+      "prompt_sha256": "91423e7b6642c52a855959f9f3fa181b5d7e81a8ed488f4d9cfd1b4266d399d4",
+      "wall_ms": 8490,
+      "exit_code": 0,
+      "usage": {
+        "input_tokens": 17846,
+        "cached_input_tokens": 0,
+        "output_tokens": 173
+      },
+      "cost": null,
+      "error": null,
+      "unexpected_tool_types": [],
+      "stdout_sha256": "d7567d867f07e08c95ebf1b07e4c2a53bb4b62bdbcd1abe084a3228415fa91f8",
+      "stderr_sha256": "3beb02de19442fdda1ce46be38754b8701f5726272ea9ca1fbd2c321c2ca271f"
+    },
+    {
+      "case_id": "missing-required-evidence",
+      "variant": "candidate",
+      "trial": 1,
+      "status": "passed",
+      "expected": {
+        "confirmedDefectCount": 0,
+        "requiredEvidenceStatus": "missing",
+        "gate": "blocked"
+      },
+      "actual": {
+        "confirmedDefectCount": 0,
+        "requiredEvidenceStatus": "missing",
+        "gate": "blocked",
+        "reason": "The predeclared staging migration rehearsal was not run, and no exception was granted. No implementation defect is supported by the packet; the change and callers cannot be independently verified from the supplied summary."
+      },
+      "visible_response": "{\"confirmedDefectCount\":0,\"requiredEvidenceStatus\":\"missing\",\"gate\":\"blocked\",\"reason\":\"The predeclared staging migration rehearsal was not run, and no exception was granted. No implementation defect is supported by the packet; the change and callers cannot be independently verified from the supplied summary.\"}",
+      "skill_sha256": "42facf6ffcf7497e3b6c0a4fdf8638b2e2ce84e93f6eb089fac74308ce153123",
+      "shared_skill_sha256": "c60d0e51f5ece313f5a3b68f933ab4278ef4ff1472582e53adcc4909e33e9f0c",
+      "fixture_sha256": "2b90371a67b369795c4c59b3805b2b3836ef6116a9f3569eef809bdd79917c52",
+      "prompt_sha256": "28293a79227cc0e320d91e432d5b25b5aba0e9a3c7709aabbb8752c5b44f9ffd",
+      "wall_ms": 8354,
+      "exit_code": 0,
+      "usage": {
+        "input_tokens": 18016,
+        "cached_input_tokens": 0,
+        "output_tokens": 129
+      },
+      "cost": null,
+      "error": null,
+      "unexpected_tool_types": [],
+      "stdout_sha256": "990cc7c9e185cccc69907a8eb87b397e83e9fab044f5098bb88aff5b375a5ab4",
+      "stderr_sha256": "567149fa9156600d4246941288f8abc9e44150355e167306ad2b0e4dd87fb986"
+    },
+    {
+      "case_id": "confirmed-defect-with-checks-satisfied",
+      "variant": "baseline",
+      "trial": 1,
+      "status": "passed",
+      "expected": {
+        "confirmedDefectCount": 1,
+        "requiredEvidenceStatus": "satisfied",
+        "gate": "blocked"
+      },
+      "actual": {
+        "confirmedDefectCount": 1,
+        "requiredEvidenceStatus": "satisfied",
+        "gate": "blocked",
+        "reason": "The complete withdraw function subtracts without checking available balance; withdraw(3, 5) returns -2, violating the required rejection behavior. Add an insufficient-balance check. The predeclared build and unit-suite evidence passed, but the suite omitted this case. Review is limited to the supplied packet; no independent execution or supporting references were available."
+      },
+      "visible_response": "{\"confirmedDefectCount\":1,\"requiredEvidenceStatus\":\"satisfied\",\"gate\":\"blocked\",\"reason\":\"The complete withdraw function subtracts without checking available balance; withdraw(3, 5) returns -2, violating the required rejection behavior. Add an insufficient-balance check. The predeclared build and unit-suite evidence passed, but the suite omitted this case. Review is limited to the supplied packet; no independent execution or supporting references were available.\"}",
+      "skill_sha256": "6713a86ec6300d437fd6022068517425970aba81c11921c372c4aaa756325ba2",
+      "shared_skill_sha256": "c60d0e51f5ece313f5a3b68f933ab4278ef4ff1472582e53adcc4909e33e9f0c",
+      "fixture_sha256": "01456280b4b18f784c6e6518c3356e228bb345106359fb0afe88c20d632d71ec",
+      "prompt_sha256": "552be307765e4b0d3995c03c6f91dc39f3414c2e21d6bcfd95306cd6529d94e3",
+      "wall_ms": 9188,
+      "exit_code": 0,
+      "usage": {
+        "input_tokens": 17906,
+        "cached_input_tokens": 11264,
+        "output_tokens": 161
+      },
+      "cost": null,
+      "error": null,
+      "unexpected_tool_types": [],
+      "stdout_sha256": "2ab6a9055f4d2d665501042a5deda12126a69a3c72df9e0088ecfc6350279610",
+      "stderr_sha256": "7ef45ef796390eaf600a4cd9552f75b07263486f0374b440bffea7e9da8c19da"
+    },
+    {
+      "case_id": "confirmed-defect-with-checks-satisfied",
+      "variant": "candidate",
+      "trial": 1,
+      "status": "passed",
+      "expected": {
+        "confirmedDefectCount": 1,
+        "requiredEvidenceStatus": "satisfied",
+        "gate": "blocked"
+      },
+      "actual": {
+        "confirmedDefectCount": 1,
+        "requiredEvidenceStatus": "satisfied",
+        "gate": "blocked",
+        "reason": "withdraw(3, 5) returns -2 instead of rejecting an amount greater than the balance. The predeclared build and normal-path suite have passing records, but this confirmed defect blocks the gate. Review was limited to the supplied packet; no independent execution was performed."
+      },
+      "visible_response": "{\"confirmedDefectCount\":1,\"requiredEvidenceStatus\":\"satisfied\",\"gate\":\"blocked\",\"reason\":\"withdraw(3, 5) returns -2 instead of rejecting an amount greater than the balance. The predeclared build and normal-path suite have passing records, but this confirmed defect blocks the gate. Review was limited to the supplied packet; no independent execution was performed.\"}",
+      "skill_sha256": "42facf6ffcf7497e3b6c0a4fdf8638b2e2ce84e93f6eb089fac74308ce153123",
+      "shared_skill_sha256": "c60d0e51f5ece313f5a3b68f933ab4278ef4ff1472582e53adcc4909e33e9f0c",
+      "fixture_sha256": "01456280b4b18f784c6e6518c3356e228bb345106359fb0afe88c20d632d71ec",
+      "prompt_sha256": "69c7cbf92884cc786fd520c4a0a21a8697b0f200285c88be5f0367944f94d118",
+      "wall_ms": 7989,
+      "exit_code": 0,
+      "usage": {
+        "input_tokens": 18076,
+        "cached_input_tokens": 17792,
+        "output_tokens": 158
+      },
+      "cost": null,
+      "error": null,
+      "unexpected_tool_types": [],
+      "stdout_sha256": "4f63f67376e701272032bc9748eef14959a8340d094a6096e704ead42d7fd8bc",
+      "stderr_sha256": "9ccbc22567cd767135fa685290506233162331f109c19bee5ae0552e634b0a59"
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "error": 0,
+    "not_run": 0
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "fixtureOnly": true,
+  "digestAlgorithm": "sha256-utf8-lf",
+  "scenario": "frozen initial evidence before the evaluated task; verifier runs on new copies do not update these records",
+  "checks": [
+    {
+      "id": "handler-baseline-R1",
+      "revision": "R1",
+      "status": "passed",
+      "inputs": {
+        "package.json": "27f71633f691c4cde254838924412def19f3eca7cdc18e328b33ac250c0a1068",
+        "src/request-handler.js": "8f08eeb514e0b982559c44f00e3106afa550fc93bfeb2d9486d560a22c002267",
+        "test/handler-baseline.test.js": "9e2f01febadd7673b616949dc676e648b8cfd230184c1b27f30e4774140db6f4"
+      },
+      "execution": {
+        "command": "node test/handler-baseline.test.js",
+        "executedAt": "2026-09-16T07:52:16.866Z",
+        "exitCode": 0,
+        "stdout": "Greeting baseline handler checks passed.",
+        "environment": {
+          "node": "v24.19.0",
+          "platform": "win32"
+        },
+        "origin": "actual local execution of repository-authored synthetic fixture; no model or external service"
+      }
+    },
+    {
+      "id": "static-styles-R1",
+      "revision": "R1",
+      "status": "passed",
+      "inputs": {
+        "package.json": "27f71633f691c4cde254838924412def19f3eca7cdc18e328b33ac250c0a1068",
+        "styles/ui.css": "7a3644de7870de5627653f66c636083bbdcc01cc1b19759b7cac9a55890a75b3",
+        "test/styles.test.js": "cb3cbb78e9c22d63d0641459f09ccae64a140a3249eff398ef99523b465dfa99"
+      },
+      "execution": {
+        "command": "node test/styles.test.js",
+        "executedAt": "2026-09-16T07:52:16.930Z",
+        "exitCode": 0,
+        "stdout": "Static CSS color, spacing, and focus-rule checks passed; no browser was run.",
+        "environment": {
+          "node": "v24.19.0",
+          "platform": "win32"
+        },
+        "origin": "actual local execution of repository-authored synthetic fixture; no model or external service"
+      }
+    },
+    {
+      "id": "handler-acceptance-R2",
+      "revision": "R2",
+      "status": "not_run",
+      "inputs": {
+        "package.json": "27f71633f691c4cde254838924412def19f3eca7cdc18e328b33ac250c0a1068",
+        "src/request-handler.js": "678ffff32e0c0cfc51fc41018313e26f8b85a3f6d55b536eb2a6a482ccc6dd20",
+        "test/handler-acceptance.test.js": "2c0a7266798bd6f476c6e554b7292464c78fa04e4e5b3efc58e8f02b80ef77fa"
+      },
+      "execution": null,
+      "requiredCommand": "node test/handler-acceptance.test.js"
+    }
+  ]
+}

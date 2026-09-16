@@ -1,0 +1,595 @@
+{
+  "schema_version": 1,
+  "evaluation_kind": "local_loopback_codex_request_shape_probe",
+  "status": "not_run",
+  "source_version": 6,
+  "previous_probe": {
+    "report": "codex-tool-surface-probe-v5.json",
+    "harness_sha256": "4f86416c357853abfe27b3a941c402da1e1d7d75f8c01862b2f8885d79fd0bf9",
+    "outcome": "V5 removed both known system Skill names but still advertised request_user_input. V6 sends exactly one authored native question call to observe its runtime boundary."
+  },
+  "model_execution": false,
+  "model_calls": 0,
+  "activation_observed": false,
+  "host_isolation_enforced": false,
+  "started_at": "2026-09-16T12:08:44.794Z",
+  "finished_at": "2026-09-16T12:08:45.655Z",
+  "run_status": "request_observed",
+  "harness_sha256": "25cdc1ee112fd6644f38e4516a64027078c8dadc2368415e3ae29302a7d8efc3",
+  "host": {
+    "cli_version_preflight": "codex-cli 0.154.0-alpha.6.2",
+    "executable_sha256": "960c111d47afd61669954b9df9e56083e302edbfa3ef6962d81dcc14a30051dc",
+    "node": "v24.19.0",
+    "platform": "win32"
+  },
+  "documentation_checked": [
+    "https://learn.chatgpt.com/docs/build-skills",
+    "https://learn.chatgpt.com/docs/config-file/config-reference"
+  ],
+  "limits": {
+    "processes": 1,
+    "timeout_ms": 30000,
+    "requests": 2,
+    "request_bytes": 2097152,
+    "output_bytes": 2097152
+  },
+  "prompt": {
+    "bytes": 173,
+    "sha256": "35ec0b1d4f625e2b8312b876672af87a50c247a8557589c43180abbfaba6ec7f",
+    "markers": {
+      "probe_prompt": true,
+      "skills_header": false,
+      "available_skills": false,
+      "skill_creator": false,
+      "openai_docs_skill": false,
+      "repository_guidance": false,
+      "repository_name": false,
+      "agent_guidance_file": false,
+      "environment_context": false,
+      "permissions_context": false,
+      "system_identity": false,
+      "app_context": false,
+      "host_skill_path": false
+    }
+  },
+  "provider": {
+    "id": "author_loopback_probe",
+    "dummy_model": "author-loopback-request-shape-probe-not-a-model",
+    "address": "http://127.0.0.1:<ephemeral>/v1",
+    "wire_api": "responses",
+    "requires_openai_auth": false,
+    "request_max_retries": 0,
+    "stream_max_retries": 0,
+    "supports_websockets": false
+  },
+  "disabled_features": [
+    "apps",
+    "artifact",
+    "auth_elicitation",
+    "browser_use",
+    "browser_use_external",
+    "browser_use_full_cdp_access",
+    "chronicle",
+    "code_mode",
+    "code_mode_host",
+    "code_mode_interrupt",
+    "code_mode_only",
+    "code_mode_prewarm",
+    "computer_use",
+    "current_time_reminder",
+    "default_mode_request_user_input",
+    "deferred_executor",
+    "deferred_tool_world_state",
+    "enable_mcp_apps",
+    "enable_request_compression",
+    "exec_permission_approvals",
+    "executor_capability_discovery",
+    "external_agent_memory_import",
+    "fast_mode",
+    "goals",
+    "guardian_approval",
+    "guardian_ext",
+    "guardianv2",
+    "hooks",
+    "image_generation",
+    "in_app_browser",
+    "in_app_chat",
+    "in_app_dictation",
+    "in_app_local_automation",
+    "in_app_updates",
+    "memories",
+    "multi_agent",
+    "multi_agent_v2",
+    "network_proxy",
+    "plugin_sharing",
+    "plugins",
+    "recommended_plugins",
+    "remote_compaction_v2",
+    "remote_plugin",
+    "request_permissions_tool",
+    "runtime_metrics",
+    "secret_auth_storage",
+    "shell_snapshot",
+    "shell_snapshot_v2",
+    "shell_tool",
+    "shell_zsh_fork",
+    "skill_mcp_dependency_install",
+    "skill_search",
+    "sleep_tool",
+    "standalone_web_search",
+    "step_model_switching",
+    "tool_call_mcp_elicitation",
+    "tool_suggest",
+    "unbounded_connection_retries",
+    "unified_exec",
+    "unified_exec_tty",
+    "view_image",
+    "workspace_dependencies",
+    "worktrees"
+  ],
+  "enabled_features": [
+    "skip_host_skill_discovery"
+  ],
+  "config": {
+    "model_provider": "author_loopback_probe",
+    "model": "author-loopback-request-shape-probe-not-a-model",
+    "model_providers.author_loopback_probe.name": "Local author-only terminal mock",
+    "model_providers.author_loopback_probe.base_url": "http://127.0.0.1:<ephemeral>/v1",
+    "model_providers.author_loopback_probe.wire_api": "responses",
+    "model_providers.author_loopback_probe.requires_openai_auth": false,
+    "model_providers.author_loopback_probe.request_max_retries": 0,
+    "model_providers.author_loopback_probe.stream_max_retries": 0,
+    "model_providers.author_loopback_probe.stream_idle_timeout_ms": 5000,
+    "model_providers.author_loopback_probe.supports_websockets": false,
+    "model_providers.author_loopback_probe.supports_standalone_web_search": false,
+    "cli_auth_credentials_store": "file",
+    "mcp_oauth_credentials_store": "file",
+    "web_search": "disabled",
+    "agents.enabled": false,
+    "analytics.enabled": false,
+    "feedback.enabled": false,
+    "check_for_update_on_startup": false,
+    "otel.exporter": "none",
+    "otel.trace_exporter": "none",
+    "otel.metrics_exporter": "none",
+    "otel.log_user_prompt": false,
+    "memories.generate_memories": false,
+    "memories.use_memories": false,
+    "project_doc_max_bytes": 0,
+    "project_root_markers": [],
+    "allow_login_shell": false,
+    "shell_environment_policy.inherit": "none",
+    "approval_policy": "never",
+    "skills.config": [
+      {
+        "path": "<scratch>/codex-home/skills/.system/openai-docs",
+        "enabled": false
+      },
+      {
+        "path": "<scratch>/codex-home/skills/.system/openai-docs/SKILL.md",
+        "enabled": false
+      },
+      {
+        "path": "<scratch>/codex-home/skills/.system/skill-creator",
+        "enabled": false
+      },
+      {
+        "path": "<scratch>/codex-home/skills/.system/skill-creator/SKILL.md",
+        "enabled": false
+      }
+    ]
+  },
+  "config_sha256": "d2699dfae7137f7407262057df83ba152bcfff4c8d2d72b440be432eb5b7f0bb",
+  "environment_keys": [
+    "ALL_PROXY",
+    "APPDATA",
+    "CODEX_HOME",
+    "DO_NOT_TRACK",
+    "HOME",
+    "HTTPS_PROXY",
+    "HTTP_PROXY",
+    "LOCALAPPDATA",
+    "NO_COLOR",
+    "NO_PROXY",
+    "OTEL_LOGS_EXPORTER",
+    "OTEL_METRICS_EXPORTER",
+    "OTEL_SDK_DISABLED",
+    "OTEL_TRACES_EXPORTER",
+    "PATH",
+    "SystemRoot",
+    "TEMP",
+    "TERM",
+    "TMP",
+    "USERPROFILE",
+    "WINDIR"
+  ],
+  "authored_response": {
+    "kind": "fixed_synthetic_function_call",
+    "name": "request_user_input",
+    "call_id": "author_question_boundary",
+    "arguments_sha256": "1f1287f53543feb93fbe82ed7a7a67552df6b0331ba3d90056b47efbea401a98",
+    "sse_sha256": "7f59a8b2d3649956bd02ca3de25c640ebc6101f1553f94284fdfd4178f98af17",
+    "synthetic_usage_is_not_model_usage": true
+  },
+  "authored_response_sent": true,
+  "process_count": 1,
+  "request_count": 2,
+  "proxy_connect_attempts": 0,
+  "upgrade_attempts": 0,
+  "requests": [
+    {
+      "ordinal": 1,
+      "route": "responses",
+      "response_status": 200,
+      "body": {
+        "json_valid": true,
+        "bytes": 23855,
+        "sha256": "c7143f01fd676390502fa462fe981865d164fb93715e009a3b042c476f4a7c07",
+        "top_level_keys": [
+          "model",
+          "instructions",
+          "input",
+          "tools",
+          "tool_choice",
+          "parallel_tool_calls",
+          "reasoning",
+          "store",
+          "stream",
+          "include",
+          "prompt_cache_key",
+          "client_metadata"
+        ],
+        "requested_dummy_model_matches": true,
+        "instructions": {
+          "bytes": 17314,
+          "sha256": "f6d6b8750560366f9a3e1086c7c9a539082230636baa89590d3fa8ce1c75a40b",
+          "markers": {
+            "probe_prompt": false,
+            "skills_header": false,
+            "available_skills": false,
+            "skill_creator": false,
+            "openai_docs_skill": false,
+            "repository_guidance": false,
+            "repository_name": false,
+            "agent_guidance_file": true,
+            "environment_context": false,
+            "permissions_context": false,
+            "system_identity": true,
+            "app_context": false,
+            "host_skill_path": false
+          }
+        },
+        "input_items": 3,
+        "input_summary_truncated": false,
+        "messages": [
+          {
+            "type": "message",
+            "role": "developer",
+            "content": {
+              "bytes": 2219,
+              "sha256": "41b439c48f2d0c61511b197d2738501968083ce4432eacf6e79b7f9454486389",
+              "markers": {
+                "probe_prompt": false,
+                "skills_header": true,
+                "available_skills": true,
+                "skill_creator": false,
+                "openai_docs_skill": false,
+                "repository_guidance": false,
+                "repository_name": true,
+                "agent_guidance_file": false,
+                "environment_context": false,
+                "permissions_context": true,
+                "system_identity": false,
+                "app_context": false,
+                "host_skill_path": false
+              }
+            }
+          },
+          {
+            "type": "message",
+            "role": "user",
+            "content": {
+              "bytes": 547,
+              "sha256": "97799f430fa652ad14fd8a122e463738c8a3db572cc70e3a0c1081bcf851a60e",
+              "markers": {
+                "probe_prompt": false,
+                "skills_header": false,
+                "available_skills": false,
+                "skill_creator": false,
+                "openai_docs_skill": false,
+                "repository_guidance": false,
+                "repository_name": true,
+                "agent_guidance_file": false,
+                "environment_context": true,
+                "permissions_context": false,
+                "system_identity": false,
+                "app_context": false,
+                "host_skill_path": false
+              }
+            }
+          },
+          {
+            "type": "message",
+            "role": "user",
+            "content": {
+              "bytes": 173,
+              "sha256": "35ec0b1d4f625e2b8312b876672af87a50c247a8557589c43180abbfaba6ec7f",
+              "markers": {
+                "probe_prompt": true,
+                "skills_header": false,
+                "available_skills": false,
+                "skill_creator": false,
+                "openai_docs_skill": false,
+                "repository_guidance": false,
+                "repository_name": false,
+                "agent_guidance_file": false,
+                "environment_context": false,
+                "permissions_context": false,
+                "system_identity": false,
+                "app_context": false,
+                "host_skill_path": false
+              }
+            }
+          }
+        ],
+        "tools": [
+          {
+            "namespace": null,
+            "name": "request_user_input",
+            "type": "function"
+          }
+        ],
+        "function_outputs": [],
+        "tools_sha256": "e33f23b8342f5acf11a42ee9f104b0cfab462ee646dacd144812c6ae2f62e7b1",
+        "context_markers": {
+          "probe_prompt": true,
+          "skills_header": false,
+          "available_skills": true,
+          "skill_creator": false,
+          "openai_docs_skill": false,
+          "repository_guidance": false,
+          "repository_name": true,
+          "agent_guidance_file": true,
+          "environment_context": true,
+          "permissions_context": true,
+          "system_identity": true,
+          "app_context": false,
+          "host_skill_path": false
+        },
+        "streaming_requested": true
+      }
+    },
+    {
+      "ordinal": 2,
+      "route": "responses",
+      "response_status": 400,
+      "body": {
+        "json_valid": true,
+        "bytes": 24455,
+        "sha256": "67f8f34aeaa5d0c5447c39bbbd95214eb735627da4d6edb6b73fb84d7ca91722",
+        "top_level_keys": [
+          "model",
+          "instructions",
+          "input",
+          "tools",
+          "tool_choice",
+          "parallel_tool_calls",
+          "reasoning",
+          "store",
+          "stream",
+          "include",
+          "prompt_cache_key",
+          "client_metadata"
+        ],
+        "requested_dummy_model_matches": true,
+        "instructions": {
+          "bytes": 17314,
+          "sha256": "f6d6b8750560366f9a3e1086c7c9a539082230636baa89590d3fa8ce1c75a40b",
+          "markers": {
+            "probe_prompt": false,
+            "skills_header": false,
+            "available_skills": false,
+            "skill_creator": false,
+            "openai_docs_skill": false,
+            "repository_guidance": false,
+            "repository_name": false,
+            "agent_guidance_file": true,
+            "environment_context": false,
+            "permissions_context": false,
+            "system_identity": true,
+            "app_context": false,
+            "host_skill_path": false
+          }
+        },
+        "input_items": 5,
+        "input_summary_truncated": false,
+        "messages": [
+          {
+            "type": "message",
+            "role": "developer",
+            "content": {
+              "bytes": 2219,
+              "sha256": "41b439c48f2d0c61511b197d2738501968083ce4432eacf6e79b7f9454486389",
+              "markers": {
+                "probe_prompt": false,
+                "skills_header": true,
+                "available_skills": true,
+                "skill_creator": false,
+                "openai_docs_skill": false,
+                "repository_guidance": false,
+                "repository_name": true,
+                "agent_guidance_file": false,
+                "environment_context": false,
+                "permissions_context": true,
+                "system_identity": false,
+                "app_context": false,
+                "host_skill_path": false
+              }
+            }
+          },
+          {
+            "type": "message",
+            "role": "user",
+            "content": {
+              "bytes": 547,
+              "sha256": "97799f430fa652ad14fd8a122e463738c8a3db572cc70e3a0c1081bcf851a60e",
+              "markers": {
+                "probe_prompt": false,
+                "skills_header": false,
+                "available_skills": false,
+                "skill_creator": false,
+                "openai_docs_skill": false,
+                "repository_guidance": false,
+                "repository_name": true,
+                "agent_guidance_file": false,
+                "environment_context": true,
+                "permissions_context": false,
+                "system_identity": false,
+                "app_context": false,
+                "host_skill_path": false
+              }
+            }
+          },
+          {
+            "type": "message",
+            "role": "user",
+            "content": {
+              "bytes": 173,
+              "sha256": "35ec0b1d4f625e2b8312b876672af87a50c247a8557589c43180abbfaba6ec7f",
+              "markers": {
+                "probe_prompt": true,
+                "skills_header": false,
+                "available_skills": false,
+                "skill_creator": false,
+                "openai_docs_skill": false,
+                "repository_guidance": false,
+                "repository_name": false,
+                "agent_guidance_file": false,
+                "environment_context": false,
+                "permissions_context": false,
+                "system_identity": false,
+                "app_context": false,
+                "host_skill_path": false
+              }
+            }
+          },
+          {
+            "type": "function_call",
+            "role": null,
+            "content": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "markers": {
+                "probe_prompt": false,
+                "skills_header": false,
+                "available_skills": false,
+                "skill_creator": false,
+                "openai_docs_skill": false,
+                "repository_guidance": false,
+                "repository_name": false,
+                "agent_guidance_file": false,
+                "environment_context": false,
+                "permissions_context": false,
+                "system_identity": false,
+                "app_context": false,
+                "host_skill_path": false
+              }
+            }
+          },
+          {
+            "type": "function_call_output",
+            "role": null,
+            "content": {
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "markers": {
+                "probe_prompt": false,
+                "skills_header": false,
+                "available_skills": false,
+                "skill_creator": false,
+                "openai_docs_skill": false,
+                "repository_guidance": false,
+                "repository_name": false,
+                "agent_guidance_file": false,
+                "environment_context": false,
+                "permissions_context": false,
+                "system_identity": false,
+                "app_context": false,
+                "host_skill_path": false
+              }
+            }
+          }
+        ],
+        "tools": [
+          {
+            "namespace": null,
+            "name": "request_user_input",
+            "type": "function"
+          }
+        ],
+        "function_outputs": [
+          {
+            "call_id": "author_question_boundary",
+            "bytes": 49,
+            "sha256": "045bf037e48b30a9161aa2b1a57287e4fdf2042f0256da761ffda8e2eddfee92",
+            "unavailable_in_default_mode": true,
+            "argument_validation_error": false
+          }
+        ],
+        "tools_sha256": "e33f23b8342f5acf11a42ee9f104b0cfab462ee646dacd144812c6ae2f62e7b1",
+        "context_markers": {
+          "probe_prompt": true,
+          "skills_header": false,
+          "available_skills": true,
+          "skill_creator": false,
+          "openai_docs_skill": false,
+          "repository_guidance": false,
+          "repository_name": true,
+          "agent_guidance_file": true,
+          "environment_context": true,
+          "permissions_context": true,
+          "system_identity": true,
+          "app_context": false,
+          "host_skill_path": false
+        },
+        "streaming_requested": true
+      }
+    }
+  ],
+  "child": {
+    "exit_code": 1,
+    "signal": null,
+    "stdout": {
+      "bytes": 1117,
+      "sha256": "a8770a00dbe3f237c7f9b29456084c38f3cc0b680eca2aaf402db37804746512"
+    },
+    "stderr": {
+      "bytes": 117,
+      "sha256": "6649c9095b46127a9c0e64753ee38b8889c218b82e399a0d2e64461e81c20b3c"
+    },
+    "configuration_diagnostic": null,
+    "startup_diagnostic": null,
+    "output_markers": {
+      "terminal_400": true,
+      "configuration_error": false,
+      "authentication_error": false,
+      "generated_action_event": false
+    }
+  },
+  "error_code": null,
+  "cleanup": {
+    "child_closed": true,
+    "server_closed": true,
+    "scratch_removed": true
+  },
+  "usage": null,
+  "cost": null,
+  "usage_complete": false,
+  "limitations": [
+    "The only supplied action is an authored synthetic question call, not a model-generated response. This cannot assess Skill activation or task success.",
+    "The script never forwards requests. Configuration, allowlisted environment, and one native tool rejection do not constitute OS-level network or filesystem isolation.",
+    "Proxy variables point only at the rejecting loopback server; this is defense in depth, not packet-level proof that every CLI subsystem honors proxies.",
+    "No raw request instructions, HTTP headers, general child output, credentials, or personal directory paths are retained. Only zero-request configuration-startup error lines may be retained, redacted and capped at 512 characters.",
+    "Feature flags were inspected for this executable before the run. No claim is made about other versions or default settings."
+  ]
+}

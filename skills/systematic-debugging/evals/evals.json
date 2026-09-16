@@ -1,0 +1,25 @@
+{
+  "skill_name": "systematic-debugging",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "A shell wrapper fails before launching any application. The repository includes Python and TypeScript services, but current evidence points only to a missing executable on PATH.",
+      "expected_output": "A causal tool-environment diagnosis without unrelated language specialists.",
+      "assertions": [
+        "It investigates the observed executable-resolution failure first.",
+        "It does not load Python or TypeScript diagnostics just because those services exist.",
+        "It verifies the corrected launch path or reports the actual environment limitation."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "A pytest case times out awaiting an asyncio task and the traceback is incomplete. Diagnose the cause before fixing it.",
+      "expected_output": "Evidence-led Python diagnostics and a justified specialist route.",
+      "assertions": [
+        "It selects python-observability-debugging for the Python runtime failure.",
+        "It does not assume concurrency design is the root cause merely from asyncio wording.",
+        "It adds relevant Python testing and implementation guidance when those actions become necessary."
+      ]
+    }
+  ]
+}

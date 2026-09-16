@@ -1,0 +1,6 @@
+.viewer-panel { padding: 16px; border: 1px solid #d3dded; border-radius: 12px; background: #fff; }
+.viewer-stage { width: 100%; height: 240px; overflow: hidden; border-radius: 8px; background: #e7edf8; }
+#viewer-canvas { display: block; width: 100%; height: 100%; }
+.viewer-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; padding-top: 12px; }
+.viewer-controls button { padding: 8px 14px; color: #fff; background: #224f99; border: 0; border-radius: 6px; font: inherit; cursor: pointer; }
+.viewer-controls output { color: #546580; font-size: 14px; }

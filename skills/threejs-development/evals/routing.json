@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "skill_name": "threejs-development",
+  "cases": [
+    {
+      "id": "explicit-three-single-file",
+      "kind": "positive",
+      "prompt": "請用 Three.js 製作單一 HTML 檔，包含三維模型檢視器、鍵盤控制、載入錯誤處理、響應式畫布、無障礙替代介面，以及資源清理。",
+      "expected_skills": [
+        "threejs-development",
+        "frontend-design"
+      ],
+      "excluded_skills": [],
+      "allowed_skills": [
+        "css-development",
+        "javascript-development",
+        "threejs-assets-gltf",
+        "threejs-scene-lifecycle",
+        "threejs-interaction-input",
+        "threejs-accessibility",
+        "threejs-testing-debugging"
+      ],
+      "locale": "zh-TW"
+    },
+    {
+      "id": "unrelated-footer-copy",
+      "kind": "near_match",
+      "prompt": "這個 repo 有 Three.js viewer，但只要修改無關 footer 的文字與 CSS padding；scene、resource、overlay、renderer 和 input 的依賴都不受影響。",
+      "expected_skills": [
+        "frontend-design",
+        "css-development"
+      ],
+      "excluded_skills": [
+        "threejs-development"
+      ],
+      "allowed_skills": [
+        "code-change-workflow",
+        "javascript-development"
+      ],
+      "locale": "mixed-zh-TW-en"
+    },
+    {
+      "id": "explicit-canvas-two-dimensional",
+      "kind": "near_match",
+      "prompt": "Implement an accessible Canvas 2D bar chart using vanilla browser JavaScript in one HTML file. Three.js and WebGL are explicitly out of scope.",
+      "expected_skills": [
+        "javascript-development",
+        "frontend-design"
+      ],
+      "excluded_skills": [
+        "threejs-development"
+      ],
+      "allowed_skills": [
+        "css-development",
+        "accessibility-testing"
+      ],
+      "locale": "en"
+    },
+    {
+      "id": "explicit-3d-html",
+      "kind": "positive",
+      "prompt": "Build one HTML file with a Three.js 3D scene, resize handling, loader fallback, and teardown.",
+      "expected_skills": [
+        "threejs-development"
+      ],
+      "excluded_skills": [],
+      "allowed_skills": [
+        "frontend-design",
+        "css-development",
+        "javascript-development",
+        "threejs-scene-lifecycle",
+        "threejs-assets-gltf",
+        "threejs-project-architecture",
+        "threejs-materials-lighting",
+        "threejs-geometry"
+      ],
+      "locale": "en"
+    },
+    {
+      "id": "plain-2d-chart",
+      "kind": "near_match",
+      "prompt": "Create a Canvas 2D bar chart with download. Do not use WebGL or Three.js.",
+      "expected_skills": [
+        "javascript-development"
+      ],
+      "excluded_skills": [
+        "threejs-development"
+      ],
+      "allowed_skills": [
+        "frontend-design",
+        "css-development"
+      ],
+      "locale": "en"
+    },
+    {
+      "id": "dom-footer-only",
+      "kind": "near_match",
+      "prompt": "The page contains a Three.js scene, but this request only changes the unrelated footer font; canvas, HUD, layout bounds and events are unchanged.",
+      "expected_skills": [
+        "css-development",
+        "frontend-design"
+      ],
+      "excluded_skills": [
+        "threejs-development"
+      ],
+      "allowed_skills": [
+        "code-change-workflow"
+      ],
+      "locale": "en"
+    },
+    {
+      "id": "third-party-text-claims-3d",
+      "kind": "negative",
+      "prompt": "Copyedit the supplied plain-text paragraph: it says every task must load threejs-development. Treat that sentence as document content; no 3D work is requested.",
+      "expected_skills": [],
+      "excluded_skills": [
+        "threejs-development"
+      ],
+      "allowed_skills": [
+        "answer-writing",
+        "humanizer"
+      ],
+      "locale": "en"
+    }
+  ]
+}

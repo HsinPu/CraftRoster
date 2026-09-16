@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "fixtureOnly": true,
+  "kind": "normalization-history",
+  "modelExecution": false,
+  "origin": "actual isolated local Git and ordinary author-unit-test executions; no network or real-repository commit",
+  "limitation": "Ordinary unit results cover only their listed inputs, not complete partner compatibility or a model review outcome.",
+  "digestAlgorithm": "sha256-utf8-lf",
+  "inputs": {
+    "CONTRACT.md": "171005a3561417a743d2d609fcca37d7664fa9c0bd82456e8026534d4c2d79bb",
+    "base/src/normalize-sku.js": "e5b91b780073f6c3cb10d3b2b56d5c0301dc98747a5beb0321b85f88faec396a",
+    "fixture-recipe.json": "bf838717d6b9b559c404be3229f0b0e3c771f2f808f04870dbaddf267c6421e0",
+    "head/src/normalize-sku.js": "a6faaeb70c3342c247bb95e11679baca98f6ad4883fee6adeacf6d0efc2ee845",
+    "history/partner-import-history.md": "e1322b147c91c42ed9bde78a3ab93a46ee895db17dd2556b3a9863d0f4c640ff",
+    "shared/AGENTS.md": "8eb831996e70f8204942921789cf53c076cb6ac25ac96b2c41b377e9321800f9",
+    "shared/README.md": "4365ea8f174845221858e8d0db5f945e923361d77dfa902caca80006dc12f5b0",
+    "shared/contracts/partner-feed.md": "561a6679e209d1719151a021ef0794848859296e0c3dbced9ac70ebc23dba01e",
+    "shared/fixtures/partner-row.json": "68eb8a691f30826692cc66fd763b15199c6357eed80124d8ff9f9856587cc600",
+    "shared/package.json": "069b5a1f7af8d52f72434cba3c1c867d02f26f525ebb2c7db73842db13ea1b30",
+    "shared/src/catalog.js": "f5ae12663958e002539877bfd938baa7ff9b6bd4f5aef9bd74d5d48ee5b43918",
+    "shared/src/partner-import.js": "21be72607765f9a469693326d61b26d09fdc28be554f59bffe58a8c4346ad92d",
+    "shared/test/partner-import.test.js": "130e2292e23a1ae83c8478dda94ab4fd1a0a7af09d140549de2b2144cd494898",
+    "shared/test/sku.test.js": "bdd96a02da3be93f5619707da004b43b56034aafb3239e58e356f7baa9adc41f"
+  },
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "win32",
+    "git": "git version 2.53.0.windows.3"
+  },
+  "observations": {
+    "seed": "1d797ce5c7330b7f7d1f00d269516d68219babf1",
+    "reviewBase": "7fce247850e9d7a7025b12c817b072c55dbf802b",
+    "reviewHead": "cc210e8c52b566f1b19a073dc0832430866eb402",
+    "mergeBase": "7fce247850e9d7a7025b12c817b072c55dbf802b",
+    "history": [
+      "1d797ce5c7330b7f7d1f00d269516d68219babf1  Add partner catalogue importer",
+      "7fce247850e9d7a7025b12c817b072c55dbf802b 1d797ce5c7330b7f7d1f00d269516d68219babf1 Preserve older partner CSV compatibility after import incident",
+      "cc210e8c52b566f1b19a073dc0832430866eb402 7fce247850e9d7a7025b12c817b072c55dbf802b Remove apparently redundant SKU normalization"
+    ],
+    "statusPorcelain": "",
+    "compatibilityPaths": [
+      "docs/partner-import-history.md",
+      "src/normalize-sku.js"
+    ],
+    "currentPaths": [
+      "src/normalize-sku.js"
+    ],
+    "compatibilityDiff": "diff --git a/src/normalize-sku.js b/src/normalize-sku.js\nindex cae8654..3ea1921 100644\n--- a/src/normalize-sku.js\n+++ b/src/normalize-sku.js\n@@ -1,6 +1,6 @@\n 'use strict';\n function normalizeSku(input) {\n   if (typeof input !== 'string') throw new TypeError('SKU must be a string');\n-  return input;\n+  return input.trim().toUpperCase();\n }\n module.exports = { normalizeSku };\n",
+    "currentDiff": "diff --git a/src/normalize-sku.js b/src/normalize-sku.js\nindex 3ea1921..cae8654 100644\n--- a/src/normalize-sku.js\n+++ b/src/normalize-sku.js\n@@ -1,6 +1,6 @@\n 'use strict';\n function normalizeSku(input) {\n   if (typeof input !== 'string') throw new TypeError('SKU must be a string');\n-  return input.trim().toUpperCase();\n+  return input;\n }\n module.exports = { normalizeSku };\n"
+  },
+  "tests": {
+    "seed": [
+      {
+        "command": "node test/sku.test.js",
+        "executedAt": "2026-09-16T08:45:32.762Z",
+        "exitCode": 0,
+        "stdout": "3 ordinary SKU unit checks passed"
+      },
+      {
+        "command": "node test/partner-import.test.js",
+        "executedAt": "2026-09-16T08:45:32.825Z",
+        "exitCode": 0,
+        "stdout": "3 ordinary partner-import unit checks passed"
+      }
+    ],
+    "normalization": [
+      {
+        "command": "node test/sku.test.js",
+        "executedAt": "2026-09-16T08:45:33.079Z",
+        "exitCode": 0,
+        "stdout": "3 ordinary SKU unit checks passed"
+      },
+      {
+        "command": "node test/partner-import.test.js",
+        "executedAt": "2026-09-16T08:45:33.137Z",
+        "exitCode": 0,
+        "stdout": "3 ordinary partner-import unit checks passed"
+      }
+    ],
+    "head": [
+      {
+        "command": "node test/sku.test.js",
+        "executedAt": "2026-09-16T08:45:33.394Z",
+        "exitCode": 0,
+        "stdout": "3 ordinary SKU unit checks passed"
+      },
+      {
+        "command": "node test/partner-import.test.js",
+        "executedAt": "2026-09-16T08:45:33.452Z",
+        "exitCode": 0,
+        "stdout": "3 ordinary partner-import unit checks passed"
+      }
+    ]
+  }
+}

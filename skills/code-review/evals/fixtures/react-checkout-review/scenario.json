@@ -1,0 +1,20 @@
+{
+  "scenario": "fictional-local-react-checkout",
+  "fictional": true,
+  "sourceViews": [
+    "base",
+    "head"
+  ],
+  "sourceViewsAreGitCommits": false,
+  "quoteProvider": "shared/fake-quotes.cjs",
+  "externalOrderService": false,
+  "paymentService": false,
+  "modelEvaluation": {
+    "status": "not_run",
+    "attempts": 0
+  },
+  "browserEvidence": {
+    "status": "not_run"
+  }
+}
+

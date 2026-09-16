@@ -1,0 +1,668 @@
+{
+  "schema_version": 1,
+  "kind": "manual_configurator_baseline_browser_and_input_check",
+  "recorded_at": "2026-09-16T10:23:10.003Z",
+  "case_id": "threejs-development:10",
+  "status": "not_run",
+  "model_calls": 0,
+  "model_task_outcome": "not_run",
+  "fixture_manifest": [
+    {
+      "path": "assets/audio-cue.json",
+      "sha256": "8a1d79dbb9fac12bd375b66e19e5637abd47df358126c2e5afd0801cc1ee1760",
+      "bytes": 240
+    },
+    {
+      "path": "assets/materials.json",
+      "sha256": "814f7e059007d70c6c1d36759e0a29d9c5a7df1c5618e68082195bf983f86b99",
+      "bytes": 476
+    },
+    {
+      "path": "CONTRACT.md",
+      "sha256": "b694bef468f9c0d3b08ba0d7df38ab463e10d87e33e5d42e6d614e6e638e07aa",
+      "bytes": 3990
+    },
+    {
+      "path": "contracts/saved-design-v1.schema.json",
+      "sha256": "a0016cf3d3e57ad5c88b2368cc905227fd3e4a8e8be2adfcee16af38df28711b",
+      "bytes": 3147
+    },
+    {
+      "path": "contracts/scene-and-capture.json",
+      "sha256": "02f0b723f49f3718384b89eefa9ea69c74d2a5b66b6c5b5aaceb1ca28b532c38",
+      "bytes": 1478
+    },
+    {
+      "path": "index.html",
+      "sha256": "39f62cd49b0327e8a2bca2ee0b29037897a9d33207b0e8074d9a4cbaba118bf4",
+      "bytes": 3454
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "e2c686418b97e82540b9792d9d2e45956d4c5af7b13aeac46ced71de35e55db2",
+      "bytes": 579
+    },
+    {
+      "path": "package.json",
+      "sha256": "db49cfddcb2be6c13d5938b342b4cc43548051a4420ee529c2eb29d7672bcf6e",
+      "bytes": 259
+    },
+    {
+      "path": "saved-designs/invalid-material.json",
+      "sha256": "dded559edd547176cbed93b911b24eb0b7197f54e0b49df66769d81d88b72c34",
+      "bytes": 519
+    },
+    {
+      "path": "saved-designs/invalid-units.json",
+      "sha256": "23f63b229ff39a8cb0774217fea2cfcfa85c0fc646707342d903474b9cd75be2",
+      "bytes": 503
+    },
+    {
+      "path": "saved-designs/invalid-version.json",
+      "sha256": "49ff625eb39950b822f3e77613b7692efdff24d092eaeda97c6978e557bd3497",
+      "bytes": 500
+    },
+    {
+      "path": "saved-designs/oak-chair.v1.json",
+      "sha256": "fa4e06b861d708b71f120a6dd1c0c2d97d5f2a196bf557fa0a5082c5494e411e",
+      "bytes": 500
+    },
+    {
+      "path": "saved-designs/wide-chair.v1.json",
+      "sha256": "9dc587d68612b0f010fc40a5063568820a18629dfad0dc194ff46fd1815a2141",
+      "bytes": 508
+    },
+    {
+      "path": "src/app.js",
+      "sha256": "ed694087b3a55aa17b30de5fed292cda35bcccffc8ac6852027eb8a8146dda50",
+      "bytes": 3179
+    },
+    {
+      "path": "src/design.js",
+      "sha256": "adc0e2296429d68d555554198547be32305166102cc4710cbeed7880835fb630",
+      "bytes": 2698
+    },
+    {
+      "path": "src/model.js",
+      "sha256": "c65f8fb717bf8c6d3820c933fc53e9c42dfc6df0fc0681b5ff386b23644d9487",
+      "bytes": 2237
+    },
+    {
+      "path": "src/renderer.js",
+      "sha256": "274fa58097d8da82678d22176785fedc83dc64604643be39201237983b157e1f",
+      "bytes": 3165
+    },
+    {
+      "path": "style.css",
+      "sha256": "11487ece37c92e4605495b7cc5f0ef7f84f27e034d41a0b47ca9c95aac84f9e9",
+      "bytes": 1177
+    },
+    {
+      "path": "test/designs.test.cjs",
+      "sha256": "819ac923ff875b17f72ae502c364c2fa39ff036e3170dcdbd32425ea0c90a1de",
+      "bytes": 1395
+    },
+    {
+      "path": "tools/audio.cjs",
+      "sha256": "7a87893a3f1957e24725ba72a0d4810bfab9908127fc10f94a1ff79589fe2178",
+      "bytes": 959
+    },
+    {
+      "path": "tools/build.cjs",
+      "sha256": "a147366b9288f4da378b620512d2c821e999bd1fd2cabe9b028510558a5bb0a7",
+      "bytes": 1456
+    },
+    {
+      "path": "tools/serve.cjs",
+      "sha256": "c53f82c2f89cab9f16cc0e9c223d464c4e538a9f605249b27e2862b9934427d6",
+      "bytes": 1641
+    }
+  ],
+  "fixture_sha256": "b3c24edfc727860095b226f506f3e3fcf0dc78ea4a6566beef16cbb49db74a2e",
+  "corpus_case_sha256": "fe63444f7ef37f3533842aecf74cd0c877d44789eb8df697061f2e9990b32f1f",
+  "public_bundle_sha256": "f170a37cd632bcb45392b2462fdb23405beeedb37c74f5a112925f6aa430f805",
+  "skill_packages": 286,
+  "author_check": {
+    "command": "node tests/skill-three-configurator-fixtures.test.js",
+    "sha256": "69ea67bb529ee6be9e446cb91ec952061bbbbb093b7f434e5c9b1c0150d1ae6e",
+    "node": "v24.19.0",
+    "platform": "win32",
+    "exit_code": 0,
+    "checks_passed": 10,
+    "stdout": "PASS legacy package lock and scene contract retain explicit unfinished capability boundaries\nPASS ordinary saved compatibility and invalid samples execute in an isolated copy\nPASS change/save/load preserves legacy IDs, camera and capture while rejection leaves prior data intact\nPASS runtime ranges agree with the v1 schema and reject semantic time, type and unknown-field changes\nPASS furniture parts use millimeter-to-meter dimensions and independent material assignments\nPASS explicit seed and time deterministically drive authored pattern and camera pose\nPASS mobile raster tier is bounded and follows viewport rather than a narrow desktop canvas\nPASS first-party audio source produces bounded reproducible mono PCM without claiming video export\nPASS ordinary compatibility checks reject private wrong-unit and dropped-capture regressions\nNOT RUN dependency install/build/browser; opt in with --build or --stage and CRAFTROSTER_NPM_CLI\nPASS all canonical inputs remain unchanged with no runtime, binary or private-regression leakage\n{\"authorChecksPassed\":10,\"build\":\"not_run\",\"browser\":\"not_run\",\"modelEvaluation\":\"not_run\",\"modernization\":\"not_implemented\"}"
+  },
+  "build": {
+    "kind": "author_created_baseline",
+    "three": "0.152.2",
+    "manifest": [
+      {
+        "path": "assets/materials.json",
+        "sha256": "814f7e059007d70c6c1d36759e0a29d9c5a7df1c5618e68082195bf983f86b99",
+        "bytes": 476
+      },
+      {
+        "path": "assets/tone-a.wav",
+        "sha256": "7ab183b375f7fa9f28bf62560cc68ce0845eadf6841dffe96ddf31244b2715d3",
+        "bytes": 8044
+      },
+      {
+        "path": "index.html",
+        "sha256": "39f62cd49b0327e8a2bca2ee0b29037897a9d33207b0e8074d9a4cbaba118bf4",
+        "bytes": 3454
+      },
+      {
+        "path": "saved-designs/invalid-material.json",
+        "sha256": "dded559edd547176cbed93b911b24eb0b7197f54e0b49df66769d81d88b72c34",
+        "bytes": 519
+      },
+      {
+        "path": "saved-designs/invalid-units.json",
+        "sha256": "23f63b229ff39a8cb0774217fea2cfcfa85c0fc646707342d903474b9cd75be2",
+        "bytes": 503
+      },
+      {
+        "path": "saved-designs/invalid-version.json",
+        "sha256": "49ff625eb39950b822f3e77613b7692efdff24d092eaeda97c6978e557bd3497",
+        "bytes": 500
+      },
+      {
+        "path": "saved-designs/oak-chair.v1.json",
+        "sha256": "fa4e06b861d708b71f120a6dd1c0c2d97d5f2a196bf557fa0a5082c5494e411e",
+        "bytes": 500
+      },
+      {
+        "path": "saved-designs/wide-chair.v1.json",
+        "sha256": "9dc587d68612b0f010fc40a5063568820a18629dfad0dc194ff46fd1815a2141",
+        "bytes": 508
+      },
+      {
+        "path": "src/app.js",
+        "sha256": "ed694087b3a55aa17b30de5fed292cda35bcccffc8ac6852027eb8a8146dda50",
+        "bytes": 3179
+      },
+      {
+        "path": "src/design.js",
+        "sha256": "adc0e2296429d68d555554198547be32305166102cc4710cbeed7880835fb630",
+        "bytes": 2698
+      },
+      {
+        "path": "src/model.js",
+        "sha256": "c65f8fb717bf8c6d3820c933fc53e9c42dfc6df0fc0681b5ff386b23644d9487",
+        "bytes": 2237
+      },
+      {
+        "path": "src/renderer.js",
+        "sha256": "274fa58097d8da82678d22176785fedc83dc64604643be39201237983b157e1f",
+        "bytes": 3165
+      },
+      {
+        "path": "style.css",
+        "sha256": "11487ece37c92e4605495b7cc5f0ef7f84f27e034d41a0b47ca9c95aac84f9e9",
+        "bytes": 1177
+      },
+      {
+        "path": "vendor/LICENSE",
+        "sha256": "852e0e8699169bf9f6fdc6bda3e682d078dcbc738b5d33e74df594721bff271d",
+        "bytes": 1081
+      },
+      {
+        "path": "vendor/three.module.js",
+        "sha256": "4d01ed1c468372b16732fcecfeb2f463ac1b29b0fc296b2d64ec084e32876b39",
+        "bytes": 1208839
+      }
+    ],
+    "staged_source_matches_canonical": true
+  },
+  "scripted_tool_probe": {
+    "status": "passed",
+    "grants": {
+      "writable_roots": [
+        "workspace/src/",
+        "workspace/test/",
+        "workspace/tools/",
+        "workspace/artifacts/"
+      ],
+      "writable_paths": [
+        "workspace/package.json",
+        "workspace/package-lock.json",
+        "workspace/index.html",
+        "workspace/style.css"
+      ]
+    },
+    "trace": [
+      {
+        "sequence": 1,
+        "tool": "read_file",
+        "path": "workspace/CONTRACT.md",
+        "request_sha256": "248ee2a999df198b18e7a2e4b794ac76bd50dd2d4fee8c23c6f5ce90cff6b67a",
+        "request_chars": 65,
+        "decision": "accepted",
+        "reason": null,
+        "response_sha256": "5e7a3b2fa22225a4f396e1d504239787b24d62076b3e4cc53db9381a40d26049"
+      },
+      {
+        "sequence": 2,
+        "tool": "write_file",
+        "path": "workspace/CONTRACT.md",
+        "request_sha256": "8a7cd56928729d0a5a39778f2d5fe2074e3bc69e994f1bcf87379154907f5877",
+        "request_chars": 81,
+        "decision": "denied",
+        "reason": "write_not_granted",
+        "response_sha256": "0bd3a4cd7f51b3d3d386dd72c2352ad721c54316d60840e7470d2c0c337a44eb"
+      },
+      {
+        "sequence": 3,
+        "tool": "read_file",
+        "path": "workspace/contracts/saved-design-v1.schema.json",
+        "request_sha256": "527fba914e9a1df0140c5cf784bbd0770de20b8ccbde889ac03e54ebc229ab51",
+        "request_chars": 91,
+        "decision": "accepted",
+        "reason": null,
+        "response_sha256": "e31ae8f69fa27eb75e5e64688ea441eee05280437007fb907ce235404530ed7c"
+      },
+      {
+        "sequence": 4,
+        "tool": "write_file",
+        "path": "workspace/contracts/saved-design-v1.schema.json",
+        "request_sha256": "4766652d3e4a116a82135116cf3717957c3a94f210047fc537a91e7f9b0ebae1",
+        "request_chars": 107,
+        "decision": "denied",
+        "reason": "write_not_granted",
+        "response_sha256": "0bd3a4cd7f51b3d3d386dd72c2352ad721c54316d60840e7470d2c0c337a44eb"
+      },
+      {
+        "sequence": 5,
+        "tool": "read_file",
+        "path": "workspace/contracts/scene-and-capture.json",
+        "request_sha256": "6f86ee207884d524cdeda88c1dc35262bbd8e72f8656be2f236bdabbe4cdf050",
+        "request_chars": 86,
+        "decision": "accepted",
+        "reason": null,
+        "response_sha256": "1d693f08e0183ec88a0830f3deb711715187df8fc2cd9bfe0f24c7064c793183"
+      },
+      {
+        "sequence": 6,
+        "tool": "write_file",
+        "path": "workspace/contracts/scene-and-capture.json",
+        "request_sha256": "70c455c2d5f71fc498cc9c458543a2644f08c5df21328b955b41f98741b5cadb",
+        "request_chars": 102,
+        "decision": "denied",
+        "reason": "write_not_granted",
+        "response_sha256": "0bd3a4cd7f51b3d3d386dd72c2352ad721c54316d60840e7470d2c0c337a44eb"
+      },
+      {
+        "sequence": 7,
+        "tool": "read_file",
+        "path": "workspace/saved-designs/oak-chair.v1.json",
+        "request_sha256": "1fce70b46f211ad0337c6cfb99e9a4554131f9bf31ba9ef3b4d3ff2d85b46452",
+        "request_chars": 85,
+        "decision": "accepted",
+        "reason": null,
+        "response_sha256": "29f96c3d22539b11d8c8f6fe3a1f16b5de0d5f794c46f5c29fbb3211d365063c"
+      },
+      {
+        "sequence": 8,
+        "tool": "write_file",
+        "path": "workspace/saved-designs/oak-chair.v1.json",
+        "request_sha256": "a6f57bcedadc626c32c09f7b2bc5e476a1413c91cd11d72fbcd48653a0abac4a",
+        "request_chars": 101,
+        "decision": "denied",
+        "reason": "write_not_granted",
+        "response_sha256": "0bd3a4cd7f51b3d3d386dd72c2352ad721c54316d60840e7470d2c0c337a44eb"
+      },
+      {
+        "sequence": 9,
+        "tool": "read_file",
+        "path": "workspace/saved-designs/wide-chair.v1.json",
+        "request_sha256": "21cb83c6d73a06bb566242fbd947fffc62eb957433bd623fc44ba13f0e154e81",
+        "request_chars": 86,
+        "decision": "accepted",
+        "reason": null,
+        "response_sha256": "3f13916a34b39b03ed6fcefa7bfc1fc1ba9e8fec84619f62ae729ff10fe07598"
+      },
+      {
+        "sequence": 10,
+        "tool": "write_file",
+        "path": "workspace/saved-designs/wide-chair.v1.json",
+        "request_sha256": "a28c53710bc84369b3cdea26628f7e294d621ccd6638ae2a71cd36cc2173638b",
+        "request_chars": 102,
+        "decision": "denied",
+        "reason": "write_not_granted",
+        "response_sha256": "0bd3a4cd7f51b3d3d386dd72c2352ad721c54316d60840e7470d2c0c337a44eb"
+      },
+      {
+        "sequence": 11,
+        "tool": "read_file",
+        "path": "private/record.json",
+        "request_sha256": "5d26223a0c10ab04c9b319b98b11c7282d0e97edeaf5e7bbb5e1aecbec174eaa",
+        "request_chars": 63,
+        "decision": "denied",
+        "reason": "invalid_or_private_path",
+        "response_sha256": "bb883fdedb6e790a589ad38e0d69271ad96df48b20e108b749918aa2c945a81d"
+      },
+      {
+        "sequence": 12,
+        "tool": "write_file",
+        "path": "workspace/src/probe.txt",
+        "request_sha256": "0977298a12da95f39fb2b32ff2eaa3667d6c4dff8db61ea884903b49c51e59da",
+        "request_chars": 86,
+        "decision": "accepted",
+        "reason": null,
+        "response_sha256": "3c94e060f52dfc47172894fef356418e1505b8fb31779fda20bc4f1a17e13143"
+      },
+      {
+        "sequence": 13,
+        "tool": "delete_file",
+        "path": "workspace/src/probe.txt",
+        "request_sha256": "7df8f8f5aa35bd63a9425930542cd5b6e8229eca1ed80a38422424a9c374ab02",
+        "request_chars": 69,
+        "decision": "accepted",
+        "reason": null,
+        "response_sha256": "56ec4a96b5dbe9b308b87d0f90f37796c46b1d50589b3771257a0ac5c48035d3"
+      },
+      {
+        "sequence": 14,
+        "tool": "write_file",
+        "path": "workspace/artifacts/probe.txt",
+        "request_sha256": "19b85d37353e51a69b48011b4738a346df3591fb5b994b5cebf55322779c1034",
+        "request_chars": 92,
+        "decision": "accepted",
+        "reason": null,
+        "response_sha256": "4d6d06f048292550d2c09c778b07c23b2ff0ae865ac88132e9a5ce503e4a61ae"
+      },
+      {
+        "sequence": 15,
+        "tool": "delete_file",
+        "path": "workspace/artifacts/probe.txt",
+        "request_sha256": "460246a89c687260eb558c434c8f311118c6d2c700c237a805dba457c4bda63d",
+        "request_chars": 75,
+        "decision": "accepted",
+        "reason": null,
+        "response_sha256": "4428d306477a6cf8c967e2cebec06a1680e65c90421c956db9b378871e1040ae"
+      }
+    ],
+    "final_workspace_unchanged": true
+  },
+  "browser": {
+    "surface": "Codex In-app Browser",
+    "url": "http://127.0.0.1:4183/",
+    "method": "Manual CUA UI actions, visible DOM diagnostics and inspected screenshots; values transcribed from actual observations. No hidden application state.",
+    "common_diagnostics": {
+      "schemaVersion": 1,
+      "revision": "152",
+      "renderer": "WebGLRenderer",
+      "objects": 7,
+      "memoryObjects": {
+        "geometries": 1,
+        "textures": 2
+      },
+      "programs": 1,
+      "outputColorSpace": "srgb",
+      "toneMapping": "none",
+      "gpuTimeMs": null,
+      "gpuBytes": null
+    },
+    "observations": [
+      {
+        "step": "initial-desktop",
+        "designId": "chair-oak-01",
+        "width": 700,
+        "depth": 650,
+        "frame": "oak",
+        "upholstery": "teal",
+        "capture": {
+          "seed": 17,
+          "timeSeconds": 0,
+          "durationSeconds": 4,
+          "fps": 24,
+          "label": "Oak reading chair",
+          "audioCue": "tone-a"
+        },
+        "quality": {
+          "tier": "desktop",
+          "width": 1438,
+          "height": 538,
+          "dpr": 1.5
+        },
+        "camera": [
+          1.3062972597655516,
+          1.3782209443280664,
+          2.801363513809898
+        ],
+        "cpuRenderSubmissionMs": 56.19999999925494
+      },
+      {
+        "step": "wide-loaded",
+        "designId": "chair-wide-02",
+        "width": 950,
+        "depth": 760,
+        "frame": "walnut",
+        "upholstery": "sand",
+        "capture": {
+          "seed": 42,
+          "timeSeconds": 1,
+          "durationSeconds": 6,
+          "fps": 30,
+          "label": "Wide chair · walnut",
+          "audioCue": "tone-a"
+        },
+        "camera": [
+          1.489010349938017,
+          1.9735050549804656,
+          3.193193000152437
+        ],
+        "cpuRenderSubmissionMs": 0.6000000014901161
+      },
+      {
+        "step": "edited-saved",
+        "saved_document": {
+          "schemaVersion": 1,
+          "id": "chair-wide-02",
+          "name": "Wide walnut chair",
+          "dimensionsMm": {
+            "width": 900,
+            "depth": 760,
+            "seatHeight": 420,
+            "backHeight": 440
+          },
+          "finish": {
+            "frame": "oak",
+            "upholstery": "sand"
+          },
+          "camera": {
+            "yawDegrees": -35,
+            "pitchDegrees": 22,
+            "distanceMeters": 3.8
+          },
+          "capture": {
+            "seed": 42,
+            "timeSeconds": 1,
+            "durationSeconds": 6,
+            "fps": 30,
+            "label": "Wide chair · walnut",
+            "audioCue": "tone-a"
+          }
+        },
+        "cpuRenderSubmissionMs": 0.5
+      },
+      {
+        "step": "edited-reloaded",
+        "width": 900,
+        "frame": "oak",
+        "capture": {
+          "seed": 42,
+          "timeSeconds": 1,
+          "durationSeconds": 6,
+          "fps": 30,
+          "label": "Wide chair · walnut",
+          "audioCue": "tone-a"
+        },
+        "camera": [
+          1.489010349938017,
+          1.9735050549804656,
+          3.193193000152437
+        ],
+        "cpuRenderSubmissionMs": 0.40000000037252903
+      },
+      {
+        "step": "invalid-version",
+        "visible_status": "Rejected: Unsupported saved design version",
+        "retained": {
+          "width": 900,
+          "frame": "oak",
+          "capture": {
+            "seed": 42,
+            "timeSeconds": 1,
+            "durationSeconds": 6,
+            "fps": 30,
+            "label": "Wide chair · walnut",
+            "audioCue": "tone-a"
+          },
+          "camera": [
+            1.489010349938017,
+            1.9735050549804656,
+            3.193193000152437
+          ]
+        }
+      },
+      {
+        "step": "invalid-units",
+        "visible_status": "Rejected: Invalid width",
+        "retained": {
+          "width": 900,
+          "frame": "oak",
+          "capture": {
+            "seed": 42,
+            "timeSeconds": 1,
+            "durationSeconds": 6,
+            "fps": 30,
+            "label": "Wide chair · walnut",
+            "audioCue": "tone-a"
+          },
+          "camera": [
+            1.489010349938017,
+            1.9735050549804656,
+            3.193193000152437
+          ]
+        }
+      },
+      {
+        "step": "invalid-material",
+        "visible_status": "Rejected: Unknown material",
+        "retained": {
+          "width": 900,
+          "frame": "oak",
+          "capture": {
+            "seed": 42,
+            "timeSeconds": 1,
+            "durationSeconds": 6,
+            "fps": 30,
+            "label": "Wide chair · walnut",
+            "audioCue": "tone-a"
+          },
+          "camera": [
+            1.489010349938017,
+            1.9735050549804656,
+            3.193193000152437
+          ]
+        }
+      },
+      {
+        "step": "375px-mobile-auto",
+        "viewport": {
+          "width": 375,
+          "height": 812
+        },
+        "documentWidth": 360,
+        "quality": {
+          "tier": "mobile",
+          "width": 335,
+          "height": 299,
+          "dpr": 1
+        },
+        "width": 900,
+        "audio": {
+          "duration": 0.25,
+          "error": null,
+          "readyState": 4
+        },
+        "cpuRenderSubmissionMs": 0.40000000037252903
+      },
+      {
+        "step": "mobile-width-edited",
+        "width": 880,
+        "timeSeconds": 1,
+        "camera": [
+          1.489010349938017,
+          1.9735050549804656,
+          3.193193000152437
+        ],
+        "cpuRenderSubmissionMs": 0.30000000074505806
+      },
+      {
+        "step": "mobile-explicit-time-2",
+        "width": 880,
+        "timeSeconds": 2,
+        "camera": [
+          3.509891432287666,
+          1.9735050549804656,
+          0.30707571053193977
+        ],
+        "cpuRenderSubmissionMs": 0.2999999988824129
+      },
+      {
+        "step": "mobile-saved-reloaded",
+        "visible_status": "Document loaded.",
+        "saved_document": {
+          "schemaVersion": 1,
+          "id": "chair-wide-02",
+          "name": "Wide walnut chair",
+          "dimensionsMm": {
+            "width": 880,
+            "depth": 760,
+            "seatHeight": 420,
+            "backHeight": 440
+          },
+          "finish": {
+            "frame": "oak",
+            "upholstery": "sand"
+          },
+          "camera": {
+            "yawDegrees": -35,
+            "pitchDegrees": 22,
+            "distanceMeters": 3.8
+          },
+          "capture": {
+            "seed": 42,
+            "timeSeconds": 2,
+            "durationSeconds": 6,
+            "fps": 30,
+            "label": "Wide chair · walnut",
+            "audioCue": "tone-a"
+          }
+        },
+        "camera": [
+          3.509891432287666,
+          1.9735050549804656,
+          0.30707571053193977
+        ],
+        "cpuRenderSubmissionMs": 0.40000000037252903
+      }
+    ],
+    "console_warn_error_entries": [],
+    "viewport_reset": true,
+    "tab_closed": true,
+    "server_stopped": true,
+    "visual_observation": "Desktop and 375px screenshots show raster chair, DOM label and semantic controls. Narrow form is usable without horizontal overflow."
+  },
+  "limitations": [
+    "This is first-party baseline feasibility evidence, not a model A/B result or completed modernization.",
+    "CSG, upholstery simulation, path tracing, dependency upgrade and encoded video with labels/audio remain unimplemented.",
+    "The narrow viewport is desktop browser emulation, not physical mobile hardware or Safari certification.",
+    "CPU render submission values are isolated observations, not GPU timing, a frame-budget verdict or comparable performance benchmark.",
+    "Audio metadata loaded, but audible playback and encoded audiovisual synchronization were not tested.",
+    "No disposal teardown, long-duration leak, raster image fidelity or screenshot-pixel determinism verdict is claimed.",
+    "The in-memory broker probe does not establish model host or arbitrary-code execution isolation.",
+    "Historical preparation records bind earlier runtime packages; this record binds the current source bytes."
+  ]
+}

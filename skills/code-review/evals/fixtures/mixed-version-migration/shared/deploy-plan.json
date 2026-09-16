@@ -1,0 +1,18 @@
+{
+  "fictional": true,
+  "executionAuthorized": false,
+  "stages": [
+    { "id": "before", "database": "initial", "activeVersions": [1] },
+    { "id": "schema", "operation": "apply up.sql", "activeVersions": [1] },
+    { "id": "mixed", "v2TrafficPercent": 20, "activeVersions": [1, 2] },
+    { "id": "new", "v2TrafficPercent": 100, "activeVersions": [2] }
+  ],
+  "rollback": [
+    "Stop admission to v2 and drain its in-flight requests.",
+    "Keep v1 ready; execute down.sql once the v2 drain is confirmed.",
+    "Route all traffic to v1 and verify current names and the public response."
+  ],
+  "rollbackRequires": ["current data backup", "drained v2", "successful local rehearsal"],
+  "productionBackupObserved": false,
+  "productionLockAndBackfillTiming": "not_run"
+}

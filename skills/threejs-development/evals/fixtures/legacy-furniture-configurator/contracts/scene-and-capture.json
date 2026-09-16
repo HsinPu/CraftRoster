@@ -1,0 +1,59 @@
+{
+  "fictional": true,
+  "legacyThree": "0.152.2",
+  "world": {
+    "up": "Y",
+    "unit": "meter",
+    "savedDimensions": "integer millimeters",
+    "origin": "floor under seat center"
+  },
+  "color": {
+    "savedHex": "sRGB",
+    "output": "sRGB",
+    "toneMapping": "none"
+  },
+  "camera": {
+    "projection": "perspective",
+    "fovDegrees": 42,
+    "nearMeters": 0.05,
+    "farMeters": 30,
+    "target": [
+      0,
+      0.55,
+      0
+    ]
+  },
+  "raster": {
+    "automaticMobileAtCssWidth": 640,
+    "mobileDprLimit": 1,
+    "mobileMaxDimension": 768,
+    "desktopDprLimit": 2,
+    "desktopMaxDimension": 1536,
+    "frameTimeBudgetMs": null
+  },
+  "capture": {
+    "time": "explicit input seconds, never wall clock",
+    "seed": "unsigned 32-bit integer; controls generated upholstery pattern",
+    "cameraMotion": "one turn per duration around saved yaw",
+    "label": "DOM overlay; not baked into media",
+    "audio": "authored PCM tone preview; no encoded audiovisual artifact"
+  },
+  "implemented": [
+    "legacy WebGL raster",
+    "v1 load/change/save",
+    "deterministic pose and pattern",
+    "responsive raster tier",
+    "local audio source preview"
+  ],
+  "notImplemented": [
+    "Boolean cutout editor",
+    "flexible upholstery simulation",
+    "path tracing",
+    "encoded image/video export with labels and audio",
+    "dependency modernization"
+  ],
+  "modelEvaluation": "not_run",
+  "browserEvidence": "not_run",
+  "physicalMobileEvidence": "not_run"
+}
+

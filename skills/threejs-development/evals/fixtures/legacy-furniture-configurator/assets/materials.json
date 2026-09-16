@@ -1,0 +1,31 @@
+{
+  "provenance": "First-party numeric colors and 2 by 2 wood pattern; no upstream images or meshes",
+  "frame": {
+    "oak": {
+      "color": "#c7975f"
+    },
+    "walnut": {
+      "color": "#70492f"
+    }
+  },
+  "upholstery": {
+    "teal": {
+      "color": "#287b80"
+    },
+    "sand": {
+      "color": "#d7bd8d"
+    }
+  },
+  "woodPattern": [
+    235,
+    215,
+    205,
+    225
+  ],
+  "fabricVariation": 12,
+  "roughness": {
+    "frame": 0.65,
+    "upholstery": 0.95
+  }
+}
+

@@ -11,7 +11,83 @@
         "Work items are dependency-linked vertical slices rather than disconnected frontend and backend task lists.",
         "Schema compatibility, telemetry, rollout, rollback, and recovery work are represented explicitly.",
         "Items with unresolved authority or product decisions are marked blocked with exact prerequisites."
+      ],
+      "locale": "en",
+      "fixture_root": "evals/fixtures/approved-offline-sync",
+      "files": [
+        "evals/fixtures/approved-offline-sync/CONTRACT.md",
+        "evals/fixtures/approved-offline-sync/contracts/schema-compatibility.json",
+        "evals/fixtures/approved-offline-sync/contracts/sync-policy.json",
+        "evals/fixtures/approved-offline-sync/contracts/telemetry-policy.json",
+        "evals/fixtures/approved-offline-sync/decision.md",
+        "evals/fixtures/approved-offline-sync/open-decisions.json",
+        "evals/fixtures/approved-offline-sync/operations/rollout-recovery.json",
+        "evals/fixtures/approved-offline-sync/samples/client-store-v1.json",
+        "evals/fixtures/approved-offline-sync/samples/client-store-v2.json",
+        "evals/fixtures/approved-offline-sync/samples/sync-scenarios.json",
+        "evals/fixtures/approved-offline-sync/samples/telemetry-event.json",
+        "evals/fixtures/approved-offline-sync/scenario.json"
       ]
+    },
+    {
+      "id": 2,
+      "prompt": "訂位設計已批准。尚有容量時，已登入的使用者可預訂 1 到 4 個座位；0 個或 5 個必須拒絕，重試相同請求識別碼不得建立第二筆訂位。請在本機整理可直接轉成工單、各自包含可用功能與驗證的工作切片及驗收證據。付款、候補名單與建立外部工單均不在範圍內。",
+      "expected_output": "A dependency-aware work-item plan with concrete seat-count, capacity, and idempotency acceptance cases and a first independently verifiable reservation slice.",
+      "assertions": [
+        "It preserves the approved rules and exclusions without reopening the product direction or introducing payments or waitlists.",
+        "Acceptance cases distinguish 1 and 4 seats from rejected 0 and 5 seats, capacity exhaustion, and retrying an already used request ID.",
+        "At least the first ready slice owns a usable reservation outcome and its proof rather than creating only disconnected database, API, UI, and test tasks.",
+        "Work items have stable IDs, real prerequisites, readiness, and evidence; the output remains local and does not create external issues."
+      ],
+      "locale": "zh-TW"
+    },
+    {
+      "id": 3,
+      "prompt": "Plan the approved customer-name migration. Version v1 reads and writes customers.display_name; v2 will use full_name. Old clients can remain active for one week, existing rows must keep their names, and rollback to v1 must work during that week. Produce tasks and verification criteria only; do not run a migration or deploy.",
+      "expected_output": "An expand-migrate-contract task graph that protects old clients, existing data, and the stated rollback window before removing the old field.",
+      "assertions": [
+        "It places compatible expansion and a consistency strategy before new-client rollout or destructive contraction.",
+        "It specifies evidence for existing-row preservation, mixed-version reads and writes, repeatable backfill, and rollback to v1 during the compatibility window.",
+        "The contraction task is blocked on evidence that the old contract is no longer required and the rollback-window condition is satisfied.",
+        "It distinguishes design choices requiring confirmation from executable tasks without inventing repository paths, migration commands, or authorization to alter a database."
+      ],
+      "locale": "en"
+    },
+    {
+      "id": 4,
+      "prompt": "audit-log service 設計已批准，但 retention owner 尚未決定保留 30 天或 365 天。現在可實作 event ingestion 與有界、非破壞性的 queries；deletion jobs 與 production execution 尚未授權。請建立 work queue，指出哪些工作能獨立開始。",
+      "expected_output": "A plan with ready ingestion and query work, an explicit retention-decision prerequisite, and blocked destructive cleanup work.",
+      "assertions": [
+        "It records the retention choice as unresolved and does not hide an assumed duration inside a ready deletion task.",
+        "It identifies independently verifiable ingestion and bounded-query slices that can proceed under the supplied authorization.",
+        "Deletion or retention-enforcement work names the missing policy decision and execution authority as prerequisites.",
+        "It does not label the entire approved project blocked or infer production deletion permission from permission to plan or implement locally."
+      ],
+      "locale": "mixed-zh-TW-en"
+    },
+    {
+      "id": 5,
+      "prompt": "You already proposed and I approved task IDs RES-1 through RES-3, their granularity, and the order RES-1 -> RES-2 -> RES-3. RES-1 reserves seats, RES-2 displays the result, RES-3 checks retries. I now authorize updating only the local plan with measurable acceptance evidence for those tasks. Keep the design and IDs; do not create tracker issues or change code.",
+      "expected_output": "A scoped update that carries forward the settled decisions, supplies concrete evidence fields, and records any newly discovered dependency problem without publishing or implementing.",
+      "assertions": [
+        "It reuses the approved task IDs and direction rather than restarting solution discovery or asking to approve the same unchanged granularity.",
+        "It defines measurable evidence for reservation behavior, displayed outcomes, and duplicate-prevention on retry.",
+        "If verification exposes a hidden prerequisite, it explains that specific change and its readiness effect rather than silently treating the old approval as permission for arbitrary scope expansion.",
+        "It limits changes to the authorized local plan and does not create external issues, edit production code, or deploy."
+      ],
+      "locale": "en"
+    },
+    {
+      "id": 6,
+      "prompt": "Repair this draft delivery graph for the approved saved-search feature: SEARCH-1 backend depends on SEARCH-2 frontend; SEARCH-2 depends on SEARCH-3 tests; SEARCH-3 depends on SEARCH-1. There is no working saved-search behavior yet. Users must save a query and reopen the same query after a page reload. Produce a workable local plan, keeping import/export and sharing out of scope.",
+      "expected_output": "An explicit diagnosis of the dependency cycle followed by independently verifiable vertical slices or justified shared prerequisites, with a usable first ready unit.",
+      "assertions": [
+        "It identifies the cycle and does not mark the three cyclic tasks ready by merely listing them in an arbitrary order.",
+        "It replaces layer-only deadlock with a usable end-to-end saved-query slice or an explicitly testable prerequisite that breaks the cycle.",
+        "The corrected graph uses stable task identities or an explicit mapping from superseded IDs and has a ready set without hidden unfinished dependencies.",
+        "Acceptance evidence covers reopening the same saved query after reload and excludes import/export or sharing work."
+      ],
+      "locale": "en"
     }
   ]
 }

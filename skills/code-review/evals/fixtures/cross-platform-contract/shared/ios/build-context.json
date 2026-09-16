@@ -1,0 +1,15 @@
+{
+  "fictional": true,
+  "scenarioBuildLabel": "fictional-ios-r42",
+  "labelIsObservedBinaryIdentity": false,
+  "binaryArtifact": null,
+  "binarySha256": null,
+  "compilerVersion": null,
+  "sdkVersion": null,
+  "signingEvidence": null,
+  "deviceOrSimulator": null,
+  "runtimeStatus": "unavailable",
+  "reason": "Only integration source is supplied. No executable binary, build chain or iOS runtime evidence is available in this evaluation case.",
+  "actualBuildExecuted": false,
+  "modelReviewStatus": "not_run"
+}

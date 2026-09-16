@@ -1,0 +1,11 @@
+{
+  "id": "tone-a",
+  "provenance": "First-party mathematical sine tone; no recording or licensed music",
+  "sampleRate": 16000,
+  "channels": 1,
+  "seconds": 0.25,
+  "frequencyHz": 440,
+  "amplitude": 0.08,
+  "timelineOffsetSeconds": 0
+}
+

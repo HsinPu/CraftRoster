@@ -1,0 +1,452 @@
+{
+  "schema_version": 1,
+  "kind": "offline_ui_delivery_provenance_fixture_preparation",
+  "created_at": "2026-09-16T09:27:12.588Z",
+  "node": "v24.19.0",
+  "platform": "win32",
+  "status": "not_run",
+  "model_calls": 0,
+  "cases": [
+    {
+      "case_id": "code-review:4",
+      "status": "not_run",
+      "model_calls": 0,
+      "fixture_files": 16,
+      "fixture_manifest": [
+        {
+          "path": "CONTRACT.md",
+          "sha256": "b23a1a95e8c2cab0a7e3b65125639c36b368f6b761ff651954ed77ac874d3715",
+          "bytes": 3130
+        },
+        {
+          "path": "base/Checkout.jsx",
+          "sha256": "a913bc7f4ffb373253f256b0a9199fdaef9ca86936b6500cc59f8332a2967cf2",
+          "bytes": 2795
+        },
+        {
+          "path": "base/checkout.css",
+          "sha256": "7d108a812a999360ba164e63fbf6bd06ec0d273c2afe25bf74453f9e63ac2c58",
+          "bytes": 1018
+        },
+        {
+          "path": "base/controller.cjs",
+          "sha256": "7a5fdc638d01a7bbeea0560e3dde336772ed1837148d5e1bb044585c8c3130b7",
+          "bytes": 1472
+        },
+        {
+          "path": "base/main.jsx",
+          "sha256": "aa733a09ee8af03fe5d5c18f42eda07a33b2688ddfe11c4528e706474e61eb88",
+          "bytes": 185
+        },
+        {
+          "path": "head/Checkout.jsx",
+          "sha256": "6792cda47fd4340c42f26716a83cc928ad9f3aaaa87529aed90e8899218ac489",
+          "bytes": 2719
+        },
+        {
+          "path": "head/checkout.css",
+          "sha256": "f77cf1048835f24b3933c559903b16aa6b6d1aee2f1d007be2b05aed9ec838d2",
+          "bytes": 997
+        },
+        {
+          "path": "head/controller.cjs",
+          "sha256": "681693c981d6b3b1a37795a82e5a9b8d7442968e91ec72aa36b9337940f02558",
+          "bytes": 1364
+        },
+        {
+          "path": "head/main.jsx",
+          "sha256": "aa733a09ee8af03fe5d5c18f42eda07a33b2688ddfe11c4528e706474e61eb88",
+          "bytes": 185
+        },
+        {
+          "path": "package-lock.json",
+          "sha256": "0b79bc0b2d770d409756d24dade04349c2a7b0be231b47db20038da6cbb5e5f2",
+          "bytes": 15632
+        },
+        {
+          "path": "package.json",
+          "sha256": "51331f6639a32e6e63e93f2720765f6adce760435e84cc7be80f833c1f3db965",
+          "bytes": 309
+        },
+        {
+          "path": "scenario.json",
+          "sha256": "17fe5e29923df2a35870fd5cc0ae0c77f653b902db9d6495826144febe7ac40e",
+          "bytes": 385
+        },
+        {
+          "path": "shared/fake-quotes.cjs",
+          "sha256": "143f6fc1ab533ccf6336b49a00210eb468497d1802989d04a94376b683370917",
+          "bytes": 696
+        },
+        {
+          "path": "shared/test/controller.test.cjs",
+          "sha256": "a53715caf453e23e75249a41d21e3b67aec783f728b3eed0264b8ac4a4c896d2",
+          "bytes": 1372
+        },
+        {
+          "path": "tools/build.cjs",
+          "sha256": "81da1c10257b57a7235d9209371f54049b3e9be16d4ebd746d4ba5a742a735aa",
+          "bytes": 1104
+        },
+        {
+          "path": "tools/serve.cjs",
+          "sha256": "12d90c3ee58f1024df01eefe1a0ece38525dedc1491845b9702554f32223fc77",
+          "bytes": 1544
+        }
+      ],
+      "fixture_sha256": "cbdc32a23a7bb3bc8426a93dc9013347701df59af8d0c69728231c5df6d01aaa",
+      "corpus_case_sha256": "b7d553debb9733e71eb40eef60ab3485a43d328d79b559c209578f08575e5c04",
+      "public_bundle_sha256": "199b309f442881b6299fe6a032be74362dd80def90dc281afcc08dcea8566b6c",
+      "skill_packages": 286,
+      "preparation_check": "passed",
+      "scripted_tool_probe": {
+        "status": "passed",
+        "grants": {},
+        "trace": [
+          {
+            "sequence": 1,
+            "tool": "read_file",
+            "path": "workspace/CONTRACT.md",
+            "request_sha256": "248ee2a999df198b18e7a2e4b794ac76bd50dd2d4fee8c23c6f5ce90cff6b67a",
+            "request_chars": 65,
+            "decision": "accepted",
+            "reason": null,
+            "response_sha256": "9f0ca0b5bcb9a422fddba8eb9af4caf701558ed52b96ab518a11ee756811ab03"
+          },
+          {
+            "sequence": 2,
+            "tool": "write_file",
+            "path": "workspace/CONTRACT.md",
+            "request_sha256": "879ef105f8285010c6acb75aae3db28494ee0b0241936f3d099cd59b6b14beaa",
+            "request_chars": 86,
+            "decision": "denied",
+            "reason": "write_not_granted",
+            "response_sha256": "0bd3a4cd7f51b3d3d386dd72c2352ad721c54316d60840e7470d2c0c337a44eb"
+          },
+          {
+            "sequence": 3,
+            "tool": "read_file",
+            "path": "private/record.json",
+            "request_sha256": "5d26223a0c10ab04c9b319b98b11c7282d0e97edeaf5e7bbb5e1aecbec174eaa",
+            "request_chars": 63,
+            "decision": "denied",
+            "reason": "invalid_or_private_path",
+            "response_sha256": "bb883fdedb6e790a589ad38e0d69271ad96df48b20e108b749918aa2c945a81d"
+          }
+        ],
+        "final_workspace_unchanged": true
+      },
+      "semantic_verdict_graded": false,
+      "host_isolation_enforced": false
+    },
+    {
+      "case_id": "verified-software-delivery:1",
+      "status": "not_run",
+      "model_calls": 0,
+      "fixture_files": 18,
+      "fixture_manifest": [
+        {
+          "path": "CONTRACT.md",
+          "sha256": "eb2acc914a7a687df035d96afa106f398eca465400fad7985e15a8c12b2c20a1",
+          "bytes": 2374
+        },
+        {
+          "path": "README.md",
+          "sha256": "b8c8c86ccba0dadebf9aa2ce9cc4eea5883eb50494a2ea1d15662b772586c0de",
+          "bytes": 2644
+        },
+        {
+          "path": "contracts/acceptance.json",
+          "sha256": "5d2082a62c8879c3c098a3547b29e03bbe0e50bdcf700679c21bfe89d3e30349",
+          "bytes": 777
+        },
+        {
+          "path": "contracts/stock-api.md",
+          "sha256": "392dded9fa16dc20e1b776b6c433a3e710acdf995acdc43d6fc105efbe527893",
+          "bytes": 1269
+        },
+        {
+          "path": "decisions/approved-direction.md",
+          "sha256": "701bd1c82c255dfbbec4c3ccc082002d19bb895bc1b4816ac4676bfaef5271e3",
+          "bytes": 1078
+        },
+        {
+          "path": "evidence/initial-checks.json",
+          "sha256": "ba430532e97eb4c52f32037f7c90f521b706ab8e352e03e1c187b3f77b14479e",
+          "bytes": 3128
+        },
+        {
+          "path": "evidence/review.json",
+          "sha256": "1ebdc37f28f62aa99c2e8d810fef85b5ce809478de117d130f53123ec54480da",
+          "bytes": 271
+        },
+        {
+          "path": "fixtures/stock.json",
+          "sha256": "bdef5d3f17b83670cc5daf5baea8838b3a34354275a0620311fc8d56be3f584a",
+          "bytes": 165
+        },
+        {
+          "path": "package.json",
+          "sha256": "a296921c792d8f7c4e5c38ce0f64f18cb50a8817926c4db4fd91250d157fd9fc",
+          "bytes": 177
+        },
+        {
+          "path": "services/allocation-worker/current.cjs",
+          "sha256": "a6f5477418d652a6df0b6eadf38243d40ba547e66a16b434abbfc02e8705216c",
+          "bytes": 354
+        },
+        {
+          "path": "services/inventory-api/current.cjs",
+          "sha256": "50eec4766effb0669d60997acf40de6227f84c63713ec02163ca51ece2c7a46e",
+          "bytes": 349
+        },
+        {
+          "path": "services/inventory-api/legacy.cjs",
+          "sha256": "24864138d7d9a63c9c3bc3ddfb8234c1d597a524da380a62fe1335c7c3e345e2",
+          "bytes": 329
+        },
+        {
+          "path": "services/planning-worker/current.cjs",
+          "sha256": "82dc2a924d5c1a6312a03a4d6db843c102c5f22e43ce1f2dfadb0ac422607ce0",
+          "bytes": 460
+        },
+        {
+          "path": "targets/local.json",
+          "sha256": "be10ccf7a20bd8529fba596a58abdf4021c3a5685a242e060f55ddcbf1ec5d8d",
+          "bytes": 512
+        },
+        {
+          "path": "test/happy-path.test.cjs",
+          "sha256": "b303e4a0a46768b99f1a206321c880ea7066fc713a193b5ed5742deb2bd173e9",
+          "bytes": 536
+        },
+        {
+          "path": "tools/local-target.cjs",
+          "sha256": "914bdb4dde72e5a38fda79b53593a51e4d49dd20b4ab88b41d199d4a9c367566",
+          "bytes": 4309
+        },
+        {
+          "path": "tools/service-harness.cjs",
+          "sha256": "189f03d9b8adcad507ef4a4c1f0e990c82e03f6fedf9f7cefe550012edf57c6f",
+          "bytes": 720
+        },
+        {
+          "path": "tools/source-scope.cjs",
+          "sha256": "35f6d25c0cdb68261f264dbf25ccce69246acfd08004c35894c8b774a0d0cb74",
+          "bytes": 1250
+        }
+      ],
+      "fixture_sha256": "9cb96264bafda93e75787d7a0d68e7ec0707f04a5e67e0b9bbcab742203b770f",
+      "corpus_case_sha256": "88e872e06c019e0f3a42ab4230fcaa9e656eb130b7f0055140f0f4d19d627610",
+      "public_bundle_sha256": "dc57c074b13d7929510662eff70a6dd2bfde2dbd998a9a7de8f043b66617d215",
+      "skill_packages": 286,
+      "preparation_check": "passed",
+      "scripted_tool_probe": {
+        "status": "passed",
+        "grants": {
+          "writable_roots": [
+            "workspace/services/",
+            "workspace/test/",
+            "workspace/artifacts/"
+          ]
+        },
+        "trace": [
+          {
+            "sequence": 1,
+            "tool": "read_file",
+            "path": "workspace/CONTRACT.md",
+            "request_sha256": "248ee2a999df198b18e7a2e4b794ac76bd50dd2d4fee8c23c6f5ce90cff6b67a",
+            "request_chars": 65,
+            "decision": "accepted",
+            "reason": null,
+            "response_sha256": "9d401e74891915f6c4032d8a6501b3bbb6cdc3a76b0e430e7e3da2979623bb77"
+          },
+          {
+            "sequence": 2,
+            "tool": "write_file",
+            "path": "workspace/CONTRACT.md",
+            "request_sha256": "879ef105f8285010c6acb75aae3db28494ee0b0241936f3d099cd59b6b14beaa",
+            "request_chars": 86,
+            "decision": "denied",
+            "reason": "write_not_granted",
+            "response_sha256": "0bd3a4cd7f51b3d3d386dd72c2352ad721c54316d60840e7470d2c0c337a44eb"
+          },
+          {
+            "sequence": 3,
+            "tool": "read_file",
+            "path": "private/record.json",
+            "request_sha256": "5d26223a0c10ab04c9b319b98b11c7282d0e97edeaf5e7bbb5e1aecbec174eaa",
+            "request_chars": 63,
+            "decision": "denied",
+            "reason": "invalid_or_private_path",
+            "response_sha256": "bb883fdedb6e790a589ad38e0d69271ad96df48b20e108b749918aa2c945a81d"
+          },
+          {
+            "sequence": 4,
+            "tool": "write_file",
+            "path": "workspace/artifacts/author-probe.txt",
+            "request_sha256": "59cb7c3b5e65160585e120028a0624defbc50acaaded8c2b65f0803a1a71ac18",
+            "request_chars": 111,
+            "decision": "accepted",
+            "reason": null,
+            "response_sha256": "82a04111302544ac48c07d0b7f02d89102617545f755e873e79bea00196fff36"
+          },
+          {
+            "sequence": 5,
+            "tool": "delete_file",
+            "path": "workspace/artifacts/author-probe.txt",
+            "request_sha256": "e1ea6eca1fe6ff70314cfa3b45eed94ff682603068440b97a4e87f5020956c3d",
+            "request_chars": 82,
+            "decision": "accepted",
+            "reason": null,
+            "response_sha256": "ff24efdc76d16482eb827911dfb5ae0cf2590ea676232ccc7dfc21ac4b376bff"
+          },
+          {
+            "sequence": 6,
+            "tool": "write_file",
+            "path": "workspace/evidence/review.json",
+            "request_sha256": "c976e1b0974f413e86c57962e203cf107c40deb0c9d3c7b8dab6de808032b673",
+            "request_chars": 90,
+            "decision": "denied",
+            "reason": "write_not_granted",
+            "response_sha256": "0bd3a4cd7f51b3d3d386dd72c2352ad721c54316d60840e7470d2c0c337a44eb"
+          },
+          {
+            "sequence": 7,
+            "tool": "write_file",
+            "path": "workspace/targets/local.json",
+            "request_sha256": "491de553138f106f2feee1cc63dffea383b59476e140e3a540145b48c5695573",
+            "request_chars": 88,
+            "decision": "denied",
+            "reason": "write_not_granted",
+            "response_sha256": "0bd3a4cd7f51b3d3d386dd72c2352ad721c54316d60840e7470d2c0c337a44eb"
+          },
+          {
+            "sequence": 8,
+            "tool": "write_file",
+            "path": "workspace/contracts/acceptance.json",
+            "request_sha256": "5839d79ea487de4fb49f5fde42afb8f3cb1eb6864bbe38f912aefdda70fcccdf",
+            "request_chars": 95,
+            "decision": "denied",
+            "reason": "write_not_granted",
+            "response_sha256": "0bd3a4cd7f51b3d3d386dd72c2352ad721c54316d60840e7470d2c0c337a44eb"
+          }
+        ],
+        "final_workspace_unchanged": true
+      },
+      "semantic_verdict_graded": false,
+      "host_isolation_enforced": false
+    },
+    {
+      "case_id": "threejs-development:6",
+      "status": "not_run",
+      "model_calls": 0,
+      "fixture_files": 3,
+      "fixture_manifest": [
+        {
+          "path": "CONTEXT.md",
+          "sha256": "2a0b77d2870c7f3821fef238ceadd6aace41a7f370e39d1b9780e3413aaf8d5a",
+          "bytes": 1622
+        },
+        {
+          "path": "existing-policy.json",
+          "sha256": "188421028c0fd108d23da8a2e6bba1040d66df00580c04e1119b47c9f3112b9d",
+          "bytes": 5843
+        },
+        {
+          "path": "upstream-evidence.json",
+          "sha256": "57188f45454a58b372e10b0eb3d8dbb81b37ae7921d9267e6f998f12919ce3d5",
+          "bytes": 3367
+        }
+      ],
+      "fixture_sha256": "379217d486cb8f4e6cd468dc30d70b107c66ab261f1e5e1fc2d718027170bdf9",
+      "corpus_case_sha256": "7751bce19da11eede0232c34bb319b98f5262242fb7bc4b9c885507288054fc3",
+      "public_bundle_sha256": "ee1c25f595d25452c6d62a2db254c8bcfc20b04a78f7726beb453427ea3409df",
+      "skill_packages": 286,
+      "preparation_check": "passed",
+      "scripted_tool_probe": {
+        "status": "passed",
+        "grants": {},
+        "trace": [
+          {
+            "sequence": 1,
+            "tool": "read_file",
+            "path": "workspace/CONTEXT.md",
+            "request_sha256": "b9db25a3d6ae634f955c530fb377e7c0151572ec386cb839281e3199e50b59f0",
+            "request_chars": 64,
+            "decision": "accepted",
+            "reason": null,
+            "response_sha256": "b2a8f5a15b2bd0b353b757fe16b4bb39bf2fb01a86c61633ce7c76c786d1813e"
+          },
+          {
+            "sequence": 2,
+            "tool": "write_file",
+            "path": "workspace/CONTEXT.md",
+            "request_sha256": "d5a5578af0f788e146ba0448f43be1a08adeeb84a2550774fcebdda62b4b04da",
+            "request_chars": 85,
+            "decision": "denied",
+            "reason": "write_not_granted",
+            "response_sha256": "0bd3a4cd7f51b3d3d386dd72c2352ad721c54316d60840e7470d2c0c337a44eb"
+          },
+          {
+            "sequence": 3,
+            "tool": "read_file",
+            "path": "private/record.json",
+            "request_sha256": "5d26223a0c10ab04c9b319b98b11c7282d0e97edeaf5e7bbb5e1aecbec174eaa",
+            "request_chars": 63,
+            "decision": "denied",
+            "reason": "invalid_or_private_path",
+            "response_sha256": "bb883fdedb6e790a589ad38e0d69271ad96df48b20e108b749918aa2c945a81d"
+          }
+        ],
+        "final_workspace_unchanged": true
+      },
+      "semantic_verdict_graded": false,
+      "host_isolation_enforced": false
+    }
+  ],
+  "author_checks": [
+    {
+      "command": "node tests/skill-review-react-fixtures.test.js",
+      "sha256": "2e8eaf1101d7b8cff846e5d23d57273f5002fc6adb352347da02ae1a398ecc44",
+      "started_at": "2026-09-16T09:27:06.398Z",
+      "elapsed_ms": 1687,
+      "exit_code": 0,
+      "checks_passed": 9,
+      "stdout": "PASS public source views use pinned real React packages and record no unexecuted results\nPASS ordinary sequential error/retry checks pass for both source views\nPASS new loading states clear quote/order and prevent premature confirmation\nPASS out-of-order success reproduces the candidate quote/confirmation mismatch only\nPASS a superseded error only replaces the candidate current success\nPASS dispose evidence is limited to controller state; neither emits to removed subscribers\nPASS a fixed author repair in a fresh copy removes both race regressions\nPASS the real local timer adapter returns both totals and fails exactly the next request\nNOT RUN dependency installation/build (opt in with --build and CRAFTROSTER_NPM_CLI)\nPASS all canonical fixture bytes remain unchanged and no build/dependency artifacts were added\n{\"authorChecksPassed\":9,\"build\":\"not_run\",\"browser\":\"not_run\",\"modelEvaluation\":\"not_run\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": "node tests/skill-delivery-migration-fixtures.test.js",
+      "sha256": "e7ff5f8940c9ebbe37cffe23abbc7f37c65d48634bacd8c3394a8fc69e5dc235",
+      "started_at": "2026-09-16T09:27:08.782Z",
+      "elapsed_ms": 1109,
+      "exit_code": 0,
+      "checks_passed": 13,
+      "stdout": "PASS initial public evidence contains only one actually passing happy path and no completed acceptance or independent review\nPASS executed baseline matrix distinguishes two reachable protocol defects from unexecuted evidence gaps\nPASS the declared LF-normalized evidence scope remains current after a CRLF checkout without masking source changes\nPASS new source and acceptance files enter the evidence scope while receipts stay outside and symlink aliases are refused\nPASS private bounded repairs pass every supported producer-consumer pairing without editing preserved comparison services\nPASS real serialized probes record baseline deployment and rollback failures in a new local-only target\nPASS repaired services survive staged local deployment and rollback with exact stock semantics\nPASS existing local authority does not turn one happy test into compatibility, rollback or review proof\nPASS actual author compatibility and rollback proof still cannot manufacture independent review or survive source drift\nPASS removing the legacy representation again passes the happy test but fails consumer compatibility\nPASS the repaired consumer rejects malformed, contradictory and unsupported-unit responses instead of guessing\nPASS foreign targets and producer selectors are refused, recorded and cannot redirect filesystem writes\nPASS all private fixes, counterexamples and target state stay outside canonical public inputs\n{\"kind\":\"author_fixture_checks\",\"modelExecution\":false,\"independentReviewPerformed\":false,\"realCommitOrDeployment\":false,\"node\":\"v24.19.0\",\"platform\":\"win32\",\"baselineMatrix\":[{\"producer\":\"legacy\",\"consumer\":\"allocation\",\"status\":\"passed\"},{\"producer\":\"legacy\",\"consumer\":\"planning\",\"status\":\"failed\"},{\"producer\":\"current\",\"consumer\":\"allocation\",\"status\":\"failed\"},{\"producer\":\"current\",\"consumer\":\"planning\",\"status\":\"passed\"}],\"repairedMatrix\":[{\"producer\":\"legacy\",\"consumer\":\"allocation\",\"status\":\"passed\"},{\"producer\":\"legacy\",\"consumer\":\"planning\",\"status\":\"passed\"},{\"producer\":\"current\",\"consumer\":\"allocation\",\"status\":\"passed\"},{\"producer\":\"current\",\"consumer\":\"planning\",\"status\":\"passed\"}]}\n13 delivery migration author-fixture checks passed; no model, independent review, real commit or external deployment ran.\n",
+      "stderr": ""
+    },
+    {
+      "command": "node tests/skill-three-provenance-fixtures.test.js",
+      "sha256": "8ef11a5ecd2b9855b3b61015df38dcf4af0d4ea36109ab75079ecc827f3212d5",
+      "started_at": "2026-09-16T09:27:10.585Z",
+      "elapsed_ms": 1885,
+      "exit_code": 0,
+      "checks_passed": 5,
+      "stdout": "PASS the public policy matches all current pinned reference paths and provenance sources\nPASS root, package and path-level notices retain materially different declarations\nPASS preparation includes only declared metadata and current runtime skills, excluding author tests and upstream payloads\nPASS read-only metadata inspection cannot mutate policy or import files through the broker\nPASS offline author checks leave primary evidence and canonical policy unchanged\n5 provenance fixture checks passed; no model, import, whole-tree or remote originality result claimed.\n",
+      "stderr": ""
+    }
+  ],
+  "implementation_sha256": {
+    "scripts/prepare-skill-pilot.js": "7d5036a0f793436be8041eccf2adc3dc5f9e80afab3a2492ec52e50afe5d59b5",
+    "scripts/lib/skill-eval-broker.js": "16254d4f9876c861d67b82441c09d70a0af2407b08e9e2186abe4c1516093679",
+    "docs/audits/skill-optimization-2026-09-16/record-ui-delivery-preparation.cjs": "1547201830455dfa29a6324db241d8da57821d9fb0b2033bf7cb3758afc55530"
+  },
+  "limitations": [
+    "React Node checks do not certify browser focus, layout, rendering or devices. Actual browser observations are recorded separately.",
+    "Migration services exchange actual serialized responses in-process. The target is synthetic local state, not a network deployment or a real Git commit.",
+    "The required independent-review adapter is unavailable; self-written approval claims cannot complete the delivery gate.",
+    "Provenance inputs are selected fixed-revision declarations. Metadata verification is not whole-tree path clearance or remote originality execution.",
+    "No controlled model host, activation, model cost, semantic outcome or full task result is certified. Browser and arbitrary code execution require separate isolation."
+  ]
+}

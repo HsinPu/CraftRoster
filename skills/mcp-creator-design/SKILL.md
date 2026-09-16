@@ -48,13 +48,17 @@ Use this skill when the task is to design, build, review, or evaluate an MCP ser
 **建議技術棧**：**TypeScript**（SDK 支援佳、執行環境相容性高）；**傳輸**：遠端用 **Streamable HTTP**（stateless JSON）、本機用 **stdio**。
 
 - **MCP 最佳實踐**：必讀 [reference/mcp_best_practices.md](reference/mcp_best_practices.md)
-- **TypeScript**：以 WebFetch 載入 `https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/main/README.md`，並參閱 [reference/node_mcp_server.md](reference/node_mcp_server.md)
-- **Python**：以 WebFetch 載入 `https://raw.githubusercontent.com/modelcontextprotocol/python-sdk/main/README.md`，並參閱 [reference/python_mcp_server.md](reference/python_mcp_server.md)
-- **Java**：以 WebFetch 載入 `https://raw.githubusercontent.com/modelcontextprotocol/java-sdk/main/README.md`，並參閱 [reference/java_mcp_server.md](reference/java_mcp_server.md)
+使用目前可用、已授權的文件擷取能力，取得所選 SDK 的官方文件並核對專案使用的版本；不依賴工具必須叫做 WebFetch。下列 main README 是導航起點，不代表與已安裝版本相同。必要時查對應 release/tag 或本地 SDK source。
+
+- **TypeScript**：官方 SDK `https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/main/README.md`；參閱 [reference/node_mcp_server.md](reference/node_mcp_server.md)
+- **Python**：官方 SDK `https://raw.githubusercontent.com/modelcontextprotocol/python-sdk/main/README.md`；參閱 [reference/python_mcp_server.md](reference/python_mcp_server.md)
+- **Java**：官方 SDK `https://raw.githubusercontent.com/modelcontextprotocol/java-sdk/main/README.md`；參閱 [reference/java_mcp_server.md](reference/java_mcp_server.md)
+
+文件來源不可用時，先查已安裝 SDK source、版本資訊或可用的官方快取，標示核對範圍與未驗證 API。繼續不依賴缺失證據的工作；只有該版本／能力差異會影響正確性時才暫停相應實作，不捏造已讀過最新文件。
 
 ### 1.4 規劃實作
 
-- 理解目標服務的 API：端點、認證、資料模型（必要時用 web search / WebFetch）
+- 理解目標服務的 API：端點、認證、資料模型；需要外部證據時使用可用的搜尋或官方文件擷取能力。
 - **Tool 選擇**：優先完整 API 覆蓋，列出要實作的端點，從最常用操作開始
 
 ---

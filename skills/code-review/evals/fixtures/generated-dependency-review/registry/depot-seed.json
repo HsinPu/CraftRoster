@@ -1,0 +1,11 @@
+{
+  "format": "synthetic-depot-series-v1",
+  "first": 1,
+  "count": 9999,
+  "digits": 4,
+  "idPrefix": "D",
+  "labelPrefix": "Synthetic depot ",
+  "capacityBase": 250,
+  "capacityPeriod": 751,
+  "packageVersion": "1.0.0"
+}

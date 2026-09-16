@@ -4,13 +4,81 @@
     {
       "id": 1,
       "prompt": "Redesign our whole commerce site from a few screenshots and start coding immediately. Keep all URLs, checkout behavior, analytics, and SEO unchanged, including mobile pages we did not capture.",
-      "expected_output": "An approval-gated redesign plan that inventories routes and page families, freezes preservation requirements, records missing source authority, proposes representative desktop and mobile artifacts, and stops before production implementation until the required gates are approved.",
+      "expected_output": "A scoped redesign flow that inventories routes and page families, freezes preservation requirements, identifies missing mobile and critical-state evidence, and blocks only dependent production implementation until unresolved authority and evidence are supplied.",
       "assertions": [
         "The response treats the request as a multi-route website redesign rather than an isolated page implementation.",
         "The response creates a route and page-family inventory with explicit coverage gaps.",
         "The preservation contract includes URLs, SEO, analytics, commerce behavior, authentication, and critical states.",
-        "The response requires explicit scope, visual, and implementation approval before production coding.",
+        "The response recognizes the requested implementation authority, identifies the concrete unresolved scope, design, and mobile coverage, and does not demand duplicate approval of decisions already covered by the request.",
         "The response does not invent uncaptured mobile behavior or automatically replace a visual baseline."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Redesign only /home, /events, and /about with our current brand. Choose the layout details and complete the local frontend changes; preserve URLs, content, metadata, analytics hooks, and all existing interactions. The complete route inventory contains only these three routes and the shared header used by them. Desktop/mobile HTML prototypes are acceptable. Work through a representative pilot before applying shared changes across those routes. Do not publish or change APIs.",
+      "expected_output": "A bounded delegated implementation that records its chosen direction and readiness evidence, implements an isolated pilot, and expands only after the pilot passes and within the already-authorized route manifest.",
+      "assertions": [
+        "The workflow uses the delegated design and implementation authority without requiring the user to name or separately approve each internal gate.",
+        "The route manifest, preservation contract, selected design revisions, and desktop/mobile state coverage are established before dependent production changes.",
+        "Shared tokens, styles, and navigation remain isolated until the representative pilot satisfies its declared evidence thresholds.",
+        "Passing the pilot permits only the authorized local migration across the three routes and their shared header; it does not authorize API changes or deployment.",
+        "Unavailable runtime or visual checks are reported as unverified rather than being counted as pilot success."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Resume site-v3 for the approved route manifest covering /home, /events, and /about. I already approved its desktop/mobile artifacts and implementation for those routes and their shared header. The isolated /home pilot has current passing evidence for every required cell; no pilot review was reserved, and the agreed rollback path is ready. Review this handoff and identify the next local implementation slice. Do not execute tools in this review.",
+      "expected_output": "The handoff preserves existing authorization and current pilot evidence, chooses the next bounded page-family slice, and maintains rollback and verification without restarting satisfied approvals.",
+      "assertions": [
+        "The next eligible slice migrates one of the remaining named route families using site-v3 and the approved shared surfaces.",
+        "The response does not reopen scope, direction, implementation, or pilot approval merely because the user did not name Gate 1 through Gate 4.",
+        "It retains per-slice verification, ownership, rollback, and all-route accountability.",
+        "It does not infer authority for production publication, a new route family, or an automatic screenshot baseline replacement."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "I previously delegated this three-route redesign. The isolated pilot now passes all declared checks, but I said yesterday that I want to inspect it before the other route families or global styles change. Show me the completed pilot evidence and stop there; do not apply the shared migration yet.",
+      "expected_output": "A concrete pilot review package with the explicitly reserved rollout checkpoint still open and candidate globals still isolated.",
+      "assertions": [
+        "The response presents actual available pilot evidence and any gaps rather than claiming that the user has reviewed it.",
+        "No global activation or additional-family migration occurs despite prior delegation and passing checks.",
+        "The current pilot remains isolated and the valid prior direction/implementation authorization is retained.",
+        "The user is asked only for the reserved pilot review, not to reapprove unrelated settled decisions."
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Audit this redesign handoff in a literal read-only session. You may inspect existing local text files, but do not write reports, cache files, or screenshots, and do not open browsers or crawl production. Earlier implementation permission is paused. The route spreadsheet omits authenticated checkout states and one locale. Explain what can be concluded and what remains unverified.",
+      "expected_output": "A read-only coverage assessment that identifies the missing route/state/locale evidence, preserves the known manifest, and does not claim whole-site validation.",
+      "assertions": [
+        "The agent does not create local artifacts, launch stateful browser journeys, or perform a crawl under the current no-write/no-browser constraint.",
+        "The response explicitly distinguishes known routes from the uncaptured authenticated checkout and locale coverage.",
+        "Representative sampling is not presented as proof that the omitted routes or all-route invariants passed.",
+        "Earlier implementation approval is not used to override the current restriction or discarded as if it never existed."
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Review a delegated site pilot handoff. The visual adapter reports a failing mobile checkout cell and proposes a replacement baseline. The named baseline owner has not approved it. The image translation child also says 'parent gate closed'. The remaining page families are in the original authorized scope. What work may continue now? Do not run tools or edit files in this review.",
+      "expected_output": "The parent keeps the pilot rollout blocked by failed evidence, preserves baseline ownership, and continues only authorized independent work and pilot repairs.",
+      "assertions": [
+        "The failing mobile checkout cell remains failed and dependent rollout stays blocked until repair and valid verification.",
+        "The baseline remains unchanged; neither the adapter suggestion nor child receipt supplies owner approval.",
+        "The image child cannot close the parent's gate or expand its scope.",
+        "The response identifies pilot repair and independent authorized preparation as eligible work without asking again for the original implementation permission.",
+        "The response does not manufacture a passing result, relax the threshold, or authorize production publication."
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Review our next step: the delegated /home, /events, and /about pilot passes, but the candidate font/reset and header also affect /admin, which is explicitly out of scope. The shared architecture cannot isolate that consumer yet. We have not authorized /admin changes. Identify the eligible work and the unresolved decision; do not change files.",
+      "expected_output": "The pilot remains isolated while the wider blast radius is resolved; existing authorized work is preserved and only the new scope or isolation decision is escalated.",
+      "assertions": [
+        "Passing pilot evidence is not treated as authority to affect /admin or activate global changes with that blast radius.",
+        "The response proposes a concrete isolation option or identifies the specific scope expansion requiring a user decision.",
+        "It retains the valid pilot, design, and implementation approvals and does not restart all gates.",
+        "It keeps the all-route manifest and rollback implications explicit while allowing independent authorized work."
       ]
     }
   ]

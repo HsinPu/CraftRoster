@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "scenario_id": "field-notes-release-42",
+  "policy_revision": "project-release-gates-4",
+  "subject_fields": ["app_id", "version", "build", "artifact_ref", "channel"],
+  "required_receipt_status": "passed",
+  "validity_rule": "recorded_at <= snapshot_at <= valid_until",
+  "gates": [
+    {
+      "id": "archive",
+      "description": "The exact archive has matching identity, expected signing, and a completed processing record.",
+      "configuration_keys": ["signing"],
+      "required_observations": ["archive-identity", "signing-profile", "processing-complete"]
+    },
+    {
+      "id": "core-paths",
+      "description": "Sign-in, note creation, and offline reopening have recorded checks for this artifact.",
+      "configuration_keys": ["backend"],
+      "required_observations": ["sign-in", "create-note", "offline-reopen"]
+    },
+    {
+      "id": "store-assets",
+      "description": "Release notes and screenshot coverage match the current metadata revision for the two supported locales.",
+      "configuration_keys": ["metadata"],
+      "required_observations": ["release-notes", "screenshots-en-US", "screenshots-zh-TW"]
+    },
+    {
+      "id": "backend-compatibility",
+      "description": "Note read/write contracts and the existing rollback compatibility window cover this artifact.",
+      "configuration_keys": ["backend"],
+      "required_observations": ["notes-read-write", "rollback-contract-window"]
+    },
+    {
+      "id": "account-deletion",
+      "description": "A device receipt covers the current deletion confirmation and a subsequent sign-in attempt after deletion.",
+      "configuration_keys": ["backend"],
+      "required_observations": ["deletion-confirmation", "post-deletion-sign-in"]
+    },
+    {
+      "id": "privacy-reconciliation",
+      "description": "The current disclosure and store copy are reconciled with the current telemetry configuration.",
+      "configuration_keys": ["metadata", "privacy_disclosure", "telemetry_configuration"],
+      "required_observations": ["event-inventory", "disclosure-mapping", "opt-in-behavior"]
+    }
+  ]
+}

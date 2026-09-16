@@ -1,0 +1,17 @@
+{
+  "logBytes": 0,
+  "passLineCount": 0,
+  "smokeStarted": false,
+  "cleanup": {
+    "verifiedEmptyAndRemoved": true,
+    "ownedTemp": "C:\\Users\\win10\\AppData\\Local\\Temp\\craftroster-native51-audit-22px8A"
+  },
+  "limitation": "Initial sandbox Node child spawn failed; this attempt is not installer evidence.",
+  "hostProbeVersion": "5.1.19041.3803",
+  "schemaVersion": 1,
+  "attemptedExecutable": "C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe",
+  "log": "native-powershell51-smoke.log",
+  "modelCalls": 0,
+  "status": "spawn_failed",
+  "error": "spawn EPERM, errno -4048"
+}

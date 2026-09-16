@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "fixtureOnly": true,
+  "digestAlgorithm": "sha256-utf8-lf",
+  "artifact": {
+    "buildId": "A",
+    "artifactSha256": "3216f3fbf1a30e989e3b4ce3f4e5b41887d4b9de8a6ed8959c8dbe924e2e7471",
+    "path": "artifacts/A.json"
+  },
+  "target": {
+    "targetId": "B",
+    "configRevision": "B-r2",
+    "configSha256": "b13dc9901a5a4d54b5cdf046be6ea9a502aa33b8fc31cc243806c7880a4033a0",
+    "path": "config/staging-B.json"
+  },
+  "requiredBeforeRollout": [
+    "build",
+    "config-validation",
+    "recovery-plan"
+  ],
+  "requiredBeforeHealthy": [
+    "staging-smoke"
+  ],
+  "authorizedActions": [
+    "read",
+    "report"
+  ],
+  "modelEvaluation": {
+    "status": "not_run",
+    "attempts": 0
+  },
+  "connectedServices": []
+}

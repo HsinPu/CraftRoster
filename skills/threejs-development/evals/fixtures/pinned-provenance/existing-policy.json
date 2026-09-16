@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "kind": "existing_repository_reference_policy",
+  "sources": [
+    {
+      "path": "scripts/data/skill-reference-sources.json",
+      "sha256": "607701c72f18f52461bed1a7a71fb52383a1dc18ff96e8514aba3c5d5061cbb1"
+    },
+    {
+      "path": "docs/threejs-skill-sources.md",
+      "sha256": "0c09fae2af6acd371fe37ce48472da5aa5fedcd45f52ca5854eaa6438aa65e8c"
+    }
+  ],
+  "repository": "scottstts/Threejs-Awesome-Graphics-Agent-Skills",
+  "revision": "e43dcb03020cae5b08983a828bc1817dd6c0c40a",
+  "tree": "d0036d0ac9d07e3a7bc7b28fd6096b84d4c1b503",
+  "root_license_evidence": {
+    "kind": "license-file",
+    "path": "LICENSE",
+    "blob": "f5edb1a90ba350596268a7f2e0f2c36002700fa6"
+  },
+  "canonical_author": "HsinPu",
+  "canonical_source": "HsinPu/CraftRoster",
+  "canonical_license": "Apache-2.0",
+  "reference_mode": "first-party adaptation, no upstream redistribution",
+  "reference_paths": [
+    {
+      "local_skill": "threejs-atmosphere-aerial-perspective",
+      "path": "skills/threejs-atmosphere-aerial-perspective/SKILL.md",
+      "git_blob": "70c9452ca04bb3013aa4b1634e84f453482ca07c"
+    },
+    {
+      "local_skill": "threejs-bloom",
+      "path": "skills/threejs-bloom/SKILL.md",
+      "git_blob": "f01ecb22200be5d763ba158b483ce0d748c165ed"
+    },
+    {
+      "local_skill": "threejs-camera-direction",
+      "path": "skills/threejs-camera-direction/SKILL.md",
+      "git_blob": "5d5671f5b2b16d79b95217cde6f76d9e5857ade3"
+    },
+    {
+      "local_skill": "threejs-development",
+      "path": "skills/threejs-skill-router/SKILL.md",
+      "git_blob": "cf52ea5883474da81b4be30dd4dc01757813cc4f"
+    },
+    {
+      "local_skill": "threejs-exposure-color-grading",
+      "path": "skills/threejs-exposure-color-grading/SKILL.md",
+      "git_blob": "cb3d96f614f02a22f2fe984894edded19c935090"
+    },
+    {
+      "local_skill": "threejs-image-pipeline",
+      "path": "skills/threejs-image-pipeline/SKILL.md",
+      "git_blob": "814afb7bf8a781c94250b13ca910913e2f6f5abf"
+    },
+    {
+      "local_skill": "threejs-parallax-occlusion-mapping",
+      "path": "skills/threejs-parallax-occlusion-mapping/SKILL.md",
+      "git_blob": "be797cfd17c9cef1ed356f3eea5a42a36a60f3a9"
+    },
+    {
+      "local_skill": "threejs-precipitation-surfaces",
+      "path": "skills/threejs-precipitation-surfaces/SKILL.md",
+      "git_blob": "40e902e03d60b13f5de8c8ce57bf5c89bbeb9a8a"
+    },
+    {
+      "local_skill": "threejs-procedural-animation",
+      "path": "skills/threejs-procedural-animation/SKILL.md",
+      "git_blob": "09cbfeee54cfddbbe29f5f8ebea2170bbb749ba5"
+    },
+    {
+      "local_skill": "threejs-procedural-architecture",
+      "path": "skills/threejs-procedural-architecture/SKILL.md",
+      "git_blob": "35de8e2cb15518ac451160b9c2f77069a3e6f86d"
+    },
+    {
+      "local_skill": "threejs-procedural-fields",
+      "path": "skills/threejs-procedural-fields/SKILL.md",
+      "git_blob": "22271c9cb67674aee53d749ef9fad1d671201061"
+    },
+    {
+      "local_skill": "threejs-procedural-geometry",
+      "path": "skills/threejs-procedural-geometry/SKILL.md",
+      "git_blob": "7c2a454c2da417973152af1ab422992033e672cc"
+    },
+    {
+      "local_skill": "threejs-procedural-materials",
+      "path": "skills/threejs-procedural-materials/SKILL.md",
+      "git_blob": "14779e1b3b8d5470c62460ff59e759f21ad486e1"
+    },
+    {
+      "local_skill": "threejs-procedural-planets",
+      "path": "skills/threejs-procedural-planets/SKILL.md",
+      "git_blob": "2fa3ae71f0c326d947d1521371a505c99fa2e591"
+    },
+    {
+      "local_skill": "threejs-procedural-vegetation",
+      "path": "skills/threejs-procedural-vegetation/SKILL.md",
+      "git_blob": "694519a4654aee6edac7cc5ff9dcfa9b28fd2823"
+    },
+    {
+      "local_skill": "threejs-procedural-vfx",
+      "path": "skills/threejs-procedural-vfx/SKILL.md",
+      "git_blob": "e8f6f1f8027d62e44682395eb874cbcf61bdd83f"
+    },
+    {
+      "local_skill": "threejs-raymarched-space-effects",
+      "path": "skills/threejs-raymarched-space-effects/SKILL.md",
+      "git_blob": "2adae39212dec3230126fb5b89b6e9939a657a2c"
+    },
+    {
+      "local_skill": "threejs-screen-space-ambient-occlusion",
+      "path": "skills/threejs-screen-space-ambient-occlusion/SKILL.md",
+      "git_blob": "901f99f83d2d87ab9b834cad5d1bfaf4e6912d25"
+    },
+    {
+      "local_skill": "threejs-shadow-systems",
+      "path": "skills/threejs-shadow-systems/SKILL.md",
+      "git_blob": "7f285547bd453945872301f03c9ea04ccd04690c"
+    },
+    {
+      "local_skill": "threejs-spectral-ocean",
+      "path": "skills/threejs-spectral-ocean/SKILL.md",
+      "git_blob": "57b5ea3c23dde38b99a85bf871d80f5f3ed7241f"
+    },
+    {
+      "local_skill": "threejs-temporal-surfaces",
+      "path": "skills/threejs-temporal-surfaces/SKILL.md",
+      "git_blob": "97a47fd8fc4190d4dca0c95ada03145560e25d10"
+    },
+    {
+      "local_skill": "threejs-visual-validation",
+      "path": "skills/threejs-visual-validation/SKILL.md",
+      "git_blob": "378aef36135e97343d294da312305c1acfda89a0"
+    },
+    {
+      "local_skill": "threejs-volumetric-clouds",
+      "path": "skills/threejs-volumetric-clouds/SKILL.md",
+      "git_blob": "93a16ad8232bf44c344bbadf4d6b44ef650515ca"
+    },
+    {
+      "local_skill": "threejs-water-optics",
+      "path": "skills/threejs-water-optics/SKILL.md",
+      "git_blob": "be4adabc8d7a342adcdabf266546be54ef1ec17b"
+    }
+  ],
+  "excluded_material": [
+    "examples",
+    "assets",
+    "vendor source",
+    "binary lookup tables",
+    "models",
+    "textures",
+    "installers",
+    "source_materials"
+  ],
+  "future_import_condition": "Path-level evidence, compatibility review and a new audit; root metadata alone is insufficient.",
+  "current_remote_originality_result": {
+    "status": "not_run",
+    "observed_at": null
+  },
+  "local_source_digest_algorithm": "sha256-utf8-lf"
+}

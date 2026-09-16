@@ -1,0 +1,15 @@
+{
+  "sdk_package": "@modelcontextprotocol/sdk",
+  "sdk_version": "1.17.5",
+  "provenance": "Author paraphrases of official tagged sources inspected on 2026-09-16. Offline replay; not live retrieval, an upstream quotation, or installed-package proof.",
+  "documents": {
+    "sdk-quickstart": {
+      "source_url": "https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/1.17.5/README.md",
+      "summary": "For this tagged release, the high-level server is McpServer from @modelcontextprotocol/sdk/server/mcp.js. StdioServerTransport is exported by @modelcontextprotocol/sdk/server/stdio.js. Zod supplies input schemas. registerTool accepts a name, a configuration containing a raw input-schema shape, and a handler returning content. Connect the server to the transport asynchronously. The example uses text content blocks. Inspect installed declarations for complete signatures; this summary is not a substitute for typechecking."
+    },
+    "server-validation": {
+      "source_url": "https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/1.17.5/src/server/mcp.ts",
+      "summary": "In this release, tool discovery converts the registered input schema to JSON Schema and exposes annotations. Call handling validates arguments before invoking the tool callback. A failed parse produces the SDK InvalidParams protocol error. Exceptions from the callback become an isError tool result. These are different failure paths; test the public client-observable behavior instead of assuming all failures use one response form."
+    }
+  }
+}

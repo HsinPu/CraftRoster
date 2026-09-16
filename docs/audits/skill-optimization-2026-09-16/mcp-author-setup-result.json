@@ -1,0 +1,22 @@
+{
+  "root": "C:\\Users\\win10\\AppData\\Local\\Temp\\craftroster-mcp-author-rZ7gv6",
+  "node": "v24.19.0",
+  "command": [
+    "C:\\Users\\win10\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+    "C:/Users/win10/AppData/Local/OpenAI/Codex/runtimes/cua_node/6f12e0ef1c6e5061/bin/node_modules/npm/bin/npm-cli.js",
+    "install",
+    "--ignore-scripts",
+    "--no-audit",
+    "--no-fund",
+    "--registry=https://registry.npmjs.org",
+    "--cache=C:\\Users\\win10\\AppData\\Local\\Temp\\craftroster-mcp-author-rZ7gv6\\cache",
+    "--userconfig=C:\\Users\\win10\\AppData\\Local\\Temp\\craftroster-mcp-author-rZ7gv6\\user.npmrc",
+    "--globalconfig=C:\\Users\\win10\\AppData\\Local\\Temp\\craftroster-mcp-author-rZ7gv6\\global.npmrc"
+  ],
+  "exit": 0,
+  "error": null,
+  "stdout": "\nadded 92 packages in 7s\n",
+  "stderr": "npm notice\nnpm notice New major version of npm available! 11.19.0 -> 12.0.2\nnpm notice Changelog: https://github.com/npm/cli/releases/tag/v12.0.2\nnpm notice To update run: npm install -g npm@12.0.2\nnpm notice\n",
+  "model_calls": 0,
+  "recorded_at": "2026-09-16T13:35:20.128Z"
+}

@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "fixtureOnly": true,
+  "origin": "Actual author execution of the single supplied happy-path function; no model, independent review, commit or deployment.",
+  "sourceScope": {
+    "algorithm": "sha256-utf8-lf",
+    "scopePolicy": "recursive regular UTF-8 fixture files; symlinks rejected",
+    "excludedRoots": [
+      "evidence/"
+    ],
+    "inputs": {
+      "CONTRACT.md": "eb2acc914a7a687df035d96afa106f398eca465400fad7985e15a8c12b2c20a1",
+      "README.md": "b8c8c86ccba0dadebf9aa2ce9cc4eea5883eb50494a2ea1d15662b772586c0de",
+      "contracts/acceptance.json": "5d2082a62c8879c3c098a3547b29e03bbe0e50bdcf700679c21bfe89d3e30349",
+      "contracts/stock-api.md": "392dded9fa16dc20e1b776b6c433a3e710acdf995acdc43d6fc105efbe527893",
+      "decisions/approved-direction.md": "701bd1c82c255dfbbec4c3ccc082002d19bb895bc1b4816ac4676bfaef5271e3",
+      "fixtures/stock.json": "bdef5d3f17b83670cc5daf5baea8838b3a34354275a0620311fc8d56be3f584a",
+      "package.json": "a296921c792d8f7c4e5c38ce0f64f18cb50a8817926c4db4fd91250d157fd9fc",
+      "services/allocation-worker/current.cjs": "a6f5477418d652a6df0b6eadf38243d40ba547e66a16b434abbfc02e8705216c",
+      "services/inventory-api/current.cjs": "50eec4766effb0669d60997acf40de6227f84c63713ec02163ca51ece2c7a46e",
+      "services/inventory-api/legacy.cjs": "24864138d7d9a63c9c3bc3ddfb8234c1d597a524da380a62fe1335c7c3e345e2",
+      "services/planning-worker/current.cjs": "82dc2a924d5c1a6312a03a4d6db843c102c5f22e43ce1f2dfadb0ac422607ce0",
+      "targets/local.json": "be10ccf7a20bd8529fba596a58abdf4021c3a5685a242e060f55ddcbf1ec5d8d",
+      "test/happy-path.test.cjs": "b303e4a0a46768b99f1a206321c880ea7066fc713a193b5ed5742deb2bd173e9",
+      "tools/local-target.cjs": "914bdb4dde72e5a38fda79b53593a51e4d49dd20b4ab88b41d199d4a9c367566",
+      "tools/service-harness.cjs": "189f03d9b8adcad507ef4a4c1f0e990c82e03f6fedf9f7cefe550012edf57c6f",
+      "tools/source-scope.cjs": "35f6d25c0cdb68261f264dbf25ccce69246acfd08004c35894c8b774a0d0cb74"
+    },
+    "digest": "b3e88cb10d3da5eeb99e602f19ff3675c066c689aceb1d8b7b2f26b59bef3c7a"
+  },
+  "checks": [
+    {
+      "id": "current-planning-happy-path",
+      "status": "passed",
+      "execution": {
+        "entrypoint": "test/happy-path.test.cjs#run",
+        "driver": "Node author bootstrap invoking the fixed local module",
+        "executedAt": "2026-09-16T09:22:47.192Z",
+        "environment": {
+          "node": "v24.19.0",
+          "platform": "win32"
+        },
+        "result": {
+          "checks": 1,
+          "producer": "current",
+          "consumer": "planning",
+          "status": "passed"
+        }
+      }
+    }
+  ],
+  "acceptance": [
+    {
+      "id": "consumer-compatibility",
+      "status": "not_run",
+      "observations": null
+    },
+    {
+      "id": "independent-review",
+      "status": "not_run",
+      "observations": null
+    },
+    {
+      "id": "rollback-rehearsal",
+      "status": "not_run",
+      "observations": null
+    },
+    {
+      "id": "final-source-verification",
+      "status": "not_run",
+      "observations": null
+    }
+  ],
+  "modelEvaluationPerformed": false
+}

@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Renderer feature baseline</title><link rel="stylesheet" href="style.css">
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script></head>
+<body><main><h1>Renderer feature baseline</h1><p>Fixed WebGL shader panel. No external assets or service calls.</p>
+<canvas id="panel" aria-label="Rendered color swatch"></canvas>
+<div class="controls"><button id="invert">Toggle invert post pass</button><button id="read">Read target pixel</button><button id="sample">Sample 60 submissions</button><button id="lose">Lose WebGL context</button><button id="restore">Restore WebGL context</button><button id="xr">Probe XR availability</button></div>
+<p id="status" role="status">Starting renderer…</p><h2>Observed diagnostics</h2><pre id="diagnostics" aria-label="Renderer diagnostics"></pre></main>
+<script type="module" src="src/probe.js"></script></body></html>
