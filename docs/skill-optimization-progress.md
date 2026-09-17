@@ -14,6 +14,10 @@ Windows 已完成原生 PowerShell 5.1 full smoke v4：exit 0、113 行 PASS，�
 
 模型比較、實際 activation、各分類任務結果、其他宿主載入與 holdout 的狀態未因作業系統範圍調整而改變。已完成的 4 次文字 A/B 保持原範圍；新增模型測試尚未獲准，另外計費 API 維持停用。下方各階段紀錄保留當時觀察，當前作業系統完成條件以本節為準。
 
+獨立資料補充（2026-09-17）：新增 [prospective-holdout-v1](audits/skill-optimization-2026-09-16/prospective-holdout-v1/authoring.json)，在作者出題前固定基線與候選各 518 個 runtime 檔案。兩個新 family 分別為樹狀文件區塊搬移、增量位元組封包解析，各有 normal／boundary，共四題；原 284 個開發案例維持 development。新增離線分組／來源／私有 rubric 檢查，不啟動模型，也不改動原本 535 個來源的待批准比較提案。這只能算對已凍結候選的 prospective 資料準備；原方案「改寫前保留」的時序未達成，不能追認。執行結果、baseline 校準與正式門檻仍未完成；操作及限制見[維護方法](skill-quality-workflow.md#prospective-holdout-v1)。
+
+本次[離線驗收紀錄](audits/skill-optimization-2026-09-16/prospective-holdout-v1/validation.json)：18 項合成防護測試在 Windows Node 22／24 通過，實際基線與候選各四題的打包及分組检查通過，`npm run validate`、套件清單檢查與獨立審查完成。套件測試初次受沙箱子程序限制，經允許本機子程序的重跑後通過；沒有發布套件。既有模型比較的 535 個來源、7 個實體工具檔與 binding hash 保持不變。新增 CI 步驟只登記本機證據，不借用先前 Windows installer 的雲端結果。
+
 ## 階段交付
 
 | 階段 | 本輪交付 | 驗收範圍 |

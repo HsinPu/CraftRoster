@@ -69,6 +69,9 @@ jobs:
       - name: Test offline Skill pilot packaging
         run: npm run test:skill-pilot-preparation
 
+      - name: Test prospective holdout registration with synthetic data
+        run: npm run test:skill-holdout
+
       - name: Test Skill pilot fixtures and local tool stubs
         run: npm run test:skill-pilot-fixtures
 
@@ -328,6 +331,10 @@ jobs:
       - name: Test Windows Codex executor with fake processes
         if: matrix.powershell == 'powershell.exe'
         run: npm run test:skill-codex-executor
+
+      - name: Test prospective holdout registration on Windows
+        if: matrix.powershell == 'powershell.exe'
+        run: npm run test:skill-holdout
 
       - name: Run isolated PowerShell installer smoke test
         shell: powershell

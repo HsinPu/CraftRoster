@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "dataset_id": "prospective-holdout-v1",
+  "authoring_started_at_utc": "2026-09-17T05:00:58Z",
+  "author_role": "eval-orchestrator (bounded offline dataset author)",
+  "runtime_snapshot_sha256": "5341e65dcea589370f65832cce5f8bc75ae0667795bd5bc5e88ae473652cbb27",
+  "exposure": {
+    "runtime_instructions_read": false,
+    "development_cases_read": true,
+    "used_for_skill_tuning": false,
+    "evaluation_runs": 0
+  },
+  "development_inventory": {
+    "corpus_files": 116,
+    "cases": 284,
+    "scope": "All current skills/*/evals/evals.json are development. Prompt inventory and targeted full cases were inspected for task-family overlap; runtime Skill files, proposed fixes and prior audit findings were not read."
+  },
+  "families": [
+    {
+      "family_id": "outline-subtree-move",
+      "fixture_lineage_id": "outline-subtree-move-v1",
+      "owner_skill": "code-change-workflow",
+      "novelty_rationale": "New flat-preorder tree-editing source, fixture data and semantic oracle: whole-section movement, nested descendants, insertion indices and input immutability. The normal and reserved-write cases share a deliberately declared lineage. Existing local billing/locale fixes and generic read-only reviews exercise overlapping workflow principles, but do not contain this task, algorithm, fixture or expected sequence.",
+      "closest_development_cases": [
+        "code-change-workflow:1",
+        "code-change-workflow:4",
+        "code-review:2",
+        "web-page-design-to-code:4"
+      ],
+      "cases": [
+        {
+          "case_id": "code-change-workflow:101",
+          "kind": "normal"
+        },
+        {
+          "case_id": "code-change-workflow:102",
+          "kind": "boundary"
+        }
+      ]
+    },
+    {
+      "family_id": "incremental-byte-framing",
+      "fixture_lineage_id": "pebble-framing-v1",
+      "owner_skill": "verified-software-delivery",
+      "novelty_rationale": "New in-memory byte-stream transducer and collecting-consumer integration: arbitrary chunk partitions, retained incomplete suffixes, payload/header distinction, and an unresolved zero-header producer grammar in the boundary variant. This is source-and-test artifact preparation, not a renamed API migration, release-readiness receipt, stale-build check or destructive retention policy. General partial-work and honest-verification principles necessarily overlap development coverage.",
+      "closest_development_cases": [
+        "verified-software-delivery:2",
+        "verified-software-delivery:3",
+        "typescript-development:1",
+        "ask-questions-if-underspecified:2"
+      ],
+      "cases": [
+        {
+          "case_id": "verified-software-delivery:101",
+          "kind": "normal"
+        },
+        {
+          "case_id": "verified-software-delivery:102",
+          "kind": "boundary"
+        }
+      ]
+    }
+  ],
+  "independence_note": "Semantic independence is a reviewed judgement about task, fixture and failure-mechanism families, not a conclusion proven by hashes. Variants within each family are correlated and must not be counted as independent families.",
+  "exposure_note": "The exposure fields are author declarations, not a technical secrecy guarantee. The author inspected development tasks but did not inspect frozen runtime instructions or prior optimization findings. Public/private packaging alone is not access isolation.",
+  "intended_use": "Prospective holdout authored after the recorded baseline and candidate runtime freeze. It is not pre-rewrite holdout evidence and has not been used for Skill tuning. Any later execution requires separate authorization, enforced runtime/private-corpus isolation, and independent grading.",
+  "tool_contract": "Each task is self-contained for a read_file/write_file-only broker. Task-time execution and external effects are unavailable. Private grading may inspect actual tool/file evidence and later invoke artifact code in a separately authorized isolated runner; model claims alone do not prove artifacts.",
+  "oracle_policy": "Expected decisions and exact answer sequences are kept in evals.json expected_output/assertions, which are private corpus fields. Public fixtures contain task requirements, synthetic inputs and existing source/tests only, with no answer or grader files.",
+  "validation": {
+    "status": "offline_fixture_checks_passed",
+    "model_evaluations": 0,
+    "runtime_snapshot_hash_matches": true,
+    "authoring_after_runtime_freeze": true,
+    "corpus_files_checked": 2,
+    "cases_checked": 4,
+    "families_checked": 2,
+    "unique_public_fixture_files_checked": 16,
+    "cjs_syntax_checks_passed": 10,
+    "baseline_smoke_tests_passed": 3,
+    "baseline_failure_observations_confirmed": 5,
+    "author_reference_chunk_partitions_checked": 512,
+    "line_endings": "All 19 author-owned files were checked for LF-only text and trailing whitespace.",
+    "fixture_checks": "A local Node assertion script checked case schemas, family/lineage links, contained fixture paths, case-insensitive destination uniqueness, absence of public answer/grader filenames, JSON parseability, CommonJS syntax, exact outline baseline output, discarded partial-frame bytes, and validator aliasing. An independent author reference checked the private stream oracle across all 512 partitions of its ten-byte sample and the stated truncation/length examples.",
+    "smoke_test_command": "node --test --experimental-test-isolation=none <outline fixture>/test/move-section.test.cjs <normal framing fixture>/test/smoke.test.cjs <boundary framing fixture>/test/smoke.test.cjs",
+    "execution_note": "The first ordinary node --test attempt failed before test execution with sandbox spawn EPERM. The same three public baseline tests then passed with process isolation disabled. These are offline fixture-authoring checks; no Skill, model, or repaired submission was evaluated.",
+    "git_diff_check": "git diff --check passed; new author-owned files were also checked directly for trailing whitespace because they are untracked.",
+    "limitations": "The author reference and fixture checks establish corpus consistency and intended baseline defects, not model quality, Skill activation, semantic independence, or future evaluator correctness. Prospective model runs remain zero."
+  }
+}

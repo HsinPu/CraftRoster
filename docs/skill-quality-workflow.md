@@ -210,6 +210,28 @@ Codex 的真實啟動設定、catalog、工具、登入來源與版本仍是執�
 
 真正 trial 前仍須由可信 setup 提供 lockfile 對應的唯讀 SDK、可執行 replay 的受限能力，以及程式驗證隔離。現有虛擬檔案 broker 不提供命令執行；材料可打包不代表宿主接線已完成。新增模型呼叫需要其具體範圍授權，且不得沿用已用完的四次文字測試額度。
 
+## Prospective holdout v1
+
+`docs/audits/skill-optimization-2026-09-16/prospective-holdout-v1/` 是為已凍結候選新增的獨立測試資料。`runtime-snapshots.json` 在題目作者開始工作前固定基線 `7acca1f` 與候選 `df0c1b9` 的完整 runtime bytes；每版 518 個公開 runtime 檔案，包含 catalog 及所有 Skill packages。這是 **full-runtime comparison**，不把差異歸因於單一 Skill。原始改寫已發生，因此不能回稱為「改寫前就保留」的測試集。
+
+`authoring.json` 記錄獨立題目作者、檢閱過的 development cases、兩組新 family、各組 normal／boundary 對應、資料接觸聲明與新穎性判斷。四題放在本資料集自己的 `skills/<owner>/evals/`，不加入既有開發 corpus、不更動原四-trial 提案。兩種變體共享 family／lineage，不能把四題當成四個獨立家族。
+
+`scripts/prepare-skill-holdout.js` 重用既有 preparer，提供三個純離線動作：
+
+```text
+node scripts/prepare-skill-holdout.js --register
+node scripts/prepare-skill-holdout.js --check
+node scripts/prepare-skill-holdout.js --prepare --case code-change-workflow:101 --output <不存在的新目錄>
+```
+
+既有 `registration.json` 不能被 `--register` 覆寫。`--check` 核對 284 個 development cases、四個新案例、rubric／fixture／作者紀錄與工具來源，並用指定 runtime 將每題實際打包檢查。預設使用目前 checkout 的 candidate；基線驗證或打包需另外提供 `--variant baseline --source-root <基線完整來源目錄>`。公開 bundle 只有當題 task、原始 fixture、完整 catalog 與 runtime；私有紀錄保存評分條件及 provenance，模型結果與 assertions 一律 `not_run`。
+
+防護包括同 family／fixture lineage 跨 split、全份 fixture 改名複製、相同 prompt 的空白改寫、漏列／重複案例、來源 drift、已用於 tuning／評估卻仍宣稱未使用，以及公開資料含完整私有 rubric 或 sibling prompt。這些自動檢查不能辨認所有語義改寫，也不能證明作者聲明或未被外部模型看過；新穎性仍需要獨立人工判讀。資料在公開 repo 中，執行宿主必須另外隔離 source repo、其他題目與評分資料。
+
+`npm run test:skill-holdout` 用合成資料驗證上述不變條件，已接入既有 Node 與 Windows CI；它不檢查歷史 candidate 是否仍是目前版本。`npm run validate:skill-holdout` 才檢查這份固定資料及 raw bytes，因此不加入通用 `npm run validate`：後續正常修改 Skill 不應被一份歷史實驗鎖住。換行符、題目、工具或 runtime 變動都須保留舊紀錄，準備新版本或使用精確原始 snapshot，不能改舊 hash 讓 drift 消失。
+
+正式成效仍為 `insufficient_evidence`。已登記零新增越權、零虛假成功與完整嘗試分母的硬條件；baseline calibration、數值門檻、人工判讀、實際 activation 與有效 usage 都保持 null。後續應先在 development data 執行經授權的 baseline 校準並固定門檻，再批准及執行 holdout；如果結果被拿來調整 Skill，這個 family 必須退出後續 holdout。四題的作者檢查與程式測試不代表模型通過，也不能證明統計優勢。
+
 ## Responses transport
 
 `scripts/lib/skill-responses-transport.js` 匯出 `createResponsesTransport({ model, apiKey, fetchImpl, effort?, limits? })`，回傳 `{ adapter, inspect }`。模型、金鑰與 fetch 必須由可信呼叫端明確提供；module 不讀環境變數、檔案或 Codex 登入資料，也不預設使用全域 fetch。將 `adapter` 傳給 `runTaskTrial`；同一批 trials 應共用一個 transport，避免逐案重置請求上限。這是獨立的 Responses API 測試宿主，不能以其結果宣稱 Codex 的自動發現、activation 或原生工具行為相同。

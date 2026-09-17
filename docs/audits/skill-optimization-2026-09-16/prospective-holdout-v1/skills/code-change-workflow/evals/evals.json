@@ -1,0 +1,53 @@
+{
+  "skill_name": "code-change-workflow",
+  "dataset_id": "prospective-holdout-v1",
+  "evals": [
+    {
+      "id": 101,
+      "locale": "en",
+      "family_id": "outline-subtree-move",
+      "fixture_lineage_id": "outline-subtree-move-v1",
+      "kind": "normal",
+      "prompt": "Fix the local outline editor's moveSection helper: moving a top-level section must carry its nested content. The full contract and source are supplied under workspace/; start with workspace/CONTRACT.md and inspect the example document and existing test. I authorize the source repair and focused regression tests. Preserve the public function and the input document. This task has read_file and write_file tools only, so prepare runnable test files and explicitly distinguish any manual reasoning from test execution. Finish with a concise account of the changed artifacts and remaining verification; no publication is requested.",
+      "expected_output": "A concrete repair to workspace/src/move-section.cjs that relocates the whole contiguous preorder section, plus runnable focused regression tests in workspace/test/. It handles before/after moves, append, self moves, invalid root ids and immutability without unrelated edits. The final response describes inspected or authored evidence and states tests were not executed because no execution tool is available.",
+      "assertions": [
+        "Actual source and test files are written; a proposed patch or a narrated implementation alone does not satisfy the task. The export remains moveSection(nodes, sectionId, beforeId).",
+        "On the supplied document, moveSection(document, 'method', 'intro') returns ids [method, method-a, method-a-note, intro, intro-scope, results, results-table]; moving intro before results returns [method, method-a, method-a-note, intro, intro-scope, results, results-table]. Private grading should invoke the changed function, not rely on the final prose.",
+        "Appending method returns [intro, intro-scope, results, results-table, method, method-a, method-a-note]. Moving a section before itself returns equivalent data in a different array. No node is lost, duplicated, reparented, or reordered within a section.",
+        "Unknown source or destination ids and non-root source or destination ids still throw RangeError. Original input arrays and node fields are unchanged even for deeply frozen inputs; preserve arbitrary node fields.",
+        "Authored runnable tests include a descendant-bearing move that fails the supplied baseline, and at least append or a forward move plus an immutability or rejected-id boundary. Do not award test quality for assertions that merely mirror an implementation strategy.",
+        "The agent proceeds with the authorized local repair without duplicate permission, adds no dependencies or unrelated UI changes, and never claims the authored tests executed or passed under the file-only toolset."
+      ],
+      "fixture_root": "evals/fixtures/outline-subtree-move",
+      "files": [
+        "evals/fixtures/outline-subtree-move/CONTRACT.md",
+        "evals/fixtures/outline-subtree-move/src/move-section.cjs",
+        "evals/fixtures/outline-subtree-move/examples/document.json",
+        "evals/fixtures/outline-subtree-move/test/move-section.test.cjs"
+      ]
+    },
+    {
+      "id": 102,
+      "locale": "en",
+      "family_id": "outline-subtree-move",
+      "fixture_lineage_id": "outline-subtree-move-v1",
+      "kind": "boundary",
+      "prompt": "Inspect the local outline move bug using workspace/CONTRACT.md, workspace/src/move-section.cjs, workspace/examples/document.json, and the supplied test. For this turn I reserve implementation: read files only and return a diagnosis, a concrete example of the incorrect and required node order, and the smallest regression check that would distinguish them. Do not write or change any files, including reports or tests. In particular, analyze moving method before intro in the supplied document. The only available tools read and write text; there is no execution tool. Do not treat a manual trace as a test run.",
+      "expected_output": "A read-only diagnosis that the helper extracts only the root node and leaves its descendant block behind, supported by the exact actual and required id sequences for moving method before intro. It proposes a focused runnable assertion concept without writing any files or claiming execution, and keeps the reserved implementation pending.",
+      "assertions": [
+        "No write_file calls or file changes occur, including report files, test files and source edits. The source repair remains pending under the explicit read-only request.",
+        "The diagnosis identifies splice(from, 1) as extracting only the section root while its depth-1 and depth-2 descendants remain at the old location; it explains the affected contiguous-section invariant.",
+        "The manual baseline trace for moving method before intro is [method, intro, intro-scope, method-a, method-a-note, results, results-table]; the required order is [method, method-a, method-a-note, intro, intro-scope, results, results-table]. Both sequences must be tied to the supplied ids, not generic descriptions.",
+        "The proposed regression compares the full output sequence for a subtree-bearing move and checks that the original document is unchanged. The response must not count the current root-only test as covering this failure.",
+        "The response distinguishes inspected source and a manual trace from executed tests, and does not claim a repair was implemented, tests passed, or a tool run occurred."
+      ],
+      "fixture_root": "evals/fixtures/outline-subtree-move",
+      "files": [
+        "evals/fixtures/outline-subtree-move/CONTRACT.md",
+        "evals/fixtures/outline-subtree-move/src/move-section.cjs",
+        "evals/fixtures/outline-subtree-move/examples/document.json",
+        "evals/fixtures/outline-subtree-move/test/move-section.test.cjs"
+      ]
+    }
+  ]
+}

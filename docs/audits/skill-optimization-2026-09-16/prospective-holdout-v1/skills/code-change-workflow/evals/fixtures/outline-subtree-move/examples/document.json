@@ -1,0 +1,38 @@
+[
+  {
+    "id": "intro",
+    "depth": 0,
+    "title": "Overview"
+  },
+  {
+    "id": "intro-scope",
+    "depth": 1,
+    "title": "Scope",
+    "collapsed": false
+  },
+  {
+    "id": "method",
+    "depth": 0,
+    "title": "Method"
+  },
+  {
+    "id": "method-a",
+    "depth": 1,
+    "title": "Preparation"
+  },
+  {
+    "id": "method-a-note",
+    "depth": 2,
+    "title": "Note"
+  },
+  {
+    "id": "results",
+    "depth": 0,
+    "title": "Results"
+  },
+  {
+    "id": "results-table",
+    "depth": 1,
+    "title": "Observations"
+  }
+]

@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "dataset_id": "prospective-holdout-v1",
+  "verified_at_utc": "2026-09-17T05:12:06.475Z",
+  "status": "offline_preparation_verified",
+  "model_status": "not_run",
+  "model_calls": 0,
+  "formal_acceptance": "insufficient_evidence",
+  "sources": [
+    {
+      "path": "docs/audits/skill-optimization-2026-09-16/prospective-holdout-v1/runtime-snapshots.json",
+      "sha256": "5341e65dcea589370f65832cce5f8bc75ae0667795bd5bc5e88ae473652cbb27"
+    },
+    {
+      "path": "docs/audits/skill-optimization-2026-09-16/prospective-holdout-v1/authoring.json",
+      "sha256": "1a798e313fb2ffcc0298a977a6a69ae608ea3b33950b5adf03acfab1e51542ad"
+    },
+    {
+      "path": "docs/audits/skill-optimization-2026-09-16/prospective-holdout-v1/registration.json",
+      "sha256": "9a88f9bbc7c20a9401fc0a67bae4e1abfd1b30fc7ba95b08d7f43d442909bada"
+    },
+    {
+      "path": "scripts/prepare-skill-holdout.js",
+      "sha256": "bddf66feac4f6d0cf3d0f4f519bd53f1e50e1ee9eddb46c7404f7c1b394c0a0e"
+    },
+    {
+      "path": "tests/skill-holdout.test.js",
+      "sha256": "91ce7bef8a37dfb02ef78e596d4c6d852545025f116e79c0e290552e44679134"
+    }
+  ],
+  "checks": [
+    {
+      "name": "synthetic_registration_guards",
+      "command": "node tests/skill-holdout.test.js",
+      "platform": "win32",
+      "arch": "x64",
+      "node_versions": [
+        "v22.23.2",
+        "v24.20.0"
+      ],
+      "checks_passed": 18,
+      "status": "passed",
+      "scope": "Synthetic data only; split, source drift, public/private separation, denominator and no fabricated results."
+    },
+    {
+      "name": "actual_candidate_packaging",
+      "command": "node scripts/prepare-skill-holdout.js --check",
+      "runtime_commit": "df0c1b96e5ac4f6223f6db2484b37b55b376f997",
+      "runtime_files": 518,
+      "holdout_cases": 4,
+      "development_cases": 284,
+      "status": "passed"
+    },
+    {
+      "name": "actual_baseline_packaging",
+      "command": "node scripts/prepare-skill-holdout.js --check --variant baseline --source-root <Git archive of baseline>",
+      "runtime_commit": "7acca1fb8865903dc67ee4c76c147d0881cb9e1b",
+      "runtime_files": 518,
+      "holdout_cases": 4,
+      "development_cases": 284,
+      "status": "passed"
+    },
+    {
+      "name": "repository_validation",
+      "command": "npm run validate",
+      "node_version": "v22.23.2",
+      "status": "passed",
+      "skills": 286,
+      "agents": 237,
+      "development_case_definitions": 284
+    },
+    {
+      "name": "npm_package_inventory",
+      "command": "npm run test:package",
+      "node_version": "v22.23.2",
+      "status": "passed",
+      "note": "Initial sandbox run could not start the npm child process (status null). The authorized local process-capable retry passed; no package was published."
+    },
+    {
+      "name": "line_endings",
+      "status": "passed",
+      "scope": "All authored data files are LF; a dataset-scoped Git attribute retains LF for CJS as well as Markdown and JSON."
+    }
+  ],
+  "independent_review": {
+    "role": "code-reviewer / eval-orchestrator",
+    "agent": "holdout_review",
+    "status": "no_actionable_findings",
+    "runtime_skill_instructions_read": false,
+    "model_runs": 0,
+    "scope": [
+      "All four task/contract/private-rubric pairs",
+      "Novelty rationale against development prompt inventory and closest cases",
+      "Supplied fixture baseline defects and three public smoke tests",
+      "All four candidate bundle hashes and broker private-record denial",
+      "Current synthetic registration tests"
+    ],
+    "limitations": [
+      "Semantic novelty is reviewed judgement, not a cryptographic proof.",
+      "Reviewer did not inspect actual baseline checkout; parent verified all four baseline bundles.",
+      "No model outputs or production artifacts were graded."
+    ]
+  },
+  "frozen_prior_comparison": {
+    "binding_sha256": "d082e15305a23fa5c70069bb9571d9f3e81cff00055f074e7f793db236c0b4e1",
+    "source_files_verified_unchanged": 535,
+    "physical_implementations_verified_unchanged": 7,
+    "status": "not_run",
+    "execution_authorized": false,
+    "note": "Only raw source bindings were checked; this is not a new host/runtime preflight or authorization."
+  },
+  "limitations": [
+    "Prepared after initial rewrites; no retroactive pre-rewrite holdout claim.",
+    "Two correlated task families, not four independent families or catalog-wide outcome coverage.",
+    "Frozen full-runtime variants cannot isolate one owning Skill causally.",
+    "All actual model, activation, manual outcome, effective usage, calibration and numeric acceptance evidence remains absent.",
+    "Future execution must isolate private data and separately verify host capabilities; repository visibility does not provide secrecy.",
+    "Existing hosted Windows installer evidence remains scoped to its recorded commit; the newly added CI step has only local Windows evidence in this receipt."
+  ]
+}

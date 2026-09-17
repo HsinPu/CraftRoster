@@ -1,0 +1,24 @@
+{
+  "protocol": "pebble-local",
+  "status": "awaiting-producer-confirmation",
+  "ordinary_header": {
+    "minimum": 1,
+    "maximum": 16,
+    "meaning": "payload byte count"
+  },
+  "zero_header": {
+    "status": "unresolved",
+    "options": [
+      "keepalive: consume the zero byte, emit no frame, and continue",
+      "escape: consume the zero byte and read the following byte as the payload length, restricted to 1..16"
+    ],
+    "decision_owner": "producer maintainer",
+    "decision_record": null
+  },
+  "example_stream": [
+    0,
+    0,
+    1,
+    65
+  ]
+}

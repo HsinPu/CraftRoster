@@ -1,0 +1,21 @@
+{
+  "protocol": "pebble-local",
+  "status": "approved",
+  "ordinary_header": {
+    "minimum": 1,
+    "maximum": 16,
+    "meaning": "payload byte count"
+  },
+  "zero_header": {
+    "status": "approved",
+    "meaning": "keepalive: consume the zero byte, emit no frame, and continue"
+  },
+  "example_stream": [
+    2,
+    65,
+    66,
+    0,
+    1,
+    67
+  ]
+}
