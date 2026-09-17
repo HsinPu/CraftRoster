@@ -2,6 +2,8 @@
 
 審查日期：2026-09-16。來源版本：`7acca1fb8865903dc67ee4c76c147d0881cb9e1b`。
 
+執行範圍更新（2026-09-17）：依使用者「目前只要驗證 windows 就好」，本次作業系統驗收僅要求 Windows。Linux／Ubuntu Bash 與 macOS quick 的實測移出本次完成條件，保留為未來擴充驗證，不再阻擋本次交付，也不記為通過。Windows 已有原生 PowerShell 5.1 full smoke v4 的通過證據，詳見[目前進度與驗收狀態](../../skill-optimization-progress.md)。本次範圍調整不改變模型比較的待驗狀態與既有授權，也不變更通用發布檢查或既有跨平台實作。
+
 本次目標是檢查現有 Skills 並提出可落地的優化方法。範圍為 CraftRoster 的 `skills/`，不包含電腦上其他插件或全域安裝副本。工作假設為保留 Codex、Claude Code、Cursor、Copilot、OpenCode 共用能力，以 GPT-6 Astra／Codex 作為第一個行為驗證環境；此假設不是已完成五平台相容性認證。
 
 ## 1. 決策摘要
