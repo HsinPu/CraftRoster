@@ -16,7 +16,9 @@ Windows 已完成原生 PowerShell 5.1 full smoke v4：exit 0、113 行 PASS，�
 
 獨立資料補充（2026-09-17）：新增 [prospective-holdout-v1](audits/skill-optimization-2026-09-16/prospective-holdout-v1/authoring.json)，在作者出題前固定基線與候選各 518 個 runtime 檔案。兩個新 family 分別為樹狀文件區塊搬移、增量位元組封包解析，各有 normal／boundary，共四題；原 284 個開發案例維持 development。新增離線分組／來源／私有 rubric 檢查，不啟動模型，也不改動原本 535 個來源的待批准比較提案。這只能算對已凍結候選的 prospective 資料準備；原方案「改寫前保留」的時序未達成，不能追認。執行結果、baseline 校準與正式門檻仍未完成；操作及限制見[維護方法](skill-quality-workflow.md#prospective-holdout-v1)。
 
-本次[離線驗收紀錄](audits/skill-optimization-2026-09-16/prospective-holdout-v1/validation.json)：18 項合成防護測試在 Windows Node 22／24 通過，實際基線與候選各四題的打包及分組检查通過，`npm run validate`、套件清單檢查與獨立審查完成。套件測試初次受沙箱子程序限制，經允許本機子程序的重跑後通過；沒有發布套件。既有模型比較的 535 個來源、7 個實體工具檔與 binding hash 保持不變。新增 CI 步驟只登記本機證據，不借用先前 Windows installer 的雲端結果。
+本次[離線驗收紀錄](audits/skill-optimization-2026-09-16/prospective-holdout-v1/validation.json)：18 項合成防護測試在 Windows Node 22／24 通過，實際基線與候選各四題的打包及分組檢查通過，`npm run validate`、套件清單檢查與獨立審查完成。套件測試初次受沙箱子程序限制，經允許本機子程序的重跑後通過；沒有發布套件。既有模型比較的 535 個來源、7 個實體工具檔與 binding hash 保持不變。該紀錄當時只登記本機證據。
+
+2026-09-17 05:15:33 UTC 補查：`ce250b3843f391038f7e7e73dc540ed8c414b7e4` 的 [Windows job](https://github.com/HsinPu/CraftRoster/actions/runs/35184903114/job/105084751600) 第 6 步 `Test prospective holdout registration on Windows` 已為 `completed/success`；這是新工具的雲端 Windows 證據。第 7 步完整 installer smoke 在該觀察時間仍為 `in_progress`，不能據此宣稱整個 job 已通過。此提交相對既有 Windows 安裝通過版本 `fd56b65` 的 installer／smoke、Skills、Agents 與依賴索引來源 diff 為空，原安裝驗收仍保持其已記錄範圍。
 
 ## 階段交付
 
@@ -162,8 +164,8 @@ Spec／footer 的[打包紀錄](audits/skill-optimization-2026-09-16/spec-footer
 2. **Windows 安裝驗收：本機及雲端完整測試通過；Linux／macOS：本次範圍外。** 本機原生 Windows PowerShell 5.1 full smoke v4 已 exit 0／113 PASS；`fd56b65` 的雲端原生 5.1／PowerShell 7 也各完成 113 行 smoke PASS，證據見上方紀錄。本機 v3 空輸出失敗、更早的長路徑失敗與雲端 5.1 延遲的原因仍未確認，不宣稱根因已修復。依 2026-09-17 使用者指示，Ubuntu Bash／macOS quick 實測不再是本次完成條件；CI jobs 保留。其他宿主的實際載入仍為 not_run，與作業系統安裝驗收分開記錄。
 3. **Pinned Skill source integrity／originality heuristic：已執行。** [公開遠端查核](audits/skill-optimization-2026-09-16/remote-skill-verification.json)保存 18 repositories／131 paths 的 integrity 及 62 個有引用 Skills／734 次文字比較，兩項 exit 0；本次又核對其中 5 個檢查來源、3 個 manifests、344 份本機文字檔 hashes 未變。224 個無引用 Skills 不在比對範圍，零命中不等於完整原創或法律認證；正式發布的其他必要 gate 仍保留。
 4. **216 顆 defer 的逐段語義與行為驗證：後續批次。** 以實際失敗、使用情境與風險排序，不因目前沒有發現缺陷便任意改寫。
-5. **提交與推送：已完成；發布：未執行。** 候選修改與可追溯證據已於 2026-09-17 依使用者要求提交並推送至 `origin/main`，提交 `d9b0e149fdf901025e4edac10aa14c31f69f93e4`。沒有 release、真實部署或更新使用者全域 Skills；本節後續範圍調整不包含於該提交。
-6. **事前凍結的 held-out 任務家族與門檻：未完成。** 目前所有案例均已參與開發審查，只能作 development／regression；不能事後重標為 holdout。正式比較前須準備未用於修改的新家族，記錄 split 版本與污染情況，預先固定驗收門檻。既有 4 次 smoke 和本機 mock 不替代這項工作。
+5. **提交與推送：已完成；發布：未執行。** 初始候選修改提交為 `d9b0e149fdf901025e4edac10aa14c31f69f93e4`；Windows 範圍／CI 與驗收紀錄另有後續提交，prospective holdout 資料與工具已於 `ce250b3843f391038f7e7e73dc540ed8c414b7e4` 推送到 `origin/main`。沒有 release、真實部署或更新使用者全域 Skills。
+6. **Prospective holdout 資料已備；模型結果與正式門檻未完成。** 原 284 案保持 development／regression。新 v1 的 2 個家族／4 題在凍結候選後、出題前登記 runtime，再固定 rubric、split 與接觸紀錄；打包及獨立資料審查通過。這不能補證原方案「初始改寫前保留」的時序。正式比較仍須經授權的 development baseline 校準、事先固定的數值門檻與未參與 tuning 的 holdout 執行證據；目前零新增越權／虛假成功等硬條件已登記，其餘 calibration、manual outcomes、activation、usage 保持 null。既有四次文字 smoke 和作者檢查不替代這些結果。
 
 ### 已執行的小型模型測試
 

@@ -37,8 +37,8 @@ Three.js cases 2／4／5 已新增 38 個公開檔案及 [21 項作者檢查紀�
 | L2 任務完成 | 38 個 pilot output cases 附檔案；broker 可驗 hash／JSON／不變／工具序列，manual 保持 unverified；footer／React checkout 有作者 browser 證據 | 模型在受控工具中操作，再執行私有任務 grader；任意程式／browser 仍須真正的執行隔離，全部案例仍須相應 runtime／grading 能力 |
 | L3 組合／授權／no-op | staging stub 有 accepted／denied；broker 記錄範圍外 attempt、前後 manifest、overflow | 接模型後收集同樣證據；adapter 必須限制輸入，禁止真實扣款／發布／DB／GitHub |
 | L4 成本與效率 | 小型 smoke 保存 usage／wall time；金額與 effective model 未取得 | 完整 trials 保留全部失敗與消耗，依成功任務計有效成本；不把字元數當 tokens |
-| Development／holdout | 現有案例全部被審查或用於開發 | 另設未參與修改的新 task／fixture families，先固定 rubric／門檻；翻譯不能充當新 holdout |
-| L5 平台 | PowerShell 7 完整通過；7 主控＋5.1 安裝器完整通過 | Ubuntu／macOS 與其他宿主的 discovery／behavior 證據；CI 的 5.1 原生主控結果 |
+| Development／holdout | 原 284 案保持 development；[prospective-holdout-v1](prospective-holdout-v1/authoring.json) 已有 2 家族／4 題、出題前 runtime freeze、rubric／lineage／接觸紀錄及本機打包驗證 | 新資料只適用於已凍結候選，不能追認初始改寫前已保留；待授權的 development baseline 校準、正式數值門檻及真正 holdout 執行／人工判讀。不得把翻譯、作者檢查或未跑結果當成獨立成效證據 |
+| L5 平台 | Windows 原生 PowerShell 5.1 與 PowerShell 7 的本機及[雲端完整安裝驗收](windows-ci-acceptance-2026-09-17.json)通過 | 使用者於 2026-09-17 將本次作業系統驗收限為 Windows，Linux／macOS 不再是阻擋項。不同宿主的 discovery／behavior 仍無實測證據，不能由安裝成功推論 |
 
 ## 後續 fixture 清單
 

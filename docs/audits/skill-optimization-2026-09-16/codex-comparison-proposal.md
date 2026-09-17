@@ -44,4 +44,4 @@
 
 目前 `status=not_run`、`execution_authorized=false`。真正執行後，會分開保存可見 action、檔案條件、人工 rubric、已知 CLI usage 與未知用量；`completed` 不自動等於任務通過。若服務不接受設定、回覆出現原生工具事件、來源改變或取消，停止並保留部分證據，不自行換服務或擴大範圍。
 
-評估完成後才能判斷這兩個 owner 入口是否需調整。其餘分類的任務 outcomes、holdout 測試、Bash／Linux／macOS 安裝驗收仍是分開的後續階段。
+評估完成後才能判斷這兩個 owner 入口是否需調整。其餘分類的任務 outcomes 與 holdout 測試仍是分開的後續階段。依使用者 2026-09-17 的範圍調整，本次只驗收 Windows，現已具有原生 PowerShell 5.1／PowerShell 7 的本機及雲端安裝證據；Bash／Linux／macOS 移出本次完成條件。此說明不改變上方凍結的模型比較設定或新增執行授權。
