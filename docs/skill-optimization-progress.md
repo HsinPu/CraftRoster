@@ -8,6 +8,8 @@
 
 Windows 已完成原生 PowerShell 5.1 full smoke v4：exit 0、113 行 PASS，涵蓋 286 Skills／237 Agents；[完整紀錄](audits/skill-optimization-2026-09-16/native-powershell51-smoke-v4.json)保存來源版本與檢查結果。這是本次 Windows 安裝驗收通過的依據；先前失敗紀錄與原因未明的限制仍保留。
 
+雲端 Windows 補查（2026-09-17）：提交 `c22f13896c0217f06b935695b90ec3cc70b7de14` 的 [PowerShell 7 job](https://github.com/HsinPu/CraftRoster/actions/runs/35180037770/job/105069989190)已完成並通過。前一實作提交 `d9b0e149fdf901025e4edac10aa14c31f69f93e4` 的[原生 5.1 job](https://github.com/HsinPu/CraftRoster/actions/runs/35161245350/job/105012239935)則被 GitHub 明示以「超過 15 分鐘」中止：smoke 已印出 41 行 PASS，最後一項為 project Skill update；大於一秒的相鄰 PASS 時間間隔中位數約 21.15 秒，沒有 assertion failure。這是未完成的雲端結果，不能以本機通過替代。Windows Server 2025 runner 的固定延遲原因尚未確認；將 5.1 job 上限調至 60 分鐘、PowerShell 7 維持 15 分鐘，以容納完整 suite，全部測試及 installer／smoke 原始碼保持不變。調整後的原生 5.1 雲端結果仍待實際執行。
+
 模型比較、實際 activation、各分類任務結果、其他宿主載入與 holdout 的狀態未因作業系統範圍調整而改變。已完成的 4 次文字 A/B 保持原範圍；新增模型測試尚未獲准，另外計費 API 維持停用。下方各階段紀錄保留當時觀察，當前作業系統完成條件以本節為準。
 
 ## 階段交付

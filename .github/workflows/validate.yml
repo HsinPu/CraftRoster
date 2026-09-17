@@ -298,13 +298,16 @@ jobs:
   installer-powershell:
     name: Installer smoke (${{ matrix.powershell }})
     runs-on: windows-latest
-    timeout-minutes: 15
+    timeout-minutes: ${{ matrix.timeout_minutes }}
     strategy:
       fail-fast: false
       matrix:
-        powershell:
-          - powershell.exe
-          - pwsh.exe
+        include:
+          # Native 5.1 exceeded 15 minutes while cases were still progressing.
+          - powershell: powershell.exe
+            timeout_minutes: 60
+          - powershell: pwsh.exe
+            timeout_minutes: 15
 
     steps:
       - name: Checkout
