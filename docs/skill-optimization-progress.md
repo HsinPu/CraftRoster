@@ -8,7 +8,9 @@
 
 Windows 已完成原生 PowerShell 5.1 full smoke v4：exit 0、113 行 PASS，涵蓋 286 Skills／237 Agents；[完整紀錄](audits/skill-optimization-2026-09-16/native-powershell51-smoke-v4.json)保存來源版本與檢查結果。這是本次 Windows 安裝驗收通過的依據；先前失敗紀錄與原因未明的限制仍保留。
 
-雲端 Windows 補查（2026-09-17）：提交 `c22f13896c0217f06b935695b90ec3cc70b7de14` 的 [PowerShell 7 job](https://github.com/HsinPu/CraftRoster/actions/runs/35180037770/job/105069989190)已完成並通過。前一實作提交 `d9b0e149fdf901025e4edac10aa14c31f69f93e4` 的[原生 5.1 job](https://github.com/HsinPu/CraftRoster/actions/runs/35161245350/job/105012239935)則被 GitHub 明示以「超過 15 分鐘」中止：smoke 已印出 41 行 PASS，最後一項為 project Skill update；大於一秒的相鄰 PASS 時間間隔中位數約 21.15 秒，沒有 assertion failure。這是未完成的雲端結果，不能以本機通過替代。Windows Server 2025 runner 的固定延遲原因尚未確認；將 5.1 job 上限調至 60 分鐘、PowerShell 7 維持 15 分鐘，以容納完整 suite，全部測試及 installer／smoke 原始碼保持不變。調整後的原生 5.1 雲端結果仍待實際執行。
+雲端 Windows 補查（2026-09-17）：提交 `c22f13896c0217f06b935695b90ec3cc70b7de14` 的 [PowerShell 7 job](https://github.com/HsinPu/CraftRoster/actions/runs/35180037770/job/105069989190)已完成並通過。前一實作提交 `d9b0e149fdf901025e4edac10aa14c31f69f93e4` 的[原生 5.1 job](https://github.com/HsinPu/CraftRoster/actions/runs/35161245350/job/105012239935)則被 GitHub 明示以「超過 15 分鐘」中止：smoke 已印出 41 行 PASS，最後一項為 project Skill update；大於一秒的相鄰 PASS 時間間隔中位數約 21.15 秒，沒有 assertion failure。這是未完成的雲端結果，不能以本機通過替代。Windows Server 2025 runner 的固定延遲原因尚未確認；將 5.1 job 上限調至 60 分鐘、PowerShell 7 維持 15 分鐘，以容納完整 suite，全部測試及 installer／smoke 原始碼保持不變。
+
+調整已於 `fd56b653358c109f017f2d072793520a1c223c45` 推送。該版本的[原生 5.1 job](https://github.com/HsinPu/CraftRoster/actions/runs/35180684865/job/105071953667)與[PowerShell 7 job](https://github.com/HsinPu/CraftRoster/actions/runs/35180684865/job/105071952887)均完成並通過，各有 **113 行 smoke PASS** 及 286 Skills／237 Agents 的完整成功摘要。包含 runner setup／cleanup 的 job 耗時分別為 **34 分 56 秒、4 分 53 秒**；[機器驗收紀錄](audits/skill-optimization-2026-09-16/windows-ci-acceptance-2026-09-17.json)保存精確 commit、job ID、起訖時間與 PASS 日誌摘錄。這補足該來源版本的 Windows 雲端安裝驗收；先前取消結果不改為通過，也不宣稱延遲根因已修復或其他平台已驗收。
 
 模型比較、實際 activation、各分類任務結果、其他宿主載入與 holdout 的狀態未因作業系統範圍調整而改變。已完成的 4 次文字 A/B 保持原範圍；新增模型測試尚未獲准，另外計費 API 維持停用。下方各階段紀錄保留當時觀察，當前作業系統完成條件以本節為準。
 
@@ -118,6 +120,7 @@ Spec／footer 的[打包紀錄](audits/skill-optimization-2026-09-16/spec-footer
 | `pipeline-review` 文字 A/B smoke | 真實執行 4 次：基線 2／2、候選 2／2，error 0；沒有觀察到工具操作。兩個案例未顯示候選優於基線，不外推至 activation 或完整流程 |
 | PowerShell installer full smoke | 先前 PS7 與 PS7 主控＋5.1 installer 均 exit 0／108 PASS；[PS7 日誌](audits/skill-optimization-2026-09-16/installer-powershell7.log)、[5.1 installer 日誌](audits/skill-optimization-2026-09-16/installer-powershell51-host7.log)。最新原生 5.1 主控＋installer **exit 0／113 PASS**，完整 suite 通過；[v4 紀錄](audits/skill-optimization-2026-09-16/native-powershell51-smoke-v4.json)。先前 [v3](audits/skill-optimization-2026-09-16/native-powershell51-smoke-v3.json) 的 102 PASS 後失敗仍保留，根因未確認 |
 | PowerShell optional dependency focused smoke | 先前 PowerShell 7.6.5 主控分別執行 PS7／Windows PS5.1 installer，兩次 exit 0、各 30 項檢查加 1 行 suite PASS；最新原生 5.1 full smoke v4 也包含現行 optional fixtures |
+| Hosted Windows installer full smoke | `fd56b65` 的原生 5.1／PowerShell 7 jobs 均 completed／success，各 113 行 smoke PASS；[驗收紀錄](audits/skill-optimization-2026-09-16/windows-ci-acceptance-2026-09-17.json)。5.1 的 60 分鐘上限已實際容納完整 suite；不代表固定延遲根因已修復 |
 | Bash（本次 Windows 驗收範圍外） | optional 支援前曾通過 Windows MSYS 語法檢查；當時 quick smoke 因缺 od／SHA 工具停止，缺工具拒絕且零寫入已測。本次 optional 版本的 Bash runtime、Ubuntu／macOS 均未執行；依 2026-09-17 範圍調整，不再阻擋本次交付 |
 | `git diff --check` | 通過；最後交付前再檢查工作目錄 |
 
@@ -152,7 +155,7 @@ Spec／footer 的[打包紀錄](audits/skill-optimization-2026-09-16/spec-footer
 ## 驗收狀態與下一步
 
 1. **完整受控模型 A/B、實際 activation、各分類 task outcomes：not_run。** 現有 routing runner 不控制 host advertised catalog，也不觀測 activation；完整 pilot 仍須建立可重現 host／toolset 與隔離 fixtures，不能拿 self-report 分數替代任務完成。下方 4 次文字 smoke 已執行，屬較窄的輸入條件與結果驗證。
-2. **Windows 安裝驗收：通過；Linux／macOS：本次範圍外。** 原生 Windows PowerShell 5.1 full smoke v4 已 exit 0／113 PASS；v3 空輸出失敗與更早的長路徑失敗仍未查明，不能因一次成功宣稱穩定性問題已修復。依 2026-09-17 使用者指示，Ubuntu Bash／macOS quick 實測不再是本次完成條件；CI jobs 保留，未執行不記為通過。其他宿主的實際載入仍為 not_run，與作業系統安裝驗收分開記錄。
+2. **Windows 安裝驗收：本機及雲端完整測試通過；Linux／macOS：本次範圍外。** 本機原生 Windows PowerShell 5.1 full smoke v4 已 exit 0／113 PASS；`fd56b65` 的雲端原生 5.1／PowerShell 7 也各完成 113 行 smoke PASS，證據見上方紀錄。本機 v3 空輸出失敗、更早的長路徑失敗與雲端 5.1 延遲的原因仍未確認，不宣稱根因已修復。依 2026-09-17 使用者指示，Ubuntu Bash／macOS quick 實測不再是本次完成條件；CI jobs 保留。其他宿主的實際載入仍為 not_run，與作業系統安裝驗收分開記錄。
 3. **Pinned Skill source integrity／originality heuristic：已執行。** [公開遠端查核](audits/skill-optimization-2026-09-16/remote-skill-verification.json)保存 18 repositories／131 paths 的 integrity 及 62 個有引用 Skills／734 次文字比較，兩項 exit 0；本次又核對其中 5 個檢查來源、3 個 manifests、344 份本機文字檔 hashes 未變。224 個無引用 Skills 不在比對範圍，零命中不等於完整原創或法律認證；正式發布的其他必要 gate 仍保留。
 4. **216 顆 defer 的逐段語義與行為驗證：後續批次。** 以實際失敗、使用情境與風險排序，不因目前沒有發現缺陷便任意改寫。
 5. **提交與推送：已完成；發布：未執行。** 候選修改與可追溯證據已於 2026-09-17 依使用者要求提交並推送至 `origin/main`，提交 `d9b0e149fdf901025e4edac10aa14c31f69f93e4`。沒有 release、真實部署或更新使用者全域 Skills；本節後續範圍調整不包含於該提交。
