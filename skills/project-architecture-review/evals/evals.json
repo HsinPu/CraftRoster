@@ -1,0 +1,83 @@
+{
+  "skill_name": "project-architecture-review",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Review this small inventory app's architecture from the supplied evidence. Two developers maintain it for 12 internal users. src/routes/items.ts validates input then calls src/items.ts; src/items.ts applies quantity rules and calls src/db.ts; src/db.ts owns SQL. The dependency report contains only routes -> items -> db. CI reports create/update/delete and rejected-negative-quantity tests passing at revision abc123; there are no reported change bottlenecks or incidents. Releases run as one process with one database. Should we restructure it? This is a review only; no repository or execution tools are available.",
+      "expected_output": "A proportionate review that retains the existing structure based on supplied evidence, explains its limits, and does not manufacture a migration.",
+      "assertions": [
+        "Recommends retaining the present structure unless additional evidence changes the decision.",
+        "Connects the decision to the routes -> items -> db path, project size, and absence of demonstrated costs rather than declaring the app universally healthy.",
+        "Does not require multiple architecture alternatives or a migration plan when no material problem is established.",
+        "Attributes test status to the supplied CI report and does not claim to have run tests or inspected unavailable files."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Review the checkout architecture using these source excerpts. packages/orders/index.ts re-exports placeOrder from service.ts and ORDER_CREATED from events.ts. packages/orders/service.ts imports charge from ../payments/index.ts and calls charge during placeOrder. packages/payments/index.ts imports ORDER_CREATED from ../orders/index.ts and exports charge. The event name is a string constant in orders/events.ts. Checkout works in production, but our bundler warns about a dependency cycle. What should we change first? Source excerpts are the only available evidence; no tools are available.",
+      "expected_output": "An evidence-based dependency cycle diagnosis with a small corrective slice and observable verification, without inventing a production outage.",
+      "assertions": [
+        "Traces the concrete orders/index -> orders/service -> payments/index -> orders/index cycle using the supplied imports.",
+        "Separates the confirmed import cycle and reported bundler warning from unproven runtime failures.",
+        "Proposes a bounded edge-breaking change, such as importing the leaf event module, instead of requiring a new service architecture.",
+        "Defines preservation of checkout/payment behavior plus a dependency or build check, and a rollback or stopping condition for the slice."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Our Rails model Order has cancel!: it rejects shipped orders, then updates status inside a database transaction. Both the HTTP controller and a scheduled job call cancel!. Model tests cover shipped rejection and persistence rollback. A reviewer says business logic in an Active Record model proves the architecture is wrong. Review that claim from this information. We have no other repository evidence or tool access, and only want a recommendation.",
+      "expected_output": "A framework-aware assessment of the actual invariant and callers rather than a categorical objection to model methods.",
+      "assertions": [
+        "Does not treat the presence of business rules in an ORM model as sufficient proof of an architecture defect.",
+        "Uses the shared controller/job call path and transaction boundary to assess invariant ownership and consistency.",
+        "States what additional evidence, such as duplicated rules or independently changing dependencies, would justify extraction.",
+        "Does not claim the described tests were independently executed."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Review only export-job architecture in our 80-package monorepo. Supplied traces show apps/api/export-route.ts calls packages/exports/enqueue.ts, which publishes ExportRequested; apps/worker/export-handler.ts consumes it and calls packages/exports/render.ts, then packages/storage/upload.ts. Failed uploads are retried by the worker. Support reports duplicate completed-export notifications after retries. The notification publisher runs after upload, and the trace sample shows the same job ID notifying twice; we have not supplied its deduplication code. Billing and authentication are owned by other teams and are outside this request. No tool access is available.",
+      "expected_output": "A focused export-flow review separating the observed duplicate from an unverified cause and giving a bounded next investigation and improvement plan.",
+      "assertions": [
+        "Maps the supplied API, queue, worker, rendering, storage, and notification sequence rather than surveying all 80 packages.",
+        "Treats duplicate notifications as observed but missing deduplication or a particular race as a hypothesis until relevant code is inspected.",
+        "Names the missing notification/deduplication and retry evidence needed to decide a fix.",
+        "Keeps unrelated billing and authentication redesign out of scope and states the review coverage limit.",
+        "Connects any proposed retry/idempotency change to observable notification behavior and a validation or stop condition."
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Review a proposed migration of persistence calls out of an HTTP handler. The supplied diff moves the same transaction and queries into OrderRepository; the handler now calls repository.create. The previous API returned HTTP 409 on duplicate external_id and committed order plus lines atomically. Local npm test exits before collecting tests because DATABASE_URL is unset. This environment has no database credentials and no additional tools. Is this migration ready, and what should the next slice be?",
+      "expected_output": "A provisional assessment that preserves duplicate and atomicity contracts, records the blocked integration checks, and does not mark the migration verified.",
+      "assertions": [
+        "Explicitly records that npm test did not collect or execute tests because DATABASE_URL is absent.",
+        "Does not equate source similarity or a test command attempt with verified behavioral compatibility.",
+        "Names HTTP 409 on duplicate external_id and atomic order/line persistence as required integration checks.",
+        "Provides a bounded next step using an appropriate database test environment and a stop or rollback condition if contracts fail."
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "The target architecture was approved yesterday: keep the monolith and move repeated tax-code normalization from three handlers into one pure helper. No schema, API, deployment, or ownership changes are permitted. We now need implementation with unchanged behavior and focused regression checks. Which workflow should handle the work?",
+      "expected_output": "A concise handoff to behavior-preserving refactoring rather than reopening an already settled architecture decision.",
+      "assertions": [
+        "Routes the implementation to code-refactoring and preserves the agreed monolith and compatibility constraints.",
+        "Carries the three callers, normalization behavior, and focused regression checks into the handoff.",
+        "Does not restart a broad architecture comparison or demand a new architecture decision."
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "專案架構不好，幫我判斷要怎麼調整。目前只有這個目錄清單：src/controllers、src/models、src/utils、tests。我不能提供程式碼，也沒有工具可以讀取專案。",
+      "locale": "zh-TW",
+      "expected_output": "A limited assessment that identifies missing decision evidence and asks a small number of consequential questions without inferring architecture quality from folder names.",
+      "assertions": [
+        "Does not infer dependency direction, circular imports, missing tests, or bad boundaries from directory names alone.",
+        "States that current evidence is insufficient for a concrete restructuring recommendation.",
+        "Asks for concrete pain points and a representative behavior or change path rather than a long generic questionnaire.",
+        "Offers a bounded next investigation without claiming unavailable repository inspection or creating speculative migration work."
+      ]
+    }
+  ]
+}

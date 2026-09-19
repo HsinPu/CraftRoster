@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "skill_name": "project-architecture-review",
+  "cases": [
+    {
+      "id": "existing-project-boundaries",
+      "kind": "positive",
+      "prompt": "這個現有專案每次改訂單都會動到付款模組，幫我審查模組邊界和依賴方向，再判斷架構是否需要調整。",
+      "expected_skills": ["project-architecture-review"],
+      "excluded_skills": [],
+      "locale": "zh-TW"
+    },
+    {
+      "id": "keep-or-restructure",
+      "kind": "positive",
+      "prompt": "Audit the architecture of our existing internal CRUD app. Should we keep its current structure or introduce additional boundaries? Review before any implementation.",
+      "expected_skills": ["project-architecture-review"],
+      "excluded_skills": [],
+      "locale": "en"
+    },
+    {
+      "id": "chosen-target-refactor",
+      "kind": "near_match",
+      "prompt": "The architecture is approved. Extract the duplicated pure normalization function into the agreed shared module while preserving behavior; implement the refactor and run focused tests.",
+      "expected_skills": ["code-refactoring"],
+      "excluded_skills": ["project-architecture-review"],
+      "locale": "en"
+    },
+    {
+      "id": "new-feature-options",
+      "kind": "near_match",
+      "prompt": "We have no application yet. Compare possible approaches for a new offline note-taking product before we choose what to build.",
+      "expected_skills": ["solution-discovery"],
+      "excluded_skills": ["project-architecture-review"],
+      "locale": "en"
+    },
+    {
+      "id": "concept-definition",
+      "kind": "negative",
+      "prompt": "Explain what a modular monolith means in two paragraphs. I am studying terminology and do not have a project to review.",
+      "expected_skills": [],
+      "excluded_skills": ["project-architecture-review"],
+      "locale": "en"
+    }
+  ]
+}

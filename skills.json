@@ -2321,7 +2321,7 @@
     },
     {
       "name": "project-architecture-review",
-      "description": "Project architecture review workflow for auditing existing repositories across languages and frameworks, mapping entry points, module boundaries, dependency direction, data flow, configuration, tests, and deployment constraints. Use when a user says a project architecture feels wrong, says 專案架構不好 or 架構設計需要調整, asks for the best or most suitable architecture, wants to compare restructuring options before coding, or needs an incremental architecture migration plan.",
+      "description": "Review existing repository architecture using behavior paths, dependency evidence, and operational constraints to decide whether to retain, locally improve, or restructure it. Use for project architecture health checks, 專案架構不好 or 架構設計需要調整, architecture comparisons, and incremental migration planning. Route behavior-preserving implementation with an already chosen target to code-refactoring.",
       "category": "software-engineering",
       "author": "HsinPu",
       "source": "HsinPu/CraftRoster",

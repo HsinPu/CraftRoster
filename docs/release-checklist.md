@@ -54,9 +54,9 @@ npm run test:package
 | Agents | 237 |
 | Skill categories | 16 |
 | Agent coverage categories | 31／31 |
-| Required eval packages | 116 |
-| Output case definitions／assertions | 284／1209 |
-| Routing case definitions | 80 |
+| Required eval packages | 117 |
+| Output case definitions／assertions | 291／1237 |
+| Routing case definitions | 85 |
 | Referenced Skills／repositories／paths | 62／18／131 |
 | Provenance lock mappings | 62 Skills／18 repositories／115 path entries |
 <!-- CRAFTROSTER_RELEASE_BASELINE_END -->

@@ -1356,11 +1356,11 @@
     {
       "name": "project-architecture-review",
       "category": "software-engineering",
-      "decision": "defer",
-      "review_depth": "inventory-only",
-      "reason": "已盤點 metadata、結構與現有案例；本輪未逐段審查語義，保留原內容。",
-      "next_action": "按實際使用或失敗證據選入下一批，先補可驗證任務與近似反例，再決定是否修改。",
-      "entry_sha256": "95658e0527fd6b219c05356a241bc0036f83d681e4c53cc1f554f54380376f83",
+      "decision": "improve",
+      "review_depth": "semantic-review",
+      "reason": "已補強痛點與範圍確認、行為路徑證據、框架慣例判斷、保留現狀、資訊不足與遷移驗收分支，並新增 7 個行為及 5 個路由案例定義。",
+      "next_action": "以實際 repository 任務執行完整案例並與前版比較；案例定義與單一 inline 情境試跑不代表整套行為或路由評估通過。",
+      "entry_sha256": "6a9f20614e43897395f0a44f31b8545685b45b38800eb6d3660994afc7bbe686",
       "runtime_status": "not_run"
     },
     {
