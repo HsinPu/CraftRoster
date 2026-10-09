@@ -579,10 +579,13 @@ try {
         $skillInstall = Invoke-InstallerStep -Label "$($profile.Label) global Skill install" -InstallerArgs @(
             "-Target", $profile.RequestedTarget, "-Type", "skill", "-Name", $profile.SkillName, "-SourceDir", $repoRoot
         )
-        $expectedProfileSkillCount = if ($profile.SkillName -ceq 'frontend-code-review') { 2 } else { 1 }
+        $expectedProfileSkillCount = 1
         Assert-Equal @($skillInstall.Output | Where-Object { $_ -match '^OK\s+install Skill ' }).Count $expectedProfileSkillCount "$($profile.Label) Skill install count including required dependencies"
         if ($profile.SkillName -ceq 'frontend-code-review') {
-            Assert-FileContentMatches -ActualPath (Join-Path $profile.SkillRoot 'code-review\SKILL.md') -ExpectedPath (Join-Path $repoRoot 'skills\code-review\SKILL.md') -Label 'global frontend review baseline'
+            Assert-Equal (Test-Path -LiteralPath (Join-Path $profile.SkillRoot 'code-review')) $false 'global frontend review conditional dependency not installed'
+            if (($skillInstall.Output -join "`n") -notmatch 'Conditional route not auto-installed: frontend-code-review -> code-review') {
+                throw 'Global frontend review conditional dependency was not explained during install'
+            }
         }
         $globalSkillRoot = Join-Path $profile.SkillRoot $profile.SkillName
         Assert-FileContentMatches `
@@ -600,6 +603,12 @@ try {
             "-Target", $profile.RequestedTarget, "-Type", "skill", "-Name", $profile.SkillName, "-SourceDir", $repoRoot
         )
         Assert-Equal @($skillUpdate.Output | Where-Object { $_ -match '^OK\s+update Skill ' }).Count $expectedProfileSkillCount "$($profile.Label) Skill update count including required dependencies"
+        if ($profile.SkillName -ceq 'frontend-code-review') {
+            Assert-Equal (Test-Path -LiteralPath (Join-Path $profile.SkillRoot 'code-review')) $false 'updated global frontend review conditional dependency not installed'
+            if (($skillUpdate.Output -join "`n") -notmatch 'Conditional route not auto-installed: frontend-code-review -> code-review') {
+                throw 'Global frontend review conditional dependency was not explained during update'
+            }
+        }
         Assert-FileContentMatches `
             -ActualPath (Join-Path $globalSkillRoot "SKILL.md") `
             -ExpectedPath (Join-Path $repoRoot ("skills\" + $profile.SkillName + "\SKILL.md")) `
