@@ -26,15 +26,16 @@ Usage:
                         [--branch name] [--dry-run] [--force]
   curl -fsSL https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/setup.sh | bash
 
-Choose a platform, Skills / Agents / both, then all components or numbered
-categories. Multiple categories accept comma or space-separated numbers.
+Choose a platform, user global or current project, Skills / Agents / both, then
+all components or numbered categories. Multiple categories accept comma or
+space-separated numbers.
 Enter uses the displayed default; q cancels. Invalid answers allow three tries.
 An explicit y is required before installation. --dry-run previews the complete
 plan without a write-confirmation prompt or destination writes.
 
 Options:
   --source-dir path  Use an existing checkout; otherwise download one GitHub archive.
-  --dir path         Override the backend destination; for project, set its root.
+  --dir path         Override the global destination, or set the project root.
   --repo owner/name  GitHub source repository (default: HsinPu/CraftRoster).
   --branch name      GitHub branch (default: main).
   --dry-run          Complete the menus and preflight only.
@@ -96,7 +97,7 @@ setup_invalid_answer() {
 
 setup_choose_platform() {
   local attempt
-  printf '\nPlatform\n  1) Codex\n  2) Claude Code\n  3) Cursor\n  4) GitHub Copilot\n  5) OpenCode\n  6) Project (all platform adapters)\n'
+  printf '\nPlatform\n  1) Codex\n  2) Claude Code\n  3) Cursor\n  4) GitHub Copilot\n  5) OpenCode\n  6) Project (all platforms)\n'
   for attempt in 1 2 3; do
     setup_read_answer 'Platform [1] (q to cancel)'
     case "${SETUP_REPLY:-1}" in
@@ -107,6 +108,25 @@ setup_choose_platform() {
       5) SETUP_TARGET="opencode"; return ;;
       6) SETUP_TARGET="project"; return ;;
       *) setup_invalid_answer "$attempt" 'Choose a platform number from 1 to 6.' ;;
+    esac
+  done
+}
+
+setup_choose_scope() {
+  local attempt
+  if [[ "$SETUP_TARGET" == "project" ]]; then
+    SETUP_PLATFORM="all"
+    SETUP_SCOPE="project"
+    return
+  fi
+  SETUP_PLATFORM="$SETUP_TARGET"
+  printf '\nInstallation scope\n  1) User global\n  2) Current project\n'
+  for attempt in 1 2 3; do
+    setup_read_answer 'Installation scope [1] (q to cancel)'
+    case "${SETUP_REPLY:-1}" in
+      1) SETUP_SCOPE="global"; return ;;
+      2) SETUP_SCOPE="project"; SETUP_TARGET="project"; return ;;
+      *) setup_invalid_answer "$attempt" 'Choose 1 (user global) or 2 (current project).' ;;
     esac
   done
 }
@@ -274,6 +294,9 @@ setup_yes_no() {
 setup_run_batch() {
   local job="$1" preview="$2"
   local -a args=(--target "$SETUP_TARGET" --type "${SETUP_JOB_TYPES[$job]}" --source-dir "$SETUP_ROOT" --branch "$SETUP_BRANCH")
+  if [[ "$SETUP_TARGET" == "project" && "$SETUP_PLATFORM" != "all" ]]; then
+    args+=(--project-platform "$SETUP_PLATFORM")
+  fi
   [[ "$SETUP_REPO_EXPLICIT" -eq 0 ]] || args+=(--repo "$SETUP_REPO")
   [[ -z "$SETUP_INSTALL_DIR" ]] || args+=(--dir "$SETUP_INSTALL_DIR")
   [[ -z "${SETUP_JOB_CATEGORIES[$job]}" ]] || args+=(--category "${SETUP_JOB_CATEGORIES[$job]}")
@@ -287,7 +310,7 @@ setup_run_batch() {
 }
 
 setup_main() {
-  local type job
+  local type job platform_label scope_label
   SETUP_TYPES=()
   SETUP_JOB_TYPES=()
   SETUP_JOB_CATEGORIES=()
@@ -323,6 +346,7 @@ setup_main() {
   SETUP_CALLER_DIR="$(pwd -P)"
   printf 'CraftRoster interactive setup\n'
   setup_choose_platform
+  setup_choose_scope
   setup_choose_content
   setup_acquire_source
   setup_load_categories
@@ -339,8 +363,16 @@ setup_main() {
     fi
   done
 
-  printf '\nSelected plan\n  Platform: %s\n  Source snapshot: %s\n' "$SETUP_TARGET" "$SETUP_ROOT"
-  [[ -z "$SETUP_INSTALL_DIR" ]] || printf '  Destination override%s: %s\n' "$(if [[ "$SETUP_TARGET" == "project" ]]; then printf ' (project root)'; fi)" "$SETUP_INSTALL_DIR"
+  platform_label="$SETUP_PLATFORM"
+  [[ "$SETUP_PLATFORM" != "all" ]] || platform_label="all platforms"
+  scope_label="user global"
+  [[ "$SETUP_SCOPE" != "project" ]] || scope_label="current project"
+  printf '\nSelected plan\n  Platform: %s\n  Installation scope: %s\n  Source snapshot: %s\n' "$platform_label" "$scope_label" "$SETUP_ROOT"
+  if [[ "$SETUP_SCOPE" == "project" ]]; then
+    printf '  Project root: %s\n' "$SETUP_INSTALL_DIR"
+  elif [[ -n "$SETUP_INSTALL_DIR" ]]; then
+    printf '  Destination override: %s\n' "$SETUP_INSTALL_DIR"
+  fi
   for ((job = 0; job < ${#SETUP_JOB_TYPES[@]}; job++)); do
     printf '  %s: %s (%s selected components)\n' "${SETUP_JOB_TYPES[$job]}" "${SETUP_JOB_CATEGORIES[$job]:-all}" "${SETUP_JOB_COUNTS[$job]}"
   done

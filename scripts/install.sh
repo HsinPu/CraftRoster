@@ -9,6 +9,8 @@ LEGACY_SKILL_DIGEST_MANIFEST=""
 LEGACY_SKILL_DIGEST_MANIFEST_VALIDATED=0
 BRANCH="main"
 TARGET=""
+PROJECT_PLATFORM="all"
+PROJECT_PLATFORM_OPTION_EXPLICIT=0
 TYPE="skill"
 NAME=""
 CATEGORY=""
@@ -50,6 +52,8 @@ Usage:
 Compatibility aliases:
   --agent is an alias for --target; --skill selects a Skill by name.
   --source-dir installs from a local checkout; otherwise the requested GitHub repo and branch are downloaded.
+  --project-platform <all|codex|claude|cursor|copilot|vscode|opencode> selects project adapters (default: all).
+  --project-platform is only valid with --target project; vscode is an alias for copilot.
   Omit --name and --category to install every available component of the selected Type.
   Skill installs include required dependencies; conditional and optional dependencies are not installed automatically.
   The source checkout must include scripts/data/install-skill-dependencies.tsv.
@@ -69,12 +73,14 @@ Examples:
   scripts/install.sh --target codex --type agent --enable-auto-delegation
   scripts/install.sh --target opencode --type agent
   scripts/install.sh --target project --type agent --name debugger --dry-run
+  scripts/install.sh --target project --project-platform codex --type agent --name debugger
 
 Safety:
   Existing components are updated only when repo, component, name, and target metadata all match.
   Agent updates additionally require matching id and adapter metadata.
   Full Agent installs also install the subagent-architecture Skill.
   The project target uses the current directory as its project root; --dir overrides that root.
+  Project installs default to all platforms; --project-platform selects a single platform.
   Global auto-delegation is opt-in and never overwrites conflicting user instructions.
   Unknown same-named content is blocked unless --force is provided.
   --force also applies to required dependencies in the expanded installation plan.
@@ -194,6 +200,7 @@ opencode_config_root() {
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --target|--agent) require_option_value "$1" "${2:-}"; TARGET="$2"; shift 2 ;;
+    --project-platform) require_option_value "$1" "${2:-}"; PROJECT_PLATFORM="$2"; PROJECT_PLATFORM_OPTION_EXPLICIT=1; shift 2 ;;
     --type) require_option_value "$1" "${2:-}"; TYPE="$2"; shift 2 ;;
     --name) require_option_value "$1" "${2:-}"; NAME="$2"; shift 2 ;;
     --category) require_option_value "$1" "${2:-}"; CATEGORY="$2"; shift 2 ;;
@@ -258,8 +265,12 @@ configure_skill_profiles() {
   SKILL_LEGACY_TARGETS=()
   SKILL_CODEX_LEGACY_CHECKS=()
   if [[ "$TARGET" == "project" ]]; then
-    add_skill_profile "$PROJECT_ROOT/.agents/skills" "project" "codex-project" 0
-    add_skill_profile "$PROJECT_ROOT/.claude/skills" "project" "claude-project" 0
+    if [[ "$PROJECT_PLATFORM" != "claude" ]]; then
+      add_skill_profile "$PROJECT_ROOT/.agents/skills" "project" "codex-project" 0
+    fi
+    if [[ "$PROJECT_PLATFORM" == "all" || "$PROJECT_PLATFORM" == "claude" ]]; then
+      add_skill_profile "$PROJECT_ROOT/.claude/skills" "project" "claude-project" 0
+    fi
     return
   fi
   if [[ "$use_install_override" -eq 1 && -n "$INSTALL_DIR" ]]; then
@@ -304,11 +315,21 @@ configure_agent_profiles() {
   AGENT_OWNERSHIP_TARGETS=()
   AGENT_LEGACY_TARGETS=()
   if [[ "$TARGET" == "project" ]]; then
-    add_agent_profile "codex" ".toml" "$PROJECT_ROOT/.codex/agents" "project" "codex-project"
-    add_agent_profile "claude" ".md" "$PROJECT_ROOT/.claude/agents" "project" "claude-project"
-    add_agent_profile "cursor" ".md" "$PROJECT_ROOT/.cursor/agents" "project" "cursor-project"
-    add_agent_profile "copilot" ".agent.md" "$PROJECT_ROOT/.github/agents" "project" "copilot-project,vscode-project,vscode"
-    add_agent_profile "opencode" ".md" "$PROJECT_ROOT/.opencode/agents" "project" "opencode-project"
+    if [[ "$PROJECT_PLATFORM" == "all" || "$PROJECT_PLATFORM" == "codex" ]]; then
+      add_agent_profile "codex" ".toml" "$PROJECT_ROOT/.codex/agents" "project" "codex-project"
+    fi
+    if [[ "$PROJECT_PLATFORM" == "all" || "$PROJECT_PLATFORM" == "claude" ]]; then
+      add_agent_profile "claude" ".md" "$PROJECT_ROOT/.claude/agents" "project" "claude-project"
+    fi
+    if [[ "$PROJECT_PLATFORM" == "all" || "$PROJECT_PLATFORM" == "cursor" ]]; then
+      add_agent_profile "cursor" ".md" "$PROJECT_ROOT/.cursor/agents" "project" "cursor-project"
+    fi
+    if [[ "$PROJECT_PLATFORM" == "all" || "$PROJECT_PLATFORM" == "copilot" ]]; then
+      add_agent_profile "copilot" ".agent.md" "$PROJECT_ROOT/.github/agents" "project" "copilot-project,vscode-project,vscode"
+    fi
+    if [[ "$PROJECT_PLATFORM" == "all" || "$PROJECT_PLATFORM" == "opencode" ]]; then
+      add_agent_profile "opencode" ".md" "$PROJECT_ROOT/.opencode/agents" "project" "opencode-project"
+    fi
     return
   fi
   if [[ -n "$INSTALL_DIR" ]]; then
@@ -2487,6 +2508,16 @@ if [[ ! "$BRANCH" =~ ^[A-Za-z0-9._/+_-]+$ ]]; then
   exit 1
 fi
 validate_target "$TARGET" "$TYPE"
+if [[ "$PROJECT_PLATFORM_OPTION_EXPLICIT" -eq 1 && "$TARGET" != "project" ]]; then
+  log_error "--project-platform is only supported with --target project."
+  exit 1
+fi
+case "$PROJECT_PLATFORM" in
+  all|codex|claude|cursor|copilot|vscode|opencode) ;;
+  *) log_error "Unsupported project platform: $PROJECT_PLATFORM"; exit 1 ;;
+esac
+REQUESTED_PROJECT_PLATFORM="$PROJECT_PLATFORM"
+if [[ "$PROJECT_PLATFORM" == "vscode" ]]; then PROJECT_PLATFORM="copilot"; fi
 REQUESTED_TARGET="$TARGET"
 if [[ "$TARGET" == "vscode" ]]; then TARGET="copilot"; fi
 if [[ "$ENABLE_AUTO_DELEGATION" -eq 1 && "$TYPE" != "agent" ]]; then
@@ -2517,6 +2548,12 @@ else
 fi
 if [[ "$REQUESTED_TARGET" == "vscode" ]]; then
   log_info "Target alias: vscode -> copilot"
+fi
+if [[ "$TARGET" == "project" ]]; then
+  if [[ "$REQUESTED_PROJECT_PLATFORM" == "vscode" ]]; then
+    log_info "Project platform alias: vscode -> copilot"
+  fi
+  log_info "Project platform: $PROJECT_PLATFORM"
 fi
 if [[ "$TYPE" == "agent" ]]; then
   for destination in "${AGENT_DESTINATIONS[@]}"; do

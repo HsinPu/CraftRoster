@@ -42,7 +42,7 @@ CraftRoster 是 catalog 與 distribution layer，**不是**另一套 Agent runti
 
 ### 互動式安裝
 
-只需執行一行命令，再跟著選單選擇平台、內容與分類。一般安裝不需要 Node.js，也不需要管理員／`sudo`。
+只需執行一行命令，再跟著選單選擇平台、全域或專案範圍、內容與分類。一般安裝不需要 Node.js，也不需要管理員／`sudo`。
 
 Windows PowerShell：
 
@@ -58,12 +58,15 @@ curl -fsSL https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/set
 
 選單會依序讓你：
 
-1. 選擇 Codex、Claude Code、Cursor、VS Code／Copilot、OpenCode，或目前專案。
-2. 選擇 Skills、Agents，或兩者一起安裝。
-3. 分別選擇全部，或用編號選取多個分類，例如 `1,3`。必要 Skill 配套會自動補齊。
-4. 查看安裝內容與位置；所有批次預檢通過後，輸入 `y` 才正式安裝。
+1. 選擇 Codex、Claude Code、Cursor、VS Code／Copilot 或 OpenCode。
+2. 選擇使用者全域安裝，或安裝到一個專案。專案範圍只建立所選平台需要的目錄。
+3. 選擇 Skills、Agents，或兩者一起安裝。
+4. 分別選擇全部，或用編號選取多個分類，例如 `1,3`。必要 Skill 配套會自動補齊。
+5. 查看安裝內容與位置；所有批次預檢通過後，輸入 `y` 才正式安裝。
 
-輸入 `q` 可取消，最後確認直接按 Enter 也會取消。選擇專案安裝時會確認專案根目錄；選擇 Codex／OpenCode Agents 時，可另外選擇是否啟用主動委派。來源 archive 只下載一次，所有批次都使用同一份內容。
+例如 Codex：選 `1) codex`，再選 `1) User global` 或 `2) Current project`。Codex 專案 Skills 寫入 `<project-root>/.agents/skills/`，Agents 寫入 `<project-root>/.codex/agents/`；全域預設使用 `$CODEX_HOME`，未設定時為 `~/.codex/`。選單另保留 `6) project (all platforms)`，可一次建立跨平台專案安裝。
+
+輸入 `q` 可取消，最後確認直接按 Enter 也會取消。選擇專案範圍時會確認專案根目錄，Enter 預設使用啟動命令時的目前目錄；選擇全域 Codex／OpenCode Agents 時，可另外選擇是否啟用主動委派。來源 archive 只下載一次，所有批次都使用同一份內容。
 
 詳細流程、本機執行方式與疑難排解請看[互動式安裝指南](docs/interactive-installation.md)。
 
@@ -160,7 +163,7 @@ curl -fsSL https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/ins
 
 ### 安裝到目前專案
 
-先切換到專案／workspace root。`project` target 直接使用目前工作目錄，不會自行尋找 Git root。
+先切換到專案／workspace root。`project` target 直接使用目前工作目錄，不會自行尋找 Git root。以下命令預設建立所有平台的專案 profile；只要一個平台時，可加上 `-ProjectPlatform codex`／`--project-platform codex`（也接受 `claude`、`cursor`、`copilot`、`opencode`）。互動安裝選 Codex → Current project 會自動使用這個範圍。
 
 Windows PowerShell：
 
@@ -216,7 +219,7 @@ bash scripts/install.sh --target codex --type agent --source-dir . --enable-auto
 
 `vscode` 是 `copilot` alias，兩者共用路徑與 ownership identity。OpenCode 依序使用 `OPENCODE_CONFIG_DIR`、`XDG_CONFIG_HOME/opencode` 或 `~/.config/opencode`。
 
-`project` target 會建立：
+`project` target 預設建立以下跨平台目錄；指定 `ProjectPlatform` 時只建立所選平台的 Skill 目錄與 Agent adapter。Codex、Cursor、Copilot 與 OpenCode 的專案 Skills 共用 `.agents/skills/`，Claude 使用 `.claude/skills/`。
 
 ```text
 <project-root>/
@@ -236,6 +239,7 @@ bash scripts/install.sh --target codex --type agent --source-dir . --enable-auto
 | 用途 | PowerShell | Bash | 說明 |
 |---|---|---|---|
 | 目標 | `-Target` | `--target` | 必填 |
+| 專案平台 | `-ProjectPlatform` | `--project-platform` | 只用於 `project`；預設 `all`，可選 `codex`、`claude`、`cursor`、`copilot`、`opencode`（`vscode` 是 `copilot` alias） |
 | 類型 | `-Type skill\|agent` | `--type skill\|agent` | 預設 `skill` |
 | 單一元件 | `-Name` | `--name` | 與分類互斥 |
 | 分類 | `-Category` | `--category` | 與單一元件互斥；選取指定分類，Skill 另補齊必要配套 |

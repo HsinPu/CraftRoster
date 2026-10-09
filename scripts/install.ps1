@@ -14,7 +14,9 @@ param(
     [string]$InstallDir,
     [switch]$EnableAutoDelegation,
     [switch]$DryRun,
-    [switch]$Force
+    [switch]$Force,
+    [ValidateSet("all", "codex", "claude", "cursor", "copilot", "vscode", "opencode")]
+    [string]$ProjectPlatform = "all"
 )
 
 $ErrorActionPreference = "Stop"
@@ -43,11 +45,14 @@ CraftRoster installer
 Usage:
   .\scripts\install.ps1 -Target <target> [-Type skill] [-Name <skill> | -Category <category>] [-InstallDir path] [-DryRun] [-Force]
   .\scripts\install.ps1 -Target <target> -Type agent [-Name <role> | -Category <category>] [-InstallDir path] [-EnableAutoDelegation] [-DryRun] [-Force]
+  .\scripts\install.ps1 -Target project [-Type skill|agent] [-ProjectPlatform all|codex|claude|cursor|copilot|opencode] [-InstallDir project-root] [-DryRun]
 
 Compatibility aliases:
   -Agent is an alias for -Target; -Skill is an alias for -Name.
   -SourceDir installs from a local checkout; otherwise the requested GitHub repo and branch are downloaded.
   -InstallDir is a direct destination for tool targets and the project root for the 'project' target.
+  -ProjectPlatform selects project destinations and requires -Target project; omitting it preserves all-platform project installs.
+  'vscode' is also an alias for the 'copilot' project platform.
   Omit -Name and -Category to install every available component of the selected Type.
   Skill installs include required dependencies; conditional and optional dependencies are not installed automatically.
   The source checkout must include scripts/data/install-skill-dependencies.tsv.
@@ -67,12 +72,13 @@ Examples:
   .\scripts\install.ps1 -Target codex -Type agent -EnableAutoDelegation
   .\scripts\install.ps1 -Target opencode -Type agent
   .\scripts\install.ps1 -Target project -Type agent -Name debugger -DryRun
+  .\scripts\install.ps1 -Target project -ProjectPlatform codex -Type agent -Name debugger -DryRun
 
 Safety:
   Existing components are updated only when repo, component, name, and target metadata all match.
   Agent updates additionally require matching id and adapter metadata.
   Full Agent installs also install the subagent-architecture Skill.
-  'project' installs cross-tool files below the current directory (or -InstallDir project root).
+  'project' installs the selected platform's files below the current directory (or -InstallDir project root); the default is all platforms.
   'vscode' is an alias for 'copilot' and uses the same ownership metadata.
   Global auto-delegation is opt-in and never overwrites conflicting user instructions.
   Unknown same-named content is blocked unless -Force is provided.
@@ -246,14 +252,18 @@ function Get-SkillInstallProfiles {
         [string]$ComponentName,
         [string]$RequestedInstallDir,
         [string]$RepoName,
-        [string]$IncomingSkillFile
+        [string]$IncomingSkillFile,
+        [string]$ProjectPlatformName = "all"
     )
     if ($TargetName -eq "project") {
         $root = Get-ProjectRoot -RequestedRoot $RequestedInstallDir
-        return @(
+        $projectProfiles = @(
             @{ DestinationRoot = Join-Path $root ".agents\skills"; TargetName = "project"; LegacyTargets = @("codex-project") },
             @{ DestinationRoot = Join-Path $root ".claude\skills"; TargetName = "project"; LegacyTargets = @("claude-project") }
         )
+        if ($ProjectPlatformName -eq "all") { return $projectProfiles }
+        if ($ProjectPlatformName -eq "claude") { return ,$projectProfiles[1] }
+        return ,$projectProfiles[0]
     }
     $destinationRoot = if ($RequestedInstallDir) {
         [System.IO.Path]::GetFullPath($RequestedInstallDir)
@@ -265,16 +275,18 @@ function Get-SkillInstallProfiles {
 }
 
 function Get-AgentInstallProfiles {
-    param([string]$TargetName, [string]$RequestedInstallDir)
+    param([string]$TargetName, [string]$RequestedInstallDir, [string]$ProjectPlatformName = "all")
     if ($TargetName -eq "project") {
         $root = Get-ProjectRoot -RequestedRoot $RequestedInstallDir
-        return @(
+        $projectProfiles = @(
             @{ DestinationRoot = Join-Path $root ".codex\agents"; TargetName = "project"; Platform = "codex"; OutputSuffix = ".toml"; LegacyTargets = @("codex-project") },
             @{ DestinationRoot = Join-Path $root ".claude\agents"; TargetName = "project"; Platform = "claude"; OutputSuffix = ".md"; LegacyTargets = @("claude-project") },
             @{ DestinationRoot = Join-Path $root ".cursor\agents"; TargetName = "project"; Platform = "cursor"; OutputSuffix = ".md"; LegacyTargets = @("cursor-project") },
             @{ DestinationRoot = Join-Path $root ".github\agents"; TargetName = "project"; Platform = "copilot"; OutputSuffix = ".agent.md"; LegacyTargets = @("copilot-project", "vscode-project", "vscode") },
             @{ DestinationRoot = Join-Path $root ".opencode\agents"; TargetName = "project"; Platform = "opencode"; OutputSuffix = ".md"; LegacyTargets = @("opencode-project") }
         )
+        if ($ProjectPlatformName -eq "all") { return $projectProfiles }
+        return @($projectProfiles | Where-Object { $_.Platform -eq $ProjectPlatformName })
     }
 
     switch ($TargetName) {
@@ -2297,6 +2309,11 @@ try {
     Test-RepositoryCoordinate -RepoName $Repo
     Test-BranchName -BranchName $Branch
     $Target = Resolve-TargetName -TargetName $Target -ComponentType $Type
+    if ($PSBoundParameters.ContainsKey("ProjectPlatform") -and $Target -ne "project") {
+        throw "ProjectPlatform is only supported with -Target project."
+    }
+    $ProjectPlatform = $ProjectPlatform.ToLowerInvariant()
+    if ($ProjectPlatform -eq "vscode") { $ProjectPlatform = "copilot" }
     if ($EnableAutoDelegation -and $Type -ne "agent") {
         throw "EnableAutoDelegation is only supported with -Type agent."
     }
@@ -2333,7 +2350,7 @@ try {
             Write-Info "Selected $($categoryNames.Count) $Type component(s) from category '$Category'"
         }
         if ($Type -eq "agent") {
-            $agentProfiles = @(Get-AgentInstallProfiles -TargetName $Target -RequestedInstallDir $InstallDir)
+            $agentProfiles = @(Get-AgentInstallProfiles -TargetName $Target -RequestedInstallDir $InstallDir -ProjectPlatformName $ProjectPlatform)
             foreach ($profile in $agentProfiles) {
                 Write-Info "Agent destination ($($profile.Platform)): $($profile.DestinationRoot)"
             }
@@ -2365,7 +2382,7 @@ try {
                 $companionSources = @(Expand-RequiredSkillSources -RepoRoot $repoRoot -Sources @($companionSource) -DependencyRows $dependencyRows)
                 $companionInstallDir = if ($Target -eq "project") { $InstallDir } else { $null }
                 foreach ($source in $companionSources) {
-                    $sourceProfiles = @(Get-SkillInstallProfiles -TargetName $Target -ComponentName $source.Name -RequestedInstallDir $companionInstallDir -RepoName $Repo -IncomingSkillFile (Join-Path $source.FullName "SKILL.md"))
+                    $sourceProfiles = @(Get-SkillInstallProfiles -TargetName $Target -ComponentName $source.Name -RequestedInstallDir $companionInstallDir -RepoName $Repo -IncomingSkillFile (Join-Path $source.FullName "SKILL.md") -ProjectPlatformName $ProjectPlatform)
                     if ($source.Name -ceq $companionSource.Name) { $companionProfiles = $sourceProfiles }
                     for ($profileIndex = 0; $profileIndex -lt $sourceProfiles.Count; $profileIndex++) {
                         $companionPlans += @{ Source = $source; Profile = $sourceProfiles[$profileIndex]; ProfileIndex = $profileIndex }
@@ -2417,7 +2434,7 @@ try {
             $sources = @(Expand-RequiredSkillSources -RepoRoot $repoRoot -Sources $sources -DependencyRows $dependencyRows)
             $skillPlans = @()
             foreach ($source in $sources) {
-                $sourceProfiles = @(Get-SkillInstallProfiles -TargetName $Target -ComponentName $source.Name -RequestedInstallDir $InstallDir -RepoName $Repo -IncomingSkillFile (Join-Path $source.FullName "SKILL.md"))
+                $sourceProfiles = @(Get-SkillInstallProfiles -TargetName $Target -ComponentName $source.Name -RequestedInstallDir $InstallDir -RepoName $Repo -IncomingSkillFile (Join-Path $source.FullName "SKILL.md") -ProjectPlatformName $ProjectPlatform)
                 for ($profileIndex = 0; $profileIndex -lt $sourceProfiles.Count; $profileIndex++) {
                     $skillPlans += @{ Source = $source; Profile = $sourceProfiles[$profileIndex]; ProfileIndex = $profileIndex }
                 }

@@ -138,7 +138,7 @@ function fixture(selectedRuntime) {
       'skill\tz-library\toptional', 'skill\ta-first\talpha', 'skill\tz-library\tconditional'
     ].join('\n') + '\n');
   write(path.join(current.source, 'scripts/data/install-skill-dependencies.tsv'),
-    'skill\tdependency\tkind\twhen\nalpha\tbase\trequired\t-\nalpha\tconditional\tconditional\tOnly for a specialist task.\nalpha\toptional\toptional\t-\nbeta\tbase\trequired\t-\n');
+    'skill\tdependency\tkind\twhen\nalpha\tbase\trequired\t-\nalpha\tconditional\tconditional\tOnly for a specialist task.\nalpha\toptional\toptional\t-\nbeta\tbase\trequired\t-\nsubagent-architecture\tbase\trequired\t-\n');
   return current;
 }
 
@@ -168,8 +168,8 @@ function environment(current, extra = {}) {
 
 function parameters(selectedRuntime, values) {
   const flags = selectedRuntime.kind === 'powershell'
-    ? { source: '-SourceDir', dir: '-InstallDir', repo: '-Repo', branch: '-Branch', dry: '-DryRun', force: '-Force', target: '-Target', type: '-Type', name: '-Name', category: '-Category' }
-    : { source: '--source-dir', dir: '--dir', repo: '--repo', branch: '--branch', dry: '--dry-run', force: '--force', target: '--target', type: '--type', name: '--name', category: '--category' };
+    ? { source: '-SourceDir', dir: '-InstallDir', repo: '-Repo', branch: '-Branch', dry: '-DryRun', force: '-Force', target: '-Target', type: '-Type', name: '-Name', category: '-Category', projectPlatform: '-ProjectPlatform' }
+    : { source: '--source-dir', dir: '--dir', repo: '--repo', branch: '--branch', dry: '--dry-run', force: '--force', target: '--target', type: '--type', name: '--name', category: '--category', projectPlatform: '--project-platform' };
   return Object.entries(values).flatMap(([key, value]) => value === undefined || value === false ? []
     : value === true ? [flags[key]] : [flags[key], ['source', 'dir'].includes(key) ? shellPath(value, selectedRuntime) : value]);
 }
@@ -198,6 +198,13 @@ function untouchedHome(current) {
   // Installation directories and global config must still be completely absent.
   const entries = fs.readdirSync(current.home).filter(name => !(process.platform === 'win32' && name === 'AppData'));
   assert.deepEqual(entries, [], `Unexpected home installation writes: ${current.home}`);
+}
+
+function isolatedProject(current, expectedRoots) {
+  assert.deepEqual(fs.readdirSync(current.destination).sort(), [...expectedRoots].sort(), 'Unexpected project profile writes');
+  assert(!fs.existsSync(path.join(current.destination, '.codex/config.toml')), 'Unexpected project delegation config');
+  assert(!fs.existsSync(path.join(current.destination, '.opencode/opencode.json')), 'Unexpected project delegation config');
+  untouchedHome(current);
 }
 
 function snapshot(directory) {
@@ -259,17 +266,17 @@ function commonCases(selectedRuntime) {
     current.source = renamedSource;
     current.destination = path.join(current.directory, 'destination with spaces');
     const values = { source: `${current.source}\\`, dir: `${current.destination}\\` };
-    const output = successful(invoke(current, '2\n1\n1\n', { ...values, dry: true }));
+    const output = successful(invoke(current, '2\n1\n1\n1\n', { ...values, dry: true }));
     assert.match(output, /DRY-RUN install Skill alpha /);
     assert.doesNotMatch(output, installationLine);
     emptyDestination(current);
-    successful(invoke(current, '2\n1\n1\ny\n', values));
+    successful(invoke(current, '2\n1\n1\n1\ny\n', values));
     installedSkills(current, current.destination, ['alpha', 'base'], 'claude');
   });
 
   test(selectedRuntime, 'multi-category Skills preserve required closure and forwarded repo/branch', () => {
     const current = fixture(selectedRuntime);
-    const output = successful(invoke(current, '2\n1\n2, 1 2\ny\n', { repo: 'FixtureOwner/Catalog', branch: 'feature/interactive-fixture' }));
+    const output = successful(invoke(current, '2\n1\n1\n2, 1 2\ny\n', { repo: 'FixtureOwner/Catalog', branch: 'feature/interactive-fixture' }));
     installedSkills(current, current.destination, ['alpha', 'beta', 'base'], 'claude', 'FixtureOwner/Catalog', 'feature/interactive-fixture');
     assert.match(output, /conditional/i);
     assert(!fs.existsSync(path.join(current.destination, 'conditional')));
@@ -277,24 +284,35 @@ function commonCases(selectedRuntime) {
     preflightBeforeWrites(output);
   });
 
-  test(selectedRuntime, 'both modes and prompted project path install every project profile', () => {
+  test(selectedRuntime, 'legacy project all profiles support single-platform updates at a path with spaces', () => {
     const current = fixture(selectedRuntime);
     current.destination = path.join(current.directory, 'chosen project with spaces');
     const answerPath = shellPath(current.destination, selectedRuntime);
     const output = successful(invoke(current, `6\n3\n1\n2,1\n${answerPath}\ny\n`, { dir: undefined }));
     for (const relative of ['.agents/skills', '.claude/skills']) installedSkills(current, path.join(current.destination, relative), ['alpha', 'base'], 'project');
     for (const profile of profiles) installedAgents(current, path.join(current.destination, profile.project), agentNames, profile, 'project');
+    assert.doesNotMatch(output, /Installation scope \[1\]/);
     assert.doesNotMatch(output, /Enable proactive Agent delegation\?/i);
     preflightBeforeWrites(output);
+    const otherProfiles = ['.claude', '.cursor', '.github', '.opencode'].map(relative => [relative, snapshot(path.join(current.destination, relative))]);
+    const skillUpdate = successful(invoke(current, '', { target: 'project', projectPlatform: 'codex', type: 'skill', name: 'alpha' }, true));
+    assert.equal(skillUpdate.split(/\r?\n/).filter(line => /^OK\s+update Skill /.test(line)).length, 2, skillUpdate);
+    const agentUpdate = successful(invoke(current, '', { target: 'project', projectPlatform: 'codex', type: 'agent', name: 'alpha-agent' }, true));
+    assert.equal(agentUpdate.split(/\r?\n/).filter(line => /^OK\s+update Agent /.test(line)).length, 1, agentUpdate);
+    installedSkills(current, path.join(current.destination, '.agents/skills'), ['alpha', 'base'], 'project');
+    installedAgents(current, path.join(current.destination, '.codex/agents'), agentNames, profiles[0], 'project');
+    for (const [relative, before] of otherProfiles) assert.deepEqual(snapshot(path.join(current.destination, relative)), before, `${relative} changed during Codex-only update`);
+    untouchedHome(current);
   });
 
   test(selectedRuntime, 'Enter defaults select codex, both and all while dry-run writes nothing', () => {
     const current = fixture(selectedRuntime);
-    const output = successful(invoke(current, '\n\n\n\n\n', { dry: true }));
+    const output = successful(invoke(current, '\n\n\n\n\n\n', { dry: true }));
     assert.match(output, /DRY-RUN install Skill alpha /);
     assert.match(output, /DRY-RUN install Skill conditional /);
     assert.match(output, /DRY-RUN install Agent alpha-agent .*alpha-agent\.toml/);
     assert.match(output, /DRY-RUN install Agent beta-agent .*beta-agent\.toml/);
+    assert.match(output, /Installation scope: user global/);
     assert.doesNotMatch(output, /Install this plan\?/i);
     assert.doesNotMatch(output, installationLine);
     emptyDestination(current);
@@ -302,9 +320,9 @@ function commonCases(selectedRuntime) {
 
   test(selectedRuntime, 'all Agents and explicit Codex delegation install companion and managed config', () => {
     const current = fixture(selectedRuntime);
-    const output = successful(invoke(current, '1\n2\n0\ny\ny\n', { dir: undefined }));
+    const output = successful(invoke(current, '1\n1\n2\n0\ny\ny\n', { dir: undefined }));
     installedAgents(current, path.join(current.home, '.codex/agents'), agentNames, profiles[0], 'codex');
-    installedSkills(current, path.join(current.home, '.codex/skills'), ['subagent-architecture'], 'codex');
+    installedSkills(current, path.join(current.home, '.codex/skills'), ['base', 'subagent-architecture'], 'codex');
     const config = fs.readFileSync(path.join(current.home, '.codex/config.toml'), 'utf8');
     assert.match(config, /CRAFTROSTER_AUTO_DELEGATION_START/);
     assert.match(config, /Delegate bounded independent tasks/);
@@ -313,14 +331,14 @@ function commonCases(selectedRuntime) {
 
   test(selectedRuntime, 'OpenCode delegation defaults to N and explicit Y updates its config', () => {
     const current = fixture(selectedRuntime);
-    successful(invoke(current, '5\n2\n1\n\ny\n', { dir: undefined }));
+    successful(invoke(current, '5\n1\n2\n1\n\ny\n', { dir: undefined }));
     const configRoot = path.join(current.home, '.config/opencode');
     installedAgents(current, path.join(configRoot, 'agents'), ['alpha-agent'], profiles[4], 'opencode');
     assert(!fs.existsSync(path.join(configRoot, 'opencode.json')));
     assert(!fs.existsSync(path.join(configRoot, 'skills')));
-    successful(invoke(current, '5\n2\n2\ny\ny\n', { dir: undefined }));
+    successful(invoke(current, '5\n1\n2\n2\ny\ny\n', { dir: undefined }));
     installedAgents(current, path.join(configRoot, 'agents'), agentNames, profiles[4], 'opencode');
-    installedSkills(current, path.join(configRoot, 'skills'), ['subagent-architecture'], 'opencode');
+    installedSkills(current, path.join(configRoot, 'skills'), ['base', 'subagent-architecture'], 'opencode');
     const config = JSON.parse(fs.readFileSync(path.join(configRoot, 'opencode.json'), 'utf8'));
     assert.deepEqual(config.instructions.map(item => item.replace(/\\/g, '/')), [shellPath(path.join(configRoot, 'skills/subagent-architecture/references/global-auto-delegation.md'), selectedRuntime).replace(/\\/g, '/')]);
   });
@@ -328,7 +346,7 @@ function commonCases(selectedRuntime) {
   test(selectedRuntime, 'confirmation defaults to N and q cancels after a complete preflight', () => {
     for (const answer of ['', 'n', 'q']) {
       const current = fixture(selectedRuntime);
-      const output = successful(invoke(current, `2\n1\n1\n${answer}\n`));
+      const output = successful(invoke(current, `2\n1\n1\n1\n${answer}\n`));
       assert.match(output, /DRY-RUN install Skill alpha /);
       assert.doesNotMatch(output, installationLine);
       emptyDestination(current);
@@ -336,7 +354,7 @@ function commonCases(selectedRuntime) {
   });
 
   test(selectedRuntime, 'q cancels at platform, category and delegation prompts', () => {
-    for (const answers of ['q\n', '2\n1\nq\n', '1\n2\n1\nq\n']) {
+    for (const answers of ['q\n', '2\n1\n1\nq\n', '1\n1\n2\n1\nq\n']) {
       const current = fixture(selectedRuntime);
       successful(invoke(current, answers));
       emptyDestination(current);
@@ -344,11 +362,11 @@ function commonCases(selectedRuntime) {
   });
 
   test(selectedRuntime, 'EOF at selection and confirmation fails promptly without writes', () => {
-    for (const answers of ['', '2\n1\n', '2\n1\n1\n']) {
+    for (const answers of ['', '2\n1\n1\n', '2\n1\n1\n1\n']) {
       const current = fixture(selectedRuntime);
       // Confirmation follows a real backend preflight; its cost is not input
       // waiting. Earlier EOF cases never launch a backend and retain a short cap.
-      const timeout = answers === '2\n1\n1\n' ? installerTimeout(selectedRuntime)
+      const timeout = answers === '2\n1\n1\n1\n' ? installerTimeout(selectedRuntime)
         : isPowerShell5(selectedRuntime) ? 60000 : 30000;
       const eofMessage = selectedRuntime.kind === 'powershell'
         ? /End of input while reading/ : /Input ended \(EOF\)/;
@@ -359,19 +377,19 @@ function commonCases(selectedRuntime) {
 
   test(selectedRuntime, 'invalid category retries preserve the valid selection and retry bound', () => {
     const current = fixture(selectedRuntime);
-    successful(invoke(current, '2\n1\n99\n1,,2\n1\ny\n'));
+    successful(invoke(current, '2\n1\n1\n99\n1,,2\n1\ny\n'));
     installedSkills(current, current.destination, ['alpha', 'base'], 'claude');
     const rejected = fixture(selectedRuntime);
-    failed(invoke(rejected, '2\n1\n99\n0 1\n,\ny\n'));
+    failed(invoke(rejected, '2\n1\n1\n99\n0 1\n,\ny\n'));
     emptyDestination(rejected);
   });
 
   test(selectedRuntime, 'confirmation accepts only y or n with a bounded retry', () => {
     const current = fixture(selectedRuntime);
-    successful(invoke(current, '2\n1\n1\nyes\ny\n'));
+    successful(invoke(current, '2\n1\n1\n1\nyes\ny\n'));
     installedSkills(current, current.destination, ['alpha', 'base'], 'claude');
     const rejected = fixture(selectedRuntime);
-    failed(invoke(rejected, '2\n1\n1\nyes\nmaybe\nyes\ny\n'));
+    failed(invoke(rejected, '2\n1\n1\n1\nyes\nmaybe\nyes\ny\n'));
     emptyDestination(rejected);
   });
 
@@ -379,7 +397,7 @@ function commonCases(selectedRuntime) {
     const current = fixture(selectedRuntime);
     write(path.join(current.destination, 'beta/SKILL.md'), 'FOREIGN selected component\n');
     const before = snapshot(current.destination);
-    const output = failed(invoke(current, '2\n1\n1 2\ny\n'));
+    const output = failed(invoke(current, '2\n1\n1\n1 2\ny\n'));
     assert.match(output, /DRY-RUN install Skill alpha /);
     assert.doesNotMatch(output, installationLine);
     assert.deepEqual(snapshot(current.destination), before);
@@ -387,21 +405,26 @@ function commonCases(selectedRuntime) {
   });
 
   test(selectedRuntime, 'a later project Agent profile blocks earlier Skill and Agent batches', () => {
-    const current = fixture(selectedRuntime);
-    write(path.join(current.destination, '.github/agents/beta-agent.agent.md'), 'FOREIGN Agent profile\n');
-    const before = snapshot(current.destination);
-    const output = failed(invoke(current, '6\n3\n1\n2\ny\n'));
-    assert.match(output, /DRY-RUN install Skill alpha /);
-    assert.doesNotMatch(output, installationLine);
-    assert.deepEqual(snapshot(current.destination), before);
-    untouchedHome(current);
+    for (const selection of [
+      { answers: '6\n3\n1\n2\ny\n', foreign: '.github/agents/beta-agent.agent.md' },
+      { answers: '1\n2\n3\n1\n2\ny\n', foreign: '.codex/agents/beta-agent.toml' }
+    ]) {
+      const current = fixture(selectedRuntime);
+      write(path.join(current.destination, selection.foreign), 'FOREIGN Agent profile\n');
+      const before = snapshot(current.destination);
+      const output = failed(invoke(current, selection.answers));
+      assert.match(output, /DRY-RUN install Skill alpha /);
+      assert.doesNotMatch(output, installationLine);
+      assert.deepEqual(snapshot(current.destination), before);
+      untouchedHome(current);
+    }
   });
 
   test(selectedRuntime, 'force is forwarded to required dependencies and preserves unselected foreign content', () => {
     const current = fixture(selectedRuntime);
     write(path.join(current.destination, 'base/user.txt'), 'FOREIGN required dependency\n');
     write(path.join(current.destination, 'conditional/user.txt'), 'FOREIGN unselected conditional\n');
-    const output = successful(invoke(current, '2\n1\n1\ny\n', { force: true }));
+    const output = successful(invoke(current, '2\n1\n1\n1\ny\n', { force: true }));
     assert.match(output, /force-replace Skill base /);
     assert(!fs.existsSync(path.join(current.destination, 'base/user.txt')));
     assert.equal(fs.readFileSync(path.join(current.destination, 'conditional/user.txt'), 'utf8'), 'FOREIGN unselected conditional\n');
@@ -416,7 +439,7 @@ function commonCases(selectedRuntime) {
   test(selectedRuntime, 'malformed category source fails before installation', () => {
     const current = fixture(selectedRuntime);
     write(path.join(current.source, 'scripts/data/install-category-index.tsv'), 'type\twrong\tname\nskill\ta-first\talpha\n');
-    failed(invoke(current, '2\n1\n1\ny\n'));
+    failed(invoke(current, '2\n1\n1\n1\ny\n'));
     emptyDestination(current);
   });
 
@@ -431,6 +454,160 @@ function commonCases(selectedRuntime) {
     assert.match(dryOutput, /DRY-RUN install Agent beta-agent /);
     assert.doesNotMatch(dryOutput, /Platform \[|Content \[|categories \[|Install this plan\?/);
     emptyDestination(all);
+    const project = fixture(selectedRuntime);
+    const projectOutput = successful(invoke(project, '', { target: 'project', type: 'agent', name: 'alpha-agent', dry: true }, true));
+    const projectPaths = projectOutput.replace(/\\/g, '/');
+    for (const profile of profiles) assert(projectPaths.includes(`${profile.project}/alpha-agent${profile.suffix}`), `Missing legacy project profile ${profile.adapter}\n${projectOutput}`);
+    assert.doesNotMatch(projectOutput, /Platform \[|Installation scope \[|Content \[|categories \[|Install this plan\?/);
+    emptyDestination(project);
+  });
+}
+
+function projectScopeCases(selectedRuntime) {
+  test(selectedRuntime, 'Codex project Skills use cwd after a scope retry and keep required dependencies local', () => {
+    const current = fixture(selectedRuntime);
+    current.destination = current.cwd;
+    const output = successful(invoke(current, '1\n0\n2\n1\n1\n\ny\n', { dir: undefined }));
+    installedSkills(current, path.join(current.destination, '.agents/skills'), ['alpha', 'base'], 'project');
+    assert.equal(fs.readFileSync(path.join(current.destination, '.agents/skills/base/references/proof.md'), 'utf8'), 'Required dependency resource.\n');
+    assert.match(output, /conditional/i);
+    assert.doesNotMatch(output, /Enable proactive Agent delegation\?/i);
+    isolatedProject(current, ['.agents']);
+    preflightBeforeWrites(output);
+  });
+
+  test(selectedRuntime, 'Codex project both installs only selected components at a prompted root with spaces', () => {
+    const current = fixture(selectedRuntime);
+    current.destination = path.join(current.directory, 'codex project with spaces');
+    const answerPath = shellPath(current.destination, selectedRuntime);
+    const output = successful(invoke(current, `1\n2\n3\n1\n2\n${answerPath}\ny\n`, { dir: undefined }));
+    installedSkills(current, path.join(current.destination, '.agents/skills'), ['alpha', 'base'], 'project');
+    installedAgents(current, path.join(current.destination, '.codex/agents'), ['beta-agent'], profiles[0], 'project');
+    assert.doesNotMatch(output, /Enable proactive Agent delegation\?/i);
+    assert.deepEqual(fs.readdirSync(current.cwd), []);
+    isolatedProject(current, ['.agents', '.codex']);
+    preflightBeforeWrites(output);
+  });
+
+  test(selectedRuntime, 'Codex project full Agents keep companions and their required closure in the project', () => {
+    const current = fixture(selectedRuntime);
+    const output = successful(invoke(current, '1\n2\n2\n0\ny\n'));
+    installedAgents(current, path.join(current.destination, '.codex/agents'), agentNames, profiles[0], 'project');
+    installedSkills(current, path.join(current.destination, '.agents/skills'), ['base', 'subagent-architecture'], 'project');
+    assert.doesNotMatch(output, /Enable proactive Agent delegation\?/i);
+    isolatedProject(current, ['.agents', '.codex']);
+    preflightBeforeWrites(output);
+  });
+
+  test(selectedRuntime, 'other single-platform project profiles keep full Agent companions in their own Skill root', () => {
+    for (let index = 1; index < profiles.length; index += 1) {
+      const current = fixture(selectedRuntime);
+      const profile = profiles[index];
+      const output = successful(invoke(current, `${index + 1}\n2\n3\n1\n0\ny\n`));
+      const skillRoot = profile.adapter === 'claude' ? '.claude' : '.agents';
+      installedSkills(current, path.join(current.destination, skillRoot, 'skills'), ['alpha', 'base', 'subagent-architecture'], 'project');
+      installedAgents(current, path.join(current.destination, profile.project), agentNames, profile, 'project');
+      assert.doesNotMatch(output, /Enable proactive Agent delegation\?/i);
+      isolatedProject(current, [...new Set([skillRoot, profile.project.split('/')[0]])]);
+      preflightBeforeWrites(output);
+      if (profile.adapter === 'copilot') {
+        const update = successful(invoke(current, '', { target: 'project', projectPlatform: 'vscode', type: 'agent', name: 'alpha-agent' }, true));
+        assert.equal(update.split(/\r?\n/).filter(line => /^OK\s+update Agent /.test(line)).length, 1, update);
+        installedAgents(current, path.join(current.destination, profile.project), agentNames, profile, 'project');
+        isolatedProject(current, ['.agents', '.github']);
+      }
+    }
+  });
+
+  test(selectedRuntime, 'scope q, EOF and bounded invalid answers never write files', () => {
+    for (const scenario of [
+      { answers: '1\nq\n', success: true },
+      { answers: '1\n', eof: true },
+      { answers: '1\n0\n3\ninvalid\n2\n1\n1\ny\n' }
+    ]) {
+      const current = fixture(selectedRuntime);
+      const result = invoke(current, scenario.answers, {}, false, { timeout: isPowerShell5(selectedRuntime) ? 60000 : 30000 });
+      const output = scenario.success ? successful(result) : failed(result);
+      assert.match(output, /Installation scope \[1\]/);
+      if (scenario.eof) assert.match(output, selectedRuntime.kind === 'powershell' ? /End of input while reading/ : /Input ended \(EOF\)/);
+      assert.doesNotMatch(output, /DRY-RUN |^OK\s+/m);
+      assert.deepEqual(fs.readdirSync(current.cwd), []);
+      emptyDestination(current);
+    }
+  });
+
+  test(selectedRuntime, 'backend rejects global, invalid and missing ProjectPlatform arguments before writes', () => {
+    for (const values of [
+      { target: 'codex', projectPlatform: 'codex' },
+      { target: 'codex', projectPlatform: 'all' },
+      { target: 'project', projectPlatform: 'unknown' },
+      { target: 'project', projectPlatform: true }
+    ]) {
+      const current = fixture(selectedRuntime);
+      const output = failed(invoke(current, '', { type: 'skill', name: 'alpha', ...values }, true));
+      assert.match(output, /ProjectPlatform|project-platform|project platform/i);
+      assert.doesNotMatch(output, /DRY-RUN |^OK\s+/m);
+      assert.deepEqual(fs.readdirSync(current.cwd), []);
+      emptyDestination(current);
+    }
+  });
+
+  test(selectedRuntime, 'stale source backends reject single-platform scope and retain legacy project all', () => {
+    const current = fixture(selectedRuntime);
+    const marker = path.join(current.source, 'legacy-backend-invocations.log');
+    if (selectedRuntime.kind === 'powershell') {
+      // Non-advanced PowerShell scripts silently accept unknown flags in $args.
+      // This marker proves the wrapper checks declared parameters without
+      // executing an unaware backend, even if that backend would exit zero.
+      write(path.join(current.source, 'scripts/install.ps1'), String.raw`param(
+  [string]$SourceDir, [string]$InstallDir, [string]$Target, [string]$Type,
+  [string]$Category, [string]$Branch, [string]$Repo,
+  [switch]$DryRun, [switch]$Force
+)
+Add-Content -LiteralPath (Join-Path $SourceDir 'legacy-backend-invocations.log') -Value "$Target|$Type|$Category|$($args.Count)"
+if ($args.Count -ne 0) { throw 'Legacy backend received an undeclared parameter.' }
+if (-not $DryRun) { throw 'Unexpected legacy backend write request.' }
+Write-Output 'DRY-RUN legacy backend preview'
+`);
+    } else {
+      write(path.join(current.source, 'scripts/install.sh'), String.raw`#!/usr/bin/env bash
+set -euo pipefail
+printf '%s\n' "$*" >> "$(dirname "$0")/../legacy-backend-invocations.log"
+dry=0
+while [[ "$#" -gt 0 ]]; do
+  case "$1" in
+    --source-dir|--dir|--target|--type|--category|--branch|--repo) shift 2 ;;
+    --dry-run) dry=1; shift ;;
+    --force) shift ;;
+    *) printf 'Unsupported legacy backend option: %s\n' "$1" >&2; exit 1 ;;
+  esac
+done
+[[ "$dry" -eq 1 ]] || { printf 'Unexpected legacy backend write request\n' >&2; exit 1; }
+printf 'DRY-RUN legacy backend preview\n'
+`);
+    }
+    const rejection = failed(invoke(current, '1\n2\n1\n1\n', { dry: true }));
+    assert.match(rejection, /ProjectPlatform|project-platform/);
+    assert.doesNotMatch(rejection, installationLine);
+    if (selectedRuntime.kind === 'powershell') {
+      assert.match(rejection, /requires a newer installer backend/);
+      assert(!fs.existsSync(marker), 'PowerShell executed an unaware backend before checking its scope capability');
+    } else {
+      assert.equal(fs.readFileSync(marker, 'utf8').trim().split(/\r?\n/).length, 1);
+      assert.match(rejection, /Unsupported legacy backend option: --project-platform/);
+    }
+    emptyDestination(current);
+    const all = successful(invoke(current, '6\n1\n1\n', { dry: true }));
+    assert.match(all, /DRY-RUN legacy backend preview/);
+    assert.doesNotMatch(all, /Installation scope \[1\]/);
+    const invocations = fs.readFileSync(marker, 'utf8').trim().split(/\r?\n/);
+    if (selectedRuntime.kind === 'powershell') assert.deepEqual(invocations, ['project|skill|a-first|0']);
+    else {
+      assert.equal(invocations.length, 2);
+      assert.match(invocations[1], /--target project/);
+      assert.doesNotMatch(invocations[1], /--project-platform/);
+    }
+    emptyDestination(current);
   });
 }
 
@@ -452,7 +629,7 @@ function snapshotCase(selectedRuntime) {
       result = execute(selectedRuntime.executable, ['-c', launch, 'fixture-transport',
         shellPath(bin, selectedRuntime),
         shellPath(path.join(root, 'scripts/setup.sh'), selectedRuntime), ...args], {
-        cwd: current.cwd, input: '6\n3\n1\n1\n', env: environment(current, {
+        cwd: current.cwd, input: '1\n2\n3\n1\n1\n', env: environment(current, {
           CRAFTROSTER_ARCHIVE_FIXTURE: shellPath(archive, selectedRuntime), CRAFTROSTER_FETCH_LOG: shellPath(log, selectedRuntime)
         })
       });
@@ -463,7 +640,7 @@ function snapshotCase(selectedRuntime) {
       }));
       const command = 'function global:Invoke-WebRequest { param([string]$Uri, [string]$OutFile) Add-Content -LiteralPath $env:CRAFTROSTER_FETCH_LOG -Value $Uri; Copy-Item -LiteralPath $env:CRAFTROSTER_ARCHIVE_FIXTURE -Destination $OutFile }; $setupText = [IO.File]::ReadAllText($env:CRAFTROSTER_SETUP); & ([scriptblock]::Create($setupText)) -Repo FixtureOwner/Catalog -Branch feature/snapshot -InstallDir $env:CRAFTROSTER_DESTINATION -DryRun';
       result = execute(selectedRuntime.executable, ['-NoProfile', '-NonInteractive', '-ExecutionPolicy', 'Bypass', '-Command', command], {
-        cwd: current.cwd, input: '6\n3\n1\n1\n', timeout: installerTimeout(selectedRuntime), env: environment(current, {
+        cwd: current.cwd, input: '1\n2\n3\n1\n1\n', timeout: installerTimeout(selectedRuntime), env: environment(current, {
           CRAFTROSTER_ARCHIVE_FIXTURE: archive, CRAFTROSTER_FETCH_LOG: log,
           CRAFTROSTER_SETUP: path.join(root, 'scripts/setup.ps1'), CRAFTROSTER_DESTINATION: current.destination
         })
@@ -475,6 +652,10 @@ function snapshotCase(selectedRuntime) {
     assert.match(requests[0], /codeload\.github\.com\/FixtureOwner\/Catalog\/(?:zip|tar\.gz)\/refs\/heads\/feature\/snapshot/);
     assert.match(output, /DRY-RUN install Skill alpha /);
     assert.match(output, /DRY-RUN install Agent alpha-agent /);
+    const paths = output.replace(/\\/g, '/');
+    assert.match(paths, /\.agents\/skills\/alpha/);
+    assert.match(paths, /\.codex\/agents\/alpha-agent\.toml/);
+    assert.doesNotMatch(paths, /\.claude\/|\.cursor\/|\.github\/agents|\.opencode\//);
     emptyDestination(current);
   });
 }
@@ -559,7 +740,7 @@ function bashCases(selectedRuntime) {
   }
   const executable = successful(execute(selectedRuntime.executable, ['-c', 'printf "%s" "$BASH"'])).trim();
   for (const scenario of [
-    { name: 'PTY pipeline keeps script payload intact and reads terminal answers', answers: '2\n1\n1\n', status: 0, sentinel: true },
+    { name: 'PTY pipeline keeps script payload intact and reads terminal answers', answers: '2\n1\n1\n1\n', status: 0, sentinel: true },
     { name: 'PTY pipeline q cancels cleanly', answers: 'q\n', status: 0 },
     { name: 'PTY pipeline EOF fails promptly', answers: '\x04', failure: true },
     { name: 'PTY pipeline Ctrl+C cancels without writes', answers: '\x03', failure: true }
@@ -595,6 +776,7 @@ try {
   for (const selectedRuntime of runtimes) {
     console.log(`Runtime ${selectedRuntime.kind}: ${selectedRuntime.executable} (${selectedRuntime.version})`);
     commonCases(selectedRuntime);
+    projectScopeCases(selectedRuntime);
     snapshotCase(selectedRuntime);
     if (selectedRuntime.kind === 'bash') bashCases(selectedRuntime);
   }

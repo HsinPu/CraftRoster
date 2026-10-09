@@ -30,13 +30,15 @@ CraftRoster interactive setup
 Usage:
   .\scripts\setup.ps1 [-SourceDir path] [-InstallDir path] [-Repo owner/name] [-Branch branch] [-DryRun] [-Force]
 
-Choose a platform, Skills / Agents / both, and all components or categories.
+Choose a platform, installation scope, Skills / Agents / both, and all components
+or categories. The project (all platforms) option
+installs directly into a project without another scope question.
 Enter accepts the displayed default. Type q at any prompt to cancel.
 Category numbers may be separated by commas or spaces. Invalid answers get
 at most three attempts; end-of-input fails immediately without accepting a default.
 
 -SourceDir uses a local checkout. Otherwise one GitHub archive is downloaded.
--InstallDir is a direct destination for tool targets or the project root for project.
+-InstallDir is a direct destination for user global installs or the project root for current project installs.
 -DryRun shows the complete backend plan without asking to write it.
 -Force is forwarded to the existing installer, including required dependencies.
 
@@ -225,6 +227,31 @@ function Get-SetupPowerShellExecutable {
     return $executable
 }
 
+function Assert-SetupProjectPlatformSupport {
+    param([string]$BackendPath, [string]$ProjectPlatform)
+    $requirement = "Selected project platform '$ProjectPlatform' requires a newer installer backend with ProjectPlatform; update SourceDir or branch."
+    $backendTokens = $null
+    $backendParseErrors = $null
+    try {
+        $backendAst = [System.Management.Automation.Language.Parser]::ParseFile($BackendPath, [ref]$backendTokens, [ref]$backendParseErrors)
+    } catch {
+        throw "$requirement Cannot parse the source installer: $($_.Exception.Message)"
+    }
+    if ($backendParseErrors.Count -gt 0) {
+        throw "$requirement The source installer has a parse error: $($backendParseErrors[0].Message)"
+    }
+    $supportsProjectPlatform = $false
+    if ($backendAst -and $backendAst.ParamBlock) {
+        foreach ($parameter in $backendAst.ParamBlock.Parameters) {
+            if ($parameter.Name.VariablePath.UserPath -ieq "ProjectPlatform") {
+                $supportsProjectPlatform = $true
+                break
+            }
+        }
+    }
+    if (-not $supportsProjectPlatform) { throw $requirement }
+}
+
 function ConvertTo-SetupProcessArgument {
     param([AllowEmptyString()][string]$Argument)
     # Windows argv quoting: double backslashes before quotes and at a quoted end.
@@ -240,6 +267,7 @@ function Invoke-SetupBackend {
         [string]$BackendPath,
         [string]$RepoRoot,
         [string]$Target,
+        [string]$ProjectPlatform,
         [object]$Batch,
         [string]$Destination,
         [bool]$AutoDelegation,
@@ -252,6 +280,7 @@ function Invoke-SetupBackend {
         "-SourceDir", $RepoRoot, "-Target", $Target, "-Type", $Batch.Type, "-Branch", $Branch)
     # Preserve the backend's default-repository legacy ownership compatibility.
     if ($repoWasExplicit) { $backendArguments += @("-Repo", $Repo) }
+    if ($Target -eq "project" -and $ProjectPlatform -ne "all") { $backendArguments += @("-ProjectPlatform", $ProjectPlatform) }
     if ($Batch.Category) { $backendArguments += @("-Category", $Batch.Category) }
     if ($Destination) { $backendArguments += @("-InstallDir", $Destination) }
     if ($AutoDelegation -and $Batch.Type -eq "agent") { $backendArguments += "-EnableAutoDelegation" }
@@ -355,9 +384,25 @@ try {
     Write-Host "  3) cursor"
     Write-Host "  4) copilot"
     Write-Host "  5) opencode"
-    Write-Host "  6) project"
+    Write-Host "  6) project (all platforms)"
     $platformNumber = Read-SetupChoice -Prompt "Platform [1] (q to cancel)" -Default 1 -Maximum 6
-    $target = @("codex", "claude", "cursor", "copilot", "opencode", "project")[$platformNumber - 1]
+    $selectedPlatform = @("codex", "claude", "cursor", "copilot", "opencode", "all platforms")[$platformNumber - 1]
+    $projectPlatform = "all"
+    $installationScope = "project"
+    $target = "project"
+    if ($platformNumber -ne 6) {
+        Write-Host ""
+        Write-Host "Installation scope:"
+        Write-Host "  1) User global"
+        Write-Host "  2) Current project"
+        $scopeNumber = Read-SetupChoice -Prompt "Installation scope [1] (q to cancel)" -Default 1 -Maximum 2
+        if ($scopeNumber -eq 1) {
+            $installationScope = "global"
+            $target = $selectedPlatform
+        } else {
+            $projectPlatform = $selectedPlatform
+        }
+    }
     Write-Host ""
     Write-Host "Content:"
     Write-Host "  1) Skills"
@@ -389,6 +434,9 @@ try {
     }
     $backendPath = Join-Path $repoRoot "scripts\install.ps1"
     if (-not (Test-Path -LiteralPath $backendPath -PathType Leaf)) { throw "Source installer not found: $backendPath" }
+    if ($target -eq "project" -and $projectPlatform -ne "all") {
+        Assert-SetupProjectPlatformSupport -BackendPath $backendPath -ProjectPlatform $projectPlatform
+    }
     $categoryRows = @(Get-SetupCategoryRows -RepoRoot $repoRoot)
     $selections = @{}
     $batches = @()
@@ -407,7 +455,7 @@ try {
         $InstallDir = Read-SetupProjectRoot -DefaultRoot $callerRoot
     }
     $autoDelegation = $false
-    if ($types -contains "agent" -and $target -in @("codex", "opencode")) {
+    if ($installationScope -eq "global" -and $types -contains "agent" -and $target -in @("codex", "opencode")) {
         Write-Host ""
         Write-Host "Proactive delegation installs the companion Skill and updates the platform's global instruction/config file."
         $autoDelegation = Read-SetupConfirmation -Prompt "Enable proactive Agent delegation? [y/N] (q to cancel)"
@@ -415,7 +463,8 @@ try {
 
     Write-Host ""
     Write-Host "Selected installation plan:"
-    Write-Host "  Platform: $target"
+    Write-Host "  Platform: $selectedPlatform"
+    Write-Host "  Installation scope: $(if ($installationScope -eq 'project') { 'current project' } else { 'user global' })"
     Write-Host "  Source: $repoRoot ($Repo@$Branch)"
     foreach ($componentType in $types) {
         $label = if ($componentType -eq "skill") { "Skills" } else { "Agents" }
@@ -423,12 +472,16 @@ try {
         $categoryLabel = if ($selection.All) { "all" } else { $selection.Categories -join ", " }
         Write-Host "  $label`: $categoryLabel"
     }
-    if ($InstallDir) { Write-Host "  Requested destination$(if ($target -eq 'project') { ' project root' }): $InstallDir" }
+    if ($target -eq "project") {
+        Write-Host "  Project root: $InstallDir"
+    } elseif ($InstallDir) {
+        Write-Host "  Requested destination: $InstallDir"
+    }
     Write-Host "  Proactive Agent delegation: $(if ($autoDelegation) { 'enabled' } else { 'disabled' })"
     Write-Host "  Force replacement: $(if ($Force) { 'enabled' } else { 'disabled' })"
     Write-Host "All selected batches will be checked before installation. Backend previews list destinations and required/companion Skills."
     foreach ($batch in $batches) {
-        Invoke-SetupBackend -PowerShellExecutable $powerShellExecutable -BackendPath $backendPath -RepoRoot $repoRoot -Target $target -Batch $batch -Destination $InstallDir -AutoDelegation $autoDelegation -Preview $true
+        Invoke-SetupBackend -PowerShellExecutable $powerShellExecutable -BackendPath $backendPath -RepoRoot $repoRoot -Target $target -ProjectPlatform $projectPlatform -Batch $batch -Destination $InstallDir -AutoDelegation $autoDelegation -Preview $true
     }
     if ($DryRun) {
         Write-Host ""
@@ -439,7 +492,7 @@ try {
         $confirmed = Read-SetupConfirmation -Prompt "Install this plan? [y/N] (q to cancel)"
         if (-not $confirmed) { throw [System.OperationCanceledException]::new("Setup cancelled. No installation batch was started.") }
         foreach ($batch in $batches) {
-            Invoke-SetupBackend -PowerShellExecutable $powerShellExecutable -BackendPath $backendPath -RepoRoot $repoRoot -Target $target -Batch $batch -Destination $InstallDir -AutoDelegation $autoDelegation -Preview $false
+            Invoke-SetupBackend -PowerShellExecutable $powerShellExecutable -BackendPath $backendPath -RepoRoot $repoRoot -Target $target -ProjectPlatform $projectPlatform -Batch $batch -Destination $InstallDir -AutoDelegation $autoDelegation -Preview $false
         }
         Write-Host ""
         Write-Host "CraftRoster setup complete." -ForegroundColor Green
