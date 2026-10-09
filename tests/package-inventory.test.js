@@ -222,6 +222,8 @@ try {
     'scripts/install.cmd',
     'scripts/install.ps1',
     'scripts/install.sh',
+    'scripts/setup.ps1',
+    'scripts/setup.sh',
     'scripts/data/agent-reference-sources.json',
     'scripts/data/agent-coverage-matrix.json',
     'scripts/data/skill-catalog.json',

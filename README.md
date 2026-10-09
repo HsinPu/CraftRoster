@@ -12,7 +12,7 @@ CraftRoster 收錄 237 個專業 Agents 與 286 個可重用 Skills，可安裝�
 
 CraftRoster 是 catalog 與 distribution layer，**不是**另一套 Agent runtime 或 orchestration framework；它讓現有 coding agent 直接取得可攜、可追溯、可驗證的角色與工作流程。
 
-[快速開始](#快速開始) · [分類安裝](#依分類安裝) · [Skill 配套清單](docs/audits/skill-installability-2026-10-09/README.md) · [支援平台](#支援平台與安裝位置) · [Catalog CLI](#catalog-cli) · [Agents](#agents) · [Skills](#skills) · [開發與驗證](#開發與驗證) · [Issues](https://github.com/HsinPu/CraftRoster/issues)
+[快速開始](#快速開始) · [互動式安裝](#互動式安裝) · [Skill 配套清單](docs/audits/skill-installability-2026-10-09/README.md) · [支援平台](#支援平台與安裝位置) · [Catalog CLI](#catalog-cli) · [Agents](#agents) · [Skills](#skills) · [開發與驗證](#開發與驗證) · [Issues](https://github.com/HsinPu/CraftRoster/issues)
 
 ## 專案內容
 
@@ -39,6 +39,38 @@ CraftRoster 是 catalog 與 distribution layer，**不是**另一套 Agent runti
 > Agents 與 Skills 可以分開安裝與使用。個別 Skill 的必要配套會由安裝器補齊；主 Agent 也能直接套用 Skill，不必先建立 subagent。
 
 ## 快速開始
+
+### 互動式安裝
+
+只需執行一行命令，再跟著選單選擇平台、內容與分類。一般安裝不需要 Node.js，也不需要管理員／`sudo`。
+
+Windows PowerShell：
+
+```powershell
+powershell -ExecutionPolicy Bypass -NoProfile -Command '$s = irm https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/setup.ps1; & ([scriptblock]::Create($s))'
+```
+
+Linux／macOS：
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/setup.sh | bash
+```
+
+選單會依序讓你：
+
+1. 選擇 Codex、Claude Code、Cursor、VS Code／Copilot、OpenCode，或目前專案。
+2. 選擇 Skills、Agents，或兩者一起安裝。
+3. 分別選擇全部，或用編號選取多個分類，例如 `1,3`。必要 Skill 配套會自動補齊。
+4. 查看安裝內容與位置；所有批次預檢通過後，輸入 `y` 才正式安裝。
+
+輸入 `q` 可取消，最後確認直接按 Enter 也會取消。選擇專案安裝時會確認專案根目錄；選擇 Codex／OpenCode Agents 時，可另外選擇是否啟用主動委派。來源 archive 只下載一次，所有批次都使用同一份內容。
+
+詳細流程、本機執行方式與疑難排解請看[互動式安裝指南](docs/interactive-installation.md)。
+
+### 進階參數安裝
+
+<details>
+<summary><strong>展開自動化／CI 與指定單一元件的命令</strong></summary>
 
 以下範例以 **Codex 使用者層級全域安裝**為預設，不需要管理員／`sudo`，一般安裝也不需要 Node.js。可按任務選一個分類或單一元件；只有省略名稱與分類時，才會安裝該類型的全部元件。
 
@@ -74,7 +106,7 @@ curl -fsSL https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/ins
 
 確認預演內容後，移除 `-DryRun`／`--dry-run` 即可正式安裝。分類 Agent 安裝不會自動加入 `subagent-architecture`，除非同時指定主動委派。
 
-可用分類請見 [Agents](#agents) 與 [Skills](#skills)，也可使用 CLI 查詢：`node craftroster-cli.js list --category frontend-design`。目前每次可指定一個分類，或一個元件名稱；兩者互斥。安裝多個分類可依序執行命令，已安裝的必要配套會依 ownership 規則核對與更新。互動式多選介面尚未提供。
+可用分類請見 [Agents](#agents) 與 [Skills](#skills)，也可使用 CLI 查詢：`node craftroster-cli.js list --category frontend-design`。參數介面每次可指定一個分類，或一個元件名稱；兩者互斥。互動入口可以一次選多個分類，並依序安裝各批次；已安裝的必要配套會依 ownership 規則核對與更新。
 
 遠端分類安裝仍會下載完整 repository archive，但只把選取的元件與必要配套寫入安裝目錄。
 
@@ -166,6 +198,8 @@ bash scripts/install.sh --target codex --type agent --source-dir . --enable-auto
 
 </details>
 
+</details>
+
 ## 支援平台與安裝位置
 
 安裝器接受 `codex`、`claude`、`cursor`、`vscode`、`copilot`、`opencode` 與 `project`。除了 `project` 之外，預設都是使用者層級安裝。
@@ -195,7 +229,9 @@ bash scripts/install.sh --target codex --type agent --source-dir . --enable-auto
 └─ .opencode/agents/     # OpenCode Markdown
 ```
 
-### 安裝器選項
+### 參數安裝器選項
+
+以下為 `install.ps1`／`install.sh` 的自動化介面。`setup.ps1`／`setup.sh` 會透過選單收集平台與分類；可選的來源、目的地與預覽參數見[互動式安裝指南](docs/interactive-installation.md)。
 
 | 用途 | PowerShell | Bash | 說明 |
 |---|---|---|---|
@@ -461,6 +497,7 @@ npm run test:skill-sources
 npm run test:package
 
 # Installer smoke tests
+npm run test:interactive-install
 npm run smoke:install:powershell
 npm run smoke:install:bash
 npm run smoke:install:bash:quick

@@ -12,7 +12,7 @@
 | 一個分類 | `-Category <category>`／`--category <category>` | 分類中的 Skills 與遞迴必要配套，可能跨分類 |
 | 全部 Skills | `-Type skill`／`--type skill`，同時省略名稱與分類 | 全部 286 個 Skills |
 
-每次可選一個名稱或一個分類，兩者互斥。安裝多個分類可依序執行安裝命令；目前沒有互動式多選介面。`-DryRun`／`--dry-run` 可先查看實際套件計畫，詳見[主 README](../../../README.md#依分類安裝)。
+上表為 `install.ps1`／`install.sh` 的參數介面，每次可選一個名稱或一個分類，兩者互斥。新版 `setup.ps1`／`setup.sh` 提供單一指令啟動的互動選單，可一次選取多個分類、預檢後再確認安裝；詳見[互動式安裝指南](../../interactive-installation.md)。`-DryRun`／`--dry-run` 可只預覽實際套件計畫。
 
 ## 依賴種類
 

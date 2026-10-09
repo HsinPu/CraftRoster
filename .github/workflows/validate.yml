@@ -328,6 +328,9 @@ jobs:
           Write-Host "ImageOS=$env:ImageOS"
           Write-Host "ImageVersion=$env:ImageVersion"
 
+      - name: Test interactive installer with isolated destinations
+        run: npm run test:interactive-install -- --shell powershell --powershell '${{ matrix.powershell }}'
+
       - name: Test Windows Codex executor with fake processes
         if: matrix.powershell == 'powershell.exe'
         run: npm run test:skill-codex-executor
@@ -359,6 +362,9 @@ jobs:
       - name: Run isolated Bash installer smoke test
         run: npm run smoke:install:bash
 
+      - name: Test interactive installer and piped terminal input
+        run: npm run test:interactive-install -- --shell bash --require-pty
+
   installer-bash-macos:
     name: Installer smoke (Bash, macOS quick)
     runs-on: macos-latest
@@ -375,6 +381,9 @@ jobs:
 
       - name: Report Bash runtime
         run: bash --version | head -n 1
+
+      - name: Test interactive installer on macOS Bash
+        run: npm run test:interactive-install -- --shell bash --bash /bin/bash --require-pty
 
       - name: Verify smoke failure propagation
         run: |
