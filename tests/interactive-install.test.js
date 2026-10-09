@@ -34,6 +34,15 @@ let skipped = 0;
 let fixtureNumber = 0;
 let ptyBootstrapExecuted = false;
 
+function isPowerShell5(selectedRuntime) {
+  return selectedRuntime.kind === 'powershell' && /^5\./.test(selectedRuntime.version);
+}
+
+function installerTimeout(selectedRuntime) {
+  // PS5 cold starts on Windows runners can make several backend launches slow.
+  return isPowerShell5(selectedRuntime) ? 600000 : 90000;
+}
+
 function execute(command, args, settings = {}) {
   const result = spawnSync(command, args, {
     encoding: 'utf8', maxBuffer: 4 * 1024 * 1024, timeout: 90000,
@@ -144,7 +153,9 @@ function environment(current, extra = {}) {
     APPDATA: path.join(current.temporary, 'appdata/roaming'),
     LOCALAPPDATA: path.join(current.temporary, 'appdata/local'),
     POWERSHELL_TELEMETRY_OPTOUT: '1',
-    PSModuleAnalysisCachePath: process.platform === 'win32' ? 'NUL' : '/dev/null',
+    PSModuleAnalysisCachePath: isPowerShell5(current.selectedRuntime)
+      ? path.join(tempRoot, 'powershell-5-module-analysis-cache')
+      : process.platform === 'win32' ? 'NUL' : '/dev/null',
     ...extra
   };
   delete env.CRAFTROSTER_INSTALL_TEST_MODE;
@@ -163,14 +174,17 @@ function parameters(selectedRuntime, values) {
     : value === true ? [flags[key]] : [flags[key], ['source', 'dir'].includes(key) ? shellPath(value, selectedRuntime) : value]);
 }
 
-function invoke(current, answers, values = {}, backend = false) {
+function invoke(current, answers, values = {}, backend = false, settings = {}) {
   const selectedRuntime = current.selectedRuntime;
   const filename = `${backend ? 'install' : 'setup'}.${selectedRuntime.kind === 'powershell' ? 'ps1' : 'sh'}`;
   const script = shellPath(path.join(root, 'scripts', filename), selectedRuntime);
   const args = parameters(selectedRuntime, { source: current.source, dir: current.destination, ...values });
   return execute(selectedRuntime.executable, selectedRuntime.kind === 'powershell'
     ? ['-NoProfile', '-NonInteractive', '-ExecutionPolicy', 'Bypass', '-File', script, ...args]
-    : [script, ...args], { cwd: current.cwd, env: environment(current), input: answers });
+    : [script, ...args], {
+      cwd: current.cwd, env: environment(current), input: answers,
+      timeout: installerTimeout(selectedRuntime), ...settings
+    });
 }
 
 function successful(result) { assert.equal(result.status, 0, result.output); return result.output; }
@@ -332,9 +346,13 @@ function commonCases(selectedRuntime) {
   test(selectedRuntime, 'EOF at selection and confirmation fails promptly without writes', () => {
     for (const answers of ['', '2\n1\n', '2\n1\n1\n']) {
       const current = fixture(selectedRuntime);
-      const started = Date.now();
-      failed(invoke(current, answers));
-      assert(Date.now() - started < 30000, 'EOF must not enter a long retry loop');
+      // Confirmation follows a real backend preflight; its cost is not input
+      // waiting. Earlier EOF cases never launch a backend and retain a short cap.
+      const timeout = answers === '2\n1\n1\n' ? installerTimeout(selectedRuntime)
+        : isPowerShell5(selectedRuntime) ? 60000 : 30000;
+      const eofMessage = selectedRuntime.kind === 'powershell'
+        ? /End of input while reading/ : /Input ended \(EOF\)/;
+      assert.match(failed(invoke(current, answers, {}, false, { timeout })), eofMessage);
       emptyDestination(current);
     }
   });
@@ -439,12 +457,13 @@ function snapshotCase(selectedRuntime) {
         })
       });
     } else {
+      // ZIP construction is one auxiliary process, not an installer batch.
       successful(execute(selectedRuntime.executable, ['-NoProfile', '-NonInteractive', '-Command', 'Add-Type -AssemblyName System.IO.Compression.FileSystem; [IO.Compression.ZipFile]::CreateFromDirectory($env:CRAFTROSTER_FIXTURE_SOURCE, $env:CRAFTROSTER_ARCHIVE_FIXTURE, [IO.Compression.CompressionLevel]::Optimal, $true)'], {
         env: environment(current, { CRAFTROSTER_FIXTURE_SOURCE: current.source, CRAFTROSTER_ARCHIVE_FIXTURE: archive })
       }));
       const command = 'function global:Invoke-WebRequest { param([string]$Uri, [string]$OutFile) Add-Content -LiteralPath $env:CRAFTROSTER_FETCH_LOG -Value $Uri; Copy-Item -LiteralPath $env:CRAFTROSTER_ARCHIVE_FIXTURE -Destination $OutFile }; $setupText = [IO.File]::ReadAllText($env:CRAFTROSTER_SETUP); & ([scriptblock]::Create($setupText)) -Repo FixtureOwner/Catalog -Branch feature/snapshot -InstallDir $env:CRAFTROSTER_DESTINATION -DryRun';
       result = execute(selectedRuntime.executable, ['-NoProfile', '-NonInteractive', '-ExecutionPolicy', 'Bypass', '-Command', command], {
-        cwd: current.cwd, input: '6\n3\n1\n1\n', env: environment(current, {
+        cwd: current.cwd, input: '6\n3\n1\n1\n', timeout: installerTimeout(selectedRuntime), env: environment(current, {
           CRAFTROSTER_ARCHIVE_FIXTURE: archive, CRAFTROSTER_FETCH_LOG: log,
           CRAFTROSTER_SETUP: path.join(root, 'scripts/setup.ps1'), CRAFTROSTER_DESTINATION: current.destination
         })
@@ -567,6 +586,7 @@ function bashCases(selectedRuntime) {
   });
 }
 
+let testFailure;
 try {
   const kinds = options.shell === 'all' ? ['powershell', 'bash'] : [options.shell];
   const runtimes = kinds.map(runtime).filter(Boolean);
@@ -580,11 +600,20 @@ try {
   }
   assert(passed > 0, 'No tests matched the requested filter');
   if (options.requirePty) assert(ptyBootstrapExecuted, '--require-pty requires the PTY bootstrap test to actually run');
+} catch (error) {
+  testFailure = error;
+  console.error(error.stack || String(error));
 } finally {
-  const resolved = path.resolve(tempRoot);
-  assert.equal(path.dirname(resolved), tempParent, 'Refusing unsafe fixture cleanup');
-  assert(path.basename(resolved).startsWith('craftroster-interactive-'), 'Refusing unexpected fixture cleanup');
-  assert(!fs.lstatSync(resolved).isSymbolicLink(), 'Refusing fixture symlink cleanup');
-  fs.rmSync(resolved, { recursive: true, force: true });
+  try {
+    const resolved = path.resolve(tempRoot);
+    assert.equal(path.dirname(resolved), tempParent, 'Refusing unsafe fixture cleanup');
+    assert(path.basename(resolved).startsWith('craftroster-interactive-'), 'Refusing unexpected fixture cleanup');
+    assert(!fs.lstatSync(resolved).isSymbolicLink(), 'Refusing fixture symlink cleanup');
+    fs.rmSync(resolved, { recursive: true, force: true, maxRetries: 5, retryDelay: 200 });
+  } catch (error) {
+    if (!testFailure) throw error;
+    console.error(`Cleanup warning: ${error.stack || String(error)}`);
+  }
 }
-console.log(`Interactive installer tests passed: ${passed}; skipped: ${skipped}`);
+if (testFailure) process.exitCode = 1;
+else console.log(`Interactive installer tests passed: ${passed}; skipped: ${skipped}`);
