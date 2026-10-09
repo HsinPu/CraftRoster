@@ -11,6 +11,8 @@ metadata:
 
 Use this skill for Vue 3 component logic and composables. Pair with `vue-development` for broader application structure, `vue-debug-guides` for runtime failures, and `nuxt-development` for Nuxt-specific conventions.
 
+Read `typescript-development` before planning typed props, emits, composables, TypeScript SFCs, or compiler diagnostics. Read `frontend-design` before planning changes to visible UI or user-facing component states. Apply these conditions independently; JavaScript composable refactoring without visible behavior changes may use this Skill alone.
+
 ## Workflow
 
 1. Identify the component, composable, props/emits contract, lifecycle needs, and reactivity shape.

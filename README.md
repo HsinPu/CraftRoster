@@ -12,7 +12,7 @@ CraftRoster 收錄 237 個專業 Agents 與 286 個可重用 Skills，可安裝�
 
 CraftRoster 是 catalog 與 distribution layer，**不是**另一套 Agent runtime 或 orchestration framework；它讓現有 coding agent 直接取得可攜、可追溯、可驗證的角色與工作流程。
 
-[快速開始](#快速開始) · [支援平台](#支援平台與安裝位置) · [Catalog CLI](#catalog-cli) · [Agents](#agents) · [Skills](#skills) · [開發與驗證](#開發與驗證) · [Issues](https://github.com/HsinPu/CraftRoster/issues)
+[快速開始](#快速開始) · [分類安裝](#依分類安裝) · [Skill 配套清單](docs/audits/skill-installability-2026-10-09/README.md) · [支援平台](#支援平台與安裝位置) · [Catalog CLI](#catalog-cli) · [Agents](#agents) · [Skills](#skills) · [開發與驗證](#開發與驗證) · [Issues](https://github.com/HsinPu/CraftRoster/issues)
 
 ## 專案內容
 
@@ -36,33 +36,47 @@ CraftRoster 是 catalog 與 distribution layer，**不是**另一套 Agent runti
 | 權限 | 明確標示 `read-only` 或 `workspace-write` | 由使用它的主 Agent／runtime 決定 |
 
 > [!NOTE]
-> Agents 與 Skills 可以獨立使用。Agent 可引用多個相關 Skills；主 Agent 也能直接套用 Skill，不必先建立 subagent。
+> Agents 與 Skills 可以分開安裝與使用。個別 Skill 的必要配套會由安裝器補齊；主 Agent 也能直接套用 Skill，不必先建立 subagent。
 
 ## 快速開始
 
-以下範例以 **Codex 使用者層級全域安裝**為預設，不需要管理員／`sudo`，一般安裝也不需要 Node.js。
+以下範例以 **Codex 使用者層級全域安裝**為預設，不需要管理員／`sudo`，一般安裝也不需要 Node.js。可按任務選一個分類或單一元件；只有省略名稱與分類時，才會安裝該類型的全部元件。
 
-### 一次安裝全部 Skills、Agents 與主動委派
+| 安裝範圍 | PowerShell | Bash |
+|---|---|---|
+| 一個分類與必要配套 | `-Category frontend-design` | `--category frontend-design` |
+| 一個元件與必要配套 | `-Name python-development` | `--name python-development` |
+| 該 Type 全部元件 | 同時省略 `-Name`、`-Category` | 同時省略 `--name`、`--category` |
+
+### 依分類安裝
+
+Skill 分類安裝會選取該分類元件，再補齊必要依賴（可能跨分類）；條件與可選依賴不自動安裝。例如 `frontend-design` 有 34 個 Skills，加上 5 個跨分類必要配套，去重後會安裝 39 個套件。各分類的數量與配套可在 [Skill 配套清單](docs/audits/skill-installability-2026-10-09/README.md#分類安裝數量) 查看。
 
 Windows PowerShell：
 
 ```powershell
-powershell -ExecutionPolicy Bypass -NoProfile -Command '$s = irm https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/install.ps1; $installer = [scriptblock]::Create($s); & $installer -Target codex -Type skill; & $installer -Target codex -Type agent -EnableAutoDelegation'
+# 預覽 Frontend & Design Skills 與必要配套
+powershell -ExecutionPolicy Bypass -NoProfile -Command '$s = irm https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/install.ps1; & ([scriptblock]::Create($s)) -Target codex -Type skill -Category frontend-design -DryRun'
+
+# 預覽 Quality Assurance Agents
+powershell -ExecutionPolicy Bypass -NoProfile -Command '$s = irm https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/install.ps1; & ([scriptblock]::Create($s)) -Target codex -Type agent -Category quality-assurance -DryRun'
 ```
 
 Linux／macOS：
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/install.sh | bash -s -- --target codex --type skill && curl -fsSL https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/install.sh | bash -s -- --target codex --type agent --enable-auto-delegation
+# 預覽 Frontend & Design Skills 與必要配套
+curl -fsSL https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/install.sh | bash -s -- --target codex --type skill --category frontend-design --dry-run
+
+# 預覽 Quality Assurance Agents
+curl -fsSL https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/install.sh | bash -s -- --target codex --type agent --category quality-assurance --dry-run
 ```
 
-這會安裝全部 286 個 Skills、237 個 Agents，並為 Codex 啟用全域主動委派。安裝完成後請開啟新的 Codex 工作階段，讓 runtime 重新載入內容。
+確認預演內容後，移除 `-DryRun`／`--dry-run` 即可正式安裝。分類 Agent 安裝不會自動加入 `subagent-architecture`，除非同時指定主動委派。
 
-> [!NOTE]
-> Codex 的初始 Skill metadata 清單最多使用 context window 的 2%，context 大小未知時上限為 8,000 字元；大量全域 Skills 可能先被縮短描述，再有部分項目被省略。檔案仍會保留在安裝目錄，但若需要保證載入，請明確使用 `$skill-name`。例如 Three.js 網頁工作可輸入 `$threejs-development 請用 Three.js 建立單檔 HTML`。CraftRoster 的 frontend、CSS 與 JavaScript 入口會在任務確實涉及 3D 場景或整合邊界時路由至 Three.js；repo 其他位置有 `three` 本身不足以觸發。部分安裝下請先確認條件依賴可用。詳見 [OpenAI Build skills](https://learn.chatgpt.com/docs/build-skills.md)。
+可用分類請見 [Agents](#agents) 與 [Skills](#skills)，也可使用 CLI 查詢：`node craftroster-cli.js list --category frontend-design`。目前每次可指定一個分類，或一個元件名稱；兩者互斥。安裝多個分類可依序執行命令，已安裝的必要配套會依 ownership 規則核對與更新。互動式多選介面尚未提供。
 
-> [!TIP]
-> 上述 one-liner 會取用 `main` 當下的 script 與 archive，不是固定且簽章的 release artifact。若需要先審核或固定版本，請 clone 指定 commit、檢查 [`install.ps1`](scripts/install.ps1) 或 [`install.sh`](scripts/install.sh)，再使用[本機 checkout](#從本機-checkout-安裝)。
+遠端分類安裝仍會下載完整 repository archive，但只把選取的元件與必要配套寫入安裝目錄。
 
 ### 只安裝單一元件
 
@@ -86,33 +100,31 @@ curl -fsSL https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/ins
 curl -fsSL https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/install.sh | bash -s -- --target codex --type agent --name code-reviewer
 ```
 
-省略 `Name`／`--name` 會安裝該 Type 的全部元件。全量 Agent 安裝會一起安裝 `subagent-architecture`；普通的單一 Agent 安裝不會。
+同時省略 `-Name`／`--name` 與 `-Category`／`--category`，才會安裝該 Type 的全部元件。全量 Agent 安裝會一起安裝 `subagent-architecture`；普通的單一 Agent 安裝不會。
 
-### 依分類安裝
+### 一次安裝全部 Skills、Agents 與主動委派
 
-如果不需要完整 catalog，可以使用 Skill 或 Agent 現有的分類。Skill 分類安裝會選取該分類元件，再補齊必要依賴（可能跨分類）；條件依賴不自動安裝。分類 Agent 安裝不會自動加入 `subagent-architecture`，除非同時指定主動委派。
+需要整套 catalog 時，可使用以下命令。
 
 Windows PowerShell：
 
 ```powershell
-# 安裝 Frontend & Design Skills
-powershell -ExecutionPolicy Bypass -NoProfile -Command '$s = irm https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/install.ps1; & ([scriptblock]::Create($s)) -Target codex -Type skill -Category frontend-design'
-
-# 安裝 Quality Assurance Agents，並先預覽
-powershell -ExecutionPolicy Bypass -NoProfile -Command '$s = irm https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/install.ps1; & ([scriptblock]::Create($s)) -Target codex -Type agent -Category quality-assurance -DryRun'
+powershell -ExecutionPolicy Bypass -NoProfile -Command '$s = irm https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/install.ps1; $installer = [scriptblock]::Create($s); & $installer -Target codex -Type skill; & $installer -Target codex -Type agent -EnableAutoDelegation'
 ```
 
 Linux／macOS：
 
 ```bash
-# 安裝 Frontend & Design Skills
-curl -fsSL https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/install.sh | bash -s -- --target codex --type skill --category frontend-design
-
-# 安裝 Quality Assurance Agents，並先預覽
-curl -fsSL https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/install.sh | bash -s -- --target codex --type agent --category quality-assurance --dry-run
+curl -fsSL https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/install.sh | bash -s -- --target codex --type skill && curl -fsSL https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/install.sh | bash -s -- --target codex --type agent --enable-auto-delegation
 ```
 
-確認預演內容後，移除 `-DryRun`／`--dry-run` 即可正式安裝。也可先使用 catalog CLI 查看內容，例如 `node craftroster-cli.js list --type agent --category quality-assurance`。可用分類請見 [Agents](#agents) 與 [Skills](#skills)；分類安裝仍會下載完整 repository archive，但只會把所選分類寫入安裝目錄，因此能減少全域檔案數與 runtime 載入內容。
+這會安裝全部 286 個 Skills、237 個 Agents，並為 Codex 啟用全域主動委派。安裝完成後請開啟新的 Codex 工作階段，讓 runtime 重新載入內容。
+
+> [!NOTE]
+> Codex 的初始 Skill metadata 清單最多使用 context window 的 2%，context 大小未知時上限為 8,000 字元；大量全域 Skills 可能先被縮短描述，再有部分項目被省略。檔案仍會保留在安裝目錄，但若需要保證載入，請明確使用 `$skill-name`。例如 Three.js 網頁工作可輸入 `$threejs-development 請用 Three.js 建立單檔 HTML`。CraftRoster 的 frontend、CSS 與 JavaScript 入口會在任務確實涉及 3D 場景或整合邊界時路由至 Three.js；repo 其他位置有 `three` 本身不足以觸發。部分安裝下請先確認條件依賴可用。詳見 [OpenAI Build skills](https://learn.chatgpt.com/docs/build-skills.md)。
+
+> [!TIP]
+> 上述 one-liner 會取用 `main` 當下的 script 與 archive，不是固定且簽章的 release artifact。若需要先審核或固定版本，請 clone 指定 commit、檢查 [`install.ps1`](scripts/install.ps1) 或 [`install.sh`](scripts/install.sh)，再使用[本機 checkout](#從本機-checkout-安裝)。
 
 ### 安裝到目前專案
 
@@ -190,7 +202,7 @@ bash scripts/install.sh --target codex --type agent --source-dir . --enable-auto
 | 目標 | `-Target` | `--target` | 必填 |
 | 類型 | `-Type skill\|agent` | `--type skill\|agent` | 預設 `skill` |
 | 單一元件 | `-Name` | `--name` | 與分類互斥 |
-| 分類 | `-Category` | `--category` | 與單一元件互斥；只安裝指定分類 |
+| 分類 | `-Category` | `--category` | 與單一元件互斥；選取指定分類，Skill 另補齊必要配套 |
 | 遠端 branch | `-Branch` | `--branch` | 預設 `main` |
 | Ownership repository | `-Repo` | `--repo` | 預設 `HsinPu/CraftRoster` |
 | 自訂位置 | `-InstallDir` | `--dir` | 一般 target 是直接目的地；`project` 是 project root |
@@ -344,6 +356,8 @@ Catalog 來源是 [`skills.json`](skills.json) 與 [`agents.json`](agents.json)�
 
 286 個 Skills 分成 16 類。完整 package 位於 [`skills/`](skills/)，generated metadata 與 routing groups 位於 [`skills.json`](skills.json)。
 
+[Skill 安裝配套與修訂清單](docs/audits/skill-installability-2026-10-09/README.md)提供 GitHub 可直接閱讀的 16 類安裝數量、286 個 Skills 最小配套與修訂證據。下表 Count 是分類本身的數量；實際安裝還會加入跨分類必要配套。
+
 | Category | Count | 範圍 |
 |---|---:|---|
 | `workflow-planning` | 12 | 需求、規劃、分段實作、handoff 與交付 |
@@ -375,7 +389,11 @@ Catalog 來源是 [`skills.json`](skills.json) 與 [`agents.json`](agents.json)�
 | 多 Agent 協作 | [`subagent-architecture`](skills/subagent-architecture/) |
 | 影片製作 | [`video-production-workflow`](skills/video-production-workflow/) |
 
-使用 `node craftroster-cli.js info <skill-name>` 可查看相近能力的選擇原則、必要依賴與條件依賴。單顆和分類安裝會先補齊必要依賴；條件依賴只提供選用條件，不自動安裝。依賴定義維護於 `scripts/data/skill-catalog.json`，由 `npm run generate:skills` 同步 catalog 與免 Node 安裝 index。
+使用 `node craftroster-cli.js info <skill-name>` 可查看必要配套、條件分支、共用資源與替代入口。單顆和分類安裝會遞迴補齊 `required`；`conditional` 與 `optional` 不自動安裝。`routes` 中的 `alternative` 表示改用另一個成果主責，`related` 表示相關能力，兩者都不加入安裝依賴。
+
+`dependencies[].usage: "resource"` 表示該套件提供共用文件；安裝與讀取文件不會啟用該套件的入口流程。例如單裝 `threejs-capture-recording` 會補上保存共用契約的 `threejs-development`，不會加裝其 61 個條件專項。`threejs-webxr-accessibility` 另需要負責非 XR fallback 的 `threejs-accessibility`。`frontend-code-review` 和 `security-code-review` 可獨立審查；擴大成跨領域審查時才選用 `code-review`。
+
+依賴與路由定義維護於 `scripts/data/skill-catalog.json`，由 `npm run generate:skills` 同步 catalog 與免 Node 安裝 index。條件分支選中但缺少對應 Skill 時，應列出缺項和受影響交付，完成可獨立進行的部分，保留該分支為未完成；既有成果只在來源、範圍、工具或交付目標及驗證狀態仍相符時沿用。
 
 安裝器在任何寫入前檢查完整依賴計畫及 ownership。必要依賴若分散於不同安裝根目錄，會指出衝突並停止，請先整理既有安裝；不會暗中搬移或覆寫本機修改。`Force` 同時適用於展開後的依賴。交易保護以個別 package 為單位，並非整批回滾；新安裝器與 source checkout 必須使用同一版本，不能省略 dependency index。詳見[安裝依賴與評估方法](docs/skill-quality-workflow.md)。
 

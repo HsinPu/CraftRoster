@@ -1,6 +1,6 @@
 ---
 name: react-ui-patterns
-description: Visible React UI changes require frontend-design plus this React state specialist. Use for building, modifying, fixing, or reviewing loading, error, empty, optimistic updates, Suspense, transitions, forms, mutations, and other user-visible component states.
+description: Visible React web UI changes require frontend-design plus this React state specialist. Use for building, modifying, fixing, or reviewing loading, error, empty, optimistic updates, Suspense, transitions, forms, mutations, and other user-visible component states; native consumers may reuse platform-neutral state guidance under their native owner.
 license: Apache-2.0
 metadata:
   author: "HsinPu"
@@ -13,7 +13,7 @@ Use this skill when the work is about React UI state behavior, not visual stylin
 
 ## Frontend Baseline Gate
 
-For any visible React component or page creation, modification, redesign, polish, responsive change, or user-facing state repair, read frontend-design before planning. Keep this Skill focused on React state behavior.
+For any visible React web component or page creation, modification, redesign, polish, responsive change, or user-facing state repair, read `frontend-design` before planning. Keep this Skill focused on React state behavior. Native consumers may reuse platform-neutral loading, error, cancellation, and optimistic-update guidance; native views remain with `react-native-expo` and do not activate this web baseline unless an actual web target is being changed.
 
 ## TypeScript Baseline Gate
 

@@ -15,6 +15,8 @@ Use this skill to test frontend logic close to the component.
 
 When tests or production targets use `.ts`, `.tsx`, typed props, typed hooks, typed mocks, or TypeScript diagnostics, read `typescript-development` before planning. Keep this skill responsible for frontend test behavior and runner choices while `typescript-development` owns type-safe fixtures, contracts, and production TypeScript changes.
 
+JavaScript-only component or hook tests can use this Skill alone. If the affected tests activate the TypeScript gate but that baseline is unavailable, identify the missing Skill and leave typed implementation pending; continue independent test inspection instead of activating it from an unrelated repository dependency.
+
 ## Workflow
 
 1. Identify the component, hook, or UI behavior that needs proof.

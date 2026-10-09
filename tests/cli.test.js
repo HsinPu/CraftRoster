@@ -109,7 +109,8 @@ const successCases = [
     name: 'explains conditional dependencies without promising auto-installation',
     args: ['info', 'image-to-code'],
     status: 0,
-    stdout: /\[條件，不自動安裝\] image-to-code-assets: Independent asset exports/,
+    stdout: /\[條件，不自動安裝\] image-to-code-assets: [^\r\n]+/,
+    notOutput: /\[必要，自動安裝\] image-to-code-assets/,
   },
   {
     name: 'shows overlap routing for a routed Skill',
@@ -406,13 +407,20 @@ function assertOptionalDependencyInfo() {
     fs.writeFileSync(path.join(fixtureRoot, 'skills.json'), JSON.stringify({ routingGroups: [], skills: [{
       name: 'root-skill', description: 'Isolated optional dependency fixture.', category: 'fixtures',
       author: 'Fixture', source: 'Fixture/Repository', license: 'Apache-2.0', tags: ['fixture'],
-      dependencies: [{ name: 'base-skill', kind: 'required' },
+      dependencies: [{ name: 'base-skill', kind: 'required', usage: 'resource' },
         { name: 'conditional-skill', kind: 'conditional', when: 'Only for this feature.' },
         { name: 'optional-skill', kind: 'optional' }],
+      routes: [{ name: 'other-output', kind: 'alternative', when: 'Only for the other deliverable.' },
+        { name: 'related-guide', kind: 'related', when: 'For background reading.' }],
     }] }));
     const result = runCli(['info', 'root-skill'], { cliPath });
     assert.equal(result.status, 0, combinedOutput(result));
     assert.match(result.stdout, /\[必要，自動安裝\] base-skill/);
+    assert.match(result.stdout, /base-skill \[共用資源；不啟用入口流程\]/);
+    assert.match(result.stdout, /轉交與相關 Skill（不自動安裝）/);
+    assert.match(result.stdout, /\[改用\] other-output: Only for the other deliverable\./);
+    assert.match(result.stdout, /\[相關\] related-guide: For background reading\./);
+    assert.doesNotMatch(result.stdout, /\[必要，自動安裝\] other-output/);
     assert.match(result.stdout, /\[條件，不自動安裝\] conditional-skill: Only for this feature\./);
     assert.match(result.stdout, /\[可選，不自動安裝\] optional-skill/);
     assert.doesNotMatch(result.stdout, /undefined|\[條件，不自動安裝\] optional-skill/);

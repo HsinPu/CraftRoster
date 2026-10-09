@@ -25,7 +25,7 @@ Before planning or editing security-sensitive Python code, read the sibling [`..
 
 ## Boundaries
 
-- Use `code-review` for reviewing diffs and surfacing security findings.
+- Use `security-code-review` when the requested outcome is vulnerability and exploitability findings without implementation. Use `code-review` when the primary outcome is a broad correctness or quality review.
 - Use `python-packaging-release` for release mechanics and artifact publication.
 - Use `python-backend-development` for framework structure and app flow.
 - Use `python-automation-scripting` for local operational scripts.
@@ -56,7 +56,7 @@ Before planning or editing security-sensitive Python code, read the sibling [`..
 
 ## Handoff
 
-- For diff review and risk findings, hand off to `code-review`.
+- For vulnerability and exploitability findings, hand off to `security-code-review`; for broad correctness and quality review, hand off to `code-review`.
 - For packaging and release output, hand off to `python-packaging-release`.
 - For general implementation style, hand off to `python-development`.
 

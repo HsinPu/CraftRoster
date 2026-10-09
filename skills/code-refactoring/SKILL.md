@@ -56,7 +56,7 @@ Do not use this skill for feature work, bug fixes, or architecture selection unl
 
 | 情況 | 說明 |
 |------|------|
-| 沒有測試覆蓋 | 無法確認行為不變，風險高；先補測試再重構。 |
+| 沒有足夠驗證方式 | 無法確認行為不變，風險高；先建立測試或其他可重現的行為證據再重構。 |
 | 時程緊且無安全網 | 沒有自動化測試或回滾計畫時，避免大範圍重構。 |
 | 程式即將被替換 | 若短期內會整塊替換，重構效益低。 |
 | 尚未理解程式在做什麼 | 先讀懂、必要時加註解或小範圍補測試，再重構。 |
@@ -147,9 +147,9 @@ Do not use this skill for feature work, bug fixes, or architecture selection unl
 
 ## 安全重構流程
 
-1. **先有測試**：沒有就補（單元或整合），再開始重構。
+1. **先有行為安全網**：依風險與 repo 要求，選既有測試、characterization test 或其他可重現且足以證明行為不變的驗證。證據不足時先補足，並記錄無法驗證的部分；本流程不固定要求 TDD 或某種語言測試 Skill。
 2. **小步進行**：一次一種重構，不混入新功能。
-3. **每次改動後跑測試**：立刻發現行為變化。
+3. **每次改動後驗證**：執行選定的測試或行為檢查，立刻發現行為變化。
 4. **常 commit**：每步可還原，commit message 說明重構內容。
 5. **檢查 diff**：確認只改結構與命名，不改行為與邊界條件。
 
@@ -159,7 +159,7 @@ Do not use this skill for feature work, bug fixes, or architecture selection unl
 
 - [ ] 重構前測試通過（或已有可驗證方式）
 - [ ] 每次改動小且聚焦於單一重構
-- [ ] 每次改動後測試通過
+- [ ] 每次改動後選定的測試或行為檢查通過
 - [ ] 僅改結構、命名、組織，不改對外行為
 - [ ] 可讀性提升（命名、長度、層級）
 - [ ] Commit message 說明重構內容（例如：Extract method X、Replace magic number）

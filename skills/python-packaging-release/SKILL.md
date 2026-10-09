@@ -1,6 +1,6 @@
 ---
 name: python-packaging-release
-description: Package, install, version, build, and release Python projects using pyproject.toml, build backends, wheels, sdists, console scripts, PyPI, or internal artifact targets. Use when Python distribution metadata, installability, artifacts, publishing, or release verification is the primary concern; pair with python-development.
+description: Prepare or review Python distribution metadata, installability, artifacts, versioning, and release evidence. Pair with python-development for packaging changes or new package/runtime compatibility proof; read-only review of valid existing metadata, artifacts, and results can run alone.
 license: Apache-2.0
 metadata:
   author: "HsinPu"
@@ -13,7 +13,9 @@ Use this skill when a Python project needs to be packaged, versioned, or release
 
 ## Python Baseline Gate
 
-Before changing Python packaging or release configuration, read the sibling [`../python-development/SKILL.md`](../python-development/SKILL.md), even when the runtime omitted it from the initial Skill list. Keep this skill responsible for build metadata, distribution artifacts, entry points, versioning, publishing, and installed-artifact proof; keep `python-development` responsible for package and import structure, supported runtimes, and implementation compatibility.
+Before preparing or changing Python packaging or release configuration, or producing new package/import/runtime compatibility proof, read the sibling [`../python-development/SKILL.md`](../python-development/SKILL.md), even when the runtime omitted it from the initial Skill list. Keep this skill responsible for build metadata, distribution artifacts, entry points, versioning, publishing, and installed-artifact proof; keep `python-development` responsible for package and import structure, supported runtimes, and implementation compatibility.
+
+Read-only review can use this Skill alone when it consumes existing metadata, artifacts, and results tied to the requested package, version, source baseline, and runtime. Confirm that relevant inputs have not changed. If fresh build, install, import, or entry-point proof is needed, record the gap in review mode; an authorized preparation or verification task activates the baseline above. A missing baseline blocks only that active branch.
 
 ## When To Use
 

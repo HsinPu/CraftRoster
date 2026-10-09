@@ -126,7 +126,7 @@ Use when the UI feels generic, over-decorated, or visually off.
 
 ## Handoff
 
-- For implementing a specific screen or component, pair with `frontend-design`, `tailwind-development`, or `css-development`.
+- For implementing a visible production screen or component, read `frontend-design` before planning; add `tailwind-development` or `css-development` only for the matching styling mechanics.
 - Use `taste-skill` when the visual intent or direction version is unresolved, then record only the approved result in the maintained system context.
 - Keep the system semantic: use base tokens, semantic tokens, and component tokens only when necessary.
 - Prefer DTCG 2025.10-compatible token objects using the standard type, value, optional description, and alias fields. Keep tool-specific provenance or mode data in documented extensions rather than custom ambiguous fields.

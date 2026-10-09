@@ -9,7 +9,7 @@ metadata:
 
 # Color Font Skill
 
-Use this skill to choose the palette and type direction. Read frontend-design when the same task applies those decisions to visible production UI.
+Use this Skill alone to choose palette and type direction. Read `frontend-design` before planning when the same task applies those decisions to visible production UI.
 
 ## Workflow
 

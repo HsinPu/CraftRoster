@@ -14,6 +14,8 @@ metadata:
 
 Coordinate risky schema and data changes through reversible stages, explicit evidence, and authorized gates.
 
+This stage-completion workflow requires `verification-before-completion`; load it before declaring any stage or the full migration complete. Engine, ORM, pipeline, and rollout companions below apply only to the migration branch they own.
+
 ## Plan
 
 1. Identify the database engine and version, environment, migration owner, application owners, dependent jobs, consumers, replicas, and deployment order.

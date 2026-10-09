@@ -6,6 +6,8 @@
 
 在 `scripts/data/skill-catalog.json` 的 `skills[name].dependencies` 宣告跨 package 資源。必要依賴使用 `{ "name": "python-development", "kind": "required" }`；條件依賴使用 `"kind": "conditional"` 與具體 `when`；可選依賴使用 `"kind": "optional"`，不帶 `when`。三者都必須指向存在且不同名的 Skill，不允許同一 owner 重複宣告相同 target。只有 conditional 接受 `when`。一般 handoff 不必自動升格為安裝依賴。
 
+共用文件可加上 `"usage": "resource"`；必須有連到該 package 實際檔案的 sibling Markdown link。安裝或讀取資源不啟用該 package 的入口流程；未指定 usage 的依賴視為 workflow 配套。同一 package 同時負責核心工作與資源時，保留 workflow 用途。`skills[name].routes` 另記 `{ "name": "other-skill", "kind": "alternative", "when": "另一成果的觸發條件" }` 或 `"kind": "related"`：前者改用另一主責，後者提供相關能力，都不投影進安裝 TSV。同 target 可依不同情境同時有 dependency 與 route，但不允許重複同 target/kind 的 route。`info` 會分別呈現。
+
 執行 `npm run generate:skills`，會同步 `skills.json` 與 `scripts/data/install-skill-dependencies.tsv`。TSV 是安裝資料，不是命令；required 先展開、去重、檢查循環和 placement，conditional／optional 只提示、不自動安裝。optional 由明確名稱、分類或全量選擇納入時，才解析它自己的 required closure。單顆、分類、全量與 Agent companion 共用相同邊界。個別 package 的 ownership、修改偵測、暫存替換及 Force 規則照舊。
 
 跨 package 的根入口 Markdown links 必須宣告依賴且指向存在的檔案；dependency 目錄連結以其 `SKILL.md` 驗證。禁止逃出 package、跨 package traversal 和 symlink escape。這項檢查涵蓋入口可執行 prose；fenced examples 不當作資源。純文字 handoff、任意執行程式的動態路徑，以及 reference 內的所有示例並不因此獲得完整可攜性認證。
@@ -148,7 +150,7 @@ GLB 需要重建時，以 `CRAFTROSTER_NPM_CLI` 指定 npm CLI 絕對路徑，�
 npm run plan:skill-regressions -- --changed solution-discovery --changed spec-flow --output new-regression-plan.json
 ```
 
-這個命令只讀本機來源並建立新的 JSON，不執行模型。`--changed` 可重複；輸出不可覆寫。選取變更本身和直接 required／conditional 消費者的全部 output／routing suites，再加一步 routing 鄰居的 routing suites，以及其他 owner 明確引用這次變更的個別 routing cases。Conditional 保守納入而不猜測 `when` 是否成立；optional 只列出與 changed 端點相關的 `optional_dependency_advisories`，不因此增加 Skills 或案例。間接依賴若有實際影響，需另外加入 `--changed`；它不是全圖遞迴或完整覆蓋證明。
+這個命令只讀本機來源並建立新的 JSON，不執行模型。`--changed` 可重複；輸出不可覆寫。選取變更本身和直接 required／conditional 消費者的全部 output／routing suites，再加一步 routing group 或 per-Skill `routes` 鄰居的 routing suites，以及其他 owner 明確引用這次變更的個別 routing cases。Conditional 保守納入而不猜測 `when` 是否成立；optional 只列出與 changed 端點相關的 `optional_dependency_advisories`，不因此增加 Skills 或案例。間接依賴若有實際影響，需另外加入 `--changed`；它不是全圖遞迴或完整覆蓋證明。
 
 先檢閱每項 reason、missing requested suite 和所需 runtime，再決定 variants、trials、host、工具、私有 grader 與額度。Manifest 包含完整 runtime package hashes（不含 evals）、corpus 與選中案例的 input hashes；執行前來源變動必須重建並重查。Oracle hashes 與選取理由只給 evaluator，不應把整份 manifest 當作模型提示。`npm run test:skill-regressions` 驗證一步邊界、三種依賴的選取差異、路徑、型別、雜湊及覆寫拒絕。
 

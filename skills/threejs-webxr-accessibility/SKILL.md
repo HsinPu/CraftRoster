@@ -11,6 +11,8 @@ metadata:
 
 Make immersive capability progressive and keep essential content and actions available outside a headset.
 
+This workflow requires `threejs-accessibility` for the non-XR fallback and the shared contracts bundled in `threejs-development`. The latter is a resource dependency; reading its contracts does not activate its full routing workflow. Reuse verified fallback evidence only when its source revision, supported actions, input modes, and device targets still match; retain `threejs-accessibility` as the owner of any changed fallback behavior.
+
 ## Workflow
 
 1. Define supported XR modes, devices, session features, physical space, input sources, comfort constraints, HTTPS deployment, and the required non-XR fallback.

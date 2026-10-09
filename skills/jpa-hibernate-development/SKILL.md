@@ -13,7 +13,7 @@ metadata:
 
 ## Java Baseline Gate
 
-When JPA or Hibernate work creates or changes Java entities, repositories, projections, services, exceptions, or public contracts, read `java-development` before planning. Keep this skill responsible for ORM mapping, fetching, transactions, queries, migrations, and persistence behavior while `java-development` owns Java type, API, and implementation decisions.
+When JPA or Hibernate work creates or changes Java entities, repositories, projections, services, exceptions, or public contracts, read `java-development` before planning. Keep this skill responsible for ORM mapping, fetching, transactions, queries, migrations, and persistence behavior while `java-development` owns Java type, API, and implementation decisions. Mapping or query-plan review without those Java changes may use this Skill alone.
 
 ## When To Use
 

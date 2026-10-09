@@ -13,7 +13,7 @@ metadata:
 
 ## Java Baseline Gate
 
-When Spring Security work creates or changes Java configuration, filters, handlers, annotations, domain authorization, or tests, read `java-development` before planning. Keep this skill responsible for the security model and controls while `java-development` owns Java language, API, exception, and resource behavior.
+When Spring Security work creates or changes Java configuration, filters, handlers, annotations, domain authorization, or tests, read `java-development` before planning. Keep this skill responsible for the security model and controls while `java-development` owns Java language, API, exception, and resource behavior. Read-only policy review without those Java changes may use this Skill alone.
 
 ## Handoff
 

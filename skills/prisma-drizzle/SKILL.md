@@ -11,6 +11,8 @@ metadata:
 
 Use this skill when a TypeScript or JavaScript project uses Prisma ORM or Drizzle ORM for database schema, migrations, queries, or type-safe data access.
 
+Read `typescript-development` before planning changes to TypeScript schemas, database-access code, typed public APIs, or compiler diagnostics. Prisma schema or SQL-only work without TypeScript changes may use this Skill alone.
+
 ## Core Scope
 
 - Prisma schema, Prisma Client, migrations, introspection, and deployment

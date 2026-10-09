@@ -156,6 +156,21 @@ try {
     run(['--check'], root);
   });
 
+  test('resource purpose and alternative conditions survive catalog generation without adding install edges', () => {
+    const root = createFixture('resource-and-route-roundtrip');
+    const config = baseConfig();
+    config.skills['alpha-skill'].dependencies = [{ name: 'beta-skill', kind: 'required', usage: 'resource' }];
+    config.skills['beta-skill'].routes = [{ name: 'alpha-skill', kind: 'alternative', when: 'The deliverable belongs to the other owner.' }];
+    fs.appendFileSync(path.join(root, 'skills/alpha-skill/SKILL.md'), '[contract](../beta-skill/SKILL.md)\n');
+    writeJson(path.join(root, 'scripts/data/skill-catalog.json'), config);
+    run([], root);
+    const generated = JSON.parse(fs.readFileSync(path.join(root, 'skills.json'), 'utf8'));
+    assert.deepStrictEqual(generated.skills[0].dependencies, config.skills['alpha-skill'].dependencies);
+    assert.deepStrictEqual(generated.skills[1].routes, config.skills['beta-skill'].routes);
+    assert.strictEqual(generated.skills[1].dependencies, undefined);
+    run(['--check'], root);
+  });
+
   test('parses quoted scalars and inline comments without truncating quoted hashes', () => {
     const root = createFixture('quoted-scalars');
     const skillPath = path.join(root, 'skills', 'alpha-skill', 'SKILL.md');

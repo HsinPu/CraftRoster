@@ -13,6 +13,8 @@ Use this skill to review frontend changes with a bug-hunting mindset. Support bo
 
 ## Umbrella Contract
 
+Focused frontend review can use this Skill alone and return the output below. It does not require the umbrella solely because the input is a frontend diff or PR.
+
 When frontend work is part of a broader code review:
 
 1. Read the sibling [`../code-review/SKILL.md`](../code-review/SKILL.md) before producing the final review.

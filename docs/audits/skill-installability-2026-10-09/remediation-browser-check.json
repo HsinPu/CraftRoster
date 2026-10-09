@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "checkedAtUtc": "2026-10-09 06:49:32 UTC",
+  "status": "passed",
+  "method": "Codex in-app browser DOM observations and visible controls",
+  "url": "http://127.0.0.1:57938/docs/audits/skill-installability-2026-10-09/remediation-report.html",
+  "checks": [
+    {
+      "label": "Final report loads current data and completed verification",
+      "observedSkills": 286,
+      "verificationStatus": "passed",
+      "successfulCheckEntries": 11
+    },
+    {
+      "label": "Search includes matching Skill and relationship owners",
+      "query": "threejs-capture-recording",
+      "observedRows": 4
+    },
+    {
+      "label": "Capture detail shows resource-only minimal installation",
+      "observedMinimum": [
+        "threejs-capture-recording",
+        "threejs-development"
+      ],
+      "resourceOwner": "threejs-development",
+      "resourceWorkflowActivated": false
+    },
+    {
+      "label": "Frontend category has exact required closure",
+      "category": "frontend-design",
+      "selected": 34,
+      "additionalRequired": [
+        "accessibility-testing",
+        "frontend-testing",
+        "image-utils",
+        "visual-regression-testing",
+        "webapp-testing"
+      ],
+      "deduplicatedPackages": 39
+    },
+    {
+      "label": "Final report restored to all Skills",
+      "observedSkills": 286,
+      "search": "",
+      "category": "",
+      "detailHidden": true
+    }
+  ]
+}

@@ -32,5 +32,6 @@ Use this skill when the task is to modify an existing video file.
 - For a complete governed production, use `video-production-workflow`; return versioned outputs and verification evidence without overwriting accepted source media or renders.
 - For vlog edit structure, B-roll planning, titles, thumbnails, and platform packaging, use `vlog-production`.
 - For programmatic video generation, use `remotion-video-toolkit`.
-- For summarizing or transcribing video content, use `summary-ops`.
+- For speech-to-text from media, use `audio-transcription`; this Skill may first extract or normalize the audio.
+- For summarizing accessible source text or an existing transcript, use `summary-ops`.
 - For command execution and evidence, use `terminal-ops`.

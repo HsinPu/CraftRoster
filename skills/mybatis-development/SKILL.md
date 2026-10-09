@@ -15,7 +15,7 @@ metadata:
 
 ## Java Baseline Gate
 
-When MyBatis work creates or changes Java mapper interfaces, domain or DTO types, services, exceptions, or public contracts, read `java-development` before planning. Keep this skill responsible for mapper XML, bindings, result maps, dynamic SQL, Spring transaction integration, and persistence behavior while `java-development` owns Java language and API decisions.
+When MyBatis work creates or changes Java mapper interfaces, domain or DTO types, services, exceptions, or public contracts, read `java-development` before planning. Keep this skill responsible for mapper XML, bindings, result maps, dynamic SQL, Spring transaction integration, and persistence behavior while `java-development` owns Java language and API decisions. XML-only mapping or SQL review without Java type or API changes may use this Skill alone.
 
 ## 適用範圍（Assumptions）
 

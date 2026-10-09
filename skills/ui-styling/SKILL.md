@@ -9,7 +9,7 @@ metadata:
 
 # UI Styling
 
-Use this skill when refining React UI components. Read frontend-design first whenever the task creates or changes visible production UI.
+Use this skill when refining React UI components. Its visible production-UI workflow requires `frontend-design`; read that baseline before planning the styling change.
 
 ## Workflow
 

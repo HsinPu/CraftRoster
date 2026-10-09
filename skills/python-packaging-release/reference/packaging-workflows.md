@@ -107,6 +107,8 @@ mytool = "mytool.cli:main"
 
 ## Verification
 
+Read-only review consumes recorded results tied to the same package, version, source baseline, and runtime. Report missing or stale proof without building or installing. The following execution steps apply to authorized preparation or fresh verification, which uses the `python-development` baseline described in the entrypoint.
+
 - Install the built artifact into a clean environment.
 - Import the package and run the exposed CLI.
 - Confirm the version string and entry points.

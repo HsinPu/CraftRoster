@@ -9,7 +9,7 @@ metadata:
 
 # Animation Best Practices
 
-Use this skill to make motion feel deliberate. Read frontend-design first when applying motion to visible production UI.
+Use this skill to make motion feel deliberate. Its visible production-UI workflow requires `frontend-design`; read that baseline before planning the animation.
 
 ## Workflow
 

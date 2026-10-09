@@ -32,7 +32,7 @@ Use the lowest level that can prove the requested behavior.
 
 ## Workflow
 
-1. Run `skill-scan`, `skill-lint`, and any required security review before executable content crosses the runtime boundary.
+1. Before executable content crosses the runtime boundary, require matching scan, lint, and applicable security verdicts. Reuse valid reports under the identity rules below; use `skill-scan`, `skill-lint`, `skill-audit`, or `skill-security-review` only for the evidence still missing. An available repository-native validator may supply the structural verdict if it covers the required checks. Do not execute while a required gate is failed, blocked, incomplete, or unavailable.
 2. Snapshot the allowed filesystem, processes, environment shape, and external state needed to detect side effects.
 3. Execute the exact run packet once. Capture command, working directory, start and end time, exit status, stdout, stderr, tool calls, file changes, network attempts, timeout, and cancellation behavior.
 4. Compare observed actions and outputs with the Skill's declared capability, permissions, completion claim, and residue contract.
@@ -40,6 +40,12 @@ Use the lowest level that can prove the requested behavior.
 6. Repeat the same packet after a change; run multiple trials when output is nondeterministic.
 7. Compare against the baseline when the question is whether the Skill improves selection or task results.
 8. Classify the proof as pass, fail, blocked, or inconclusive and state the untested surface.
+
+## Reusing Gate Evidence
+
+Verify each report against the run packet's source revision, full package inventory and file hashes, dependency identity, inspected scope, target tool and version, and permission boundary. Also check the validator or reviewer version, actual commands or observations, and recorded status. A static report must explicitly identify runtime checks as not applicable or unrun; it cannot supply runtime proof for the packet.
+
+Changes to the package, dependencies, target tool, relevant environment, or authority boundary invalidate affected reports. Keep failed, blocked, and incomplete verdicts intact; report availability never establishes a pass. If an evidence producer is unavailable, remain in static-only mode and name only that missing prerequisite.
 
 ## Stop Conditions
 
@@ -63,7 +69,8 @@ Return the run packet, isolation level, commands, observations, baseline compari
 ## Handoff
 
 - For repo shell commands and git state checks, use `terminal-ops`.
-- For automation-heavy browser work, use `webapp-testing`.
-- For deterministic package structure checks, use `skill-lint`.
-- For provenance, safety, and maintenance review, use `skill-audit` or `skill-security-review`.
+- For a run packet that verifies a local application's UI behavior, use `webapp-testing`.
+- For an authorized browser interaction or retrieval task in the run packet, use `browser-automation` or `playwright-automation`; browser transport alone does not make the task local application QA.
+- For a missing deterministic package structure verdict, use `skill-lint` or an equivalent repository-native validator.
+- For missing provenance, safety, or maintenance evidence, use `skill-audit` or `skill-security-review` according to the unresolved review scope.
 - For release certification after the execution proof passes, use `skillforge`.

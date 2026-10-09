@@ -21,11 +21,11 @@ Use this skill when the task needs Google Workspace automation from the terminal
 
 ## Workflow
 
-1. Confirm authentication and account scope.
-2. Identify the Workspace app involved.
-3. Use the simplest command that performs the action.
-4. Prefer non-interactive input for repeatable automation.
-5. If the task is just document formatting, hand off to `word-document-ops` or `spreadsheet-ops`; if the target is Markdown, hand off to `document-to-markdown`.
+1. Identify an existing Google Workspace CLI and inspect its version, help, supported apps, authentication state, and available account scopes through documented read-only commands. This package does not bundle a CLI or grant Google access.
+2. Identify the Workspace app and verify that the discovered CLI supports the requested operation and output format. Derive command syntax from its actual help or documentation; do not invent a generic Workspace command.
+3. If the CLI, required app support, authentication, or scope is missing, report that runtime prerequisite and provide a bounded plan. Installation, account setup, authentication, and scope expansion require explicit authorization and are separate from using this Skill.
+4. Use the narrowest documented command within the authorized account and scope; prefer non-interactive input for repeatable automation when supported.
+5. Verify the resulting object, revision, or action receipt. If the task is just document formatting, hand off to `word-document-ops` or `spreadsheet-ops`; if the target is Markdown, hand off to `document-to-markdown`.
 
 ## Rules
 

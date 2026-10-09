@@ -13,7 +13,7 @@ metadata:
 
 ## Java Baseline Gate
 
-When WebFlux or Reactor work creates or changes Java source, typed handlers, domain APIs, exceptions, resources, or concurrency behavior, read `java-development` before planning. Keep this skill responsible for reactive pipelines, backpressure, schedulers, WebClient, R2DBC, and reactive tests while `java-development` owns the Java contracts and general implementation.
+When WebFlux or Reactor work creates or changes Java source, typed handlers, domain APIs, exceptions, resources, or concurrency behavior, read `java-development` before planning. Keep this skill responsible for reactive pipelines, backpressure, schedulers, WebClient, R2DBC, and reactive tests while `java-development` owns the Java contracts and general implementation. Read-only workload or operator analysis without those Java changes may use this Skill alone.
 
 ## When To Use WebFlux
 

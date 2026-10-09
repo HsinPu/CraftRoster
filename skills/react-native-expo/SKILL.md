@@ -47,7 +47,7 @@ Use this skill when building, debugging, testing, or releasing a mobile app with
 
 ## Handoff
 
-- Use `react-ui-patterns` for component state and loading/error patterns.
+- Native component state and views remain owned here. Optionally reuse platform-neutral loading, error, cancellation, and optimistic-update guidance from `react-ui-patterns` without activating its web frontend baseline. For an actual web target, read `frontend-design` before visible web UI changes.
 - Use `typescript-development` for type-safe implementation.
 - Use `auth-integration` for mobile auth, OAuth redirects, sessions, and secure storage.
 - Use `testing-strategy` for mobile test planning.

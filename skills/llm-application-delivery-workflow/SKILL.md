@@ -30,7 +30,7 @@ Read [references/delivery-stage-gates.md](references/delivery-stage-gates.md) an
 
 ## Orchestration Rules
 
-- Start at the earliest unresolved gate; reuse existing evidence only after confirming that it matches the current revision and environment.
+- Start at the earliest unresolved gate; reuse existing evidence only after verifying its current source revision and artifact hashes, input and dependency lineage, inspected or tested scope, tool and environment target, evaluator version, authority boundary, and actual gate status. A blocked, incomplete, stale, or unrun report cannot become a pass. Load only the producer needed for missing evidence; accepted matching artifacts need no rerun.
 - Prefer one model call or one agent with narrow tools until evidence justifies added retrieval, memory, handoffs, or loops.
 - Keep application authorization and deterministic business rules outside model discretion.
 - Record every skipped gate with its reason, evidence, owner, and residual risk.

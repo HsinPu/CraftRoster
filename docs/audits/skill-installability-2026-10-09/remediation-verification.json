@@ -1,0 +1,201 @@
+{
+  "schemaVersion": 1,
+  "checkedAtUtc": "2026-10-09 06:47:22 UTC",
+  "status": "passed",
+  "nodeVersion": "24.19.0",
+  "runtimeStatus": "not_run",
+  "scope": "Executed repository validation, 280 local regression tests, PowerShell and Git Bash isolated dependency installer smoke, and 52 current-catalog dry-run installation plans. Live model behavior and interactive category selection UI are outside this verification.",
+  "checks": [
+    {
+      "label": "npm run validate (final catalog)",
+      "command": "$env:PATH = 'C:\\Users\\win10\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin;' + $env:PATH; & 'C:\\Users\\win10\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe' 'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js' run validate",
+      "exitCode": 0,
+      "executed": true,
+      "output": "\n> craftroster@1.0.0 validate\n> node scripts/generate-skill-catalog.js --check && node scripts/generate-install-category-index.js --check && node scripts/validate-catalog.js && node scripts/validate-skill-contracts.js && node scripts/validate-legacy-skill-digests.js && node scripts/validate-skill-evals.js && node scripts/verify-skill-sources.js && node scripts/verify-agent-references.js && node scripts/validate-agent-coverage.js && node scripts/generate-release-baseline.js --check && node scripts/generate-install-skill-dependencies.js --check && node scripts/validate-skill-review.js\n\nSkill catalog generation check passed\nInstall category index check passed: 523 components\nCatalog validation passed: 286 skills, 237 agents\nSkill contract validation passed: 825 Markdown files, 7 workflow contracts\nLegacy Skill digest manifest passed: 213 Skills, 370 digests\nSkill eval validation passed: 117/286 skills covered (40.9%), 291 evals, 1237 assertions, 85 routing cases (case definitions only; no model tasks executed)\nSkill source manifest verified: 62 Skills, 18 repositories, 131 paths\nAgent reference manifest verified: 24 repositories, 237 Agents, 329 paths\nAgent coverage matrix passed: 31/31 categories, 111 representative owners\nRelease baseline check passed (catalog and case definitions, not runtime success)\nSkill dependency index check passed: 995 edges\nSkill review registry validated: 286 decisions, 16 category case definitions; no runtime result claimed\n"
+    },
+    {
+      "label": "Skill dependency and minimal package tests (final catalog)",
+      "command": "& 'C:\\Users\\win10\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe' tests/skill-dependencies.test.js",
+      "exitCode": 0,
+      "executed": true,
+      "output": "PASS chain and conditional back-edge remain valid\nPASS optional back-edge does not turn a required chain into a cycle\nPASS required cycle reports chain\nPASS reject unknown target\nPASS reject self edge\nPASS reject duplicate edge\nPASS reject unknown kind\nPASS reject optional unknown target\nPASS reject optional self edge\nPASS reject optional duplicate edge\nPASS reject optional condition\nPASS reject optional null condition\nPASS reject missing condition\nPASS reject multiline condition\nPASS reject NUL condition\nPASS reject required condition\nPASS reject unknown field\nPASS reject unknown usage\nPASS reject non-array\nPASS shared-resource dependency keeps its install kind and excludes alternatives from TSV\nPASS alternative back-edges do not create an install cycle\nPASS reject route unknown target\nPASS reject route self route\nPASS reject route install kind\nPASS reject route missing condition\nPASS reject route multiline condition\nPASS reject route execution field\nPASS duplicate alternatives are rejected\nPASS deterministic TSV preserves conditional explanation\nPASS optional declaration survives JSON and deterministic TSV without inventing a condition\nPASS entrypoint link scan excludes fenced examples\nPASS all supported Markdown destination forms are checked\nPASS catalog name type is checked before object-key coercion\nPASS sibling package directory resolves to SKILL.md\nPASS undeclared sibling rejected\nPASS resource usage is tied to a real bundled sibling file\nPASS missing bundled reference rejected\nPASS reject resource escape ../../README.md\nPASS reject resource escape ../beta/../gamma/SKILL.md\nPASS reject resource escape ../beta/reference/../../gamma/SKILL.md\nPASS titles, angle links, and reference definitions cannot conceal escapes\nPASS repository minimal package plan for document-to-markdown\nPASS repository minimal package plan for image-to-code-assets\nPASS repository minimal package plan for threejs-capture-recording\nPASS repository minimal package plan for threejs-webxr-accessibility\nPASS repository minimal package plan for frontend-code-review\nPASS repository minimal package plan for security-code-review\nPASS repository minimal package plan for python-packaging-release\nPASS repository minimal package plan for animation-best-practices\nPASS repository minimal package plan for responsive-design\nPASS repository minimal package plan for ui-styling\nPASS repository minimal package plan for tailwind-patterns\nPASS shared Three.js resources do not expand the base router specialist inventory\nPASS complete page and redesign packages retain their required delivery owners\nPASS migration completion retains a required verification owner\n55 dependency tests passed\n"
+    },
+    {
+      "label": "Skill catalog generation tests",
+      "command": "& 'C:\\Users\\win10\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe' tests/skill-catalog-generation.test.js",
+      "exitCode": 0,
+      "executed": true,
+      "output": "PASS builds a deterministic catalog from Skill metadata and catalog config\nGenerated skills.json for 2 Skills\nSkill catalog generation check passed\nPASS writes the catalog and accepts an exact generation check\nGenerated skills.json for 2 Skills\nSkill catalog generation check passed\nPASS catalog generation preserves optional declarations without converting them to required edges\nGenerated skills.json for 2 Skills\nSkill catalog generation check passed\nPASS resource purpose and alternative conditions survive catalog generation without adding install edges\nPASS parses quoted scalars and inline comments without truncating quoted hashes\nGenerated skills.json for 2 Skills\nPASS detects stale generated output\nPASS rejects missing classifications\nPASS rejects unknown routed Skills\nPASS rejects duplicate nested metadata keys\nPASS rejects incomplete reference metadata\nPASS rejects unterminated quoted scalars\nPASS rejects unsupported YAML instead of silently skipping it\nPASS rejects unsupported inline collections\nPASS rejects unknown generator arguments\nSkill catalog generation tests passed: 14\n"
+    },
+    {
+      "label": "Offline regression planner tests",
+      "command": "& 'C:\\Users\\win10\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe' tests/skill-regression-plan.test.js",
+      "exitCode": 0,
+      "executed": true,
+      "output": "PASS direct changes select output tasks and all routing kinds, including no-skill negatives\nPASS required and conditional direct reverse consumers retain auditable conditions\nPASS routing adjacency is one step and cannot turn into a transitive graph walk\nPASS optional edges are auditable advisories and cannot select output or routing suites\nPASS per-Skill alternatives and related routes select only one-step routing suites\nPASS foreign owners contribute expected, excluded and allowed references without unrelated tasks\nPASS changing a reference invalidates the complete runtime package, not the unchanged corpus\nPASS fixture changes invalidate case inputs independently of prompt and runtime hashes\nPASS oracle-only edits invalidate corpus and case hashes without contaminating runtime or input hashes\nPASS a changed Skill without evals remains visible with two missing requested suites\nPASS plans are deterministic across repeated and reordered changed inputs\nPASS unknown names, traversal and unsupported execution flags fail closed\nPASS malformed unselected corpus, unknown routing references and duplicate case IDs cannot disappear\nPASS invalid dependency and routing metadata is rejected at its canonical source\nPASS numeric routing group identifiers cannot be accepted through regular-expression coercion\nPASS array routing names cannot pass catalog membership and silently lose routing neighbors\nPASS string and array aliases cannot bypass duplicate routing-member rejection\nPASS fixture traversal and missing files are errors, not absent evidence\nPASS real directory symlinks cannot escape through runtime resources or fixture inputs\nPASS a missing corpus behind a directory symlink fails instead of being called missing\nPASS new JSON output is reviewable and overwrite cannot alter the previous record\nPASS CLI entry uses only local planning and leaves execution, budgets and grades unconfigured\nSkill regression plan tests passed: 22\n"
+    },
+    {
+      "label": "Skill review registry guards",
+      "command": "& 'C:\\Users\\win10\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe' tests/skill-review.test.js",
+      "exitCode": 0,
+      "executed": true,
+      "output": "Skill review registry tests passed: 16\n"
+    },
+    {
+      "label": "CLI regression tests (final catalog)",
+      "command": "& 'C:\\Users\\win10\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe' tests/cli.test.js",
+      "exitCode": 0,
+      "executed": true,
+      "output": "PASS shows help when no command is provided\nPASS supports the help command\nPASS supports the long help option\nPASS supports the short help option\nPASS supports help after a known command\nPASS defaults to the Skill catalog when --type is omitted\nPASS accepts a valid Skill category\nPASS accepts a valid Agent category\nPASS preserves Skill search\nPASS preserves Agent search\nPASS preserves Skill info\nPASS shows required installation dependencies\nPASS explains conditional dependencies without promising auto-installation\nPASS shows overlap routing for a routed Skill\nPASS preserves Agent info\nPASS allows an installed catalog target\nPASS allows all installed catalog targets\nPASS rejects an unknown command\nPASS rejects an unknown short option in command position\nPASS rejects an unknown short option after a command\nPASS rejects an unknown long option\nPASS rejects unsupported --option=value syntax\nPASS rejects an unsupported catalog type\nPASS rejects --type without a value\nPASS treats another option after --type as a missing value\nPASS rejects repeated --type values\nPASS rejects an unsupported target\nPASS rejects --target without a value\nPASS rejects duplicate target aliases\nPASS rejects --category without a value\nPASS rejects duplicate categories\nPASS rejects an invalid Skill category\nPASS rejects an invalid Agent category\nPASS rejects a positional argument for list\nPASS requires a search query\nPASS requires an info name\nPASS rejects multiple info names\nPASS rejects --installed for search\nPASS rejects --category for search\nPASS rejects --installed for info\nPASS requires --installed with --all\nPASS requires --installed with --target\nPASS rejects --category with --installed\nPASS rejects --all with --target\nPASS returns not found for missing Skill info\nPASS returns not found for missing Agent info\nPASS returns not found for a Skill search without matches\nPASS returns not found for an Agent search without matches\nPASS scans the Codex transition root but accepts only CraftRoster ownership\nPASS distinguishes required, conditional and optional dependencies in an isolated catalog\nCLI tests passed: 50\n"
+    },
+    {
+      "label": "Catalog validation regression tests",
+      "command": "& 'C:\\Users\\win10\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe' tests/catalog-validation.test.js",
+      "exitCode": 0,
+      "executed": true,
+      "output": "PASS preserves catalog entry validation semantics\nPASS enforces official Skill top-level fields and constraints\nPASS requires nested Skill ownership metadata and catalog parity\nPASS enforces nested Skill reference metadata parity\nPASS rejects malformed YAML frontmatter instead of reporting a false green\nCatalog validation tests passed: 5\n"
+    },
+    {
+      "label": "Skill workflow contract regression tests",
+      "command": "& 'C:\\Users\\win10\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe' tests/skill-contracts.test.js",
+      "exitCode": 0,
+      "executed": true,
+      "output": "PASS validates the current repository contract bundle\nPASS keeps contract section placement correct with CRLF documents\nPASS detects Markdown header and separator mismatches\nPASS detects Markdown body rows with too many columns\nPASS detects Markdown body rows with too few columns\nPASS detects Markdown body rows with too many without outer pipes columns\nPASS accepts empty cells while preserving the declared column count\nPASS ignores escaped and matched inline-code pipes while splitting tables\nPASS treats an unmatched backtick as text instead of swallowing a table delimiter\nPASS treats backslashes as literal characters inside a Markdown code span\nPASS validates tables inside Markdown fences used as copyable templates\nPASS ignores table-like text inside non-Markdown fences\nPASS detects a malformed table in the real page deliverables template\nPASS ignores headings inside fenced examples\nPASS ignores machine contract markers inside fenced examples\nPASS rejects source-workflow mutation: figma default receipt disabled\nPASS rejects source-workflow mutation: figma production edits enabled\nPASS rejects source-workflow mutation: figma baseline approval enabled\nPASS rejects source-workflow mutation: figma parent gate closure enabled\nPASS rejects source-workflow mutation: figma rerouting enabled\nPASS rejects source-workflow mutation: figma scope expansion enabled\nPASS rejects source-workflow mutation: figma parent return disabled\nPASS rejects source-workflow mutation: image default receipt disabled\nPASS rejects source-workflow mutation: image production edits enabled\nPASS rejects source-workflow mutation: image gate closure enabled\nPASS rejects Agent-facing contract drift: Figma default parent receipt removed\nPASS rejects Agent-facing contract drift: Figma stop-before-implementation removed\nPASS rejects Agent-facing contract drift: Figma production write prohibition inverted\nPASS rejects Agent-facing contract drift: image production write prohibition inverted\nPASS rejects Agent-facing contract drift: design-system dry-run no-write rule inverted\nPASS rejects Agent-facing contract drift: page pre-gate machine lock removed\nPASS rejects Agent-facing contract drift: site Gate 3 machine contract made optional\nPASS rejects Agent-facing contract drift: site child source workflow may close and expand the program\nPASS rejects a source workflow with a missing implementation stop boundary\nPASS rejects an unknown parent workflow and a one-way support edge\nPASS rejects an invalid or duplicate machine contract marker\nPASS rejects a missing Figma screenshot-only fallback row\nPASS rejects an unknown Figma parent fallback action enum\nPASS rejects a parent fallback description that performs implementation\nPASS rejects design-system mutation: dry-run writes enabled\nPASS rejects design-system mutation: apply authorization disabled\nPASS rejects design-system mutation: parent gate bypass enabled\nPASS rejects design-system mutation: dry-run output requirement enabled\nPASS rejects design-system mutation: apply destructive approval disabled\nPASS rejects normalized machine examples missing either authority field or an issue field\nPASS rejects an inverted machine authority map\nPASS accepts both valid machine authority modes\nPASS rejects invalid machine result: regression with both IDs\nPASS rejects invalid machine result: regression with neither ID\nPASS rejects invalid machine result: reference fidelity with both IDs\nPASS rejects invalid machine result: reference fidelity with neither ID\nPASS rejects invalid machine result: reference fidelity with an empty authority ID\nPASS rejects invalid machine result: unknown mode\nPASS rejects orchestrator mutation: page support edits enabled\nPASS rejects orchestrator mutation: page support gate closure enabled\nPASS rejects orchestrator mutation: site support scope expansion enabled\nPASS rejects page and site machine-contract lock sections that move past their gates\nPASS rejects a deliverable contract that drops a machine receipt field\nPASS rejects web-page-design-to-code authorization-policy mutation: existingAuthorizationSatisfiesGate\nPASS rejects web-page-design-to-code authorization-policy mutation: requiresInternalGateName\nPASS rejects web-page-design-to-code authorization-policy mutation: explicitUserCheckpointBinding\nPASS rejects web-page-design-to-code authorization-policy mutation: readOnlyOverridesModes\nPASS rejects web-page-design-to-code authorization-policy mutation: preservationAppliesToAllModes\nPASS rejects web-page-design-to-code authorization-policy mutation: evidenceRequiredInAllModes\nPASS rejects web-page-design-to-code authorization-policy mutation: isolatedSitePilotRequired\nPASS rejects web-page-design-to-code authorization-policy mutation: baselineOwnerApprovalRequired\nPASS rejects web-page-design-to-code authorization-policy mutation: productMigrationAuthorizationSeparate\nPASS rejects web-page-design-to-code authorization-policy mutation: externalActionAuthorizationSeparate\nPASS rejects web-page-design-to-code authorization-policy mutation: changedScopeRequiresReassessment\nPASS rejects web-page-design-to-code authorization-policy mutation: supportMayCloseGate\nPASS rejects web-page-design-to-code authorization prose that requires a gate name despite delegation\nPASS rejects web-page-design-to-code authorization prose that reopens existing approval\nPASS rejects web-page-design-to-code authorization prose that skips a user-reserved checkpoint\nPASS rejects web-page-design-to-code authorization prose that ignores read-only\nPASS rejects web-page-design-to-code authorization prose that lets support close the gate\nPASS rejects web-page-design-to-code authorization prose that treats silence as authority\nPASS rejects web-page-design-to-code missing authorization-record fields\nPASS rejects website-redesign-to-code authorization-policy mutation: existingAuthorizationSatisfiesGate\nPASS rejects website-redesign-to-code authorization-policy mutation: requiresInternalGateName\nPASS rejects website-redesign-to-code authorization-policy mutation: explicitUserCheckpointBinding\nPASS rejects website-redesign-to-code authorization-policy mutation: readOnlyOverridesModes\nPASS rejects website-redesign-to-code authorization-policy mutation: preservationAppliesToAllModes\nPASS rejects website-redesign-to-code authorization-policy mutation: evidenceRequiredInAllModes\nPASS rejects website-redesign-to-code authorization-policy mutation: isolatedSitePilotRequired\nPASS rejects website-redesign-to-code authorization-policy mutation: baselineOwnerApprovalRequired\nPASS rejects website-redesign-to-code authorization-policy mutation: productMigrationAuthorizationSeparate\nPASS rejects website-redesign-to-code authorization-policy mutation: externalActionAuthorizationSeparate\nPASS rejects website-redesign-to-code authorization-policy mutation: changedScopeRequiresReassessment\nPASS rejects website-redesign-to-code authorization-policy mutation: supportMayCloseGate\nPASS rejects website-redesign-to-code authorization prose that requires a gate name despite delegation\nPASS rejects website-redesign-to-code authorization prose that reopens existing approval\nPASS rejects website-redesign-to-code authorization prose that skips a user-reserved checkpoint\nPASS rejects website-redesign-to-code authorization prose that ignores read-only\nPASS rejects website-redesign-to-code authorization prose that lets support close the gate\nPASS rejects website-redesign-to-code authorization prose that treats silence as authority\nPASS rejects website-redesign-to-code missing authorization-record fields\nPASS rejects removal of the page implementation authorization checkpoint\nPASS rejects site rollout before pilot evidence or outside delegated scope\nPASS rejects redundant scope and visual approvals in a delegated site flow\nPASS allows implementation to start an isolated pilot before pilot acceptance\nPASS accepts already-approved page work and delegated site rollout without a new checkpoint\nPASS allows waiting, read-only evidence, and parent receipts while preserving their posture\nPASS rejects inconsistent authorization record: missing implementation permission\nPASS rejects inconsistent authorization record: user-reserved review\nPASS rejects inconsistent authorization record: missing readiness evidence\nPASS rejects inconsistent authorization record: failed readiness evidence\nPASS rejects inconsistent authorization record: read-only mode cannot implement\nPASS rejects inconsistent authorization record: support cannot close parent gate\nPASS rejects inconsistent authorization record: rollout with pending pilot\nPASS rejects inconsistent authorization record: rollout with failed pilot\nPASS rejects inconsistent authorization record: rollout without pilot\nPASS rejects inconsistent authorization record: baseline replacement without owner approval\nPASS rejects inconsistent authorization record: support replaces baseline after owner approval\nPASS rejects inconsistent authorization record: deployment is not an inferred next action\nPASS rejects inconsistent authorization record: unknown authorization mode\nPASS rejects inconsistent authorization record: missing evidence citation\nPASS allows proposing a baseline candidate and separately approved replacement\nPASS validates authorization records in the deliverable examples\nSkill contract tests passed: 118\n"
+    },
+    {
+      "label": "PowerShell isolated dependency installer smoke",
+      "command": "& 'C:\\Users\\win10\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe' -NoProfile -File scripts/smoke-install.ps1 -PowerShellExecutable powershell.exe -DependenciesOnly",
+      "exitCode": 0,
+      "executed": true,
+      "output": "PASS PowerShell strict repository coordinate\r\nPASS PowerShell strict branch name\r\nPASS canonical cross-platform Skill digest fixture\r\nPASS canonical nested, binary, and non-ASCII Skill digest\r\nPASS required dependency diamond dry run\r\nPASS cross-category required dependencies in both project profiles\r\nPASS matching owned dependencies update\r\nPASS full dependency inventory remains deduplicated\r\nPASS explicit optional target installs only its own required closure\r\nPASS force on owner preserves unselected optional foreign files\r\nPASS foreign dependency blocks every project profile\r\nPASS prepare owned dependency\r\nPASS modified dependency blocks installation\r\nPASS explicit force resets modified dependency\r\nPASS required dependency cycle\r\nPASS unknown dependency\r\nPASS unknown dependency owner\r\nPASS optional unknown target\r\nPASS optional condition prohibited\r\nPASS unknown dependency kind\r\nPASS self dependency\r\nPASS duplicate dependency\r\nPASS malformed dependency row\r\nPASS extra dependency column\r\nPASS empty dependency condition\r\nPASS invalid dependency condition\r\nPASS invalid dependency header\r\nPASS missing dependency index refuses incomplete source\r\nPASS prepare alternate-root owned dependency\r\nPASS required dependency split roots refuse before writes\r\nPASS PowerShell dependency closure, references, conditional and optional selection, ownership, and placement\r\nPowerShell dependency smoke passed; remaining installer scenarios not run.\r\n"
+    },
+    {
+      "label": "Git Bash isolated dependency installer smoke",
+      "command": "& 'C:\\Program Files\\Git\\bin\\bash.exe' scripts/smoke-install.sh --dependencies",
+      "exitCode": 0,
+      "executed": true,
+      "output": "PASS Bash missing option value\nPASS Bash option token is not a value\nPASS Bash strict Skill name\nPASS Bash strict repository coordinate\nPASS Bash strict branch name\nPASS Bash fault injection requires test gate\nPASS Bash test gate has strict value\nPASS canonical cross-platform Skill digest fixture\nPASS canonical nested, binary, and non-ASCII Skill digest\nPASS required dependency diamond dry run\nPASS cross-category required dependencies in both project profiles\nPASS matching owned dependencies update\nPASS full dependency inventory remains deduplicated\nPASS explicit optional target installs only its own required closure\nPASS force on owner preserves unselected optional foreign files\nPASS foreign dependency blocks every project profile\nPASS prepare owned dependency\nPASS modified dependency blocks installation\nPASS explicit force resets modified dependency\nPASS invalid dependency cycle\nPASS invalid dependency unknown\nPASS invalid dependency owner\nPASS invalid dependency optional-unknown\nPASS invalid dependency optional-condition\nPASS invalid dependency kind\nPASS invalid dependency self\nPASS invalid dependency duplicate\nPASS invalid dependency malformed\nPASS invalid dependency extra\nPASS invalid dependency empty\nPASS invalid dependency condition\nPASS invalid dependency nul\nPASS invalid dependency header\nPASS missing dependency index refuses incomplete source\nPASS dependency byte inspection failure\nPASS prepare alternate-root owned dependency\nPASS required dependency split roots refuse before writes\nPASS Bash dependency closure, references, conditional and optional selection, ownership, and placement\nPASS Bash dependency smoke passed; remaining installer scenarios not run.\n"
+    },
+    {
+      "label": "Current catalog installation dry-run plans",
+      "command": "PowerShell 7 -NoProfile -File docs/audits/skill-installability-2026-10-09/verify-install-plans.ps1",
+      "exitCode": 0,
+      "executed": true,
+      "output": "PASS codex / document-to-markdown: 2 unique skills\nPASS codex / threejs-capture-recording: 2 unique packages\r\nPASS codex / threejs-webxr-accessibility: 3 unique packages\r\nPASS codex / frontend-code-review: 1 unique packages\r\nPASS codex / python-packaging-release: 1 unique packages\r\nPASS codex / web-page-design-to-code: 3 unique packages\r\nPASS codex / website-redesign-to-code: 7 unique packages\r\nPASS claude / document-to-markdown: 2 unique packages\r\nPASS claude / threejs-capture-recording: 2 unique packages\r\nPASS claude / threejs-webxr-accessibility: 3 unique packages\r\nPASS claude / frontend-code-review: 1 unique packages\r\nPASS claude / python-packaging-release: 1 unique packages\r\nPASS claude / web-page-design-to-code: 3 unique packages\r\nPASS claude / website-redesign-to-code: 7 unique packages\r\nPASS cursor / document-to-markdown: 2 unique packages\r\nPASS cursor / threejs-capture-recording: 2 unique packages\r\nPASS cursor / threejs-webxr-accessibility: 3 unique packages\r\nPASS cursor / frontend-code-review: 1 unique packages\r\nPASS cursor / python-packaging-release: 1 unique packages\r\nPASS cursor / web-page-design-to-code: 3 unique packages\r\nPASS cursor / website-redesign-to-code: 7 unique packages\r\nPASS copilot / document-to-markdown: 2 unique packages\r\nPASS copilot / threejs-capture-recording: 2 unique packages\r\nPASS copilot / threejs-webxr-accessibility: 3 unique packages\r\nPASS copilot / frontend-code-review: 1 unique packages\r\nPASS copilot / python-packaging-release: 1 unique packages\r\nPASS copilot / web-page-design-to-code: 3 unique packages\r\nPASS copilot / website-redesign-to-code: 7 unique packages\r\nPASS opencode / document-to-markdown: 2 unique packages\r\nPASS opencode / threejs-capture-recording: 2 unique packages\r\nPASS opencode / threejs-webxr-accessibility: 3 unique packages\r\nPASS opencode / frontend-code-review: 1 unique packages\r\nPASS opencode / python-packaging-release: 1 unique packages\r\nPASS opencode / web-page-design-to-code: 3 unique packages\r\nPASS opencode / website-redesign-to-code: 7 unique packages\r\nPASS category / workflow-planning: 12 unique packages\r\nPASS category / software-engineering: 21 unique packages\r\nPASS category / frontend-design: 39 unique packages\r\nPASS category / threejs-graphics: 62 unique packages\r\nPASS category / backend-data: 28 unique packages\r\nPASS category / ai-llm: 5 unique packages\r\nPASS category / mobile-desktop: 7 unique packages\r\nPASS category / testing-quality: 28 unique packages\r\nPASS category / security-governance: 8 unique packages\r\nPASS category / cloud-devops: 14 unique packages\r\nPASS category / agent-skill-tooling: 17 unique packages\r\nPASS category / browser-automation: 5 unique packages\r\nPASS category / media-creative: 20 unique packages\r\nPASS category / writing-content: 12 unique packages\r\nPASS category / research-product: 7 unique packages\r\nPASS category / documents-productivity: 12 unique packages\r\nPASS project / XR: 3 unique packages\r\nCurrent catalog install plans passed: 52 cases\r\n"
+    }
+  ],
+  "installPlanEvidence": "remediation-install-plans.json",
+  "modelTasksExecuted": 0,
+  "globalInstallation": false,
+  "unitTestCount": 280,
+  "installPlanCases": 52,
+  "evidenceIdentity": {
+    "checkedAtUtc": "2026-10-09T07:10:53.821Z",
+    "sourceFiles": 517,
+    "proposalFiles": 4,
+    "allOriginalFindingsResolved": true,
+    "currentCatalogMatchesRemediation": true,
+    "implementationInputs": [
+      {
+        "file": "README.md",
+        "sha256": "fd17bd56653bdf03d215a452254aa517ae705480134dbdc7a03e3e4067104a83"
+      },
+      {
+        "file": "craftroster-cli.js",
+        "sha256": "d1d2fcf65be699511fb10697c277864486b1f0b0180b68e73687fd828a2f6109"
+      },
+      {
+        "file": "docs/skill-quality-workflow.md",
+        "sha256": "b8453a31ee33b92957ab6b7261cf3ffe1b70050e19b2e2f5aa62ed344d167341"
+      },
+      {
+        "file": "docs/skill-review-registry.json",
+        "sha256": "0f0097d33572c964477171b35ea5f3401272f351ff8256906c32f062b296a210"
+      },
+      {
+        "file": "scripts/data/skill-catalog.json",
+        "sha256": "ee655a74f3be3c257a96df8756219a9df4558e1b7230d6b560ebe84dfd964ac7"
+      },
+      {
+        "file": "skills.json",
+        "sha256": "b268a6570d94f884f5aa1f23fa1fa4ae8adab100515ee750a2a68d899759ca00"
+      },
+      {
+        "file": "scripts/data/install-skill-dependencies.tsv",
+        "sha256": "ae999c8f746b8ff400ce53109ed4c73e3cb682f56e80eac11ffb074e000bd7ed"
+      },
+      {
+        "file": "scripts/lib/skill-dependencies.js",
+        "sha256": "4a3186ca203a8c4afeb7378b07d3db504cede7b664456d9f30b73ea15f3bd269"
+      },
+      {
+        "file": "scripts/generate-skill-catalog.js",
+        "sha256": "82a5d90e2eb106a74dbd090a1334d43fafbec0ba796527e4f99a6e8d9ae13211"
+      },
+      {
+        "file": "scripts/generate-install-skill-dependencies.js",
+        "sha256": "b20a3e32a4aeab992398c576c19f2f70acc25de4769ba05273d29e91ea286b5c"
+      },
+      {
+        "file": "scripts/validate-catalog.js",
+        "sha256": "7f20c7e0c0e839501808174d6fca9f5a1fecd8289645c243c902911d69ae2bca"
+      },
+      {
+        "file": "scripts/plan-skill-regressions.js",
+        "sha256": "6ed94879d170bdeafd57f6fe3f277aacb6eb800a9bd251bf8f9db6ea835f744c"
+      },
+      {
+        "file": "tests/skill-dependencies.test.js",
+        "sha256": "5fec755ed344c76d6ba72e8d65d6d47c19ba076a3f46224bcb1cb3ddc4f32c93"
+      },
+      {
+        "file": "tests/skill-catalog-generation.test.js",
+        "sha256": "648d09657dd1142bac08689bdf19301fafadd55dd7f4c69b22391deec19e4c3b"
+      },
+      {
+        "file": "tests/skill-regression-plan.test.js",
+        "sha256": "3ed9c77bbbd6e2a129c462a6a720d46bb797eca92e6990cfaf6f732bad299d4b"
+      },
+      {
+        "file": "tests/skill-review.test.js",
+        "sha256": "faac6b341bddf9dfe6f9208c923184c4478ca7bb39b3f79281d17e1e9d02e2d7"
+      },
+      {
+        "file": "tests/cli.test.js",
+        "sha256": "1463f7040c0c9c3d493310c643269630be1e7fb5feda351e65e81c6a93e0caa6"
+      },
+      {
+        "file": "tests/catalog-validation.test.js",
+        "sha256": "d83d8419701b0e2e9b348639efae97e8c009bb36f306183063846209fb3298f9"
+      },
+      {
+        "file": "tests/skill-contracts.test.js",
+        "sha256": "01a56c25794fee5c73b9e15ebae71f9a6605b6649b9931ee0eaed8a31057534f"
+      },
+      {
+        "file": "scripts/install.ps1",
+        "sha256": "12eaa30810db13bf154d6d8bd40e45b5dd6923672187d5fa357e0659bc0fd174"
+      },
+      {
+        "file": "scripts/install.sh",
+        "sha256": "6981f9feb2258bbdfa8345a0004369f95ecee1b1b8f58e38ee967680cf8f030f"
+      },
+      {
+        "file": "scripts/smoke-install.ps1",
+        "sha256": "f2734649aabac024e60148d6574d0e43fe42fe561ea30061ee5d35ef2c5b8e9c"
+      },
+      {
+        "file": "scripts/smoke-install.sh",
+        "sha256": "1140510e7c839303ca06e03dce85b0d610f3c5c090d47e4a6d8dd1107eb9b61b"
+      }
+    ],
+    "repairRecord": {
+      "file": "docs/audits/skill-installability-2026-10-09/remediation-status.json",
+      "sha256": "e59adb3ea42b1f448a0c30aa9d2c93af71587e6751eb2df872696668ffc19531"
+    },
+    "installPlanRecord": {
+      "file": "docs/audits/skill-installability-2026-10-09/remediation-install-plans.json",
+      "sha256": "6b7d4fcf49a48689aeccfeeafd4e354001d3ac410f5ac3114d85e455caf93a16"
+    }
+  }
+}

@@ -11,6 +11,8 @@ metadata:
 
 Redesign an existing multi-route website or web application as one coherent system. Audit the real site, establish scope and design authority, implement by page family in reversible slices, and verify that the redesign did not silently break behavior, content, SEO, analytics, accessibility, or performance.
 
+The complete redesign package requires `frontend-stack-inference`, `frontend-design`, `webapp-testing`, `visual-regression-testing`, `frontend-testing`, and `accessibility-testing` for discovery, implementation, and whole-site verification. Install that closure for the complete deliverable. An audit-only invocation may stop after its bounded discovery or direction receipt; it does not activate implementation or whole-site QA merely because those companions are installed. Source and direction specialists are selected only for the branch that needs them.
+
 ## Choose the Redesign Mode
 
 Default to **visual redesign**. Change product structure only with explicit authorization.

@@ -30,6 +30,8 @@ Use this as the default first skill for existing-code changes. It answers: what 
 - Use stack-specific skills only after the owner code path is understood.
 - Use `code-review` or `security-code-review` instead when the task is only to review an existing diff.
 
+The inspection workflow can run on its own. Before a language or specialist branch starts, check that its named Skill is available. If it is missing, name the Skill and the affected branch, continue independent inspection, and leave that branch pending rather than claiming its baseline was applied. Do not load an entire language family merely because unrelated files use it.
+
 ## Workflow
 
 1. Read the request and local instructions such as `AGENTS.md`.

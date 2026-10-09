@@ -11,6 +11,8 @@
 
 Use `threejs-development` when a request spans several systems or starts from an incomplete product brief. Use one specialist directly when the affected boundary is already known.
 
+Select these routes by the affected concern. They are conditional companions, not an all-specialist installation bundle. A package installed to supply shared reference files does not by itself select any route. When a selected specialist is missing, return its name and the affected pending branch rather than treating a route description as executed evidence.
+
 ## Core Engineering
 
 | Concern | Skill |

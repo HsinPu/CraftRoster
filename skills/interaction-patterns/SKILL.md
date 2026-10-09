@@ -11,6 +11,8 @@ metadata:
 
 Use this skill when the work is about navigation and movement.
 
+Read `frontend-design` before planning visible web navigation, scrolling, transition, or interaction-state changes. Read-only interaction analysis may use this Skill alone.
+
 ## Workflow
 
 1. Identify the interaction surface: tabs, scroll regions, panels, or transitions.
@@ -30,4 +32,4 @@ Use this skill when the work is about navigation and movement.
 
 - For motion polish, use `animation-best-practices`.
 - For responsive layout, use `responsive-design`.
-- For state and loading behavior, use `react-ui-patterns`.
+- For state and loading behavior owned by React components, use `react-ui-patterns`; keep other frameworks with their matching state owner.

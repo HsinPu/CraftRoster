@@ -22,6 +22,8 @@ Use this skill to coordinate a complete video production without assuming a spec
 4. Discover available Agents, Skills, tools, and providers. Never claim a capability from a name alone.
 5. Choose the smallest execution mode that satisfies the brief.
 
+Before starting an unresolved stage, verify its selected Agent, Skill, or tool owner and input/output contract. Reuse an accepted artifact only when its version or content hash, approved input lineage, project constraints, rights, acceptance evidence, and approval scope still match the current project. Record that reuse in `project-state.md`; an existing file alone is not acceptance evidence. If a required stage producer is unavailable, report the bounded stage and its smallest missing companion or runtime requirement, continue independent eligible work, and keep dependent work blocked. Do not install the full media category or redo accepted stages merely to fill a role.
+
 ## Execution Modes
 
 ### Director-led multi-agent
@@ -35,7 +37,7 @@ Use this skill to coordinate a complete video production without assuming a spec
 ### Sequential fallback
 
 - When custom Agents or subagents are unavailable, keep one agent in control and execute the same stages in order.
-- Load the relevant Skill for each stage instead of imitating an unavailable specialist.
+- Load only the selected Skill for an unresolved stage when its required producer is available; accepted matching artifacts need no producer rerun. A missing optional Agent does not block a capable sequential owner, while a missing required stage capability must be recorded as a bounded blocker.
 - Write the same canonical artifacts, approvals, decisions, and checkpoints used by the multi-agent mode.
 - Stop at every required gate; fallback mode does not reduce approval requirements.
 

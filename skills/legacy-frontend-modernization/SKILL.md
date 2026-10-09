@@ -11,6 +11,8 @@ metadata:
 
 Use this skill when the frontend is legacy, risky, or mixed with server-rendered pages and global scripts. Use `jquery-development` for maintaining existing jQuery and `jquery-4-migration` for version upgrades.
 
+Before planning a replacement that changes visible production UI, read `frontend-design`. Stack inventory, boundary analysis, and migration planning without visible implementation may use this Skill alone.
+
 ## Strategy
 
 - Preserve business behavior first; do not rewrite purely for style.

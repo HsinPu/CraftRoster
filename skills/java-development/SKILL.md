@@ -32,6 +32,8 @@ Keep this skill responsible for supported Java versions and language features, p
 
 Do not load every related skill. Keep Java as the shared implementation baseline and select the smallest specialist set justified by the request.
 
+General Java implementation can use this Skill alone. Before entering a material specialist concern above, check that its named Skill is available; if it is missing, name the blocked concern and continue independent Java work without claiming that specialist's contract was applied.
+
 ## When To Use
 
 - Create or change Java classes, records, interfaces, services, libraries, commands, or application code.

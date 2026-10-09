@@ -6,11 +6,11 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 const { safeRead } = require('./prepare-skill-pilot');
-const { validateDependencies } = require('./lib/skill-dependencies');
+const { validateDependencies, validateRoutes } = require('./lib/skill-dependencies');
 const { validateRoutingDocument } = require('./validate-skill-evals');
 const DEFAULT_ROOT = path.resolve(__dirname, '..');
 const CATALOG = 'scripts/data/skill-catalog.json';
-const ALGORITHM = 'changed-direct-consumers-routing-neighbors-v2';
+const ALGORITHM = 'changed-direct-consumers-routing-neighbors-v3';
 const NAME = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const compare = (a, b) => a < b ? -1 : a > b ? 1 : 0;
 const hash = value => crypto.createHash('sha256').update(value).digest('hex');
@@ -52,6 +52,7 @@ function jsonInput(root, relative) {
 function validateCatalog(catalog) {
   if (!object(catalog) || !object(catalog.skills) || Object.keys(catalog.skills).length === 0) throw new Error('Canonical catalog needs nonempty skills');
   validateDependencies(catalog.skills);
+  validateRoutes(catalog.skills);
   if (!Array.isArray(catalog.routingGroups)) throw new Error('Canonical catalog needs routingGroups');
   const ids = new Set();
   for (const group of catalog.routingGroups) {
@@ -186,6 +187,15 @@ function buildPlan(options) {
       add(route.name, { type: 'direct_routing_neighbor', source: CATALOG, changed_skill: changedSkill, group_id: group.id, when: route.when });
     }
   }
+  for (const name of names) for (const route of catalog.skills[name].routes || []) {
+    for (const changedSkill of changed) {
+      const neighbor = name === changedSkill ? route.name : route.name === changedSkill ? name : null;
+      if (!neighbor) continue;
+      routing.add(neighbor);
+      add(neighbor, { type: 'direct_skill_route_neighbor', source: CATALOG, changed_skill: changedSkill,
+        route_owner: name, kind: route.kind, when: route.when });
+    }
+  }
   const selectedCases = [];
   for (const corpus of corpora) for (const { item, input_files: files } of corpus.cases) {
     const caseReasons = [];
@@ -223,7 +233,7 @@ function buildPlan(options) {
   const implementation = ['plan-skill-regressions.js', 'prepare-skill-pilot.js', 'lib/skill-dependencies.js', 'validate-skill-evals.js']
     .map(file => ({ path: `scripts/${file}`, sha256: hash(fs.readFileSync(path.join(__dirname, file))) }));
   return { schema_version: 1, evaluation_kind: 'offline_affected_suite_plan', audience: 'evaluator', status: 'not_run',
-    selection_algorithm: { version: ALGORITHM, source: CATALOG, reverse_dependency_depth: 1, routing_group_depth: 1,
+    selection_algorithm: { version: ALGORITHM, source: CATALOG, reverse_dependency_depth: 1, routing_group_depth: 1, skill_route_depth: 1,
       expansion_roots: 'changed_only', case_reference_fields: ['expected_skills', 'excluded_skills', 'allowed_skills'],
       conditional_dependencies: 'conservatively_included_without_evaluating_when', optional_dependencies: 'advisory_only_no_expansion', implementation },
     changed_skills: changed, optional_dependency_advisories: optionalAdvisories, selected_skills: selectedSkills, cases: selectedCases,

@@ -44,6 +44,6 @@ Turn incoming review findings into traceable remediation without blindly accepti
 - Use `github-operations` to inspect or update pull-request discussions when GitHub interaction is authorized.
 - Use `code-change-workflow` to trace the affected owner path and implement an accepted remediation safely.
 - Use `systematic-debugging` when the reported failure cannot be reproduced or its cause remains disputed.
-- Use `test-driven-development` to add regression coverage before correcting observable behavior.
+- Use `test-driven-development` when an accepted correction needs new regression coverage to lead the change.
 - Use `verification-before-completion` to prepare fresh remediation evidence.
-- Return to `pipeline-review` for independent re-review and final finding closure.
+- Return to the original independent reviewer for re-review and finding closure. Use `pipeline-review` only when the original review is a pipeline gate or the requested outcome calls for a new independent stage gate; preserve that gate's finding identifiers and rounds. Findings from another review source do not require a pipeline installation merely to return remediation evidence.

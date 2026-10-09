@@ -13,7 +13,7 @@ Extract reusable bitmap assets from approved visual evidence without turning the
 
 ## Ownership
 
-Use image-to-code as the parent whenever the main outcome is a real webpage or application screen. That parent owns source authority, semantic UI, responsive behavior, implementation, and visual comparison.
+Use `image-to-code` as the parent whenever the main outcome is a real webpage or application screen. That parent owns source authority, semantic UI, responsive behavior, implementation, and visual comparison. For an asset-only request, the user or named task owns the return; no page workflow is required.
 
 This Skill owns only the independent asset branch:
 
@@ -23,7 +23,7 @@ This Skill owns only the independent asset branch:
 - return stable asset paths and constraints to the parent implementation;
 - optionally describe a later Figma layer handoff without claiming that raster evidence contains original vectors or hidden layers.
 
-Use image-utils for deterministic crop, resize, format conversion, compositing, alpha inspection, and optimization. Do not regenerate an asset or upload private designs unless the user separately authorizes that action.
+This Skill requires `image-utils` for deterministic crop, resize, format conversion, compositing, alpha inspection, and optimization. Do not regenerate an asset or upload private designs unless the user separately authorizes that action.
 
 ## Trigger Boundary
 
@@ -41,7 +41,7 @@ Do not select it merely because image-to-code is implementing a screenshot. Ordi
 Record:
 
 - approved source image path or artifact ID, source hash, dimensions, color mode, and known license or ownership;
-- parent workflow, target route, output root, and whether production writes are authorized;
+- return owner, output root, and whether production writes are authorized; include the parent workflow and target route only when page implementation is active;
 - requested asset roles, target formats, density factors, background policy, and CSS display sizes;
 - whether editable text, CSS shapes, repository icons, or existing assets must be preferred;
 - privacy, network-egress, Figma, and generated-asset permissions.
@@ -84,7 +84,7 @@ Verify:
 - no neighboring text, controls, or unrelated artwork leaked into the crop;
 - CSS display dimensions and density are consistent;
 - file size and compression are appropriate for the target web pipeline;
-- placement in the real page remains faithful at representative viewports.
+- when page implementation is active, placement in the real page remains faithful at representative viewports; asset-only requests verify the agreed preview backgrounds, dimensions, and density without requiring a page implementation.
 
 When the parent implementation is active, return results to image-to-code before final visual comparison.
 
@@ -97,11 +97,11 @@ When the parent implementation is active, return results to image-to-code before
 
 ## Completion And Residue
 
-Completion requires the approved output files, a verified manifest when requested, the QA results, known approximations, and a handoff to the owning page workflow. Temporary crops, previews, masks, and processing directories must be removed unless the user names them as retained evidence.
+Completion requires the approved output files, a verified manifest when requested, the QA results, known approximations, and a handoff to the return owner. Return asset-only results to the user or named task; return page-support results to the owning page workflow. Remove only task-created temporary crops, previews, masks, and processing directories under the authorized output root, unless the user names them as retained evidence.
 
 ## Handoff
 
-- Use image-to-code for the page implementation and visual-evidence contract.
+- Use image-to-code for page implementation and its visual-evidence contract only when that deliverable is active; asset-only requests return directly to their return owner.
 - Use image-utils for deterministic image operations.
-- Use visual-regression-testing for final page-level comparison.
+- After the asset receipt returns, the owning page workflow uses visual-regression-testing for final page-level comparison. Asset-only completion does not require page comparison.
 - Use figma-to-code only when structured Figma data is the primary authority; this Skill may provide a later raster layer manifest but does not replace structured Figma context.

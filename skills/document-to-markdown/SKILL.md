@@ -27,7 +27,7 @@ Use this skill when the primary goal is to convert an existing document into Mar
 - Use Marker for complex PDF/image/PPTX/DOCX documents when tables, formulas, images, headers/footers, OCR, or layout-aware Markdown/JSON/HTML extraction matter; check dependency, compute, and licensing constraints before relying on it.
 - Use Mammoth when DOCX semantic structure matters more than visual styling.
 - Use PDF/OCR tooling when the source is scanned, image-only, or layout-heavy.
-- Use manual cleanup plus `markdown-writer` rules after every conversion, even when the converter succeeds.
+- Load `markdown-writer` for the required Markdown baseline after every conversion, even when the converter succeeds, and apply manual cleanup. This companion is part of the core conversion package; the format-specific Skills below are needed only for their stated branches. If the baseline is unavailable, preserve the draft and report the final Markdown review as incomplete.
 
 ## Quality Gate
 

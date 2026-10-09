@@ -1,0 +1,401 @@
+{
+  "schemaVersion": 1,
+  "labels": {
+    "accessibility": "3D 無障礙",
+    "animation-system": "動畫系統",
+    "assets-gltf": "glTF／GLB 資產",
+    "atmosphere-aerial-perspective": "天空與大氣",
+    "bloom": "HDR 泛光",
+    "cad-bim": "CAD／BIM",
+    "camera-direction": "鏡頭控制",
+    "capture-recording": "畫面擷取與錄影",
+    "csg-modeling": "CSG 布林建模",
+    "data-visualization": "3D 資料視覺化",
+    "deformable-simulation": "變形與流體模擬",
+    "development": "Three.js 任務入口",
+    "editor-authoring": "編輯器與匯出",
+    "exposure-color-grading": "曝光與調色",
+    "framework-integrations": "Vue／Svelte 等框架整合",
+    "gameplay-systems": "遊戲系統",
+    "geometry": "幾何資料",
+    "image-pipeline": "整體影像管線",
+    "interaction-input": "互動與輸入",
+    "large-worlds-geospatial": "大型世界與地理資料",
+    "materials-lighting": "材質與燈光",
+    "math-transforms": "數學與座標轉換",
+    "navigation-crowds": "導航與群眾",
+    "networked-experiences": "連線互動體驗",
+    "offscreen-workers": "離屏渲染與 Worker",
+    "parallax-occlusion-mapping": "視差遮蔽映射",
+    "path-tracing": "路徑追蹤",
+    "performance-memory": "效能與記憶體",
+    "physics-audio": "舊版物理／音效相容入口",
+    "physics-simulation": "剛體物理模擬",
+    "point-clouds-splats": "點雲與 Gaussian Splat",
+    "postprocessing": "後製通道",
+    "precipitation-surfaces": "雨雪與表面累積",
+    "procedural-animation": "程序動畫",
+    "procedural-architecture": "程序建築",
+    "procedural-characters": "程序角色",
+    "procedural-fields": "程序場",
+    "procedural-geometry": "程序幾何",
+    "procedural-materials": "程序材質",
+    "procedural-planets": "程序星球",
+    "procedural-vegetation": "程序植被",
+    "procedural-vfx": "程序特效",
+    "project-architecture": "3D 專案架構",
+    "raymarched-space-effects": "光線步進空間效果",
+    "react-three-fiber": "React Three Fiber",
+    "rendering-platforms": "WebGL／WebGPU 平台選擇",
+    "scene-lifecycle": "場景生命週期",
+    "screen-space-ambient-occlusion": "SSAO",
+    "security-deployment": "3D 資安與部署",
+    "shaders": "Shader",
+    "shadow-systems": "陰影系統",
+    "spatial-audio": "空間音效",
+    "spectral-ocean": "頻譜海洋",
+    "temporal-surfaces": "歷史回饋表面",
+    "testing-debugging": "3D 測試與除錯",
+    "ui-overlays": "HUD／標籤／介面",
+    "version-migration": "Three.js 版本遷移",
+    "visual-validation": "3D 視覺驗證",
+    "volumetric-clouds": "體積雲",
+    "water-optics": "水體光學",
+    "webgpu-tsl": "WebGPU／TSL",
+    "webxr-accessibility": "WebXR 與無障礙"
+  },
+  "relations": {
+    "threejs-accessibility": [
+      [
+        "threejs-webxr-accessibility",
+        "alternative",
+        "任務主要為沉浸式 session、XR 輸入與舒適度。",
+        33
+      ],
+      [
+        "threejs-ui-overlays",
+        "conditional",
+        "需要投影標籤、HUD、文字、遮擋或 DOM 與場景對齊。",
+        34
+      ]
+    ],
+    "threejs-assets-gltf": [
+      [
+        "threejs-editor-authoring",
+        "conditional",
+        "需要 runtime 編輯、序列化、GLTFExporter、round trip 或發佈。",
+        33
+      ],
+      [
+        "threejs-cad-bim",
+        "alternative",
+        "工程模型、CAD／BIM metadata 超出一般 glTF 邊界。",
+        34
+      ],
+      [
+        "threejs-point-clouds-splats",
+        "alternative",
+        "密集空間資料或串流超出一般 glTF 邊界。",
+        34
+      ]
+    ],
+    "threejs-data-visualization": [
+      [
+        "threejs-point-clouds-splats",
+        "alternative",
+        "主要輸入為密集掃描、點雲、splats 與空間串流。",
+        33
+      ],
+      [
+        "threejs-cad-bim",
+        "alternative",
+        "主要需求為工程 metadata、測量與 revision 比較。",
+        34
+      ]
+    ],
+    "threejs-development": [
+      [
+        "frontend-design",
+        "conditional",
+        "3D 體驗還需要語意頁面殼、內容層級、DOM 控制與無障礙 fallback。",
+        25
+      ],
+      [
+        "css-development",
+        "conditional",
+        "需要文件版面、canvas 尺寸、堆疊與 overlay 的 CSS 契約。",
+        25
+      ],
+      [
+        "javascript-development",
+        "conditional",
+        "需要通用模組、I/O 與錯誤邊界的 JavaScript 指引。",
+        25
+      ]
+    ],
+    "threejs-editor-authoring": [
+      [
+        "threejs-csg-modeling",
+        "conditional",
+        "Boolean operands、拓樸修復、cut-face materials 或 Boolean 匯出成為獨立子系統。",
+        37
+      ]
+    ],
+    "threejs-framework-integrations": [
+      [
+        "threejs-react-three-fiber",
+        "alternative",
+        "React Three Fiber 擁有場景；改由該專項主責。",
+        25
+      ]
+    ],
+    "threejs-geometry": [
+      [
+        "threejs-csg-modeling",
+        "alternative",
+        "布林運算或固體有效性成為主要問題。",
+        36
+      ],
+      [
+        "threejs-procedural-geometry",
+        "alternative",
+        "確定性程序形狀與語意構建規則成為主要問題。",
+        37
+      ]
+    ],
+    "threejs-image-pipeline": [
+      [
+        "threejs-path-tracing",
+        "conditional",
+        "影像管線包含漸進式 radiance 累积、BVH light transport 或 path-traced feature 支援。",
+        39
+      ],
+      [
+        "threejs-capture-recording",
+        "conditional",
+        "交付包含截圖、frame sequence、編碼、時間戳、音訊或媒體檔。",
+        40
+      ]
+    ],
+    "threejs-physics-audio": [
+      [
+        "threejs-physics-simulation",
+        "conditional",
+        "相容入口承接剛體或合併物理音效實作；只做物理時可直接走此專項。",
+        16
+      ],
+      [
+        "threejs-spatial-audio",
+        "conditional",
+        "相容入口承接音效或合併物理音效實作；只做音效時可直接走此專項。",
+        17
+      ]
+    ],
+    "threejs-physics-simulation": [
+      [
+        "threejs-deformable-simulation",
+        "alternative",
+        "任務主要是布、繩、軟體、粒子或網格流體。",
+        37
+      ]
+    ],
+    "threejs-project-architecture": [
+      [
+        "threejs-scene-lifecycle",
+        "conditional",
+        "需具體 loop、resize、visibility、context-loss 與 cleanup 細節。",
+        37
+      ],
+      [
+        "threejs-editor-authoring",
+        "conditional",
+        "產品編輯或發佈版本化 scene documents。",
+        38
+      ],
+      [
+        "threejs-offscreen-workers",
+        "conditional",
+        "Worker 擁有 rendering 或延遲敏感子系統。",
+        39
+      ],
+      [
+        "threejs-framework-integrations",
+        "conditional",
+        "Vue、Svelte 或其他非 React UI 框架整合。",
+        40
+      ],
+      [
+        "threejs-accessibility",
+        "conditional",
+        "需定義非 XR 語意與等價輸入的具體邊界。",
+        41
+      ],
+      [
+        "threejs-networked-experiences",
+        "conditional",
+        "state authority 跨 client／server。",
+        42
+      ],
+      [
+        "threejs-react-three-fiber",
+        "conditional",
+        "React 擁有建立與釋放生命週期。",
+        43
+      ]
+    ],
+    "threejs-rendering-platforms": [
+      [
+        "threejs-version-migration",
+        "alternative",
+        "主要變更為 Three.js release 升級，而非圖形 backend 變更。",
+        36
+      ],
+      [
+        "threejs-webgpu-tsl",
+        "conditional",
+        "需要 native WebGPU、TSL、storage、compute、readback 或 WGSL 細節。",
+        37
+      ]
+    ],
+    "threejs-version-migration": [
+      [
+        "threejs-rendering-platforms",
+        "conditional",
+        "同時授權 WebGLRenderer 到 WebGPURenderer 的 backend 遷移。",
+        28
+      ],
+      [
+        "threejs-webgpu-tsl",
+        "conditional",
+        "同時涉及 WebGPU／TSL backend 的具體遷移。",
+        28
+      ]
+    ],
+    "threejs-visual-validation": [
+      [
+        "threejs-capture-recording",
+        "conditional",
+        "交付為使用者可用的 still、frame sequence、video、audio-video 或 live stream，而非只有驗證證據。",
+        44
+      ]
+    ],
+    "threejs-webxr-accessibility": [
+      [
+        "threejs-accessibility",
+        "required",
+        "核心要求有非 XR fallback，並明定由該 Skill 主責其語意與等價輸入。",
+        17
+      ]
+    ]
+  },
+  "ambiguities": {
+    "threejs-development": [
+      {
+        "title": "路由入口缺少未安裝專項的處理契約",
+        "detail": "入口要求按 capability map 載入專項，但未說明專項未安裝時可自行完成、提示加裝，或停止哪些交付。",
+        "file": "skills/threejs-development/SKILL.md",
+        "line": 26,
+        "proposedRule": "保留場景入口獨立安裝；將專項映射為有觸發條件的依賴，執行時列出缺少的專項並明確說明可完成的範圍。",
+        "proposedWording": "可獨立處理基本場景；當已選中的專項未安裝時，列出該專項與原因，完成不依賴它的部分，並將受影響分支標示 pending；安裝授權另行依使用者指示處理。"
+      }
+    ],
+    "threejs-physics-audio": [
+      {
+        "title": "相容路由沒有安裝與執行前提",
+        "detail": "本文第16至18行要求按情境使用兩個專項，但 catalog 沒有任何依賴；獨裝只足以做路由或事件契約，不應視為完整物理與音效實作包。",
+        "file": "skills/threejs-physics-audio/SKILL.md",
+        "line": 16,
+        "proposedRule": "新增兩條 conditional 並保留『只有合併事件音效才同時使用』條件；純物理或純音效提供直接入口。",
+        "proposedWording": "本 Skill 是相容路由。實作時按任務使用 physics-simulation 或 spatial-audio；碰撞或 gameplay 事件需同步音效時才同時需要兩者。缺少選中專項時先說明缺項與受影響交付。"
+      }
+    ],
+    "threejs-webxr-accessibility": [
+      {
+        "title": "非 XR 無障礙主責未列入依賴",
+        "detail": "核心要求非頭盔等價路徑，並無條件指派 threejs-accessibility；metadata 卻只宣告共用參考文件所在的 threejs-development。",
+        "file": "skills/threejs-webxr-accessibility/SKILL.md",
+        "line": 17,
+        "proposedRule": "將 threejs-accessibility 明確列為 required workflow companion，或補充已有合格 non-XR contract 可取代的條件。",
+        "proposedWording": "非 XR fallback 由 threejs-accessibility 主責；若採已驗證的既有非 XR 契約，需列出其版本、涵蓋範圍與可沿用證據，再說明是否免於另載該 Skill。"
+      }
+    ]
+  },
+  "groups": {
+    "3d-core": [
+      "development",
+      "project-architecture",
+      "scene-lifecycle",
+      "math-transforms",
+      "interaction-input",
+      "geometry",
+      "materials-lighting",
+      "assets-gltf",
+      "ui-overlays",
+      "performance-memory"
+    ],
+    "3d-frameworks": [
+      "react-three-fiber",
+      "framework-integrations",
+      "offscreen-workers",
+      "rendering-platforms",
+      "webgpu-tsl",
+      "version-migration"
+    ],
+    "3d-simulation-characters": [
+      "animation-system",
+      "procedural-animation",
+      "procedural-characters",
+      "navigation-crowds",
+      "physics-simulation",
+      "deformable-simulation",
+      "physics-audio",
+      "spatial-audio",
+      "gameplay-systems",
+      "networked-experiences"
+    ],
+    "3d-spatial-data": [
+      "data-visualization",
+      "cad-bim",
+      "point-clouds-splats",
+      "large-worlds-geospatial"
+    ],
+    "3d-geometry-authoring": [
+      "editor-authoring",
+      "csg-modeling",
+      "procedural-fields",
+      "procedural-geometry",
+      "procedural-architecture",
+      "procedural-planets",
+      "procedural-vegetation"
+    ],
+    "3d-render-effects": [
+      "postprocessing",
+      "image-pipeline",
+      "shaders",
+      "bloom",
+      "exposure-color-grading",
+      "screen-space-ambient-occlusion",
+      "shadow-systems",
+      "path-tracing",
+      "parallax-occlusion-mapping",
+      "procedural-materials",
+      "procedural-vfx",
+      "atmosphere-aerial-perspective",
+      "volumetric-clouds",
+      "spectral-ocean",
+      "water-optics",
+      "precipitation-surfaces",
+      "temporal-surfaces",
+      "raymarched-space-effects",
+      "camera-direction"
+    ],
+    "3d-verification-delivery": [
+      "testing-debugging",
+      "visual-validation",
+      "capture-recording",
+      "security-deployment",
+      "accessibility",
+      "webxr-accessibility"
+    ]
+  }
+}

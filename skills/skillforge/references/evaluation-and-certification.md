@@ -27,6 +27,8 @@ Keep evidence states distinct:
 
 Return fail or incomplete when a required state transition lacks evidence.
 
+Manifest-only assembly does not enter an evaluated state: it may hash supplied files independently and still returns `unsigned-unapproved`. For adjudication, a report may be reused only when its frozen source revision, current package inventory and hashes, dependency identity, case or inspection scope, tool and environment target, validator or evaluator version, authority boundary, recorded verdict, and applicable cleanup evidence match. Rerun or obtain only the missing producer scope; never infer a pass from an artifact name or an installed sibling.
+
 ## Evaluation Dimensions
 
 Score separately:

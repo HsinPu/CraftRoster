@@ -17,7 +17,7 @@ metadata:
 
 ## Handoff
 
-- Use `markdown-writer` for general Markdown formatting and structure after the README scope is clear.
+- Use `markdown-writer` only when Markdown syntax or formatting conventions need specialist guidance; ordinary README type selection and content authoring can remain independent.
 - Use `repo-ready` when README work is part of broader repository hygiene, CI, release, or packaging readiness.
 - Use `github-operations` when README links, issues, releases, or repository metadata need live GitHub checks.
 - Use `specification-authoring` when the target is a formal spec rather than a repository README.

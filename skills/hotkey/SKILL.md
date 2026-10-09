@@ -11,6 +11,8 @@ metadata:
 
 Use this skill when the work is about keyboard shortcuts.
 
+Read `frontend-design` before planning changes to visible web UI, focus behavior, or user-facing shortcut states. Keybinding inventory or conflict analysis without those UI changes may use this Skill alone.
+
 ## Workflow
 
 1. Map the action set to a small, memorable shortcut set.
@@ -29,4 +31,4 @@ Use this skill when the work is about keyboard shortcuts.
 ## Handoff
 
 - For keyboard navigation, focus order, and accessible UI states, use `frontend-design`.
-- For UI state behavior, use `react-ui-patterns`.
+- For UI state behavior owned by React components, use `react-ui-patterns`. For another framework, preserve its state model and load its matching owner only when that state work is needed.

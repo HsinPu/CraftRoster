@@ -29,5 +29,5 @@ Use this skill when the task is to post-process an existing image file.
 
 - For generating new images, use `baoyu-image-gen`.
 - For image prompt design, use `ai-image-prompt-design`.
-- For extracting multiple independent UI assets with transparency, density, bounding boxes, or a manifest, use `image-to-code-assets` while this Skill performs the deterministic pixel operations.
+- Load `image-to-code-assets` only for multiple independent UI cut-outs requiring transparency, density exports, source bounds, or a manifest; this Skill performs the deterministic pixel operations while that companion owns the asset contract. A single-image resize or crop remains independent. If the companion is missing, preserve completed pixel outputs and report the asset-contract stage as unavailable.
 - For command execution evidence, use `terminal-ops`.

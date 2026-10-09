@@ -11,6 +11,8 @@ metadata:
 
 Use this skill when the task is to integrate or customize `@lobehub/ui` components in a React or Next.js AIGC application.
 
+Read `frontend-design` before planning integration that changes visible production UI. Package, provider, bundler, or SSR compatibility analysis without a visible UI change may use this Skill alone.
+
 ## Workflow
 
 1. Confirm the host app uses compatible React, Ant Design, bundler, and SSR/client rendering assumptions.

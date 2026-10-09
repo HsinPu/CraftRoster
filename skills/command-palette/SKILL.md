@@ -11,6 +11,8 @@ metadata:
 
 Use this skill when the work is about a command palette or quick launcher.
 
+Read `frontend-design` before planning visible web palette implementation or interaction-state changes. Action inventory and shortcut planning without a visible UI change may use this Skill alone.
+
 ## Workflow
 
 1. Define whether the palette is for navigation, commands, or both.
@@ -31,5 +33,5 @@ Use this skill when the work is about a command palette or quick launcher.
 
 - For shortcut design, use `hotkey`.
 - For focus, keyboard access, and accessible interaction states, use `frontend-design`.
-- For async execution states, use `react-ui-patterns`.
+- For async execution states owned by React components, use `react-ui-patterns`. In other frameworks, preserve the host framework's state model and use its matching owner only when needed.
 - For surrounding navigation or transitions, use `interaction-patterns`.

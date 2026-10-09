@@ -21,12 +21,19 @@ Treat certification as an evidence-backed release decision, not as a label gener
 
 Never skip from draft or candidate to certified.
 
+## Select the Work Mode
+
+- **Manifest assembly only**: use the bundled manifest script with the candidate directory, version, source digest, and supplied evidence files. It runs locally without calling sibling Skills and can be used independently. Preserve missing or incomplete evidence as such; the result stays `unsigned-unapproved` with all pass claims false.
+- **Release adjudication**: require the deterministic, semantic, security, runtime, and approval evidence applicable to the frozen candidate. Reuse valid artifacts instead of rerunning their producers. Use the relevant companion only for missing evidence; if a required producer or approval is unavailable, return incomplete rather than installing every governance Skill or declaring release readiness.
+
+Reuse requires matching source revision, complete package inventory and hashes, dependency identity, case and inspection scope, tool and environment target, validator or evaluator version, permission boundary, recorded verdict, and applicable cleanup evidence. Verify those bindings against the candidate. A changed candidate or target invalidates affected evidence; fail, blocked, incomplete, and unrun statuses remain distinct from pass.
+
 ## Evidence Workflow
 
 1. Freeze the candidate package, version, source revision, dependency surface, and intended trigger behavior.
-2. Run `skill-scan`, `skill-lint`, provenance verification, package inventory, relevant script tests, semantic audit, and focused security review.
+2. Establish the required scan, lint, provenance, package inventory, script-test, semantic, and applicable focused-security verdicts. Reuse matching reports; otherwise use `skill-scan`, `skill-lint`, `skill-audit`, or `skill-security-review` for the missing scope. Equivalent repository-native structural results are acceptable only for checks they actually cover.
 3. Build a development set and a held-out set with positive, negative, ambiguous, boundary, adversarial, missing-tool, stale-context, and recovery cases.
-4. Run candidate and baseline trials with the same prompts, artifacts, tools, environment, model settings, and graders.
+4. Reuse matching candidate and baseline trials or run missing trials with the same prompts, artifacts, tools, environment, model settings, and graders. Use `skill-executor` when controlled runtime proof is missing and that is the selected execution path.
 5. Evaluate trigger precision, instruction coverage, task completion, safety, context efficiency, portability, and residue.
 6. Repeat nondeterministic trials, calibrate graders, inspect high-impact slices, and apply thresholds defined before the held-out run.
 7. Record failures, exceptions, environment, prompts, models, tools, evaluators, and runtime proof as immutable evidence files.
@@ -76,8 +83,10 @@ Only `approved` or `attested` may be described as release-ready, and only for th
 
 ## Handoff
 
-- Use `skill-lint` for structural validation.
-- Use `skill-audit` for package quality and security findings.
-- Use `skill-security-review` for third-party provenance and executable content.
+- Use `skill-scan` when release adjudication lacks a matching deterministic scan report.
+- Use `skill-lint` when release adjudication lacks the structural verdict and no equivalent repository-native result is available.
+- Use `skill-audit` when release adjudication lacks matching package-quality or semantic evidence.
+- Use `skill-security-review` when third-party provenance or executable content needs focused security evidence that is missing or stale.
+- Use `skill-executor` when the selected release path requires controlled runtime proof and matching evidence is unavailable.
 - Use `llm-evals` for deeper statistical evaluation design.
 - Use `skillctl` to install or update only after the required approval state is recorded.

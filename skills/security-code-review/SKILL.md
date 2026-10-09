@@ -13,6 +13,8 @@ Use this skill for vulnerability-focused review. Use `code-review` for broad cor
 
 ## Umbrella Contract
 
+Standalone vulnerability audits can use this Skill alone and return the security output below. A security-only diff or PR does not activate the umbrella merely because of its input format.
+
 When security analysis is one dimension of a broader diff or pull-request review:
 
 1. Read the sibling [`../code-review/SKILL.md`](../code-review/SKILL.md).

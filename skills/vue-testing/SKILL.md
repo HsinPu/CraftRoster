@@ -15,6 +15,8 @@ Use this skill when Vue behavior needs test coverage or a Vue test is failing. P
 
 When Vue tests or production targets use `<script setup lang="ts">`, `.ts`, typed props or emits, typed stores, typed mocks, `vue-tsc`, or TypeScript diagnostics, read `typescript-development` before planning. Keep this skill responsible for Vue test behavior and runner details while `typescript-development` owns type-safe contracts and production TypeScript changes.
 
+JavaScript-only Vue tests can use this Skill alone. Check the baseline only for the affected typed tests or targets. If it is unavailable, identify the missing Skill and leave typed implementation pending while continuing independent test inspection.
+
 ## Workflow
 
 1. Identify the behavior under test and the smallest useful level: composable, component, store, route, or browser flow.

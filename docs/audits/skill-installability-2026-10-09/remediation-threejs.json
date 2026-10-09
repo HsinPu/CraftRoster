@@ -1,0 +1,1990 @@
+{
+  "partition": "threejs-graphics",
+  "skills": [
+    {
+      "name": "threejs-accessibility",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": [
+        {
+          "target": "threejs-development",
+          "kind": "required",
+          "when": "核心工作流程無條件要求讀取共用契約。",
+          "usage": "resource",
+          "reasonZh": "需安裝保存共用參考文件的套件；不等於啟用 threejs-development 的完整入口流程。",
+          "evidence": [
+            {
+              "file": "skills/threejs-accessibility/SKILL.md",
+              "line": 17,
+              "text": "2. Read [accessibility-contract.md](../threejs-development/references/accessibility-contract.md) and define the semantic DOM or structured-data counterpart to the scene."
+            }
+          ]
+        },
+        {
+          "target": "threejs-webxr-accessibility",
+          "kind": "alternative",
+          "when": "任務主要為沉浸式 session、XR 輸入與舒適度。",
+          "usage": "workflow",
+          "reasonZh": "主問題轉由其他專項負責，不能因此視為原 Skill 必装依賴。",
+          "evidence": [
+            {
+              "file": "skills/threejs-accessibility/SKILL.md",
+              "line": 33,
+              "text": "- Use `threejs-webxr-accessibility` for immersive-session lifecycle, reference spaces, controllers, hands, and XR comfort."
+            }
+          ]
+        },
+        {
+          "target": "threejs-ui-overlays",
+          "kind": "conditional",
+          "when": "需要投影標籤、HUD、文字、遮擋或 DOM 與場景對齊。",
+          "usage": "workflow",
+          "reasonZh": "需要投影標籤、HUD、文字、遮擋或 DOM 與場景對齊。",
+          "evidence": [
+            {
+              "file": "skills/threejs-accessibility/SKILL.md",
+              "line": 34,
+              "text": "- Use `threejs-ui-overlays` for projected labels, HUD layout, text rendering, occlusion, and DOM-to-scene alignment."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "threejs-animation-system",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": [
+        {
+          "target": "threejs-development",
+          "kind": "conditional",
+          "when": "IK, locomotion, procedural animation, navigation, or physics shares pose authority.",
+          "usage": "resource",
+          "reasonZh": "需安裝保存共用參考文件的套件；不等於啟用 threejs-development 的完整入口流程。",
+          "evidence": [
+            {
+              "file": "skills/threejs-animation-system/SKILL.md",
+              "line": 17,
+              "text": "2. Read [character-spatial-systems.md](../threejs-development/references/character-spatial-systems.md) when IK, locomotion, procedural characters, navigation, or physics share pose or transform authority."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "threejs-assets-gltf",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": [
+        {
+          "target": "threejs-development",
+          "kind": "conditional",
+          "when": "Runtime authoring/export or engineering and dense spatial source formats require the shared contracts.",
+          "usage": "resource",
+          "reasonZh": "需安裝保存共用參考文件的套件；不等於啟用 threejs-development 的完整入口流程。",
+          "evidence": [
+            {
+              "file": "skills/threejs-assets-gltf/SKILL.md",
+              "line": 33,
+              "text": "- Use `threejs-editor-authoring` plus [authoring-export.md](../threejs-development/references/authoring-export.md) for runtime editing, serialization, GLTFExporter, round trips, and publishing."
+            },
+            {
+              "file": "skills/threejs-assets-gltf/SKILL.md",
+              "line": 34,
+              "text": "- Use `threejs-cad-bim` or `threejs-point-clouds-splats` plus [specialized-data-formats.md](../threejs-development/references/specialized-data-formats.md) when engineering metadata, dense spatial data, or streaming needs exceed a conventional glTF asset boundary."
+            }
+          ]
+        },
+        {
+          "target": "threejs-editor-authoring",
+          "kind": "conditional",
+          "when": "需要 runtime 編輯、序列化、GLTFExporter、round trip 或發佈。",
+          "usage": "workflow",
+          "reasonZh": "需要 runtime 編輯、序列化、GLTFExporter、round trip 或發佈。",
+          "evidence": [
+            {
+              "file": "skills/threejs-assets-gltf/SKILL.md",
+              "line": 33,
+              "text": "- Use `threejs-editor-authoring` plus [authoring-export.md](../threejs-development/references/authoring-export.md) for runtime editing, serialization, GLTFExporter, round trips, and publishing."
+            }
+          ]
+        },
+        {
+          "target": "threejs-cad-bim",
+          "kind": "alternative",
+          "when": "工程模型、CAD／BIM metadata 超出一般 glTF 邊界。",
+          "usage": "workflow",
+          "reasonZh": "主問題轉由其他專項負責，不能因此視為原 Skill 必装依賴。",
+          "evidence": [
+            {
+              "file": "skills/threejs-assets-gltf/SKILL.md",
+              "line": 34,
+              "text": "- Use `threejs-cad-bim` or `threejs-point-clouds-splats` plus [specialized-data-formats.md](../threejs-development/references/specialized-data-formats.md) when engineering metadata, dense spatial data, or streaming needs exceed a conventional glTF asset boundary."
+            }
+          ]
+        },
+        {
+          "target": "threejs-point-clouds-splats",
+          "kind": "alternative",
+          "when": "密集空間資料或串流超出一般 glTF 邊界。",
+          "usage": "workflow",
+          "reasonZh": "主問題轉由其他專項負責，不能因此視為原 Skill 必装依賴。",
+          "evidence": [
+            {
+              "file": "skills/threejs-assets-gltf/SKILL.md",
+              "line": 34,
+              "text": "- Use `threejs-cad-bim` or `threejs-point-clouds-splats` plus [specialized-data-formats.md](../threejs-development/references/specialized-data-formats.md) when engineering metadata, dense spatial data, or streaming needs exceed a conventional glTF asset boundary."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "threejs-atmosphere-aerial-perspective",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": []
+    },
+    {
+      "name": "threejs-bloom",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": []
+    },
+    {
+      "name": "threejs-cad-bim",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": [
+        {
+          "target": "threejs-development",
+          "kind": "required",
+          "when": "核心工作流程無條件要求讀取共用契約。",
+          "usage": "resource",
+          "reasonZh": "需安裝保存共用參考文件的套件；不等於啟用 threejs-development 的完整入口流程。",
+          "evidence": [
+            {
+              "file": "skills/threejs-cad-bim/SKILL.md",
+              "line": 17,
+              "text": "2. Read [specialized-data-formats.md](../threejs-development/references/specialized-data-formats.md) and choose a conversion, streaming, or verified adapter boundary."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "threejs-camera-direction",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": []
+    },
+    {
+      "name": "threejs-capture-recording",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": [
+        {
+          "target": "threejs-development",
+          "kind": "required",
+          "when": "核心工作流程無條件要求讀取共用契約。",
+          "usage": "resource",
+          "reasonZh": "需安裝保存共用參考文件的套件；不等於啟用 threejs-development 的完整入口流程。",
+          "evidence": [
+            {
+              "file": "skills/threejs-capture-recording/SKILL.md",
+              "line": 17,
+              "text": "2. Read [capture-recording.md](../threejs-development/references/capture-recording.md) and choose renderer readback, canvas blob, `captureStream()`, `MediaRecorder`, WebCodecs, tiled rendering, or an external encoder from the output contract."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "threejs-csg-modeling",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": [
+        {
+          "target": "threejs-development",
+          "kind": "required",
+          "when": "核心工作流程無條件要求讀取共用契約。",
+          "usage": "resource",
+          "reasonZh": "需安裝保存共用參考文件的套件；不等於啟用 threejs-development 的完整入口流程。",
+          "evidence": [
+            {
+              "file": "skills/threejs-csg-modeling/SKILL.md",
+              "line": 17,
+              "text": "2. Read [csg-modeling.md](../threejs-development/references/csg-modeling.md), preflight manifoldness, winding, degeneracy, coplanarity, self-intersection, bounds, and transform parity, and reject invalid solid claims."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "threejs-data-visualization",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": [
+        {
+          "target": "threejs-development",
+          "kind": "conditional",
+          "when": "Converting or streaming analytical source data requires shared format contracts.",
+          "usage": "resource",
+          "reasonZh": "需安裝保存共用參考文件的套件；不等於啟用 threejs-development 的完整入口流程。",
+          "evidence": [
+            {
+              "file": "skills/threejs-data-visualization/SKILL.md",
+              "line": 35,
+              "text": "- Read [specialized-data-formats.md](../threejs-development/references/specialized-data-formats.md) before converting or streaming analytical source data."
+            }
+          ]
+        },
+        {
+          "target": "threejs-point-clouds-splats",
+          "kind": "alternative",
+          "when": "主要輸入為密集掃描、點雲、splats 與空間串流。",
+          "usage": "workflow",
+          "reasonZh": "主問題轉由其他專項負責，不能因此視為原 Skill 必装依賴。",
+          "evidence": [
+            {
+              "file": "skills/threejs-data-visualization/SKILL.md",
+              "line": 33,
+              "text": "- Use `threejs-point-clouds-splats` for dense scans, PLY, LAS or LAZ conversion, Gaussian splats, progressive spatial hierarchies, and splat-specific sorting."
+            }
+          ]
+        },
+        {
+          "target": "threejs-cad-bim",
+          "kind": "alternative",
+          "when": "主要需求為工程 metadata、測量與 revision 比較。",
+          "usage": "workflow",
+          "reasonZh": "主問題轉由其他專項負責，不能因此視為原 Skill 必装依賴。",
+          "evidence": [
+            {
+              "file": "skills/threejs-data-visualization/SKILL.md",
+              "line": 34,
+              "text": "- Use `threejs-cad-bim` for assemblies, IFC or CAD conversion, engineering metadata, measurement tolerances, and revision comparison."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "threejs-deformable-simulation",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": [
+        {
+          "target": "threejs-development",
+          "kind": "required",
+          "when": "核心工作流程無條件要求讀取共用契約。",
+          "usage": "resource",
+          "reasonZh": "需安裝保存共用參考文件的套件；不等於啟用 threejs-development 的完整入口流程。",
+          "evidence": [
+            {
+              "file": "skills/threejs-deformable-simulation/SKILL.md",
+              "line": 17,
+              "text": "2. Read [deformable-simulation.md](../threejs-development/references/deformable-simulation.md) and select mass-spring, PBD or XPBD, FEM, SPH, particle-grid, stable-fluid, height-field, or baked motion from the required behavior."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "threejs-development",
+      "changedFiles": [
+        "skills/threejs-development/SKILL.md",
+        "skills/threejs-development/references/capability-map.md"
+      ],
+      "resolvedAmbiguities": [
+        {
+          "title": "路由入口缺少未安裝專項的處理契約",
+          "resolution": "Basic scenes can run independently; select only affected specialists. A missing selected specialist leaves its branch pending, and shared-reference use does not activate the router."
+        }
+      ],
+      "relationships": [
+        {
+          "target": "frontend-design",
+          "kind": "conditional",
+          "when": "3D 體驗還需要語意頁面殼、內容層級、DOM 控制與無障礙 fallback。",
+          "usage": "workflow",
+          "reasonZh": "3D 體驗還需要語意頁面殼、內容層級、DOM 控制與無障礙 fallback。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/SKILL.md",
+              "line": 29,
+              "text": "3. Use `frontend-design` only for the semantic page shell, content hierarchy, responsive DOM, controls, and accessible fallback; use `css-development` for document layout, canvas sizing, stacking, and overlays; use `javascript-development` for generic module, I/O, and error boundaries."
+            }
+          ]
+        },
+        {
+          "target": "css-development",
+          "kind": "conditional",
+          "when": "需要文件版面、canvas 尺寸、堆疊與 overlay 的 CSS 契約。",
+          "usage": "workflow",
+          "reasonZh": "需要文件版面、canvas 尺寸、堆疊與 overlay 的 CSS 契約。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/SKILL.md",
+              "line": 29,
+              "text": "3. Use `frontend-design` only for the semantic page shell, content hierarchy, responsive DOM, controls, and accessible fallback; use `css-development` for document layout, canvas sizing, stacking, and overlays; use `javascript-development` for generic module, I/O, and error boundaries."
+            }
+          ]
+        },
+        {
+          "target": "javascript-development",
+          "kind": "conditional",
+          "when": "需要通用模組、I/O 與錯誤邊界的 JavaScript 指引。",
+          "usage": "workflow",
+          "reasonZh": "需要通用模組、I/O 與錯誤邊界的 JavaScript 指引。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/SKILL.md",
+              "line": 29,
+              "text": "3. Use `frontend-design` only for the semantic page shell, content hierarchy, responsive DOM, controls, and accessible fallback; use `css-development` for document layout, canvas sizing, stacking, and overlays; use `javascript-development` for generic module, I/O, and error boundaries."
+            }
+          ]
+        },
+        {
+          "target": "threejs-project-architecture",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Modules, ownership, update phases, migration",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 20,
+              "text": "| Modules, ownership, update phases, migration | `threejs-project-architecture` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-version-migration",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Three.js release upgrades, breaking changes, deprecations, compatibility",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 21,
+              "text": "| Three.js release upgrades, breaking changes, deprecations, compatibility | `threejs-version-migration` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-editor-authoring",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Runtime editors, undo, serialization, import, export, publishing",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 22,
+              "text": "| Runtime editors, undo, serialization, import, export, publishing | `threejs-editor-authoring` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-offscreen-workers",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：OffscreenCanvas, renderer workers, message and transfer protocols",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 23,
+              "text": "| OffscreenCanvas, renderer workers, message and transfer protocols | `threejs-offscreen-workers` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-scene-lifecycle",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Loop, resize, visibility, teardown, context recovery",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 24,
+              "text": "| Loop, resize, visibility, teardown, context recovery | `threejs-scene-lifecycle` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-assets-gltf",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：glTF, textures, compression, loading, asset rights",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 25,
+              "text": "| glTF, textures, compression, loading, asset rights | `threejs-assets-gltf` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-animation-system",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Keyframes, mixers, blending, skeletons, morphs, retargeting, IK",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 26,
+              "text": "| Keyframes, mixers, blending, skeletons, morphs, retargeting, IK | `threejs-animation-system` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-math-transforms",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Vectors, matrices, quaternions, transforms, projections",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 27,
+              "text": "| Vectors, matrices, quaternions, transforms, projections | `threejs-math-transforms` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-geometry",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：BufferGeometry, attributes, topology, instancing",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 28,
+              "text": "| BufferGeometry, attributes, topology, instancing | `threejs-geometry` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-csg-modeling",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Solid Boolean modeling, CSG topology, tolerances, cut faces",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 29,
+              "text": "| Solid Boolean modeling, CSG topology, tolerances, cut faces | `threejs-csg-modeling` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-materials-lighting",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：PBR materials, static or media textures, environments, lights",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 30,
+              "text": "| PBR materials, static or media textures, environments, lights | `threejs-materials-lighting` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-shaders",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：GLSL, ShaderMaterial, uniforms, GPU computation",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 31,
+              "text": "| GLSL, ShaderMaterial, uniforms, GPU computation | `threejs-shaders` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-interaction-input",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Picking, pointer, touch, keyboard, controls, spatial indexes",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 32,
+              "text": "| Picking, pointer, touch, keyboard, controls, spatial indexes | `threejs-interaction-input` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-physics-simulation",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Rigid bodies, colliders, fixed-step simulation, physics workers",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 33,
+              "text": "| Rigid bodies, colliders, fixed-step simulation, physics workers | `threejs-physics-simulation` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-spatial-audio",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Listener ownership, positional audio, activation, captions",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 34,
+              "text": "| Listener ownership, positional audio, activation, captions | `threejs-spatial-audio` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-physics-audio",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Legacy or explicitly combined physics-and-audio routing",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 35,
+              "text": "| Legacy or explicitly combined physics-and-audio routing | `threejs-physics-audio` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-deformable-simulation",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Cloth, ropes, soft bodies, strands, particles, and fluids",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 36,
+              "text": "| Cloth, ropes, soft bodies, strands, particles, and fluids | `threejs-deformable-simulation` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-navigation-crowds",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Navmeshes, pathfinding, agents, avoidance, crowds",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 37,
+              "text": "| Navmeshes, pathfinding, agents, avoidance, crowds | `threejs-navigation-crowds` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-rendering-platforms",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：WebGLRenderer, WebGPURenderer, capability fallback",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 38,
+              "text": "| WebGLRenderer, WebGPURenderer, capability fallback | `threejs-rendering-platforms` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-webgpu-tsl",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：WebGPU, TSL node materials, compute, storage, WGSL",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 39,
+              "text": "| WebGPU, TSL node materials, compute, storage, WGSL | `threejs-webgpu-tsl` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-postprocessing",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Pass graphs and screen-space effects",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 40,
+              "text": "| Pass graphs and screen-space effects | `threejs-postprocessing` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-capture-recording",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Stills, deterministic frames, video, codecs, and audio-video recording",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 41,
+              "text": "| Stills, deterministic frames, video, codecs, and audio-video recording | `threejs-capture-recording` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-react-three-fiber",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：React Three Fiber and Drei integration",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 42,
+              "text": "| React Three Fiber and Drei integration | `threejs-react-three-fiber` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-framework-integrations",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Vue/TresJS, Svelte/Threlte, and other framework integration",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 43,
+              "text": "| Vue/TresJS, Svelte/Threlte, and other framework integration | `threejs-framework-integrations` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-ui-overlays",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：HUDs, labels, text, DOM and world-space UI",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 44,
+              "text": "| HUDs, labels, text, DOM and world-space UI | `threejs-ui-overlays` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-gameplay-systems",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Core loops, entities, levels, game feel, replay",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 45,
+              "text": "| Core loops, entities, levels, game feel, replay | `threejs-gameplay-systems` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-data-visualization",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：3D charts, networks, volumes, and scientific analysis",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 46,
+              "text": "| 3D charts, networks, volumes, and scientific analysis | `threejs-data-visualization` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-point-clouds-splats",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Dense point clouds, scans, Gaussian splats, streaming LOD",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 47,
+              "text": "| Dense point clouds, scans, Gaussian splats, streaming LOD | `threejs-point-clouds-splats` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-cad-bim",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：CAD/BIM conversion, assemblies, metadata, measurement",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 48,
+              "text": "| CAD/BIM conversion, assemblies, metadata, measurement | `threejs-cad-bim` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-large-worlds-geospatial",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Geographic coordinates, floating origins, tiled worlds",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 49,
+              "text": "| Geographic coordinates, floating origins, tiled worlds | `threejs-large-worlds-geospatial` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-accessibility",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Non-XR semantics, equivalent input, sensory alternatives",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 50,
+              "text": "| Non-XR semantics, equivalent input, sensory alternatives | `threejs-accessibility` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-webxr-accessibility",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：WebXR sessions, immersive input, comfort, inclusive fallback",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 51,
+              "text": "| WebXR sessions, immersive input, comfort, inclusive fallback | `threejs-webxr-accessibility` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-performance-memory",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Profiling, spatial acceleration, adaptive quality, cleanup",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 52,
+              "text": "| Profiling, spatial acceleration, adaptive quality, cleanup | `threejs-performance-memory` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-testing-debugging",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Reproduction, diagnostics, automated and visual tests",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 53,
+              "text": "| Reproduction, diagnostics, automated and visual tests | `threejs-testing-debugging` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-security-deployment",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Untrusted assets, policies, production delivery",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 54,
+              "text": "| Untrusted assets, policies, production delivery | `threejs-security-deployment` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-networked-experiences",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Replication, interpolation, prediction, authority",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 55,
+              "text": "| Replication, interpolation, prediction, authority | `threejs-networked-experiences` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-camera-direction",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Camera rigs, cinematic composition, floating origins",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 61,
+              "text": "| Camera rigs, cinematic composition, floating origins | `threejs-camera-direction` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-procedural-animation",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Analytic timelines, springs, quaternions, staging",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 62,
+              "text": "| Analytic timelines, springs, quaternions, staging | `threejs-procedural-animation` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-procedural-characters",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Seeded characters, body plans, rigs, IK, character LOD",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 63,
+              "text": "| Seeded characters, body plans, rigs, IK, character LOD | `threejs-procedural-characters` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-procedural-fields",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Shared scalar and vector fields",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 64,
+              "text": "| Shared scalar and vector fields | `threejs-procedural-fields` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-procedural-materials",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Procedural PBR surfaces and masks",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 65,
+              "text": "| Procedural PBR surfaces and masks | `threejs-procedural-materials` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-parallax-occlusion-mapping",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Height-field relief and silhouette POM",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 66,
+              "text": "| Height-field relief and silhouette POM | `threejs-parallax-occlusion-mapping` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-procedural-geometry",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Generated production meshes",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 67,
+              "text": "| Generated production meshes | `threejs-procedural-geometry` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-procedural-vegetation",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Trees, grass, ivy, wind, growth",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 68,
+              "text": "| Trees, grass, ivy, wind, growth | `threejs-procedural-vegetation` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-procedural-architecture",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Building grammars, façades, roofs, cities",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 69,
+              "text": "| Building grammars, façades, roofs, cities | `threejs-procedural-architecture` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-procedural-planets",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Spherical terrain, biomes, craters, orbital LOD",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 70,
+              "text": "| Spherical terrain, biomes, craters, orbital LOD | `threejs-procedural-planets` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-spectral-ocean",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Directional wave-spectrum oceans",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 71,
+              "text": "| Directional wave-spectrum oceans | `threejs-spectral-ocean` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-water-optics",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Bounded and analytic water optics",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 72,
+              "text": "| Bounded and analytic water optics | `threejs-water-optics` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-precipitation-surfaces",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Rain, snow, wetness, accumulation, splashes",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 73,
+              "text": "| Rain, snow, wetness, accumulation, splashes | `threejs-precipitation-surfaces` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-atmosphere-aerial-perspective",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Planetary sky and aerial perspective",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 74,
+              "text": "| Planetary sky and aerial perspective | `threejs-atmosphere-aerial-perspective` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-volumetric-clouds",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Raymarched clouds and cloud shadows",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 75,
+              "text": "| Raymarched clouds and cloud shadows | `threejs-volumetric-clouds` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-raymarched-space-effects",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Black holes, wormholes, bounded space raymarching",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 76,
+              "text": "| Black holes, wormholes, bounded space raymarching | `threejs-raymarched-space-effects` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-path-tracing",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Progressive path tracing, BVH light transport, convergence",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 77,
+              "text": "| Progressive path tracing, BVH light transport, convergence | `threejs-path-tracing` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-procedural-vfx",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Particles, debris, wakes, dissolves, effect pools",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 78,
+              "text": "| Particles, debris, wakes, dissolves, effect pools | `threejs-procedural-vfx` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-temporal-surfaces",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：History-driven frost, droplets, wet glass",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 79,
+              "text": "| History-driven frost, droplets, wet glass | `threejs-temporal-surfaces` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-shadow-systems",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Cascades, clipmaps, stable large-world shadows",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 80,
+              "text": "| Cascades, clipmaps, stable large-world shadows | `threejs-shadow-systems` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-screen-space-ambient-occlusion",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：GTAO and screen-space ambient occlusion",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 81,
+              "text": "| GTAO and screen-space ambient occlusion | `threejs-screen-space-ambient-occlusion` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-bloom",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：HDR bloom and selective emission",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 82,
+              "text": "| HDR bloom and selective emission | `threejs-bloom` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-exposure-color-grading",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Exposure adaptation, tone mapping, LUT grading",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 83,
+              "text": "| Exposure adaptation, tone mapping, LUT grading | `threejs-exposure-color-grading` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-image-pipeline",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Integrated depth, normals, history, and final image",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 84,
+              "text": "| Integrated depth, normals, history, and final image | `threejs-image-pipeline` |"
+            }
+          ]
+        },
+        {
+          "target": "threejs-visual-validation",
+          "kind": "conditional",
+          "when": "所選場景包含此能力：Fixed-view, seed, temporal, and GPU acceptance",
+          "usage": "workflow",
+          "reasonZh": "入口依 capability map 選最小專項集合；並非整張表全部必装。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/capability-map.md",
+              "line": 85,
+              "text": "| Fixed-view, seed, temporal, and GPU acceptance | `threejs-visual-validation` |"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "threejs-editor-authoring",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": [
+        {
+          "target": "threejs-development",
+          "kind": "required",
+          "when": "核心工作流程無條件要求讀取共用契約。",
+          "usage": "resource",
+          "reasonZh": "需安裝保存共用參考文件的套件；不等於啟用 threejs-development 的完整入口流程。",
+          "evidence": [
+            {
+              "file": "skills/threejs-editor-authoring/SKILL.md",
+              "line": 17,
+              "text": "2. Read [authoring-export.md](../threejs-development/references/authoring-export.md) and separate editor document state, transient selection or gizmo state, and rendered scene state."
+            }
+          ]
+        },
+        {
+          "target": "threejs-csg-modeling",
+          "kind": "conditional",
+          "when": "Boolean operands、拓樸修復、cut-face materials 或 Boolean 匯出成為獨立子系統。",
+          "usage": "workflow",
+          "reasonZh": "Boolean operands、拓樸修復、cut-face materials 或 Boolean 匯出成為獨立子系統。",
+          "evidence": [
+            {
+              "file": "skills/threejs-editor-authoring/SKILL.md",
+              "line": 37,
+              "text": "- Use `threejs-csg-modeling` when Boolean operands, operation stacks, topology repair, cut-face materials, or Boolean export become a distinct authoring subsystem."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "threejs-exposure-color-grading",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": []
+    },
+    {
+      "name": "threejs-framework-integrations",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": [
+        {
+          "target": "threejs-development",
+          "kind": "required",
+          "when": "核心工作流程無條件要求讀取共用契約。",
+          "usage": "resource",
+          "reasonZh": "需安裝保存共用參考文件的套件；不等於啟用 threejs-development 的完整入口流程。",
+          "evidence": [
+            {
+              "file": "skills/threejs-framework-integrations/SKILL.md",
+              "line": 17,
+              "text": "2. Read [framework-integrations.md](../threejs-development/references/framework-integrations.md) and map component, store, scene, render-loop, asset-cache, event, and teardown ownership."
+            }
+          ]
+        },
+        {
+          "target": "threejs-react-three-fiber",
+          "kind": "alternative",
+          "when": "React Three Fiber 擁有場景；改由該專項主責。",
+          "usage": "workflow",
+          "reasonZh": "主問題轉由其他專項負責，不能因此視為原 Skill 必装依賴。",
+          "evidence": [
+            {
+              "file": "skills/threejs-framework-integrations/SKILL.md",
+              "line": 25,
+              "text": "- Use `threejs-react-three-fiber` when React Three Fiber owns the scene."
+            }
+          ]
+        },
+        {
+          "target": "threejs-scene-lifecycle",
+          "kind": "conditional",
+          "when": "框架承載 imperative Three.js island。",
+          "usage": "workflow",
+          "reasonZh": "已引用的共用框架契約在此分支要求搭配場景生命週期專項。",
+          "evidence": [
+            {
+              "file": "skills/threejs-development/references/framework-integrations.md",
+              "line": 23,
+              "text": "| Framework hosts an imperative Three.js island | `threejs-framework-integrations` plus `threejs-scene-lifecycle` |"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "threejs-gameplay-systems",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": []
+    },
+    {
+      "name": "threejs-geometry",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": [
+        {
+          "target": "threejs-csg-modeling",
+          "kind": "alternative",
+          "when": "布林運算或固體有效性成為主要問題。",
+          "usage": "workflow",
+          "reasonZh": "主問題轉由其他專項負責，不能因此視為原 Skill 必装依賴。",
+          "evidence": [
+            {
+              "file": "skills/threejs-geometry/SKILL.md",
+              "line": 36,
+              "text": "- Use `threejs-csg-modeling` when union, subtraction, intersection, cut faces, solid validity, Boolean tolerance, or authoring-time operation stacks own the problem."
+            }
+          ]
+        },
+        {
+          "target": "threejs-procedural-geometry",
+          "kind": "alternative",
+          "when": "確定性程序形狀與語意構建規則成為主要問題。",
+          "usage": "workflow",
+          "reasonZh": "主問題轉由其他專項負責，不能因此視為原 Skill 必装依賴。",
+          "evidence": [
+            {
+              "file": "skills/threejs-geometry/SKILL.md",
+              "line": 37,
+              "text": "- Use `threejs-procedural-geometry` when deterministic generated forms and semantic construction rules own the mesh."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "threejs-image-pipeline",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": [
+        {
+          "target": "threejs-path-tracing",
+          "kind": "conditional",
+          "when": "影像管線包含漸進式 radiance 累积、BVH light transport 或 path-traced feature 支援。",
+          "usage": "workflow",
+          "reasonZh": "影像管線包含漸進式 radiance 累积、BVH light transport 或 path-traced feature 支援。",
+          "evidence": [
+            {
+              "file": "skills/threejs-image-pipeline/SKILL.md",
+              "line": 39,
+              "text": "- Use `threejs-path-tracing` for progressive radiance accumulation, BVH-backed light transport, convergence, and path-traced feature support."
+            }
+          ]
+        },
+        {
+          "target": "threejs-capture-recording",
+          "kind": "conditional",
+          "when": "交付包含截圖、frame sequence、編碼、時間戳、音訊或媒體檔。",
+          "usage": "workflow",
+          "reasonZh": "交付包含截圖、frame sequence、編碼、時間戳、音訊或媒體檔。",
+          "evidence": [
+            {
+              "file": "skills/threejs-image-pipeline/SKILL.md",
+              "line": 40,
+              "text": "- Use `threejs-capture-recording` when screenshots, frame sequences, codecs, timestamps, audio, or exported media artifacts own the acceptance contract."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "threejs-interaction-input",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": []
+    },
+    {
+      "name": "threejs-large-worlds-geospatial",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": []
+    },
+    {
+      "name": "threejs-materials-lighting",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": []
+    },
+    {
+      "name": "threejs-math-transforms",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": []
+    },
+    {
+      "name": "threejs-navigation-crowds",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": [
+        {
+          "target": "threejs-development",
+          "kind": "required",
+          "when": "核心工作流程無條件要求讀取共用契約。",
+          "usage": "resource",
+          "reasonZh": "需安裝保存共用參考文件的套件；不等於啟用 threejs-development 的完整入口流程。",
+          "evidence": [
+            {
+              "file": "skills/threejs-navigation-crowds/SKILL.md",
+              "line": 17,
+              "text": "2. Read [character-spatial-systems.md](../threejs-development/references/character-spatial-systems.md) and choose the navmesh, graph, grid, or hybrid representation from environment and update needs."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "threejs-networked-experiences",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": []
+    },
+    {
+      "name": "threejs-offscreen-workers",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": [
+        {
+          "target": "threejs-development",
+          "kind": "required",
+          "when": "核心工作流程無條件要求讀取共用契約。",
+          "usage": "resource",
+          "reasonZh": "需安裝保存共用參考文件的套件；不等於啟用 threejs-development 的完整入口流程。",
+          "evidence": [
+            {
+              "file": "skills/threejs-offscreen-workers/SKILL.md",
+              "line": 17,
+              "text": "2. Read [worker-rendering.md](../threejs-development/references/worker-rendering.md) and decide whether the worker owns rendering, decoding, simulation, spatial queries, or another bounded task."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "threejs-parallax-occlusion-mapping",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": []
+    },
+    {
+      "name": "threejs-path-tracing",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": [
+        {
+          "target": "threejs-development",
+          "kind": "required",
+          "when": "核心工作流程無條件要求讀取共用契約。",
+          "usage": "resource",
+          "reasonZh": "需安裝保存共用參考文件的套件；不等於啟用 threejs-development 的完整入口流程。",
+          "evidence": [
+            {
+              "file": "skills/threejs-path-tracing/SKILL.md",
+              "line": 17,
+              "text": "2. Read [path-tracing.md](../threejs-development/references/path-tracing.md) and classify every scene feature as native, approximated, baked, raster-composited, or unsupported."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "threejs-performance-memory",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": []
+    },
+    {
+      "name": "threejs-physics-audio",
+      "changedFiles": [
+        "skills/threejs-physics-audio/SKILL.md"
+      ],
+      "resolvedAmbiguities": [
+        {
+          "title": "相容路由沒有安裝與執行前提",
+          "resolution": "Compatibility-only entry can select owners independently. Implementation selects physics, audio, or both by the event boundary, with missing selected work pending."
+        }
+      ],
+      "relationships": [
+        {
+          "target": "threejs-physics-simulation",
+          "kind": "conditional",
+          "when": "相容入口承接剛體或合併物理音效實作；只做物理時可直接走此專項。",
+          "usage": "workflow",
+          "reasonZh": "相容入口承接剛體或合併物理音效實作；只做物理時可直接走此專項。",
+          "evidence": [
+            {
+              "file": "skills/threejs-physics-audio/SKILL.md",
+              "line": 18,
+              "text": "1. Use `threejs-physics-simulation` for bodies, colliders, triggers, joints, character controllers, fixed timesteps, workers, contacts, and transform synchronization."
+            }
+          ]
+        },
+        {
+          "target": "threejs-spatial-audio",
+          "kind": "conditional",
+          "when": "相容入口承接音效或合併物理音效實作；只做音效時可直接走此專項。",
+          "usage": "workflow",
+          "reasonZh": "相容入口承接音效或合併物理音效實作；只做音效時可直接走此專項。",
+          "evidence": [
+            {
+              "file": "skills/threejs-physics-audio/SKILL.md",
+              "line": 19,
+              "text": "2. Use `threejs-spatial-audio` for listener ownership, positional sources, attenuation, HRTF, zones, mixing, autoplay restrictions, captions, and audio lifecycle."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "threejs-physics-simulation",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": [
+        {
+          "target": "threejs-deformable-simulation",
+          "kind": "alternative",
+          "when": "任務主要是布、繩、軟體、粒子或網格流體。",
+          "usage": "workflow",
+          "reasonZh": "主問題轉由其他專項負責，不能因此視為原 Skill 必装依賴。",
+          "evidence": [
+            {
+              "file": "skills/threejs-physics-simulation/SKILL.md",
+              "line": 37,
+              "text": "- Use `threejs-deformable-simulation` for cloth, ropes, soft bodies, strands, particle fluids, or grid and volume fluids."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "threejs-point-clouds-splats",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": [
+        {
+          "target": "threejs-development",
+          "kind": "required",
+          "when": "核心工作流程無條件要求讀取共用契約。",
+          "usage": "resource",
+          "reasonZh": "需安裝保存共用參考文件的套件；不等於啟用 threejs-development 的完整入口流程。",
+          "evidence": [
+            {
+              "file": "skills/threejs-point-clouds-splats/SKILL.md",
+              "line": 17,
+              "text": "2. Read [specialized-data-formats.md](../threejs-development/references/specialized-data-formats.md) and choose conversion, chunking, hierarchy, compression, and runtime representation."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "threejs-postprocessing",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": []
+    },
+    {
+      "name": "threejs-precipitation-surfaces",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": []
+    },
+    {
+      "name": "threejs-procedural-animation",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": []
+    },
+    {
+      "name": "threejs-procedural-architecture",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": []
+    },
+    {
+      "name": "threejs-procedural-characters",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": [
+        {
+          "target": "threejs-development",
+          "kind": "required",
+          "when": "核心工作流程無條件要求讀取共用契約。",
+          "usage": "resource",
+          "reasonZh": "需安裝保存共用參考文件的套件；不等於啟用 threejs-development 的完整入口流程。",
+          "evidence": [
+            {
+              "file": "skills/threejs-procedural-characters/SKILL.md",
+              "line": 17,
+              "text": "2. Read [character-spatial-systems.md](../threejs-development/references/character-spatial-systems.md) and separate morphology parameters, generated mesh, skeleton, skin weights, animation state, and gameplay authority."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "threejs-procedural-fields",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": []
+    },
+    {
+      "name": "threejs-procedural-geometry",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": []
+    },
+    {
+      "name": "threejs-procedural-materials",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": []
+    },
+    {
+      "name": "threejs-procedural-planets",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": []
+    },
+    {
+      "name": "threejs-procedural-vegetation",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": []
+    },
+    {
+      "name": "threejs-procedural-vfx",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": []
+    },
+    {
+      "name": "threejs-project-architecture",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": [
+        {
+          "target": "threejs-scene-lifecycle",
+          "kind": "conditional",
+          "when": "需具體 loop、resize、visibility、context-loss 與 cleanup 細節。",
+          "usage": "workflow",
+          "reasonZh": "需具體 loop、resize、visibility、context-loss 與 cleanup 細節。",
+          "evidence": [
+            {
+              "file": "skills/threejs-project-architecture/SKILL.md",
+              "line": 37,
+              "text": "- Use `threejs-scene-lifecycle` for loop, resize, visibility, context-loss, and cleanup details."
+            }
+          ]
+        },
+        {
+          "target": "threejs-editor-authoring",
+          "kind": "conditional",
+          "when": "產品編輯或發佈版本化 scene documents。",
+          "usage": "workflow",
+          "reasonZh": "產品編輯或發佈版本化 scene documents。",
+          "evidence": [
+            {
+              "file": "skills/threejs-project-architecture/SKILL.md",
+              "line": 38,
+              "text": "- Use `threejs-editor-authoring` when the product edits and publishes versioned scene documents."
+            }
+          ]
+        },
+        {
+          "target": "threejs-offscreen-workers",
+          "kind": "conditional",
+          "when": "Worker 擁有 rendering 或延遲敏感子系統。",
+          "usage": "workflow",
+          "reasonZh": "Worker 擁有 rendering 或延遲敏感子系統。",
+          "evidence": [
+            {
+              "file": "skills/threejs-project-architecture/SKILL.md",
+              "line": 39,
+              "text": "- Use `threejs-offscreen-workers` when a worker owns rendering or another latency-sensitive subsystem."
+            }
+          ]
+        },
+        {
+          "target": "threejs-framework-integrations",
+          "kind": "conditional",
+          "when": "Vue、Svelte 或其他非 React UI 框架整合。",
+          "usage": "workflow",
+          "reasonZh": "Vue、Svelte 或其他非 React UI 框架整合。",
+          "evidence": [
+            {
+              "file": "skills/threejs-project-architecture/SKILL.md",
+              "line": 40,
+              "text": "- Use `threejs-framework-integrations` for Vue, Svelte, or another non-React UI framework."
+            }
+          ]
+        },
+        {
+          "target": "threejs-accessibility",
+          "kind": "conditional",
+          "when": "需定義非 XR 語意與等價輸入的具體邊界。",
+          "usage": "workflow",
+          "reasonZh": "需定義非 XR 語意與等價輸入的具體邊界。",
+          "evidence": [
+            {
+              "file": "skills/threejs-project-architecture/SKILL.md",
+              "line": 41,
+              "text": "- Use `threejs-accessibility` to define non-XR semantic and input-equivalence boundaries."
+            }
+          ]
+        },
+        {
+          "target": "threejs-networked-experiences",
+          "kind": "conditional",
+          "when": "state authority 跨 client／server。",
+          "usage": "workflow",
+          "reasonZh": "state authority 跨 client／server。",
+          "evidence": [
+            {
+              "file": "skills/threejs-project-architecture/SKILL.md",
+              "line": 42,
+              "text": "- Use `threejs-networked-experiences` when state authority crosses clients or servers."
+            }
+          ]
+        },
+        {
+          "target": "threejs-react-three-fiber",
+          "kind": "conditional",
+          "when": "React 擁有建立與釋放生命週期。",
+          "usage": "workflow",
+          "reasonZh": "React 擁有建立與釋放生命週期。",
+          "evidence": [
+            {
+              "file": "skills/threejs-project-architecture/SKILL.md",
+              "line": 43,
+              "text": "- Use `threejs-react-three-fiber` when React owns creation and disposal."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "threejs-raymarched-space-effects",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": []
+    },
+    {
+      "name": "threejs-react-three-fiber",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": []
+    },
+    {
+      "name": "threejs-rendering-platforms",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": [
+        {
+          "target": "threejs-version-migration",
+          "kind": "alternative",
+          "when": "主要變更為 Three.js release 升級，而非圖形 backend 變更。",
+          "usage": "workflow",
+          "reasonZh": "主問題轉由其他專項負責，不能因此視為原 Skill 必装依賴。",
+          "evidence": [
+            {
+              "file": "skills/threejs-rendering-platforms/SKILL.md",
+              "line": 36,
+              "text": "- Use `threejs-version-migration` when the primary change is moving between Three.js releases rather than changing graphics backends."
+            }
+          ]
+        },
+        {
+          "target": "threejs-webgpu-tsl",
+          "kind": "conditional",
+          "when": "需要 native WebGPU、TSL、storage、compute、readback 或 WGSL 細節。",
+          "usage": "workflow",
+          "reasonZh": "需要 native WebGPU、TSL、storage、compute、readback 或 WGSL 細節。",
+          "evidence": [
+            {
+              "file": "skills/threejs-rendering-platforms/SKILL.md",
+              "line": 37,
+              "text": "- Use `threejs-webgpu-tsl` for native WebGPU, TSL, storage, compute, readback, and WGSL implementation details."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "threejs-scene-lifecycle",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": []
+    },
+    {
+      "name": "threejs-screen-space-ambient-occlusion",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": []
+    },
+    {
+      "name": "threejs-security-deployment",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": []
+    },
+    {
+      "name": "threejs-shaders",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": []
+    },
+    {
+      "name": "threejs-shadow-systems",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": []
+    },
+    {
+      "name": "threejs-spatial-audio",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": []
+    },
+    {
+      "name": "threejs-spectral-ocean",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": []
+    },
+    {
+      "name": "threejs-temporal-surfaces",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": []
+    },
+    {
+      "name": "threejs-testing-debugging",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": []
+    },
+    {
+      "name": "threejs-ui-overlays",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": []
+    },
+    {
+      "name": "threejs-version-migration",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": [
+        {
+          "target": "threejs-development",
+          "kind": "required",
+          "when": "核心工作流程無條件要求讀取共用契約。",
+          "usage": "resource",
+          "reasonZh": "需安裝保存共用參考文件的套件；不等於啟用 threejs-development 的完整入口流程。",
+          "evidence": [
+            {
+              "file": "skills/threejs-version-migration/SKILL.md",
+              "line": 17,
+              "text": "2. Read [version-migration.md](../threejs-development/references/version-migration.md), then inspect every official migration-guide interval between the source and target instead of comparing only the endpoints."
+            }
+          ]
+        },
+        {
+          "target": "threejs-rendering-platforms",
+          "kind": "conditional",
+          "when": "同時授權 WebGLRenderer 到 WebGPURenderer 的 backend 遷移。",
+          "usage": "workflow",
+          "reasonZh": "同時授權 WebGLRenderer 到 WebGPURenderer 的 backend 遷移。",
+          "evidence": [
+            {
+              "file": "skills/threejs-version-migration/SKILL.md",
+              "line": 28,
+              "text": "- Route WebGLRenderer-to-WebGPURenderer work through `threejs-rendering-platforms` and `threejs-webgpu-tsl`; a release upgrade does not require a backend migration."
+            }
+          ]
+        },
+        {
+          "target": "threejs-webgpu-tsl",
+          "kind": "conditional",
+          "when": "同時涉及 WebGPU／TSL backend 的具體遷移。",
+          "usage": "workflow",
+          "reasonZh": "同時涉及 WebGPU／TSL backend 的具體遷移。",
+          "evidence": [
+            {
+              "file": "skills/threejs-version-migration/SKILL.md",
+              "line": 28,
+              "text": "- Route WebGLRenderer-to-WebGPURenderer work through `threejs-rendering-platforms` and `threejs-webgpu-tsl`; a release upgrade does not require a backend migration."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "threejs-visual-validation",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": [
+        {
+          "target": "threejs-capture-recording",
+          "kind": "conditional",
+          "when": "交付為使用者可用的 still、frame sequence、video、audio-video 或 live stream，而非只有驗證證據。",
+          "usage": "workflow",
+          "reasonZh": "交付為使用者可用的 still、frame sequence、video、audio-video 或 live stream，而非只有驗證證據。",
+          "evidence": [
+            {
+              "file": "skills/threejs-visual-validation/SKILL.md",
+              "line": 44,
+              "text": "- Use `threejs-capture-recording` when the output is a user-facing still, frame sequence, video, audio-video file, or live stream rather than validation evidence alone."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "threejs-volumetric-clouds",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": []
+    },
+    {
+      "name": "threejs-water-optics",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": []
+    },
+    {
+      "name": "threejs-webgpu-tsl",
+      "changedFiles": [],
+      "resolvedAmbiguities": [],
+      "relationships": []
+    },
+    {
+      "name": "threejs-webxr-accessibility",
+      "changedFiles": [
+        "skills/threejs-webxr-accessibility/SKILL.md"
+      ],
+      "resolvedAmbiguities": [
+        {
+          "title": "非 XR 無障礙主責未列入依賴",
+          "resolution": "The non-XR owner is a required workflow companion; the base package supplies resources only. Reused fallback evidence must match its source and targets."
+        }
+      ],
+      "relationships": [
+        {
+          "target": "threejs-development",
+          "kind": "required",
+          "when": "核心工作流程無條件要求讀取共用契約。",
+          "usage": "resource",
+          "reasonZh": "需安裝保存共用參考文件的套件；不等於啟用 threejs-development 的完整入口流程。",
+          "evidence": [
+            {
+              "file": "skills/threejs-webxr-accessibility/SKILL.md",
+              "line": 19,
+              "text": "2. Read [accessibility-contract.md](../threejs-development/references/accessibility-contract.md) and assign general semantic, keyboard, screen-reader, caption, and reduced-motion behavior to `threejs-accessibility`."
+            }
+          ]
+        },
+        {
+          "target": "threejs-accessibility",
+          "kind": "required",
+          "when": "核心要求有非 XR fallback，並明定由該 Skill 主責其語意與等價輸入。",
+          "usage": "workflow",
+          "reasonZh": "核心要求有非 XR fallback，並明定由該 Skill 主責其語意與等價輸入。",
+          "evidence": [
+            {
+              "file": "skills/threejs-webxr-accessibility/SKILL.md",
+              "line": 19,
+              "text": "2. Read [accessibility-contract.md](../threejs-development/references/accessibility-contract.md) and assign general semantic, keyboard, screen-reader, caption, and reduced-motion behavior to `threejs-accessibility`."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "checks": [
+    "62 entrypoints and bundled shared contracts reviewed; current evidence lines resolved.",
+    "Required resource packages remain separate from conditional scene specialist routes."
+  ],
+  "limits": [
+    "Static instruction and dependency review; no scene execution or model activation claim."
+  ]
+}

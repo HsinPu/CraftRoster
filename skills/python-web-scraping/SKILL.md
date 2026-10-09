@@ -25,7 +25,7 @@ Before planning or editing a Python scraper, read the sibling [`../python-develo
 
 ## Boundaries
 
-- Use `webapp-testing` when you must click, log in, or render JS-heavy pages in a browser.
+- Use `browser-automation` or `playwright-automation` for browser-driven data retrieval when authorized clicks, login state, or JS rendering are necessary; choose the available transport that fits the extraction task. Use `webapp-testing` only when the requested outcome is local application verification or UI debugging.
 - Use `python-data-engineering` for downstream cleaning, joins, aggregation, or dataset pipelines.
 - Use `python-development` for general Python architecture, packaging, or code style.
 
@@ -58,7 +58,8 @@ Before planning or editing a Python scraper, read the sibling [`../python-develo
 ## Handoff
 
 - For tabular output, hand off to `python-data-engineering`.
-- For browser-driven extraction, hand off to `webapp-testing`.
+- For browser-driven extraction, hand off to `browser-automation` or `playwright-automation`; this changes the extraction transport rather than requiring a QA Skill for every scraper.
+- For local application verification, hand off to `webapp-testing`.
 - For general Python packaging or style, hand off to `python-development`.
 
 - See [reference/scraping-workflows.md](reference/scraping-workflows.md) for deeper guidance.

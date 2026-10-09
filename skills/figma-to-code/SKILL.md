@@ -74,6 +74,8 @@ Choose one ownership mode before acquisition:
 When an open parent gate is known but the mode is not explicit, default to parent-orchestrated receipt mode. Routing recommendations are findings for the parent, not direct handoffs.
 <!-- CRAFTROSTER_CONTRACT_TEXT_END figma-to-code.execution#ownership -->
 
+Here, standalone describes workflow ownership, not dependency-free installation. Production implementation loads `frontend-design` for the UI baseline and `visual-regression-testing` for fidelity evidence. Parent-receipt mode acquires and maps evidence only, returns to the named parent, and does not activate those implementation or validation stages merely because the companions are installed.
+
 ## Workflow
 
 ### 1. Establish the Contract

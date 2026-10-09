@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "checkedAtUtc": "2026-10-09 07:10:49 UTC",
+  "status": "passed",
+  "scope": "GitHub Markdown documentation update; existing Skill instructions and implementation checks remain unchanged.",
+  "checks": [
+    {
+      "label": "README catalog validation",
+      "command": "$env:PATH = 'C:\\Users\\win10\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin;' + $env:PATH; & 'C:\\Users\\win10\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe' 'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js' run validate",
+      "exitCode": 0,
+      "output": "\n> craftroster@1.0.0 validate\n> node scripts/generate-skill-catalog.js --check && node scripts/generate-install-category-index.js --check && node scripts/validate-catalog.js && node scripts/validate-skill-contracts.js && node scripts/validate-legacy-skill-digests.js && node scripts/validate-skill-evals.js && node scripts/verify-skill-sources.js && node scripts/verify-agent-references.js && node scripts/validate-agent-coverage.js && node scripts/generate-release-baseline.js --check && node scripts/generate-install-skill-dependencies.js --check && node scripts/validate-skill-review.js\n\nSkill catalog generation check passed\nInstall category index check passed: 523 components\nCatalog validation passed: 286 skills, 237 agents\nSkill contract validation passed: 826 Markdown files, 7 workflow contracts\nLegacy Skill digest manifest passed: 213 Skills, 370 digests\nSkill eval validation passed: 117/286 skills covered (40.9%), 291 evals, 1237 assertions, 85 routing cases (case definitions only; no model tasks executed)\nSkill source manifest verified: 62 Skills, 18 repositories, 131 paths\nAgent reference manifest verified: 24 repositories, 237 Agents, 329 paths\nAgent coverage matrix passed: 31/31 categories, 111 representative owners\nRelease baseline check passed (catalog and case definitions, not runtime success)\nSkill dependency index check passed: 995 edges\nSkill review registry validated: 286 decisions, 16 category case definitions; no runtime result claimed\n"
+    },
+    {
+      "label": "README local link and Git whitespace checks",
+      "command": "$taskDocs = @('README.md', 'docs/audits/skill-installability-2026-10-09/README.md'); $checkedLinks = 0; foreach ($taskDoc in $taskDocs) { $documentText = [IO.File]::ReadAllText((Join-Path (Get-Location) $taskDoc)); $basePath = Split-Path -Parent (Join-Path (Get-Location) $taskDoc); foreach ($match in [regex]::Matches($documentText, '\\[[^\\]]+\\]\\(([^)]+)\\)')) { $destination = $match.Groups[1].Value; if ($destination -match '^(?:[a-z]+:|#)') { continue }; $relative = ($destination -split '#', 2)[0]; if (-not (Test-Path -LiteralPath (Join-Path $basePath $relative))) { throw \"Missing link in ${taskDoc}: $destination\" }; $checkedLinks++ } }; Write-Output \"README local links verified: $checkedLinks\"; git diff --check; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; git diff --numstat -- README.md; git status --short",
+      "exitCode": 0,
+      "output": "README local links verified: 651"
+    }
+  ]
+}

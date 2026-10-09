@@ -14,16 +14,18 @@ metadata:
 
 Route non-trivial software work through explicit artifacts and gates without duplicating the component skills.
 
+This Skill coordinates stages; it can independently inspect and assemble valid existing artifacts. Load a stage's owner Skill only when that stage needs a new artifact, remediation, or a rerun. A reusable artifact must identify its target and baseline, cover the current acceptance criteria, retain its result and verification gaps, and still match the relevant code, configuration, dependencies, and environment. Missing or stale evidence activates the corresponding owner below; a missing owner blocks that stage, while independent authorized work can continue.
+
 ## Delivery Flow
 
 1. Run `solution-discovery` when the problem lacks an approved direction. Preserve the decision record.
-2. Run `spec-flow` to convert the direction into scope, acceptance criteria, dependencies, risks, and executable tasks.
-3. Run `code-change-workflow` to identify the owner path, affected contracts, current baseline, and verification path before editing.
+2. Run `spec-flow` when specification evidence needs to be created or revised: scope, acceptance criteria, dependencies, risks, and executable tasks.
+3. Run `code-change-workflow` when inspection evidence needs to be created or refreshed before editing: owner path, affected contracts, current baseline, and verification path.
 4. Use `test-driven-development` when the user or repository requires it, or a failing regression or contract test should lead the change. Otherwise use `testing-strategy` to select proportionate evidence and record the reason for an alternative; this judgment is not automatically an approval gate. Preserve valid existing tests and inherited implementation rather than manufacturing a new RED cycle.
 5. Run `incremental-implementation` when the change needs independently reviewable slices. Preserve focused verification for each completed slice.
-6. Run `pipeline-review` against a frozen baseline. Preserve its stable finding identifiers and gate decision.
+6. Run `pipeline-review` when an independent gate report must be created or refreshed against the frozen baseline. Preserve its stable finding identifiers and gate decision. Consume an existing independent report only while its scope and evidence remain valid.
 7. Run `receiving-code-review` for accepted, unclear, or disputed findings. Return the remediated baseline to the independent reviewer until the gate passes or an authorized owner accepts residual risk.
-8. Run `verification-before-completion` on the final baseline. Evidence remains current only if the relevant code, configuration, dependencies, and environment have not changed since the check; rerun affected checks when they have. Claim completion only from that valid evidence record.
+8. Apply the claim-to-evidence gate to the final baseline. Consume a valid existing completion record; run `verification-before-completion` when that record is missing, incomplete, or stale. Evidence remains current only if the relevant code, configuration, dependencies, and environment have not changed since the check; rerun affected checks when they have. Claim completion only from that valid evidence record.
 9. Enter Git, release, or deployment work only when the user authorizes that external state change.
 
 ## Required Artifacts

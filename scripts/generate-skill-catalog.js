@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const { validateDependencies, validateSiblingLinks } = require('./lib/skill-dependencies');
+const { validateDependencies, validateRoutes, validateSiblingLinks } = require('./lib/skill-dependencies');
 
 const componentNamePattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const revisionPattern = /^[0-9a-f]{40}$/;
@@ -235,6 +235,7 @@ function validateConfig(config, skillNames) {
 
   const usedCategories = new Set();
   validateDependencies(config.skills);
+  validateRoutes(config.skills);
   for (const name of configuredNames) {
     const entry = config.skills[name];
     if (!entry || typeof entry !== 'object' || Array.isArray(entry)) {
@@ -338,6 +339,9 @@ function buildCatalog(root) {
     };
     if (classification.dependencies && classification.dependencies.length) {
       skill.dependencies = [...classification.dependencies].sort((a, b) => a.name.localeCompare(b.name));
+    }
+    if (classification.routes && classification.routes.length) {
+      skill.routes = [...classification.routes].sort((a, b) => a.name.localeCompare(b.name) || a.kind.localeCompare(b.kind));
     }
 
     const referenceSource = metadata['reference-source'];

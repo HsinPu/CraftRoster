@@ -14,13 +14,13 @@ Decide whether a third-party Skill can be installed or executed within an explic
 ## Workflow
 
 1. Freeze repository, revision, release artifact, author, license, install path, file inventory, and hashes.
-2. Run or consume `skill-scan`; inspect every high and medium signal and preserve the inventory hashes.
+2. Reuse a `skill-scan` report only after verifying its source revision, complete package inventory and file hashes, dependency identity, inspected scope, scanner version, target tool or platform, and actual disposition against the package being reviewed. Otherwise produce a fresh scan with `skill-scan`. If no scan producer is available, record that prerequisite as blocked; source inspection alone does not satisfy it. Inspect every high and medium signal and preserve the inventory hashes.
 3. Establish the trust boundary: target tool, user identity, workspace, credentials, network, external systems, and allowed mutations.
 4. Inspect frontmatter, instructions, references, scripts, binaries, archives, generated files, dependencies, hooks, and installers.
 5. Trace inputs through parsing, command construction, subprocesses, filesystem paths, network requests, logs, outputs, deletion, and cleanup.
 6. Trace dependency and download provenance. Flag mutable URLs, unpinned packages, install-time scripts, hidden payloads, obfuscation, and checksum gaps.
 7. Test untrusted repository, web, document, filename, and tool-output content for instruction injection and authority expansion.
-8. Use `skill-executor` for representative behavior only in an isolated environment with synthetic data, least privilege, blocked secrets, explicit network policy, timeout, and observable file and process activity.
+8. When representative runtime behavior needs proof, reuse matching execution evidence or use `skill-executor` only in an isolated environment with synthetic data, least privilege, blocked secrets, explicit network policy, timeout, and observable file and process activity. Reuse requires the same package identity, tested case scope, target tool and version, environment, authority boundary, observed verdict, and cleanup proof; stale, blocked, incomplete, or unrun cases cannot become a pass.
 9. Compare observed behavior with declared capability, permissions, completion, and residue contracts.
 10. Classify findings, define required controls, and recommend approve, approve with restrictions, quarantine, or reject.
 
@@ -56,6 +56,6 @@ State the decision and highest severity first. Include evidence paths or lines, 
 ## Handoff
 
 - Use `skill-audit` for invocation quality, workflow completeness, overlap, context cost, maintenance, and the overall adopt-versus-adapt decision.
-- Use `skill-scan` for broad deterministic package scanning before deep review.
-- Use `skill-executor` for controlled runtime proof.
+- Use `skill-scan` when the matching deterministic package scan is missing or stale.
+- Use `skill-executor` when controlled runtime proof is required and no matching execution evidence is available.
 - Use `github-operations` for GitHub-hosted revision and source inspection.

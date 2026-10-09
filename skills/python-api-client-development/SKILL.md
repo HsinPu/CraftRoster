@@ -52,6 +52,6 @@ Before planning or editing a Python client or SDK, read the sibling [`../python-
 - For consumer/provider compatibility and breaking-change gates, hand off to `api-contract-testing`.
 - For packaging and publishing the SDK, hand off to `python-packaging-release`.
 - For hardening secrets and trust boundaries, hand off to `python-security-hardening`.
-- For transport or service-side implementation details, hand off to `python-backend-development`.
+- For server-side transport or service implementation, hand off to `python-backend-development`; client transport, retry, timeout, serialization, and remote-error handling remain owned here.
 
 - See [reference/api-client-workflows.md](reference/api-client-workflows.md) for deeper guidance.

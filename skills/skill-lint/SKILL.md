@@ -18,7 +18,7 @@ Validate observable package rules without changing the package or claiming seman
 3. Verify kebab-case naming, folder-to-name equality, one regular `SKILL.md`, directly linked resources, normalized relative paths, and absence of broken or escaping links.
 4. Check that the description states the owned capability and selection context, and that body instructions, resources, scripts, and handoffs are reachable and non-duplicative.
 5. Run the narrowest available package validator, then the repository-native gates.
-6. Record every command, exit status, finding location, and unavailable check. Report pass only for checks that actually ran.
+6. Record source revision, complete package inventory and file hashes, dependency identity, inspected scope, target platform and tool version, validator version, every command, exit status, finding location, and unavailable check. Mark runtime or permission fields not applicable for static checks. This binding lets later audit or release stages verify evidence against the current package; report pass only for checks that actually ran.
 
 ## Portable Package Checks
 

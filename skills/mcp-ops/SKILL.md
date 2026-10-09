@@ -41,4 +41,5 @@ Use this skill when the task is about talking to MCP servers directly.
 ## Handoff
 
 - For GitHub-specific tasks, use `github-operations`.
-- For general terminal automation, use `code-refactoring` or `git-operations` as appropriate.
+- For general terminal execution and command evidence, use `terminal-ops`.
+- For local Git work, use `git-operations`; for code restructuring, use `code-refactoring`.

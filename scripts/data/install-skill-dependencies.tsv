@@ -1,50 +1,996 @@
 skill	dependency	kind	when
+accessibility-testing	browser-compatibility-testing	conditional	The task includes browser-specific behavior.
+accessibility-testing	frontend-design-review	optional	-
+accessibility-testing	frontend-testing	conditional	The task includes automated component coverage.
+accessibility-testing	mobile-app-testing	conditional	The task includes device and lifecycle matrices.
+agent-action-governance	git-operations	conditional	The task includes repository safeguards.
+agent-action-governance	mcp-creator-design	conditional	The task includes server-side tool boundaries.
+agent-action-governance	mcp-ops	conditional	The task includes MCP configuration and authentication.
+agent-action-governance	security-code-review	conditional	The task includes policy and enforcement implementation review.
+agent-introspection-debugging	agents-sdk-development	conditional	SDK-specific tracing, tools, handoffs, and guardrail implementation.
+agent-introspection-debugging	llm-evals	conditional	Use `llm-evals` to convert confirmed failures into datasets, graders, and release gates.
+agent-introspection-debugging	logging-patterns	conditional	the required diagnostic signals do not exist.
+agent-introspection-debugging	observability-engineering	conditional	the required diagnostic signals do not exist.
+agent-introspection-debugging	subagent-architecture	conditional	evidence confirms a routing, ownership, or fan-in design problem.
+agent-introspection-debugging	systematic-debugging	conditional	the causal failure extends beyond the agent trace or requires broader competing-hypothesis work.
+agent-reach-ops	browser-automation	conditional	a real browser or repeatable extraction is required; this skill owns the evidence record, not the transport.
+agent-reach-ops	market-research	conditional	a market decision memo after platform evidence is collected
+agent-reach-ops	python-web-scraping	conditional	a real browser or repeatable extraction is required; this skill owns the evidence record, not the transport.
+agent-reach-ops	summary-ops	conditional	a faithful summary of one accessible source
+agents-sdk-development	agent-introspection-debugging	conditional	traces show looping, routing, tool, handoff, guardrail, or context failures.
+agents-sdk-development	karpathy-guidelines	optional	-
+agents-sdk-development	llm-application-delivery-workflow	conditional	the agent must pass product, eval, security, cost, deployment, and post-release gates.
+agents-sdk-development	llm-evals	conditional	agent eval datasets, trace grading, and regression checks.
+agents-sdk-development	rag-vector-search	conditional	retrieval tools and knowledge grounding.
+ai-image-prompt-design	image-to-code	conditional	the generated image is a web UI reference and the authorized next step is an editable frontend implementation.
+ai-image-prompts-skill	baoyu-image-gen	conditional	direct image generation
+ai-video-generation	ai-video-prompting	conditional	detailed video prompts
+ai-video-generation	storyboard-creation	conditional	shot plans and continuity
+ai-video-generation	video-edit	conditional	editing finished clips
+ai-video-generation	video-production-workflow	conditional	treatment-to-delivery coordination
+ai-video-prompting	ai-video-generation	conditional	selecting models or running a generation workflow
+ai-video-prompting	storyboard-creation	conditional	multi-shot planning
+ai-video-prompting	video-production-workflow	conditional	a governed multi-shot production
+animation-best-practices	frontend-design	required	-
+animation-best-practices	responsive-design	conditional	When the animation work also requires layout or responsive adaptation.
+animation-best-practices	tailwind-patterns	conditional	When the animation is implemented with Tailwind utilities.
+api-contract-design	api-contract-testing	conditional	When the task needs executable provider, consumer, schema, example, or breaking-change verification.
+api-contract-design	spring-development	conditional	When the designed API requires Spring implementation.
+api-contract-testing	github-actions-ci	conditional	The task requires work to automate contract verification and compatibility gates.
+api-contract-testing	pipeline-review	conditional	The task includes an independent decision over breaking-change evidence and approved exceptions.
+api-contract-testing	test-driven-development	conditional	A failing contract expectation should lead an implementation change.
+api-contract-testing	testing-strategy	optional	-
+api-contract-testing	verification-before-completion	conditional	A provider, consumer, or release candidate is about to be claimed compatible.
+api-doc-comments	coding-standards	optional	-
+api-doc-comments	java-development	conditional	Java Javadoc syntax
+api-doc-comments	python-development	conditional	Python docstring syntax
+app-store-release	deployment-operations	conditional	When the release requires staged rollout or rollback strategy.
+app-store-release	flutter-development	conditional	When the release requires Flutter build or release checks.
+app-store-release	mobile-app-testing	conditional	When the release candidate needs a mobile test plan.
+app-store-release	react-native-expo	conditional	When the release requires Expo EAS Build, Submit, or Update guidance.
+article-writing	brand-voice	conditional	a reusable organization or creator voice must be established first.
+article-writing	content-repurposing	conditional	Use `content-repurposing` to derive channel-specific content from the approved article.
+article-writing	humanizer	optional	-
+article-writing	markdown-writer	conditional	GFM structure and formatting after editorial content is approved.
+article-writing	market-research	conditional	the article depends on a market, audience, or competitor decision memo.
+article-writing	web-research-ops	conditional	missing current facts and source verification.
+ask-questions-if-underspecified	code-change-workflow	conditional	Clarification is enough and the next step is to inspect an existing code path.
+ask-questions-if-underspecified	todo-first	optional	-
+audio-generation	remotion-video-toolkit	conditional	timing audio inside programmatic video
+audio-generation	video-edit	conditional	trimming, converting, or mixing exported media files
+audio-transcription	subtitle-captions	conditional	SRT, VTT, ASS, or caption timing
+audio-transcription	summary-ops	conditional	concise summaries after transcription
+audio-transcription	video-edit	conditional	local video audio extraction
+auth-integration	nextjs-development	conditional	When the authentication task depends on Next.js routes, middleware, or server boundaries.
+auth-integration	security-code-review	conditional	When the task requires an independent review of authentication-sensitive code.
+auth-integration	spring-security	conditional	When the authentication or authorization implementation is in a Spring application.
+auth-integration	supabase-development	conditional	When the application uses Supabase Auth or row-level security.
+autoresearch	git-advanced	conditional	Use `git-advanced` to create an isolated worktree or recover an experiment branch.
+autoresearch	incremental-implementation	conditional	Use `incremental-implementation` to integrate retained experiments into a maintainable production change.
+autoresearch	llm-evals	conditional	the primary outcome measures prompts, models, retrieval, or agent behavior.
+autoresearch	self-improvement	conditional	Use `self-improvement` only after a lesson is supported well enough to reuse beyond this run.
+autoresearch	terminal-ops	conditional	Use `terminal-ops` to run and preserve exact measurement evidence.
+autoresearch	testing-strategy	optional	-
+avatar-video-generation	short-video-script	conditional	script drafting
+avatar-video-generation	subtitle-captions	conditional	subtitles
+avatar-video-generation	ugc-video-ads	conditional	script drafting
+avatar-video-generation	video-edit	conditional	post-processing and export edits
+aws-operations	deployment-operations	conditional	The task includes release verification and rollout strategy.
+aws-operations	incident-response-postmortems	conditional	The task includes live incidents and postmortems.
+aws-operations	security-scanning	conditional	The task includes IaC, dependency, and container scanning.
+aws-operations	terraform-infrastructure	conditional	The task includes Terraform/OpenTofu implementation details.
+baoyu-image-gen	ai-image-prompt-design	optional	-
+baoyu-image-gen	ai-image-prompts-skill	optional	-
+baoyu-image-gen	image-utils	conditional	deterministic post-processing
+brand-voice	article-writing	conditional	Use `article-writing` to apply the approved profile to sourced long-form content.
+brand-voice	content-repurposing	conditional	Use `content-repurposing` to preserve the profile across channel-specific derivatives.
+brand-voice	market-research	conditional	audience, positioning, or competitor context is not yet supported by evidence.
+brand-voice	product-pitch-writing	conditional	Use `product-pitch-writing` to apply the approved profile to an evidence-grounded product pitch, demo talk, keynote, or presentation speech.
+brand-voice	ux-writing	conditional	interface microcopy that must apply the voice under usability constraints.
+browser-compatibility-testing	playwright-automation	conditional	The task includes Playwright browser-project setup.
+browser-compatibility-testing	visual-regression-testing	conditional	The task includes visual diffs across browsers.
+chrome-devtools-debugging	playwright-automation	conditional	The task includes Playwright-specific scripts and locators.
+chrome-devtools-debugging	react-perf	conditional	The task includes web performance focused React issues.
+cloudflare-development	database-design	conditional	The task includes D1 schema and migration planning.
+cloudflare-development	deployment-operations	conditional	The task includes rollout, rollback, smoke checks, and incident response.
+cloudflare-development	rag-vector-search	conditional	Using Vectorize or AI retrieval workflows.
+cloudflare-development	typescript-development	conditional	The task includes Worker TypeScript structure.
+code-change-workflow	code-refactoring	conditional	The current change is behavior-preserving cleanup after ownership and verification are understood.
+code-change-workflow	incremental-implementation	conditional	Inspection shows a broad, risky, or multi-step change that needs verified slices.
+code-change-workflow	java-development	conditional	The affected change or diagnostic evidence involves Java source, source sets, javac diagnostics, or a Java/JVM stack trace.
+code-change-workflow	jvm-build-tooling	conditional	The affected task changes Maven or Gradle configuration without changing Java source or runtime behavior.
+code-change-workflow	karpathy-guidelines	optional	-
+code-change-workflow	pipeline-review	optional	-
+code-change-workflow	python-development	conditional	The affected change or diagnostic evidence involves Python code, runtime behavior, package configuration, or a Python traceback.
+code-change-workflow	receiving-code-review	conditional	This edit is remediation for an existing finding or review comment.
+code-change-workflow	systematic-debugging	conditional	The failure is reproducible but its root cause is unknown or disputed.
+code-change-workflow	terminal-ops	optional	-
+code-change-workflow	test-driven-development	conditional	The user or repository requires it, or a failing regression or contract test is the appropriate way to lead the change.
+code-change-workflow	testing-strategy	optional	-
+code-change-workflow	typescript-development	conditional	The affected change or diagnostic evidence involves TypeScript source, compiler configuration, typed APIs, or tsc/vue-tsc diagnostics.
+code-change-workflow	verification-before-completion	conditional	A completion claim needs a claim-to-evidence check for the requested change.
+code-refactoring	code-change-workflow	conditional	The entry point, data flow, caller impact, current behavior, or verification path is unclear.
+code-refactoring	incremental-implementation	conditional	The refactor spans many files and needs small verified slices, checkpoints, or commits.
+code-refactoring	java-development	conditional	The task includes Java language, type, API, exception, resource, and compatibility decisions during a Java refactor.
+code-review	api-contract-testing	conditional	Affected API compatibility test contracts need domain guidance during the review.
+code-review	auth-integration	conditional	Affected identity or authorization integration contracts need domain guidance during the review.
+code-review	database-migration-workflow	conditional	Affected schema/data migration contracts need domain guidance during the review.
+code-review	frontend-code-review	conditional	The requested broader review includes frontend correctness, state, accessibility, responsive, rendering, performance, or browser behavior.
+code-review	github-code-review	conditional	Pull-request comments, checks, commit history, or GitHub context materially affect the review conclusion.
+code-review	github-inline-review	conditional	The user authorizes publishing the completed review actions to GitHub.
+code-review	ios-architecture	conditional	Affected iOS architecture contracts need domain guidance during the review.
+code-review	javascript-development	conditional	Affected JavaScript runtime contracts need domain guidance during the review.
+code-review	pipeline-review	conditional	The review must become a repeatable stage gate with stable finding IDs and re-review rounds.
+code-review	python-development	conditional	Affected Python contracts need domain guidance during the review.
+code-review	security-code-review	conditional	The requested review includes vulnerability or exploitability analysis.
+code-review	threejs-development	conditional	Affected Three.js scene or renderer contracts need domain guidance during the review.
+coding-standards	design-system	conditional	The task includes design tokens and visual consistency.
+coding-standards	frontend-design	conditional	The requested standards work also includes user-visible frontend implementation.
+coding-standards	javascript-development	conditional	The requested standards work also includes JavaScript implementation details.
+coding-standards	typescript-development	conditional	The requested standards work also includes TypeScript implementation details.
+coding-standards	vue-development	conditional	The requested standards work also includes Vue implementation details.
+color-font-skill	design-system-patterns	conditional	When color or typography decisions require system-wide token architecture.
+color-font-skill	frontend-design	conditional	When the same task applies palette or typography decisions to visible production UI.
+command-palette	frontend-design	conditional	When implementing or changing visible web palette UI or interaction states.
+command-palette	hotkey	conditional	When the command palette needs shortcut design or keybinding behavior.
+command-palette	interaction-patterns	conditional	When the palette changes surrounding navigation or interface transitions.
+command-palette	react-ui-patterns	conditional	When React components own asynchronous command execution and its loading or error states.
+content-repurposing	agent-reach-ops	conditional	platform-specific social, video, or RSS evidence must be collected from its native channel.
+content-repurposing	ai-image-prompt-design	conditional	The derivative needs approved still-image asset prompts.
+content-repurposing	ai-video-prompting	conditional	The derivative needs approved video asset prompts.
+content-repurposing	article-writing	conditional	the source must first become an approved long-form article.
+content-repurposing	brand-voice	conditional	derivatives require a stable reusable voice profile.
+content-repurposing	markdown-writer	conditional	final Markdown structure and formatting.
+content-repurposing	product-pitch-writing	conditional	the derivative is a product or system pitch that needs a selling-point hierarchy, timed spoken arc, proof, and claim-risk review.
+content-repurposing	short-video-script	conditional	short-form spoken scripts, visual beats, and retention pacing.
+content-repurposing	storyboard-creation	conditional	a derivative requires shot-level visual planning.
+content-repurposing	ux-writing	conditional	interface or product microcopy derivatives.
+content-repurposing	web-research-ops	conditional	Use `web-research-ops` to verify current platform constraints or substantiate a new claim before adapting it.
+context-governance	session-handoff	conditional	The task includes a compact, evidence-linked continuation record across sessions or tools.
+css-development	frontend-design	conditional	When CSS work changes a rendered page, component, visual state, theme, or responsive layout.
+css-development	tailwind-development	conditional	When the work requires Tailwind-specific configuration, utilities, or generated-CSS behavior.
+css-development	tailwind-patterns	conditional	When the work requires Tailwind component or layout composition patterns.
 css-development	threejs-development	conditional	CSS affects a Three.js canvas, renderer sizing, HUD, projected labels, or pointer integration.
-frontend-code-review	code-review	required	-
+css-development	threejs-ui-overlays	conditional	When projected or occluded labels, CSS2D, CSS3D, or DOM-to-scene overlays are central to the change.
+dashboard-design	frontend-design	conditional	When implementing or modifying visible production dashboard UI.
+dashboard-design	responsive-design	conditional	When the dashboard needs responsive layout adaptation.
+data-organization-system	downloads-desktop-cleanup	conditional	Downloads/Desktop inbox triage.
+data-organization-system	file-organizer	conditional	physical file moves and duplicate cleanup.
+data-organization-system	folder-structure-cleanup	conditional	folder hierarchy audits, folder merges, flattening, empty-folder cleanup, and active/archive separation.
+data-organization-system	image-utils	conditional	The requested organization also requires image pixel processing or resizing.
+data-organization-system	pdf-operations	conditional	The requested organization also requires PDF extraction, OCR, or processing.
+data-organization-system	python-data-engineering	conditional	cleaning tabular data or building reproducible ETL.
+data-organization-system	rag-vector-search	conditional	organized documents need ingestion, chunking, metadata, retrieval, and citations.
+data-organization-system	spreadsheet-ops	conditional	The requested organization also requires spreadsheet extraction or processing.
+data-organization-system	word-document-ops	conditional	The requested organization also requires Word document extraction or processing.
+data-pipeline-orchestration	database-design	conditional	When the task needs a storage-model design.
+data-pipeline-orchestration	observability-engineering	conditional	When the pipeline requires service-level monitoring.
+data-pipeline-orchestration	python-data-engineering	conditional	When the pipeline requires Python dataframe or file-transformation implementation.
+data-pipeline-orchestration	sql-best-practices	conditional	When the task needs concrete SQL query design.
+database-design	database-migration-workflow	conditional	When an approved schema change needs compatibility windows, backfill, production rollout, verification, or recovery gates.
+database-design	jpa-hibernate-development	conditional	When the Java persistence layer uses JPA or Hibernate and needs mapping guidance.
+database-design	mybatis-development	conditional	When the Java persistence layer uses MyBatis and needs mapping guidance.
+database-migration-workflow	data-pipeline-orchestration	conditional	When backfill requires a large governed pipeline with partitions, retries, or lineage.
+database-migration-workflow	database-design	conditional	When the target schema, constraints, indexes, or integrity rules still need modeling.
+database-migration-workflow	deployment-operations	conditional	When the migration requires coordinated application rollout, canaries, rollback, or post-cutover health checks.
+database-migration-workflow	jpa-hibernate-development	conditional	When the migration requires JPA or Hibernate persistence artifacts.
+database-migration-workflow	mongodb-development	conditional	When the migration needs MongoDB-specific commands.
+database-migration-workflow	mybatis-development	conditional	When the migration requires MyBatis persistence artifacts.
+database-migration-workflow	observability-engineering	conditional	When the migration needs dashboards, alerts, or service guardrails.
+database-migration-workflow	pipeline-review	conditional	When the migration plan or completed stage needs an independent review gate.
+database-migration-workflow	postgres-operations	conditional	When the migration needs PostgreSQL locking, backup, restore, or replication commands.
+database-migration-workflow	prisma-drizzle	conditional	When the migration requires Prisma or Drizzle ORM artifacts.
+database-migration-workflow	verification-before-completion	required	-
+deployment-operations	database-migration-workflow	conditional	The task includes schema or data rollout with compatibility, backfill, validation, and recovery stages.
+deployment-operations	github-operations	conditional	The task includes GitHub releases or workflow checks.
+deployment-operations	llm-application-delivery-workflow	conditional	The task includes an LLM or agent release that requires eval, cost, safety, and observability gates.
+deployment-operations	repo-ready	conditional	The task includes repo setup and release automation.
+deployment-operations	terminal-ops	optional	-
+design-consultation	frontend-design	conditional	When the selected design decisions must be implemented in a production screen.
+design-consultation	tailwind-development	conditional	When implementation needs Tailwind-specific configuration, utilities, or build behavior.
+design-consultation	tailwind-patterns	conditional	When the selected direction needs Tailwind layout or component composition.
+design-intelligence-search	accessibility-testing	conditional	Use `accessibility-testing` to verify accessibility requirements rather than trusting a guidance record.
+design-intelligence-search	design-system	conditional	Durable tokens or component decisions must be created from the accepted direction.
+design-intelligence-search	frontend-design	conditional	Use `frontend-design` to implement a selected direction in the repository's architecture.
+design-intelligence-search	taste-skill	conditional	An accepted design direction needs taste and visual-quality decisions.
+design-system	css-development	conditional	When the implementation needs CSS styling mechanics.
+design-system	frontend-design	conditional	When implementing a visible production screen or component.
+design-system	tailwind-development	conditional	When the implementation needs Tailwind styling mechanics.
+design-system	taste-skill	conditional	When the visual intent or active direction version is unresolved.
+design-system-patterns	frontend-design	conditional	When implementing visible production components or theme changes.
+design-system-patterns	tailwind-development	conditional	When the design-system implementation uses Tailwind utilities.
+design-system-patterns	ui-styling	conditional	When the work requires React component styling within the shadcn, Radix, or Tailwind specialist scope.
+desktop-development	deployment-operations	conditional	When the task requires application packaging or release workflows.
+desktop-development	frontend-design	conditional	When implementing visible web-renderer UI.
+desktop-development	ui-styling	conditional	When visible web-renderer styling matches the React, shadcn, Radix, or Tailwind specialist scope.
+docker-development	deployment-operations	conditional	The task includes production rollout verification.
+docker-development	github-actions-ci	conditional	The task includes CI builds and image publishing.
+docker-development	kubernetes-operations	conditional	The task includes Kubernetes deployment manifests.
+document-to-markdown	markdown-writer	required	-
+document-to-markdown	pdf-operations	conditional	a PDF requires OCR, page-aware extraction, layout checks, splitting, merging, or image extraction.
+document-to-markdown	word-document-ops	conditional	`.docx` formatting, comments, tracked changes, or Word layout must be inspected or preserved.
+document-to-markdown	workspace-google-ops	conditional	the source is a Google Docs file that must first be located, exported, or accessed through Drive.
+domain-modeling	api-contract-design	conditional	The task includes transport-facing contracts.
+domain-modeling	database-design	conditional	The task includes persistence consequences.
+domain-modeling	event-sourcing-cqrs	conditional	Temporal reconstruction or separate command/read models are justified.
+domain-modeling	project-architecture-review	conditional	The task includes module and dependency boundaries in an existing repository.
+domain-modeling	requirements-deep-dive	conditional	A stakeholder decision or contradiction cannot be resolved from evidence.
+domain-modeling	spec-flow	conditional	The task requires work to turn the accepted model into dependency-aware implementation work.
+drawio-skill	presentation-ops	conditional	document-heavy presentation work
+drawio-skill	word-document-ops	conditional	Markdown-to-doc conversion
+event-sourcing-cqrs	api-contract-design	conditional	When the task requires command or query API boundary design.
+event-sourcing-cqrs	database-design	conditional	When the task requires physical storage or index modeling.
+event-sourcing-cqrs	observability-engineering	conditional	When the task requires projection-lag or replay monitoring.
+event-sourcing-cqrs	temporal-workflow-engineering	conditional	When the task requires a long-running process across aggregates.
+figma-to-code	design-system	conditional	When standalone implementation needs durable token extraction or drift governance for Figma variables and styles.
+figma-to-code	frontend-design	conditional	When this workflow owns authorized standalone production UI implementation.
+figma-to-code	visual-regression-testing	conditional	When standalone implementation requires repeatable visual-fidelity validation.
+file-organizer	image-utils	conditional	The requested organization also requires image pixel processing or resizing.
+file-organizer	pdf-operations	conditional	The requested organization also requires PDF extraction, OCR, or processing.
+file-organizer	spreadsheet-ops	conditional	The requested organization also requires spreadsheet extraction or processing.
+file-organizer	word-document-ops	conditional	The requested organization also requires Word document extraction or processing.
+firebase-development	auth-integration	conditional	When the application needs login or session user-flow guidance.
+firebase-development	database-design	conditional	When the task needs data-model decisions.
+firebase-development	mobile-app-testing	conditional	When the task needs device, push-notification, or release testing.
+firebase-development	security-code-review	conditional	When Firebase rules, custom claims, or privileged functions need an independent security review.
+flutter-development	app-store-release	conditional	When the task requires store submission or review readiness.
+flutter-development	auth-integration	conditional	When the task requires login, OAuth redirects, or secure-session guidance.
+flutter-development	database-design	conditional	When the task requires backend data-model design.
+flutter-development	mobile-app-testing	conditional	When the task requires a device test plan or automation.
+flutter-development	supabase-development	conditional	When the selected backend is Supabase.
+frontend-code-review	code-review	conditional	Frontend analysis is part of a broader cross-cutting review or a unified verdict; a focused frontend-only review remains standalone.
+frontend-code-review	webapp-testing	optional	-
+frontend-design	animation-best-practices	conditional	When the requested behavior requires substantial interface animation or motion.
+frontend-design	css-development	optional	-
+frontend-design	figma-to-code	conditional	When structured Figma evidence is the primary implementation authority.
+frontend-design	frontend-design-review	conditional	When the implemented interface needs an independent design review.
+frontend-design	image-to-code	conditional	When screenshots or recordings are the primary implementation authority.
+frontend-design	javascript-development	optional	-
+frontend-design	responsive-design	conditional	When the interface requires complex responsive reflow.
+frontend-design	tailwind-development	conditional	When the implementation needs Tailwind configuration, utility, or build mechanics.
+frontend-design	tailwind-patterns	conditional	When the implementation needs Tailwind layout or component composition patterns.
 frontend-design	threejs-development	conditional	The requested or affected surface includes a Three.js or 3D scene; unrelated DOM and styling work does not qualify.
+frontend-design	ui-styling	conditional	When React component styling matches the shadcn, Radix, or Tailwind specialist scope.
+frontend-design-review	design-system	optional	-
+frontend-design-review	frontend-code-review	optional	-
+frontend-design-review	webapp-testing	optional	-
+frontend-testing	react-ui-patterns	optional	-
+frontend-testing	typescript-development	conditional	Affected tests or production targets use TypeScript, typed props/hooks/mocks, or TypeScript diagnostics.
+git-readme-writer	github-operations	conditional	README links, issues, releases, or repository metadata need live GitHub checks.
 git-readme-writer	markdown-writer	conditional	Markdown syntax or formatting conventions need specialist guidance.
+git-readme-writer	repo-ready	conditional	README work is part of broader repository hygiene, CI, release, or packaging readiness.
+github-actions-ci	api-contract-testing	conditional	The task includes API compatibility checks that must become required CI gates.
+github-actions-ci	deployment-operations	conditional	The task includes release verification after deployment.
+github-actions-ci	github-operations	conditional	The task includes GitHub API, PR, issue, or check inspection.
 github-code-review	code-review	required	-
-image-to-code	image-to-code-assets	conditional	Independent asset exports, transparency, density variants, bounding boxes, or a Figma-layer handoff are requested.
-java-architecture	java-development	conditional	Implementation or migration planning requires this Java baseline or its testing contract; current-state assessment can remain standalone.
-java-architecture	java-testing	conditional	Implementation or migration planning requires this Java baseline or its testing contract; current-state assessment can remain standalone.
-javascript-development	threejs-development	conditional	The affected task requires this TypeScript or Three.js specialist; unrelated repository dependencies do not qualify.
-javascript-development	typescript-development	conditional	The affected task requires this TypeScript or Three.js specialist; unrelated repository dependencies do not qualify.
+github-code-review	github-inline-review	conditional	The user separately authorizes posting completed comments, suggestions, approvals, or request-changes actions.
+github-inline-review	github-code-review	conditional	The task still needs original PR analysis because review findings do not already exist.
+hotkey	frontend-design	conditional	When the task changes visible web UI, focus behavior, or user-facing shortcut states.
+hotkey	react-ui-patterns	conditional	When React components own the shortcut-related UI state.
+humanizer	brand-voice	conditional	extracting and applying a specific organization or creator voice
+humanizer	product-pitch-writing	conditional	product or system selling points, timed talks, demo narratives, or presentation speeches
+i18n-localization	desktop-development	conditional	The task includes desktop Electron apps.
+i18n-localization	frontend-design	conditional	Localization requires implementing visible layout, direction, controls, or feedback.
+i18n-localization	react-ui-patterns	conditional	Localization requires implementing React component state or behavior.
+i18n-localization	ux-writing	conditional	The task includes message copy quality.
+image-to-code	accessibility-testing	conditional	When standalone implementation requires accessibility evidence.
+image-to-code	frontend-design	conditional	When this workflow owns authorized standalone production UI implementation.
+image-to-code	frontend-stack-inference	conditional	When an existing repository needs its framework and styling conventions identified.
+image-to-code	image-to-code-assets	conditional	Independent asset exports, transparency, density variants, bounding boxes, or a Figma-layer handoff are requested. An explicit request for asset slicing or an asset manifest also qualifies.
+image-to-code	image-utils	conditional	When source work needs deterministic local image inspection, conversion, cropping, or metadata processing.
+image-to-code	responsive-design	conditional	When standalone implementation requires non-trivial reflow across viewports.
+image-to-code	taste-skill	conditional	When standalone routing uses the image as inspiration and the visual direction remains unresolved.
+image-to-code	visual-regression-testing	conditional	When standalone implementation requires the render, comparison, and visual-repair gate.
+image-to-code	webapp-testing	conditional	When standalone implementation requires browser interaction and runtime evidence.
+image-to-code-assets	image-to-code	conditional	The active main deliverable is a real webpage or application screen.
+image-to-code-assets	image-utils	required	-
+image-to-code-assets	visual-regression-testing	conditional	When the owning page workflow performs final page-level comparison after receiving the asset receipt.
+image-utils	image-to-code-assets	conditional	Multiple independent UI cut-outs require transparency, density exports, source bounds, or an asset manifest.
+image-utils	terminal-ops	optional	-
+incident-response-postmortems	deployment-operations	conditional	The task includes rollback and release recovery.
+incident-response-postmortems	observability-engineering	conditional	The task includes missing signals and alert design.
+incident-response-postmortems	security-code-review	conditional	The task includes security investigation follow-up.
+incident-response-postmortems	security-scanning	conditional	The task includes security investigation follow-up.
+incremental-implementation	code-change-workflow	conditional	The existing entry point, ownership, callers, constraints, or verification path is unknown before the first slice.
+incremental-implementation	code-refactoring	conditional	An implementation slice is behavior-preserving cleanup.
+incremental-implementation	multi-session-planning	conditional	The broader dependency and decision map extends beyond implementation slices or one work session.
+incremental-implementation	pipeline-review	conditional	A stage boundary requires an independent acceptance decision.
+incremental-implementation	session-handoff	conditional	A verified slice or checkpoint must be resumed by another session, agent, or tool.
+incremental-implementation	test-driven-development	conditional	A slice is being implemented through an automated RED-GREEN cycle.
+incremental-implementation	testing-strategy	optional	-
+incremental-implementation	todo-first	conditional	The slice list has meaningful execution status to track.
+incremental-implementation	verification-before-completion	conditional	A slice or the overall change is about to be marked complete.
+interaction-patterns	animation-best-practices	conditional	When the interaction requires specialist animation or motion-polish guidance.
+interaction-patterns	frontend-design	conditional	When the task changes visible web navigation, scrolling, transitions, or interaction states.
+interaction-patterns	react-ui-patterns	conditional	When React components own the affected state or loading behavior.
+interaction-patterns	responsive-design	conditional	When the interaction requires responsive layout or overflow adaptation.
+ios-architecture	app-store-release	conditional	When the task requires signing, privacy disclosures, archives, TestFlight, or store submission.
+ios-architecture	incremental-implementation	conditional	When the target architecture is approved and the task requires migration in multiple verified slices.
+ios-architecture	mobile-app-testing	conditional	When the task requires device, lifecycle, permission, deep-link, or offline verification.
+ios-architecture	swiftui-development	conditional	When the task requires SwiftUI state wrappers, views, navigation, accessibility, previews, or rendering implementation.
+java-architecture	incremental-implementation	conditional	The architecture migration needs small verified slices.
+java-architecture	java-development	conditional	Architecture work creates, moves, changes, or plans migration of Java source, public types, package boundaries, or runtime behavior.
+java-architecture	java-testing	conditional	The architecture migration needs characterization, regression, ArchUnit, or package-boundary tests.
+java-architecture	jpa-hibernate-development	conditional	Architecture work includes JPA/Hibernate persistence implementation details.
+java-architecture	mybatis-development	conditional	Architecture work includes MyBatis persistence implementation details.
+java-architecture	spring-development	conditional	Architecture work includes Spring application implementation details.
+java-development	code-refactoring	conditional	The affected Java task is behavior-preserving cleanup.
+java-development	java-architecture	conditional	The affected Java task includes package, module, domain, hexagonal, or bounded-context architecture.
+java-development	java-testing	conditional	The affected Java task includes JUnit, Mockito, AssertJ, Testcontainers, ArchUnit, or flaky Java tests.
+java-development	jpa-hibernate-development	conditional	The affected Java task includes JPA, Hibernate, Spring Data, entities, repositories, or ORM behavior.
+java-development	jvm-build-tooling	conditional	The affected Java task includes Maven/Gradle, toolchains, dependency resolution, plugins, wrappers, or build phases.
+java-development	mybatis-development	conditional	The affected Java task includes MyBatis mappers, XML, dynamic SQL, or transactions.
+java-development	spring-cloud-microservices	conditional	The affected Java task includes Spring Cloud, Kafka, gateways, resilience, or distributed services.
+java-development	spring-development	conditional	The affected Java task includes Spring Boot structure, DI, configuration, REST, or observability.
+java-development	spring-security	conditional	The affected Java task includes Spring authentication, authorization, OAuth2, JWT, CSRF, or CORS.
+java-development	spring-webflux	conditional	The affected Java task includes WebFlux, Reactor, WebClient, R2DBC, or reactive behavior.
+java-development	systematic-debugging	conditional	A Java compiler, build, test, or runtime failure has an unknown cause.
+java-development	test-driven-development	conditional	The affected Java task requires a RED-GREEN-REFACTOR cycle.
+java-testing	java-development	conditional	Writing or fixing Java tests, changing production Java, or defining typed fixtures/public contracts; read-only existing-test review remains standalone.
+java-testing	jpa-hibernate-development	conditional	The affected integration tests need JPA/Hibernate-specific persistence behavior.
+java-testing	mybatis-development	conditional	The affected integration tests need MyBatis-specific persistence behavior.
+java-testing	spring-development	conditional	The affected tests focus on Spring Boot web, data, or security slices.
+java-testing	spring-webflux	conditional	The task includes WebTestClient, Reactor StepVerifier, and reactive pipeline tests.
+java-testing	testing-strategy	optional	-
+javascript-development	frontend-design	conditional	Affected browser JavaScript creates or changes visible DOM, controls, navigation, forms, feedback, loading, errors, animation, or responsive behavior.
+javascript-development	playwright-automation	optional	-
+javascript-development	react-perf	optional	-
+javascript-development	react-ui-patterns	optional	-
+javascript-development	threejs-development	conditional	Affected JavaScript uses Three.js, the requested outcome is a Three.js/WebGL/WebGPU experience, or evidence connects the failure to its scene or renderer.
+javascript-development	typescript-development	conditional	The affected change or diagnosis involves TypeScript source, compiler configuration, typed public APIs, or tsc/vue-tsc diagnostics.
+javascript-development	webapp-testing	optional	-
+jpa-hibernate-development	database-design	conditional	When the task needs schema, index, constraint, or migration design.
+jpa-hibernate-development	java-development	conditional	When creating or changing Java entities, repositories, projections, services, exceptions, or public contracts.
+jpa-hibernate-development	spring-development	conditional	When the task needs broader Spring service, controller, configuration, or testing guidance.
+jquery-4-migration	jquery-development	optional	-
+jquery-4-migration	jquery-version-migration	conditional	The project is still on jQuery 1.x or 2.x and needs staged upgrades before the final 3.x-to-4.x jump.
+jquery-development	frontend-stack-inference	conditional	The frontend stack or jQuery/script ownership is unknown.
+jquery-version-migration	frontend-stack-inference	conditional	The frontend stack or script ownership is unclear.
+jquery-version-migration	jquery-4-migration	conditional	The staged upgrade reaches the final jQuery 3.x-to-4.x jump.
+jvm-build-tooling	java-development	conditional	The same task changes Java source, runtime behavior, compiler-facing public APIs, or Java implementation to resolve the build.
+jvm-build-tooling	security-scanning	conditional	Dependency changes are driven by CVE or supply-chain scanning requirements.
+jvm-build-tooling	spring-development	conditional	The task includes Spring Boot application configuration beyond build files.
+karpathy-guidelines	code-change-workflow	conditional	The current entry point, call chain, or verification path is not yet clear.
+karpathy-guidelines	java-development	optional	-
+karpathy-guidelines	javascript-development	optional	-
+karpathy-guidelines	python-development	optional	-
+karpathy-guidelines	typescript-development	optional	-
+kubernetes-operations	deployment-operations	conditional	The task includes release sequencing and smoke checks.
+kubernetes-operations	docker-development	conditional	The task includes image construction.
+kubernetes-operations	observability-engineering	conditional	The task includes SLOs, dashboards, and alerts.
+kubernetes-operations	terraform-infrastructure	conditional	The task includes cluster and cloud resources.
+legacy-frontend-modernization	frontend-design	conditional	When planning a replacement that changes visible production UI.
+llm-application-delivery-workflow	agent-introspection-debugging	conditional	Live trace-level failures need causal investigation.
+llm-application-delivery-workflow	agents-sdk-development	conditional	The selected architecture includes tool-using agent orchestration.
+llm-application-delivery-workflow	api-contract-design	conditional	The selected architecture exposes a public service API and its contract artifact is missing.
+llm-application-delivery-workflow	api-contract-testing	conditional	A public service API requires contract verification that lacks matching current evidence.
+llm-application-delivery-workflow	autoresearch	conditional	Live outcomes reveal a measurable optimization opportunity suitable for a controlled experiment.
+llm-application-delivery-workflow	database-migration-workflow	conditional	The selected implementation includes a durable schema or data transition.
+llm-application-delivery-workflow	deployment-operations	conditional	The delivery scope includes rollout and operational readiness without matching current deployment artifacts.
+llm-application-delivery-workflow	incident-response-postmortems	conditional	a released AI feature causes an active incident or requires coordinated recovery.
+llm-application-delivery-workflow	llm-evals	conditional	An applicable evaluation gate lacks matching representative data, baseline, or result evidence for the current revision and environment.
+llm-application-delivery-workflow	logging-patterns	conditional	Required application logs or event patterns lack matching current operational artifacts.
+llm-application-delivery-workflow	observability-engineering	conditional	Required traces, metrics, budgets, dashboards, alerts, or failure ownership lack matching current operational artifacts.
+llm-application-delivery-workflow	openai-api-development	conditional	The selected architecture uses direct model API integration.
+llm-application-delivery-workflow	rag-vector-search	conditional	The selected architecture requires grounded knowledge retrieval.
+llm-application-delivery-workflow	security-code-review	conditional	Implementation findings require code-level security verification without matching current evidence.
+llm-application-delivery-workflow	subagent-architecture	conditional	Independent component work is delegated across agents with distinct ownership.
+llm-application-delivery-workflow	threat-modeling	conditional	An applicable abuse and data-safety gate lacks a matching current threat model.
+llm-application-delivery-workflow	todo-first	optional	-
+llm-application-delivery-workflow	verified-software-delivery	optional	-
+llm-evals	agent-introspection-debugging	conditional	Use `agent-introspection-debugging` to turn failed traces into causal hypotheses and regression cases.
+llm-evals	agents-sdk-development	conditional	trace grading and agent workflow evals.
+llm-evals	autoresearch	conditional	one stable metric should drive controlled prompt, model, retrieval, or configuration experiments.
+llm-evals	llm-application-delivery-workflow	conditional	Use `llm-application-delivery-workflow` to place eval results inside a release and rollback decision.
+llm-evals	openai-api-development	conditional	model and prompt integration.
+llm-evals	rag-vector-search	conditional	retrieval-specific evals.
+llm-evals	testing-strategy	conditional	deciding where evals fit into CI and release gates.
+lobe-icons-usage	frontend-design	conditional	When integrating icons into visible production web UI.
+lobe-ui-development	frontend-design	conditional	When integrating Lobe UI components into visible production UI.
+lobe-ui-development	nextjs-development	conditional	When a Next.js routing, SSR, build, or server-client boundary issue blocks the integration.
+logo-design	frontend-design	conditional	the logo is part of a full website or product UI build.
+markdown-writer	article-writing	conditional	the work requires a sourced long-form narrative before Markdown formatting.
+markdown-writer	document-to-markdown	conditional	若來源是 `.docx`、PDF、PPTX、HTML、Google Docs export 或其他非 Markdown 文件，先使用 `document-to-markdown` 轉成初稿，再回到本 skill 做 GFM、heading、列表、表格、連結與整體可讀性整理。
+markdown-writer	summary-ops	conditional	the task is to summarize source material before writing the Markdown.
+market-research	agent-reach-ops	conditional	evidence must be collected from platform-specific social, video, code, or RSS sources.
+market-research	article-writing	conditional	the research should become a sourced long-form publication.
+market-research	brand-voice	conditional	the confirmed audience and positioning should shape a reusable voice profile.
+market-research	solution-discovery	conditional	the evidence must inform a product or implementation direction.
+market-research	spec-flow	conditional	Use `spec-flow` after a market-backed product direction is approved and needs executable requirements.
+market-research	web-research-ops	conditional	The supplied ledger lacks current-source discovery, verification, or citation capture needed for the market decision.
+mcp-creator-design	java-development	conditional	The selected MCP implementation uses Java and needs language-specific guidance.
+mcp-creator-design	python-development	conditional	The selected MCP implementation uses Python and needs language-specific guidance.
+mcp-creator-design	skill-security-review	conditional	adopting third-party MCP code, scripts, or templates.
+mcp-creator-design	typescript-development	conditional	The selected MCP implementation uses TypeScript and needs language-specific guidance.
+mobile-app-testing	flutter-development	conditional	The task includes Flutter test structure.
+mobile-app-testing	react-native-expo	conditional	The task includes Expo/EAS-specific build and update workflows.
+mobile-app-testing	testing-strategy	optional	-
+mongodb-development	database-design	conditional	When the task requires broader data-model design.
+mongodb-development	javascript-development	conditional	When the application integration uses JavaScript.
+mongodb-development	security-code-review	conditional	When access control or secret exposure requires an independent security review.
+mongodb-development	typescript-development	conditional	When the application integration uses TypeScript.
+multi-session-planning	domain-modeling	conditional	The task includes language, invariants, lifecycle, and ownership decisions.
+multi-session-planning	requirements-deep-dive	conditional	The task includes unresolved stakeholder choices.
+multi-session-planning	session-handoff	conditional	The plan needs a compact continuation record across sessions or tools.
+multi-session-planning	spec-flow	conditional	The task requires work to turn approved outcomes into issue-ready work units.
+multi-session-planning	subagent-architecture	conditional	The task requires work to execute parallel-safe units with agent ownership.
+mybatis-development	database-design	conditional	When the task needs schema, index, constraint, or migration design.
+mybatis-development	java-development	conditional	When creating or changing Java mapper interfaces, domain or DTO types, services, exceptions, or public contracts.
+mybatis-development	spring-development	conditional	When the task needs broader Spring dependency-injection, REST, or testing guidance.
+nextjs-development	auth-integration	conditional	When the task includes application authentication flows.
+nextjs-development	frontend-design	conditional	When the task changes a visible page, layout, component, form, navigation, responsive surface, interaction state, or visual treatment.
+nextjs-development	react-ui-patterns	conditional	When the task requires React component-state or rendering guidance.
+nextjs-development	stripe-payments	conditional	When the task includes Stripe checkout, billing, or webhook flows.
+nextjs-development	typescript-development	conditional	When the target uses TypeScript source, typed route parameters, typed Server Actions or Route Handlers, or compiler diagnostics.
+nextjs-development	vercel-deployment	conditional	The release target is Vercel.
+nuxt-development	cloudflare-development	conditional	The release target is Cloudflare.
+nuxt-development	deployment-operations	conditional	When the task requires general release or rollout operations.
+nuxt-development	frontend-design	conditional	When the task changes visible pages, components, layouts, navigation, or user-facing states.
+nuxt-development	typescript-development	conditional	When the task changes TypeScript source, TypeScript SFCs, typed handlers, public type contracts, or compiler diagnostics.
+nuxt-development	vercel-deployment	conditional	The release target is Vercel.
+nuxt-development	vite	conditional	When the issue concerns Vite configuration, plugins, development-server behavior, or builds.
+nuxt-development	vue-debug-guides	conditional	When diagnosing Vue runtime warnings, hydration mismatches, or reactivity defects.
+nuxt-development	vue-development	conditional	When the task needs framework-independent Vue component, Composition API, store, or router guidance.
+observability-engineering	dashboard-design	conditional	The task includes product or executive dashboard information design.
+observability-engineering	deployment-operations	conditional	The task includes release verification.
+observability-engineering	incident-response-postmortems	conditional	The task includes incident coordination and learning.
+observability-engineering	llm-application-delivery-workflow	conditional	Telemetry must satisfy an LLM release or rollback gate.
+observability-engineering	logging-patterns	optional	-
+openai-api-development	agents-sdk-development	conditional	multi-step agent workflows with tools, handoffs, and tracing.
+openai-api-development	llm-application-delivery-workflow	conditional	implementation must be coordinated with eval, security, budget, deployment, rollback, and production evidence.
+openai-api-development	llm-evals	conditional	regression testing, graders, and prompt quality checks.
+openai-api-development	rag-vector-search	conditional	retrieval-grounded applications.
+openai-api-development	security-code-review	conditional	prompt injection, secret handling, or tool safety reviews.
+openapi-spec-generation	api-contract-design	conditional	When the task requires API-model or behavior decisions.
+openapi-spec-generation	api-contract-testing	conditional	When the task needs executable examples, consumer expectations, compatibility differences, or breaking-change gates.
+openapi-spec-generation	python-api-client-development	conditional	When the generated SDK or API client is implemented in Python.
+openapi-spec-generation	typescript-development	conditional	When the generated SDK or API client is implemented in TypeScript.
+pdf-operations	file-organizer	conditional	file organization around PDFs
+pdf-operations	markdown-writer	conditional	Text is already extracted and requires Markdown cleanup.
+pinia-state-management	nuxt-development	conditional	When the store integration depends on Nuxt auto-import or SSR conventions.
+pinia-state-management	typescript-development	conditional	When the task changes TypeScript stores, typed actions, public store contracts, or compiler diagnostics.
+pinia-state-management	vue-development	conditional	When the store task needs broader Vue application-structure guidance.
+pinia-state-management	vue-testing	conditional	When the task includes Vue or Pinia test setup.
+pipeline-review	code-change-workflow	conditional	The task requires work to route accepted findings back to the implementation owner.
 pipeline-review	code-review	required	-
+pipeline-review	github-code-review	conditional	The review packet lives in a pull request and needs GitHub context.
+pipeline-review	receiving-code-review	conditional	The task requires work to triage, remediate, and report the status of accepted findings before re-review.
+pipeline-review	repo-ready	conditional	The independent gate has passed but repository release readiness still needs work.
+pipeline-review	testing-strategy	optional	-
+pipeline-review	verification-before-completion	optional	-
+postgres-operations	database-design	conditional	When the task requires schema or data-integrity modeling.
+postgres-operations	database-migration-workflow	conditional	When a production database change needs staging, compatibility, backfill, or recovery gates.
+postgres-operations	prisma-drizzle	conditional	When Prisma or Drizzle owns migration artifacts.
+postgres-operations	rag-vector-search	conditional	When the task needs pgvector retrieval or index design.
+postgres-operations	sql-best-practices	conditional	When the task requires SQL query writing or review.
+presentation-ops	markdown-writer	conditional	accompanying notes or summaries
+presentation-ops	pdf-operations	conditional	If the deck needs PDF export, hand off to `pdf-operations`.
+presentation-ops	product-pitch-writing	conditional	product or system selling points, timed narrative, full speech, and claim integrity before deck construction
+prisma-drizzle	database-design	conditional	When the task needs target-schema, relationship, or integrity modeling.
+prisma-drizzle	database-migration-workflow	conditional	When the migration requires coordination of expansion, backfill, contraction, rollout, or recovery across environments.
+prisma-drizzle	nextjs-development	conditional	When database access requires Next.js runtime or Server Component integration.
+prisma-drizzle	sql-best-practices	conditional	When the task requires raw SQL or query optimization.
+prisma-drizzle	supabase-development	conditional	When Supabase Postgres or row-level security is part of the stack.
+prisma-drizzle	typescript-development	conditional	When changing TypeScript schemas, database-access code, typed public APIs, or compiler diagnostics.
+product-pitch-writing	brand-voice	conditional	a reusable organization or product voice must be extracted before drafting.
+product-pitch-writing	content-repurposing	conditional	an approved pitch must become additional channel-specific assets.
+product-pitch-writing	humanizer	optional	-
+product-pitch-writing	market-research	conditional	audience, category, competitor, or comparative positioning still requires external evidence.
+product-pitch-writing	presentation-ops	conditional	the primary deliverable is an editable slide deck or `.pptx` file.
+product-pitch-writing	project-architecture-review	conditional	repository-wide architecture, dependency direction, or restructuring is the requested outcome.
+project-architecture-review	api-contract-design	conditional	The task includes public API boundaries, versioning, pagination, idempotency, and compatibility.
+project-architecture-review	code-change-workflow	conditional	Tracing an existing behavior path before edits.
+project-architecture-review	code-refactoring	conditional	The target architecture is chosen and the work is behavior-preserving cleanup.
+project-architecture-review	database-design	conditional	The task includes schema ownership, persistence boundaries, or data migration design.
+project-architecture-review	domain-modeling	conditional	Architecture boundaries depend on business language, invariants, lifecycle, or consistency ownership.
+project-architecture-review	java-architecture	conditional	Architecture work proceeds into Java-specific package, module, or domain boundaries.
+project-architecture-review	python-development	conditional	Architecture work proceeds into Python-specific structure or implementation.
+project-architecture-review	spec-flow	conditional	The recommendation needs acceptance criteria and dependency-aware implementation work.
+project-architecture-review	specification-authoring	conditional	The recommendation needs a formal technical specification.
+project-architecture-review	spring-development	conditional	Architecture work proceeds into Spring-specific implementation details.
+project-architecture-review	typescript-development	conditional	Architecture work proceeds into TypeScript-specific implementation contracts.
+project-architecture-review	vue-development	conditional	Architecture work proceeds into Vue-specific implementation details.
+prompt-engineering	llm-evals	conditional	A reusable, high-impact, or production prompt needs larger dataset, grader, statistical, or release-evaluation design.
+python-api-client-development	api-contract-testing	conditional	When the client requires API consumer or provider compatibility gates.
 python-api-client-development	python-development	required	-
+python-api-client-development	python-packaging-release	conditional	When the client library needs versioning, wheel preparation, or publishing.
+python-api-client-development	python-security-hardening	conditional	When the client needs focused trust-boundary or secret-hardening work.
+python-api-client-development	python-testing-engineering	conditional	When the request includes detailed Python test design or implementation.
 python-automation-scripting	python-development	required	-
+python-backend-development	api-contract-design	conditional	When the task requires request, response, error, pagination, or versioning contract design.
+python-backend-development	deployment-operations	conditional	When the backend task requires rollout or release verification.
 python-backend-development	python-development	required	-
+python-backend-development	python-testing-engineering	conditional	When Python test implementation is a material part of the request.
+python-concurrency-patterns	python-backend-development	conditional	The task includes framework-specific workers or request flow.
 python-concurrency-patterns	python-development	required	-
+python-concurrency-patterns	python-observability-debugging	conditional	The task includes unknown race conditions, tracebacks, failing tests, hangs, timeouts, or runtime failures; add this skill only when the confirmed fix changes concurrency ownership or coordination.
 python-data-engineering	python-development	required	-
-python-development	python-api-client-development	conditional	The requested Python task matches this specialist domain; load only the relevant specialist.
-python-development	python-automation-scripting	conditional	The requested Python task matches this specialist domain; load only the relevant specialist.
-python-development	python-backend-development	conditional	The requested Python task matches this specialist domain; load only the relevant specialist.
-python-development	python-concurrency-patterns	conditional	The requested Python task matches this specialist domain; load only the relevant specialist.
-python-development	python-data-engineering	conditional	The requested Python task matches this specialist domain; load only the relevant specialist.
-python-development	python-observability-debugging	conditional	The requested Python task matches this specialist domain; load only the relevant specialist.
-python-development	python-packaging-release	conditional	The requested Python task matches this specialist domain; load only the relevant specialist.
-python-development	python-security-hardening	conditional	The requested Python task matches this specialist domain; load only the relevant specialist.
-python-development	python-testing-engineering	conditional	The requested Python task matches this specialist domain; load only the relevant specialist.
-python-development	python-web-scraping	conditional	The requested Python task matches this specialist domain; load only the relevant specialist.
-python-observability-debugging	python-development	conditional	Planning or implementing a Python code fix after diagnosis.
-python-packaging-release	python-development	required	-
+python-development	python-api-client-development	conditional	The material Python concern is HTTP API clients, SDKs, OpenAPI, auth, pagination, retries, or error mapping.
+python-development	python-automation-scripting	conditional	The material Python concern is scripts, CLIs, filesystem side effects, subprocesses, local automation, or batch jobs.
+python-development	python-backend-development	conditional	The material Python concern is Django, Flask, FastAPI, ASGI/WSGI, ORM, migrations, or workers.
+python-development	python-concurrency-patterns	conditional	The material Python concern is asyncio coordination, TaskGroup, cancellation, queues, or backpressure.
+python-development	python-data-engineering	conditional	The material Python concern is dataframe, notebook, ETL, CSV/Parquet/JSON transformation, or file-based datasets.
+python-development	python-observability-debugging	conditional	The material Python concern is tracebacks, failures with unknown cause, hangs, timeouts, profiling, slowness, or memory.
+python-development	python-packaging-release	conditional	The material Python concern is wheels, sdists, build metadata, console entry points, or publication/release evidence.
+python-development	python-security-hardening	conditional	The material Python concern is security-sensitive implementation around secrets, paths, subprocesses, unsafe deserialization, or dependencies.
+python-development	python-testing-engineering	conditional	The material Python concern is pytest, unittest, fixtures, mocks, or test harness implementation.
+python-development	python-web-scraping	conditional	The material Python concern is requests/httpx scraping, HTML parsing, feeds, or crawling.
+python-observability-debugging	logging-patterns	optional	-
+python-observability-debugging	python-concurrency-patterns	conditional	Task ownership, cancellation, queues, backpressure, or concurrency structure is the behavior being designed or changed.
+python-observability-debugging	python-development	conditional	A confirmed Python code fix is being planned; diagnosis alone remains standalone.
+python-packaging-release	deployment-operations	conditional	The task includes operational rollout checks.
+python-packaging-release	python-development	conditional	Preparing/changing packaging or release configuration, or producing new package/import/runtime compatibility proof; valid existing metadata/artifact/result review remains standalone.
+python-packaging-release	repo-ready	conditional	The task includes broad repository setup and release automation hygiene.
+python-security-hardening	python-automation-scripting	conditional	The task includes local operational scripts.
+python-security-hardening	python-backend-development	conditional	The task includes framework structure and app flow.
 python-security-hardening	python-development	required	-
+python-security-hardening	python-packaging-release	conditional	The task includes release mechanics and artifact publication.
+python-testing-engineering	python-backend-development	conditional	The task includes app-structure-specific integration details.
 python-testing-engineering	python-development	required	-
+python-testing-engineering	python-observability-debugging	conditional	The task includes diagnosing why tests or code are failing.
+python-testing-engineering	testing-strategy	optional	-
+python-web-scraping	python-data-engineering	conditional	downstream cleaning, joins, aggregation, or dataset pipelines.
 python-web-scraping	python-development	required	-
-security-code-review	code-review	required	-
+rag-vector-search	agents-sdk-development	conditional	RAG is exposed as an agent tool.
+rag-vector-search	database-design	conditional	metadata schema and access-control modeling.
+rag-vector-search	llm-application-delivery-workflow	conditional	retrieval changes are part of a gated product release.
+rag-vector-search	llm-evals	conditional	retrieval and answer quality eval design.
+rag-vector-search	openai-api-development	conditional	embeddings, file search, and API integration.
+react-native-expo	auth-integration	conditional	When the task requires mobile authentication, redirects, sessions, or secure storage.
+react-native-expo	frontend-design	conditional	When an actual web target needs visible web UI changes.
+react-native-expo	react-ui-patterns	optional	-
+react-native-expo	testing-strategy	conditional	When the task requires mobile test planning.
+react-native-expo	typescript-development	conditional	When the task requires type-safe TypeScript implementation.
+react-perf	react-ui-patterns	optional	-
+react-perf	webapp-testing	optional	-
+react-ui-patterns	coding-standards	conditional	When the task requires team-wide coding conventions.
+react-ui-patterns	frontend-design	conditional	When creating or changing visible React web UI or user-facing web states.
+react-ui-patterns	javascript-development	conditional	When the task requires general JavaScript style or asynchronous primitives.
+react-ui-patterns	typescript-development	conditional	When the target uses TypeScript source, typed hooks, props, tests, generics, or public APIs.
+receiving-code-review	code-change-workflow	conditional	The task requires work to trace the affected owner path and implement an accepted remediation safely.
+receiving-code-review	github-operations	conditional	The task requires work to inspect or update pull-request discussions when GitHub interaction is authorized.
+receiving-code-review	pipeline-review	conditional	The original review is a pipeline gate or the requested outcome requires a new independent stage gate.
+receiving-code-review	systematic-debugging	conditional	The reported failure cannot be reproduced or its cause remains disputed.
+receiving-code-review	test-driven-development	conditional	An accepted correction needs new regression coverage to lead the change.
+receiving-code-review	verification-before-completion	conditional	Fresh remediation evidence is needed for the changed baseline.
+redis-upstash	api-contract-design	conditional	When the task requires idempotent-job or rate-limit response contracts.
+redis-upstash	cloudflare-development	conditional	When the integration uses Cloudflare Workers runtime or bindings.
+redis-upstash	nextjs-development	conditional	When the integration depends on Next.js routes, middleware, or Edge runtime behavior.
+redis-upstash	observability-engineering	conditional	When the integration requires metrics, alerts, or dashboards.
+remotion-video-toolkit	animation-best-practices	optional	-
+remotion-video-toolkit	frontend-design	conditional	The work also includes a browser player or product interface requiring visible-UI guidance.
+remotion-video-toolkit	react-ui-patterns	conditional	The work also includes a browser player or product interface requiring React UI guidance.
+remotion-video-toolkit	video-production-workflow	conditional	a complete governed production
+repo-ready	agent-instructions-authoring	conditional	The task includes AGENTS.md.
+repo-ready	git-readme-writer	conditional	The task includes README design.
+repo-ready	github-actions-ci	conditional	The task includes workflow implementation.
+repo-ready	security-scanning	conditional	The task includes automated security gates.
+requirements-deep-dive	domain-modeling	conditional	Decisions define terminology, invariants, ownership, or lifecycle.
+requirements-deep-dive	session-handoff	conditional	The interview pauses before the decision queue is resolved.
+requirements-deep-dive	solution-discovery	conditional	Materially different solution directions still need comparison.
+requirements-deep-dive	spec-flow	conditional	Decisions are approved and ready for acceptance criteria and work-item decomposition.
+responsive-design	css-development	conditional	When the layout requires CSS-level implementation guidance.
+responsive-design	frontend-design	required	-
+responsive-design	tailwind-patterns	conditional	When the responsive layout is implemented with Tailwind.
+reverse-engineering	incident-response-postmortems	conditional	The task includes incident evidence and timeline.
+reverse-engineering	security-code-review	conditional	The task includes recovered source or implementation review.
+reverse-engineering	specification-authoring	conditional	The task includes behavioral contracts.
+reverse-engineering	testing-strategy	conditional	The task includes conformance tests.
+security-code-review	code-review	conditional	Security analysis is one dimension of a broader diff/PR review or unified verdict; a standalone vulnerability audit remains independent.
+security-scanning	github-actions-ci	conditional	The task includes workflow implementation.
+security-scanning	security-code-review	conditional	The task includes manual vulnerability analysis.
+security-scanning	threat-modeling	conditional	The task requires work to derive security requirements from architecture and abuse cases.
+self-improvement	autoresearch	conditional	The task includes a measurable idea that still needs repeated controlled experiments.
+self-improvement	code-refactoring	conditional	The task includes code changes driven by the learning.
+self-improvement	context-governance	optional	-
+service-mesh-engineering	deployment-operations	conditional	The task includes staged rollout.
+service-mesh-engineering	kubernetes-operations	conditional	The task includes workload and policy delivery.
+service-mesh-engineering	observability-engineering	conditional	The task includes metrics, traces, dashboards, and SLOs.
+service-mesh-engineering	threat-modeling	conditional	The task includes trust-boundary analysis.
+session-handoff	context-governance	optional	-
+session-handoff	git-operations	conditional	A Git action is authorized.
+session-handoff	multi-session-planning	optional	-
+session-handoff	terminal-ops	optional	-
+shadcn-ui	frontend-design	conditional	When implementing or changing visible production UI with shadcn components.
+shadcn-ui	tailwind-development	conditional	When the component work requires Tailwind-specific styling rules or mechanics.
+short-video-script	content-repurposing	conditional	adapting an approved article, report, or campaign source across several channels before writing the video script
+short-video-script	storyboard-creation	conditional	shot-level planning
+short-video-script	subtitle-captions	conditional	captions
+short-video-script	text-to-speech	conditional	voiceover generation
+short-video-script	video-production-workflow	conditional	a complete production with treatment, approvals, shot planning, assets, edit, and delivery
+skill-audit	skill-executor	conditional	controlled runtime proof of scripts and representative tasks.
+skill-audit	skill-lint	conditional	The required structural verdict is missing or stale and no equivalent repository-native result is available.
+skill-audit	skill-scan	conditional	An unfamiliar, third-party, or executable package lacks a matching current scan report.
+skill-audit	skill-security-review	conditional	deeper third-party and supply-chain vetting.
+skill-creator-design	skill-audit	conditional	semantic quality, provenance, safety, and maintenance review.
+skill-creator-design	skill-executor	conditional	controlled script execution and representative task proof.
+skill-creator-design	skill-gap-analyzer	conditional	Use `skill-gap-analyzer` before adding a capability that may already exist.
+skill-creator-design	skill-lint	conditional	deterministic metadata, naming, structure, and link checks.
+skill-creator-design	skillctl	conditional	Use `skillctl` only after the package is ready to install, update, or publish.
+skill-creator-design	skillforge	conditional	versioned evaluation and release certification.
+skill-executor	browser-automation	conditional	The authorized run packet includes browser interaction or data retrieval rather than local application QA.
+skill-executor	playwright-automation	conditional	The authorized run packet selects repeatable Playwright interaction or retrieval rather than local application QA.
+skill-executor	skill-audit	conditional	The run packet lacks matching provenance, semantic, safety, or maintenance review evidence within the unresolved audit scope.
+skill-executor	skill-lint	conditional	Before execution, the required matching structural verdict is missing and no equivalent repository-native result is available.
+skill-executor	skill-scan	conditional	Before executable content crosses the runtime boundary, its required matching scan report is missing or stale.
+skill-executor	skill-security-review	conditional	Before execution, applicable focused provenance or executable-content security evidence is missing or stale.
+skill-executor	skillforge	conditional	release certification after the execution proof passes
+skill-executor	terminal-ops	optional	-
+skill-executor	webapp-testing	conditional	The run packet verifies a local application's UI behavior.
+skill-gap-analyzer	skill-creator-design	conditional	a confirmed first-party addition or redesign
+skill-gap-analyzer	skill-lint	conditional	structure checks after edits
+skill-gap-analyzer	skill-security-review	conditional	Use `skill-security-review` before installing or importing third-party bundled scripts, templates, or executable content.
+skill-lint	skill-audit	conditional	broader package quality and provenance review
+skill-lint	skill-executor	conditional	controlled execution of bundled scripts or representative tasks
+skill-lint	skill-scan	conditional	the package is unfamiliar.
+skill-lint	skill-security-review	conditional	security-focused review
+skill-scan	skill-audit	conditional	`needs-review`: use `skill-audit` before execution or adoption.
+skill-scan	skill-lint	conditional	`continue`: run `skill-lint`; a clean scan still does not prove safety or effectiveness.
+skill-scan	skill-security-review	conditional	`stop-and-review`: do not install or execute; use `skill-security-review`.
+skill-scan	skillforge	conditional	release gating after remediation and runtime proof
+skill-security-review	github-operations	optional	-
+skill-security-review	skill-executor	conditional	Representative runtime behavior requires proof and no matching execution evidence is available.
+skill-security-review	skill-scan	conditional	The exact reviewed revision and inventory lack a matching current scan report.
+skillctl	skill-lint	conditional	structure validation
+skillctl	skill-scan	conditional	If a package includes scripts, templates, broad permissions, mutable revisions, or unclear provenance, hand off to `skill-scan` and `skill-security-review` before installing.
+skillctl	skill-security-review	conditional	If a package includes scripts, templates, broad permissions, mutable revisions, or unclear provenance, hand off to `skill-scan` and `skill-security-review` before installing.
+skillforge	llm-evals	optional	-
+skillforge	skill-audit	conditional	Release adjudication lacks matching package-quality or semantic evidence for the frozen candidate.
+skillforge	skill-executor	conditional	The selected release-adjudication path requires controlled runtime proof and no matching execution evidence is available.
+skillforge	skill-lint	conditional	Release adjudication lacks the current structural verdict and no equivalent repository-native result is available.
+skillforge	skill-scan	conditional	Release adjudication lacks a matching deterministic scan report for the frozen candidate.
+skillforge	skill-security-review	conditional	Applicable third-party provenance or executable-content security evidence is missing or stale during release adjudication.
+skillforge	skillctl	conditional	Use `skillctl` to install or update only after the required approval state is recorded.
+solution-discovery	domain-modeling	conditional	competing options depend on terminology, invariants, ownership, or lifecycle rules.
+solution-discovery	project-architecture-review	conditional	the options depend on evidence from an existing repository or architecture.
+solution-discovery	spec-flow	conditional	An approved direction needs acceptance criteria or implementation tickets.
+solution-discovery	throwaway-prototyping	conditional	a bounded executable experiment is the cheapest reliable way to compare directions.
+spec-flow	code-change-workflow	conditional	The task requires work to trace implementation ownership before editing.
+spec-flow	domain-modeling	conditional	Terminology, invariants, ownership, or state transitions are unclear.
+spec-flow	incremental-implementation	conditional	The task requires work to execute the approved slices with verification checkpoints.
+spec-flow	multi-session-planning	conditional	The dependency map will span several work sessions or parallel owners.
+spec-flow	requirements-deep-dive	conditional	Critical choices or contradictions need a deliberate interview.
+spreadsheet-ops	markdown-writer	conditional	narrative summaries
+spreadsheet-ops	pdf-operations	conditional	PDF export or scanned attachments
+spring-cloud-microservices	deployment-operations	conditional	When the task requires release or rollout operations.
+spring-cloud-microservices	java-architecture	conditional	When the task requires internal Clean Architecture, hexagonal, domain-driven, or module-boundary decisions.
+spring-cloud-microservices	java-development	conditional	When creating or changing Java source, clients, consumers, events, resilience code, or public service contracts.
+spring-cloud-microservices	kubernetes-operations	conditional	When the deployment target needs Kubernetes cluster, probe, or manifest operations.
+spring-cloud-microservices	observability-engineering	conditional	When the system needs service-level indicators or objectives, metrics, logs, traces, or alerts.
+spring-cloud-microservices	spring-webflux	conditional	When the task requires reactive WebClient, Reactor, or WebFlux implementation.
+spring-development	java-development	conditional	When changing Java source, public APIs, exceptions, resources, or runtime behavior.
+spring-development	jpa-hibernate-development	conditional	When the task needs JPA or Hibernate persistence details.
+spring-development	mybatis-development	conditional	When the task needs MyBatis persistence details.
+spring-development	spring-cloud-microservices	conditional	When the task requires gateways, service discovery, resilience, Kafka, or distributed tracing.
+spring-development	spring-security	conditional	When the task requires authentication, CSRF, CORS, JWT, or security filter-chain work.
+spring-development	spring-webflux	conditional	When the task requires reactive handlers, WebClient, Reactor, or non-blocking persistence.
+spring-security	java-development	conditional	When creating or changing Java configuration, filters, handlers, annotations, domain authorization, or tests.
+spring-security	spring-development	conditional	When the task needs general Spring application, controller, service, configuration, or testing guidance.
+spring-security	spring-webflux	conditional	When the security implementation is hosted in reactive WebFlux.
+spring-webflux	java-development	conditional	When changing Java source, typed handlers, domain APIs, exceptions, resources, or concurrency behavior.
+spring-webflux	java-testing	conditional	When the task needs broader Java or Testcontainers tests outside reactive-specific testing.
+spring-webflux	spring-cloud-microservices	conditional	When the task includes distributed communication, gateways, resilience, or tracing.
+sql-best-practices	database-design	conditional	When the same task also requires schema, index, migration, or integrity design.
+sql-best-practices	jpa-hibernate-development	conditional	When the task requires JPA-specific or Hibernate-specific persistence implementation.
+sql-best-practices	mybatis-development	conditional	When the task requires MyBatis-specific persistence implementation.
+sql-best-practices	prisma-drizzle	conditional	When the task requires Prisma-specific or Drizzle-specific persistence implementation.
+stable-diffusion-image-generation	ai-image-prompt-design	optional	-
+stable-diffusion-image-generation	image-utils	conditional	post-processing generated images
+storyboard-creation	ai-video-prompting	conditional	AI video prompt wording
+storyboard-creation	remotion-video-toolkit	conditional	code-generated execution
+storyboard-creation	video-production-workflow	conditional	an end-to-end project
+stripe-payments	api-contract-design	conditional	When the payment task requires endpoint-shape or idempotency contracts.
+stripe-payments	nextjs-development	conditional	When payment behavior is implemented in Next.js Route Handlers or Server Actions.
+stripe-payments	security-code-review	conditional	When secrets or webhook verification require an independent security review.
+stripe-payments	testing-strategy	conditional	When the task requires a payment test matrix.
+subagent-architecture	agent-introspection-debugging	conditional	traces indicate routing, ownership, handoff, loop, or context failures in an agent team.
+subagent-architecture	code-review	conditional	Use `code-review` after integrating multi-agent implementation.
+subagent-architecture	context-governance	conditional	durable lessons and reusable decisions that should outlive the current task.
+subagent-architecture	multi-session-planning	conditional	the dependency and ownership map spans several work sessions.
+subagent-architecture	session-handoff	conditional	evidence-linked continuation across agents, tools, or sessions.
+subagent-architecture	todo-first	optional	-
+subtitle-captions	audio-transcription	conditional	first-pass speech-to-text
+subtitle-captions	video-edit	conditional	burning captions into video or exporting clips
+summary-ops	audio-transcription	conditional	Only raw audio or video speech is available and a usable transcript must be obtained before summarizing.
+summary-ops	markdown-writer	conditional	Markdown cleanup after extraction or summarization
+supabase-development	auth-integration	conditional	When the application needs login or session user-flow guidance.
+supabase-development	database-design	conditional	When the task needs relational modeling or index design.
+supabase-development	security-code-review	conditional	When policies or secret exposure require an independent security review.
+supabase-development	sql-best-practices	conditional	When the task requires SQL review or query optimization.
+swift-concurrency	ios-architecture	conditional	When concurrency issues expose feature ownership, module boundaries, dependency direction, or a larger migration decision.
+swift-concurrency	mobile-app-testing	conditional	When the task requires background or foreground transitions, permissions, deep links, push, purchases, network interruptions, or device automation.
+swift-testing	swift-concurrency	conditional	Actor ownership, Sendable, task lifetime, continuations, or cancellation must first be corrected in production code.
+swift-testing	test-driven-development	conditional	Implementation should proceed through an explicit red-green-refactor loop.
+swift-testing	testing-strategy	optional	-
+swiftui-development	accessibility-testing	conditional	When the task requires an independent assistive-technology or accessibility audit.
+swiftui-development	app-store-release	conditional	When the task requires archives, signing, privacy disclosures, TestFlight, or store submission.
+swiftui-development	mobile-app-testing	conditional	When the task requires device coverage, permissions, deep links, push, purchases, lifecycle behavior, or automation.
+systematic-debugging	agent-introspection-debugging	conditional	The failing system is an agent run and model, tool, handoff, guardrail, retrieval, or context traces must be reconstructed.
+systematic-debugging	code-change-workflow	conditional	The owner path and justified fix are known and implementation is ready to begin.
+systematic-debugging	java-development	conditional	The task includes Java compiler, exception, concurrency, resource, JVM runtime, or public-API failures; add java-testing for JUnit reproduction and jvm-build-tooling when the causal boundary is Maven, Gradle, a plugin, dependency resolution, or the toolchain.
+systematic-debugging	java-testing	conditional	The confirmed Java failure needs JUnit reproduction or test repair.
+systematic-debugging	jvm-build-tooling	conditional	The causal boundary is Maven, Gradle, a plugin, dependency resolution, or the Java toolchain.
+systematic-debugging	python-development	conditional	A confirmed Python implementation fix is needed after diagnosis.
+systematic-debugging	python-observability-debugging	conditional	The failing path or evidence concerns Python exceptions or pytest runtime failures.
+systematic-debugging	terminal-ops	optional	-
+systematic-debugging	test-driven-development	conditional	A red-green cycle is required or chosen for the confirmed fix; otherwise use testing-strategy to retain decisive regression evidence without forcing a meaningless cycle.
+systematic-debugging	testing-strategy	conditional	Decisive regression evidence is needed without a required or chosen RED-GREEN cycle.
+systematic-debugging	typescript-development	conditional	The failing path involves TypeScript compiler, inference, narrowing, module resolution, declarations, or typed public APIs.
+systematic-debugging	verification-before-completion	conditional	The task requires work to prove the original failure and adjacent checks now pass.
+tailwind-development	frontend-design	conditional	When Tailwind work changes a visible page, component, layout, theme, or user-facing state.
+tailwind-development	tailwind-patterns	conditional	When the task needs ready-to-apply Tailwind layout or component composition patterns.
+tailwind-patterns	frontend-design	required	-
+tailwind-patterns	tailwind-development	conditional	When the work requires Tailwind architecture, configuration, or build behavior.
+taste-skill	frontend-design	conditional	When the visual direction is established and production UI must be implemented.
+temporal-workflow-engineering	event-sourcing-cqrs	conditional	When the task requires immutable domain-history or projection design.
+temporal-workflow-engineering	observability-engineering	conditional	When the task requires workflow or worker telemetry.
+temporal-workflow-engineering	testing-strategy	conditional	When the task requires broader test-level selection.
+terminal-ops	code-change-workflow	conditional	The task includes code edits that require understanding current behavior before changing files.
+terminal-ops	git-operations	conditional	The task includes git-specific work.
+terminal-ops	subagent-architecture	conditional	The task includes designing delegation boundaries or multi-agent command workflows.
+terminal-ops	systematic-debugging	conditional	The task includes failures with an unknown root cause.
+terminal-ops	verification-before-completion	conditional	The task includes the final evidence gate before claiming completion.
+terraform-infrastructure	deployment-operations	conditional	The task includes release rollout verification.
+terraform-infrastructure	github-actions-ci	conditional	The task includes CI integration and plan checks.
+terraform-infrastructure	kubernetes-operations	conditional	The task includes Kubernetes workload operations.
+test-driven-development	code-change-workflow	conditional	The task requires work to identify the owner path and affected boundaries before the first cycle.
+test-driven-development	frontend-testing	conditional	The RED-GREEN cycle includes React or other frontend component tests.
+test-driven-development	incremental-implementation	conditional	The work requires several independently verified slices.
+test-driven-development	java-development	conditional	The RED-GREEN cycle includes Java production code, typed fixtures, exceptions, resources, or public contracts.
+test-driven-development	java-testing	conditional	The RED-GREEN cycle includes Java test implementation.
+test-driven-development	python-development	conditional	The RED-GREEN cycle includes a Python production-code increment.
+test-driven-development	python-testing-engineering	conditional	The RED-GREEN cycle includes Python test implementation.
+test-driven-development	systematic-debugging	conditional	A test fails for an unknown reason or the implementation does not produce the predicted result.
+test-driven-development	testing-strategy	conditional	No explicit user/repository TDD requirement applies and proportionate evidence or an alternative to a new failing test needs judgment.
+test-driven-development	typescript-development	conditional	The RED-GREEN cycle includes TypeScript production increments or typed test boundaries.
+test-driven-development	verification-before-completion	conditional	The task requires work to run the broader acceptance checks and inspect repository state.
+test-driven-development	vue-testing	conditional	The RED-GREEN cycle includes Vue tests.
+testing-strategy	frontend-testing	conditional	The selected implementation work is React or another frontend component/hook test surface.
+testing-strategy	java-development	conditional	The selected Java test work needs language, typed fixtures, production code, exception, resource, or public-contract decisions.
+testing-strategy	java-testing	conditional	The task includes Java tests, JUnit, Mockito, AssertJ, Spring test slices, Testcontainers, ArchUnit, or flaky test repair.
+testing-strategy	python-development	conditional	The Python test implementation task also changes production Python code.
+testing-strategy	python-testing-engineering	conditional	The task includes Python test implementation, fixtures, mocks, async tests, and pytest or unittest details.
+testing-strategy	typescript-development	conditional	The task includes TypeScript unit or Node.js tests, Vitest or Jest fixtures, typed mocks, and production .ts changes.
+testing-strategy	vue-testing	conditional	The selected implementation work is a Vue component, composable, store, or route test surface.
+text-to-speech	remotion-video-toolkit	conditional	assembling voiceover into video
+text-to-speech	subtitle-captions	conditional	captions and subtitle timing
+text-to-speech	video-edit	conditional	assembling voiceover into video
+threat-modeling	auth-integration	conditional	The task includes identity and authorization design.
+threat-modeling	incident-response-postmortems	conditional	The task includes response and recovery planning.
+threat-modeling	security-code-review	conditional	The task requires work to inspect implementation.
+threat-modeling	security-scanning	conditional	The task requires work to automate applicable controls.
 threejs-accessibility	threejs-development	required	-
+threejs-accessibility	threejs-ui-overlays	conditional	需要投影標籤、HUD、文字、遮擋或 DOM 與場景對齊。
 threejs-animation-system	threejs-development	conditional	IK, locomotion, procedural animation, navigation, or physics shares pose authority.
 threejs-assets-gltf	threejs-development	conditional	Runtime authoring/export or engineering and dense spatial source formats require the shared contracts.
+threejs-assets-gltf	threejs-editor-authoring	conditional	需要 runtime 編輯、序列化、GLTFExporter、round trip 或發佈。
 threejs-cad-bim	threejs-development	required	-
 threejs-capture-recording	threejs-development	required	-
 threejs-csg-modeling	threejs-development	required	-
 threejs-data-visualization	threejs-development	conditional	Converting or streaming analytical source data requires shared format contracts.
 threejs-deformable-simulation	threejs-development	required	-
+threejs-development	css-development	conditional	需要文件版面、canvas 尺寸、堆疊與 overlay 的 CSS 契約。
+threejs-development	frontend-design	conditional	3D 體驗還需要語意頁面殼、內容層級、DOM 控制與無障礙 fallback。
+threejs-development	javascript-development	conditional	需要通用模組、I/O 與錯誤邊界的 JavaScript 指引。
+threejs-development	threejs-accessibility	conditional	所選場景包含此能力：Non-XR semantics, equivalent input, sensory alternatives
+threejs-development	threejs-animation-system	conditional	所選場景包含此能力：Keyframes, mixers, blending, skeletons, morphs, retargeting, IK
+threejs-development	threejs-assets-gltf	conditional	所選場景包含此能力：glTF, textures, compression, loading, asset rights
+threejs-development	threejs-atmosphere-aerial-perspective	conditional	所選場景包含此能力：Planetary sky and aerial perspective
+threejs-development	threejs-bloom	conditional	所選場景包含此能力：HDR bloom and selective emission
+threejs-development	threejs-cad-bim	conditional	所選場景包含此能力：CAD/BIM conversion, assemblies, metadata, measurement
+threejs-development	threejs-camera-direction	conditional	所選場景包含此能力：Camera rigs, cinematic composition, floating origins
+threejs-development	threejs-capture-recording	conditional	所選場景包含此能力：Stills, deterministic frames, video, codecs, and audio-video recording
+threejs-development	threejs-csg-modeling	conditional	所選場景包含此能力：Solid Boolean modeling, CSG topology, tolerances, cut faces
+threejs-development	threejs-data-visualization	conditional	所選場景包含此能力：3D charts, networks, volumes, and scientific analysis
+threejs-development	threejs-deformable-simulation	conditional	所選場景包含此能力：Cloth, ropes, soft bodies, strands, particles, and fluids
+threejs-development	threejs-editor-authoring	conditional	所選場景包含此能力：Runtime editors, undo, serialization, import, export, publishing
+threejs-development	threejs-exposure-color-grading	conditional	所選場景包含此能力：Exposure adaptation, tone mapping, LUT grading
+threejs-development	threejs-framework-integrations	conditional	所選場景包含此能力：Vue/TresJS, Svelte/Threlte, and other framework integration
+threejs-development	threejs-gameplay-systems	conditional	所選場景包含此能力：Core loops, entities, levels, game feel, replay
+threejs-development	threejs-geometry	conditional	所選場景包含此能力：BufferGeometry, attributes, topology, instancing
+threejs-development	threejs-image-pipeline	conditional	所選場景包含此能力：Integrated depth, normals, history, and final image
+threejs-development	threejs-interaction-input	conditional	所選場景包含此能力：Picking, pointer, touch, keyboard, controls, spatial indexes
+threejs-development	threejs-large-worlds-geospatial	conditional	所選場景包含此能力：Geographic coordinates, floating origins, tiled worlds
+threejs-development	threejs-materials-lighting	conditional	所選場景包含此能力：PBR materials, static or media textures, environments, lights
+threejs-development	threejs-math-transforms	conditional	所選場景包含此能力：Vectors, matrices, quaternions, transforms, projections
+threejs-development	threejs-navigation-crowds	conditional	所選場景包含此能力：Navmeshes, pathfinding, agents, avoidance, crowds
+threejs-development	threejs-networked-experiences	conditional	所選場景包含此能力：Replication, interpolation, prediction, authority
+threejs-development	threejs-offscreen-workers	conditional	所選場景包含此能力：OffscreenCanvas, renderer workers, message and transfer protocols
+threejs-development	threejs-parallax-occlusion-mapping	conditional	所選場景包含此能力：Height-field relief and silhouette POM
+threejs-development	threejs-path-tracing	conditional	所選場景包含此能力：Progressive path tracing, BVH light transport, convergence
+threejs-development	threejs-performance-memory	conditional	所選場景包含此能力：Profiling, spatial acceleration, adaptive quality, cleanup
+threejs-development	threejs-physics-audio	conditional	所選場景包含此能力：Legacy or explicitly combined physics-and-audio routing
+threejs-development	threejs-physics-simulation	conditional	所選場景包含此能力：Rigid bodies, colliders, fixed-step simulation, physics workers
+threejs-development	threejs-point-clouds-splats	conditional	所選場景包含此能力：Dense point clouds, scans, Gaussian splats, streaming LOD
+threejs-development	threejs-postprocessing	conditional	所選場景包含此能力：Pass graphs and screen-space effects
+threejs-development	threejs-precipitation-surfaces	conditional	所選場景包含此能力：Rain, snow, wetness, accumulation, splashes
+threejs-development	threejs-procedural-animation	conditional	所選場景包含此能力：Analytic timelines, springs, quaternions, staging
+threejs-development	threejs-procedural-architecture	conditional	所選場景包含此能力：Building grammars, façades, roofs, cities
+threejs-development	threejs-procedural-characters	conditional	所選場景包含此能力：Seeded characters, body plans, rigs, IK, character LOD
+threejs-development	threejs-procedural-fields	conditional	所選場景包含此能力：Shared scalar and vector fields
+threejs-development	threejs-procedural-geometry	conditional	所選場景包含此能力：Generated production meshes
+threejs-development	threejs-procedural-materials	conditional	所選場景包含此能力：Procedural PBR surfaces and masks
+threejs-development	threejs-procedural-planets	conditional	所選場景包含此能力：Spherical terrain, biomes, craters, orbital LOD
+threejs-development	threejs-procedural-vegetation	conditional	所選場景包含此能力：Trees, grass, ivy, wind, growth
+threejs-development	threejs-procedural-vfx	conditional	所選場景包含此能力：Particles, debris, wakes, dissolves, effect pools
+threejs-development	threejs-project-architecture	conditional	所選場景包含此能力：Modules, ownership, update phases, migration
+threejs-development	threejs-raymarched-space-effects	conditional	所選場景包含此能力：Black holes, wormholes, bounded space raymarching
+threejs-development	threejs-react-three-fiber	conditional	所選場景包含此能力：React Three Fiber and Drei integration
+threejs-development	threejs-rendering-platforms	conditional	所選場景包含此能力：WebGLRenderer, WebGPURenderer, capability fallback
+threejs-development	threejs-scene-lifecycle	conditional	所選場景包含此能力：Loop, resize, visibility, teardown, context recovery
+threejs-development	threejs-screen-space-ambient-occlusion	conditional	所選場景包含此能力：GTAO and screen-space ambient occlusion
+threejs-development	threejs-security-deployment	conditional	所選場景包含此能力：Untrusted assets, policies, production delivery
+threejs-development	threejs-shaders	conditional	所選場景包含此能力：GLSL, ShaderMaterial, uniforms, GPU computation
+threejs-development	threejs-shadow-systems	conditional	所選場景包含此能力：Cascades, clipmaps, stable large-world shadows
+threejs-development	threejs-spatial-audio	conditional	所選場景包含此能力：Listener ownership, positional audio, activation, captions
+threejs-development	threejs-spectral-ocean	conditional	所選場景包含此能力：Directional wave-spectrum oceans
+threejs-development	threejs-temporal-surfaces	conditional	所選場景包含此能力：History-driven frost, droplets, wet glass
+threejs-development	threejs-testing-debugging	conditional	所選場景包含此能力：Reproduction, diagnostics, automated and visual tests
+threejs-development	threejs-ui-overlays	conditional	所選場景包含此能力：HUDs, labels, text, DOM and world-space UI
+threejs-development	threejs-version-migration	conditional	所選場景包含此能力：Three.js release upgrades, breaking changes, deprecations, compatibility
+threejs-development	threejs-visual-validation	conditional	所選場景包含此能力：Fixed-view, seed, temporal, and GPU acceptance
+threejs-development	threejs-volumetric-clouds	conditional	所選場景包含此能力：Raymarched clouds and cloud shadows
+threejs-development	threejs-water-optics	conditional	所選場景包含此能力：Bounded and analytic water optics
+threejs-development	threejs-webgpu-tsl	conditional	所選場景包含此能力：WebGPU, TSL node materials, compute, storage, WGSL
+threejs-development	threejs-webxr-accessibility	conditional	所選場景包含此能力：WebXR sessions, immersive input, comfort, inclusive fallback
+threejs-editor-authoring	threejs-csg-modeling	conditional	Boolean operands、拓樸修復、cut-face materials 或 Boolean 匯出成為獨立子系統。
 threejs-editor-authoring	threejs-development	required	-
 threejs-framework-integrations	threejs-development	required	-
+threejs-framework-integrations	threejs-scene-lifecycle	conditional	框架承載 imperative Three.js island。
+threejs-image-pipeline	threejs-capture-recording	conditional	交付包含截圖、frame sequence、編碼、時間戳、音訊或媒體檔。
+threejs-image-pipeline	threejs-path-tracing	conditional	影像管線包含漸進式 radiance 累积、BVH light transport 或 path-traced feature 支援。
 threejs-navigation-crowds	threejs-development	required	-
 threejs-offscreen-workers	threejs-development	required	-
 threejs-path-tracing	threejs-development	required	-
+threejs-physics-audio	threejs-physics-simulation	conditional	相容入口承接剛體或合併物理音效實作；只做物理時可直接走此專項。
+threejs-physics-audio	threejs-spatial-audio	conditional	相容入口承接音效或合併物理音效實作；只做音效時可直接走此專項。
 threejs-point-clouds-splats	threejs-development	required	-
 threejs-procedural-characters	threejs-development	required	-
+threejs-project-architecture	threejs-accessibility	conditional	需定義非 XR 語意與等價輸入的具體邊界。
+threejs-project-architecture	threejs-editor-authoring	conditional	產品編輯或發佈版本化 scene documents。
+threejs-project-architecture	threejs-framework-integrations	conditional	Vue、Svelte 或其他非 React UI 框架整合。
+threejs-project-architecture	threejs-networked-experiences	conditional	state authority 跨 client／server。
+threejs-project-architecture	threejs-offscreen-workers	conditional	Worker 擁有 rendering 或延遲敏感子系統。
+threejs-project-architecture	threejs-react-three-fiber	conditional	React 擁有建立與釋放生命週期。
+threejs-project-architecture	threejs-scene-lifecycle	conditional	需具體 loop、resize、visibility、context-loss 與 cleanup 細節。
+threejs-rendering-platforms	threejs-webgpu-tsl	conditional	需要 native WebGPU、TSL、storage、compute、readback 或 WGSL 細節。
 threejs-version-migration	threejs-development	required	-
+threejs-version-migration	threejs-rendering-platforms	conditional	同時授權 WebGLRenderer 到 WebGPURenderer 的 backend 遷移。
+threejs-version-migration	threejs-webgpu-tsl	conditional	同時涉及 WebGPU／TSL backend 的具體遷移。
+threejs-visual-validation	threejs-capture-recording	conditional	交付為使用者可用的 still、frame sequence、video、audio-video 或 live stream，而非只有驗證證據。
+threejs-webxr-accessibility	threejs-accessibility	required	-
 threejs-webxr-accessibility	threejs-development	required	-
+throwaway-prototyping	code-change-workflow	conditional	The approved production version is to be implemented in an existing repository.
+throwaway-prototyping	solution-discovery	optional	-
+throwaway-prototyping	spec-flow	conditional	Prototype evidence has informed an approved production direction that needs implementation tasks.
+todo-first	multi-session-planning	conditional	The dependency and decision map spans several sessions, agents, tools, or milestones.
+todo-first	session-handoff	conditional	Non-trivial work is being transferred or paused and needs a continuation record.
+typescript-development	code-refactoring	conditional	The affected TypeScript task is behavior-preserving structural cleanup.
+typescript-development	frontend-design	conditional	The affected task creates or changes visible browser UI, components, styling, layout, controls, or interaction presentation.
+typescript-development	frontend-testing	conditional	The affected TypeScript task includes React or general frontend component tests.
+typescript-development	javascript-development	conditional	The TypeScript task also needs plain runtime behavior, asynchronous I/O, cancellation, or JavaScript interop guidance.
+typescript-development	nextjs-development	conditional	The affected TypeScript task includes Next.js routing, Server Components/Actions, caching, or route handlers.
+typescript-development	react-ui-patterns	conditional	The affected TypeScript task includes React component state or user-visible async behavior.
+typescript-development	systematic-debugging	conditional	A TypeScript compiler, build, or runtime failure has an unknown cause.
+typescript-development	test-driven-development	conditional	The affected TypeScript task requires a RED-GREEN-REFACTOR cycle.
+typescript-development	testing-strategy	conditional	The affected TypeScript task needs general test-level selection or non-UI Vitest coverage strategy.
+typescript-development	vue-composition-api	conditional	The affected TypeScript task includes Composition API, composables, or reactivity behavior.
+typescript-development	vue-development	conditional	The affected TypeScript task includes Vue SFC application behavior.
+typescript-development	vue-testing	conditional	The affected TypeScript task includes Vue component, composable, store, or route tests.
+ugc-video-ads	avatar-video-generation	conditional	AI avatar or talking-head generation
+ugc-video-ads	storyboard-creation	conditional	shot breakdowns
+ugc-video-ads	video-edit	conditional	final clip edits
+ui-styling	frontend-design	required	-
+ui-styling	shadcn-ui	conditional	When the work requires shadcn-specific component composition.
+ui-styling	tailwind-development	conditional	When the styling work requires Tailwind configuration, utility, or build mechanics.
+ui-styling	tailwind-patterns	conditional	When the styling work requires Tailwind layout or component composition patterns.
+ux-research	accessibility-testing	conditional	findings require technical accessibility verification.
+ux-research	design-consultation	conditional	Explicit research implications need visual design consultation before implementation.
+ux-research	frontend-design	conditional	Explicit research implications must become a broader visible-UI implementation.
+ux-research	product-experimentation	conditional	a causal product decision can be evaluated through a controlled experiment.
+ux-writing	brand-voice	conditional	interface copy must follow a reusable organization or product voice profile.
+ux-writing	frontend-design	conditional	copy is part of a broader visual/UI redesign.
+vercel-deployment	deployment-operations	conditional	The task includes release verification and rollback strategy.
+vercel-deployment	github-actions-ci	conditional	Deployment is driven from CI workflows.
+vercel-deployment	nextjs-development	conditional	The task includes Next.js App Router, caching, and server boundary behavior.
+vercel-deployment	observability-engineering	conditional	The task includes production logs, metrics, and alerts.
+verification-before-completion	git-operations	conditional	Required local verification has passed and the Git action is authorized.
+verification-before-completion	pipeline-review	conditional	The change needs an independent read-only acceptance gate.
+verification-before-completion	terminal-ops	optional	-
+verified-software-delivery	code-change-workflow	conditional	Owner-path and verification inspection evidence must be created or refreshed before editing.
+verified-software-delivery	deployment-operations	conditional	The task includes authorized rollout, rollback readiness, smoke checks, and post-deployment health.
+verified-software-delivery	git-operations	conditional	The task includes authorized staging, commits, branches, merges, or pushes after local verification.
+verified-software-delivery	incremental-implementation	conditional	Implementation needs new independently reviewable slices and focused verification.
+verified-software-delivery	pipeline-review	conditional	An independent review gate report is missing, incomplete, or stale for the frozen baseline.
+verified-software-delivery	receiving-code-review	conditional	Unresolved accepted, unclear, or disputed findings need triage or remediation evidence.
+verified-software-delivery	repo-ready	conditional	Repository-wide contributor, CI, security, or release hygiene is part of the requested outcome.
+verified-software-delivery	solution-discovery	conditional	The problem lacks a valid approved direction record.
+verified-software-delivery	spec-flow	conditional	Specification evidence is missing, incomplete, or needs revision.
+verified-software-delivery	subagent-architecture	optional	-
+verified-software-delivery	test-driven-development	conditional	New implementation evidence is needed and the user/repository requires TDD, or a failing regression/contract test should lead the change.
+verified-software-delivery	testing-strategy	conditional	A stage needs a proportionate verification strategy and valid existing evidence does not already settle that choice.
+verified-software-delivery	todo-first	optional	-
+verified-software-delivery	verification-before-completion	conditional	The final claim-to-evidence record is missing, incomplete, or stale for relevant code, configuration, dependencies, or environment.
+video-edit	terminal-ops	optional	-
+video-edit	video-production-workflow	conditional	a complete governed production
+video-edit	vlog-production	conditional	vlog edit structure, B-roll planning, titles, thumbnails, and platform packaging
+video-production-workflow	ai-image-prompt-design	conditional	An unresolved still-asset stage needs new visual prompts on the selected image path.
+video-production-workflow	ai-video-generation	conditional	An unresolved asset stage needs generative clips on the selected provider path.
+video-production-workflow	ai-video-prompting	conditional	An unresolved generative-clip stage needs detailed video prompt design.
+video-production-workflow	audio-generation	conditional	An unresolved sound-asset stage needs non-speech audio generation.
+video-production-workflow	audio-transcription	conditional	An unresolved stage requires speech-to-text from raw audio or video and lacks an accepted transcript.
+video-production-workflow	image-utils	conditional	An unresolved still-asset stage requires deterministic image pixel operations.
+video-production-workflow	remotion-video-toolkit	conditional	The unresolved edit stage selects deterministic React or Remotion composition and rendering.
+video-production-workflow	short-video-script	conditional	The unresolved narrative stage needs a short social script and uses the Skill path.
+video-production-workflow	storyboard-creation	conditional	The unresolved shot-planning stage uses the Skill path and lacks accepted matching storyboard artifacts.
+video-production-workflow	subtitle-captions	conditional	An unresolved stage requires same-language caption authoring, timing, format mechanics, or caption QC.
+video-production-workflow	text-to-speech	conditional	An unresolved sound-asset stage needs generated speech or voiceover.
+video-production-workflow	video-edit	conditional	The unresolved edit stage selects local existing-footage or timeline editing and versioned cuts.
+video-production-workflow	web-research-ops	conditional	An unresolved research stage needs attributable current factual or visual sources.
+visual-regression-testing	browser-compatibility-testing	conditional	The task includes cross-browser visual differences.
+visual-regression-testing	webapp-testing	optional	-
+vite	typescript-development	conditional	When the Vite work requires TypeScript configuration or typing guidance.
+vlog-production	ai-video-prompting	conditional	B-roll or scenes will be generated with AI video tools.
+vlog-production	short-video-script	conditional	short-form hooks, talking-head scripts, and caption beats.
+vlog-production	storyboard-creation	conditional	shot tables and production-ready shot planning.
+vlog-production	subtitle-captions	conditional	SRT/VTT/full caption workflows.
+vlog-production	video-edit	conditional	modifying local footage with ffmpeg or media tools.
+vue-composition-api	frontend-design	conditional	When changing visible UI or user-facing component states.
+vue-composition-api	nuxt-development	conditional	When the component or composable depends on Nuxt-specific conventions.
+vue-composition-api	typescript-development	conditional	When changing typed props, emits, composables, TypeScript SFCs, or compiler diagnostics.
+vue-composition-api	vue-debug-guides	conditional	When the task requires runtime failure diagnosis.
+vue-composition-api	vue-development	conditional	When the task needs broader Vue application-structure guidance.
+vue-debug-guides	nuxt-development	conditional	The task includes Nuxt SSR and hydration issues.
+vue-debug-guides	webapp-testing	optional	-
+vue-development	frontend-design	conditional	When the task changes a visible component, page, layout, interaction, or user-facing state.
+vue-development	pinia-state-management	conditional	When the task requires Pinia store architecture, SSR hydration, or store testing.
+vue-development	typescript-development	conditional	When the target uses TypeScript SFCs, typed props, emits or composables, vue-tsc, or compiler diagnostics.
+vue-development	vue-composition-api	conditional	When the task requires detailed Composition API or SFC macro guidance.
+vue-development	vue-router-patterns	conditional	When the task requires route records, guards, parameters, query state, or navigation lifecycle guidance.
+vue-router-patterns	frontend-design	conditional	When changing visible navigation or user-facing loading, error, or permission states.
+vue-router-patterns	pinia-state-management	conditional	When route behavior requires authentication or session-store implementation.
+vue-router-patterns	vue-debug-guides	conditional	When the task requires runtime navigation diagnosis.
+vue-testing	pinia-state-management	conditional	The affected tests also need Pinia store design decisions.
+vue-testing	testing-strategy	optional	-
+vue-testing	typescript-development	conditional	Affected Vue tests/targets use TypeScript SFCs, typed props/emits/stores/mocks, vue-tsc, or TypeScript diagnostics.
+vue-testing	webapp-testing	optional	-
+vulnerability-variant-analysis	security-scanning	conditional	The task requires work to operationalize a mature, tested query or rule in CI.
+vulnerability-variant-analysis	threat-modeling	conditional	The invariant, assets, or trust boundaries are not yet clear.
+web-page-design-to-code	design-consultation	conditional	When the page needs a bounded aesthetic plan.
+web-page-design-to-code	design-intelligence-search	conditional	When direction is unresolved and a local evidence search would improve the decision.
+web-page-design-to-code	design-system	conditional	When incomplete tokens or conflicting repository, live-page, or Figma values require a bounded token or drift receipt.
+web-page-design-to-code	figma-to-code	conditional	When an open page gate needs a bounded structured-Figma parent receipt.
+web-page-design-to-code	frontend-design	required	-
+web-page-design-to-code	frontend-stack-inference	conditional	When an existing repository needs its framework, route owner, styling system, and test surface identified.
+web-page-design-to-code	image-to-code	conditional	When an open page gate needs a bounded raster or recording parent receipt.
+web-page-design-to-code	responsive-design	conditional	When the page implementation requires non-trivial responsive reflow.
+web-page-design-to-code	taste-skill	conditional	When the page needs deeper contextual art direction or an anti-generic design review.
+web-page-design-to-code	visual-regression-testing	conditional	When the page requires deterministic image comparison or a machine-consumed visual gate.
+web-page-design-to-code	webapp-testing	required	-
+web-research-ops	agent-reach-ops	conditional	social, video, code-hosting, or RSS evidence: platform-specific collection through agent-reach-ops.
+web-research-ops	article-writing	conditional	an approved evidence set should become a sourced long-form publication.
+web-research-ops	markdown-writer	conditional	the result should become notes or documentation.
+web-research-ops	market-research	conditional	The collected source ledger must become a market, audience, competitor, positioning, launch, or investment decision memo.
+web-research-ops	skill-security-review	conditional	Use skill-security-review before adopting or executing a third-party skill, script, or provider package discovered during research.
+website-redesign-to-code	accessibility-testing	required	-
+website-redesign-to-code	design-consultation	conditional	When the site needs a bounded aesthetic plan.
+website-redesign-to-code	design-intelligence-search	conditional	When direction is unresolved and local evidence would improve the cross-site decision.
+website-redesign-to-code	design-system	conditional	When shared tokens or contracts require a bounded receipt to reconcile repository, live-site, or Figma drift.
+website-redesign-to-code	figma-to-code	conditional	When a Figma-authoritative page family needs a bounded translation receipt under the active site workflow.
+website-redesign-to-code	frontend-design	required	-
+website-redesign-to-code	frontend-stack-inference	required	-
+website-redesign-to-code	frontend-testing	required	-
+website-redesign-to-code	image-to-code	conditional	When a raster-authoritative page family needs a bounded translation receipt under the active site workflow.
+website-redesign-to-code	incremental-implementation	conditional	When the authorized redesign requires a large migration in verified slices.
+website-redesign-to-code	responsive-design	conditional	When page-family implementation requires specialist responsive reflow guidance.
+website-redesign-to-code	taste-skill	conditional	When the site needs stronger contextual art direction.
+website-redesign-to-code	visual-regression-testing	required	-
+website-redesign-to-code	webapp-testing	required	-
+word-document-ops	markdown-writer	conditional	plain-text or markdown cleanup
+word-document-ops	pdf-operations	conditional	If the target output is PDF, hand off to `pdf-operations`.
+wordpress-development	accessibility-testing	conditional	When visitor or editor interfaces need accessibility verification.
+wordpress-development	browser-compatibility-testing	conditional	When visitor or editor interfaces need cross-browser verification.
+wordpress-development	database-migration-workflow	conditional	When a large or zero-downtime schema or data migration needs staged compatibility and reconciliation.
+wordpress-development	deployment-operations	conditional	When the task requires broader release mechanisms, rollout observation, or rollback.
+wordpress-development	frontend-design	conditional	When implementing visible theme, block, or editor web UI.
+wordpress-development	frontend-testing	conditional	When visitor or editor components need functional verification.

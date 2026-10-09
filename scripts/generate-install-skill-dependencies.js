@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const fs = require('fs');
 const path = require('path');
-const { validateDependencies } = require('./lib/skill-dependencies');
+const { validateDependencies, validateRoutes } = require('./lib/skill-dependencies');
 
 function buildRows(catalog) {
   if (!catalog || !Array.isArray(catalog.skills)) throw new Error('Skill catalog must contain skills');
@@ -13,6 +13,7 @@ function buildRows(catalog) {
   const entries = Object.fromEntries(catalog.skills.map((skill) => [skill.name, skill]));
   if (Object.keys(entries).length !== catalog.skills.length) throw new Error('Duplicate Skill names');
   validateDependencies(entries);
+  validateRoutes(entries);
   return Object.keys(entries).sort().flatMap((name) => [...(entries[name].dependencies || [])]
     .sort((a, b) => a.name < b.name ? -1 : a.name > b.name ? 1 : 0)
     .map((dependency) => ({ skill: name, dependency: dependency.name, kind: dependency.kind, when: dependency.when || '-' })));

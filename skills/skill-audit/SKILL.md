@@ -17,8 +17,8 @@ Audit both whether a Skill is safe to trust and whether it changes behavior usef
 ## Workflow
 
 1. Freeze the package identity: source, revision, author, license, inventory, claimed purpose, target tools, and update history.
-2. Run or consume a current `skill-scan` report when the package is unfamiliar, third-party, or executable. Resolve high and medium signals in source context.
-3. Run `skill-lint` and separate deterministic failures from semantic findings.
+2. Require a matching scan report when the package is unfamiliar, third-party, or executable. Reuse valid evidence under the identity rules below; otherwise use `skill-scan`. Resolve high and medium signals in source context.
+3. Require a structural verdict for the exact package being audited. Reuse a matching lint report; otherwise use `skill-lint` or an available repository-native validator that covers the required structural checks. Record which checks ran and separate deterministic failures from semantic findings. If no producer is available, keep the structural gate incomplete while reporting the static audit findings that can still be established.
 4. Map capability, invocation, completion, and residue contracts from frontmatter, instructions, resources, and scripts.
 5. Compare positive, negative, and near-match requests against neighboring Skills to test selection precision.
 6. Trace every workflow branch through prerequisites, authority, actions, outputs, no-op cases, failure states, cleanup, and handoff.
@@ -26,6 +26,12 @@ Audit both whether a Skill is safe to trust and whether it changes behavior usef
 8. Test untrusted inputs for prompt injection, scope expansion, secret disclosure, unauthorized installation, contact with third parties, and exfiltration.
 9. Evaluate context cost, duplicated rules, inert instructions, negative-only guidance, portability, ownership, dependency drift, and platform-specific assumptions.
 10. Rank findings and choose keep, improve, merge, route, quarantine, reject, or accept with explicit controls.
+
+## Reusing Gate Evidence
+
+A report is reusable only when its source and revision, full package inventory and file hashes, dependency identity, inspected scope, target tool or platform, validator or review version, applicable permission boundary, and recorded verdict match the current audit. Check the current files against that identity rather than accepting a report title or timestamp. For read-only structural reports, record runtime fields as not applicable; they do not establish runtime proof.
+
+Preserve the actual command or reviewer evidence and pass, fail, blocked, or incomplete status. Reuse does not upgrade a verdict or convert an unrun check into a pass. Missing or stale evidence activates only its producer branch; it does not require every governance Skill to be installed.
 
 ## Semantic Quality Tests
 
@@ -75,7 +81,7 @@ Report:
 
 ## Handoff
 
-- Use `skill-lint` for deterministic structure checks.
+- Use `skill-lint` when a required deterministic structural verdict is missing and no equivalent repository-native result is available.
 - Use `skill-executor` for controlled runtime proof of scripts and representative tasks.
 - Use `skill-security-review` for deeper third-party and supply-chain vetting.
 - Use `skill-gap-analyzer` when the main question is upgrade, add, merge, or no action across catalogs.

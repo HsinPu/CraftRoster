@@ -11,6 +11,8 @@ metadata:
 
 Use this skill when building with shadcn/ui components.
 
+Read `frontend-design` before planning any visible production UI implementation or modification. Component inventory, installation, or tooling-only configuration may use this Skill alone.
+
 ## Workflow
 
 1. Identify the component set, layout, and theme constraints.
@@ -29,4 +31,4 @@ Use this skill when building with shadcn/ui components.
 ## Handoff
 
 - For Tailwind-specific styling rules, use `tailwind-development`.
-- For overall visual polish, use `frontend-design`.
+- For visible production UI implementation, use `frontend-design` as the baseline, including forms, dialogs, navigation, and visual polish.

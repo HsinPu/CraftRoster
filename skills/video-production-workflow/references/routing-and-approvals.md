@@ -101,8 +101,8 @@ Stop the turn at a required human gate unless the current project state records 
 When delegation is unavailable:
 
 1. Keep one current stage and one canonical artifact owner identity: `sequential-runner`.
-2. Load only the Skills needed for that stage.
-3. Complete and validate the artifact before advancing.
+2. Verify the selected Agent, Skill, or tool capability and load only the Skills needed for the unresolved stage. If a required producer is missing, name that stage and its minimum companion requirement; keep dependent work blocked while continuing independent eligible work.
+3. Reuse an accepted artifact only when its version or hash, approved input lineage, constraints, rights, acceptance evidence, and approval scope match the current project. Otherwise complete and validate the artifact before advancing. Record reuse rather than rerunning a valid producer.
 4. Record the same gates, evidence, versions, costs, and rights used in multi-agent mode.
 5. Ask for specialist review only when the risk or acceptance criteria require expertise not available in the current runtime.
 

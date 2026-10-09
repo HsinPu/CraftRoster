@@ -27,6 +27,10 @@ Use this skill when the task is about a Nuxt application rather than a plain Vue
 - Decide SSR/CSR/hybrid rendering, route rules, data fetching, caching, SEO/head, or deployment behavior.
 - Debug hydration, Nitro, runtime config, payload, or server/client boundary issues.
 
+## Implementation Baselines
+
+Read `frontend-design` before planning changes to visible pages, components, layouts, navigation, or user-facing states. Read `typescript-development` before planning `.ts` targets, TypeScript SFCs, typed server handlers, public type contracts, or compiler diagnostics. Apply each baseline only when its condition holds; JavaScript Nitro-only work with no visible UI or typed contract may use this Skill alone.
+
 ## Workflow
 
 1. Identify whether the touched code runs in Vue client code, Nuxt app context, Nitro server code, or both.
@@ -40,7 +44,7 @@ Use this skill when the task is about a Nuxt application rather than a plain Vue
 - Use `vue-development` for framework-agnostic Vue 3 component, Composition API, Pinia, or Vue Router guidance.
 - Use `vue-debug-guides` for runtime Vue warnings, hydration mismatches, or reactivity debugging.
 - Use `vite` when the issue is Vite config, plugins, dev server behavior, or build tooling.
-- Use `deployment-operations`, `vercel-deployment`, or `cloudflare-development` for platform-specific release work.
+- Use `deployment-operations` for general release and rollout operations; add `vercel-deployment` for a Vercel target or `cloudflare-development` for a Cloudflare target.
 
 ## 進階與參考（Bundled resources）
 

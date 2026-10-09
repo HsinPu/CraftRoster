@@ -13,7 +13,7 @@ metadata:
 
 ## Java Baseline Gate
 
-When distributed-system work creates or changes Java source, clients, consumers, events, resilience code, or public service contracts, read `java-development` before planning. Keep this skill responsible for service boundaries and distributed behavior while `java-development` owns Java language, API, exception, resource, and compatibility decisions.
+When distributed-system work creates or changes Java source, clients, consumers, events, resilience code, or public service contracts, read `java-development` before planning. Keep this skill responsible for service boundaries and distributed behavior while `java-development` owns Java language, API, exception, resource, and compatibility decisions. Read-only topology analysis or platform-manifest work without those Java changes may use this Skill alone.
 
 ## When To Use
 

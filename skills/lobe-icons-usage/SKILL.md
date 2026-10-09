@@ -11,6 +11,8 @@ metadata:
 
 Use this skill when a UI, document, dashboard, or product surface needs recognizable AI, model, provider, or application brand icons from the Lobe Icons ecosystem.
 
+Read `frontend-design` before integrating icons into visible production web UI. Asset selection, exported files, static documents, and native UI do not activate that web implementation baseline.
+
 ## Workflow
 
 1. Identify the target surface: React UI, React Native app, static docs, exported asset, or design system.

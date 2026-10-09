@@ -15,6 +15,8 @@ metadata:
 
 Read `java-development` when writing or fixing Java tests, changing production Java, or defining typed fixtures and public contracts. Keep this skill responsible for test levels, JUnit, assertions, mocks, containers, determinism, coverage, and architecture tests while `java-development` owns Java language, type, exception, resource, and production-code decisions.
 
+Read-only review of existing tests and results can use this Skill alone. Do not create fixtures or edit test or production code in that mode; report coverage and proof gaps. An implementation or repair request activates the baseline above. If it is unavailable, name the affected branch and continue independent review while leaving Java edits pending.
+
 ## When To Use
 
 Use this skill when the task is to write, repair, review, or improve Java tests.
@@ -25,11 +27,11 @@ Use this skill when the task is to write, repair, review, or improve Java tests.
 
 ## Workflow
 
-1. 先確認要驗證的行為、失敗案例與邊界條件。
+1. 先區分只讀 review、測試設計或 implementation/repair，再確認要驗證的行為、失敗案例與邊界條件。
 2. 選最小足夠的測試層級：pure unit、slice test、integration test、end-to-end。
-3. 先寫會失敗的測試或 regression test，再做最小實作修正。
+3. 只讀 review 核對既有測試、結果與 coverage gaps；設計模式提出測試案例。Implementation/repair 才依所選驗證策略補測試與最小修正，必要時先建立 failing/regression test。
 4. 保持測試 deterministic：固定時間、隨機值、外部 I/O、thread scheduling 與資料庫狀態。
-5. 跑最窄測試，再逐步擴大到 module / full build。
+5. 在授權執行模式跑最窄測試，再依影響擴大到 module / full build；只讀模式檢查既有結果並標明需要新執行的缺口。
 
 ## Test Level Choices
 

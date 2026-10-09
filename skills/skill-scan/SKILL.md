@@ -20,7 +20,7 @@ Inventory an unfamiliar package without executing it or following links outside 
    node scripts/scan-skill.js <skill-directory> --json
    ```
 
-3. Preserve the JSON report as evidence when a later review needs package hashes or signal locations.
+3. Preserve the JSON report as evidence when a later review needs package hashes or signal locations. Accompany it with the source revision, dependency identity, scanner version, inspected scope, target tool or platform, actual command and exit status; mark runtime checks not applicable. The bundled inventory hashes bind the inspected bytes, while the accompanying record binds their review context.
 4. Inspect every high and medium signal in source context; pattern matches are triage evidence, not proof of malicious intent.
 5. Route by disposition:
    - `stop-and-review`: do not install or execute; use `skill-security-review`.

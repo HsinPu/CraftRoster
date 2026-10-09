@@ -11,6 +11,8 @@ metadata:
 
 Turn one page from an idea, existing implementation, screenshot, or visual reference into an approved design and then into verified production code. Treat the visual mockup as an approval artifact, not as executable UI or a pixel-perfect source of text.
 
+The complete page workflow requires `frontend-design` for production implementation and `webapp-testing` for real-page verification. Install those companions with this Skill; source and direction specialists below are conditional selections. A bounded audit or source receipt may stop before implementation and testing, and does not treat installed companions as permission to advance an open checkpoint.
+
 ## Route the Request
 
 Use this workflow for one route, one page, or a small set of tightly coupled states of the same page.
@@ -22,6 +24,8 @@ Use `image-to-code` instead when an external supplied or previously approved ima
 <!-- CRAFTROSTER_CONTRACT_TEXT_START web-page-design-to-code.orchestration#source-boundary -->
 Use `figma-to-code` instead when structured Figma data is the approved primary authority, direct implementation is authorized, and no page-design gate remains open. When Figma, a screenshot, or a recording is only one input to a page redesign whose approval gate is already open, keep this workflow as the top-level orchestrator. The source workflow may own a bounded acquisition or translation receipt, but it must return that receipt here without reopening direction discovery, closing this workflow's gate, or expanding implementation scope.
 <!-- CRAFTROSTER_CONTRACT_TEXT_END web-page-design-to-code.orchestration#source-boundary -->
+
+These are two distinct source routes: an approved direct implementation with no open page gate transfers ownership to `figma-to-code` or `image-to-code`; an open page gate may invoke only the matching source workflow in `parent-receipt` mode for needed evidence, then resume here. Do not install or invoke both source workflows merely because this page workflow is selected.
 
 Before design work, lock a source-authority record: brief or current page, structured Figma, raster or recording, generated approval artifact, or an explicit hybrid. Record artifact IDs and revisions, represented state and viewport, the approval owner, conflicts between sources, and which source governs visual approval versus preserved product behavior. Do not let the most recently fetched artifact silently become authoritative.
 

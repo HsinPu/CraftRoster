@@ -1,6 +1,6 @@
 ---
 name: ai-image-prompts-skill
-description: AI image prompt library and inspiration workflow for finding, adapting, and improving text-to-image prompts across models such as Midjourney, DALL-E, Flux, Stable Diffusion, GPT Image, and similar generators. Use when the user needs prompt ideas, reusable prompt patterns, style variants, or higher-quality image-generation wording.
+description: Adapt supplied or already chosen image prompt patterns into reusable variants across image generators. Use when the user wants to reuse a prompt structure, explore style variants, or improve an existing pattern; use ai-image-prompt-design when a visual brief needs a new complete prompt.
 license: Apache-2.0
 metadata:
   author: "HsinPu"
@@ -9,7 +9,7 @@ metadata:
 
 # AI Image Prompts Skill
 
-Use this skill when the task is to improve or discover image-generation prompts.
+Use this skill when the task is to adapt an existing image-generation prompt or reusable pattern. This package does not bundle an offline prompt library. Work from supplied patterns, examples already available in the conversation, or a pattern whose source can be identified; if none is available and a full prompt must be designed from a brief, use `ai-image-prompt-design` instead.
 
 ## Workflow
 

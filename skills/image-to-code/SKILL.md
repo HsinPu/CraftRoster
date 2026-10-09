@@ -80,6 +80,8 @@ Choose one ownership mode before analysis:
 When an open parent gate is known but the mode is not explicit, default to parent-orchestrated receipt mode. The routing options above become recommendations returned to the parent rather than direct handoffs.
 <!-- CRAFTROSTER_CONTRACT_TEXT_END image-to-code.execution#ownership -->
 
+Here, standalone describes workflow ownership, not dependency-free installation. Production implementation loads `frontend-design` for the UI baseline and `visual-regression-testing` for the render-and-compare gate. Parent-receipt mode returns the bounded evidence contract before code, visual repair, or interface verification; installed companions do not authorize those later stages.
+
 ## Non-Negotiable Contract
 
 - Any standalone implementation result must remain editable UI, not a screenshot used as a page background; a parent-orchestrated result is a receipt, not an implementation.
@@ -107,7 +109,7 @@ Record:
 - must-preserve content, behavior, accessibility, and design-system contracts;
 - allowed visual tolerance and any deadline or dependency constraints.
 
-For an existing repository, inspect its instructions and use stack inference before selecting implementation techniques. For a standalone artifact with no stated stack, default to semantic HTML, CSS, and minimal JavaScript.
+For an existing repository, inspect its instructions and read `frontend-stack-inference` before selecting implementation techniques. For a standalone artifact with no stated stack, default to semantic HTML, CSS, and minimal JavaScript.
 
 ### 2. Analyze the Visual Evidence at Three Levels
 

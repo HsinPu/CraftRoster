@@ -31,7 +31,7 @@ Use this reference when the work centers on extracting data from web pages, feed
 
 ## 邊界與分工
 
-- 用 `webapp-testing` 處理需要點擊、登入、截圖、DOM 驗證的 browser workflow。
+- 用 `browser-automation` 或 `playwright-automation` 處理需要授權點擊、登入狀態或 JS rendering 的資料擷取；只在成果是本機應用驗證或 UI debugging 時使用 `webapp-testing`。
 - 用 `python-data-engineering` 處理擷取後的清理、join、聚合與資料管線。
 - 用 `python-development` 處理一般 Python 架構、包裝與風格。
 - 這份參考專注在抓取、解析、分頁、去重與輸出。
@@ -42,7 +42,7 @@ Use this reference when the work centers on extracting data from web pages, feed
 
 - 先找 API、feed、site map、export 或公開 JSON endpoint。
 - 若 HTML 已足夠，就不要升級到 browser automation。
-- 若頁面高度依賴 JS、登入狀態或互動流程，再改用 `webapp-testing`。
+- 若頁面高度依賴 JS、登入狀態或互動流程，再選擇可用的 `browser-automation` 或 `playwright-automation` 擷取路徑。
 - 抓取前先定義輸出 schema 與唯一識別鍵。
 
 ---
@@ -105,7 +105,7 @@ def parse_links(html: str, base_url: str) -> list[dict[str, str]]:
 ## 動態頁面
 
 - 優先抓 network 可見的 JSON API 或頁面內嵌資料。
-- 若一定要 browser，優先轉交給 `webapp-testing`。
+- 若一定要 browser，轉交給 `browser-automation` 或 `playwright-automation`；擷取資料本身不代表要啟動本機應用 QA。
 - 不要把 browser automation 當作默認策略。
 
 ---

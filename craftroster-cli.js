@@ -588,13 +588,18 @@ function showInfo(skillName) {
     ? `\n相近 Skill 選擇:\n${routing.join('\n')}\n`
     : '';
   const dependencySection = (skill.dependencies || []).length
-    ? `\n安裝依賴:\n${skill.dependencies.map((dependency) => dependency.kind === 'required'
+    ? `\n安裝依賴:\n${skill.dependencies.map((dependency) => (dependency.kind === 'required'
       ? `  [必要，自動安裝] ${dependency.name}`
       : dependency.kind === 'conditional'
         ? `  [條件，不自動安裝] ${dependency.name}: ${dependency.when}`
         : dependency.kind === 'optional'
           ? `  [可選，不自動安裝] ${dependency.name}`
-          : `  [未知依賴類型] ${dependency.name}`).join('\n')}\n`
+          : `  [未知依賴類型] ${dependency.name}`) + (dependency.usage === 'resource'
+            ? ' [共用資源；不啟用入口流程]' : '')).join('\n')}\n`
+    : '';
+  const routeSection = (skill.routes || []).length
+    ? `\n轉交與相關 Skill（不自動安裝）:\n${skill.routes.map((route) =>
+      `  [${route.kind === 'alternative' ? '改用' : '相關'}] ${route.name}: ${route.when}`).join('\n')}\n`
     : '';
 
   console.log(`
@@ -606,7 +611,7 @@ ${skill.description}
 來源: ${skill.source}
 授權: ${skill.license}
 標籤: ${skill.tags ? skill.tags.join(', ') : '無'}
-${dependencySection}${routingSection}
+${dependencySection}${routeSection}${routingSection}
 
 免 Node 安裝:
   powershell -ExecutionPolicy Bypass -NoProfile -Command '$s = irm https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/install.ps1; & ([scriptblock]::Create($s)) -Agent codex -Skill ${skill.name}'

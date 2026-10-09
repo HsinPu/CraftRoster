@@ -1,0 +1,4675 @@
+{
+  "version": "2.0.0",
+  "updated": "2026-08-28T00:00:00Z",
+  "categories": [
+    {
+      "id": "workflow-planning",
+      "name": "Workflow & Planning",
+      "description": "Task planning, requirements clarification, staged implementation, context continuity, handoff, and delivery orchestration."
+    },
+    {
+      "id": "software-engineering",
+      "name": "Software Engineering",
+      "description": "Core coding practices, architecture, language development, refactoring, version control, and maintainability."
+    },
+    {
+      "id": "frontend-design",
+      "name": "Frontend & Design",
+      "description": "Web frontend development, visual direction, design systems, responsive UI, interaction patterns, and design-to-code."
+    },
+    {
+      "id": "threejs-graphics",
+      "name": "Three.js & 3D Graphics",
+      "description": "Three.js application architecture, rendering, assets, interaction, simulation, advanced graphics, validation, performance, accessibility, and production delivery."
+    },
+    {
+      "id": "backend-data",
+      "name": "Backend & Data",
+      "description": "Backend services, APIs, databases, persistence, data engineering, distributed workflows, and migrations."
+    },
+    {
+      "id": "ai-llm",
+      "name": "AI & LLM",
+      "description": "LLM application development, OpenAI APIs, retrieval, evaluation, and AI delivery workflows."
+    },
+    {
+      "id": "mobile-desktop",
+      "name": "Mobile & Desktop",
+      "description": "Native, cross-platform, desktop application development, packaging, and store release."
+    },
+    {
+      "id": "testing-quality",
+      "name": "Testing & Quality",
+      "description": "Testing strategy, implementation review, debugging, accessibility, compatibility, regression, and completion evidence."
+    },
+    {
+      "id": "security-governance",
+      "name": "Security & Governance",
+      "description": "Security analysis, hardening, scanning, threat modeling, reverse engineering, policy, and approval controls."
+    },
+    {
+      "id": "cloud-devops",
+      "name": "Cloud & DevOps",
+      "description": "Deployment, CI, cloud platforms, infrastructure, containers, observability, operations, and incident response."
+    },
+    {
+      "id": "agent-skill-tooling",
+      "name": "Agent & Skill Tooling",
+      "description": "Agent, Skill, and MCP creation, discovery, validation, execution, governance, and release tooling."
+    },
+    {
+      "id": "browser-automation",
+      "name": "Browser & Automation",
+      "description": "Static web extraction, browser control, Playwright automation, and repeatable web operations."
+    },
+    {
+      "id": "media-creative",
+      "name": "Media & Creative",
+      "description": "Image, audio, video, animation, prompting, editing, production, and creative asset workflows."
+    },
+    {
+      "id": "writing-content",
+      "name": "Writing & Content",
+      "description": "User-facing writing, technical documentation, brand voice, long-form content, editing, and repurposing."
+    },
+    {
+      "id": "research-product",
+      "name": "Research & Product",
+      "description": "Evidence gathering, market research, solution discovery, design intelligence, and experimentation."
+    },
+    {
+      "id": "documents-productivity",
+      "name": "Documents & Productivity",
+      "description": "File organization, office documents, spreadsheets, presentations, PDFs, diagrams, and workspace operations."
+    }
+  ],
+  "skills": {
+    "accessibility-testing": {
+      "category": "testing-quality",
+      "tags": [
+        "accessibility",
+        "wcag",
+        "screen-reader",
+        "keyboard",
+        "testing"
+      ]
+    },
+    "agent-action-governance": {
+      "category": "security-governance",
+      "tags": [
+        "agents",
+        "governance",
+        "policy",
+        "approvals",
+        "signed-receipts"
+      ]
+    },
+    "agent-creator-design": {
+      "category": "agent-skill-tooling",
+      "tags": [
+        "agent",
+        "system-prompt",
+        "design"
+      ]
+    },
+    "agent-instructions-authoring": {
+      "category": "agent-skill-tooling",
+      "tags": [
+        "agent-instructions",
+        "agents",
+        "repo-guidance",
+        "codex",
+        "cursor",
+        "claude",
+        "copilot",
+        "gemini",
+        "skills"
+      ]
+    },
+    "agent-introspection-debugging": {
+      "category": "agent-skill-tooling",
+      "tags": [
+        "agents",
+        "debugging",
+        "tracing",
+        "handoffs",
+        "evals"
+      ]
+    },
+    "agent-reach-ops": {
+      "category": "browser-automation",
+      "tags": [
+        "research",
+        "search",
+        "transcript",
+        "social",
+        "rss",
+        "platform-evidence",
+        "provenance",
+        "source-lineage"
+      ]
+    },
+    "agents-sdk-development": {
+      "category": "agent-skill-tooling",
+      "tags": [
+        "openai",
+        "agents-sdk",
+        "agents",
+        "tools",
+        "handoffs",
+        "guardrails",
+        "tracing"
+      ]
+    },
+    "ai-image-prompt-design": {
+      "category": "media-creative",
+      "tags": [
+        "image-generation",
+        "prompt-design",
+        "flux",
+        "midjourney",
+        "stable-diffusion",
+        "art-direction"
+      ]
+    },
+    "ai-image-prompts-skill": {
+      "category": "media-creative",
+      "tags": [
+        "image-prompts",
+        "prompt-library",
+        "text-to-image",
+        "midjourney",
+        "dalle",
+        "flux"
+      ]
+    },
+    "ai-video-generation": {
+      "category": "media-creative",
+      "tags": [
+        "ai-video",
+        "text-to-video",
+        "image-to-video",
+        "sora",
+        "veo",
+        "runway"
+      ]
+    },
+    "ai-video-prompting": {
+      "category": "media-creative",
+      "tags": [
+        "ai-video",
+        "prompting",
+        "cinematography",
+        "camera",
+        "motion"
+      ]
+    },
+    "animation-best-practices": {
+      "category": "frontend-design",
+      "tags": [
+        "animation",
+        "motion",
+        "transitions",
+        "hover",
+        "buttons",
+        "ui"
+      ]
+    },
+    "answer-writing": {
+      "category": "writing-content",
+      "tags": [
+        "writing",
+        "communication",
+        "templates",
+        "support"
+      ]
+    },
+    "api-contract-design": {
+      "category": "backend-data",
+      "tags": [
+        "api",
+        "contracts",
+        "versioning",
+        "compatibility"
+      ]
+    },
+    "api-contract-testing": {
+      "category": "testing-quality",
+      "tags": [
+        "api",
+        "contract-testing",
+        "compatibility",
+        "consumer-driven"
+      ]
+    },
+    "api-doc-comments": {
+      "category": "writing-content",
+      "tags": [
+        "docstrings",
+        "javadoc",
+        "tsdoc",
+        "api-docs",
+        "documentation-comments"
+      ]
+    },
+    "app-store-release": {
+      "category": "mobile-desktop",
+      "tags": [
+        "app-store",
+        "google-play",
+        "testflight",
+        "mobile",
+        "release",
+        "privacy",
+        "review"
+      ]
+    },
+    "article-writing": {
+      "category": "writing-content",
+      "tags": [
+        "article",
+        "long-form",
+        "editorial",
+        "fact-checking"
+      ]
+    },
+    "ask-questions-if-underspecified": {
+      "category": "workflow-planning",
+      "tags": [
+        "clarification",
+        "requirements",
+        "workflow"
+      ]
+    },
+    "audio-generation": {
+      "category": "media-creative",
+      "tags": [
+        "audio",
+        "music-generation",
+        "sound-effects",
+        "text-to-audio",
+        "media"
+      ]
+    },
+    "audio-transcription": {
+      "category": "media-creative",
+      "tags": [
+        "audio",
+        "transcription",
+        "speech-to-text",
+        "diarization",
+        "whisper"
+      ]
+    },
+    "auth-integration": {
+      "category": "backend-data",
+      "tags": [
+        "auth",
+        "oauth",
+        "oidc",
+        "sessions",
+        "cookies",
+        "authorization",
+        "security"
+      ]
+    },
+    "autoresearch": {
+      "category": "research-product",
+      "tags": [
+        "experimentation",
+        "optimization",
+        "metrics",
+        "automation"
+      ]
+    },
+    "avatar-video-generation": {
+      "category": "media-creative",
+      "tags": [
+        "avatar",
+        "talking-head",
+        "lipsync",
+        "heygen",
+        "digital-human"
+      ]
+    },
+    "aws-operations": {
+      "category": "cloud-devops",
+      "tags": [
+        "aws",
+        "iam",
+        "lambda",
+        "s3",
+        "cloudfront",
+        "cdk",
+        "operations"
+      ]
+    },
+    "baoyu-image-gen": {
+      "category": "media-creative",
+      "tags": [
+        "image-generation",
+        "text-to-image",
+        "openai",
+        "google",
+        "dashscope",
+        "reference-image"
+      ]
+    },
+    "brand-voice": {
+      "category": "writing-content",
+      "tags": [
+        "brand",
+        "voice",
+        "tone",
+        "writing"
+      ]
+    },
+    "browser-automation": {
+      "category": "browser-automation",
+      "tags": [
+        "browser",
+        "automation",
+        "playwright",
+        "scraping",
+        "screenshots"
+      ]
+    },
+    "browser-compatibility-testing": {
+      "category": "testing-quality",
+      "tags": [
+        "cross-browser",
+        "compatibility",
+        "browserstack",
+        "safari",
+        "firefox",
+        "mobile"
+      ]
+    },
+    "chrome-devtools-debugging": {
+      "category": "testing-quality",
+      "tags": [
+        "chrome-devtools",
+        "cdp",
+        "debugging",
+        "network",
+        "performance",
+        "console"
+      ]
+    },
+    "cloudflare-development": {
+      "category": "cloud-devops",
+      "tags": [
+        "cloudflare",
+        "workers",
+        "pages",
+        "d1",
+        "r2",
+        "kv",
+        "durable-objects"
+      ]
+    },
+    "code-change-workflow": {
+      "category": "workflow-planning",
+      "tags": [
+        "code-change",
+        "workflow",
+        "implementation",
+        "analysis",
+        "call-chain",
+        "data-flow",
+        "verification"
+      ]
+    },
+    "code-refactoring": {
+      "category": "software-engineering",
+      "tags": [
+        "refactoring",
+        "code-quality",
+        "clean-code",
+        "magic-values",
+        "magic-numbers",
+        "hardcoded-values",
+        "constants"
+      ]
+    },
+    "code-review": {
+      "category": "testing-quality",
+      "tags": [
+        "code-review",
+        "diff",
+        "pull-request",
+        "read-only",
+        "evidence",
+        "findings",
+        "security",
+        "best-practices",
+        "testing",
+        "architecture"
+      ]
+    },
+    "coding-standards": {
+      "category": "software-engineering",
+      "tags": [
+        "coding-standards",
+        "typescript",
+        "javascript",
+        "react",
+        "nodejs",
+        "eslint",
+        "prettier",
+        "testing",
+        "accessibility",
+        "security",
+        "hardcoded-values",
+        "constants",
+        "configuration"
+      ]
+    },
+    "color-font-skill": {
+      "category": "frontend-design",
+      "tags": [
+        "color",
+        "palette",
+        "typography",
+        "fonts",
+        "theme",
+        "branding"
+      ]
+    },
+    "command-palette": {
+      "category": "frontend-design",
+      "tags": [
+        "command-palette",
+        "launcher",
+        "fuzzy-search",
+        "keyboard",
+        "navigation",
+        "ui"
+      ]
+    },
+    "content-repurposing": {
+      "category": "writing-content",
+      "tags": [
+        "content",
+        "repurposing",
+        "channels",
+        "campaign"
+      ]
+    },
+    "context-governance": {
+      "category": "workflow-planning",
+      "tags": [
+        "context",
+        "memory",
+        "lessons",
+        "governance"
+      ]
+    },
+    "css-development": {
+      "category": "frontend-design",
+      "tags": [
+        "css",
+        "frontend",
+        "threejs",
+        "canvas",
+        "html-overlays",
+        "responsive",
+        "flexbox",
+        "grid",
+        "tokens",
+        "architecture"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "conditional",
+          "when": "CSS affects a Three.js canvas, renderer sizing, HUD, projected labels, or pointer integration."
+        }
+      ]
+    },
+    "dashboard-design": {
+      "category": "frontend-design",
+      "tags": [
+        "dashboard",
+        "layout",
+        "cards",
+        "kpi",
+        "analytics",
+        "hierarchy"
+      ]
+    },
+    "data-organization-system": {
+      "category": "documents-productivity",
+      "tags": [
+        "data-organization",
+        "taxonomy",
+        "metadata",
+        "lifecycle",
+        "knowledge-management"
+      ]
+    },
+    "data-pipeline-orchestration": {
+      "category": "backend-data",
+      "tags": [
+        "data-engineering",
+        "airflow",
+        "dbt",
+        "spark",
+        "data-quality"
+      ]
+    },
+    "database-design": {
+      "category": "backend-data",
+      "tags": [
+        "database",
+        "sql",
+        "schema",
+        "postgresql",
+        "mysql"
+      ]
+    },
+    "database-migration-workflow": {
+      "category": "backend-data",
+      "tags": [
+        "database",
+        "migration",
+        "zero-downtime",
+        "backfill",
+        "recovery"
+      ]
+    },
+    "deployment-operations": {
+      "category": "cloud-devops",
+      "tags": [
+        "deployment",
+        "release",
+        "rollback",
+        "smoke-test"
+      ]
+    },
+    "design-consultation": {
+      "category": "frontend-design",
+      "tags": [
+        "design",
+        "color",
+        "typography",
+        "layout",
+        "buttons",
+        "theme"
+      ]
+    },
+    "design-intelligence-search": {
+      "category": "research-product",
+      "tags": [
+        "design-intelligence",
+        "search",
+        "ui",
+        "ux",
+        "visual-direction",
+        "accessibility",
+        "data-visualization",
+        "local-dataset"
+      ]
+    },
+    "design-system": {
+      "category": "frontend-design",
+      "tags": [
+        "design-system",
+        "tokens",
+        "audit",
+        "visual-audit",
+        "slop-check",
+        "preview",
+        "css",
+        "tailwind",
+        "react",
+        "vue",
+        "design-context",
+        "provenance",
+        "dtcg",
+        "live-extraction",
+        "drift",
+        "cross-platform"
+      ]
+    },
+    "design-system-patterns": {
+      "category": "frontend-design",
+      "tags": [
+        "design-system",
+        "tokens",
+        "theming",
+        "components",
+        "architecture",
+        "theme-switching"
+      ]
+    },
+    "desktop-development": {
+      "category": "mobile-desktop",
+      "tags": [
+        "electron",
+        "desktop",
+        "ipc",
+        "preload",
+        "windows"
+      ]
+    },
+    "docker-development": {
+      "category": "cloud-devops",
+      "tags": [
+        "docker",
+        "containers",
+        "dockerfile",
+        "compose",
+        "images"
+      ]
+    },
+    "document-to-markdown": {
+      "category": "documents-productivity",
+      "tags": [
+        "markdown",
+        "documents",
+        "conversion",
+        "docx",
+        "pdf",
+        "pptx",
+        "html",
+        "google-docs",
+        "marker",
+        "ocr",
+        "gfm"
+      ]
+    },
+    "domain-modeling": {
+      "category": "software-engineering",
+      "tags": [
+        "domain-modeling",
+        "ubiquitous-language",
+        "invariants",
+        "bounded-contexts",
+        "state-transitions"
+      ]
+    },
+    "downloads-desktop-cleanup": {
+      "category": "documents-productivity",
+      "tags": [
+        "downloads",
+        "desktop",
+        "file-management",
+        "cleanup",
+        "disk-hygiene"
+      ]
+    },
+    "drawio-skill": {
+      "category": "documents-productivity",
+      "tags": [
+        "diagram",
+        "drawio",
+        "visuals",
+        "architecture"
+      ]
+    },
+    "e2e-testing-patterns": {
+      "category": "testing-quality",
+      "tags": [
+        "e2e",
+        "testing",
+        "playwright",
+        "cypress",
+        "flakiness"
+      ]
+    },
+    "event-sourcing-cqrs": {
+      "category": "backend-data",
+      "tags": [
+        "event-sourcing",
+        "cqrs",
+        "event-store",
+        "projections",
+        "replay"
+      ]
+    },
+    "figma-to-code": {
+      "category": "frontend-design",
+      "tags": [
+        "figma",
+        "design-to-code",
+        "frontend",
+        "design-context",
+        "components",
+        "tokens",
+        "assets",
+        "visual-fidelity"
+      ]
+    },
+    "file-organizer": {
+      "category": "documents-productivity",
+      "tags": [
+        "file-management",
+        "organization",
+        "cleanup"
+      ]
+    },
+    "firebase-development": {
+      "category": "backend-data",
+      "tags": [
+        "firebase",
+        "firestore",
+        "auth",
+        "security-rules",
+        "cloud-functions",
+        "storage",
+        "emulator"
+      ]
+    },
+    "flutter-development": {
+      "category": "mobile-desktop",
+      "tags": [
+        "flutter",
+        "dart",
+        "mobile",
+        "widgets",
+        "state-management",
+        "testing",
+        "release"
+      ]
+    },
+    "folder-structure-cleanup": {
+      "category": "documents-productivity",
+      "tags": [
+        "folders",
+        "directory-tree",
+        "organization",
+        "archive",
+        "cleanup"
+      ]
+    },
+    "frontend-code-review": {
+      "category": "testing-quality",
+      "tags": [
+        "frontend",
+        "review",
+        "react",
+        "typescript",
+        "ui",
+        "accessibility",
+        "performance"
+      ],
+      "dependencies": [
+        {
+          "name": "code-review",
+          "kind": "required"
+        }
+      ]
+    },
+    "frontend-design": {
+      "category": "frontend-design",
+      "tags": [
+        "frontend",
+        "design",
+        "threejs",
+        "3d-web",
+        "html",
+        "react",
+        "css",
+        "ui",
+        "state-management",
+        "component-architecture"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "conditional",
+          "when": "The requested or affected surface includes a Three.js or 3D scene; unrelated DOM and styling work does not qualify."
+        }
+      ]
+    },
+    "frontend-design-review": {
+      "category": "testing-quality",
+      "tags": [
+        "frontend",
+        "design-review",
+        "ui",
+        "accessibility",
+        "design-system",
+        "responsive",
+        "review",
+        "production-audit",
+        "ux-review"
+      ]
+    },
+    "frontend-stack-inference": {
+      "category": "frontend-design",
+      "tags": [
+        "frontend",
+        "tech-stack",
+        "inference",
+        "jquery",
+        "bootstrap",
+        "migration",
+        "audit"
+      ]
+    },
+    "frontend-testing": {
+      "category": "testing-quality",
+      "tags": [
+        "frontend",
+        "testing",
+        "react",
+        "rtl",
+        "vitest"
+      ]
+    },
+    "git-advanced": {
+      "category": "software-engineering",
+      "tags": [
+        "git",
+        "advanced",
+        "rebase",
+        "bisect",
+        "worktree",
+        "recovery"
+      ]
+    },
+    "git-operations": {
+      "category": "software-engineering",
+      "tags": [
+        "git",
+        "version-control",
+        "workflow"
+      ]
+    },
+    "git-readme-writer": {
+      "category": "writing-content",
+      "tags": [
+        "markdown",
+        "documentation",
+        "readme",
+        "git",
+        "github",
+        "gerrit"
+      ],
+      "dependencies": [
+        {
+          "name": "markdown-writer",
+          "kind": "conditional",
+          "when": "Markdown syntax or formatting conventions need specialist guidance."
+        }
+      ]
+    },
+    "github-actions-ci": {
+      "category": "cloud-devops",
+      "tags": [
+        "github-actions",
+        "ci",
+        "workflow",
+        "yaml",
+        "automation"
+      ]
+    },
+    "github-code-review": {
+      "category": "testing-quality",
+      "tags": [
+        "github",
+        "pull-request",
+        "review",
+        "diff",
+        "checks",
+        "gh"
+      ],
+      "dependencies": [
+        {
+          "name": "code-review",
+          "kind": "required"
+        }
+      ]
+    },
+    "github-inline-review": {
+      "category": "testing-quality",
+      "tags": [
+        "github",
+        "pull-request",
+        "code-review",
+        "inline-comments",
+        "suggestions",
+        "gh-cli"
+      ]
+    },
+    "github-operations": {
+      "category": "cloud-devops",
+      "tags": [
+        "github",
+        "gh",
+        "pull-requests",
+        "issues",
+        "ci",
+        "api"
+      ]
+    },
+    "hotkey": {
+      "category": "frontend-design",
+      "tags": [
+        "keyboard",
+        "hotkeys",
+        "shortcuts",
+        "keybindings",
+        "react",
+        "frontend"
+      ]
+    },
+    "humanizer": {
+      "category": "writing-content",
+      "tags": [
+        "writing",
+        "editing",
+        "tone",
+        "copy"
+      ]
+    },
+    "i18n-localization": {
+      "category": "software-engineering",
+      "tags": [
+        "i18n",
+        "localization",
+        "translation",
+        "locale",
+        "rtl"
+      ]
+    },
+    "image-to-code": {
+      "category": "frontend-design",
+      "tags": [
+        "image-to-code",
+        "screenshot",
+        "mockup",
+        "frontend",
+        "responsive",
+        "visual-fidelity",
+        "accessibility",
+        "screen-recording",
+        "multi-state"
+      ],
+      "dependencies": [
+        {
+          "name": "image-to-code-assets",
+          "kind": "conditional",
+          "when": "Independent asset exports, transparency, density variants, bounding boxes, or a Figma-layer handoff are requested."
+        }
+      ]
+    },
+    "image-to-code-assets": {
+      "category": "frontend-design",
+      "tags": [
+        "image-to-code",
+        "asset-extraction",
+        "transparent-png",
+        "webp",
+        "density",
+        "bounding-box",
+        "manifest",
+        "figma-handoff"
+      ]
+    },
+    "image-utils": {
+      "category": "media-creative",
+      "tags": [
+        "image-processing",
+        "resize",
+        "crop",
+        "conversion",
+        "optimization",
+        "post-processing"
+      ]
+    },
+    "incident-response-postmortems": {
+      "category": "cloud-devops",
+      "tags": [
+        "incident-response",
+        "postmortem",
+        "root-cause",
+        "operations"
+      ]
+    },
+    "incremental-implementation": {
+      "category": "workflow-planning",
+      "tags": [
+        "incremental",
+        "implementation",
+        "refactoring",
+        "small-slices",
+        "verification",
+        "commits",
+        "rollback"
+      ]
+    },
+    "interaction-patterns": {
+      "category": "frontend-design",
+      "tags": [
+        "navigation",
+        "scroll",
+        "tabs",
+        "transitions",
+        "overflow",
+        "ui"
+      ]
+    },
+    "ios-architecture": {
+      "category": "mobile-desktop",
+      "tags": [
+        "ios",
+        "swift",
+        "architecture",
+        "swiftui",
+        "uikit",
+        "mvvm",
+        "mvi",
+        "tca",
+        "clean-architecture",
+        "coordinator",
+        "dependency-injection",
+        "concurrency"
+      ]
+    },
+    "java-architecture": {
+      "category": "software-engineering",
+      "tags": [
+        "java",
+        "architecture",
+        "clean-architecture",
+        "clean",
+        "hexagonal",
+        "ddd",
+        "microservices",
+        "spring",
+        "package",
+        "module",
+        "refactor"
+      ],
+      "dependencies": [
+        {
+          "name": "java-development",
+          "kind": "conditional",
+          "when": "Implementation or migration planning requires this Java baseline or its testing contract; current-state assessment can remain standalone."
+        },
+        {
+          "name": "java-testing",
+          "kind": "conditional",
+          "when": "Implementation or migration planning requires this Java baseline or its testing contract; current-state assessment can remain standalone."
+        }
+      ]
+    },
+    "java-development": {
+      "category": "software-engineering",
+      "tags": [
+        "java",
+        "code",
+        "write",
+        "modify",
+        "fix",
+        "review",
+        "refactor",
+        "test",
+        "program",
+        "implementation",
+        "source",
+        "class",
+        "method",
+        "exception",
+        "stacktrace",
+        "javac",
+        "public-api",
+        "generics",
+        "records",
+        "sealed",
+        "concurrency",
+        "spring",
+        "boot",
+        "endpoint",
+        "junit",
+        "jpa",
+        "repository",
+        "mybatis",
+        "mapper",
+        "architecture",
+        "clean-architecture",
+        "code-style",
+        "design-patterns"
+      ]
+    },
+    "java-testing": {
+      "category": "testing-quality",
+      "tags": [
+        "java",
+        "testing",
+        "junit",
+        "mockito",
+        "spring",
+        "testcontainers",
+        "jacoco",
+        "archunit",
+        "tdd",
+        "test",
+        "regression",
+        "flaky"
+      ]
+    },
+    "javascript-development": {
+      "category": "software-engineering",
+      "tags": [
+        "javascript",
+        "nodejs",
+        "browser",
+        "threejs",
+        "canvas",
+        "code-style",
+        "async",
+        "security",
+        "testing"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "conditional",
+          "when": "The affected task requires this TypeScript or Three.js specialist; unrelated repository dependencies do not qualify."
+        },
+        {
+          "name": "typescript-development",
+          "kind": "conditional",
+          "when": "The affected task requires this TypeScript or Three.js specialist; unrelated repository dependencies do not qualify."
+        }
+      ]
+    },
+    "jpa-hibernate-development": {
+      "category": "backend-data",
+      "tags": [
+        "java",
+        "jpa",
+        "hibernate",
+        "spring-data",
+        "persistence",
+        "database",
+        "performance",
+        "repository",
+        "entity",
+        "transaction",
+        "n-plus-one",
+        "testcontainers"
+      ]
+    },
+    "jquery-4-migration": {
+      "category": "software-engineering",
+      "tags": [
+        "jquery",
+        "jquery4",
+        "migration",
+        "upgrade",
+        "legacy",
+        "wordpress",
+        "ajax"
+      ]
+    },
+    "jquery-development": {
+      "category": "software-engineering",
+      "tags": [
+        "jquery",
+        "dom",
+        "ajax",
+        "legacy",
+        "security",
+        "xss",
+        "upgrade",
+        "migration"
+      ]
+    },
+    "jquery-version-migration": {
+      "category": "software-engineering",
+      "tags": [
+        "jquery",
+        "jquery1",
+        "jquery2",
+        "jquery3",
+        "jquery4",
+        "migration",
+        "legacy",
+        "plugins"
+      ]
+    },
+    "jvm-build-tooling": {
+      "category": "software-engineering",
+      "tags": [
+        "java",
+        "jvm",
+        "maven",
+        "gradle",
+        "build",
+        "dependencies",
+        "dependency",
+        "plugin",
+        "toolchain",
+        "wrapper",
+        "ci"
+      ]
+    },
+    "karpathy-guidelines": {
+      "category": "software-engineering",
+      "tags": [
+        "coding-guidelines",
+        "llm",
+        "simplicity",
+        "refactoring",
+        "code-review",
+        "verification",
+        "workflow"
+      ]
+    },
+    "kubernetes-operations": {
+      "category": "cloud-devops",
+      "tags": [
+        "kubernetes",
+        "k8s",
+        "kubectl",
+        "deployment",
+        "operations"
+      ]
+    },
+    "legacy-frontend-modernization": {
+      "category": "frontend-design",
+      "tags": [
+        "frontend",
+        "legacy",
+        "modernization",
+        "jquery",
+        "migration",
+        "refactoring",
+        "typescript"
+      ]
+    },
+    "llm-application-delivery-workflow": {
+      "category": "ai-llm",
+      "tags": [
+        "llm",
+        "agents",
+        "rag",
+        "delivery",
+        "release-gates"
+      ]
+    },
+    "llm-evals": {
+      "category": "ai-llm",
+      "tags": [
+        "llm",
+        "evals",
+        "graders",
+        "regression",
+        "rag",
+        "agents",
+        "quality"
+      ]
+    },
+    "lobe-icons-usage": {
+      "category": "frontend-design",
+      "tags": [
+        "lobehub",
+        "icons",
+        "ai-icons",
+        "llm",
+        "react",
+        "svg"
+      ]
+    },
+    "lobe-ui-development": {
+      "category": "frontend-design",
+      "tags": [
+        "lobehub",
+        "lobe-ui",
+        "react",
+        "nextjs",
+        "antd",
+        "aigc"
+      ]
+    },
+    "logging-patterns": {
+      "category": "software-engineering",
+      "tags": [
+        "logging",
+        "observability",
+        "code-style",
+        "debugging"
+      ]
+    },
+    "logo-design": {
+      "category": "media-creative",
+      "tags": [
+        "logo",
+        "branding",
+        "svg",
+        "visual-identity",
+        "design"
+      ]
+    },
+    "markdown-writer": {
+      "category": "writing-content",
+      "tags": [
+        "markdown",
+        "documentation",
+        "readme"
+      ]
+    },
+    "market-research": {
+      "category": "research-product",
+      "tags": [
+        "market-research",
+        "competitors",
+        "evidence",
+        "decision-memo"
+      ]
+    },
+    "mcp-creator-design": {
+      "category": "agent-skill-tooling",
+      "tags": [
+        "mcp",
+        "api",
+        "integration",
+        "python",
+        "typescript"
+      ]
+    },
+    "mcp-ops": {
+      "category": "agent-skill-tooling",
+      "tags": [
+        "mcp",
+        "cli",
+        "tools",
+        "auth",
+        "codegen"
+      ]
+    },
+    "mobile-app-testing": {
+      "category": "testing-quality",
+      "tags": [
+        "mobile",
+        "testing",
+        "ios",
+        "android",
+        "maestro",
+        "appium",
+        "detox"
+      ]
+    },
+    "mongodb-development": {
+      "category": "backend-data",
+      "tags": [
+        "mongodb",
+        "atlas",
+        "document-database",
+        "indexes",
+        "aggregation",
+        "transactions",
+        "change-streams"
+      ]
+    },
+    "multi-session-planning": {
+      "category": "workflow-planning",
+      "tags": [
+        "planning",
+        "multi-session",
+        "dependencies",
+        "decisions",
+        "checkpoints"
+      ]
+    },
+    "mybatis-development": {
+      "category": "backend-data",
+      "tags": [
+        "mybatis",
+        "java",
+        "sql",
+        "persistence",
+        "spring",
+        "transactions",
+        "security",
+        "performance",
+        "mapper",
+        "xml",
+        "dynamic-sql",
+        "result-map"
+      ]
+    },
+    "nextjs-development": {
+      "category": "frontend-design",
+      "tags": [
+        "nextjs",
+        "react",
+        "app-router",
+        "server-components",
+        "server-actions",
+        "caching",
+        "deployment"
+      ]
+    },
+    "nuxt-development": {
+      "category": "frontend-design",
+      "tags": [
+        "nuxt",
+        "vue",
+        "ssr",
+        "nitro",
+        "fullstack",
+        "seo",
+        "data-fetching",
+        "typescript",
+        "performance",
+        "security",
+        "deployment"
+      ]
+    },
+    "observability-engineering": {
+      "category": "cloud-devops",
+      "tags": [
+        "observability",
+        "monitoring",
+        "metrics",
+        "tracing",
+        "slo"
+      ]
+    },
+    "openai-api-development": {
+      "category": "ai-llm",
+      "tags": [
+        "openai",
+        "responses-api",
+        "structured-outputs",
+        "function-calling",
+        "streaming",
+        "tools",
+        "multimodal"
+      ]
+    },
+    "openapi-spec-generation": {
+      "category": "backend-data",
+      "tags": [
+        "openapi",
+        "swagger",
+        "api-spec",
+        "sdk",
+        "validation"
+      ]
+    },
+    "pdf-operations": {
+      "category": "documents-productivity",
+      "tags": [
+        "pdf",
+        "documents",
+        "ocr",
+        "merge",
+        "split",
+        "layout"
+      ]
+    },
+    "pinia-state-management": {
+      "category": "frontend-design",
+      "tags": [
+        "vue",
+        "pinia",
+        "state-management",
+        "stores",
+        "ssr",
+        "nuxt",
+        "testing"
+      ]
+    },
+    "pipeline-review": {
+      "category": "testing-quality",
+      "tags": [
+        "pipeline-review",
+        "quality-gate",
+        "review-report",
+        "review-loop",
+        "read-only"
+      ],
+      "dependencies": [
+        {
+          "name": "code-review",
+          "kind": "required"
+        }
+      ]
+    },
+    "playwright-automation": {
+      "category": "browser-automation",
+      "tags": [
+        "playwright",
+        "browser",
+        "automation",
+        "locators",
+        "traces",
+        "screenshots"
+      ]
+    },
+    "postgres-operations": {
+      "category": "backend-data",
+      "tags": [
+        "postgres",
+        "postgresql",
+        "database",
+        "indexes",
+        "explain",
+        "backup",
+        "operations"
+      ]
+    },
+    "presentation-ops": {
+      "category": "documents-productivity",
+      "tags": [
+        "pptx",
+        "slides",
+        "presentation",
+        "layout",
+        "charts"
+      ]
+    },
+    "prisma-drizzle": {
+      "category": "backend-data",
+      "tags": [
+        "prisma",
+        "drizzle",
+        "orm",
+        "typescript",
+        "database",
+        "migrations",
+        "sql"
+      ]
+    },
+    "product-experimentation": {
+      "category": "research-product",
+      "tags": [
+        "experimentation",
+        "a-b-testing",
+        "metrics",
+        "randomization",
+        "srm",
+        "guardrails",
+        "instrumentation",
+        "decision"
+      ]
+    },
+    "product-pitch-writing": {
+      "category": "writing-content",
+      "tags": [
+        "product-pitch",
+        "speech-writing",
+        "presentation-script",
+        "selling-points",
+        "value-proposition",
+        "demo-talk",
+        "claim-evidence"
+      ]
+    },
+    "project-architecture-review": {
+      "category": "software-engineering",
+      "tags": [
+        "architecture",
+        "project-structure",
+        "module-boundaries",
+        "dependency-direction",
+        "migration-plan",
+        "refactoring",
+        "code-quality"
+      ]
+    },
+    "prompt-engineering": {
+      "category": "ai-llm",
+      "tags": [
+        "prompt",
+        "prompt-engineering",
+        "prompt-template",
+        "instruction-design",
+        "structured-output",
+        "prompt-evals",
+        "injection-resistance"
+      ]
+    },
+    "python-api-client-development": {
+      "category": "backend-data",
+      "tags": [
+        "python",
+        "sdk",
+        "client",
+        "openapi",
+        "auth",
+        "pagination",
+        "retries",
+        "error-mapping",
+        "transport",
+        "generated-code"
+      ],
+      "dependencies": [
+        {
+          "name": "python-development",
+          "kind": "required"
+        }
+      ]
+    },
+    "python-automation-scripting": {
+      "category": "software-engineering",
+      "tags": [
+        "python",
+        "automation",
+        "scripting",
+        "cli",
+        "subprocess",
+        "pathlib",
+        "filesystem",
+        "batch",
+        "typer",
+        "click"
+      ],
+      "dependencies": [
+        {
+          "name": "python-development",
+          "kind": "required"
+        }
+      ]
+    },
+    "python-backend-development": {
+      "category": "backend-data",
+      "tags": [
+        "python",
+        "backend",
+        "django",
+        "flask",
+        "asgi",
+        "wsgi",
+        "orm",
+        "migrations",
+        "middleware",
+        "workers"
+      ],
+      "dependencies": [
+        {
+          "name": "python-development",
+          "kind": "required"
+        }
+      ]
+    },
+    "python-concurrency-patterns": {
+      "category": "software-engineering",
+      "tags": [
+        "python",
+        "asyncio",
+        "concurrency",
+        "taskgroup",
+        "cancellation",
+        "backpressure",
+        "queues",
+        "workers",
+        "parallelism",
+        "coordination"
+      ],
+      "dependencies": [
+        {
+          "name": "python-development",
+          "kind": "required"
+        }
+      ]
+    },
+    "python-data-engineering": {
+      "category": "backend-data",
+      "tags": [
+        "python",
+        "data",
+        "analytics",
+        "etl",
+        "pandas",
+        "polars",
+        "duckdb",
+        "parquet",
+        "jupyter",
+        "dataframes"
+      ],
+      "dependencies": [
+        {
+          "name": "python-development",
+          "kind": "required"
+        }
+      ]
+    },
+    "python-development": {
+      "category": "software-engineering",
+      "tags": [
+        "python",
+        "code",
+        "write",
+        "modify",
+        "fix",
+        "program",
+        "script",
+        "implementation",
+        "refactoring",
+        "architecture",
+        "src-layout",
+        "code-style",
+        "design-patterns",
+        "pep8",
+        "tooling",
+        "testing",
+        "async",
+        "packaging",
+        "ruff",
+        "uv",
+        "fastapi",
+        "pydantic"
+      ],
+      "dependencies": [
+        {
+          "name": "python-api-client-development",
+          "kind": "conditional",
+          "when": "The requested Python task matches this specialist domain; load only the relevant specialist."
+        },
+        {
+          "name": "python-automation-scripting",
+          "kind": "conditional",
+          "when": "The requested Python task matches this specialist domain; load only the relevant specialist."
+        },
+        {
+          "name": "python-backend-development",
+          "kind": "conditional",
+          "when": "The requested Python task matches this specialist domain; load only the relevant specialist."
+        },
+        {
+          "name": "python-concurrency-patterns",
+          "kind": "conditional",
+          "when": "The requested Python task matches this specialist domain; load only the relevant specialist."
+        },
+        {
+          "name": "python-data-engineering",
+          "kind": "conditional",
+          "when": "The requested Python task matches this specialist domain; load only the relevant specialist."
+        },
+        {
+          "name": "python-observability-debugging",
+          "kind": "conditional",
+          "when": "The requested Python task matches this specialist domain; load only the relevant specialist."
+        },
+        {
+          "name": "python-packaging-release",
+          "kind": "conditional",
+          "when": "The requested Python task matches this specialist domain; load only the relevant specialist."
+        },
+        {
+          "name": "python-security-hardening",
+          "kind": "conditional",
+          "when": "The requested Python task matches this specialist domain; load only the relevant specialist."
+        },
+        {
+          "name": "python-testing-engineering",
+          "kind": "conditional",
+          "when": "The requested Python task matches this specialist domain; load only the relevant specialist."
+        },
+        {
+          "name": "python-web-scraping",
+          "kind": "conditional",
+          "when": "The requested Python task matches this specialist domain; load only the relevant specialist."
+        }
+      ]
+    },
+    "python-observability-debugging": {
+      "category": "testing-quality",
+      "tags": [
+        "python",
+        "debugging",
+        "observability",
+        "profiling",
+        "troubleshooting",
+        "traceback",
+        "memory",
+        "performance",
+        "runtime",
+        "diagnostics"
+      ],
+      "dependencies": [
+        {
+          "name": "python-development",
+          "kind": "conditional",
+          "when": "Planning or implementing a Python code fix after diagnosis."
+        }
+      ]
+    },
+    "python-packaging-release": {
+      "category": "software-engineering",
+      "tags": [
+        "python",
+        "packaging",
+        "release",
+        "wheel",
+        "sdist",
+        "versioning",
+        "pypi",
+        "entry-points",
+        "build",
+        "distribution"
+      ],
+      "dependencies": [
+        {
+          "name": "python-development",
+          "kind": "required"
+        }
+      ]
+    },
+    "python-security-hardening": {
+      "category": "security-governance",
+      "tags": [
+        "python",
+        "security",
+        "hardening",
+        "secrets",
+        "subprocess",
+        "deserialization",
+        "supply-chain",
+        "filesystem",
+        "network",
+        "trust-boundaries"
+      ],
+      "dependencies": [
+        {
+          "name": "python-development",
+          "kind": "required"
+        }
+      ]
+    },
+    "python-testing-engineering": {
+      "category": "testing-quality",
+      "tags": [
+        "python",
+        "testing",
+        "pytest",
+        "fixtures",
+        "mocking",
+        "async",
+        "monkeypatch",
+        "coverage",
+        "tmp_path",
+        "parametrize"
+      ],
+      "dependencies": [
+        {
+          "name": "python-development",
+          "kind": "required"
+        }
+      ]
+    },
+    "python-web-scraping": {
+      "category": "browser-automation",
+      "tags": [
+        "python",
+        "scraping",
+        "html",
+        "parsing",
+        "requests",
+        "httpx",
+        "bs4",
+        "lxml",
+        "crawling",
+        "pagination"
+      ],
+      "dependencies": [
+        {
+          "name": "python-development",
+          "kind": "required"
+        }
+      ]
+    },
+    "rag-vector-search": {
+      "category": "ai-llm",
+      "tags": [
+        "rag",
+        "vector-search",
+        "embeddings",
+        "retrieval",
+        "reranking",
+        "citations",
+        "evaluation"
+      ]
+    },
+    "react-native-expo": {
+      "category": "mobile-desktop",
+      "tags": [
+        "react-native",
+        "expo",
+        "mobile",
+        "eas",
+        "ios",
+        "android",
+        "app-store"
+      ]
+    },
+    "react-perf": {
+      "category": "testing-quality",
+      "tags": [
+        "react",
+        "performance",
+        "rendering",
+        "bundle",
+        "profiling"
+      ]
+    },
+    "react-ui-patterns": {
+      "category": "frontend-design",
+      "tags": [
+        "react",
+        "ui",
+        "loading",
+        "error",
+        "empty-state",
+        "suspense",
+        "optimistic-updates",
+        "transitions"
+      ]
+    },
+    "receiving-code-review": {
+      "category": "testing-quality",
+      "tags": [
+        "code-review",
+        "remediation",
+        "feedback",
+        "re-review"
+      ]
+    },
+    "redis-upstash": {
+      "category": "backend-data",
+      "tags": [
+        "redis",
+        "upstash",
+        "cache",
+        "rate-limit",
+        "queues",
+        "sessions",
+        "serverless"
+      ]
+    },
+    "remotion-video-toolkit": {
+      "category": "media-creative",
+      "tags": [
+        "video",
+        "remotion",
+        "react",
+        "animation",
+        "captions",
+        "rendering"
+      ]
+    },
+    "repo-ready": {
+      "category": "cloud-devops",
+      "tags": [
+        "repo",
+        "hygiene",
+        "documentation",
+        "ci",
+        "release"
+      ]
+    },
+    "requirements-deep-dive": {
+      "category": "workflow-planning",
+      "tags": [
+        "requirements",
+        "interview",
+        "decisions",
+        "repository-evidence",
+        "clarification"
+      ]
+    },
+    "responsive-design": {
+      "category": "frontend-design",
+      "tags": [
+        "responsive",
+        "layout",
+        "breakpoints",
+        "container-queries",
+        "mobile",
+        "typography"
+      ]
+    },
+    "reverse-engineering": {
+      "category": "security-governance",
+      "tags": [
+        "reverse-engineering",
+        "binary-analysis",
+        "memory-forensics",
+        "protocol-analysis",
+        "firmware"
+      ]
+    },
+    "security-code-review": {
+      "category": "security-governance",
+      "tags": [
+        "security",
+        "code-review",
+        "vulnerability",
+        "owasp",
+        "audit",
+        "xss",
+        "injection",
+        "auth"
+      ],
+      "dependencies": [
+        {
+          "name": "code-review",
+          "kind": "required"
+        }
+      ]
+    },
+    "security-scanning": {
+      "category": "security-governance",
+      "tags": [
+        "security",
+        "sast",
+        "dependency-scan",
+        "secret-scan",
+        "sbom"
+      ]
+    },
+    "self-improvement": {
+      "category": "workflow-planning",
+      "tags": [
+        "learning",
+        "errors",
+        "memory",
+        "improvement"
+      ]
+    },
+    "service-mesh-engineering": {
+      "category": "cloud-devops",
+      "tags": [
+        "service-mesh",
+        "istio",
+        "linkerd",
+        "mtls",
+        "traffic-management"
+      ]
+    },
+    "session-handoff": {
+      "category": "workflow-planning",
+      "tags": [
+        "handoff",
+        "sessions",
+        "context",
+        "continuation",
+        "evidence"
+      ]
+    },
+    "shadcn-ui": {
+      "category": "frontend-design",
+      "tags": [
+        "shadcn",
+        "radix",
+        "tailwind",
+        "react",
+        "forms"
+      ]
+    },
+    "short-video-script": {
+      "category": "media-creative",
+      "tags": [
+        "short-video",
+        "script",
+        "tiktok",
+        "reels",
+        "youtube-shorts"
+      ]
+    },
+    "skill-audit": {
+      "category": "agent-skill-tooling",
+      "tags": [
+        "audit",
+        "security",
+        "skills",
+        "review"
+      ]
+    },
+    "skill-creator-design": {
+      "category": "agent-skill-tooling",
+      "tags": [
+        "skill",
+        "creator",
+        "agent",
+        "prompt-engineering"
+      ]
+    },
+    "skill-executor": {
+      "category": "agent-skill-tooling",
+      "tags": [
+        "sandbox",
+        "execution",
+        "verification",
+        "skills"
+      ]
+    },
+    "skill-explorer": {
+      "category": "agent-skill-tooling",
+      "tags": [
+        "discovery",
+        "navigation",
+        "catalog",
+        "skills"
+      ]
+    },
+    "skill-gap-analyzer": {
+      "category": "agent-skill-tooling",
+      "tags": [
+        "skills",
+        "lobehub",
+        "marketplace",
+        "skills.sh",
+        "github",
+        "catalog",
+        "gap-analysis",
+        "keywords"
+      ]
+    },
+    "skill-lint": {
+      "category": "agent-skill-tooling",
+      "tags": [
+        "lint",
+        "validation",
+        "skills",
+        "quality"
+      ]
+    },
+    "skill-scan": {
+      "category": "agent-skill-tooling",
+      "tags": [
+        "scan",
+        "skills",
+        "triage",
+        "security"
+      ]
+    },
+    "skill-security-review": {
+      "category": "agent-skill-tooling",
+      "tags": [
+        "security",
+        "review",
+        "vetting",
+        "marketplace"
+      ]
+    },
+    "skillctl": {
+      "category": "agent-skill-tooling",
+      "tags": [
+        "cli",
+        "skills",
+        "install",
+        "search",
+        "skills-cli",
+        "skills.sh"
+      ]
+    },
+    "skillforge": {
+      "category": "agent-skill-tooling",
+      "tags": [
+        "quality",
+        "release",
+        "evaluation",
+        "skills"
+      ]
+    },
+    "solution-discovery": {
+      "category": "research-product",
+      "tags": [
+        "solution-discovery",
+        "design",
+        "tradeoffs",
+        "decision"
+      ]
+    },
+    "spec-flow": {
+      "category": "workflow-planning",
+      "tags": [
+        "spec",
+        "planning",
+        "tasks",
+        "execution"
+      ]
+    },
+    "specification-authoring": {
+      "category": "writing-content",
+      "tags": [
+        "spec",
+        "documentation",
+        "requirements",
+        "workflow"
+      ]
+    },
+    "spreadsheet-ops": {
+      "category": "documents-productivity",
+      "tags": [
+        "xlsx",
+        "csv",
+        "spreadsheets",
+        "formulas",
+        "charts"
+      ]
+    },
+    "spring-cloud-microservices": {
+      "category": "backend-data",
+      "tags": [
+        "spring",
+        "spring-cloud",
+        "microservices",
+        "resilience4j",
+        "kafka",
+        "gateway",
+        "observability"
+      ]
+    },
+    "spring-development": {
+      "category": "backend-data",
+      "tags": [
+        "spring",
+        "spring-boot",
+        "boot",
+        "java",
+        "web",
+        "endpoint",
+        "rest",
+        "controller",
+        "data",
+        "security",
+        "testing",
+        "observability"
+      ]
+    },
+    "spring-security": {
+      "category": "backend-data",
+      "tags": [
+        "spring",
+        "spring-security",
+        "oauth2",
+        "jwt",
+        "authorization",
+        "csrf",
+        "security"
+      ]
+    },
+    "spring-webflux": {
+      "category": "backend-data",
+      "tags": [
+        "spring",
+        "webflux",
+        "reactor",
+        "reactive",
+        "webclient",
+        "r2dbc",
+        "testing"
+      ]
+    },
+    "sql-best-practices": {
+      "category": "backend-data",
+      "tags": [
+        "sql",
+        "performance",
+        "security",
+        "best-practices"
+      ]
+    },
+    "stable-diffusion-image-generation": {
+      "category": "media-creative",
+      "tags": [
+        "stable-diffusion",
+        "diffusers",
+        "text-to-image",
+        "inpainting",
+        "lora",
+        "pipeline"
+      ]
+    },
+    "storyboard-creation": {
+      "category": "media-creative",
+      "tags": [
+        "storyboard",
+        "shot-list",
+        "video-planning",
+        "script",
+        "production"
+      ]
+    },
+    "stripe-payments": {
+      "category": "backend-data",
+      "tags": [
+        "stripe",
+        "payments",
+        "checkout",
+        "billing",
+        "webhooks",
+        "subscriptions",
+        "idempotency"
+      ]
+    },
+    "subagent-architecture": {
+      "category": "agent-skill-tooling",
+      "tags": [
+        "subagent",
+        "agents",
+        "orchestration",
+        "delegation"
+      ]
+    },
+    "subtitle-captions": {
+      "category": "media-creative",
+      "tags": [
+        "subtitles",
+        "captions",
+        "srt",
+        "vtt",
+        "accessibility"
+      ]
+    },
+    "summary-ops": {
+      "category": "writing-content",
+      "tags": [
+        "summary",
+        "transcript",
+        "research",
+        "url"
+      ]
+    },
+    "supabase-development": {
+      "category": "backend-data",
+      "tags": [
+        "supabase",
+        "postgres",
+        "rls",
+        "auth",
+        "storage",
+        "edge-functions",
+        "migrations"
+      ]
+    },
+    "swift-concurrency": {
+      "category": "mobile-desktop",
+      "tags": [
+        "swift",
+        "ios",
+        "concurrency",
+        "async-await",
+        "structured-concurrency",
+        "actors",
+        "main-actor",
+        "sendable",
+        "task-cancellation",
+        "async-sequence",
+        "swift-6",
+        "xcode",
+        "data-races",
+        "migration"
+      ]
+    },
+    "swift-testing": {
+      "category": "testing-quality",
+      "tags": [
+        "swift",
+        "ios",
+        "testing",
+        "swift-testing",
+        "xctest",
+        "unit-testing",
+        "integration-testing",
+        "async-testing",
+        "parameterized-tests",
+        "traits",
+        "parallel-testing",
+        "xcode"
+      ]
+    },
+    "swiftui-development": {
+      "category": "mobile-desktop",
+      "tags": [
+        "ios",
+        "swift",
+        "swiftui",
+        "observation",
+        "state-management",
+        "navigation",
+        "structured-concurrency",
+        "accessibility",
+        "localization",
+        "performance",
+        "testing",
+        "xcode"
+      ]
+    },
+    "systematic-debugging": {
+      "category": "testing-quality",
+      "tags": [
+        "debugging",
+        "root-cause",
+        "hypotheses",
+        "regression"
+      ]
+    },
+    "tailwind-development": {
+      "category": "frontend-design",
+      "tags": [
+        "tailwind",
+        "tailwindcss",
+        "css",
+        "frontend",
+        "design-tokens",
+        "utility-first",
+        "dark-mode",
+        "performance",
+        "architecture"
+      ]
+    },
+    "tailwind-patterns": {
+      "category": "frontend-design",
+      "tags": [
+        "tailwind",
+        "layout",
+        "buttons",
+        "forms",
+        "typography",
+        "responsive",
+        "ui"
+      ]
+    },
+    "taste-skill": {
+      "category": "frontend-design",
+      "tags": [
+        "frontend",
+        "design-direction",
+        "art-direction",
+        "visual-system",
+        "anti-generic",
+        "ui",
+        "decision-log"
+      ]
+    },
+    "temporal-workflow-engineering": {
+      "category": "backend-data",
+      "tags": [
+        "temporal",
+        "workflows",
+        "durability",
+        "retries",
+        "testing"
+      ]
+    },
+    "terminal-ops": {
+      "category": "cloud-devops",
+      "tags": [
+        "terminal",
+        "verification",
+        "repo",
+        "commands"
+      ]
+    },
+    "terraform-infrastructure": {
+      "category": "cloud-devops",
+      "tags": [
+        "terraform",
+        "opentofu",
+        "iac",
+        "infrastructure",
+        "state"
+      ]
+    },
+    "test-driven-development": {
+      "category": "testing-quality",
+      "tags": [
+        "tdd",
+        "testing",
+        "red-green-refactor",
+        "regression"
+      ]
+    },
+    "testing-strategy": {
+      "category": "testing-quality",
+      "tags": [
+        "testing",
+        "strategy",
+        "fixtures",
+        "flakiness"
+      ]
+    },
+    "text-to-speech": {
+      "category": "media-creative",
+      "tags": [
+        "audio",
+        "tts",
+        "voiceover",
+        "speech",
+        "narration"
+      ]
+    },
+    "threejs-accessibility": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "accessibility",
+        "keyboard",
+        "screen-reader",
+        "reduced-motion",
+        "semantic-ui"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
+      ]
+    },
+    "threejs-animation-system": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "animation",
+        "animation-mixer",
+        "skeletal-animation",
+        "morph-targets",
+        "inverse-kinematics"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "conditional",
+          "when": "IK, locomotion, procedural animation, navigation, or physics shares pose authority."
+        }
+      ]
+    },
+    "threejs-assets-gltf": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "gltf",
+        "assets",
+        "loaders",
+        "compression",
+        "textures"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "conditional",
+          "when": "Runtime authoring/export or engineering and dense spatial source formats require the shared contracts."
+        }
+      ]
+    },
+    "threejs-cad-bim": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "cad",
+        "bim",
+        "ifc",
+        "measurement",
+        "technical-models"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
+      ]
+    },
+    "threejs-atmosphere-aerial-perspective": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "atmosphere",
+        "aerial-perspective",
+        "scattering",
+        "sky",
+        "lut"
+      ]
+    },
+    "threejs-bloom": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "bloom",
+        "hdr",
+        "emissive",
+        "postprocessing"
+      ]
+    },
+    "threejs-camera-direction": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "camera",
+        "cinematography",
+        "controls",
+        "quaternions"
+      ]
+    },
+    "threejs-capture-recording": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "capture",
+        "recording",
+        "mediarecorder",
+        "webcodecs",
+        "deterministic-frames"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
+      ]
+    },
+    "threejs-csg-modeling": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "csg",
+        "boolean-modeling",
+        "topology",
+        "manifold",
+        "authoring"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
+      ]
+    },
+    "threejs-data-visualization": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "data-visualization",
+        "point-clouds",
+        "scientific-visualization",
+        "spatial-data",
+        "accessibility"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "conditional",
+          "when": "Converting or streaming analytical source data requires shared format contracts."
+        }
+      ]
+    },
+    "threejs-deformable-simulation": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "deformable",
+        "cloth",
+        "soft-body",
+        "fluid-simulation",
+        "xpbd"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
+      ]
+    },
+    "threejs-development": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "webgl",
+        "webgpu",
+        "3d",
+        "html",
+        "web-page",
+        "single-file",
+        "architecture",
+        "routing"
+      ]
+    },
+    "threejs-editor-authoring": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "editor",
+        "authoring",
+        "undo-redo",
+        "serialization",
+        "export"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
+      ]
+    },
+    "threejs-exposure-color-grading": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "exposure",
+        "tone-mapping",
+        "color-grading",
+        "lut",
+        "hdr"
+      ]
+    },
+    "threejs-framework-integrations": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "vue",
+        "tresjs",
+        "svelte",
+        "threlte",
+        "frameworks"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
+      ]
+    },
+    "threejs-gameplay-systems": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "gameplay",
+        "games",
+        "entities",
+        "game-loop",
+        "playtesting"
+      ]
+    },
+    "threejs-geometry": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "buffergeometry",
+        "topology",
+        "attributes",
+        "instancing"
+      ]
+    },
+    "threejs-image-pipeline": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "rendering",
+        "frame-graph",
+        "postprocessing",
+        "hdr",
+        "diagnostics"
+      ]
+    },
+    "threejs-interaction-input": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "interaction",
+        "raycasting",
+        "spatial-indexing",
+        "pointer",
+        "touch",
+        "gamepad"
+      ]
+    },
+    "threejs-large-worlds-geospatial": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "geospatial",
+        "large-worlds",
+        "floating-origin",
+        "terrain",
+        "tiling"
+      ]
+    },
+    "threejs-materials-lighting": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "materials",
+        "lighting",
+        "pbr",
+        "textures",
+        "media-textures",
+        "environment"
+      ]
+    },
+    "threejs-math-transforms": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "math",
+        "transforms",
+        "vectors",
+        "matrices",
+        "quaternions"
+      ]
+    },
+    "threejs-navigation-crowds": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "navigation",
+        "navmesh",
+        "pathfinding",
+        "crowds",
+        "avoidance"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
+      ]
+    },
+    "threejs-networked-experiences": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "multiplayer",
+        "networking",
+        "interpolation",
+        "prediction",
+        "replication"
+      ]
+    },
+    "threejs-offscreen-workers": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "offscreencanvas",
+        "web-workers",
+        "worker-rendering",
+        "transferables",
+        "responsiveness"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
+      ]
+    },
+    "threejs-parallax-occlusion-mapping": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "pom",
+        "parallax",
+        "relief",
+        "shaders",
+        "tsl"
+      ]
+    },
+    "threejs-path-tracing": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "path-tracing",
+        "ray-tracing",
+        "bvh",
+        "light-transport",
+        "convergence"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
+      ]
+    },
+    "threejs-performance-memory": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "performance",
+        "gpu",
+        "memory",
+        "profiling",
+        "spatial-acceleration",
+        "adaptive-quality"
+      ]
+    },
+    "threejs-physics-audio": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "compatibility-routing",
+        "physics",
+        "spatial-audio",
+        "collision-events"
+      ]
+    },
+    "threejs-physics-simulation": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "physics",
+        "collision",
+        "fixed-timestep",
+        "rigid-bodies",
+        "character-controller"
+      ]
+    },
+    "threejs-point-clouds-splats": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "point-clouds",
+        "gaussian-splats",
+        "ply",
+        "streaming",
+        "spatial-data"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
+      ]
+    },
+    "threejs-postprocessing": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "postprocessing",
+        "effect-composer",
+        "render-targets",
+        "screen-space"
+      ]
+    },
+    "threejs-precipitation-surfaces": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "rain",
+        "snow",
+        "wetness",
+        "accumulation",
+        "weather"
+      ]
+    },
+    "threejs-procedural-animation": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "animation",
+        "procedural",
+        "quaternions",
+        "deterministic-time"
+      ]
+    },
+    "threejs-procedural-architecture": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "procedural",
+        "architecture",
+        "buildings",
+        "cities",
+        "instancing"
+      ]
+    },
+    "threejs-procedural-characters": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "procedural",
+        "characters",
+        "rigging",
+        "morphology",
+        "inverse-kinematics"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
+      ]
+    },
+    "threejs-procedural-fields": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "procedural",
+        "noise",
+        "fields",
+        "domain-warping",
+        "determinism"
+      ]
+    },
+    "threejs-procedural-geometry": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "procedural",
+        "geometry",
+        "mesh-generation",
+        "topology"
+      ]
+    },
+    "threejs-procedural-materials": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "procedural",
+        "materials",
+        "pbr",
+        "shaders",
+        "terrain"
+      ]
+    },
+    "threejs-procedural-planets": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "procedural",
+        "planets",
+        "terrain",
+        "lod",
+        "large-worlds"
+      ]
+    },
+    "threejs-procedural-vegetation": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "procedural",
+        "vegetation",
+        "grass",
+        "trees",
+        "lod"
+      ]
+    },
+    "threejs-procedural-vfx": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "vfx",
+        "particles",
+        "gpu-simulation",
+        "pooling",
+        "emissive"
+      ]
+    },
+    "threejs-project-architecture": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "architecture",
+        "modules",
+        "scene-graph",
+        "state-management"
+      ]
+    },
+    "threejs-react-three-fiber": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "react",
+        "react-three-fiber",
+        "drei",
+        "r3f",
+        "suspense"
+      ]
+    },
+    "threejs-raymarched-space-effects": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "raymarching",
+        "space",
+        "black-hole",
+        "wormhole",
+        "shaders"
+      ]
+    },
+    "threejs-rendering-platforms": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "webgl",
+        "webgpu",
+        "renderer",
+        "fallback",
+        "capabilities"
+      ]
+    },
+    "threejs-scene-lifecycle": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "lifecycle",
+        "render-loop",
+        "resize",
+        "disposal",
+        "context-loss"
+      ]
+    },
+    "threejs-screen-space-ambient-occlusion": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "ssao",
+        "gtao",
+        "ambient-occlusion",
+        "depth",
+        "postprocessing"
+      ]
+    },
+    "threejs-security-deployment": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "security",
+        "deployment",
+        "csp",
+        "assets",
+        "cdn"
+      ]
+    },
+    "threejs-shaders": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "shaders",
+        "glsl",
+        "tsl",
+        "uniforms",
+        "gpu"
+      ]
+    },
+    "threejs-shadow-systems": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "shadows",
+        "cascades",
+        "clipmaps",
+        "large-worlds",
+        "webgpu"
+      ]
+    },
+    "threejs-spatial-audio": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "spatial-audio",
+        "web-audio",
+        "hrtf",
+        "audio-listener",
+        "captions"
+      ]
+    },
+    "threejs-spectral-ocean": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "ocean",
+        "fft",
+        "waves",
+        "water",
+        "webgpu"
+      ]
+    },
+    "threejs-temporal-surfaces": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "temporal",
+        "history-buffer",
+        "wet-glass",
+        "frost",
+        "refraction"
+      ]
+    },
+    "threejs-testing-debugging": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "testing",
+        "debugging",
+        "visual-regression",
+        "gpu",
+        "diagnostics"
+      ]
+    },
+    "threejs-ui-overlays": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "ui",
+        "hud",
+        "labels",
+        "text",
+        "accessibility"
+      ]
+    },
+    "threejs-version-migration": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "migration",
+        "upgrade",
+        "compatibility",
+        "deprecations",
+        "rollback"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
+      ]
+    },
+    "threejs-visual-validation": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "visual-validation",
+        "determinism",
+        "baselines",
+        "gpu-budget",
+        "regression"
+      ]
+    },
+    "threejs-volumetric-clouds": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "volumetric-clouds",
+        "raymarching",
+        "weather",
+        "temporal-reconstruction"
+      ]
+    },
+    "threejs-water-optics": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "water",
+        "refraction",
+        "fresnel",
+        "caustics",
+        "heightfield"
+      ]
+    },
+    "threejs-webgpu-tsl": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "webgpu",
+        "tsl",
+        "compute",
+        "node-materials",
+        "wgsl"
+      ]
+    },
+    "threejs-webxr-accessibility": {
+      "category": "threejs-graphics",
+      "tags": [
+        "threejs",
+        "webxr",
+        "vr",
+        "ar",
+        "accessibility",
+        "motion-comfort"
+      ],
+      "dependencies": [
+        {
+          "name": "threejs-development",
+          "kind": "required"
+        }
+      ]
+    },
+    "threat-modeling": {
+      "category": "security-governance",
+      "tags": [
+        "security",
+        "threat-modeling",
+        "stride",
+        "attack-trees",
+        "risk"
+      ]
+    },
+    "throwaway-prototyping": {
+      "category": "workflow-planning",
+      "tags": [
+        "prototype",
+        "experiments",
+        "discovery",
+        "reversible",
+        "evidence"
+      ]
+    },
+    "todo-first": {
+      "category": "workflow-planning",
+      "tags": [
+        "planning",
+        "workflow",
+        "progress-tracking",
+        "runtime-neutral"
+      ]
+    },
+    "typescript-development": {
+      "category": "software-engineering",
+      "tags": [
+        "typescript",
+        "javascript",
+        "code",
+        "write",
+        "modify",
+        "fix",
+        "function",
+        "program",
+        "implementation",
+        "refactoring",
+        "code-style",
+        "types",
+        "strict",
+        "generics",
+        "interfaces",
+        "unions",
+        "tsconfig",
+        "tsc",
+        "tsx",
+        "type-error",
+        "node",
+        "cli",
+        "react",
+        "component",
+        "nextjs",
+        "route",
+        "handler",
+        "vue",
+        "vitest",
+        "test",
+        "api-client"
+      ]
+    },
+    "ugc-video-ads": {
+      "category": "media-creative",
+      "tags": [
+        "ugc",
+        "video-ads",
+        "marketing",
+        "creative",
+        "short-video"
+      ]
+    },
+    "ui-styling": {
+      "category": "frontend-design",
+      "tags": [
+        "ui",
+        "styling",
+        "shadcn",
+        "tailwind",
+        "buttons",
+        "colors",
+        "layout",
+        "react"
+      ]
+    },
+    "ux-research": {
+      "category": "research-product",
+      "tags": [
+        "ux-research",
+        "interviews",
+        "usability-testing",
+        "recruitment",
+        "consent",
+        "synthesis",
+        "evidence"
+      ]
+    },
+    "ux-writing": {
+      "category": "writing-content",
+      "tags": [
+        "ux-writing",
+        "microcopy",
+        "ui",
+        "copywriting",
+        "product-design"
+      ]
+    },
+    "vercel-deployment": {
+      "category": "cloud-devops",
+      "tags": [
+        "vercel",
+        "deployment",
+        "nextjs",
+        "preview",
+        "environment-variables",
+        "serverless",
+        "edge"
+      ]
+    },
+    "verification-before-completion": {
+      "category": "testing-quality",
+      "tags": [
+        "verification",
+        "evidence",
+        "completion",
+        "quality-gate"
+      ]
+    },
+    "verified-software-delivery": {
+      "category": "workflow-planning",
+      "tags": [
+        "software-delivery",
+        "workflow",
+        "review-gates",
+        "verification",
+        "orchestration"
+      ]
+    },
+    "video-edit": {
+      "category": "media-creative",
+      "tags": [
+        "video",
+        "editing",
+        "ffmpeg",
+        "media",
+        "compression",
+        "conversion"
+      ]
+    },
+    "video-production-workflow": {
+      "category": "media-creative",
+      "tags": [
+        "video-production",
+        "multi-agent",
+        "approval-gates",
+        "artifact-handoffs",
+        "continuity",
+        "workflow"
+      ]
+    },
+    "visual-regression-testing": {
+      "category": "testing-quality",
+      "tags": [
+        "visual-regression",
+        "screenshots",
+        "percy",
+        "chromatic",
+        "backstopjs",
+        "ui-testing",
+        "fidelity-evaluation",
+        "visual-evidence",
+        "machine-gate",
+        "ocr",
+        "dom-geometry",
+        "contrast",
+        "ci"
+      ]
+    },
+    "vite": {
+      "category": "frontend-design",
+      "tags": [
+        "vite",
+        "build",
+        "plugins",
+        "ssr",
+        "dev-server",
+        "configuration"
+      ]
+    },
+    "vlog-production": {
+      "category": "media-creative",
+      "tags": [
+        "vlog",
+        "video",
+        "storytelling",
+        "b-roll",
+        "youtube",
+        "shorts",
+        "creator"
+      ]
+    },
+    "vue-composition-api": {
+      "category": "frontend-design",
+      "tags": [
+        "vue",
+        "vue3",
+        "composition-api",
+        "script-setup",
+        "sfc",
+        "reactivity",
+        "composables",
+        "typescript"
+      ]
+    },
+    "vue-debug-guides": {
+      "category": "testing-quality",
+      "tags": [
+        "vue",
+        "debugging",
+        "errors",
+        "hydration",
+        "reactivity",
+        "ssr"
+      ]
+    },
+    "vue-development": {
+      "category": "frontend-design",
+      "tags": [
+        "vue",
+        "vue3",
+        "frontend",
+        "sfc",
+        "composition-api",
+        "pinia",
+        "vue-router",
+        "typescript",
+        "testing",
+        "performance",
+        "security"
+      ]
+    },
+    "vue-router-patterns": {
+      "category": "frontend-design",
+      "tags": [
+        "vue",
+        "vue-router",
+        "routing",
+        "navigation-guards",
+        "spa",
+        "route-params",
+        "lazy-loading"
+      ]
+    },
+    "vue-testing": {
+      "category": "testing-quality",
+      "tags": [
+        "vue",
+        "testing",
+        "vitest",
+        "vue-test-utils",
+        "pinia",
+        "playwright",
+        "components",
+        "composables"
+      ]
+    },
+    "vulnerability-variant-analysis": {
+      "category": "security-governance",
+      "tags": [
+        "security",
+        "variant-analysis",
+        "vulnerability",
+        "codeql",
+        "semgrep",
+        "data-flow",
+        "remediation",
+        "regression"
+      ]
+    },
+    "web-page-design-to-code": {
+      "category": "frontend-design",
+      "tags": [
+        "frontend",
+        "web-design",
+        "mockup",
+        "imagegen",
+        "design-to-code",
+        "responsive",
+        "visual-validation",
+        "figma",
+        "design-intelligence",
+        "machine-gate"
+      ]
+    },
+    "web-research-ops": {
+      "category": "research-product",
+      "tags": [
+        "search",
+        "research",
+        "verification",
+        "sources",
+        "content-extraction",
+        "query-planning",
+        "freshness",
+        "research-safety"
+      ]
+    },
+    "webapp-testing": {
+      "category": "testing-quality",
+      "tags": [
+        "playwright",
+        "testing",
+        "browser",
+        "frontend",
+        "screenshots"
+      ]
+    },
+    "website-redesign-to-code": {
+      "category": "frontend-design",
+      "tags": [
+        "website-redesign",
+        "design-system",
+        "page-families",
+        "mockup",
+        "design-to-code",
+        "frontend",
+        "visual-validation",
+        "figma",
+        "design-intelligence",
+        "dtcg",
+        "machine-gate"
+      ]
+    },
+    "word-document-ops": {
+      "category": "documents-productivity",
+      "tags": [
+        "docx",
+        "word",
+        "documents",
+        "tracked-changes",
+        "templates"
+      ]
+    },
+    "wordpress-development": {
+      "category": "backend-data",
+      "tags": [
+        "wordpress",
+        "cms",
+        "plugins",
+        "themes",
+        "blocks",
+        "wp-cli",
+        "rest-api",
+        "security",
+        "migration",
+        "operations"
+      ]
+    },
+    "workspace-google-ops": {
+      "category": "documents-productivity",
+      "tags": [
+        "gmail",
+        "calendar",
+        "drive",
+        "sheets",
+        "docs"
+      ]
+    }
+  },
+  "routingGroups": [
+    {
+      "id": "prompt-design",
+      "title": "Prompt Design by Artifact and Lifecycle",
+      "decision": "Choose the owner by the artifact being produced; use the general prompt workflow only when a narrower Agent, repository-instruction, media, integration, or evaluation workflow does not own the result.",
+      "skills": [
+        {
+          "name": "prompt-engineering",
+          "when": "A text prompt or reusable prompt template must be created, diagnosed, rewritten, adapted, secured, versioned, or prepared for regression testing."
+        },
+        {
+          "name": "agent-creator-design",
+          "when": "The artifact is a reusable Agent identity with role boundaries, permissions, workflow stages, metadata, and handoff behavior."
+        },
+        {
+          "name": "agent-instructions-authoring",
+          "when": "The artifact is repository-wide coding-agent guidance such as AGENTS.md or equivalent harness instructions."
+        },
+        {
+          "name": "ai-image-prompt-design",
+          "when": "The prompt primarily controls still-image composition, style, lighting, camera, typography, or generation parameters."
+        },
+        {
+          "name": "ai-video-prompting",
+          "when": "The prompt primarily controls shots, motion, continuity, timing, camera movement, or video-generation behavior."
+        },
+        {
+          "name": "llm-evals",
+          "when": "The main task is building datasets, graders, metrics, experiments, or release gates for prompts and AI behavior."
+        },
+        {
+          "name": "openai-api-development",
+          "when": "The main task is implementing prompts, structured outputs, tools, or model configuration in an OpenAI API application."
+        }
+      ]
+    },
+    {
+      "id": "frontend-design-source",
+      "title": "Frontend Design Source and Stage",
+      "decision": "Any task that creates or changes visible production web UI starts with frontend-design as the implementation baseline; add only the source, direction, framework, styling, responsive, motion, or review specialists that materially own part of the work.",
+      "skills": [
+        {
+          "name": "taste-skill",
+          "when": "Visual direction is unresolved and the product needs contextual art direction or an anti-generic visual system."
+        },
+        {
+          "name": "design-consultation",
+          "when": "Only a quick bounded palette, typography, spacing, layout, or component-style decision is needed before coding."
+        },
+        {
+          "name": "design-system",
+          "when": "The task is extracting, generating, auditing, governing, or checking drift in a reusable token and component system."
+        },
+        {
+          "name": "design-system-patterns",
+          "when": "The visual direction exists and the task is implementing token, theme, component, or theme-switching architecture in code."
+        },
+        {
+          "name": "image-to-code",
+          "when": "A JPG or PNG design image, screenshot, raster mockup, generated design, reference set, or approved UI recording is the primary authority for an actual editable responsive webpage or frontend implementation."
+        },
+        {
+          "name": "image-to-code-assets",
+          "when": "The image-to-code task explicitly requires independent asset slicing, transparent PNG or WebP, 2x/3x/4x density exports, source bounding boxes, an asset manifest, or later Figma-layer handoff. It supplements rather than replaces image-to-code."
+        },
+        {
+          "name": "figma-to-code",
+          "when": "A Figma file or node with structured variables, components, assets, and design context is the primary authority."
+        },
+        {
+          "name": "web-page-design-to-code",
+          "when": "One page needs an approval-gated mockup, implementation contract, production code, and browser verification."
+        },
+        {
+          "name": "website-redesign-to-code",
+          "when": "The redesign spans multiple routes, navigation, templates, page families, or a shared site-wide system."
+        },
+        {
+          "name": "frontend-design",
+          "when": "Any request creates, modifies, restyles, redesigns, polishes, repairs, or reproduces visible web UI, including HTML, CSS, browser JavaScript, React, Vue, Next.js, Tailwind, components, pages, forms, navigation, responsive layouts, interaction states, and visual bugs. Specialists supplement rather than replace this baseline."
+        },
+        {
+          "name": "frontend-design-review",
+          "when": "An implemented interface exists and needs an independent usability, accessibility, responsive, state, and optical review."
+        },
+        {
+          "name": "visual-regression-testing",
+          "when": "The result needs reproducible screenshots, approved baselines, measurable fidelity, or a CI-grade visual verdict."
+        }
+      ]
+    },
+    {
+      "id": "threejs-html-frontend-entry",
+      "title": "Three.js HTML and Frontend Ownership",
+      "decision": "For requested 3D work, Three.js owns the scene and rendering contract. Add frontend, CSS, or JavaScript owners only for affected DOM, integration, and language boundaries; repository presence alone does not activate the 3D route.",
+      "skills": [
+        {
+          "name": "threejs-development",
+          "when": "The requested outcome or affected implementation needs Three.js or WebGL/WebGPU 3D, including an explicitly requested single-file HTML 3D scene. Plain Canvas 2D, unrelated DOM edits, and a three dependency elsewhere are insufficient."
+        },
+        {
+          "name": "frontend-design",
+          "when": "The page also needs semantic HTML, content hierarchy, responsive DOM composition, controls, design tokens, state presentation, or an accessible non-canvas fallback."
+        },
+        {
+          "name": "css-development",
+          "when": "The Three.js page also needs document flow, canvas sizing, stacking, pointer boundaries, responsive overlays, labels, or CSS2D and CSS3D presentation."
+        },
+        {
+          "name": "javascript-development",
+          "when": "The Three.js page also needs generic module structure, application boundaries, asynchronous I/O, validation, cancellation, error handling, or non-rendering JavaScript tests."
+        }
+      ]
+    },
+    {
+      "id": "threejs-development",
+      "title": "Three.js Application and Graphics Development",
+      "decision": "Use the umbrella route for cross-cutting work; otherwise select the narrowest specialist by ownership boundary, visual system, platform, or acceptance evidence.",
+      "skills": [
+        {
+          "name": "threejs-development",
+          "when": "The requested outcome or affected implementation needs Three.js or WebGL/WebGPU 3D, including an explicitly requested single-file HTML 3D scene. Plain Canvas 2D, unrelated DOM edits, and a three dependency elsewhere are insufficient."
+        },
+        {
+          "name": "threejs-version-migration",
+          "when": "The task moves between Three.js releases, resolves deprecations or breaking changes, aligns addons or framework adapters, migrates persisted behavior, or needs upgrade evidence and rollback."
+        },
+        {
+          "name": "threejs-project-architecture",
+          "when": "The task concerns feature modules, dependency direction, scene ownership, update phases, simulation boundaries, or migration from a monolithic scene script."
+        },
+        {
+          "name": "threejs-editor-authoring",
+          "when": "The task concerns a runtime scene editor, outliner, inspector, gizmos, commands, undo and redo, serialization, autosave, import, GLTFExporter, or editor-to-runtime publishing."
+        },
+        {
+          "name": "threejs-offscreen-workers",
+          "when": "The task concerns OffscreenCanvas, a worker-owned renderer, transferables, rendering or simulation workers, message protocols, forwarded input or resize, responsiveness, or a main-thread fallback."
+        },
+        {
+          "name": "threejs-scene-lifecycle",
+          "when": "The task concerns bootstrap, loop ownership, resize, DPR, visibility, pause and resume, context loss, route transitions, teardown, or resource cleanup."
+        },
+        {
+          "name": "threejs-assets-gltf",
+          "when": "The task concerns glTF or GLB, loaders, Blender export, textures, compression, progress, cancellation, caching, CDN delivery, or asset licensing."
+        },
+        {
+          "name": "threejs-animation-system",
+          "when": "The task concerns AnimationClip, AnimationMixer, tracks, blending, skeletal or facial animation, morph targets, root motion, locomotion, IK, ragdoll handoff, retargeting, events, or mixer lifecycle."
+        },
+        {
+          "name": "threejs-math-transforms",
+          "when": "The task concerns vectors, matrices, quaternions, coordinate spaces, local or world transforms, projections, rays, planes, bounds, or numerical precision."
+        },
+        {
+          "name": "threejs-geometry",
+          "when": "The task concerns BufferGeometry attributes, topology, indices, normals, tangents, UVs, morphs, skin data, bounds, instancing, or merging."
+        },
+        {
+          "name": "threejs-csg-modeling",
+          "when": "The task concerns union, subtraction, intersection, cutaways, procedural solid editing, Boolean stacks, manifold repair, CSG attributes or materials, performance, or export."
+        },
+        {
+          "name": "threejs-materials-lighting",
+          "when": "The task concerns built-in PBR materials, texture channels, VideoTexture, CanvasTexture, webcam or 360 media, color management, light rigs, environment maps, transparency, transmission, or shading defects."
+        },
+        {
+          "name": "threejs-shaders",
+          "when": "The task concerns ShaderMaterial, RawShaderMaterial, GLSL, uniforms, varyings, GPU simulation, precision, compilation, or custom material integration."
+        },
+        {
+          "name": "threejs-interaction-input",
+          "when": "The task concerns raycasting, GPU picking, BVH or Octree acceleration, pointer, touch, keyboard, gamepad, gestures, selection, drag tools, focus, or DOM-to-scene event routing."
+        },
+        {
+          "name": "threejs-physics-audio",
+          "when": "A legacy or explicitly combined request couples physics or collision events with positional sound and needs routing to independent simulation and audio owners."
+        },
+        {
+          "name": "threejs-physics-simulation",
+          "when": "The task concerns rigid bodies, colliders, triggers, joints, character controllers, vehicles, fixed timesteps, interpolation, physics workers, determinism, or contact events."
+        },
+        {
+          "name": "threejs-deformable-simulation",
+          "when": "The task concerns cloth, ropes, cables, soft bodies, strands, PBD or XPBD, particle fluids, grid or volume fluids, deformable collision, tearing, or solver-to-render mapping."
+        },
+        {
+          "name": "threejs-spatial-audio",
+          "when": "The task concerns AudioListener, PositionalAudio, HRTF, attenuation, ambient zones, audio occlusion, collision or gameplay cues, autoplay restrictions, captions, mixing, or audio-context lifecycle."
+        },
+        {
+          "name": "threejs-navigation-crowds",
+          "when": "The task concerns navmeshes, pathfinding, path following, off-mesh links, local avoidance, crowds, dynamic obstacles, replanning, or synchronization with animation and physics."
+        },
+        {
+          "name": "threejs-rendering-platforms",
+          "when": "The task is choosing or migrating WebGLRenderer or WebGPURenderer, defining capability fallbacks, context options, output formats, or backend recovery."
+        },
+        {
+          "name": "threejs-webgpu-tsl",
+          "when": "The task specifically concerns WebGPURenderer, TSL node materials, compute nodes, storage buffers or textures, WGSL interop, readback, or backend parity."
+        },
+        {
+          "name": "threejs-postprocessing",
+          "when": "The task concerns a general pass graph, EffectComposer, depth or normal inputs, anti-aliasing, outline, depth of field, motion blur, or custom full-screen effects."
+        },
+        {
+          "name": "threejs-capture-recording",
+          "when": "The task concerns screenshots, deterministic frame sequences, canvas captureStream, MediaRecorder, WebCodecs, audio-video recording, tiled output, codecs, CORS, or capture lifecycle."
+        },
+        {
+          "name": "threejs-react-three-fiber",
+          "when": "React owns the Three.js scene through React Three Fiber, Canvas, hooks, Suspense, Drei, declarative resources, events, or adaptive frame loops."
+        },
+        {
+          "name": "threejs-framework-integrations",
+          "when": "Vue and TresJS, Svelte and Threlte, Angular, Solid, web components, or another non-React framework owns or hosts the Three.js scene and its reactive lifecycle."
+        },
+        {
+          "name": "threejs-ui-overlays",
+          "when": "The task concerns HUDs, menus, labels, annotations, tooltips, DOM overlays, SDF or 3D text, projection, occlusion, safe areas, text fit, or accessible UI."
+        },
+        {
+          "name": "threejs-gameplay-systems",
+          "when": "The task concerns a browser game's core loop, entities, abilities, combat, vehicles, AI, levels, game feel, restart, persistence, replay, or bot playtests."
+        },
+        {
+          "name": "threejs-data-visualization",
+          "when": "The task concerns 3D charts, networks, volumes, trajectories, digital twins, scientific data, encodings, uncertainty, filtering, or accessible analysis."
+        },
+        {
+          "name": "threejs-point-clouds-splats",
+          "when": "The task concerns dense point clouds, PLY, LAS or LAZ conversion, Gaussian splats, scans, progressive spatial streaming, LOD, splat sorting, classification, or large-dataset picking."
+        },
+        {
+          "name": "threejs-cad-bim",
+          "when": "The task concerns CAD or IFC conversion, BIM assemblies, technical-model hierarchy, engineering metadata, units, measurement, clipping, exploded views, large models, or revision comparison."
+        },
+        {
+          "name": "threejs-large-worlds-geospatial",
+          "when": "The task concerns geographic coordinates, ellipsoids, projections, local tangent frames, floating origins, tiled terrain, GIS data, geospatial precision, or horizon culling."
+        },
+        {
+          "name": "threejs-accessibility",
+          "when": "The task concerns non-XR keyboard or switch access, focus, screen-reader semantics, reduced motion, captions, high contrast, color-independent cues, canvas alternatives, or equivalent data views."
+        },
+        {
+          "name": "threejs-webxr-accessibility",
+          "when": "The task concerns VR or AR sessions, reference spaces, controllers, hands, locomotion, hit testing, comfort, inclusive immersive input, or a coordinated non-XR fallback."
+        },
+        {
+          "name": "threejs-performance-memory",
+          "when": "The task concerns FPS, frame spikes, draw calls, fill rate, compilation stalls, textures, leaks, mobile limits, LOD, batching, BVH, Octree, occlusion culling, workers, or adaptive quality."
+        },
+        {
+          "name": "threejs-testing-debugging",
+          "when": "The task is reproducing or testing math, scene, loader, shader, browser, GPU, interaction, lifecycle, visual, or performance failures."
+        },
+        {
+          "name": "threejs-security-deployment",
+          "when": "The task concerns untrusted assets or URLs, shader injection, CORS, CSP, credentials, privacy, production builds, CDNs, caching, rollout, or rollback."
+        },
+        {
+          "name": "threejs-networked-experiences",
+          "when": "The task concerns multiplayer authority, entity replication, snapshots, interpolation, prediction, reconciliation, presence, replay, bandwidth, or disconnect recovery."
+        },
+        {
+          "name": "threejs-camera-direction",
+          "when": "The task concerns advanced chase, orbit, cockpit, side, or cinematic rigs, scale-aware framing, damping, quaternion handoffs, floating origins, or camera collision."
+        },
+        {
+          "name": "threejs-procedural-animation",
+          "when": "The task concerns analytic timelines, staged motion, launch or flight paths, docking, spring response, rotating frames, deterministic time, or quaternion animation."
+        },
+        {
+          "name": "threejs-procedural-characters",
+          "when": "The task concerns seeded characters or creatures, body plans, configurable anatomy, runtime rigs, skinning, procedural locomotion, IK, facial variation, equipment attachment, or character LOD."
+        },
+        {
+          "name": "threejs-procedural-fields",
+          "when": "Several geometry, material, density, biome, weather, wear, or flow channels must derive from coherent seeded scalar or vector fields."
+        },
+        {
+          "name": "threejs-procedural-materials",
+          "when": "The task concerns generated PBR terrain, soil, moss, rock, lava, wetness, wear, dissolve, per-instance variation, or correlated material channels."
+        },
+        {
+          "name": "threejs-parallax-occlusion-mapping",
+          "when": "The task specifically needs height-field relief ray marching, view-adaptive POM, silhouette clipping, self-shadowing, or relief-aware depth."
+        },
+        {
+          "name": "threejs-procedural-geometry",
+          "when": "The task concerns production generated meshes such as lofts, shells, branches, profiles, apertures, caps, semantic parts, material groups, or deterministic variants."
+        },
+        {
+          "name": "threejs-procedural-vegetation",
+          "when": "The task concerns generated grass, trees, branches, roots, ivy, vines, canopies, leaf cards, rooted wind, species presets, scattering, or vegetation LOD."
+        },
+        {
+          "name": "threejs-procedural-architecture",
+          "when": "The task concerns procedural massing, building grammars, façades, bays, roofs, trim, modular kits, deterministic variants, or scalable city assets."
+        },
+        {
+          "name": "threejs-procedural-planets",
+          "when": "The task concerns spherical terrain, continents, oceans, biomes, craters, orbital-to-ground LOD, atmosphere coupling, or planetary precision."
+        },
+        {
+          "name": "threejs-spectral-ocean",
+          "when": "The task requires directional wave spectra, FFT or hybrid ocean cascades, choppiness, derivative normals, temporal foam, or large above-and-below-water views."
+        },
+        {
+          "name": "threejs-water-optics",
+          "when": "The task concerns analytic waves or bounded pools, ripples, Fresnel, reflection, refraction, absorption, caustics, interactive disturbances, or water volumes."
+        },
+        {
+          "name": "threejs-precipitation-surfaces",
+          "when": "The task couples rain, snow, streaks, flakes, splashes, puddles, ripples, wetness, accumulation, melt, or weather-driven material changes."
+        },
+        {
+          "name": "threejs-atmosphere-aerial-perspective",
+          "when": "The task concerns planetary sky, Rayleigh or Mie scattering, atmosphere LUTs, sun or moon discs, aerial perspective, or ground-to-space transitions."
+        },
+        {
+          "name": "threejs-volumetric-clouds",
+          "when": "The task concerns weather-driven volume clouds, shape and detail density, raymarching, silver lining, temporal reconstruction, multiple layers, or cloud shadows."
+        },
+        {
+          "name": "threejs-raymarched-space-effects",
+          "when": "The task concerns black holes, wormholes, accretion disks, curved rays, bounded nebulae, signed-distance structures, or space-effect numerical integration."
+        },
+        {
+          "name": "threejs-path-tracing",
+          "when": "The task concerns progressive path tracing, accumulated ray transport, BVH integration, material or environment support, convergence, denoising, tiled output, or a raster fallback."
+        },
+        {
+          "name": "threejs-procedural-vfx",
+          "when": "The task concerns particles, plasma, sparks, wakes, trails, debris, dissolves, impact bursts, GPU simulation, pooling, or HDR effect emission."
+        },
+        {
+          "name": "threejs-temporal-surfaces",
+          "when": "The task concerns history-driven frost, thaw, wet glass, droplets, accumulation masks, ping-pong simulation, blur, refraction, or interactive surface state."
+        },
+        {
+          "name": "threejs-shadow-systems",
+          "when": "The task concerns stable directional shadows, cascades, clipmaps, large worlds, texel stabilization, cached updates, custom depth materials, or invalidation."
+        },
+        {
+          "name": "threejs-screen-space-ambient-occlusion",
+          "when": "The task specifically concerns SSAO or GTAO, depth and normal reconstruction, horizon sampling, bent normals, bilateral upsampling, contact grounding, or halos."
+        },
+        {
+          "name": "threejs-bloom",
+          "when": "The task specifically concerns HDR bloom, emissive hierarchy, threshold and knee tuning, multi-scale blur, selective bloom, restoration, or exposure coupling."
+        },
+        {
+          "name": "threejs-exposure-color-grading",
+          "when": "The task concerns luminance metering, eye adaptation, exposure, tone mapping, output conversion, LUT grading, or crushed, clipped, or double-encoded output."
+        },
+        {
+          "name": "threejs-image-pipeline",
+          "when": "Several advanced passes must share depth, normals, motion, history, atmosphere, bloom, exposure, tone mapping, grading, antialiasing, and final output ownership."
+        },
+        {
+          "name": "threejs-visual-validation",
+          "when": "The result needs fixed cameras, seeds, times, no-post baselines, diagnostic captures, distance and temporal sweeps, GPU budgets, or visual regression evidence."
+        }
+      ]
+    },
+    {
+      "id": "python-development",
+      "title": "Python Implementation and Specialist Routing",
+      "decision": "Use python-development as the baseline for Python code work, then add only the specialist that owns the primary backend, automation, testing, debugging, data, scraping, packaging, concurrency, security, or API-client concern.",
+      "skills": [
+        {
+          "name": "python-development",
+          "when": "The task creates, modifies, fixes, reviews, refactors, or runs general Python code, modules, packages, applications, .py files, or Python project configuration."
+        },
+        {
+          "name": "python-automation-scripting",
+          "when": "The Python deliverable is a script, CLI, filesystem utility, subprocess wrapper, scheduled job, or small batch automation."
+        },
+        {
+          "name": "python-backend-development",
+          "when": "The Python code is a Django, Flask, FastAPI, ASGI/WSGI, ORM-backed, migration-aware, worker, or other server-side application."
+        },
+        {
+          "name": "python-testing-engineering",
+          "when": "The task writes or fixes Python tests, pytest or unittest fixtures, parametrization, mocks, async tests, temporary paths, or test harnesses."
+        },
+        {
+          "name": "python-observability-debugging",
+          "when": "A Python exception, traceback, failing runtime, logging problem, performance regression, memory growth, or environment-specific symptom needs diagnosis."
+        },
+        {
+          "name": "python-data-engineering",
+          "when": "The Python work centers on pandas, Polars, DuckDB, PyArrow, notebooks, ETL/ELT, tabular data, CSV, Parquet, or file-based data pipelines."
+        },
+        {
+          "name": "python-web-scraping",
+          "when": "The Python work collects structured data through requests, httpx, BeautifulSoup, lxml, XPath, feeds, pagination, or static HTML crawling."
+        },
+        {
+          "name": "python-packaging-release",
+          "when": "The task concerns Python build metadata, pyproject.toml, wheels, sdists, console entry points, installation, versioning, PyPI, or release artifacts."
+        },
+        {
+          "name": "python-concurrency-patterns",
+          "when": "The Python code coordinates asyncio tasks, TaskGroup, cancellation, timeouts, queues, backpressure, workers, or bounded parallelism."
+        },
+        {
+          "name": "python-security-hardening",
+          "when": "The Python implementation handles secrets, untrusted deserialization, subprocesses, filesystem paths, network boundaries, or dependency and supply-chain risk."
+        },
+        {
+          "name": "python-api-client-development",
+          "when": "The Python deliverable is an HTTP API client or SDK with OpenAPI, auth, pagination, retries, timeouts, transport configuration, or error mapping."
+        }
+      ]
+    },
+    {
+      "id": "typescript-development",
+      "title": "TypeScript Implementation and Framework Routing",
+      "decision": "Use typescript-development as the baseline for TypeScript code work, then add only the specialist that owns the primary runtime, React, Next.js, Vue, testing, debugging, or refactoring concern.",
+      "skills": [
+        {
+          "name": "typescript-development",
+          "when": "The task creates, modifies, fixes, reviews, refactors, tests, or type-checks TypeScript code, .ts or .tsx files, tsconfig settings, strict types, or typed public APIs."
+        },
+        {
+          "name": "javascript-development",
+          "when": "The TypeScript task materially involves Node.js or browser runtime behavior, asynchronous I/O, cancellation, error propagation, security, or JavaScript interoperability."
+        },
+        {
+          "name": "react-ui-patterns",
+          "when": "The TypeScript task builds or reviews React UI state, loading, empty, error, retry, optimistic update, Suspense, or transition behavior."
+        },
+        {
+          "name": "nextjs-development",
+          "when": "The TypeScript task concerns Next.js routing, Server or Client Components, Server Actions, route handlers, caching, metadata, or deployment boundaries."
+        },
+        {
+          "name": "vue-development",
+          "when": "The TypeScript task concerns Vue SFCs, script setup, typed props or emits, composables, Pinia, Vue Router, or vue-tsc."
+        },
+        {
+          "name": "frontend-testing",
+          "when": "The TypeScript work writes or fixes React or general frontend component and hook tests with Vitest, Jest, RTL-style queries, typed fixtures, or typed mocks."
+        },
+        {
+          "name": "vue-testing",
+          "when": "The TypeScript work writes or fixes Vue component, composable, route, or Pinia tests with Vitest or Vue Test Utils."
+        },
+        {
+          "name": "systematic-debugging",
+          "when": "A TypeScript compiler, build, module-resolution, inference, narrowing, declaration, or runtime failure has an unknown or disputed cause."
+        },
+        {
+          "name": "code-refactoring",
+          "when": "The TypeScript change must preserve behavior and public contracts while improving structure or removing unsafe type workarounds."
+        },
+        {
+          "name": "test-driven-development",
+          "when": "The TypeScript implementation must proceed through an explicit RED-GREEN-REFACTOR cycle with a focused regression or contract test."
+        }
+      ]
+    },
+    {
+      "id": "java-development",
+      "title": "Java Implementation and JVM Specialist Routing",
+      "decision": "Use java-development as the baseline when Java source, runtime behavior, or public contracts change, then add only the specialist that owns architecture, tests, build tooling, Spring, persistence, debugging, or refactoring. For Maven or Gradle configuration with no Java source or runtime change, use jvm-build-tooling without forcing the Java baseline.",
+      "skills": [
+        {
+          "name": "java-development",
+          "when": "The task creates, modifies, fixes, reviews, refactors, tests, or runs Java source, .java files, javac diagnostics, JVM exceptions, concurrency, resources, or Java public APIs."
+        },
+        {
+          "name": "java-architecture",
+          "when": "The Java task concerns package or module boundaries, Clean Architecture, hexagonal design, DDD, bounded contexts, ports and adapters, or an incremental architecture migration."
+        },
+        {
+          "name": "java-testing",
+          "when": "The task writes or fixes Java tests, JUnit, Mockito, AssertJ, Testcontainers, ArchUnit, deterministic fixtures, regression coverage, or flaky test behavior."
+        },
+        {
+          "name": "jvm-build-tooling",
+          "when": "The task concerns Maven, Gradle, wrappers, plugins, dependencies, toolchains, multi-module builds, Java version alignment, or build phases."
+        },
+        {
+          "name": "spring-development",
+          "when": "The Java task concerns Spring Boot application structure, dependency injection, configuration, controllers, REST APIs, transactions, testing slices, or observability."
+        },
+        {
+          "name": "spring-security",
+          "when": "The Spring Java task concerns authentication, authorization, OAuth2, OIDC, JWT, CSRF, CORS, method security, filter chains, or security tests."
+        },
+        {
+          "name": "spring-webflux",
+          "when": "The Java task concerns WebFlux, Reactor, WebClient, R2DBC, reactive pipelines, backpressure, schedulers, cancellation, WebTestClient, or StepVerifier."
+        },
+        {
+          "name": "spring-cloud-microservices",
+          "when": "The Java task concerns Spring Cloud, service boundaries, gateways, Kafka, distributed events, resilience, tracing, or service-to-service communication."
+        },
+        {
+          "name": "jpa-hibernate-development",
+          "when": "The Java task concerns JPA, Hibernate, Spring Data, entities, repositories, ORM transactions, fetching, N plus 1 queries, projections, or persistence tests."
+        },
+        {
+          "name": "mybatis-development",
+          "when": "The Java task concerns MyBatis mapper interfaces, XML, bindings, ResultMap definitions, dynamic SQL, batch execution, or MyBatis transactions."
+        },
+        {
+          "name": "systematic-debugging",
+          "when": "A Java compiler, build, test, exception, concurrency, resource, JVM runtime, or framework failure has an unknown or disputed cause."
+        },
+        {
+          "name": "code-refactoring",
+          "when": "The Java change must preserve behavior and public contracts while improving structure, naming, duplication, or maintainability."
+        },
+        {
+          "name": "test-driven-development",
+          "when": "The Java implementation must proceed through an explicit RED-GREEN-REFACTOR cycle with a focused regression or contract test."
+        }
+      ]
+    },
+    {
+      "id": "ios-native-development",
+      "title": "Native iOS Architecture and Delivery",
+      "decision": "Choose by concern: app and module boundaries, SwiftUI implementation, concurrency and isolation, code-level testing, device behavior, or release readiness.",
+      "skills": [
+        {
+          "name": "ios-architecture",
+          "when": "The task is selecting or reviewing Swift app architecture, feature and module boundaries, dependency direction, state and effect ownership, navigation ownership, or an incremental migration."
+        },
+        {
+          "name": "swiftui-development",
+          "when": "The task is implementing or reviewing SwiftUI state, views, identity, navigation, lifecycle-safe concurrency, accessibility, compatibility, or rendering performance."
+        },
+        {
+          "name": "swift-concurrency",
+          "when": "The task is diagnosing actor-isolation or Sendable diagnostics, designing task lifetime or cancellation, adopting async/await, actors, or AsyncSequence, or migrating targets to Swift 6 strict concurrency."
+        },
+        {
+          "name": "swift-testing",
+          "when": "The task is writing or reviewing native Swift unit and integration tests, using Swift Testing APIs, testing async or actor-isolated code, fixing parallel-test flakiness, or migrating XCTest."
+        },
+        {
+          "name": "mobile-app-testing",
+          "when": "The task is proving behavior across devices, simulators, lifecycle events, permissions, offline states, deep links, push notifications, purchases, or mobile automation."
+        },
+        {
+          "name": "app-store-release",
+          "when": "The implementation is ready for signing, archive validation, privacy declarations, TestFlight, App Store metadata, review, or staged release."
+        }
+      ]
+    },
+    {
+      "id": "testing-lifecycle",
+      "title": "Testing and Quality Lifecycle",
+      "decision": "Choose by test lifecycle stage, target layer, and required evidence rather than by test tool name alone.",
+      "skills": [
+        {
+          "name": "testing-strategy",
+          "when": "The task is choosing test levels, confidence targets, fixture strategy, coverage boundaries, and maintenance tradeoffs."
+        },
+        {
+          "name": "test-driven-development",
+          "when": "New or changed behavior should be implemented through a strict red-green-refactor cycle."
+        },
+        {
+          "name": "swift-testing",
+          "when": "The task is native Swift unit or integration testing with Swift Testing or XCTest, including parameterized cases, traits, async behavior, parallel isolation, or framework migration."
+        },
+        {
+          "name": "frontend-testing",
+          "when": "React or TypeScript units, hooks, components, or RTL-style behavior need focused non-browser tests."
+        },
+        {
+          "name": "e2e-testing-patterns",
+          "when": "The task is designing and maintaining reliable browser E2E suites, fixtures, critical flows, CI integration, or flake control."
+        },
+        {
+          "name": "playwright-automation",
+          "when": "The task explicitly requires Playwright locators, traces, scripted interactions, screenshots, or browser automation."
+        },
+        {
+          "name": "webapp-testing",
+          "when": "A local web application needs outcome-focused functional verification, UI troubleshooting, screenshots, and browser-log checks."
+        },
+        {
+          "name": "accessibility-testing",
+          "when": "The interface needs WCAG, keyboard, focus, screen-reader, reflow, contrast, or reduced-motion evidence."
+        },
+        {
+          "name": "visual-regression-testing",
+          "when": "Visual fidelity, screenshots, baselines, OCR, DOM geometry, or machine acceptance gates are the primary evidence."
+        },
+        {
+          "name": "systematic-debugging",
+          "when": "A regression or failure exists but its root cause is not understood and hypotheses must be tested before changing code."
+        },
+        {
+          "name": "verification-before-completion",
+          "when": "Implementation is believed complete and fresh commands, behavior checks, diff inspection, and repository state must prove it."
+        }
+      ]
+    },
+    {
+      "id": "skill-governance",
+      "title": "Skill Discovery, Review, and Release",
+      "decision": "Choose one owner by the artifact needed now: cross-tool contract, local route, external gap decision, CLI action, read-only scan, deterministic lint, semantic audit, focused security decision, controlled runtime proof, or versioned release evidence.",
+      "skills": [
+        {
+          "name": "skill-creator-design",
+          "when": "A new or materially redesigned cross-tool Skill needs ownership, invocation, completion, residue, resources, and platform-creator handoffs defined before implementation."
+        },
+        {
+          "name": "skill-explorer",
+          "when": "The user needs to navigate the local catalog, compare nearby Skills, or select the smallest useful local route."
+        },
+        {
+          "name": "skill-gap-analyzer",
+          "when": "Local coverage must be compared with marketplaces or GitHub to decide whether to upgrade, add, or keep unchanged."
+        },
+        {
+          "name": "skillctl",
+          "when": "The exact source, target, scope, and owner are known and the task is a direct query, install, update, use, initialization, or supported removal command."
+        },
+        {
+          "name": "skill-scan",
+          "when": "An unfamiliar Skill folder needs a deterministic read-only inventory, hashes, executable surfaces, and suspicious-pattern triage before deeper checks."
+        },
+        {
+          "name": "skill-lint",
+          "when": "SKILL.md structure, frontmatter, naming, links, package shape, eval schema, provenance locks, or repository-native deterministic gates must be validated."
+        },
+        {
+          "name": "skill-audit",
+          "when": "Invocation fit, semantic completeness, evidence, overlap, provenance, maintenance, and overall package risk need review."
+        },
+        {
+          "name": "skill-security-review",
+          "when": "A third-party or executable Skill needs focused supply-chain, permissions, secrets, data-flow, network, and prompt-injection review."
+        },
+        {
+          "name": "skill-executor",
+          "when": "Static review cannot prove behavior and a Skill needs an explicit isolation packet, controlled execution, repeated-run evidence, side-effect observation, and cleanup proof."
+        },
+        {
+          "name": "skillforge",
+          "when": "A frozen Skill revision needs candidate-versus-baseline evaluation, held-out thresholds, runtime and safety evidence, an unsigned manifest, approval, and optional approved attestation."
+        }
+      ]
+    },
+    {
+      "id": "video-production",
+      "title": "Video Production Stage and Medium",
+      "decision": "Use the production workflow as orchestrator, then select specialists by artifact stage, generation method, or final format.",
+      "skills": [
+        {
+          "name": "video-production-workflow",
+          "when": "A complete video project needs coordinated brief, treatment, script, storyboard, continuity, assets, edit, review, and approval gates."
+        },
+        {
+          "name": "storyboard-creation",
+          "when": "A script or idea must become scenes, shots, timing, camera notes, dialogue, and production-ready shot tables."
+        },
+        {
+          "name": "short-video-script",
+          "when": "The deliverable is a short-form TikTok, Reels, Shorts, Douyin, or Xiaohongshu script with hook, pacing, and CTA."
+        },
+        {
+          "name": "vlog-production",
+          "when": "The project is a vlog requiring story arc, footage review, talking-head beats, B-roll, edit, packaging, and repurposing."
+        },
+        {
+          "name": "ugc-video-ads",
+          "when": "The deliverable is a creator-style product ad with persona, hook, demo, objections, social proof, and platform variants."
+        },
+        {
+          "name": "ai-video-generation",
+          "when": "New clips must be generated through text-to-video, image-to-video, or reference-driven AI video providers."
+        },
+        {
+          "name": "avatar-video-generation",
+          "when": "The output is a presenter, talking-head, digital-human, avatar, or lip-synced video."
+        },
+        {
+          "name": "remotion-video-toolkit",
+          "when": "The output should be deterministic, programmable, data-driven, and rendered through React and Remotion."
+        },
+        {
+          "name": "video-edit",
+          "when": "Existing media must be trimmed, concatenated, resized, compressed, converted, inspected, or edited with local tools."
+        },
+        {
+          "name": "subtitle-captions",
+          "when": "The task is subtitle timing, caption formatting, SRT/VTT production, readability, or caption accessibility."
+        }
+      ]
+    },
+    {
+      "id": "writing-artifact",
+      "title": "Writing Artifact and Transformation",
+      "decision": "Choose by target artifact and transformation intent; do not apply generic polishing when a specialist must preserve evidence or structure.",
+      "skills": [
+        {
+          "name": "answer-writing",
+          "when": "The target is a concise, actionable final response to a user."
+        },
+        {
+          "name": "humanizer",
+          "when": "Existing text is correct but sounds stiff, repetitive, promotional, formulaic, or obviously AI-generated."
+        },
+        {
+          "name": "brand-voice",
+          "when": "Writing must extract, document, or consistently apply a specific organization, publication, product, or creator voice."
+        },
+        {
+          "name": "product-pitch-writing",
+          "when": "Verified product or system truth must become audience-specific selling points, a timed presentation speech, demo narrative, keynote, or speaker notes."
+        },
+        {
+          "name": "article-writing",
+          "when": "The deliverable is an evidence-led long-form article, guide, essay, or newsletter."
+        },
+        {
+          "name": "content-repurposing",
+          "when": "One approved source must become multiple channel-specific derivatives without introducing unsupported claims."
+        },
+        {
+          "name": "ux-writing",
+          "when": "The text is interface microcopy such as labels, errors, empty states, onboarding, notifications, or form help."
+        },
+        {
+          "name": "markdown-writer",
+          "when": "The main requirement is clear GFM structure, headings, tables, examples, and general Markdown documentation."
+        },
+        {
+          "name": "git-readme-writer",
+          "when": "A repository README must be derived from actual project structure, setup, usage, architecture, and contribution paths."
+        },
+        {
+          "name": "specification-authoring",
+          "when": "A formal technical specification with prescribed structure, numbering, diagrams, traceability, and version history is required."
+        }
+      ]
+    },
+    {
+      "id": "code-review-ownership",
+      "title": "Code Review Scope and Ownership",
+      "decision": "Use code-review as the risk profile, evidence, severity, coverage, and verdict umbrella for bounded change review; add or substitute the narrow specialist according to review context, domain, and whether the task is analysis, publication, remediation, or a repeatable gate.",
+      "skills": [
+        {
+          "name": "code-review",
+          "when": "A bounded diff, commit, branch comparison, changed file, working tree, or pasted snippet needs a risk-calibrated read-only review with intent and implementation passes, concrete findings, honest coverage, and a verdict."
+        },
+        {
+          "name": "frontend-code-review",
+          "when": "The change affects frontend state, rendering, accessibility, responsiveness, browser behavior, CSS, React, TypeScript, or user-visible UI logic."
+        },
+        {
+          "name": "security-code-review",
+          "when": "The primary question is vulnerability, exploitability, attacker control, trust boundaries, authentication, authorization, injection, secrets, cryptography, infrastructure security, or validation of a potentially blocking security finding."
+        },
+        {
+          "name": "github-code-review",
+          "when": "An existing GitHub pull request needs a first review or re-review using frozen base and head SHAs, merge-base diff, commits, prior findings, comments, changed files, and checks."
+        },
+        {
+          "name": "github-inline-review",
+          "when": "Existing review findings must be published as GitHub inline comments, suggestion blocks, approval, comment, or request-changes actions after explicit authorization."
+        },
+        {
+          "name": "project-architecture-review",
+          "when": "The requested review concerns repository-wide architecture, module boundaries, dependency direction, data flow, or restructuring options rather than one bounded change."
+        },
+        {
+          "name": "receiving-code-review",
+          "when": "Review findings already exist and must be validated, disputed, accepted, implemented, tested, and returned for re-review."
+        },
+        {
+          "name": "pipeline-review",
+          "when": "A completed stage needs an independent repeatable review gate with risk-calibrated depth, stable finding IDs, coverage, verification gaps, ownership, and re-review loops."
+        }
+      ]
+    },
+    {
+      "id": "git-github",
+      "title": "Git and GitHub Operation Boundary",
+      "decision": "Choose first between local Git and remote GitHub, then between analysis-only and state-changing operations.",
+      "skills": [
+        {
+          "name": "git-operations",
+          "when": "The task is routine local repository status, branch, stage, commit, pull, push, merge, rebase, stash, or conflict handling."
+        },
+        {
+          "name": "git-advanced",
+          "when": "The task needs worktrees, bisect, interactive rebase, recovery, hooks, history repair, or advanced Git control."
+        },
+        {
+          "name": "github-operations",
+          "when": "The task concerns remote issues, pull requests, releases, checks, workflow runs, or GitHub API operations."
+        },
+        {
+          "name": "github-code-review",
+          "when": "An existing GitHub pull request needs a read-only first review or re-review with frozen revisions, prior-finding disposition, diff, discussion, and check analysis."
+        },
+        {
+          "name": "github-inline-review",
+          "when": "Review findings must be submitted as line-level comments, suggestion blocks, approval, comment, or request-changes actions."
+        },
+        {
+          "name": "github-actions-ci",
+          "when": "The task is specifically creating, debugging, or reviewing GitHub Actions workflow YAML, jobs, matrices, caching, or permissions."
+        }
+      ]
+    },
+    {
+      "id": "browser-web",
+      "title": "Web Extraction, Browser Control, and Browser QA",
+      "decision": "Choose by page type and intent: static extraction, interactive automation, tool-specific scripting, diagnostics, local verification, or specialized QA.",
+      "skills": [
+        {
+          "name": "python-web-scraping",
+          "when": "Content can be collected through HTTP and parsed from static or lightly dynamic HTML without driving a real browser."
+        },
+        {
+          "name": "browser-automation",
+          "when": "A real browser must navigate, click, fill forms, capture screenshots, extract rendered data, or repeat web interactions."
+        },
+        {
+          "name": "playwright-automation",
+          "when": "The browser task explicitly requires Playwright locators, traces, scripted flows, MCP, or CLI execution."
+        },
+        {
+          "name": "chrome-devtools-debugging",
+          "when": "The goal is diagnosing console, network, runtime, performance, DOM, accessibility tree, storage, or page-load behavior."
+        },
+        {
+          "name": "webapp-testing",
+          "when": "A local web application needs functional validation and UI troubleshooting rather than general web automation."
+        },
+        {
+          "name": "e2e-testing-patterns",
+          "when": "The work concerns E2E suite architecture, critical-flow selection, fixtures, flakiness, maintenance, or CI."
+        },
+        {
+          "name": "browser-compatibility-testing",
+          "when": "The risk is differences across Chrome, Firefox, Safari, Edge, mobile browsers, or remote browser grids."
+        },
+        {
+          "name": "visual-regression-testing",
+          "when": "The browser output must be compared against approved visual baselines or machine-readable fidelity criteria."
+        },
+        {
+          "name": "agent-reach-ops",
+          "when": "Evidence must retain native social, video, podcast, code-hosting, or RSS authorship, timestamps, transcript provenance, revision state, and source lineage."
+        },
+        {
+          "name": "web-research-ops",
+          "when": "The main outcome is verified research with source quality and citations rather than extraction automation itself."
+        }
+      ]
+    },
+    {
+      "id": "planning-delivery",
+      "title": "Planning, Discovery, and Delivery Stage",
+      "decision": "Choose by lifecycle stage and task duration: clarify, discover, prototype, specify, plan, edit, slice, hand off, or verify.",
+      "skills": [
+        {
+          "name": "ask-questions-if-underspecified",
+          "when": "The user explicitly requests a question-first approach and only the minimum missing information is needed."
+        },
+        {
+          "name": "requirements-deep-dive",
+          "when": "The user explicitly requests a deliberate one-decision-at-a-time interview that challenges assumptions and records decisions."
+        },
+        {
+          "name": "solution-discovery",
+          "when": "The outcome is known but solution direction, alternatives, scope, or architecture tradeoffs are not yet approved."
+        },
+        {
+          "name": "throwaway-prototyping",
+          "when": "One unresolved product, interaction, visual, logic, architecture, or integration question needs disposable executable evidence."
+        },
+        {
+          "name": "spec-flow",
+          "when": "Requirements or direction are clear and must become acceptance criteria, vertical slices, dependencies, and executable work items."
+        },
+        {
+          "name": "todo-first",
+          "when": "The current task has several meaningful steps and needs runtime-neutral progress tracking in this session."
+        },
+        {
+          "name": "code-change-workflow",
+          "when": "Existing code will change and entry points, call chains, data flow, tests, constraints, and verification paths must be inspected first."
+        },
+        {
+          "name": "incremental-implementation",
+          "when": "A large change must be divided into small verified slices, checkpoints, reviewable commits, or rollback-safe stages."
+        },
+        {
+          "name": "multi-session-planning",
+          "when": "The work spans sessions, agents, tools, milestones, or context windows and needs a durable dependency and ownership map."
+        },
+        {
+          "name": "session-handoff",
+          "when": "Non-trivial work must pause, transfer ownership, cross a context boundary, or resume from an evidence-linked handoff."
+        },
+        {
+          "name": "verified-software-delivery",
+          "when": "The whole delivery chain from approved problem framing through implementation, review, and completion needs orchestration."
+        }
+      ]
+    },
+    {
+      "id": "security-analysis",
+      "title": "Security Analysis Scope and Evidence",
+      "decision": "Choose by whether the task starts from an architecture, an unknown codebase risk, a known vulnerability family, an operationalized detector, or a binary artifact.",
+      "skills": [
+        {
+          "name": "threat-modeling",
+          "when": "Assets, trust boundaries, attacker capabilities, abuse cases, or required security invariants are not yet explicit."
+        },
+        {
+          "name": "security-code-review",
+          "when": "A code change or component needs a first-pass vulnerability review without a confirmed seed family."
+        },
+        {
+          "name": "vulnerability-variant-analysis",
+          "when": "A credible known issue, incomplete fix, or recurring weakness should be expanded into a root-cause predicate and complete variant ledger."
+        },
+        {
+          "name": "security-scanning",
+          "when": "A mature, tested rule or scanner must be configured, automated, triaged, and enforced in delivery workflows."
+        },
+        {
+          "name": "reverse-engineering",
+          "when": "The authorized evidence is a binary, firmware image, protocol, memory artifact, or undocumented implementation rather than source code."
+        }
+      ]
+    },
+    {
+      "id": "product-research-experimentation",
+      "title": "Product Research and Experimentation Method",
+      "decision": "Choose by the uncertainty and evidence needed: market context, user behavior, design precedents, solution direction, controlled optimization, or causal product impact.",
+      "skills": [
+        {
+          "name": "market-research",
+          "when": "The decision needs evidence about markets, competitors, positioning, demand, or external alternatives."
+        },
+        {
+          "name": "ux-research",
+          "when": "The uncertainty concerns real user needs, behavior, comprehension, accessibility, or why a workflow succeeds or fails."
+        },
+        {
+          "name": "design-intelligence-search",
+          "when": "The task needs searchable design precedents, patterns, visual directions, or accessibility references before a design decision."
+        },
+        {
+          "name": "solution-discovery",
+          "when": "The outcome is known but viable approaches, trade-offs, scope, or implementation direction are not yet approved."
+        },
+        {
+          "name": "autoresearch",
+          "when": "A measurable artifact or system can be improved through controlled, repeatable optimization loops with a fixed evaluator."
+        },
+        {
+          "name": "product-experimentation",
+          "when": "A causal product decision can be tested through randomized assignment, predeclared metrics, instrumentation checks, and a ship-or-stop rule."
+        }
+      ]
+    }
+  ]
+}

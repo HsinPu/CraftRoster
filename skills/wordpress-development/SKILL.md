@@ -11,6 +11,8 @@ metadata:
 
 Build and operate WordPress through supported extension points while preserving the site's content, identity, editorial behavior, and recovery path.
 
+Read `frontend-design` before planning visible theme, block, or editor web UI implementation. Backend, database, site operations, and read-only inventory without a visible UI change may use this Skill alone.
+
 ## Establish the Contract
 
 1. Identify the requested outcome, target environment, WordPress and PHP versions, hosting constraints, repository, deployment path, access level, and decision owner.

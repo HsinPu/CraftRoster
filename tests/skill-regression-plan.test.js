@@ -98,10 +98,25 @@ try {
         [['alpha', 'bare', 'none'], ['unrelated', 'alpha', 'none']]);
       assert(plan.optional_dependency_advisories.every(item => item.changed_endpoints.length === 1 && item.changed_endpoints[0] === 'alpha'));
       assert.strictEqual(plan.selection_algorithm.optional_dependencies, 'advisory_only_no_expansion');
-      assert(plan.selection_algorithm.version.endsWith('-v2'));
+      assert(plan.selection_algorithm.version.endsWith('-v3'));
       const explicit = buildPlan({ root, changed: ['alpha', 'unrelated'] });
       assert(selectedCase(explicit, 'unrelated'));
       assert(skill(explicit, 'unrelated').reasons.some(reason => reason.type === 'direct_change'));
+    } finally { write('scripts/data/skill-catalog.json', catalog); }
+  });
+  check('per-Skill alternatives and related routes select only one-step routing suites', () => {
+    const changed = structuredClone(catalog);
+    changed.skills.alpha.routes = [{ name: 'unrelated', kind: 'alternative', when: 'The other output is requested.' }];
+    changed.skills.bare.routes = [{ name: 'alpha', kind: 'related', when: 'The changed owner is relevant background.' }];
+    changed.skills.unrelated.routes = [{ name: 'distant', kind: 'alternative', when: 'A second-hop output is requested.' }];
+    write('scripts/data/skill-catalog.json', changed);
+    try {
+      const plan = buildPlan(options);
+      assert(selectedCase(plan, 'unrelated', 'positive', 'routing'));
+      assert(!selectedCase(plan, 'unrelated'));
+      assert(skill(plan, 'bare').reasons.some(reason => reason.type === 'direct_skill_route_neighbor' && reason.kind === 'related'));
+      assert(!skill(plan, 'distant'));
+      assert.strictEqual(plan.selection_algorithm.skill_route_depth, 1);
     } finally { write('scripts/data/skill-catalog.json', catalog); }
   });
   check('foreign owners contribute expected, excluded and allowed references without unrelated tasks', () => {

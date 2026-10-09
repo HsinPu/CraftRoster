@@ -11,6 +11,8 @@ metadata:
 
 Use this skill for Vue application state that belongs outside a single component. Pair with `vue-development` for app structure, `vue-testing` for test setup, and `nuxt-development` for Nuxt-specific auto-import and SSR behavior.
 
+Read `typescript-development` before planning TypeScript stores, typed actions or public store contracts, or compiler diagnostics. Pure JavaScript store analysis may use this Skill alone.
+
 ## Store Design
 
 - Prefer setup stores for complex logic, composables, watchers, and TypeScript-friendly composition.

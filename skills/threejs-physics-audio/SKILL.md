@@ -11,6 +11,8 @@ metadata:
 
 Preserve the former combined entry point while assigning simulation and audio to independent owners.
 
+Installed alone, this Skill selects owners and defines their event contract; it does not implement both systems. Implementation needs only the selected physics or audio specialist, and needs both when simulation events drive synchronized sound. If a selected specialist is unavailable, identify the missing package and leave its implementation pending while completing the independent routing contract.
+
 ## Routing
 
 1. Use `threejs-physics-simulation` for bodies, colliders, triggers, joints, character controllers, fixed timesteps, workers, contacts, and transform synchronization.

@@ -33,5 +33,5 @@ Use this skill when the task is to build videos with code.
 
 - For a complete governed production, use `video-production-workflow`; return the versioned render, render settings, source revision, and review evidence to the project artifact set.
 - For local video trimming, compression, and conversion, use `video-edit`.
-- For React component structure, use `react-ui-patterns` or `frontend-design`.
-- For motion quality and interaction timing, use `animation-best-practices`.
+- Keep frame-driven composition structure and render timing in this Skill. Use `react-ui-patterns` or `frontend-design` only when the work also includes a browser player or product interface that needs React or visible-UI guidance.
+- Use `animation-best-practices` only for browser UI motion and interaction timing in that interface; a video-only composition does not require the frontend baseline.

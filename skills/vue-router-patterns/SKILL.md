@@ -11,6 +11,8 @@ metadata:
 
 Use this skill for Vue Router 4 route design, navigation behavior, and guard bugs. Pair with `vue-debug-guides` for runtime diagnosis, `pinia-state-management` for auth/session stores, and `nuxt-development` when routes are Nuxt file-based routes.
 
+Read `frontend-design` before planning changes to visible navigation or user-facing loading, error, and permission states. Route-record analysis or guard contracts without a visible UI change may use this Skill alone.
+
 ## Workflow
 
 1. Identify route records, route names, params/query, guards, redirects, and owning components.

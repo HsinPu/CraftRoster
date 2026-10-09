@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "auditDate": "2026-10-09",
+  "recordedAtUtc": "2026-10-09T05:48:12.222Z",
+  "nodeVersion": "24.19.0",
+  "checks": [
+    {
+      "name": "npm run validate",
+      "command": [
+        "node",
+        "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js",
+        "run",
+        "validate"
+      ],
+      "exitCode": 0,
+      "result": "Catalog 286 Skills / 237 Agents, contract/source/review registries and generated indexes passed; dependency index has 49 edges; definitions checked, no model tasks executed."
+    },
+    {
+      "name": "skill dependency tests",
+      "command": [
+        "node",
+        "tests/skill-dependencies.test.js"
+      ],
+      "exitCode": 0,
+      "result": "30 dependency tests passed."
+    }
+  ],
+  "limits": [
+    "Records checks executed in the research turn. Rebuilding the report does not rerun these commands."
+  ]
+}

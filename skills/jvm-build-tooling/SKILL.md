@@ -15,6 +15,8 @@ metadata:
 
 Keep build-file-only Maven, Gradle, wrapper, dependency, plugin, toolchain, and CI work in this skill. When the same task changes `.java` source, runtime behavior, compiler-facing public APIs, or Java implementation to resolve the build, read `java-development` before planning and keep this skill responsible for the build graph and toolchain.
 
+A build-file-only task can use this Skill alone. Check the Java baseline only for the affected source or runtime branch; if it is unavailable, report that branch as pending and continue independent build-graph inspection without treating an unrelated Java file as an activation trigger.
+
 ## Handoff
 
 - Use `java-development` for Java code style, APIs, language-level design, or implementation changes.

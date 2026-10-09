@@ -18,7 +18,7 @@ Turn current market evidence into a decision-ready recommendation.
 
 1. Define the decision, target audience, geography, language, units or currency, as-of date, time horizon, market boundary, and excluded questions.
 2. Convert the decision into falsifiable research questions and evidence requirements.
-3. Collect primary and current sources before relying on commentary, aggregators, or vendor claims.
+3. Check whether the supplied source ledger covers the defined questions, market boundary, and as-of date. Use `web-research-ops` only for missing current-source retrieval and qualification; use `agent-reach-ops` for a required platform-specific collection path. A sufficient current ledger needs no new collection.
 4. Build a claim-to-source ledger with canonical locators, evidence-family lineage, relevant dates, support or contradiction status, and a limitation for every material claim. Separate observed facts, estimates, interpretations, and recommendations.
 5. Compare customer signals, alternatives, competitors, switching constraints, and evidence against the status quo.
 6. Resolve conflicts by checking definitions, publication, update, observation, measurement, and requested as-of dates, methodology, sample, source lineage, incentives, and market boundary.
@@ -51,14 +51,14 @@ Include:
 
 ## Boundaries
 
-- Do not perform broad web-search mechanics here; route current-source collection to `web-research-ops`.
+- Keep market definitions, competitor interpretation, sizing methods, confidence, and the decision memo here. Keep current-source retrieval and qualification with `web-research-ops`; consume its ledger instead of handing collection back and forth because a claim concerns a market.
 - Do not present TAM, SAM, or SOM without an explicit sizing method and defensible inputs.
 - Do not write campaign copy, a brand voice profile, or an implementation specification inside the research memo.
 - Stop when a required paid source, private customer record, or legal interpretation is unavailable or unauthorized; report the gap and the smallest reversible next step rather than bypassing access controls.
 
 ## Handoff
 
-- Use `web-research-ops` for current-source discovery, verification, and citation capture.
+- Use `web-research-ops` only when the evidence ledger lacks current-source discovery, verification, or citation capture needed for the decision.
 - Use `agent-reach-ops` when evidence must be collected from platform-specific social, video, code, or RSS sources.
 - Use `solution-discovery` when the evidence must inform a product or implementation direction.
 - Use `spec-flow` after a market-backed product direction is approved and needs executable requirements.

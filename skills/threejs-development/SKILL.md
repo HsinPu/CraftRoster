@@ -14,6 +14,10 @@ metadata:
 
 Route a Three.js task to the smallest specialist set while preserving one coherent scene, renderer, resource, and verification contract.
 
+This package can handle a basic scene independently. The capability map is a selection guide, not a requirement to install or activate every listed Skill. For an affected specialist boundary, check that the selected Skill is available before claiming its workflow was followed. If it is missing, name the Skill and affected deliverable, complete independent work, and mark that branch pending; install it only within the user's authorized installation scope.
+
+Other packages may require this package solely for files under `references/`. Reading those contracts does not activate this entry workflow or its specialist routes.
+
 ## HTML and Web Page Entry
 
 Treat any request to use Three.js or `three` in an HTML page, website, browser demo, canvas experience, or frontend application as a Three.js task even when `frontend-design`, `css-development`, or `javascript-development` was the initial entry point.

@@ -9,7 +9,7 @@ metadata:
 
 # Responsive Design
 
-Use this skill to make layouts adapt cleanly across viewports. Read frontend-design first for any visible production UI change.
+Use this skill to make layouts adapt cleanly across viewports. Its visible production-UI workflow requires `frontend-design`; read that baseline before planning the responsive change.
 
 ## Workflow
 

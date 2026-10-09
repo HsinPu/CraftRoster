@@ -20,8 +20,11 @@ function validateDependencies(entries) {
       if (seen.has(dependency.name)) throw new Error(`${source}: duplicate dependency ${dependency.name}`);
       seen.add(dependency.name);
       if (!['required', 'conditional', 'optional'].includes(dependency.kind)) throw new Error(`${source}: invalid dependency kind`);
-      if (Object.keys(dependency).some((key) => !['name', 'kind', 'when'].includes(key))) {
+      if (Object.keys(dependency).some((key) => !['name', 'kind', 'when', 'usage'].includes(key))) {
         throw new Error(`${source}: unknown dependency field`);
+      }
+      if (dependency.usage !== undefined && !['workflow', 'resource'].includes(dependency.usage)) {
+        throw new Error(`${source}: invalid dependency usage`);
       }
       if (dependency.kind !== 'conditional' && dependency.when !== undefined) {
         throw new Error(`${source}: ${dependency.kind} dependency must omit when`);
@@ -45,6 +48,30 @@ function validateDependencies(entries) {
     complete.add(name);
   }
   [...names].sort().forEach(visit);
+}
+
+function validateRoutes(entries) {
+  const names = new Set(Object.keys(entries));
+  for (const [source, entry] of Object.entries(entries)) {
+    const routes = entry.routes === undefined ? [] : entry.routes;
+    if (!Array.isArray(routes)) throw new Error(`${source}: routes must be an array`);
+    const seen = new Set();
+    for (const route of routes) {
+      if (!route || typeof route !== 'object' || Array.isArray(route)
+        || !namePattern.test(route.name || '') || !names.has(route.name)) {
+        throw new Error(`${source}: unknown or invalid routed Skill`);
+      }
+      if (route.name === source) throw new Error(`${source}: self route is not allowed`);
+      if (!['alternative', 'related'].includes(route.kind)) throw new Error(`${source}: invalid route kind`);
+      if (Object.keys(route).some((key) => !['name', 'kind', 'when'].includes(key))) throw new Error(`${source}: unknown route field`);
+      if (typeof route.when !== 'string' || !route.when.trim() || route.when === '-' || /[\t\r\n\0]/.test(route.when)) {
+        throw new Error(`${source}: route needs a single-line when`);
+      }
+      const key = `${route.name}/${route.kind}`;
+      if (seen.has(key)) throw new Error(`${source}: duplicate route ${key}`);
+      seen.add(key);
+    }
+  }
 }
 
 function siblingLinks(text) {
@@ -75,11 +102,13 @@ function validateSiblingLinks(root, entries) {
   const skillsRoot = path.resolve(root, 'skills');
   for (const [source, entry] of Object.entries(entries)) {
     const text = fs.readFileSync(path.join(skillsRoot, source, 'SKILL.md'), 'utf8');
+    const linkedPackages = new Set();
     for (const raw of siblingLinks(text)) {
       if (raw.startsWith('./') && !raw.slice(2).includes('../')) continue;
       const match = raw.match(/^\.\.\/([a-z0-9]+(?:-[a-z0-9]+)*)(?:\/(.*))?$/);
       if (!match || !Object.hasOwn(entries, match[1])) throw new Error(`${source}: relative resource escapes Skill packages: ${raw}`);
       const [, target, suffix] = match;
+      linkedPackages.add(target);
       if (!(entry.dependencies || []).some((dependency) => dependency.name === target)) {
         throw new Error(`${source}: sibling resource needs a declared dependency on ${target}: ${raw}`);
       }
@@ -99,7 +128,12 @@ function validateSiblingLinks(root, entries) {
         throw new Error(`${source}: sibling resource resolves outside dependency package: ${raw}`);
       }
     }
+    for (const dependency of entry.dependencies || []) {
+      if (dependency.usage === 'resource' && !linkedPackages.has(dependency.name)) {
+        throw new Error(`${source}: resource dependency needs a sibling resource link to ${dependency.name}`);
+      }
+    }
   }
 }
 
-module.exports = { validateDependencies, siblingLinks, validateSiblingLinks };
+module.exports = { validateDependencies, validateRoutes, siblingLinks, validateSiblingLinks };

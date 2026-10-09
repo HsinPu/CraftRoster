@@ -15,6 +15,8 @@
 
 Capture repository, pinned revision or release, author, license, package path, file hashes, install method, target tools, dependencies, network domains, required credentials, declared permissions, expected outputs, and cleanup behavior.
 
+Before reusing a scan, lint, review, or runtime result, compare the current package inventory and hashes, source revision, dependency identity, scope, target tool and version, validator or evaluator version, and applicable permission boundary with the recorded evidence. Preserve its actual pass, fail, blocked, or incomplete verdict and unrun checks. Static-only reports cannot substitute for runtime or cleanup proof. Missing matching evidence activates the relevant producer branch rather than all audit-related Skills.
+
 ## Severity
 
 - **Critical**: credential theft, hidden exfiltration, destructive execution, unverifiable executable payload, or unauthorized external action.

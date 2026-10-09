@@ -29,5 +29,5 @@ Use this skill when the task is to build or maintain an Electron desktop applica
 ## Handoff
 
 - For browser automation against a running Electron app, use `browser-automation`.
-- For UI design and component work, use `frontend-design` or `ui-styling`.
+- For visible web-renderer UI implementation, read `frontend-design` before planning; add `ui-styling` only when the renderer's React/shadcn/Radix/Tailwind scope matches that specialist. Main-process, preload, or IPC-only work does not activate the UI baseline.
 - For app packaging and release workflows, use `deployment-operations`.

@@ -11,7 +11,7 @@ metadata:
 
 ## Frontend Baseline Gate
 
-When Tailwind work creates or changes a visible page, component, layout, form, navigation, responsive state, theme, or visual treatment, read frontend-design before planning. Keep this Skill responsible for Tailwind mechanics and generated CSS.
+When Tailwind work creates or changes a visible page, component, layout, form, navigation, responsive state, theme, or visual treatment, read frontend-design before planning. Keep this Skill responsible for Tailwind mechanics and generated CSS. Build-only configuration or generated-CSS diagnostics without a visible UI change may use this Skill alone.
 
 **在使用 Tailwind CSS（以 v4+ 為主）撰寫 UI 時請讀取本 skill。**
 

@@ -18,7 +18,7 @@ Turn subjective design taste into explicit, reviewable decisions. Treat taste as
 
 Use this Skill when a visually important interface needs a stronger point of view, a current design feels interchangeable, or several contributors need one shared visual direction.
 
-Do not run it automatically for routine CSS fixes, component maintenance, or a direction that is already approved. Use a lightweight consultation for a quick palette or spacing decision. When a screenshot, mockup, or generated image is the principal implementation source, route to the image translation workflow instead.
+Do not run it automatically for routine CSS fixes, component maintenance, or a direction that is already approved. Use `design-consultation` instead for a quick bounded palette or spacing decision. When a screenshot, mockup, or generated image is the principal implementation source, route to `image-to-code` instead.
 
 ## Workflow
 

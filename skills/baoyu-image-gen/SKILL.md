@@ -29,5 +29,5 @@ Use this skill when the user wants an image generated from text.
 ## Handoff
 
 - For prompt craft and visual direction, use `ai-image-prompt-design`.
-- For curated prompt inspiration, use `ai-image-prompts-skill`.
+- For adapting a supplied or already chosen prompt pattern into variants, use `ai-image-prompts-skill`; that package does not bundle an offline prompt library.
 - For deterministic post-processing, use `image-utils`.

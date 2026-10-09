@@ -20,7 +20,7 @@ Turn a current question into a traceable answer without tying the work to one se
    - product behavior or version: official documentation, release notes, source repository, or vendor status record;
    - rules, dates, or public policy: the responsible authority or original publication;
    - research findings: the paper, dataset, protocol, or primary institution;
-   - market claims: current evidence collected through market-research;
+   - market claims: current customer, regulatory, company, transaction, or first-party product sources collected and qualified here; keep market definition, competitor interpretation, and decision-making with `market-research` when that memo is requested;
    - social, video, code-hosting, or RSS evidence: platform-specific collection through agent-reach-ops.
 5. Group sources by evidence family before corroborating them. Verify every material or time-sensitive claim with a primary source or two genuinely independent sources. Do not count republished press coverage, syndication, or summaries of the same announcement, dataset, or study as independent confirmation.
 6. Resolve disagreement by checking the claim definition, observation date, publication date, last-updated date, retrieval date, version, jurisdiction, methodology, incentives, and whether each source reports evidence or merely repeats a claim. For historical questions, separate later retrospective evidence from evidence available at the requested as-of date. Preserve unresolved conflict.
@@ -54,7 +54,7 @@ Keep a compact ledger while researching:
 ## Handoff
 
 - Use summary-ops when the user only needs shorter source material.
-- Use market-research when the evidence must support a market, audience, competitor, positioning, launch, or investment decision.
+- Hand the resulting source ledger to `market-research` only when the requested artifact is a market, audience, competitor, positioning, launch, or investment decision memo. Retrieval stays here; an ordinary cited answer about a market claim does not need that companion.
 - Use agent-reach-ops when evidence must be collected from a specific social, video, code, or RSS platform.
 - Use skill-security-review before adopting or executing a third-party skill, script, or provider package discovered during research.
 - Use article-writing when an approved evidence set should become a sourced long-form publication.

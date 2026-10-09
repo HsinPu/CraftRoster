@@ -3,7 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const { parseYamlFrontmatter } = require('./generate-skill-catalog');
-const { validateDependencies, validateSiblingLinks } = require('./lib/skill-dependencies');
+const { validateDependencies, validateRoutes, validateSiblingLinks } = require('./lib/skill-dependencies');
 
 const root = path.resolve(__dirname, '..');
 const skillsRoot = path.join(root, 'skills');
@@ -176,6 +176,7 @@ const skillsByName = new Map(validSkills.filter((skill) => skill.name).map((skil
 try {
   const dependencyEntries = Object.fromEntries(skillsByName);
   validateDependencies(dependencyEntries);
+  validateRoutes(dependencyEntries);
   validateSiblingLinks(root, dependencyEntries);
 } catch (error) {
   fail(`Skill dependency validation: ${error.message}`);

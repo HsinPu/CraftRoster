@@ -30,7 +30,7 @@ Use this reference when Python code needs secure-by-default implementation choic
 
 ## 邊界與分工
 
-- 用 `code-review` 產出 diff 層級的 security findings。
+- 用 `security-code-review` 產出漏洞與 exploitability findings；通用 correctness/quality review 才用 `code-review`。
 - 用 `python-packaging-release` 處理打包與 release mechanics。
 - 用 `python-backend-development` 處理 framework structure。
 - 這份參考專注在 implementation hardening，而不是審查報告。

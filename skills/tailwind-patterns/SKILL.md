@@ -11,6 +11,8 @@ metadata:
 
 Use this skill for practical Tailwind layout and component styling.
 
+This production-UI styling workflow requires `frontend-design`; read that baseline before planning implementation. If the deliverable is only unresolved visual direction, use the direction owner named below instead.
+
 ## Workflow
 
 1. Decide the layout pattern first: stack, grid, split pane, hero, sidebar, or card deck.

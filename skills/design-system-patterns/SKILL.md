@@ -11,6 +11,8 @@ metadata:
 
 Use this skill to build the structure behind a consistent UI.
 
+Read `frontend-design` before planning visible production components or theme changes. Token architecture or naming analysis that does not change visible UI may use this Skill alone.
+
 ## Workflow
 
 1. Define base tokens, semantic tokens, and component tokens.

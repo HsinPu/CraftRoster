@@ -30,6 +30,8 @@ When the affected JavaScript imports or uses Three.js, the requested outcome is 
 
 Plain Canvas 2D, a generic HTML demo, or an unrelated script in a repository containing Three.js does not activate this gate.
 
+Ordinary Node.js and non-visual JavaScript work can use this Skill alone. Check only the baselines activated by the affected task above; if a selected baseline is unavailable, name it and leave that branch pending while continuing independent JavaScript work.
+
 ## Workflow
 
 1. Inspect runtime targets, module format, package scripts, lint rules, and test setup.
@@ -56,5 +58,6 @@ Plain Canvas 2D, a generic HTML demo, or an unrelated script in a repository con
 
 - For work that meets the 3D routing gate, use `threejs-development` as the scene implementation and routing Skill.
 - For TypeScript-heavy code, use `typescript-development`.
-- For React UI behavior, use `react-ui-patterns` or `react-perf`.
-- For browser automation or UI verification, use `webapp-testing` or `playwright-automation`.
+- For React component state and async UI behavior, use `react-ui-patterns`.
+- For a measured React rendering or interaction performance bottleneck, use `react-perf`.
+- For local application verification in a browser, use `webapp-testing`; for browser automation, navigation, or extraction, use `playwright-automation`.

@@ -75,7 +75,7 @@ When the Next.js target uses `.ts`, `.tsx`, typed route parameters, typed Server
 - Use `typescript-development` for type-level implementation details.
 - Use `auth-integration` for application authentication flows.
 - Use `stripe-payments` for checkout, billing, and webhook flows.
-- Use `vercel-deployment` if added later for Vercel-specific deployment operations.
+- Use `vercel-deployment` when the release target is Vercel.
 
 ## References
 

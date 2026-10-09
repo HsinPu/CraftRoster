@@ -32,6 +32,8 @@ Do not load every related skill. Keep TypeScript as the shared implementation ba
 
 For visible browser UI, components, styling, layout, controls, or interaction presentation, always add frontend-design as the UI implementation baseline.
 
+Server, CLI, and non-visual library work can use this Skill alone. Check `frontend-design` only for that visible UI branch and the named specialists only for their material concerns. If one is unavailable, name it and the blocked branch, continue independent TypeScript work, and do not claim that branch's contract was applied.
+
 ## When To Use
 
 - Create or change `.ts` and `.tsx` files in libraries, services, command-line tools, web apps, or framework projects.
