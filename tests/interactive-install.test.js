@@ -27,7 +27,8 @@ for (let index = 2; index < process.argv.length; index += 1) {
 assert(['all', 'powershell', 'bash'].includes(options.shell), '--shell must be all, powershell, or bash');
 const caseFilter = options.case ? new RegExp(options.case) : null;
 const installationLine = /^OK\s+(?:install|update|force-replace|repair|migrate-update) (?:Skill|Agent) /m;
-const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'craftroster-interactive-'));
+const tempParent = fs.realpathSync.native(os.tmpdir());
+const tempRoot = fs.mkdtempSync(path.join(tempParent, 'craftroster-interactive-'));
 let passed = 0;
 let skipped = 0;
 let fixtureNumber = 0;
@@ -581,7 +582,7 @@ try {
   if (options.requirePty) assert(ptyBootstrapExecuted, '--require-pty requires the PTY bootstrap test to actually run');
 } finally {
   const resolved = path.resolve(tempRoot);
-  assert.equal(path.dirname(resolved), path.resolve(os.tmpdir()), 'Refusing unsafe fixture cleanup');
+  assert.equal(path.dirname(resolved), tempParent, 'Refusing unsafe fixture cleanup');
   assert(path.basename(resolved).startsWith('craftroster-interactive-'), 'Refusing unexpected fixture cleanup');
   assert(!fs.lstatSync(resolved).isSymbolicLink(), 'Refusing fixture symlink cleanup');
   fs.rmSync(resolved, { recursive: true, force: true });
