@@ -9,11 +9,25 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - security-code-review
-  - auth-integration
-  - api-contract-design
-  - security-scanning
+skill-dependencies:
+  - name: security-code-review
+    kind: conditional
+    reason: "Supports threat-modeling-expert with exploit-path, trust-boundary, vulnerability-confidence, and remediation evidence."
+    when: "The scope includes a code-level trust boundary, exploitable path, or security review."
+  - name: auth-integration
+    kind: conditional
+    reason: "Supports threat-modeling-expert with session, OAuth or OIDC, callback, identity, and authorization boundaries."
+    when: "Authentication, session, identity federation, or authorization integration is in scope."
+  - name: api-contract-design
+    kind: conditional
+    reason: "Supports threat-modeling-expert with versioned requests, responses, errors, pagination, and compatibility contracts."
+    when: "The work defines or changes consumer-visible API, event, or webhook contracts."
+  - name: security-scanning
+    kind: optional
+    reason: "An opt-in extension of threat-modeling-expert provides authorized scanner configuration, baselines, result triage, and security quality gates."
+  - name: threat-modeling
+    kind: recommended
+    reason: "Supports threat-modeling-expert with assets, actors, data flows, abuse cases, mitigations, and residual-risk ownership."
 tags:
   - threat-modeling
   - abuse-cases

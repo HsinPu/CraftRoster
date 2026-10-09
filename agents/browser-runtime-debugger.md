@@ -9,11 +9,23 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - chrome-devtools-debugging
-  - browser-automation
-  - webapp-testing
-  - logging-patterns
+skill-dependencies:
+  - name: chrome-devtools-debugging
+    kind: recommended
+    reason: "Supports browser-runtime-debugger with console, network, DOM, storage, and runtime performance evidence."
+  - name: browser-automation
+    kind: recommended
+    reason: "Supports browser-runtime-debugger with real-browser interaction, state inspection, and repeatable capture."
+  - name: webapp-testing
+    kind: conditional
+    reason: "Supports browser-runtime-debugger with local web-app journey verification with browser logs and capture evidence."
+    when: "The investigated behavior belongs to a local web application with a reproducible journey."
+  - name: logging-patterns
+    kind: optional
+    reason: "An opt-in extension of browser-runtime-debugger provides stable event names, levels, structured fields, and secret-safe diagnostics."
+  - name: systematic-debugging
+    kind: recommended
+    reason: "Supports browser-runtime-debugger with a reproduced failure, competing hypotheses, and the smallest proven cause."
 tags:
   - browser-debugging
   - runtime-evidence

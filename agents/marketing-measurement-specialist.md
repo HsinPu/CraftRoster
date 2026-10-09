@@ -9,12 +9,23 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - product-experimentation
-  - browser-automation
-  - webapp-testing
-  - javascript-development
-  - data-organization-system
+skill-dependencies:
+  - name: product-experimentation
+    kind: required
+    reason: "Task 1 explicitly calls product-experimentation to define assignment, exposure, metric, and acceptance contracts; its measurement evidence must preserve that shared contract."
+  - name: browser-automation
+    kind: recommended
+    reason: "Supports marketing-measurement-specialist with real-browser interaction, state inspection, and repeatable capture."
+  - name: webapp-testing
+    kind: recommended
+    reason: "Supports marketing-measurement-specialist with local web-app journey verification with browser logs and capture evidence."
+  - name: javascript-development
+    kind: conditional
+    reason: "Supports marketing-measurement-specialist with browser or Node JavaScript modules, async flow, cancellation, and errors."
+    when: "The affected code or diagnostic evidence uses browser or Node JavaScript."
+  - name: data-organization-system
+    kind: optional
+    reason: "An opt-in extension of marketing-measurement-specialist provides a durable taxonomy, metadata, lifecycle, retention, and retrieval system."
 tags:
   - analytics
   - conversion-tracking

@@ -9,11 +9,22 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - specification-authoring
-  - humanizer
-  - workspace-google-ops
-  - data-organization-system
+skill-dependencies:
+  - name: humanizer
+    kind: optional
+    reason: "An opt-in extension of hr-pro provides optional prose polishing that preserves the author and confirmed meaning."
+  - name: workspace-google-ops
+    kind: conditional
+    reason: "Supports hr-pro with explicitly authorized Google Workspace CLI inputs and account-scoped operations."
+    when: "The approved scope explicitly uses Google Workspace CLI automation and authorized account data."
+  - name: data-organization-system
+    kind: conditional
+    reason: "Supports hr-pro with a durable taxonomy, metadata, lifecycle, retention, and retrieval system."
+    when: "The scope designs a reusable taxonomy, metadata, retention, or retrieval system beyond one report."
+  - name: word-document-ops
+    kind: conditional
+    reason: "Supports hr-pro with DOCX formatting, tracked changes, tables, and validated editable output."
+    when: "The requested input or output is a formatted DOCX document."
 tags:
   - human-resources
   - hiring

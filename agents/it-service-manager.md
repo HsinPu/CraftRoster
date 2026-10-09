@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - incident-response-postmortems
-  - observability-engineering
-  - deployment-operations
-  - data-organization-system
+skill-dependencies:
+  - name: incident-response-postmortems
+    kind: recommended
+    reason: "Supports it-service-manager with software-service incident evidence, recovery decisions, and corrective actions."
+  - name: observability-engineering
+    kind: conditional
+    reason: "Supports it-service-manager with service objectives, low-cardinality telemetry, diagnostics, and alert validation."
+    when: "Service objectives, telemetry, operational diagnostics, or monitoring design are in scope."
+  - name: deployment-operations
+    kind: conditional
+    reason: "Supports it-service-manager with mode-aware artifact, rollout, health, abort, and recovery evidence."
+    when: "An environment promotion, artifact rollout, or recovery plan is part of the authorized mode."
+  - name: data-organization-system
+    kind: recommended
+    reason: "Supports it-service-manager with a durable taxonomy, metadata, lifecycle, retention, and retrieval system."
 tags:
   - itsm
   - service-management

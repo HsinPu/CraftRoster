@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - security-code-review
-  - testing-strategy
-  - api-contract-design
-  - deployment-operations
+skill-dependencies:
+  - name: security-code-review
+    kind: recommended
+    reason: "Supports blockchain-developer with exploit-path, trust-boundary, vulnerability-confidence, and remediation evidence."
+  - name: testing-strategy
+    kind: recommended
+    reason: "Supports blockchain-developer with risk-based test levels, fixtures, boundaries, and meaningful coverage."
+  - name: api-contract-design
+    kind: conditional
+    reason: "Supports blockchain-developer with versioned requests, responses, errors, pagination, and compatibility contracts."
+    when: "The work defines or changes consumer-visible API, event, or webhook contracts."
+  - name: deployment-operations
+    kind: conditional
+    reason: "Supports blockchain-developer with mode-aware artifact, rollout, health, abort, and recovery evidence."
+    when: "An environment promotion, artifact rollout, or recovery plan is part of the authorized mode."
 tags:
   - blockchain
   - smart-contracts

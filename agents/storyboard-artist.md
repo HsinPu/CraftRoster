@@ -9,12 +9,18 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - storyboard-creation
-  - ai-video-prompting
-  - design-consultation
-  - animation-best-practices
-  - responsive-design
+skill-dependencies:
+  - name: storyboard-creation
+    kind: recommended
+    reason: "Supports storyboard-artist with approved scene intent converted into shot IDs, timing, camera, audio, and continuity."
+  - name: ai-video-prompting
+    kind: conditional
+    reason: "Supports storyboard-artist with shot intent, camera motion, temporal continuity, and generative-video prompts."
+    when: "The selected production path needs generative-video prompts or prompt review."
+  - name: ai-image-prompt-design
+    kind: conditional
+    reason: "Supports storyboard-artist with new image briefs expressed as composition, subject, lighting, and prompt variants."
+    when: "The approved work requires new prompts for generated still assets or storyboard panels."
 tags:
   - storyboarding
   - shot-list

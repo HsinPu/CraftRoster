@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - testing-strategy
-  - observability-engineering
-  - incident-response-postmortems
-  - deployment-operations
+skill-dependencies:
+  - name: testing-strategy
+    kind: recommended
+    reason: "Supports chaos-engineer with risk-based test levels, fixtures, boundaries, and meaningful coverage."
+  - name: observability-engineering
+    kind: recommended
+    reason: "Supports chaos-engineer with service objectives, low-cardinality telemetry, diagnostics, and alert validation."
+  - name: incident-response-postmortems
+    kind: conditional
+    reason: "Supports chaos-engineer with software-service incident evidence, recovery decisions, and corrective actions."
+    when: "The scope includes a software-service incident, operational recovery, or postmortem."
+  - name: deployment-operations
+    kind: conditional
+    reason: "Supports chaos-engineer with mode-aware artifact, rollout, health, abort, and recovery evidence."
+    when: "An environment promotion, artifact rollout, or recovery plan is part of the authorized mode."
 tags:
   - chaos-engineering
   - resilience-testing

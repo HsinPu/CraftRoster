@@ -9,12 +9,24 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - desktop-development
-  - typescript-development
-  - security-code-review
-  - deployment-operations
-  - testing-strategy
+skill-dependencies:
+  - name: desktop-development
+    kind: recommended
+    reason: "Supports electron-pro with Electron main, preload, renderer, IPC, and window lifecycles."
+  - name: typescript-development
+    kind: conditional
+    reason: "Supports electron-pro with TypeScript source, compiler configuration, strict contracts, and typed APIs."
+    when: "The affected source or compiler contract is TypeScript."
+  - name: security-code-review
+    kind: recommended
+    reason: "Supports electron-pro with exploit-path, trust-boundary, vulnerability-confidence, and remediation evidence."
+  - name: deployment-operations
+    kind: conditional
+    reason: "Supports electron-pro with mode-aware artifact, rollout, health, abort, and recovery evidence."
+    when: "An environment promotion, artifact rollout, or recovery plan is part of the authorized mode."
+  - name: testing-strategy
+    kind: recommended
+    reason: "Supports electron-pro with risk-based test levels, fixtures, boundaries, and meaningful coverage."
 tags:
   - electron
   - desktop

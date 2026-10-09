@@ -9,11 +9,22 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - mobile-app-testing
-  - react-native-expo
-  - flutter-development
-  - app-store-release
+skill-dependencies:
+  - name: mobile-app-testing
+    kind: recommended
+    reason: "Supports mobile-developer with device, OS, lifecycle, permission, offline, and native accessibility checks."
+  - name: react-native-expo
+    kind: conditional
+    reason: "Supports mobile-developer with React Native or Expo state, navigation, native integration, and EAS contracts."
+    when: "The affected mobile application uses React Native or Expo."
+  - name: flutter-development
+    kind: conditional
+    reason: "Supports mobile-developer with Dart widgets, Flutter state, navigation, lifecycle, and platform validation."
+    when: "The affected application uses Flutter and Dart."
+  - name: app-store-release
+    kind: conditional
+    reason: "Supports mobile-developer with store-specific signing boundaries, submission metadata, and rollout readiness."
+    when: "The task includes mobile store submission, staged rollout, or release-readiness requirements."
 tags:
   - mobile
   - android

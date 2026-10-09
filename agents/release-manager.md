@@ -9,11 +9,22 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - git-operations
-  - github-operations
-  - deployment-operations
-  - testing-strategy
+skill-dependencies:
+  - name: git-operations
+    kind: conditional
+    reason: "Supports release-manager with exact Git scope, current state, history, and safe repository operations."
+    when: "The work uses Git history, a repository diff, or an explicitly authorized Git operation."
+  - name: github-operations
+    kind: conditional
+    reason: "Supports release-manager with authorized GitHub issues, PRs, checks, and release-state inspection."
+    when: "GitHub issue, PR, check, or release-state evidence is part of the requested scope."
+  - name: deployment-operations
+    kind: conditional
+    reason: "Supports release-manager with mode-aware artifact, rollout, health, abort, and recovery evidence."
+    when: "An environment promotion, artifact rollout, or recovery plan is part of the authorized mode."
+  - name: testing-strategy
+    kind: recommended
+    reason: "Supports release-manager with risk-based test levels, fixtures, boundaries, and meaningful coverage."
 tags:
   - release-management
   - readiness

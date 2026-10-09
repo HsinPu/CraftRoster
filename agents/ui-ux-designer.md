@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - design-consultation
-  - frontend-design
-  - ux-writing
-  - interaction-patterns
+skill-dependencies:
+  - name: design-consultation
+    kind: recommended
+    reason: "Supports ui-ux-designer with web interface visual direction before implementation."
+  - name: frontend-design
+    kind: conditional
+    reason: "Supports ui-ux-designer with the visible web implementation baseline and rendered user-state verification."
+    when: "The read-only design produces acceptance guidance for a visible web implementation owner."
+  - name: ux-writing
+    kind: recommended
+    reason: "Supports ui-ux-designer with clear interface labels, instructions, error states, and truthful user guidance."
+  - name: interaction-patterns
+    kind: conditional
+    reason: "Supports ui-ux-designer with web navigation, scrolling, focus, and transition interaction rules."
+    when: "The task designs or evaluates web navigation, scroll, focus, or transition behavior."
 tags:
   - ui-ux
   - user-journeys

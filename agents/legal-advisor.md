@@ -9,11 +9,18 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - web-research-ops
-  - specification-authoring
-  - summary-ops
-  - security-code-review
+skill-dependencies:
+  - name: web-research-ops
+    kind: recommended
+    reason: "Supports legal-advisor with current primary sources, dates, contradictions, and attributable evidence."
+  - name: summary-ops
+    kind: conditional
+    reason: "Supports legal-advisor with faithful condensation of supplied source text with preserved uncertainty and attribution."
+    when: "Supplied text, records, or an accepted transcript needs faithful condensation before analysis or writing."
+  - name: word-document-ops
+    kind: conditional
+    reason: "Supports legal-advisor with DOCX formatting, tracked changes, tables, and validated editable output."
+    when: "The requested input or output is a formatted DOCX document."
 tags:
   - legal
   - compliance

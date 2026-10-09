@@ -9,10 +9,17 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - web-research-ops
-  - agent-reach-ops
-  - summary-ops
+skill-dependencies:
+  - name: web-research-ops
+    kind: recommended
+    reason: "Supports search-specialist with current primary sources, dates, contradictions, and attributable evidence."
+  - name: agent-reach-ops
+    kind: conditional
+    reason: "Supports search-specialist with platform-specific source identity, timestamps, revisions, and transcript collection."
+    when: "Evidence must be collected from platform-specific social, transcript, code-hosting, or RSS surfaces."
+  - name: summary-ops
+    kind: optional
+    reason: "An opt-in extension of search-specialist provides faithful condensation of supplied source text with preserved uncertainty and attribution."
 tags:
   - research
   - web-search

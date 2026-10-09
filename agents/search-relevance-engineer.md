@@ -9,11 +9,22 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - rag-vector-search
-  - llm-evals
-  - sql-best-practices
-  - observability-engineering
+skill-dependencies:
+  - name: rag-vector-search
+    kind: conditional
+    reason: "Supports search-relevance-engineer with corpus lineage, chunking, retrieval, relevance, and access-aware evaluation."
+    when: "The selected design uses retrieval, embeddings, RAG, or a vector index."
+  - name: llm-evals
+    kind: conditional
+    reason: "Supports search-relevance-engineer with versioned LLM cases, rubrics, graders, baselines, and regression gates."
+    when: "The model under evaluation is an LLM or an LLM-backed application."
+  - name: sql-best-practices
+    kind: conditional
+    reason: "Supports search-relevance-engineer with SQL grain, null, join, parameterization, and query-plan correctness."
+    when: "The requested evidence or implementation includes SQL queries and their data semantics."
+  - name: observability-engineering
+    kind: recommended
+    reason: "Supports search-relevance-engineer with service objectives, low-cardinality telemetry, diagnostics, and alert validation."
 tags:
   - search-relevance
   - information-retrieval

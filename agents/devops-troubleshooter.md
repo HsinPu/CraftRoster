@@ -9,11 +9,22 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - deployment-operations
-  - docker-development
-  - kubernetes-operations
-  - observability-engineering
+skill-dependencies:
+  - name: deployment-operations
+    kind: conditional
+    reason: "Supports devops-troubleshooter with mode-aware artifact, rollout, health, abort, and recovery evidence."
+    when: "An environment promotion, artifact rollout, or recovery plan is part of the authorized mode."
+  - name: docker-development
+    kind: conditional
+    reason: "Supports devops-troubleshooter with container build, image, Compose, healthcheck, and local runtime contracts."
+    when: "The chosen build or runtime path uses Docker or Compose."
+  - name: kubernetes-operations
+    kind: conditional
+    reason: "Supports devops-troubleshooter with Kubernetes workload, namespace, rollout, RBAC, and health contracts."
+    when: "The selected platform or affected workload uses Kubernetes."
+  - name: observability-engineering
+    kind: recommended
+    reason: "Supports devops-troubleshooter with service objectives, low-cardinality telemetry, diagnostics, and alert validation."
 tags:
   - devops
   - troubleshooting

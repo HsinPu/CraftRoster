@@ -9,11 +9,17 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - coding-standards
-  - desktop-development
-  - testing-strategy
-  - security-scanning
+skill-dependencies:
+  - name: testing-strategy
+    kind: recommended
+    reason: "Supports csharp-pro with risk-based test levels, fixtures, boundaries, and meaningful coverage."
+  - name: security-scanning
+    kind: conditional
+    reason: "Supports csharp-pro with authorized scanner configuration, baselines, result triage, and security quality gates."
+    when: "Authorized automated scanner configuration, existing scan evidence, or quality-gate triage is needed."
+  - name: code-change-workflow
+    kind: recommended
+    reason: "Supports csharp-pro with pre-edit ownership, call-path, compatibility, and verification inspection."
 tags:
   - csharp
   - dotnet

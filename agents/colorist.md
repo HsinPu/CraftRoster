@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - video-production-workflow
-  - video-edit
-  - image-utils
-  - terminal-ops
+skill-dependencies:
+  - name: video-production-workflow
+    kind: recommended
+    reason: "Supports colorist with the canonical production artifacts, stage gates, accepted lineage, and sequential fallback."
+  - name: video-edit
+    kind: conditional
+    reason: "Supports colorist with existing-footage inspection, local editing, controlled transcodes, and media verification."
+    when: "Existing media needs local inspection, frame extraction, editing, transcoding, or delivery QC."
+  - name: image-utils
+    kind: conditional
+    reason: "Supports colorist with non-destructive deterministic crop, resize, conversion, and pixel inspection."
+    when: "The authorized work needs deterministic still-image operations or pixel-level inspection."
+  - name: terminal-ops
+    kind: recommended
+    reason: "Supports colorist with exact commands, repository state, scoped execution, and reproducible verification."
 tags:
   - color-grading
   - color-management

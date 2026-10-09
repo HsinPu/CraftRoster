@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - deployment-operations
-  - github-actions-ci
-  - docker-development
-  - observability-engineering
+skill-dependencies:
+  - name: deployment-operations
+    kind: recommended
+    reason: "Supports deployment-engineer with mode-aware artifact, rollout, health, abort, and recovery evidence."
+  - name: github-actions-ci
+    kind: conditional
+    reason: "Supports deployment-engineer with GitHub Actions events, runners, permissions, artifacts, and quality gates."
+    when: "The affected delivery or enforcement platform is GitHub Actions."
+  - name: docker-development
+    kind: conditional
+    reason: "Supports deployment-engineer with container build, image, Compose, healthcheck, and local runtime contracts."
+    when: "The chosen build or runtime path uses Docker or Compose."
+  - name: observability-engineering
+    kind: recommended
+    reason: "Supports deployment-engineer with service objectives, low-cardinality telemetry, diagnostics, and alert validation."
 tags:
   - deployment
   - ci-cd

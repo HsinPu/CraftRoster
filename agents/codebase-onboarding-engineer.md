@@ -9,11 +9,17 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - project-architecture-review
-  - code-change-workflow
-  - terminal-ops
-  - context-governance
+skill-dependencies:
+  - name: project-architecture-review
+    kind: optional
+    reason: "An opt-in extension of codebase-onboarding-engineer provides existing repository boundaries, dependency evidence, and incremental architecture decisions."
+  - name: terminal-ops
+    kind: recommended
+    reason: "Supports codebase-onboarding-engineer with exact commands, repository state, scoped execution, and reproducible verification."
+  - name: context-governance
+    kind: conditional
+    reason: "Supports codebase-onboarding-engineer with a compact authoritative context record with precedence and provenance."
+    when: "Durable context, shared decisions, or context-budget behavior needs governance."
 tags:
   - codebase-onboarding
   - repository-exploration

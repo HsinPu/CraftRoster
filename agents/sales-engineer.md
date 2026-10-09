@@ -9,12 +9,26 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - project-architecture-review
-  - api-contract-design
-  - presentation-ops
-  - product-pitch-writing
-  - web-research-ops
+skill-dependencies:
+  - name: project-architecture-review
+    kind: conditional
+    reason: "Supports sales-engineer with existing repository boundaries, dependency evidence, and incremental architecture decisions."
+    when: "Existing repository architecture, module boundaries, or a migration decision is in scope."
+  - name: api-contract-design
+    kind: conditional
+    reason: "Supports sales-engineer with versioned requests, responses, errors, pagination, and compatibility contracts."
+    when: "The work defines or changes consumer-visible API, event, or webhook contracts."
+  - name: presentation-ops
+    kind: conditional
+    reason: "Supports sales-engineer with editable presentation decks with layout and render validation."
+    when: "The requested input or deliverable is an editable slide deck."
+  - name: product-pitch-writing
+    kind: conditional
+    reason: "Supports sales-engineer with an audience-specific pitch narrative grounded in verified product truth."
+    when: "The requested asset is a timed product pitch, demo narrative, or presentation script."
+  - name: web-research-ops
+    kind: recommended
+    reason: "Supports sales-engineer with current primary sources, dates, contradictions, and attributable evidence."
 tags:
   - sales-engineering
   - technical-discovery

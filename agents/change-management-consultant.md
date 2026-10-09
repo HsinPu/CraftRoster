@@ -9,11 +9,18 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - specification-authoring
-  - data-organization-system
-  - presentation-ops
-  - humanizer
+skill-dependencies:
+  - name: data-organization-system
+    kind: conditional
+    reason: "Supports change-management-consultant with a durable taxonomy, metadata, lifecycle, retention, and retrieval system."
+    when: "The scope designs a reusable taxonomy, metadata, retention, or retrieval system beyond one report."
+  - name: presentation-ops
+    kind: conditional
+    reason: "Supports change-management-consultant with editable presentation decks with layout and render validation."
+    when: "The requested input or deliverable is an editable slide deck."
+  - name: humanizer
+    kind: optional
+    reason: "An opt-in extension of change-management-consultant provides optional prose polishing that preserves the author and confirmed meaning."
 tags:
   - change-management
   - adoption

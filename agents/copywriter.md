@@ -9,13 +9,29 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - product-pitch-writing
-  - brand-voice
-  - ux-writing
-  - humanizer
-  - web-research-ops
-  - markdown-writer
+skill-dependencies:
+  - name: product-pitch-writing
+    kind: conditional
+    reason: "Supports copywriter with an audience-specific pitch narrative grounded in verified product truth."
+    when: "The requested asset is a timed product pitch, demo narrative, or presentation script."
+  - name: brand-voice
+    kind: recommended
+    reason: "Supports copywriter with a source-derived tone, vocabulary, and messaging profile."
+  - name: ux-writing
+    kind: conditional
+    reason: "Supports copywriter with clear interface labels, instructions, error states, and truthful user guidance."
+    when: "The requested copy is interface microcopy or an explicitly identified product state."
+  - name: humanizer
+    kind: optional
+    reason: "An opt-in extension of copywriter provides optional prose polishing that preserves the author and confirmed meaning."
+  - name: web-research-ops
+    kind: conditional
+    reason: "Supports copywriter with current primary sources, dates, contradictions, and attributable evidence."
+    when: "Current external facts, primary requirements, or source contradictions need verification."
+  - name: markdown-writer
+    kind: conditional
+    reason: "Supports copywriter with clear GFM structure, source-preserving documentation, and links."
+    when: "The requested artifact is Markdown or GFM documentation."
 tags:
   - copywriting
   - conversion

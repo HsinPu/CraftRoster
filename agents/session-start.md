@@ -9,11 +9,23 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - context-governance
-  - git-operations
-  - terminal-ops
-  - todo-first
+skill-dependencies:
+  - name: context-governance
+    kind: recommended
+    reason: "Supports session-start with a compact authoritative context record with precedence and provenance."
+  - name: git-operations
+    kind: conditional
+    reason: "Supports session-start with exact Git scope, current state, history, and safe repository operations."
+    when: "The work uses Git history, a repository diff, or an explicitly authorized Git operation."
+  - name: terminal-ops
+    kind: recommended
+    reason: "Supports session-start with exact commands, repository state, scoped execution, and reproducible verification."
+  - name: todo-first
+    kind: optional
+    reason: "An opt-in extension of session-start provides a live runtime-neutral dependency plan and evidence-linked progress tracking."
+  - name: session-handoff
+    kind: recommended
+    reason: "Supports session-start with a compact evidence-linked continuation and current-state resumption check."
 tags:
   - session
   - resume

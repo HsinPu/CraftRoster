@@ -3,7 +3,7 @@
 param(
     [Alias("Agent")]
     [string]$Target,
-    [ValidateSet("skill", "agent")]
+    [ValidateSet("skill", "agent", "bundle")]
     [string]$Type = "skill",
     [Alias("Skill")]
     [string]$Name,
@@ -16,7 +16,12 @@ param(
     [switch]$DryRun,
     [switch]$Force,
     [ValidateSet("all", "codex", "claude", "cursor", "copilot", "vscode", "opencode")]
-    [string]$ProjectPlatform = "all"
+    [string]$ProjectPlatform = "all",
+    [string]$Bundle = "all",
+    [ValidateSet("legacy", "required", "recommended")]
+    [string]$AgentSkillPolicy,
+    [string]$AgentSkillInclude,
+    [string]$AgentSkillExclude
 )
 
 $ErrorActionPreference = "Stop"
@@ -46,6 +51,7 @@ Usage:
   .\scripts\install.ps1 -Target <target> [-Type skill] [-Name <skill> | -Category <category>] [-InstallDir path] [-DryRun] [-Force]
   .\scripts\install.ps1 -Target <target> -Type agent [-Name <role> | -Category <category>] [-InstallDir path] [-EnableAutoDelegation] [-DryRun] [-Force]
   .\scripts\install.ps1 -Target project [-Type skill|agent] [-ProjectPlatform all|codex|claude|cursor|copilot|opencode] [-InstallDir project-root] [-DryRun]
+  .\scripts\install.ps1 -Target <target> -Type bundle [-Bundle all|id1,id2] [-AgentSkillPolicy required|recommended] [-DryRun] [-Force]
 
 Compatibility aliases:
   -Agent is an alias for -Target; -Skill is an alias for -Name.
@@ -53,6 +59,9 @@ Compatibility aliases:
   -InstallDir is a direct destination for tool targets and the project root for the 'project' target.
   -ProjectPlatform selects project destinations and requires -Target project; omitting it preserves all-platform project installs.
   'vscode' is also an alias for the 'copilot' project platform.
+  Bundle installs combine category members, Agent-related Skills, and required Skill dependencies in one checked plan.
+  AgentSkillPolicy defaults to legacy for the old Agent entry point and recommended for bundles; bundles reject legacy.
+  AgentSkillInclude selects related Skills explicitly; AgentSkillExclude only suppresses recommended additions, never roots or required dependencies.
   Omit -Name and -Category to install every available component of the selected Type.
   Skill installs include required dependencies; conditional and optional dependencies are not installed automatically.
   The source checkout must include scripts/data/install-skill-dependencies.tsv.
@@ -547,6 +556,313 @@ function Assert-SkillDependencyPlan {
                 throw "Required Skill dependency uses different roots: $($row.Skill) at '$sourceRoot' -> $($row.Dependency) at '$dependencyRoot'. Reconcile the existing Skill roots before installing; no duplicate or migration was created."
             }
         }
+    }
+}
+
+function Read-InstallTsvLines {
+    param([string]$Path, [string]$Header, [string]$Label)
+    if (-not (Test-Path -LiteralPath $Path -PathType Leaf) -or
+        ((Get-Item -Force -LiteralPath $Path).Attributes -band [System.IO.FileAttributes]::ReparsePoint)) {
+        throw "$Label not found or not a regular file: $Path. Update SourceDir or branch."
+    }
+    try {
+        $lines = [System.IO.File]::ReadAllLines($Path, [System.Text.UTF8Encoding]::new($false, $true))
+    } catch { throw "$Label is not valid UTF-8: $Path" }
+    if ($lines.Count -lt 1 -or $lines[0] -cne $Header) { throw "$Label has an invalid header: $Path" }
+    return ,$lines
+}
+
+function Get-InstallCatalog {
+    param([string]$RepoRoot)
+    $skills = @(Get-SkillSources -RepoRoot $RepoRoot)
+    $skillNames = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::Ordinal)
+    foreach ($source in $skills) {
+        if ($source.Name -cnotmatch '^[a-z0-9]+(?:-[a-z0-9]+)*$' -or -not $skillNames.Add($source.Name)) {
+            throw "Invalid or duplicate Skill identifier in source catalog: $($source.Name)"
+        }
+    }
+    $agentRoot = Join-Path $RepoRoot 'agents'
+    if (-not (Test-Path -LiteralPath $agentRoot -PathType Container)) {
+        throw "Canonical Agent catalog not found: $agentRoot"
+    }
+    $agentNames = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::Ordinal)
+    $agentIds = [System.Collections.Generic.List[string]]::new()
+    foreach ($source in @(Get-ChildItem -LiteralPath $agentRoot -File -Filter '*.md' | Sort-Object Name)) {
+        if ($source.BaseName -cnotmatch '^[a-z0-9]+(?:-[a-z0-9]+)*$' -or -not $agentNames.Add($source.BaseName)) {
+            throw "Invalid or duplicate canonical Agent identifier: $($source.BaseName)"
+        }
+        $agentIds.Add($source.BaseName)
+    }
+    if ($agentIds.Count -eq 0) { throw "No canonical Agents were found in $agentRoot." }
+    return [pscustomobject]@{
+        SkillSources = $skills; SkillNames = $skillNames
+        AgentNames = $agentNames; AgentIds = $agentIds.ToArray()
+    }
+}
+
+function Get-InstallBundleRows {
+    param([string]$RepoRoot, [object]$Catalog)
+    $path = Join-Path $RepoRoot 'scripts\data\install-bundles.tsv'
+    $header = [string]::Join([char]9, @('bundle', 'title', 'description', 'type', 'name'))
+    $lines = Read-InstallTsvLines -Path $path -Header $header -Label 'Install bundle index'
+    $seen = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::Ordinal)
+    $coveredAgents = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::Ordinal)
+    $coveredSkills = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::Ordinal)
+    $definitions = @{}
+    $rows = [System.Collections.Generic.List[object]]::new()
+    for ($index = 1; $index -lt $lines.Count; $index++) {
+        $parts = @($lines[$index] -split '\t', 0)
+        if ($parts.Count -ne 5) { throw "Install bundle index row $($index + 1) must contain exactly five fields." }
+        $id, $title, $description, $rowType, $name = $parts
+        if ($id -cnotmatch '^[a-z0-9]+(?:-[a-z0-9]+)*$' -or $id -ceq 'all' -or
+            $name -cnotmatch '^[a-z0-9]+(?:-[a-z0-9]+)*$' -or $rowType -cnotin @('agent', 'skill') -or
+            [string]::IsNullOrWhiteSpace($title) -or [string]::IsNullOrWhiteSpace($description) -or
+            $title -match '[\x00-\x1f\x7f]' -or $description -match '[\x00-\x1f\x7f]') {
+            throw "Install bundle index row $($index + 1) contains an invalid value."
+        }
+        if (-not $seen.Add("$id|$rowType|$name")) { throw "Duplicate install bundle member: $id -> $rowType $name" }
+        if ($definitions.ContainsKey($id)) {
+            if ($definitions[$id].Title -cne $title -or $definitions[$id].Description -cne $description) {
+                throw "Install bundle '$id' has inconsistent title or description."
+            }
+        } else { $definitions[$id] = @{ Title = $title; Description = $description } }
+        if ($rowType -ceq 'agent') {
+            if (-not $Catalog.AgentNames.Contains($name)) { throw "Unknown Agent in install bundle '$id': $name" }
+            $null = $coveredAgents.Add($name)
+        } else {
+            if (-not $Catalog.SkillNames.Contains($name)) { throw "Unknown Skill in install bundle '$id': $name" }
+            $null = $coveredSkills.Add($name)
+        }
+        $rows.Add([pscustomobject]@{ Bundle = $id; Title = $title; Description = $description; Type = $rowType; Name = $name })
+    }
+    if ($rows.Count -eq 0) { throw 'Install bundle index contains no categories.' }
+    foreach ($id in $Catalog.AgentIds) {
+        if (-not $coveredAgents.Contains($id)) { throw "Install bundle index does not cover Agent: $id" }
+    }
+    foreach ($source in $Catalog.SkillSources) {
+        if (-not $coveredSkills.Contains($source.Name)) { throw "Install bundle index does not cover Skill: $($source.Name)" }
+    }
+    return @($rows.ToArray())
+}
+
+function Get-AgentSkillDependencyRows {
+    param([string]$RepoRoot, [object]$Catalog)
+    $path = Join-Path $RepoRoot 'scripts\data\install-agent-skill-dependencies.tsv'
+    $header = [string]::Join([char]9, @('agent', 'skill', 'kind', 'when', 'reason'))
+    $lines = Read-InstallTsvLines -Path $path -Header $header -Label 'Agent Skill dependency index'
+    $seen = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::Ordinal)
+    $coverage = @{}
+    $sentinels = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::Ordinal)
+    $rows = [System.Collections.Generic.List[object]]::new()
+    for ($index = 1; $index -lt $lines.Count; $index++) {
+        $parts = @($lines[$index] -split '\t', 0)
+        if ($parts.Count -ne 5) { throw "Agent Skill dependency index row $($index + 1) must contain exactly five fields." }
+        $agentId, $skillId, $kind, $when, $reason = $parts
+        if (-not $Catalog.AgentNames.Contains($agentId)) { throw "Unknown Agent in Agent Skill dependency index: $agentId" }
+        if (-not $seen.Add("$agentId|$skillId")) { throw "Duplicate Agent Skill dependency: $agentId -> $skillId" }
+        if (-not $coverage.ContainsKey($agentId)) { $coverage[$agentId] = 0 }
+        $coverage[$agentId]++
+        if ($skillId -ceq '-') {
+            if ($kind -cne 'none' -or $when -cne '-' -or $reason -cne '-') {
+                throw "Invalid no-dependency sentinel for Agent: $agentId"
+            }
+            $null = $sentinels.Add($agentId)
+        } else {
+            if (-not $Catalog.SkillNames.Contains($skillId)) { throw "Unknown Skill in Agent dependency: $agentId -> $skillId" }
+            if ($kind -cnotin @('required', 'recommended', 'conditional', 'optional') -or
+                [string]::IsNullOrWhiteSpace($reason) -or $reason -ceq '-' -or $reason -match '[\x00-\x1f\x7f]' -or
+                $when -match '[\x00-\x1f\x7f]' -or
+                ($kind -cne 'conditional' -and $when -cne '-') -or
+                ($kind -ceq 'conditional' -and ([string]::IsNullOrWhiteSpace($when) -or $when -ceq '-'))) {
+                throw "Agent Skill dependency index row $($index + 1) contains an invalid value."
+            }
+        }
+        $rows.Add([pscustomobject]@{ Agent = $agentId; Skill = $skillId; Kind = $kind; When = $when; Reason = $reason })
+    }
+    foreach ($agentId in $Catalog.AgentIds) {
+        if (-not $coverage.ContainsKey($agentId)) { throw "Agent Skill dependency index does not cover Agent: $agentId" }
+        if ($sentinels.Contains($agentId) -and $coverage[$agentId] -ne 1) {
+            throw "Agent '$agentId' mixes a no-dependency sentinel with dependency rows."
+        }
+    }
+    return @($rows.ToArray())
+}
+
+function Get-InstallCsvIds {
+    param([string]$Value, [string]$Label, [switch]$AllowAll)
+    if ($AllowAll -and $Value.Trim() -ceq 'all') { return ,@('all') }
+    if ($Value -cnotmatch '^\s*[a-z0-9]+(?:-[a-z0-9]+)*\s*(?:,\s*[a-z0-9]+(?:-[a-z0-9]+)*\s*)*$') {
+        throw "$Label must contain lowercase identifiers separated by commas, without empty entries."
+    }
+    $seen = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::Ordinal)
+    $result = [System.Collections.Generic.List[string]]::new()
+    foreach ($id in @($Value -split ',')) {
+        $id = $id.Trim()
+        if ($AllowAll -and $id -ceq 'all') { throw "'all' cannot be combined with other Bundle identifiers." }
+        if ($seen.Add($id)) { $result.Add($id) }
+    }
+    return ,$result.ToArray()
+}
+
+function Add-InstallReason {
+    param([hashtable]$Reasons, [string]$Name, [string]$Reason)
+    if (-not $Reasons.ContainsKey($Name)) { $Reasons[$Name] = [System.Collections.Generic.List[string]]::new() }
+    if (-not $Reasons[$Name].Contains($Reason)) { $Reasons[$Name].Add($Reason) }
+}
+
+function Invoke-CombinedInstallation {
+    param(
+        [string]$RepoRoot, [object]$Catalog, [string[]]$AgentIds,
+        [hashtable]$AgentReasons, [hashtable]$SkillReasons, [bool]$FullAgentInstall
+    )
+    $agentRows = @(Get-AgentSkillDependencyRows -RepoRoot $RepoRoot -Catalog $Catalog)
+    $selectedAgents = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::Ordinal)
+    foreach ($id in $AgentIds) {
+        if (-not $Catalog.AgentNames.Contains($id)) { throw "Unknown selected Agent: $id" }
+        $null = $selectedAgents.Add($id)
+    }
+    $relations = @($agentRows | Where-Object { $selectedAgents.Contains($_.Agent) -and $_.Kind -cne 'none' })
+    $includeIds = @()
+    $excludeIds = @()
+    if ($AgentSkillInclude) { $includeIds = Get-InstallCsvIds -Value $AgentSkillInclude -Label 'AgentSkillInclude' }
+    if ($AgentSkillExclude) { $excludeIds = Get-InstallCsvIds -Value $AgentSkillExclude -Label 'AgentSkillExclude' }
+    foreach ($id in $includeIds) {
+        if (@($relations | Where-Object { $_.Skill -ceq $id }).Count -eq 0) {
+            throw "AgentSkillInclude '$id' is not related to a selected Agent."
+        }
+        if ($excludeIds -ccontains $id) { throw "Skill '$id' cannot be in both AgentSkillInclude and AgentSkillExclude." }
+    }
+    foreach ($id in $excludeIds) {
+        if (@($relations | Where-Object { $_.Skill -ceq $id -and $_.Kind -ceq 'recommended' }).Count -eq 0) {
+            throw "AgentSkillExclude '$id' can only exclude a recommended relation of a selected Agent; required and root Skills are retained."
+        }
+    }
+    foreach ($row in $relations) {
+        $condition = if ($row.Kind -ceq 'conditional') { " when $($row.When)" } else { '' }
+        $reason = "Agent $($row.Agent), $($row.Kind)$($condition): $($row.Reason)"
+        if ($row.Kind -ceq 'required' -or
+            ($row.Kind -ceq 'recommended' -and $AgentSkillPolicy -eq 'recommended' -and $excludeIds -cnotcontains $row.Skill)) {
+            Add-InstallReason -Reasons $SkillReasons -Name $row.Skill -Reason $reason
+        } elseif ($row.Kind -ceq 'conditional' -or $row.Kind -ceq 'optional') {
+            Write-Info "$($row.Kind) Agent Skill not auto-installed: $($row.Agent) -> $($row.Skill)$condition ($($row.Reason))"
+        }
+        if ($includeIds -ccontains $row.Skill) {
+            Add-InstallReason -Reasons $SkillReasons -Name $row.Skill -Reason "Explicit inclusion; $reason"
+        }
+        if ($row.Kind -ceq 'recommended' -and $excludeIds -ccontains $row.Skill) {
+            Write-Info "Excluded recommended relation: $($row.Agent) -> $($row.Skill); required and root selections remain."
+        }
+    }
+    if ($FullAgentInstall -or $EnableAutoDelegation) {
+        Add-InstallReason -Reasons $SkillReasons -Name 'subagent-architecture' -Reason 'Common Agent delegation companion'
+    }
+    foreach ($id in $SkillReasons.Keys) {
+        if (-not $Catalog.SkillNames.Contains($id)) { throw "Selected or required companion Skill not found: $id" }
+    }
+    $skillRoots = @($Catalog.SkillSources | Where-Object { $SkillReasons.ContainsKey($_.Name) })
+    $dependencyRows = @(Get-SkillDependencyRows -RepoRoot $RepoRoot)
+    $sources = @(Expand-RequiredSkillSources -RepoRoot $RepoRoot -Sources $skillRoots -DependencyRows $dependencyRows)
+    $expandedNames = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::Ordinal)
+    foreach ($source in $sources) { $null = $expandedNames.Add($source.Name) }
+    foreach ($row in $dependencyRows) {
+        if ($row.Kind -ceq 'required' -and $expandedNames.Contains($row.Skill)) {
+            Add-InstallReason -Reasons $SkillReasons -Name $row.Dependency -Reason "Required Skill dependency of $($row.Skill)"
+        }
+    }
+    Write-Info "Agent Skill policy: $AgentSkillPolicy"
+    Write-Info "Logical package totals: $($selectedAgents.Count) Agent(s), $($sources.Count) Skill(s)."
+    foreach ($id in $AgentIds) { Write-Info "Agent $id <- $($AgentReasons[$id] -join '; ')" }
+    foreach ($source in $sources) { Write-Info "Skill $($source.Name) <- $($SkillReasons[$source.Name] -join '; ')" }
+
+    $agentPlans = [System.Collections.Generic.List[object]]::new()
+    if ($AgentIds.Count -gt 0) {
+        foreach ($profile in @(Get-AgentInstallProfiles -TargetName $Target -RequestedInstallDir $InstallDir -ProjectPlatformName $ProjectPlatform)) {
+            Write-Info "Agent destination ($($profile.Platform)): $($profile.DestinationRoot)"
+            $profileSources = @(Get-AgentSources -RepoRoot $RepoRoot -Platform $profile.Platform -OutputSuffix $profile.OutputSuffix |
+                Where-Object { $selectedAgents.Contains($_.Id) })
+            if ($profileSources.Count -ne $selectedAgents.Count) {
+                throw "Selected Agents do not match the available $($profile.Platform) adapter inventory."
+            }
+            foreach ($source in $profileSources) {
+                Test-AgentProfileInstall -Source $source.Source -RuntimeName $source.RuntimeName -AgentId $source.Id -Platform $source.Platform -OutputSuffix $source.OutputSuffix -DestinationRoot $profile.DestinationRoot -TargetName $profile.TargetName -LegacyTargets $profile.LegacyTargets -RepoName $Repo
+                $agentPlans.Add(@{ Source = $source; Profile = $profile; Label = "Agent $($source.Id) -> $(Join-Path $profile.DestinationRoot ($source.RuntimeName + $source.OutputSuffix))" })
+            }
+        }
+    }
+    $skillInstallDir = if ($Type -eq 'bundle' -or $Target -eq 'project') { $InstallDir } else { $null }
+    $skillPlans = [System.Collections.Generic.List[object]]::new()
+    $seenDestinations = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)
+    foreach ($source in $sources) {
+        $profiles = @(Get-SkillInstallProfiles -TargetName $Target -ComponentName $source.Name -RequestedInstallDir $skillInstallDir -RepoName $Repo -IncomingSkillFile (Join-Path $source.FullName 'SKILL.md') -ProjectPlatformName $ProjectPlatform)
+        for ($profileIndex = 0; $profileIndex -lt $profiles.Count; $profileIndex++) {
+            $profile = $profiles[$profileIndex]
+            $destination = Join-Path $profile.DestinationRoot $source.Name
+            if (-not $seenDestinations.Add([System.IO.Path]::GetFullPath($destination))) { continue }
+            $plan = Get-SkillInstallPlan -Source $source -DestinationRoot $profile.DestinationRoot -TargetName $profile.TargetName -LegacyTargets $profile.LegacyTargets -RepoName $Repo
+            $skillPlans.Add(@{ Source = $source; Profile = $profile; ProfileIndex = $profileIndex; InstallPlan = $plan; Label = "Skill $($source.Name) -> $destination" })
+        }
+    }
+    Assert-SkillDependencyPlan -Plans $skillPlans.ToArray() -DependencyRows $dependencyRows
+    @($skillPlans | ForEach-Object { $_.Profile.DestinationRoot } | Sort-Object -Unique) |
+        ForEach-Object { Write-Info "Skill destination: $_" }
+    $autoPlan = $null
+    if ($EnableAutoDelegation) {
+        $guidance = Get-AutoDelegationGuidance -RepoRoot $RepoRoot
+        if ($Target -eq 'codex') { $autoPlan = Get-CodexAutoDelegationPlan -Guidance $guidance } else {
+            $companionPlans = @($skillPlans | Where-Object { $_.Source.Name -ceq 'subagent-architecture' })
+            $instructionPath = Join-Path $companionPlans[0].Profile.DestinationRoot 'subagent-architecture\references\global-auto-delegation.md'
+            $autoPlan = Get-OpenCodeAutoDelegationPlan -InstructionPath $instructionPath
+        }
+        Write-Info "Auto-delegation configuration: $($autoPlan.ConfigPath) ($($autoPlan.Action))"
+    }
+    Write-Info "Complete preflight passed: $($agentPlans.Count) Agent profile(s), $($skillPlans.Count) Skill profile(s)."
+    # Recheck every destination together before the first package is written.
+    foreach ($entry in $skillPlans) {
+        $null = Assert-SkillTargetUnchanged -Plan $entry.InstallPlan -TargetPath (Join-Path $entry.Profile.DestinationRoot $entry.Source.Name) -SkillName $entry.Source.Name
+    }
+    foreach ($entry in $agentPlans) {
+        $source = $entry.Source
+        $profile = $entry.Profile
+        Test-AgentProfileInstall -Source $source.Source -RuntimeName $source.RuntimeName -AgentId $source.Id -Platform $source.Platform -OutputSuffix $source.OutputSuffix -DestinationRoot $profile.DestinationRoot -TargetName $profile.TargetName -LegacyTargets $profile.LegacyTargets -RepoName $Repo
+    }
+    if ($autoPlan) {
+        if ($autoPlan.SiblingConfigPath -and (Test-Path -LiteralPath $autoPlan.SiblingConfigPath)) {
+            throw "Auto-delegation sibling configuration appeared after planning: $($autoPlan.SiblingConfigPath)"
+        }
+        if ($autoPlan.Existing) {
+            Assert-RegularConfigFile -Path $autoPlan.ConfigPath
+            if (-not (Test-Path -LiteralPath $autoPlan.ConfigPath -PathType Leaf) -or
+                (Get-FileSha256 -Path $autoPlan.ConfigPath) -cne $autoPlan.OriginalHash) {
+                throw "Auto-delegation configuration changed after planning: $($autoPlan.ConfigPath)"
+            }
+        } elseif (Test-Path -LiteralPath $autoPlan.ConfigPath) {
+            throw "Auto-delegation configuration appeared after planning: $($autoPlan.ConfigPath)"
+        }
+    }
+    $pending = [System.Collections.Generic.List[string]]::new()
+    foreach ($entry in $skillPlans) { $pending.Add($entry.Label) }
+    foreach ($entry in $agentPlans) { $pending.Add($entry.Label) }
+    if ($autoPlan) { $pending.Add("Auto-delegation -> $($autoPlan.ConfigPath)") }
+    $completed = [System.Collections.Generic.List[string]]::new()
+    try {
+        foreach ($entry in $skillPlans) {
+            $profile = $entry.Profile
+            Install-Skill -Source $entry.Source -DestinationRoot $profile.DestinationRoot -TargetName $profile.TargetName -LegacyTargets $profile.LegacyTargets -RepoName $Repo -BranchName $Branch -Plan $entry.InstallPlan
+            $completed.Add($entry.Label); $null = $pending.Remove($entry.Label)
+        }
+        foreach ($entry in $agentPlans) {
+            $source = $entry.Source
+            $profile = $entry.Profile
+            Install-AgentProfile -Source $source.Source -RuntimeName $source.RuntimeName -AgentId $source.Id -Platform $source.Platform -OutputSuffix $source.OutputSuffix -DestinationRoot $profile.DestinationRoot -TargetName $profile.TargetName -LegacyTargets $profile.LegacyTargets -RepoName $Repo -BranchName $Branch
+            $completed.Add($entry.Label); $null = $pending.Remove($entry.Label)
+        }
+        if ($autoPlan) {
+            Invoke-AutoDelegationPlan -Plan $autoPlan
+            $label = "Auto-delegation -> $($autoPlan.ConfigPath)"
+            $completed.Add($label); $null = $pending.Remove($label)
+        }
+    } catch {
+        throw "$($_.Exception.Message)$([Environment]::NewLine)Completed: $($completed -join '; ')$([Environment]::NewLine)Pending: $($pending -join '; ')$([Environment]::NewLine)Earlier completed packages are not rolled back as a group."
     }
 }
 
@@ -2306,6 +2622,34 @@ function Invoke-AutoDelegationPlan {
 try {
     if (-not $Target) { Show-Usage; throw "Target is required." }
     if ($Name -and $Category) { throw "Name and Category cannot be used together." }
+    $Type = $Type.ToLowerInvariant()
+    if ($PSBoundParameters.ContainsKey('Bundle') -and $Type -ne 'bundle') {
+        throw "Bundle is only supported with -Type bundle."
+    }
+    if ($Type -eq 'bundle' -and ($PSBoundParameters.ContainsKey('Name') -or $PSBoundParameters.ContainsKey('Category'))) {
+        throw "Type bundle cannot be combined with Name or Category."
+    }
+    if (-not $PSBoundParameters.ContainsKey('AgentSkillPolicy')) {
+        $AgentSkillPolicy = if ($Type -eq 'bundle') { 'recommended' } else { 'legacy' }
+    } else { $AgentSkillPolicy = $AgentSkillPolicy.ToLowerInvariant() }
+    if ($Type -eq 'bundle' -and $AgentSkillPolicy -eq 'legacy') {
+        throw "Type bundle requires AgentSkillPolicy required or recommended; legacy is only available for the old Agent entry."
+    }
+    if ($Type -eq 'skill' -and ($PSBoundParameters.ContainsKey('AgentSkillPolicy') -or
+        $PSBoundParameters.ContainsKey('AgentSkillInclude') -or $PSBoundParameters.ContainsKey('AgentSkillExclude'))) {
+        throw "Agent Skill policy and customizations are only supported with -Type agent or bundle."
+    }
+    if ($AgentSkillPolicy -eq 'legacy' -and ($PSBoundParameters.ContainsKey('AgentSkillInclude') -or
+        $PSBoundParameters.ContainsKey('AgentSkillExclude'))) {
+        throw "Agent Skill customizations require AgentSkillPolicy required or recommended."
+    }
+    if ($PSBoundParameters.ContainsKey('AgentSkillInclude')) {
+        $null = Get-InstallCsvIds -Value $AgentSkillInclude -Label 'AgentSkillInclude'
+    }
+    if ($PSBoundParameters.ContainsKey('AgentSkillExclude')) {
+        $null = Get-InstallCsvIds -Value $AgentSkillExclude -Label 'AgentSkillExclude'
+    }
+    $bundleIds = if ($Type -eq 'bundle') { Get-InstallCsvIds -Value $Bundle -Label 'Bundle' -AllowAll } else { @() }
     Test-RepositoryCoordinate -RepoName $Repo
     Test-BranchName -BranchName $Branch
     $Target = Resolve-TargetName -TargetName $Target -ComponentType $Type
@@ -2314,8 +2658,8 @@ try {
     }
     $ProjectPlatform = $ProjectPlatform.ToLowerInvariant()
     if ($ProjectPlatform -eq "vscode") { $ProjectPlatform = "copilot" }
-    if ($EnableAutoDelegation -and $Type -ne "agent") {
-        throw "EnableAutoDelegation is only supported with -Type agent."
+    if ($EnableAutoDelegation -and $Type -notin @("agent", "bundle")) {
+        throw "EnableAutoDelegation is only supported with -Type agent or bundle."
     }
     if ($EnableAutoDelegation -and $Target -notin @("codex", "opencode")) {
         throw "EnableAutoDelegation only supports the global Agent targets 'codex' and 'opencode'."
@@ -2349,7 +2693,39 @@ try {
         if ($Category) {
             Write-Info "Selected $($categoryNames.Count) $Type component(s) from category '$Category'"
         }
-        if ($Type -eq "agent") {
+        if ($Type -eq 'bundle' -or ($Type -eq 'agent' -and $AgentSkillPolicy -ne 'legacy')) {
+            $catalog = Get-InstallCatalog -RepoRoot $repoRoot
+            $agentReasons = @{}
+            $skillReasons = @{}
+            $fullAgentInstall = $false
+            if ($Type -eq 'bundle') {
+                $bundleRows = @(Get-InstallBundleRows -RepoRoot $repoRoot -Catalog $catalog)
+                if ($bundleIds.Count -eq 1 -and $bundleIds[0] -ceq 'all') {
+                    $fullAgentInstall = $true
+                    foreach ($id in $catalog.AgentIds) { Add-InstallReason -Reasons $agentReasons -Name $id -Reason 'All catalog Agents' }
+                    foreach ($source in $catalog.SkillSources) { Add-InstallReason -Reasons $skillReasons -Name $source.Name -Reason 'All catalog Skills' }
+                } else {
+                    foreach ($bundleId in $bundleIds) {
+                        $members = @($bundleRows | Where-Object { $_.Bundle -ceq $bundleId })
+                        if ($members.Count -eq 0) { throw "Unknown selected Bundle: $bundleId" }
+                        foreach ($member in $members) {
+                            $reason = "Category $($member.Title) ($bundleId)"
+                            if ($member.Type -ceq 'agent') { Add-InstallReason -Reasons $agentReasons -Name $member.Name -Reason $reason } else {
+                                Add-InstallReason -Reasons $skillReasons -Name $member.Name -Reason $reason
+                            }
+                        }
+                    }
+                }
+            } else {
+                $fullAgentInstall = (-not $Name) -and (-not $Category)
+                $ids = if ($Name) { @($Name) } elseif ($Category) { $categoryNames } else { $catalog.AgentIds }
+                foreach ($id in $ids) { Add-InstallReason -Reasons $agentReasons -Name $id -Reason 'Selected Agent command' }
+            }
+            $selectedAgentIds = @($catalog.AgentIds | Where-Object { $agentReasons.ContainsKey($_) })
+            if ($selectedAgentIds.Count -ne $agentReasons.Count) { throw 'Selected Agents do not match the canonical Agent catalog.' }
+            Invoke-CombinedInstallation -RepoRoot $repoRoot -Catalog $catalog -AgentIds $selectedAgentIds -AgentReasons $agentReasons -SkillReasons $skillReasons -FullAgentInstall $fullAgentInstall
+        } elseif ($Type -eq "agent") {
+            Write-Info "Legacy Agent Skill policy: role-related Skills are not populated. Use -AgentSkillPolicy required or recommended to install them."
             $agentProfiles = @(Get-AgentInstallProfiles -TargetName $Target -RequestedInstallDir $InstallDir -ProjectPlatformName $ProjectPlatform)
             foreach ($profile in $agentProfiles) {
                 Write-Info "Agent destination ($($profile.Platform)): $($profile.DestinationRoot)"

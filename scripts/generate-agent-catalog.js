@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { readAgent } = require('./lib/agent-metadata');
 
 const root = path.resolve(__dirname, '..');
 const agentsRoot = path.join(root, 'agents');
@@ -19,40 +20,12 @@ const requiredFields = [
   'license',
   'model',
   'permission',
-  'skills',
+  'skill-dependencies',
   'tags',
   'reference-repo',
   'reference-paths',
   'reference-tree'
 ];
-
-function parseScalar(value) {
-  const trimmed = value.trim();
-  if (trimmed.startsWith('"') && trimmed.endsWith('"')) {
-    try { return JSON.parse(trimmed); } catch { /* Use plain scalar fallback. */ }
-  }
-  return trimmed.replace(/^['"]|['"]$/g, '');
-}
-
-function parseFrontmatter(filePath) {
-  const text = fs.readFileSync(filePath, 'utf8');
-  const match = text.match(/^---\r?\n([\s\S]*?)\r?\n---/);
-  if (!match) throw new Error(`${path.relative(root, filePath)} is missing YAML frontmatter`);
-
-  const fields = {};
-  let currentList = null;
-  for (const line of match[1].split(/\r?\n/)) {
-    const field = line.match(/^([A-Za-z0-9_-]+):\s*(.*)$/);
-    if (field) {
-      fields[field[1]] = field[2].trim() === '' ? [] : parseScalar(field[2]);
-      currentList = field[2].trim() === '' ? field[1] : null;
-      continue;
-    }
-    const item = line.match(/^\s+-\s+(.+)$/);
-    if (item && currentList) fields[currentList].push(parseScalar(item[1]));
-  }
-  return fields;
-}
 
 function listAgentFiles() {
   if (!fs.existsSync(agentsRoot)) throw new Error('agents/ directory is missing');
@@ -63,11 +36,12 @@ function listAgentFiles() {
 }
 
 function readAgents() {
+  const skillNames = new Set(JSON.parse(fs.readFileSync(path.join(root, 'skills.json'), 'utf8')).skills.map((skill) => skill.name));
   return listAgentFiles().map((filePath) => {
-    const fields = parseFrontmatter(filePath);
+    const { fields, skillDependencies } = readAgent(filePath, skillNames);
     const relativePath = path.relative(root, filePath).replace(/\\/g, '/');
     for (const field of requiredFields) {
-      if (!fields[field] || (Array.isArray(fields[field]) && fields[field].length === 0)) {
+      if (!fields[field] || (field !== 'skill-dependencies' && Array.isArray(fields[field]) && fields[field].length === 0)) {
         throw new Error(`${relativePath} is missing required frontmatter field: ${field}`);
       }
     }
@@ -89,6 +63,7 @@ function readAgents() {
       model: fields.model,
       permission: fields.permission,
       skills: fields.skills,
+      skillDependencies,
       tags: fields.tags,
       path: relativePath,
       references: {

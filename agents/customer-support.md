@@ -9,11 +9,22 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - summary-ops
-  - ux-writing
-  - incident-response-postmortems
-  - ask-questions-if-underspecified
+skill-dependencies:
+  - name: summary-ops
+    kind: conditional
+    reason: "Supports customer-support with faithful condensation of supplied source text with preserved uncertainty and attribution."
+    when: "Supplied text, records, or an accepted transcript needs faithful condensation before analysis or writing."
+  - name: incident-response-postmortems
+    kind: conditional
+    reason: "Supports customer-support with software-service incident evidence, recovery decisions, and corrective actions."
+    when: "The scope includes a software-service incident, operational recovery, or postmortem."
+  - name: ask-questions-if-underspecified
+    kind: conditional
+    reason: "Supports customer-support with an explicitly requested question-first clarification workflow."
+    when: "The user explicitly requests clarification before substantive work."
+  - name: answer-writing
+    kind: recommended
+    reason: "Supports customer-support with a direct, clear, actionable customer-facing response with explicit next steps."
 tags:
   - customer-support
   - troubleshooting

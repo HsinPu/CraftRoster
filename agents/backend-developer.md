@@ -9,12 +9,31 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - code-change-workflow
-  - api-contract-design
-  - auth-integration
-  - database-design
-  - observability-engineering
+skill-dependencies:
+  - name: code-change-workflow
+    kind: recommended
+    reason: "Supports backend-developer with pre-edit ownership, call-path, compatibility, and verification inspection."
+  - name: api-contract-design
+    kind: recommended
+    reason: "Supports backend-developer with versioned requests, responses, errors, pagination, and compatibility contracts."
+  - name: auth-integration
+    kind: conditional
+    reason: "Supports backend-developer with session, OAuth or OIDC, callback, identity, and authorization boundaries."
+    when: "Authentication, session, identity federation, or authorization integration is in scope."
+  - name: database-design
+    kind: conditional
+    reason: "Supports backend-developer with logical schemas, integrity constraints, access patterns, and migration design."
+    when: "Schema, persistent data integrity, storage ownership, or migration design is in scope."
+  - name: observability-engineering
+    kind: recommended
+    reason: "Supports backend-developer with service objectives, low-cardinality telemetry, diagnostics, and alert validation."
+  - name: testing-strategy
+    kind: recommended
+    reason: "Supports backend-developer with risk-based test levels, fixtures, boundaries, and meaningful coverage."
+  - name: api-contract-testing
+    kind: conditional
+    reason: "Supports backend-developer with provider-consumer compatibility and executable API contract checks."
+    when: "Provider-consumer API compatibility needs executable checks."
 tags:
   - backend
   - api

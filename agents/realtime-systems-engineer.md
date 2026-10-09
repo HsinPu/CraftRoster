@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - api-contract-design
-  - event-sourcing-cqrs
-  - redis-upstash
-  - testing-strategy
+skill-dependencies:
+  - name: api-contract-design
+    kind: recommended
+    reason: "Supports realtime-systems-engineer with versioned requests, responses, errors, pagination, and compatibility contracts."
+  - name: event-sourcing-cqrs
+    kind: conditional
+    reason: "Supports realtime-systems-engineer with immutable event semantics, aggregate invariants, replay, and projections."
+    when: "The approved design uses immutable events, replay, or CQRS read models."
+  - name: redis-upstash
+    kind: conditional
+    reason: "Supports realtime-systems-engineer with Redis key, TTL, cache, pub/sub, queue, and rate-limit contracts."
+    when: "The approved transport, cache, queue, or rate-limit path uses Redis or Upstash."
+  - name: testing-strategy
+    kind: recommended
+    reason: "Supports realtime-systems-engineer with risk-based test levels, fixtures, boundaries, and meaningful coverage."
 tags:
   - realtime-systems
   - websocket

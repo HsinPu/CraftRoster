@@ -9,11 +9,22 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - humanizer
-  - markdown-writer
-  - summary-ops
-  - web-research-ops
+skill-dependencies:
+  - name: humanizer
+    kind: optional
+    reason: "An opt-in extension of content-editor provides optional prose polishing that preserves the author and confirmed meaning."
+  - name: markdown-writer
+    kind: conditional
+    reason: "Supports content-editor with clear GFM structure, source-preserving documentation, and links."
+    when: "The requested artifact is Markdown or GFM documentation."
+  - name: summary-ops
+    kind: conditional
+    reason: "Supports content-editor with faithful condensation of supplied source text with preserved uncertainty and attribution."
+    when: "Supplied text, records, or an accepted transcript needs faithful condensation before analysis or writing."
+  - name: web-research-ops
+    kind: conditional
+    reason: "Supports content-editor with current primary sources, dates, contradictions, and attributable evidence."
+    when: "Current external facts, primary requirements, or source contradictions need verification."
 tags:
   - editing
   - editorial-quality

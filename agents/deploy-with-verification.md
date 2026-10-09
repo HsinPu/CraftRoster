@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - deployment-operations
-  - observability-engineering
-  - github-actions-ci
-  - incident-response-postmortems
+skill-dependencies:
+  - name: deployment-operations
+    kind: recommended
+    reason: "Supports deploy-with-verification with mode-aware artifact, rollout, health, abort, and recovery evidence."
+  - name: observability-engineering
+    kind: recommended
+    reason: "Supports deploy-with-verification with service objectives, low-cardinality telemetry, diagnostics, and alert validation."
+  - name: github-actions-ci
+    kind: conditional
+    reason: "Supports deploy-with-verification with GitHub Actions events, runners, permissions, artifacts, and quality gates."
+    when: "The affected delivery or enforcement platform is GitHub Actions."
+  - name: incident-response-postmortems
+    kind: conditional
+    reason: "Supports deploy-with-verification with software-service incident evidence, recovery decisions, and corrective actions."
+    when: "The scope includes a software-service incident, operational recovery, or postmortem."
 tags:
   - deployment
   - verification

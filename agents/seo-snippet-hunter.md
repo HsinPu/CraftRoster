@@ -9,11 +9,22 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - web-research-ops
-  - ux-writing
-  - summary-ops
-  - frontend-design-review
+skill-dependencies:
+  - name: web-research-ops
+    kind: recommended
+    reason: "Supports seo-snippet-hunter with current primary sources, dates, contradictions, and attributable evidence."
+  - name: ux-writing
+    kind: conditional
+    reason: "Supports seo-snippet-hunter with clear interface labels, instructions, error states, and truthful user guidance."
+    when: "The requested copy is interface microcopy or an explicitly identified product state."
+  - name: summary-ops
+    kind: conditional
+    reason: "Supports seo-snippet-hunter with faithful condensation of supplied source text with preserved uncertainty and attribution."
+    when: "Supplied text, records, or an accepted transcript needs faithful condensation before analysis or writing."
+  - name: frontend-design-review
+    kind: conditional
+    reason: "Supports seo-snippet-hunter with read-only interface usability, accessibility, and visual-quality evidence."
+    when: "An implemented web surface needs independent UX, accessibility, or visual evidence."
 tags:
   - seo
   - featured-snippets

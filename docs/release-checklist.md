@@ -20,6 +20,7 @@ npm run generate:release-baseline
 ```
 
 - `agents/<role>.md` 是 canonical Agent source；`adapters/` 與 `agents.json` 是 generated artifacts。
+- Agent 的 `skill-dependencies` 是配套關聯唯一來源；`scripts/data/install-bundles.json` 是統一用途來源。Agent／Skill generators 會同步用途與 Agent 關聯 TSV，安裝時不用 Node.js。
 - `skills/<name>/SKILL.md` 與 `scripts/data/skill-catalog.json` 是 canonical Skill inputs；`skills.json` 是 generated artifact。
 - 外部 Skill provenance 有核准變更時才執行 `npm run update:skill-reference-lock`；manifest、lock 與 verifier 都受 CODEOWNERS 覆核。
 - 重新執行 generator 後不應持續產生新 drift。
@@ -30,6 +31,8 @@ npm run generate:release-baseline
 npm run validate
 node scripts/generate-legacy-skill-digests.js --check
 npm run test:cli
+npm run test:install-bundles
+npm run test:interactive-install
 npm run test:catalog
 npm run test:skill-catalog
 npm run test:skill-evals

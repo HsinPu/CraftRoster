@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - coding-standards
-  - testing-strategy
-  - database-design
-  - security-code-review
+skill-dependencies:
+  - name: testing-strategy
+    kind: recommended
+    reason: "Supports php-pro with risk-based test levels, fixtures, boundaries, and meaningful coverage."
+  - name: database-design
+    kind: conditional
+    reason: "Supports php-pro with logical schemas, integrity constraints, access patterns, and migration design."
+    when: "Schema, persistent data integrity, storage ownership, or migration design is in scope."
+  - name: security-code-review
+    kind: conditional
+    reason: "Supports php-pro with exploit-path, trust-boundary, vulnerability-confidence, and remediation evidence."
+    when: "The scope includes a code-level trust boundary, exploitable path, or security review."
+  - name: code-change-workflow
+    kind: recommended
+    reason: "Supports php-pro with pre-edit ownership, call-path, compatibility, and verification inspection."
 tags:
   - php
   - web

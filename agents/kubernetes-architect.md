@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - kubernetes-operations
-  - docker-development
-  - observability-engineering
-  - security-scanning
+skill-dependencies:
+  - name: kubernetes-operations
+    kind: recommended
+    reason: "Supports kubernetes-architect with Kubernetes workload, namespace, rollout, RBAC, and health contracts."
+  - name: docker-development
+    kind: conditional
+    reason: "Supports kubernetes-architect with container build, image, Compose, healthcheck, and local runtime contracts."
+    when: "The chosen build or runtime path uses Docker or Compose."
+  - name: observability-engineering
+    kind: recommended
+    reason: "Supports kubernetes-architect with service objectives, low-cardinality telemetry, diagnostics, and alert validation."
+  - name: security-scanning
+    kind: conditional
+    reason: "Supports kubernetes-architect with authorized scanner configuration, baselines, result triage, and security quality gates."
+    when: "Authorized automated scanner configuration, existing scan evidence, or quality-gate triage is needed."
 tags:
   - kubernetes
   - platform-engineering

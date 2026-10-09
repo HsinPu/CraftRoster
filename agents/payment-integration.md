@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - stripe-payments
-  - api-contract-design
-  - database-design
-  - security-code-review
+skill-dependencies:
+  - name: stripe-payments
+    kind: conditional
+    reason: "Supports payment-integration with Stripe Checkout, PaymentIntents, subscriptions, webhook, and idempotency contracts."
+    when: "The payment integration uses Stripe."
+  - name: api-contract-design
+    kind: recommended
+    reason: "Supports payment-integration with versioned requests, responses, errors, pagination, and compatibility contracts."
+  - name: database-design
+    kind: conditional
+    reason: "Supports payment-integration with logical schemas, integrity constraints, access patterns, and migration design."
+    when: "Schema, persistent data integrity, storage ownership, or migration design is in scope."
+  - name: security-code-review
+    kind: recommended
+    reason: "Supports payment-integration with exploit-path, trust-boundary, vulnerability-confidence, and remediation evidence."
 tags:
   - payments
   - billing

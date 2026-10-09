@@ -9,12 +9,25 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - video-production-workflow
-  - storyboard-creation
-  - ai-video-generation
-  - remotion-video-toolkit
-  - video-edit
+skill-dependencies:
+  - name: video-production-workflow
+    kind: required
+    reason: "The Constraints and Output explicitly require the canonical video-production-workflow artifact contracts and sequential fallback when subagents are unavailable."
+  - name: storyboard-creation
+    kind: recommended
+    reason: "Supports video-director with approved scene intent converted into shot IDs, timing, camera, audio, and continuity."
+  - name: ai-video-generation
+    kind: conditional
+    reason: "Supports video-director with model-aware clip generation, input contracts, parameters, and output evidence."
+    when: "An authorized production stage generates or reviews new AI video clips."
+  - name: remotion-video-toolkit
+    kind: conditional
+    reason: "Supports video-director with Remotion or React compositions, timing, captions, audio, and render validation."
+    when: "The selected composition or render path is Remotion or React video."
+  - name: video-edit
+    kind: conditional
+    reason: "Supports video-director with existing-footage inspection, local editing, controlled transcodes, and media verification."
+    when: "Existing media needs local inspection, frame extraction, editing, transcoding, or delivery QC."
 tags:
   - video-direction
   - creative-treatment

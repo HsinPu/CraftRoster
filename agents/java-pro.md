@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - java-development
-  - java-testing
-  - jvm-build-tooling
-  - security-scanning
+skill-dependencies:
+  - name: java-development
+    kind: recommended
+    reason: "Supports java-pro with the mandatory Java implementation owner and specialist-routing baseline."
+  - name: java-testing
+    kind: recommended
+    reason: "Supports java-pro with JUnit, Mockito, Testcontainers, and deterministic JVM regression evidence."
+  - name: jvm-build-tooling
+    kind: conditional
+    reason: "Supports java-pro with Maven or Gradle wrappers, toolchains, dependency resolution, and builds."
+    when: "The project uses Maven or Gradle and build or dependency behavior is in scope."
+  - name: security-scanning
+    kind: conditional
+    reason: "Supports java-pro with authorized scanner configuration, baselines, result triage, and security quality gates."
+    when: "Authorized automated scanner configuration, existing scan evidence, or quality-gate triage is needed."
 tags:
   - java
   - jvm

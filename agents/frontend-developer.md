@@ -9,12 +9,24 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - frontend-design
-  - javascript-development
-  - typescript-development
-  - react-ui-patterns
-  - responsive-design
+skill-dependencies:
+  - name: frontend-design
+    kind: recommended
+    reason: "Supports frontend-developer with the visible web implementation baseline and rendered user-state verification."
+  - name: javascript-development
+    kind: recommended
+    reason: "Supports frontend-developer with browser or Node JavaScript modules, async flow, cancellation, and errors."
+  - name: typescript-development
+    kind: conditional
+    reason: "Supports frontend-developer with TypeScript source, compiler configuration, strict contracts, and typed APIs."
+    when: "The affected source or compiler contract is TypeScript."
+  - name: react-ui-patterns
+    kind: conditional
+    reason: "Supports frontend-developer with React loading, error, empty, optimistic, and concurrent UI states."
+    when: "The affected web interface uses React and its component-state contracts."
+  - name: responsive-design
+    kind: recommended
+    reason: "Supports frontend-developer with complex web layout reflow, fluid sizing, breakpoints, and touch-target contracts."
 tags:
   - frontend
   - user-interface

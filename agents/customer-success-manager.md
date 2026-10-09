@@ -9,11 +9,22 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - data-organization-system
-  - spreadsheet-ops
-  - summary-ops
-  - presentation-ops
+skill-dependencies:
+  - name: data-organization-system
+    kind: conditional
+    reason: "Supports customer-success-manager with a durable taxonomy, metadata, lifecycle, retention, and retrieval system."
+    when: "The scope designs a reusable taxonomy, metadata, retention, or retrieval system beyond one report."
+  - name: spreadsheet-ops
+    kind: conditional
+    reason: "Supports customer-success-manager with workbook or tabular input, formulas, units, calculation, and output validation."
+    when: "The primary source or requested output is a workbook or tabular calculation artifact."
+  - name: summary-ops
+    kind: optional
+    reason: "An opt-in extension of customer-success-manager provides faithful condensation of supplied source text with preserved uncertainty and attribution."
+  - name: presentation-ops
+    kind: conditional
+    reason: "Supports customer-success-manager with editable presentation decks with layout and render validation."
+    when: "The requested input or deliverable is an editable slide deck."
 tags:
   - customer-success
   - onboarding

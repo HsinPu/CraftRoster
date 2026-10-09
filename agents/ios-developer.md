@@ -9,11 +9,29 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - mobile-app-testing
-  - app-store-release
-  - responsive-design
-  - auth-integration
+skill-dependencies:
+  - name: mobile-app-testing
+    kind: recommended
+    reason: "Supports ios-developer with device, OS, lifecycle, permission, offline, and native accessibility checks."
+  - name: app-store-release
+    kind: conditional
+    reason: "Supports ios-developer with store-specific signing boundaries, submission metadata, and rollout readiness."
+    when: "The task includes mobile store submission, staged rollout, or release-readiness requirements."
+  - name: auth-integration
+    kind: conditional
+    reason: "Supports ios-developer with session, OAuth or OIDC, callback, identity, and authorization boundaries."
+    when: "Authentication, session, identity federation, or authorization integration is in scope."
+  - name: ios-architecture
+    kind: recommended
+    reason: "Supports ios-developer with native iOS module, lifecycle, state, persistence, and dependency boundaries."
+  - name: swift-concurrency
+    kind: conditional
+    reason: "Supports ios-developer with Swift task ownership, actor isolation, cancellation, and Sendable boundaries."
+    when: "The native iOS task changes Swift concurrency, isolation, cancellation, or task ownership."
+  - name: swiftui-development
+    kind: conditional
+    reason: "Supports ios-developer with native SwiftUI states, view identity, navigation, and platform behavior."
+    when: "The affected native iOS interface uses SwiftUI."
 tags:
   - ios
   - swift

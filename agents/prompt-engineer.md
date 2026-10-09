@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - llm-evals
-  - openai-api-development
-  - specification-authoring
-  - security-code-review
+skill-dependencies:
+  - name: llm-evals
+    kind: recommended
+    reason: "Supports prompt-engineer with versioned LLM cases, rubrics, graders, baselines, and regression gates."
+  - name: openai-api-development
+    kind: conditional
+    reason: "Supports prompt-engineer with OpenAI API input, output, tool, retry, streaming, and provider contracts."
+    when: "The selected model provider or affected integration is OpenAI."
+  - name: security-code-review
+    kind: conditional
+    reason: "Supports prompt-engineer with exploit-path, trust-boundary, vulnerability-confidence, and remediation evidence."
+    when: "The scope includes a code-level trust boundary, exploitable path, or security review."
+  - name: prompt-engineering
+    kind: recommended
+    reason: "Supports prompt-engineer with explicit prompt inputs, trust boundaries, reusable templates, and representative tests."
 tags:
   - prompt-engineering
   - evaluation

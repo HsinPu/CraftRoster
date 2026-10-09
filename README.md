@@ -12,7 +12,7 @@ CraftRoster 收錄 237 個專業 Agents 與 286 個可重用 Skills，可安裝�
 
 CraftRoster 是 catalog 與 distribution layer，**不是**另一套 Agent runtime 或 orchestration framework；它讓現有 coding agent 直接取得可攜、可追溯、可驗證的角色與工作流程。
 
-[快速開始](#快速開始) · [互動式安裝](#互動式安裝) · [Skill 配套清單](docs/audits/skill-installability-2026-10-09/README.md) · [支援平台](#支援平台與安裝位置) · [Catalog CLI](#catalog-cli) · [Agents](#agents) · [Skills](#skills) · [開發與驗證](#開發與驗證) · [Issues](https://github.com/HsinPu/CraftRoster/issues)
+[快速開始](#快速開始) · [15 個用途分類](#用途分類與配套) · [Skill 配套清單](docs/audits/skill-installability-2026-10-09/README.md) · [支援平台](#支援平台與安裝位置) · [Catalog CLI](#catalog-cli) · [Agents](#agents) · [Skills](#skills) · [開發與驗證](#開發與驗證) · [Issues](https://github.com/HsinPu/CraftRoster/issues)
 
 ## 專案內容
 
@@ -20,6 +20,7 @@ CraftRoster 是 catalog 與 distribution layer，**不是**另一套 Agent runti
 |---|---:|---|---|
 | Skills | **286 Skills**／16 類 | 可重用的工作流程、規範、工具指引與領域知識 | [`skills/<name>/SKILL.md`](skills/) |
 | Agents | 237／31 類 | 可委派的專業角色，包含權限、限制與輸出契約 | [`agents/<role>.md`](agents/) |
+| 安裝用途分類 | 15 類 | 每類一起安裝相關 Skills 與子代理 | [`install-bundles.json`](scripts/data/install-bundles.json) |
 | Codex adapters | 237 | Codex custom Agent TOML | [`adapters/codex/`](adapters/codex/) |
 | Claude adapters | 237 | Claude Code subagent Markdown | [`adapters/claude/`](adapters/claude/) |
 | Cursor adapters | 237 | Cursor subagent Markdown | [`adapters/cursor/`](adapters/cursor/) |
@@ -42,7 +43,7 @@ CraftRoster 是 catalog 與 distribution layer，**不是**另一套 Agent runti
 
 ### 互動式安裝
 
-只需執行一行命令，再跟著選單選擇平台、全域或專案範圍、內容與分類。一般安裝不需要 Node.js，也不需要管理員／`sudo`。
+只需執行一行命令，再選環境、全域或專案、全部安裝或指定用途分類。相關 Skills 與子代理一起安裝。一般安裝不需要 Node.js，也不需要管理員／`sudo`。
 
 Windows PowerShell：
 
@@ -60,15 +61,43 @@ curl -fsSL https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/set
 
 1. 選擇 Codex、Claude Code、Cursor、VS Code／Copilot 或 OpenCode。
 2. 選擇使用者全域安裝，或安裝到一個專案。專案範圍只建立所選平台需要的目錄。
-3. 選擇 Skills、Agents，或兩者一起安裝。
-4. 分別選擇全部，或用編號選取多個分類，例如 `1,3`。必要 Skill 配套會自動補齊。
-5. 查看安裝內容與位置；所有批次預檢通過後，輸入 `y` 才正式安裝。
+3. 選擇全部安裝，或指定用途分類。
+4. 指定分類時，用編號複選畫圖、程式開發、網頁設計等用途，例如 `1,2`。每類包含 Skills 與子代理，角色的必需／建議配套及 Skill 必需依賴會一起補齊。
+5. 查看合併後的完整內容、加入原因與位置；整份計畫預檢通過後，輸入 `y` 才正式安裝。
 
 例如 Codex：選 `1) codex`，再選 `1) User global` 或 `2) Current project`。Codex 專案 Skills 寫入 `<project-root>/.agents/skills/`，Agents 寫入 `<project-root>/.codex/agents/`；全域預設使用 `$CODEX_HOME`，未設定時為 `~/.codex/`。選單另保留 `6) project (all platforms)`，可一次建立跨平台專案安裝。
 
-輸入 `q` 可取消，最後確認直接按 Enter 也會取消。選擇專案範圍時會確認專案根目錄，Enter 預設使用啟動命令時的目前目錄；選擇全域 Codex／OpenCode Agents 時，可另外選擇是否啟用主動委派。來源 archive 只下載一次，所有批次都使用同一份內容。
+例如要在 Codex 專案使用畫圖與程式能力：Codex → Current project → 確認專案目錄 → 指定分類 → 選畫圖與程式開發 → 預覽 → `y`。選「全部」會加入目錄裡全部 Skills 與子代理，直接進入預覽，不再選分類。
+
+輸入 `q` 可取消，最後確認直接按 Enter 也會取消。專案目錄的 Enter 預設為啟動命令時的目前目錄；分類選單空白不會自動全裝。全域 Codex／OpenCode 可另外選擇是否啟用主動委派。來源 archive 只下載一次，合併計畫共用這份內容；同一目的地的共享 Skill 只安排一次。
 
 詳細流程、本機執行方式與疑難排解請看[互動式安裝指南](docs/interactive-installation.md)。
+
+### 用途分類與配套
+
+一般安裝使用以下 15 個統一用途分類。數量是分類直接成員，安裝時另加入角色配套與 Skill 必需依賴；跨類成員會按目的地去重。原本的 16 類 Skills／31 類 Agents 仍用於進階查詢與單類型安裝。
+
+<!-- INSTALL_BUNDLES_START -->
+| 用途分類 | Skills | 子代理 |
+|---|---:|---:|
+| 畫圖與圖像處理 (`image-graphics`) | 6 | 2 |
+| 程式開發 (`software-development`) | 40 | 45 |
+| 網頁與介面設計 (`web-interface`) | 40 | 11 |
+| 測試與程式審查 (`testing-review`) | 28 | 16 |
+| 資料庫與資料分析 (`data-analysis`) | 13 | 15 |
+| AI與LLM (`ai-llm`) | 7 | 13 |
+| 雲端部署與維運 (`cloud-operations`) | 14 | 25 |
+| 資安與治理 (`security-governance`) | 8 | 23 |
+| 影片與音訊製作 (`video-audio`) | 14 | 23 |
+| 文件與辦公 (`documents-office`) | 16 | 10 |
+| 研究、需求與專案規劃 (`research-planning`) | 15 | 19 |
+| 寫作與商務營運 (`writing-business`) | 11 | 38 |
+| 行動桌面與嵌入式開發 (`mobile-desktop-embedded`) | 9 | 13 |
+| 3D與互動圖形 (`threejs-graphics`) | 62 | 4 |
+| Agent、Skill與自動化工具 (`agent-automation`) | 26 | 15 |
+<!-- INSTALL_BUNDLES_END -->
+
+查看成員：`node craftroster-cli.js bundles` 或 `node craftroster-cli.js bundles image-graphics`。配套關係由 canonical Agent 的 `skill-dependencies` 定義，分為必需、建議、條件與可選；分類本身直接包含的元件固定加入，條件／可選關聯只在明確選取時追加。審核與邊界修正見 [Agent／Skill 配套審核](docs/audits/agent-skill-bundles-2026-10-09/README.md)。
 
 ### 進階參數安裝
 
@@ -82,6 +111,24 @@ curl -fsSL https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/set
 | 一個分類與必要配套 | `-Category frontend-design` | `--category frontend-design` |
 | 一個元件與必要配套 | `-Name python-development` | `--name python-development` |
 | 該 Type 全部元件 | 同時省略 `-Name`、`-Category` | 同時省略 `--name`、`--category` |
+
+### 用途配套安裝
+
+可在自動化腳本中一次指定多個用途，並用同一份計畫預檢與安裝：
+
+```powershell
+powershell -ExecutionPolicy Bypass -NoProfile -File scripts/install.ps1 -SourceDir . -Target codex -Type bundle -Bundle 'image-graphics,software-development' -DryRun
+```
+
+```bash
+bash scripts/install.sh --source-dir . --target codex --type bundle --bundle image-graphics,software-development --dry-run
+```
+
+`-Bundle all`／`--bundle all` 表示全部 Skills 與 Agents。專案安裝再加 `-Target project -ProjectPlatform codex`／`--target project --project-platform codex`，目的地可由 `-InstallDir`／`--dir` 指定。用途選擇不能與單一 `Name` 或舊 `Category` 混用。
+
+只選一個角色時，使用 `-AgentSkillPolicy recommended`／`--agent-skill-policy recommended` 追加必需與建議 Skills；`required` 只追加必需項目。條件與可選項目可由 `-AgentSkillInclude`／`--agent-skill-include` 明確指定；`-AgentSkillExclude`／`--agent-skill-exclude` 可排除建議關聯，但不取消分類直接成員或任何必需依賴。各自接受逗號分隔的 Skill 名稱。
+
+原有 `Type agent` 參數入口未指定配套策略時維持 `legacy` 行為，供既有腳本相容；預覽會標示尚未補齊角色配套。新的 `Type bundle` 與互動安裝預設使用建議配套。
 
 ### 依分類安裝
 
@@ -109,7 +156,7 @@ curl -fsSL https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/ins
 
 確認預演內容後，移除 `-DryRun`／`--dry-run` 即可正式安裝。分類 Agent 安裝不會自動加入 `subagent-architecture`，除非同時指定主動委派。
 
-可用分類請見 [Agents](#agents) 與 [Skills](#skills)，也可使用 CLI 查詢：`node craftroster-cli.js list --category frontend-design`。參數介面每次可指定一個分類，或一個元件名稱；兩者互斥。互動入口可以一次選多個分類，並依序安裝各批次；已安裝的必要配套會依 ownership 規則核對與更新。
+可用舊分類請見 [Agents](#agents) 與 [Skills](#skills)，也可使用 CLI 查詢：`node craftroster-cli.js list --category frontend-design`。單類型參數介面每次可指定一個舊分類，或一個元件名稱；兩者互斥。用途 `bundle` 與互動入口則可選多個用途，合併後預檢與安裝。
 
 遠端分類安裝仍會下載完整 repository archive，但只把選取的元件與必要配套寫入安裝目錄。
 
@@ -144,13 +191,13 @@ curl -fsSL https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/ins
 Windows PowerShell：
 
 ```powershell
-powershell -ExecutionPolicy Bypass -NoProfile -Command '$s = irm https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/install.ps1; $installer = [scriptblock]::Create($s); & $installer -Target codex -Type skill; & $installer -Target codex -Type agent -EnableAutoDelegation'
+powershell -ExecutionPolicy Bypass -NoProfile -Command '$s = irm https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/install.ps1; & ([scriptblock]::Create($s)) -Target codex -Type bundle -Bundle all -EnableAutoDelegation'
 ```
 
 Linux／macOS：
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/install.sh | bash -s -- --target codex --type skill && curl -fsSL https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/install.sh | bash -s -- --target codex --type agent --enable-auto-delegation
+curl -fsSL https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/install.sh | bash -s -- --target codex --type bundle --bundle all --enable-auto-delegation
 ```
 
 這會安裝全部 286 個 Skills、237 個 Agents，並為 Codex 啟用全域主動委派。安裝完成後請開啟新的 Codex 工作階段，讓 runtime 重新載入內容。
@@ -310,6 +357,8 @@ cd CraftRoster
 node craftroster-cli.js list
 node craftroster-cli.js search "python development"
 node craftroster-cli.js info ios-architecture
+node craftroster-cli.js bundles
+node craftroster-cli.js bundles image-graphics
 node craftroster-cli.js list --type agent --category quality-assurance
 node craftroster-cli.js list --installed --type agent --target codex
 ```
@@ -326,6 +375,7 @@ craftroster list
 | `list` | `ls` | 依分類列出 Skills 或 Agents |
 | `search <query>` | `s` | 搜尋名稱、描述與 tags |
 | `info <name>` | — | 顯示 metadata、授權、routing 與安裝命令 |
+| `bundles [id]` | — | 列出 15 個安裝用途，或查閱其 Skills 與子代理 |
 
 | Option | 用途 |
 |---|---|
@@ -444,13 +494,19 @@ Canonical Agent: agents/<role>.md
         └─ generate:agents
            ├─ adapters/{codex,claude,cursor,copilot,opencode}/
            ├─ agents.json
-           └─ scripts/data/install-category-index.tsv
+           ├─ scripts/data/install-category-index.tsv
+           └─ scripts/data/install-agent-skill-dependencies.tsv
 
 Canonical Skill: skills/<name>/SKILL.md
 Taxonomy:        scripts/data/skill-catalog.json
         └─ generate:skills
            ├─ skills.json
-           └─ scripts/data/install-category-index.tsv
+           ├─ scripts/data/install-category-index.tsv
+           └─ scripts/data/install-skill-dependencies.tsv
+
+Install purposes: scripts/data/install-bundles.json
+        └─ Agent／Skill generators
+           └─ scripts/data/install-bundles.tsv
 ```
 
 ```text
@@ -493,6 +549,7 @@ npm run test:cli
 npm run test:catalog
 npm run test:skill-catalog
 npm run test:install-categories
+npm run test:install-bundles
 npm run test:skill-contracts
 npm run test:skill-evals
 npm run test:skill-routing
@@ -534,7 +591,7 @@ npm run eval:skill-routing -- --skill solution-discovery --max-cases 3 --output 
 - Agent references 固定 commit、tree、paths 與 license evidence；Skill references 另外固定逐檔 blob 與 review-controlled lock。
 - `npm run audit:agent-originality` 會針對 237 個 canonical Agent prompt 與 pinned upstream references 檢查長行及逐字片段重疊。
 - Skill originality audit 會逐一比對有 reference 的 canonical packages 與固定 upstream files。
-- Eval gate 目前具名保護 99／286 個 Skill packages、200 個 output evals、909 個 assertions 與 10 個 routing cases；不宣稱所有 Skills 都有 eval。
+- Eval gate 目前具名保護 117／286 個 Skill packages、291 個 output evals、1237 個 assertions 與 85 個 routing cases；這些是案例定義，不宣稱所有 Skills 都有 eval 或已執行模型任務。
 - Workflow contract gate 目前涵蓋 7 組跨 Skill contracts；Agent responsibility coverage 由 [31 類 matrix](docs/agent-coverage-matrix.md) 驗證。
 
 詳細來源與改寫紀錄：
@@ -589,8 +646,9 @@ CLI 只確認檔案與 CraftRoster ownership，不代表已開啟的 runtime 已
 1. Fork repository 並建立 feature branch。
 2. Agent 只修改 `agents/<role>.md`，再執行 `npm run generate:agents`。
 3. Skill 修改 `skills/<name>/SKILL.md`；分類與 routing 同步修改 `scripts/data/skill-catalog.json`，再執行 `npm run generate:skills`。
-4. 執行 `npm run validate`、相關 tests、`git diff --check`。
-5. 建立 [Pull Request](https://github.com/HsinPu/CraftRoster/pulls)，說明需求、來源、權限邊界與驗證證據。
+4. 用途成員修改 `scripts/data/install-bundles.json`；Agent 配套修改 canonical `skill-dependencies`，每項填 `name`、`kind`、`reason`，條件項再填 `when`。重新生成索引，不直接編輯 TSV 或 generated adapters。
+5. 執行 `npm run validate`、相關 tests、`git diff --check`。
+6. 建立 [Pull Request](https://github.com/HsinPu/CraftRoster/pulls)，說明需求、來源、權限邊界與驗證證據。
 
 發現問題或缺少能力時，請先建立 [Issue](https://github.com/HsinPu/CraftRoster/issues)。
 

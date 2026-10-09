@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - web-research-ops
-  - humanizer
-  - markdown-writer
-  - frontend-design-review
+skill-dependencies:
+  - name: web-research-ops
+    kind: recommended
+    reason: "Supports seo-content-refresher with current primary sources, dates, contradictions, and attributable evidence."
+  - name: humanizer
+    kind: optional
+    reason: "An opt-in extension of seo-content-refresher provides optional prose polishing that preserves the author and confirmed meaning."
+  - name: markdown-writer
+    kind: conditional
+    reason: "Supports seo-content-refresher with clear GFM structure, source-preserving documentation, and links."
+    when: "The requested artifact is Markdown or GFM documentation."
+  - name: frontend-design-review
+    kind: conditional
+    reason: "Supports seo-content-refresher with read-only interface usability, accessibility, and visual-quality evidence."
+    when: "An implemented web surface needs independent UX, accessibility, or visual evidence."
 tags:
   - seo
   - content-refresh

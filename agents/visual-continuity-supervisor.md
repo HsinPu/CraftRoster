@@ -9,12 +9,26 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - storyboard-creation
-  - ai-video-prompting
-  - ai-video-generation
-  - image-utils
-  - video-edit
+skill-dependencies:
+  - name: storyboard-creation
+    kind: recommended
+    reason: "Supports visual-continuity-supervisor with approved scene intent converted into shot IDs, timing, camera, audio, and continuity."
+  - name: ai-video-prompting
+    kind: conditional
+    reason: "Supports visual-continuity-supervisor with shot intent, camera motion, temporal continuity, and generative-video prompts."
+    when: "The selected production path needs generative-video prompts or prompt review."
+  - name: ai-video-generation
+    kind: conditional
+    reason: "Supports visual-continuity-supervisor with model-aware clip generation, input contracts, parameters, and output evidence."
+    when: "An authorized production stage generates or reviews new AI video clips."
+  - name: image-utils
+    kind: conditional
+    reason: "Supports visual-continuity-supervisor with non-destructive deterministic crop, resize, conversion, and pixel inspection."
+    when: "The authorized work needs deterministic still-image operations or pixel-level inspection."
+  - name: video-edit
+    kind: conditional
+    reason: "Supports visual-continuity-supervisor with existing-footage inspection, local editing, controlled transcodes, and media verification."
+    when: "Existing media needs local inspection, frame extraction, editing, transcoding, or delivery QC."
 tags:
   - visual-continuity
   - character-consistency

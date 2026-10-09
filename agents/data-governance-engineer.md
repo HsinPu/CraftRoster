@@ -9,11 +9,18 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - data-organization-system
-  - data-pipeline-orchestration
-  - database-design
-  - specification-authoring
+skill-dependencies:
+  - name: data-organization-system
+    kind: recommended
+    reason: "Supports data-governance-engineer with a durable taxonomy, metadata, lifecycle, retention, and retrieval system."
+  - name: data-pipeline-orchestration
+    kind: conditional
+    reason: "Supports data-governance-engineer with idempotent data delivery, lineage, scheduling, quality gates, and recovery."
+    when: "Governed transformations, scheduling, lineage, or repeatable data delivery are in scope."
+  - name: database-design
+    kind: conditional
+    reason: "Supports data-governance-engineer with logical schemas, integrity constraints, access patterns, and migration design."
+    when: "Schema, persistent data integrity, storage ownership, or migration design is in scope."
 tags:
   - data-governance
   - data-stewardship

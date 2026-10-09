@@ -9,11 +9,26 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - python-data-engineering
-  - python-development
-  - python-testing-engineering
-  - llm-evals
+skill-dependencies:
+  - name: python-data-engineering
+    kind: conditional
+    reason: "Supports ml-engineer with reproducible Python dataframe or dataset transformation with data checks."
+    when: "The analysis or pipeline implements dataset transformations in Python."
+  - name: python-development
+    kind: conditional
+    reason: "Supports ml-engineer with the mandatory Python implementation owner and specialist-routing baseline."
+    when: "The affected code, runtime contract, or diagnostic evidence is Python."
+  - name: python-testing-engineering
+    kind: conditional
+    reason: "Supports ml-engineer with pytest or unittest tests, fixtures, regression plans, and deterministic evidence."
+    when: "The requested evidence includes Python tests, fixtures, regressions, or a Python test plan."
+  - name: llm-evals
+    kind: conditional
+    reason: "Supports ml-engineer with versioned LLM cases, rubrics, graders, baselines, and regression gates."
+    when: "The model under evaluation is an LLM or an LLM-backed application."
+  - name: testing-strategy
+    kind: recommended
+    reason: "Supports ml-engineer with risk-based test levels, fixtures, boundaries, and meaningful coverage."
 tags:
   - machine-learning
   - model-serving

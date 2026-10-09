@@ -9,15 +9,36 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - ask-questions-if-underspecified
-  - requirements-deep-dive
-  - solution-discovery
-  - domain-modeling
-  - spec-flow
-  - specification-authoring
-  - api-contract-design
-  - context-governance
+skill-dependencies:
+  - name: ask-questions-if-underspecified
+    kind: conditional
+    reason: "Supports product-spec-orchestrator with an explicitly requested question-first clarification workflow."
+    when: "The user explicitly requests a question-first intake before product discovery."
+  - name: requirements-deep-dive
+    kind: conditional
+    reason: "Supports product-spec-orchestrator with a deliberate stakeholder decision interview for consequential unresolved choices."
+    when: "Several consequential product choices require a deliberate stakeholder decision interview."
+  - name: solution-discovery
+    kind: required
+    reason: "Task 4 explicitly runs solution discovery to frame alternatives and record the direction decision before specification or implementation handoff."
+  - name: domain-modeling
+    kind: conditional
+    reason: "Supports product-spec-orchestrator with technology-neutral business language, identity, invariants, and ownership."
+    when: "Ambiguous terminology, invariants, ownership, or lifecycle would change the decision or contract."
+  - name: spec-flow
+    kind: recommended
+    reason: "Supports product-spec-orchestrator with approved requirements converted into acceptance and dependency-aware implementation work."
+  - name: specification-authoring
+    kind: conditional
+    reason: "Supports product-spec-orchestrator with a formal technical Spec with the explicitly requested fixed document structure."
+    when: "The user explicitly requests a formal technical Spec with the prescribed document structure."
+  - name: api-contract-design
+    kind: conditional
+    reason: "Supports product-spec-orchestrator with versioned requests, responses, errors, pagination, and compatibility contracts."
+    when: "The work defines or changes consumer-visible API, event, or webhook contracts."
+  - name: context-governance
+    kind: recommended
+    reason: "Supports product-spec-orchestrator with a compact authoritative context record with precedence and provenance."
 tags:
   - product-discovery
   - specification

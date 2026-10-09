@@ -9,11 +9,20 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - typescript-development
-  - javascript-development
-  - testing-strategy
-  - security-scanning
+skill-dependencies:
+  - name: typescript-development
+    kind: recommended
+    reason: "Supports typescript-pro with TypeScript source, compiler configuration, strict contracts, and typed APIs."
+  - name: javascript-development
+    kind: recommended
+    reason: "Supports typescript-pro with browser or Node JavaScript modules, async flow, cancellation, and errors."
+  - name: testing-strategy
+    kind: recommended
+    reason: "Supports typescript-pro with risk-based test levels, fixtures, boundaries, and meaningful coverage."
+  - name: security-scanning
+    kind: conditional
+    reason: "Supports typescript-pro with authorized scanner configuration, baselines, result triage, and security quality gates."
+    when: "Authorized automated scanner configuration, existing scan evidence, or quality-gate triage is needed."
 tags:
   - typescript
   - type-safety

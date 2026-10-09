@@ -9,12 +9,25 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - video-production-workflow
-  - data-organization-system
-  - subtitle-captions
-  - audio-transcription
-  - text-to-speech
+skill-dependencies:
+  - name: video-production-workflow
+    kind: recommended
+    reason: "Supports audiovisual-localization-producer with the canonical production artifacts, stage gates, accepted lineage, and sequential fallback."
+  - name: data-organization-system
+    kind: optional
+    reason: "An opt-in extension of audiovisual-localization-producer provides a durable taxonomy, metadata, lifecycle, retention, and retrieval system."
+  - name: subtitle-captions
+    kind: conditional
+    reason: "Supports audiovisual-localization-producer with same-language caption authoring, timing, conversion, and caption QC."
+    when: "The approved deliverable needs caption authoring, timing, conversion, or caption QC."
+  - name: audio-transcription
+    kind: conditional
+    reason: "Supports audiovisual-localization-producer with speech extraction, speaker labeling, and source-linked transcript evidence."
+    when: "Raw audio or video speech needs extraction and no accepted matching transcript exists."
+  - name: text-to-speech
+    kind: conditional
+    reason: "Supports audiovisual-localization-producer with authorized synthetic speech, voice selection, timing, and voiceover evidence."
+    when: "The approved production needs generated speech or voiceover with appropriate consent."
 tags:
   - audiovisual-localization
   - language-versioning

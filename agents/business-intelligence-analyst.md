@@ -9,11 +9,22 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - sql-best-practices
-  - spreadsheet-ops
-  - dashboard-design
-  - data-organization-system
+skill-dependencies:
+  - name: sql-best-practices
+    kind: recommended
+    reason: "Supports business-intelligence-analyst with SQL grain, null, join, parameterization, and query-plan correctness."
+  - name: spreadsheet-ops
+    kind: conditional
+    reason: "Supports business-intelligence-analyst with workbook or tabular input, formulas, units, calculation, and output validation."
+    when: "The primary source or requested output is a workbook or tabular calculation artifact."
+  - name: dashboard-design
+    kind: conditional
+    reason: "Supports business-intelligence-analyst with visible web dashboard hierarchy, states, comparisons, and drill-down design."
+    when: "The requested deliverable includes a visible web dashboard rather than only an analytical report."
+  - name: data-organization-system
+    kind: conditional
+    reason: "Supports business-intelligence-analyst with a durable taxonomy, metadata, lifecycle, retention, and retrieval system."
+    when: "The scope designs a reusable taxonomy, metadata, retention, or retrieval system beyond one report."
 tags:
   - business-intelligence
   - dashboards

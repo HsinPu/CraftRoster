@@ -9,11 +9,22 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - aws-operations
-  - kubernetes-operations
-  - terraform-infrastructure
-  - deployment-operations
+skill-dependencies:
+  - name: aws-operations
+    kind: conditional
+    reason: "Supports cloud-architect with AWS account, regional service, IAM, and workload-specific operational evidence."
+    when: "The selected provider or affected workload is AWS."
+  - name: kubernetes-operations
+    kind: conditional
+    reason: "Supports cloud-architect with Kubernetes workload, namespace, rollout, RBAC, and health contracts."
+    when: "The selected platform or affected workload uses Kubernetes."
+  - name: terraform-infrastructure
+    kind: conditional
+    reason: "Supports cloud-architect with Terraform or OpenTofu modules, provider state, plans, and safe infrastructure review."
+    when: "The chosen infrastructure contract uses Terraform or OpenTofu."
+  - name: deployment-operations
+    kind: recommended
+    reason: "Supports cloud-architect with mode-aware artifact, rollout, health, abort, and recovery evidence."
 tags:
   - cloud
   - infrastructure

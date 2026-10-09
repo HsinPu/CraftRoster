@@ -9,11 +9,20 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - subagent-architecture
-  - incremental-implementation
-  - context-governance
-  - terminal-ops
+skill-dependencies:
+  - name: subagent-architecture
+    kind: recommended
+    reason: "Supports orchestrate with focused delegation, exclusive ownership, dependency gates, and verified fan-in."
+  - name: incremental-implementation
+    kind: recommended
+    reason: "Supports orchestrate with dependency-aware verified slices and reversible integration checkpoints."
+  - name: context-governance
+    kind: conditional
+    reason: "Supports orchestrate with a compact authoritative context record with precedence and provenance."
+    when: "Durable context, shared decisions, or context-budget behavior needs governance."
+  - name: terminal-ops
+    kind: recommended
+    reason: "Supports orchestrate with exact commands, repository state, scoped execution, and reproducible verification."
 tags:
   - orchestration
   - delegation

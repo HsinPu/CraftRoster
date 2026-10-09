@@ -9,11 +9,20 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - api-contract-design
-  - project-architecture-review
-  - specification-authoring
-  - web-research-ops
+skill-dependencies:
+  - name: api-contract-design
+    kind: recommended
+    reason: "Supports technical-product-manager with versioned requests, responses, errors, pagination, and compatibility contracts."
+  - name: project-architecture-review
+    kind: recommended
+    reason: "Supports technical-product-manager with existing repository boundaries, dependency evidence, and incremental architecture decisions."
+  - name: specification-authoring
+    kind: conditional
+    reason: "Supports technical-product-manager with a formal technical Spec with the explicitly requested fixed document structure."
+    when: "The user explicitly requests a formal technical Spec with the prescribed document structure."
+  - name: web-research-ops
+    kind: recommended
+    reason: "Supports technical-product-manager with current primary sources, dates, contradictions, and attributable evidence."
 tags:
   - technical-product-management
   - platform-products

@@ -9,10 +9,17 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - specification-authoring
-  - llm-evals
-  - humanizer
+skill-dependencies:
+  - name: llm-evals
+    kind: conditional
+    reason: "Supports prompt-crafter with versioned LLM cases, rubrics, graders, baselines, and regression gates."
+    when: "The model under evaluation is an LLM or an LLM-backed application."
+  - name: humanizer
+    kind: optional
+    reason: "An opt-in extension of prompt-crafter provides optional prose polishing that preserves the author and confirmed meaning."
+  - name: prompt-engineering
+    kind: recommended
+    reason: "Supports prompt-crafter with explicit prompt inputs, trust boundaries, reusable templates, and representative tests."
 tags:
   - prompting
   - instructions

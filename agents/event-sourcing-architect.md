@@ -9,10 +9,25 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - database-design
-  - api-contract-design
-  - spring-cloud-microservices
+skill-dependencies:
+  - name: database-design
+    kind: conditional
+    reason: "Supports event-sourcing-architect with logical schemas, integrity constraints, access patterns, and migration design."
+    when: "Schema, persistent data integrity, storage ownership, or migration design is in scope."
+  - name: api-contract-design
+    kind: conditional
+    reason: "Supports event-sourcing-architect with versioned requests, responses, errors, pagination, and compatibility contracts."
+    when: "The work defines or changes consumer-visible API, event, or webhook contracts."
+  - name: spring-cloud-microservices
+    kind: conditional
+    reason: "Supports event-sourcing-architect with Spring-specific distributed configuration, messaging, resilience, and service boundaries."
+    when: "The affected event or distributed-service architecture uses Spring Cloud or Spring Boot."
+  - name: event-sourcing-cqrs
+    kind: recommended
+    reason: "Supports event-sourcing-architect with immutable event semantics, aggregate invariants, replay, and projections."
+  - name: domain-modeling
+    kind: recommended
+    reason: "Supports event-sourcing-architect with technology-neutral business language, identity, invariants, and ownership."
 tags:
   - event-sourcing
   - domain-modeling

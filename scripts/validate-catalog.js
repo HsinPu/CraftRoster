@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const { parseYamlFrontmatter } = require('./generate-skill-catalog');
 const { validateDependencies, validateRoutes, validateSiblingLinks } = require('./lib/skill-dependencies');
+const { readAgent, validateAgentSkillDependencies, renderSkillGuidance } = require('./lib/agent-metadata');
 
 const root = path.resolve(__dirname, '..');
 const skillsRoot = path.join(root, 'skills');
@@ -394,6 +395,12 @@ for (const agent of agents) {
   for (const skillName of Array.isArray(agent.skills) ? agent.skills : []) {
     if (!skillNames.has(skillName)) fail(`${label} references unknown skill: ${skillName}`);
   }
+  try {
+    const dependencies = validateAgentSkillDependencies(label, agent.skillDependencies, skillNames);
+    compare(label, 'skills', dependencies.map((entry) => entry.name), agent.skills, 'skillDependencies compatibility mapping', 'agents.json');
+  } catch (error) {
+    fail(error.message);
+  }
 
   if (!agent.references || typeof agent.references !== 'object') {
     fail(`${label}: references must be an object`);
@@ -457,13 +464,23 @@ for (const agent of agents) {
 
 for (const agentFile of agentFiles) {
   const text = fs.readFileSync(agentFile.path, 'utf8');
-  const frontmatter = parseFrontmatter(agentFile.path);
+  let agentMetadata;
+  try {
+    agentMetadata = readAgent(agentFile.path, skillNames);
+  } catch (error) {
+    fail(`${agentFile.relativePath} has invalid Agent metadata: ${error.message}`);
+    agentMetadata = { fields: {}, skillDependencies: [], body: text.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n/, '').trim() };
+  }
+  const frontmatter = agentMetadata.fields;
   const catalogEntry = agentsById.get(agentFile.role);
   if (!catalogEntry) fail(`${agentFile.role}: Markdown file is missing from agents.json`);
   for (const field of ['id', 'name', 'role', 'description', 'category', 'author', 'source', 'license', 'model', 'permission', 'reference-repo', 'reference-tree']) {
     if (!frontmatter[field]) fail(`${agentFile.role}: Agent Markdown is missing frontmatter field: ${field}`);
   }
-  for (const field of ['skills', 'tags', 'reference-paths']) {
+  if (!Array.isArray(frontmatter['skill-dependencies'])) {
+    fail(`${agentFile.role}: skill-dependencies must be a YAML list`);
+  }
+  for (const field of ['tags', 'reference-paths']) {
     if (!Array.isArray(frontmatter[field]) || frontmatter[field].length === 0) {
       fail(`${agentFile.role}: ${field} must be a non-empty YAML list`);
     }
@@ -475,6 +492,7 @@ for (const agentFile of agentFiles) {
     for (const field of ['name', 'role', 'description', 'category', 'author', 'source', 'license', 'model', 'permission', 'skills', 'tags']) {
       compare(agentFile.role, field, catalogEntry[field], frontmatter[field], 'agents.json', 'Agent Markdown');
     }
+    compare(agentFile.role, 'skillDependencies', catalogEntry.skillDependencies, agentMetadata.skillDependencies, 'agents.json', 'Agent Markdown');
     compare(agentFile.role, 'references.repo', catalogEntry.references.repo, frontmatter['reference-repo'], 'agents.json', 'Agent Markdown');
     compare(agentFile.role, 'references.paths', catalogEntry.references.paths, frontmatter['reference-paths'], 'agents.json', 'Agent Markdown');
     compare(agentFile.role, 'references.tree', catalogEntry.references.tree, frontmatter['reference-tree'], 'agents.json', 'Agent Markdown');
@@ -483,7 +501,7 @@ for (const agentFile of agentFiles) {
   const requiredHeadings = ['# Role', '# Task', '# Constraints', '# Output'];
   const topLevelHeadings = [...text.matchAll(/^# .+$/gm)].map((match) => match[0]);
   compare(agentFile.role, 'top-level headings', requiredHeadings, topLevelHeadings, 'required Agent structure', 'Agent Markdown');
-  const canonicalBody = text.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n/, '').trim();
+  const canonicalBody = renderSkillGuidance(agentMetadata.body, agentMetadata.skillDependencies);
 
   const codexPath = path.join(adaptersRoot, 'codex', `${agentFile.role}.toml`);
   if (!fs.existsSync(codexPath)) {
@@ -515,7 +533,10 @@ for (const agentFile of agentFiles) {
     compare(agentFile.role, 'Claude description', catalogEntry.description, claudeFrontmatter.description, 'agents.json', 'adapter');
     compare(agentFile.role, 'Claude model', 'inherit', claudeFrontmatter.model, 'required adapter value', 'adapter');
     compare(agentFile.role, 'Claude permissionMode', catalogEntry.permission === 'read-only' ? 'plan' : 'default', claudeFrontmatter.permissionMode, 'agents.json mapping', 'adapter');
-    compare(agentFile.role, 'Claude skills', catalogEntry.skills, claudeFrontmatter.skills, 'agents.json', 'adapter');
+    const preloadedSkills = Array.isArray(catalogEntry.skillDependencies)
+      ? catalogEntry.skillDependencies.filter((entry) => entry.kind === 'required').map((entry) => entry.name) : [];
+    compare(agentFile.role, 'Claude skills', preloadedSkills.length ? preloadedSkills : undefined,
+      claudeFrontmatter.skills, 'required Skill support', 'adapter');
     compare(agentFile.role, 'Claude instructions', normalizeNewlines(canonicalBody), normalizeNewlines(claudeBody), 'canonical Agent', 'adapter');
   }
 

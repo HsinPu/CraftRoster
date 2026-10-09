@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - coding-standards
-  - jvm-build-tooling
-  - testing-strategy
-  - observability-engineering
+skill-dependencies:
+  - name: jvm-build-tooling
+    kind: conditional
+    reason: "Supports scala-pro with Maven or Gradle wrappers, toolchains, dependency resolution, and builds."
+    when: "The project uses Maven or Gradle and build or dependency behavior is in scope."
+  - name: testing-strategy
+    kind: recommended
+    reason: "Supports scala-pro with risk-based test levels, fixtures, boundaries, and meaningful coverage."
+  - name: observability-engineering
+    kind: conditional
+    reason: "Supports scala-pro with service objectives, low-cardinality telemetry, diagnostics, and alert validation."
+    when: "Service objectives, telemetry, operational diagnostics, or monitoring design are in scope."
+  - name: code-change-workflow
+    kind: recommended
+    reason: "Supports scala-pro with pre-edit ownership, call-path, compatibility, and verification inspection."
 tags:
   - scala
   - jvm

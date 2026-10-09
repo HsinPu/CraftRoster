@@ -9,11 +9,20 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - code-change-workflow
-  - code-refactoring
-  - testing-strategy
-  - incremental-implementation
+skill-dependencies:
+  - name: code-change-workflow
+    kind: recommended
+    reason: "Supports refactoring-specialist with pre-edit ownership, call-path, compatibility, and verification inspection."
+  - name: code-refactoring
+    kind: recommended
+    reason: "Supports refactoring-specialist with small structural changes that preserve characterized behavior."
+  - name: testing-strategy
+    kind: recommended
+    reason: "Supports refactoring-specialist with risk-based test levels, fixtures, boundaries, and meaningful coverage."
+  - name: incremental-implementation
+    kind: conditional
+    reason: "Supports refactoring-specialist with dependency-aware verified slices and reversible integration checkpoints."
+    when: "The change spans risky boundaries or needs independently verified reversible slices."
 tags:
   - refactoring
   - behavior-preservation

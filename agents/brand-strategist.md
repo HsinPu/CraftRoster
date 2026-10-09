@@ -9,11 +9,28 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - web-research-ops
-  - design-consultation
-  - ux-writing
-  - color-font-skill
+skill-dependencies:
+  - name: web-research-ops
+    kind: recommended
+    reason: "Supports brand-strategist with current primary sources, dates, contradictions, and attributable evidence."
+  - name: design-consultation
+    kind: conditional
+    reason: "Supports brand-strategist with web interface visual direction before implementation."
+    when: "The requested design direction or research handoff concerns a web interface."
+  - name: ux-writing
+    kind: conditional
+    reason: "Supports brand-strategist with clear interface labels, instructions, error states, and truthful user guidance."
+    when: "The requested copy is interface microcopy or an explicitly identified product state."
+  - name: color-font-skill
+    kind: conditional
+    reason: "Supports brand-strategist with web visual direction, typography, palette, and contrast choices."
+    when: "The approved visual work concerns a web interface palette or typography."
+  - name: brand-voice
+    kind: recommended
+    reason: "Supports brand-strategist with a source-derived tone, vocabulary, and messaging profile."
+  - name: market-research
+    kind: recommended
+    reason: "Supports brand-strategist with a dated market and audience evidence ledger leading to a decision memo."
 tags:
   - brand-strategy
   - positioning

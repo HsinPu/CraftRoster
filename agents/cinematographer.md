@@ -9,12 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - video-production-workflow
-  - storyboard-creation
-  - ai-video-prompting
-  - ai-video-generation
-  - animation-best-practices
+skill-dependencies:
+  - name: video-production-workflow
+    kind: recommended
+    reason: "Supports cinematographer with the canonical production artifacts, stage gates, accepted lineage, and sequential fallback."
+  - name: storyboard-creation
+    kind: recommended
+    reason: "Supports cinematographer with approved scene intent converted into shot IDs, timing, camera, audio, and continuity."
+  - name: ai-video-prompting
+    kind: conditional
+    reason: "Supports cinematographer with shot intent, camera motion, temporal continuity, and generative-video prompts."
+    when: "The selected production path needs generative-video prompts or prompt review."
+  - name: ai-video-generation
+    kind: conditional
+    reason: "Supports cinematographer with model-aware clip generation, input contracts, parameters, and output evidence."
+    when: "An authorized production stage generates or reviews new AI video clips."
 tags:
   - cinematography
   - camera-planning

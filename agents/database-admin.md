@@ -9,11 +9,23 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - postgres-operations
-  - database-design
-  - observability-engineering
-  - deployment-operations
+skill-dependencies:
+  - name: postgres-operations
+    kind: conditional
+    reason: "Supports database-admin with PostgreSQL plans, locks, roles, backups, replication, and maintenance evidence."
+    when: "The selected or affected database is PostgreSQL."
+  - name: database-design
+    kind: conditional
+    reason: "Supports database-admin with logical schemas, integrity constraints, access patterns, and migration design."
+    when: "Schema, persistent data integrity, storage ownership, or migration design is in scope."
+  - name: observability-engineering
+    kind: conditional
+    reason: "Supports database-admin with service objectives, low-cardinality telemetry, diagnostics, and alert validation."
+    when: "Service objectives, telemetry, operational diagnostics, or monitoring design are in scope."
+  - name: deployment-operations
+    kind: conditional
+    reason: "Supports database-admin with mode-aware artifact, rollout, health, abort, and recovery evidence."
+    when: "An environment promotion, artifact rollout, or recovery plan is part of the authorized mode."
 tags:
   - database-administration
   - backup

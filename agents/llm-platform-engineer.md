@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - openai-api-development
-  - llm-evals
-  - observability-engineering
-  - deployment-operations
+skill-dependencies:
+  - name: openai-api-development
+    kind: conditional
+    reason: "Supports llm-platform-engineer with OpenAI API input, output, tool, retry, streaming, and provider contracts."
+    when: "The selected model provider or affected integration is OpenAI."
+  - name: llm-evals
+    kind: recommended
+    reason: "Supports llm-platform-engineer with versioned LLM cases, rubrics, graders, baselines, and regression gates."
+  - name: observability-engineering
+    kind: recommended
+    reason: "Supports llm-platform-engineer with service objectives, low-cardinality telemetry, diagnostics, and alert validation."
+  - name: deployment-operations
+    kind: conditional
+    reason: "Supports llm-platform-engineer with mode-aware artifact, rollout, health, abort, and recovery evidence."
+    when: "An environment promotion, artifact rollout, or recovery plan is part of the authorized mode."
 tags:
   - llm-platform
   - model-routing

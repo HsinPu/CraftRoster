@@ -9,11 +9,20 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - subagent-architecture
-  - todo-first
-  - context-governance
-  - code-review
+skill-dependencies:
+  - name: subagent-architecture
+    kind: recommended
+    reason: "Supports team-lead with focused delegation, exclusive ownership, dependency gates, and verified fan-in."
+  - name: todo-first
+    kind: recommended
+    reason: "Supports team-lead with a live runtime-neutral dependency plan and evidence-linked progress tracking."
+  - name: context-governance
+    kind: recommended
+    reason: "Supports team-lead with a compact authoritative context record with precedence and provenance."
+  - name: code-review
+    kind: conditional
+    reason: "Supports team-lead with risk-calibrated evidence, failure scenarios, severity, and an independent review verdict."
+    when: "The verification target includes software source or a code change."
 tags:
   - team-leadership
   - coordination

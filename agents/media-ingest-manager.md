@@ -9,12 +9,23 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - video-production-workflow
-  - terminal-ops
-  - video-edit
-  - data-organization-system
-  - file-organizer
+skill-dependencies:
+  - name: video-production-workflow
+    kind: recommended
+    reason: "Supports media-ingest-manager with the canonical production artifacts, stage gates, accepted lineage, and sequential fallback."
+  - name: terminal-ops
+    kind: recommended
+    reason: "Supports media-ingest-manager with exact commands, repository state, scoped execution, and reproducible verification."
+  - name: video-edit
+    kind: conditional
+    reason: "Supports media-ingest-manager with existing-footage inspection, local editing, controlled transcodes, and media verification."
+    when: "Existing media needs local inspection, frame extraction, editing, transcoding, or delivery QC."
+  - name: data-organization-system
+    kind: recommended
+    reason: "Supports media-ingest-manager with a durable taxonomy, metadata, lifecycle, retention, and retrieval system."
+  - name: file-organizer
+    kind: optional
+    reason: "An opt-in extension of media-ingest-manager provides authorized, recoverable directory cleanup and duplicate handling."
 tags:
   - media-ingest
   - checksum-verification

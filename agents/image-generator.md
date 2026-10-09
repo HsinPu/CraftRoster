@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - baoyu-image-gen
-  - ai-image-prompt-design
-  - image-utils
-  - design-consultation
+skill-dependencies:
+  - name: baoyu-image-gen
+    kind: recommended
+    reason: "Supports image-generator with provider-backed still-image creation with reference and output validation."
+  - name: ai-image-prompt-design
+    kind: recommended
+    reason: "Supports image-generator with new image briefs expressed as composition, subject, lighting, and prompt variants."
+  - name: image-utils
+    kind: conditional
+    reason: "Supports image-generator with non-destructive deterministic crop, resize, conversion, and pixel inspection."
+    when: "The authorized work needs deterministic still-image operations or pixel-level inspection."
+  - name: logo-design
+    kind: conditional
+    reason: "Supports image-generator with brand-mark briefs, simple concepts, and editable logo directions."
+    when: "The user requests a logo or brand-mark asset."
 tags:
   - image-generation
   - visual-design

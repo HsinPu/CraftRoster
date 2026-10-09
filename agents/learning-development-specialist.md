@@ -9,11 +9,19 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - specification-authoring
-  - presentation-ops
-  - spreadsheet-ops
-  - data-organization-system
+skill-dependencies:
+  - name: presentation-ops
+    kind: conditional
+    reason: "Supports learning-development-specialist with editable presentation decks with layout and render validation."
+    when: "The requested input or deliverable is an editable slide deck."
+  - name: spreadsheet-ops
+    kind: conditional
+    reason: "Supports learning-development-specialist with workbook or tabular input, formulas, units, calculation, and output validation."
+    when: "The primary source or requested output is a workbook or tabular calculation artifact."
+  - name: data-organization-system
+    kind: conditional
+    reason: "Supports learning-development-specialist with a durable taxonomy, metadata, lifecycle, retention, and retrieval system."
+    when: "The scope designs a reusable taxonomy, metadata, retention, or retrieval system beyond one report."
 tags:
   - learning-development
   - instructional-design

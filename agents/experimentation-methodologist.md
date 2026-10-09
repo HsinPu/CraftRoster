@@ -9,11 +9,18 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - testing-strategy
-  - spreadsheet-ops
-  - sql-best-practices
-  - specification-authoring
+skill-dependencies:
+  - name: spreadsheet-ops
+    kind: conditional
+    reason: "Supports experimentation-methodologist with workbook or tabular input, formulas, units, calculation, and output validation."
+    when: "The primary source or requested output is a workbook or tabular calculation artifact."
+  - name: sql-best-practices
+    kind: conditional
+    reason: "Supports experimentation-methodologist with SQL grain, null, join, parameterization, and query-plan correctness."
+    when: "The requested evidence or implementation includes SQL queries and their data semantics."
+  - name: product-experimentation
+    kind: recommended
+    reason: "Supports experimentation-methodologist with predeclared hypotheses, assignment integrity, guardrails, and causal decision gates."
 tags:
   - experimentation
   - causal-inference

@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - coding-standards
-  - testing-strategy
-  - observability-engineering
-  - security-scanning
+skill-dependencies:
+  - name: testing-strategy
+    kind: recommended
+    reason: "Supports golang-pro with risk-based test levels, fixtures, boundaries, and meaningful coverage."
+  - name: observability-engineering
+    kind: conditional
+    reason: "Supports golang-pro with service objectives, low-cardinality telemetry, diagnostics, and alert validation."
+    when: "Service objectives, telemetry, operational diagnostics, or monitoring design are in scope."
+  - name: security-scanning
+    kind: conditional
+    reason: "Supports golang-pro with authorized scanner configuration, baselines, result triage, and security quality gates."
+    when: "Authorized automated scanner configuration, existing scan evidence, or quality-gate triage is needed."
+  - name: code-change-workflow
+    kind: recommended
+    reason: "Supports golang-pro with pre-edit ownership, call-path, compatibility, and verification inspection."
 tags:
   - golang
   - concurrency

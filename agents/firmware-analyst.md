@@ -9,10 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - security-code-review
-  - security-scanning
-  - terminal-ops
+skill-dependencies:
+  - name: security-code-review
+    kind: conditional
+    reason: "Supports firmware-analyst with exploit-path, trust-boundary, vulnerability-confidence, and remediation evidence."
+    when: "The scope includes a code-level trust boundary, exploitable path, or security review."
+  - name: security-scanning
+    kind: conditional
+    reason: "Supports firmware-analyst with authorized scanner configuration, baselines, result triage, and security quality gates."
+    when: "Authorized automated scanner configuration, existing scan evidence, or quality-gate triage is needed."
+  - name: terminal-ops
+    kind: recommended
+    reason: "Supports firmware-analyst with exact commands, repository state, scoped execution, and reproducible verification."
+  - name: reverse-engineering
+    kind: recommended
+    reason: "Supports firmware-analyst with authorized artifact provenance, static structure, and controlled analysis evidence."
 tags:
   - firmware
   - binary-analysis

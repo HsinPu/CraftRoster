@@ -15,6 +15,7 @@ param(
 
 $ErrorActionPreference = "Stop"
 $ProgressPreference = "SilentlyContinue"
+try { [Console]::OutputEncoding = [System.Text.UTF8Encoding]::new($false) } catch {}
 $repoWasExplicit = $PSBoundParameters.ContainsKey("Repo")
 $sourceWasExplicit = $PSBoundParameters.ContainsKey("SourceDir")
 $installDirWasExplicit = $PSBoundParameters.ContainsKey("InstallDir")
@@ -30,8 +31,8 @@ CraftRoster interactive setup
 Usage:
   .\scripts\setup.ps1 [-SourceDir path] [-InstallDir path] [-Repo owner/name] [-Branch branch] [-DryRun] [-Force]
 
-Choose a platform, installation scope, Skills / Agents / both, and all components
-or categories. The project (all platforms) option
+Choose a platform, installation scope, and all Skills and Agents or usage categories.
+The project (all platforms) option
 installs directly into a project without another scope question.
 Enter accepts the displayed default. Type q at any prompt to cancel.
 Category numbers may be separated by commas or spaces. Invalid answers get
@@ -141,78 +142,108 @@ function Read-SetupProjectRoot {
     }
 }
 
-function Get-SetupCategoryRows {
+function Get-SetupBundleRows {
     param([string]$RepoRoot)
-    $indexPath = Join-Path $RepoRoot "scripts\data\install-category-index.tsv"
-    if (-not (Test-Path -LiteralPath $indexPath -PathType Leaf)) {
-        throw "Install category index not found: $indexPath"
+    $indexPath = Join-Path $RepoRoot 'scripts\data\install-bundles.tsv'
+    if (-not (Test-Path -LiteralPath $indexPath -PathType Leaf) -or
+        ((Get-Item -Force -LiteralPath $indexPath).Attributes -band [System.IO.FileAttributes]::ReparsePoint)) {
+        throw "Install bundle index not found or not a regular file: $indexPath. Update SourceDir or branch."
     }
-    try {
-        $lines = [System.IO.File]::ReadAllLines($indexPath, [System.Text.UTF8Encoding]::new($false, $true))
-    } catch {
-        throw "Install category index is not valid UTF-8: $indexPath"
+    $relationPath = Join-Path $RepoRoot 'scripts\data\install-agent-skill-dependencies.tsv'
+    if (-not (Test-Path -LiteralPath $relationPath -PathType Leaf) -or
+        ((Get-Item -Force -LiteralPath $relationPath).Attributes -band [System.IO.FileAttributes]::ReparsePoint)) {
+        throw "Agent Skill dependency index not found or not a regular file: $relationPath. Update SourceDir or branch."
     }
-    if ($lines.Count -lt 2 -or $lines[0] -cne "type`tcategory`tname") {
-        throw "Install category index has an invalid header: $indexPath"
+    try { $lines = [System.IO.File]::ReadAllLines($indexPath, [System.Text.UTF8Encoding]::new($false, $true)) } catch {
+        throw "Install bundle index is not valid UTF-8: $indexPath"
+    }
+    $header = [string]::Join([char]9, @('bundle', 'title', 'description', 'type', 'name'))
+    if ($lines.Count -lt 2 -or $lines[0] -cne $header) { throw "Install bundle index has an invalid header: $indexPath" }
+    $agentRoot = Join-Path $RepoRoot 'agents'
+    $skillRoot = Join-Path $RepoRoot 'skills'
+    if (-not (Test-Path -LiteralPath $agentRoot -PathType Container) -or
+        -not (Test-Path -LiteralPath $skillRoot -PathType Container)) {
+        throw 'Bundled setup requires canonical agents and skills catalogs in the source checkout.'
+    }
+    $agents = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::Ordinal)
+    $skills = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::Ordinal)
+    foreach ($file in @(Get-ChildItem -LiteralPath $agentRoot -File -Filter '*.md')) { $null = $agents.Add($file.BaseName) }
+    foreach ($folder in @(Get-ChildItem -LiteralPath $skillRoot -Directory)) {
+        if (Test-Path -LiteralPath (Join-Path $folder.FullName 'SKILL.md') -PathType Leaf) { $null = $skills.Add($folder.Name) }
     }
     $seen = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::Ordinal)
+    $coveredAgents = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::Ordinal)
+    $coveredSkills = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::Ordinal)
+    $definitions = @{}
+    $rows = [System.Collections.Generic.List[object]]::new()
     for ($lineIndex = 1; $lineIndex -lt $lines.Count; $lineIndex++) {
-        $parts = @($lines[$lineIndex] -split "`t", 0)
-        if ($parts.Count -ne 3 -or $parts[0] -cnotin @("skill", "agent") -or
-            $parts[1] -cnotmatch '^[a-z0-9]+(?:-[a-z0-9]+)*$' -or
-            $parts[2] -cnotmatch '^[a-z0-9]+(?:-[a-z0-9]+)*$') {
-            throw "Install category index row $($lineIndex + 1) contains an invalid type, category, or name."
+        $parts = @($lines[$lineIndex] -split '\t', 0)
+        if ($parts.Count -ne 5) { throw "Install bundle index row $($lineIndex + 1) must contain exactly five fields." }
+        $id, $title, $description, $componentType, $name = $parts
+        if ($id -cnotmatch '^[a-z0-9]+(?:-[a-z0-9]+)*$' -or $id -ceq 'all' -or
+            $name -cnotmatch '^[a-z0-9]+(?:-[a-z0-9]+)*$' -or $componentType -cnotin @('skill', 'agent') -or
+            [string]::IsNullOrWhiteSpace($title) -or [string]::IsNullOrWhiteSpace($description) -or
+            $title -match '[\x00-\x1f\x7f]' -or $description -match '[\x00-\x1f\x7f]') {
+            throw "Install bundle index row $($lineIndex + 1) contains an invalid value."
         }
-        if (-not $seen.Add("$($parts[0])`t$($parts[2])")) {
-            throw "Install category index contains duplicate $($parts[0]) name: $($parts[2])"
+        if (-not $seen.Add("$id|$componentType|$name")) { throw "Duplicate bundle member: $id -> $componentType $name" }
+        if ($definitions.ContainsKey($id)) {
+            if ($definitions[$id].Title -cne $title -or $definitions[$id].Description -cne $description) {
+                throw "Bundle '$id' has inconsistent title or description."
+            }
+        } else { $definitions[$id] = @{ Title = $title; Description = $description } }
+        if ($componentType -ceq 'agent') {
+            if (-not $agents.Contains($name)) { throw "Unknown Agent in bundle '$id': $name" }
+            $null = $coveredAgents.Add($name)
+        } else {
+            if (-not $skills.Contains($name)) { throw "Unknown Skill in bundle '$id': $name" }
+            $null = $coveredSkills.Add($name)
         }
-        [pscustomobject]@{ Type = $parts[0]; Category = $parts[1]; Name = $parts[2] }
+        $rows.Add([pscustomobject]@{ Bundle = $id; Title = $title; Description = $description; Type = $componentType; Name = $name })
     }
+    foreach ($name in $agents) {
+        if (-not $coveredAgents.Contains($name)) { throw "Install bundle index does not cover Agent: $name" }
+    }
+    foreach ($name in $skills) {
+        if (-not $coveredSkills.Contains($name)) { throw "Install bundle index does not cover Skill: $name" }
+    }
+    return @($rows.ToArray())
 }
 
-function Read-SetupCategories {
-    param([object[]]$Rows, [string]$ComponentType)
-    $label = if ($ComponentType -eq "skill") { "Skills" } else { "Agents" }
-    $counts = @{}
+function Read-SetupBundles {
+    param([object[]]$Rows)
+    $definitions = @{}
+    $ids = [System.Collections.Generic.List[string]]::new()
     foreach ($row in $Rows) {
-        if ($row.Type -ceq $ComponentType) {
-            if (-not $counts.ContainsKey($row.Category)) { $counts[$row.Category] = 0 }
-            $counts[$row.Category]++
+        if (-not $definitions.ContainsKey($row.Bundle)) {
+            $ids.Add($row.Bundle)
+            $definitions[$row.Bundle] = @{ Title = $row.Title; Skills = 0; Agents = 0 }
         }
+        if ($row.Type -ceq 'skill') { $definitions[$row.Bundle].Skills++ } else { $definitions[$row.Bundle].Agents++ }
     }
-    if ($counts.Count -eq 0) { throw "No $label categories were found in the install category index." }
-    [string[]]$categoryIds = @($counts.Keys)
-    [Array]::Sort($categoryIds, [System.StringComparer]::Ordinal)
-    Write-Host ""
-    Write-Host "$label categories:"
-    Write-Host "  0) All $label ($(@($Rows | Where-Object { $_.Type -ceq $ComponentType }).Count))"
-    for ($categoryIndex = 0; $categoryIndex -lt $categoryIds.Count; $categoryIndex++) {
-        $categoryId = $categoryIds[$categoryIndex]
-        Write-Host "  $($categoryIndex + 1)) $categoryId ($($counts[$categoryId]))"
+    Write-Host ''
+    Write-Host 'Usage categories:'
+    for ($index = 0; $index -lt $ids.Count; $index++) {
+        $id = $ids[$index]
+        $definition = $definitions[$id]
+        Write-Host "  $($index + 1)) $($definition.Title) ($id) (Skills: $($definition.Skills), Agents: $($definition.Agents))"
     }
     for ($attempt = 1; $attempt -le 3; $attempt++) {
-        $answer = Read-SetupAnswer -Prompt "$label categories [0 = all] (comma/space-separated numbers, q to cancel)"
-        if ($answer -eq "" -or $answer -ceq "0") {
-            return [pscustomobject]@{ All = $true; Categories = @() }
-        }
-        # Require the complete line; empty comma tokens and mixed 'all' are invalid.
+        $answer = Read-SetupAnswer -Prompt 'Usage categories (comma/space-separated numbers, q to cancel)'
         if ($answer -cnotmatch '^[1-9][0-9]*(?:(?:\s*,\s*|\s+)[1-9][0-9]*)*$') {
-            Write-SetupInvalidAnswer -Message "Enter 0 alone for all, or category numbers separated by commas or spaces without empty entries." -Attempt $attempt
+            Write-SetupInvalidAnswer -Message 'Choose category numbers separated by commas or spaces without empty entries. Enter does not select all.' -Attempt $attempt
             continue
         }
-        $selected = @()
-        $seenNumbers = [System.Collections.Generic.HashSet[int]]::new()
+        $selected = [System.Collections.Generic.List[string]]::new()
+        $seen = [System.Collections.Generic.HashSet[int]]::new()
         $valid = $true
         foreach ($token in @($answer -split '[,\s]+')) {
             $number = 0
-            if (-not [int]::TryParse($token, [ref]$number) -or $number -gt $categoryIds.Count) {
-                $valid = $false
-                break
-            }
-            if ($seenNumbers.Add($number)) { $selected += $categoryIds[$number - 1] }
+            if (-not [int]::TryParse($token, [ref]$number) -or $number -gt $ids.Count) { $valid = $false; break }
+            if ($seen.Add($number)) { $selected.Add($ids[$number - 1]) }
         }
-        if ($valid) { return [pscustomobject]@{ All = $false; Categories = @($selected) } }
-        Write-SetupInvalidAnswer -Message "Category numbers must be between 1 and $($categoryIds.Count); use 0 alone for all." -Attempt $attempt
+        if ($valid) { return ,$selected.ToArray() }
+        Write-SetupInvalidAnswer -Message "Category numbers must be between 1 and $($ids.Count)." -Attempt $attempt
     }
 }
 
@@ -227,29 +258,25 @@ function Get-SetupPowerShellExecutable {
     return $executable
 }
 
-function Assert-SetupProjectPlatformSupport {
-    param([string]$BackendPath, [string]$ProjectPlatform)
-    $requirement = "Selected project platform '$ProjectPlatform' requires a newer installer backend with ProjectPlatform; update SourceDir or branch."
+function Assert-SetupBackendSupport {
+    param([string]$BackendPath, [string]$Target, [string]$ProjectPlatform)
+    $requirement = 'Bundled setup requires a newer installer backend with Bundle and AgentSkillPolicy; update SourceDir or branch.'
     $backendTokens = $null
     $backendParseErrors = $null
     try {
         $backendAst = [System.Management.Automation.Language.Parser]::ParseFile($BackendPath, [ref]$backendTokens, [ref]$backendParseErrors)
-    } catch {
-        throw "$requirement Cannot parse the source installer: $($_.Exception.Message)"
-    }
+    } catch { throw "$requirement Cannot parse the source installer: $($_.Exception.Message)" }
     if ($backendParseErrors.Count -gt 0) {
         throw "$requirement The source installer has a parse error: $($backendParseErrors[0].Message)"
     }
-    $supportsProjectPlatform = $false
+    $parameters = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)
     if ($backendAst -and $backendAst.ParamBlock) {
-        foreach ($parameter in $backendAst.ParamBlock.Parameters) {
-            if ($parameter.Name.VariablePath.UserPath -ieq "ProjectPlatform") {
-                $supportsProjectPlatform = $true
-                break
-            }
-        }
+        foreach ($parameter in $backendAst.ParamBlock.Parameters) { $null = $parameters.Add($parameter.Name.VariablePath.UserPath) }
     }
-    if (-not $supportsProjectPlatform) { throw $requirement }
+    if (-not $parameters.Contains('Bundle') -or -not $parameters.Contains('AgentSkillPolicy')) { throw $requirement }
+    if ($Target -eq 'project' -and $ProjectPlatform -ne 'all' -and -not $parameters.Contains('ProjectPlatform')) {
+        throw "Selected project platform '$ProjectPlatform' requires a newer installer backend with ProjectPlatform; update SourceDir or branch."
+    }
 }
 
 function ConvertTo-SetupProcessArgument {
@@ -268,7 +295,7 @@ function Invoke-SetupBackend {
         [string]$RepoRoot,
         [string]$Target,
         [string]$ProjectPlatform,
-        [object]$Batch,
+        [string]$BundleSelection,
         [string]$Destination,
         [bool]$AutoDelegation,
         [bool]$Preview
@@ -277,16 +304,16 @@ function Invoke-SetupBackend {
     $RepoRoot = Get-SetupNormalizedPath -Path $RepoRoot
     if ($Destination) { $Destination = Get-SetupNormalizedPath -Path $Destination }
     $backendArguments = @("-NoLogo", "-NoProfile", "-NonInteractive", "-ExecutionPolicy", "Bypass", "-File", $BackendPath,
-        "-SourceDir", $RepoRoot, "-Target", $Target, "-Type", $Batch.Type, "-Branch", $Branch)
+        "-SourceDir", $RepoRoot, "-Target", $Target, "-Type", "bundle", "-Bundle", $BundleSelection,
+        "-AgentSkillPolicy", "recommended", "-Branch", $Branch)
     # Preserve the backend's default-repository legacy ownership compatibility.
     if ($repoWasExplicit) { $backendArguments += @("-Repo", $Repo) }
     if ($Target -eq "project" -and $ProjectPlatform -ne "all") { $backendArguments += @("-ProjectPlatform", $ProjectPlatform) }
-    if ($Batch.Category) { $backendArguments += @("-Category", $Batch.Category) }
     if ($Destination) { $backendArguments += @("-InstallDir", $Destination) }
-    if ($AutoDelegation -and $Batch.Type -eq "agent") { $backendArguments += "-EnableAutoDelegation" }
+    if ($AutoDelegation) { $backendArguments += "-EnableAutoDelegation" }
     if ($Force) { $backendArguments += "-Force" }
     if ($Preview) { $backendArguments += "-DryRun" }
-    $batchLabel = "$($Batch.Type) / $(if ($Batch.Category) { $Batch.Category } else { 'all' })"
+    $batchLabel = "bundle / $BundleSelection"
     Write-Host ""
     Write-Host "==> $(if ($Preview) { 'Preview' } else { 'Install' }) $batchLabel"
     $startInfo = [System.Diagnostics.ProcessStartInfo]::new()
@@ -327,7 +354,7 @@ function Invoke-SetupBackend {
     }
     if ($backendExitCode -ne 0) {
         $phase = if ($Preview) { "preflight" } else { "installation" }
-        $detail = if ($Preview) { "No installation batch has started." } else { "Earlier batches may already be installed." }
+        $detail = if ($Preview) { "No installation package has started." } else { "Earlier packages may already be installed; see the backend's completed and pending list." }
         throw "Backend $phase failed for $batchLabel (exit $backendExitCode). $detail"
     }
 }
@@ -403,13 +430,14 @@ try {
             $projectPlatform = $selectedPlatform
         }
     }
+    if ($target -eq "project" -and -not $installDirWasExplicit) {
+        $InstallDir = Read-SetupProjectRoot -DefaultRoot $callerRoot
+    }
     Write-Host ""
-    Write-Host "Content:"
-    Write-Host "  1) Skills"
-    Write-Host "  2) Agents"
-    Write-Host "  3) Skills and Agents"
-    $contentNumber = Read-SetupChoice -Prompt "Content [3] (q to cancel)" -Default 3 -Maximum 3
-    $types = switch ($contentNumber) { 1 { @("skill") } 2 { @("agent") } 3 { @("skill", "agent") } }
+    Write-Host "Installation mode:"
+    Write-Host "  1) All Skills and Agents"
+    Write-Host "  2) Select categories"
+    $modeNumber = Read-SetupChoice -Prompt "Installation mode [1] (q to cancel)" -Default 1 -Maximum 2
 
     if ($SourceDir) {
         $repoRoot = Get-SetupFullPath -Path $SourceDir
@@ -434,28 +462,16 @@ try {
     }
     $backendPath = Join-Path $repoRoot "scripts\install.ps1"
     if (-not (Test-Path -LiteralPath $backendPath -PathType Leaf)) { throw "Source installer not found: $backendPath" }
-    if ($target -eq "project" -and $projectPlatform -ne "all") {
-        Assert-SetupProjectPlatformSupport -BackendPath $backendPath -ProjectPlatform $projectPlatform
-    }
-    $categoryRows = @(Get-SetupCategoryRows -RepoRoot $repoRoot)
-    $selections = @{}
-    $batches = @()
-    foreach ($componentType in $types) {
-        $selection = Read-SetupCategories -Rows $categoryRows -ComponentType $componentType
-        $selections[$componentType] = $selection
-        if ($selection.All) {
-            $batches += [pscustomobject]@{ Type = $componentType; Category = $null }
-        } else {
-            foreach ($category in $selection.Categories) {
-                $batches += [pscustomobject]@{ Type = $componentType; Category = $category }
-            }
-        }
-    }
-    if ($target -eq "project" -and -not $installDirWasExplicit) {
-        $InstallDir = Read-SetupProjectRoot -DefaultRoot $callerRoot
+    Assert-SetupBackendSupport -BackendPath $backendPath -Target $target -ProjectPlatform $projectPlatform
+    $bundleRows = @(Get-SetupBundleRows -RepoRoot $repoRoot)
+    $bundleSelection = 'all'
+    $selectedBundleIds = @()
+    if ($modeNumber -eq 2) {
+        $selectedBundleIds = Read-SetupBundles -Rows $bundleRows
+        $bundleSelection = $selectedBundleIds -join ','
     }
     $autoDelegation = $false
-    if ($installationScope -eq "global" -and $types -contains "agent" -and $target -in @("codex", "opencode")) {
+    if ($installationScope -eq "global" -and $target -in @("codex", "opencode")) {
         Write-Host ""
         Write-Host "Proactive delegation installs the companion Skill and updates the platform's global instruction/config file."
         $autoDelegation = Read-SetupConfirmation -Prompt "Enable proactive Agent delegation? [y/N] (q to cancel)"
@@ -466,12 +482,14 @@ try {
     Write-Host "  Platform: $selectedPlatform"
     Write-Host "  Installation scope: $(if ($installationScope -eq 'project') { 'current project' } else { 'user global' })"
     Write-Host "  Source: $repoRoot ($Repo@$Branch)"
-    foreach ($componentType in $types) {
-        $label = if ($componentType -eq "skill") { "Skills" } else { "Agents" }
-        $selection = $selections[$componentType]
-        $categoryLabel = if ($selection.All) { "all" } else { $selection.Categories -join ", " }
-        Write-Host "  $label`: $categoryLabel"
+    Write-Host "  Installation mode: $(if ($modeNumber -eq 1) { 'all Skills and Agents' } else { 'selected usage categories' })"
+    if ($modeNumber -eq 2) {
+        foreach ($id in $selectedBundleIds) {
+            $definition = @($bundleRows | Where-Object { $_.Bundle -ceq $id })[0]
+            Write-Host "  Usage category: $($definition.Title) ($id)"
+        }
     }
+    Write-Host '  Agent-related Skills: required and recommended'
     if ($target -eq "project") {
         Write-Host "  Project root: $InstallDir"
     } elseif ($InstallDir) {
@@ -479,21 +497,17 @@ try {
     }
     Write-Host "  Proactive Agent delegation: $(if ($autoDelegation) { 'enabled' } else { 'disabled' })"
     Write-Host "  Force replacement: $(if ($Force) { 'enabled' } else { 'disabled' })"
-    Write-Host "All selected batches will be checked before installation. Backend previews list destinations and required/companion Skills."
-    foreach ($batch in $batches) {
-        Invoke-SetupBackend -PowerShellExecutable $powerShellExecutable -BackendPath $backendPath -RepoRoot $repoRoot -Target $target -ProjectPlatform $projectPlatform -Batch $batch -Destination $InstallDir -AutoDelegation $autoDelegation -Preview $true
-    }
+    Write-Host "The complete package will be checked before installation. The preview lists reasons, totals, and destinations."
+    Invoke-SetupBackend -PowerShellExecutable $powerShellExecutable -BackendPath $backendPath -RepoRoot $repoRoot -Target $target -ProjectPlatform $projectPlatform -BundleSelection $bundleSelection -Destination $InstallDir -AutoDelegation $autoDelegation -Preview $true
     if ($DryRun) {
         Write-Host ""
         Write-Host "Dry run complete. No installation files were written." -ForegroundColor Green
     } else {
         Write-Host ""
-        Write-Host "Batches install sequentially; a later failure does not roll back earlier completed batches."
+        Write-Host "Packages install sequentially after complete preflight; a later failure does not roll back earlier completed packages."
         $confirmed = Read-SetupConfirmation -Prompt "Install this plan? [y/N] (q to cancel)"
-        if (-not $confirmed) { throw [System.OperationCanceledException]::new("Setup cancelled. No installation batch was started.") }
-        foreach ($batch in $batches) {
-            Invoke-SetupBackend -PowerShellExecutable $powerShellExecutable -BackendPath $backendPath -RepoRoot $repoRoot -Target $target -ProjectPlatform $projectPlatform -Batch $batch -Destination $InstallDir -AutoDelegation $autoDelegation -Preview $false
-        }
+        if (-not $confirmed) { throw [System.OperationCanceledException]::new("Setup cancelled. No installation package was started.") }
+        Invoke-SetupBackend -PowerShellExecutable $powerShellExecutable -BackendPath $backendPath -RepoRoot $repoRoot -Target $target -ProjectPlatform $projectPlatform -BundleSelection $bundleSelection -Destination $InstallDir -AutoDelegation $autoDelegation -Preview $false
         Write-Host ""
         Write-Host "CraftRoster setup complete." -ForegroundColor Green
     }

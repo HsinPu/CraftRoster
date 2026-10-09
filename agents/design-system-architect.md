@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - design-system
-  - design-system-patterns
-  - color-font-skill
-  - frontend-design
+skill-dependencies:
+  - name: design-system
+    kind: recommended
+    reason: "Supports design-system-architect with durable visual tokens, observed style evidence, governance, and drift review."
+  - name: design-system-patterns
+    kind: recommended
+    reason: "Supports design-system-architect with token layers, frontend component variants, and theming architecture."
+  - name: color-font-skill
+    kind: conditional
+    reason: "Supports design-system-architect with web visual direction, typography, palette, and contrast choices."
+    when: "The approved visual work concerns a web interface palette or typography."
+  - name: frontend-design
+    kind: conditional
+    reason: "Supports design-system-architect with the visible web implementation baseline and rendered user-state verification."
+    when: "The task defines an implementation handoff for visible web UI; a write-capable owner executes changes."
 tags:
   - design-system
   - tokens

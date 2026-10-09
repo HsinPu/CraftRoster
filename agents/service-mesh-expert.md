@@ -9,11 +9,25 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - kubernetes-operations
-  - observability-engineering
-  - security-scanning
-  - api-contract-design
+skill-dependencies:
+  - name: kubernetes-operations
+    kind: conditional
+    reason: "Supports service-mesh-expert with Kubernetes workload, namespace, rollout, RBAC, and health contracts."
+    when: "The selected platform or affected workload uses Kubernetes."
+  - name: observability-engineering
+    kind: recommended
+    reason: "Supports service-mesh-expert with service objectives, low-cardinality telemetry, diagnostics, and alert validation."
+  - name: security-scanning
+    kind: conditional
+    reason: "Supports service-mesh-expert with authorized scanner configuration, baselines, result triage, and security quality gates."
+    when: "Authorized automated scanner configuration, existing scan evidence, or quality-gate triage is needed."
+  - name: api-contract-design
+    kind: conditional
+    reason: "Supports service-mesh-expert with versioned requests, responses, errors, pagination, and compatibility contracts."
+    when: "The work defines or changes consumer-visible API, event, or webhook contracts."
+  - name: service-mesh-engineering
+    kind: recommended
+    reason: "Supports service-mesh-expert with mesh identity, traffic, mTLS, failure, telemetry, and adoption boundaries."
 tags:
   - service-mesh
   - traffic-management

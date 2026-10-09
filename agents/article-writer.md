@@ -9,11 +9,28 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - web-research-ops
-  - markdown-writer
-  - humanizer
-  - summary-ops
+skill-dependencies:
+  - name: web-research-ops
+    kind: recommended
+    reason: "Supports article-writer with current primary sources, dates, contradictions, and attributable evidence."
+  - name: markdown-writer
+    kind: conditional
+    reason: "Supports article-writer with clear GFM structure, source-preserving documentation, and links."
+    when: "The requested artifact is Markdown or GFM documentation."
+  - name: humanizer
+    kind: optional
+    reason: "An opt-in extension of article-writer provides optional prose polishing that preserves the author and confirmed meaning."
+  - name: summary-ops
+    kind: conditional
+    reason: "Supports article-writer with faithful condensation of supplied source text with preserved uncertainty and attribution."
+    when: "Supplied text, records, or an accepted transcript needs faithful condensation before analysis or writing."
+  - name: article-writing
+    kind: recommended
+    reason: "Supports article-writer with an evidence-led long-form article with claim mapping and editorial structure."
+  - name: brand-voice
+    kind: conditional
+    reason: "Supports article-writer with a source-derived tone, vocabulary, and messaging profile."
+    when: "A specific organization or creator voice must be derived from supplied evidence or applied."
 tags:
   - article-writing
   - long-form

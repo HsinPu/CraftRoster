@@ -9,10 +9,18 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - threat-modeling
-  - security-scanning
-  - security-code-review
+skill-dependencies:
+  - name: threat-modeling
+    kind: recommended
+    reason: "Supports penetration-tester with assets, actors, data flows, abuse cases, mitigations, and residual-risk ownership."
+  - name: security-scanning
+    kind: conditional
+    reason: "Supports penetration-tester with authorized scanner configuration, baselines, result triage, and security quality gates."
+    when: "Authorized automated scanner configuration, existing scan evidence, or quality-gate triage is needed."
+  - name: security-code-review
+    kind: conditional
+    reason: "Supports penetration-tester with exploit-path, trust-boundary, vulnerability-confidence, and remediation evidence."
+    when: "The scope includes a code-level trust boundary, exploitable path, or security review."
 tags:
   - penetration-testing
   - rules-of-engagement

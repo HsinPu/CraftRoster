@@ -9,13 +9,28 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - todo-first
-  - spec-flow
-  - multi-session-planning
-  - session-handoff
-  - data-organization-system
-  - spreadsheet-ops
+skill-dependencies:
+  - name: todo-first
+    kind: recommended
+    reason: "Supports project-manager with a live runtime-neutral dependency plan and evidence-linked progress tracking."
+  - name: spec-flow
+    kind: required
+    reason: "Task 2 explicitly uses spec flow to decompose the approved initiative into acceptance-backed work and dependency gates."
+  - name: multi-session-planning
+    kind: conditional
+    reason: "Supports project-manager with cross-session dependencies, ready work, decisions, and replanning triggers."
+    when: "The delivery dependencies and decisions extend beyond one verified session."
+  - name: session-handoff
+    kind: recommended
+    reason: "Supports project-manager with a compact evidence-linked continuation and current-state resumption check."
+  - name: data-organization-system
+    kind: conditional
+    reason: "Supports project-manager with a durable taxonomy, metadata, lifecycle, retention, and retrieval system."
+    when: "The scope designs a reusable taxonomy, metadata, retention, or retrieval system beyond one report."
+  - name: spreadsheet-ops
+    kind: conditional
+    reason: "Supports project-manager with workbook or tabular input, formulas, units, calculation, and output validation."
+    when: "The primary source or requested output is a workbook or tabular calculation artifact."
 tags:
   - project-management
   - planning

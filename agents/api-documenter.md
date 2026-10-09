@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - api-doc-comments
-  - openapi-spec-generation
-  - markdown-writer
-  - api-contract-design
+skill-dependencies:
+  - name: api-doc-comments
+    kind: conditional
+    reason: "Supports api-documenter with verified code-level docstrings and exported API comments."
+    when: "The requested artifact includes code-level API comments or docstrings."
+  - name: openapi-spec-generation
+    kind: conditional
+    reason: "Supports api-documenter with a validated OpenAPI schema and implementation-contract drift checks."
+    when: "The API uses OpenAPI or the requested handoff includes a formal OpenAPI specification."
+  - name: markdown-writer
+    kind: recommended
+    reason: "Supports api-documenter with clear GFM structure, source-preserving documentation, and links."
+  - name: api-contract-design
+    kind: recommended
+    reason: "Supports api-documenter with versioned requests, responses, errors, pagination, and compatibility contracts."
 tags:
   - api-documentation
   - openapi

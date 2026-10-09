@@ -9,11 +9,22 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - web-research-ops
-  - markdown-writer
-  - presentation-ops
-  - agent-action-governance
+skill-dependencies:
+  - name: web-research-ops
+    kind: recommended
+    reason: "Supports developer-advocate with current primary sources, dates, contradictions, and attributable evidence."
+  - name: markdown-writer
+    kind: conditional
+    reason: "Supports developer-advocate with clear GFM structure, source-preserving documentation, and links."
+    when: "The requested artifact is Markdown or GFM documentation."
+  - name: presentation-ops
+    kind: conditional
+    reason: "Supports developer-advocate with editable presentation decks with layout and render validation."
+    when: "The requested input or deliverable is an editable slide deck."
+  - name: agent-action-governance
+    kind: conditional
+    reason: "Supports developer-advocate with explicit authority, tool-action policies, approval windows, and attributable receipts."
+    when: "The scope includes AI tool-action policy, approval windows, signed receipts, or execution handoffs."
 tags:
   - developer-relations
   - developer-education

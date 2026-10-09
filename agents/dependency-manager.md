@@ -9,11 +9,20 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - code-change-workflow
-  - security-scanning
-  - testing-strategy
-  - repo-ready
+skill-dependencies:
+  - name: code-change-workflow
+    kind: recommended
+    reason: "Supports dependency-manager with pre-edit ownership, call-path, compatibility, and verification inspection."
+  - name: security-scanning
+    kind: recommended
+    reason: "Supports dependency-manager with authorized scanner configuration, baselines, result triage, and security quality gates."
+  - name: testing-strategy
+    kind: recommended
+    reason: "Supports dependency-manager with risk-based test levels, fixtures, boundaries, and meaningful coverage."
+  - name: repo-ready
+    kind: conditional
+    reason: "Supports dependency-manager with stack-aware repository instructions, contribution commands, CI, and release hygiene."
+    when: "Repository-wide contributor, quality, or release hygiene is included in the approved scope."
 tags:
   - dependencies
   - upgrades

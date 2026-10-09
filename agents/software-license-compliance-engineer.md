@@ -9,11 +9,18 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - web-research-ops
-  - security-scanning
-  - repo-ready
-  - specification-authoring
+skill-dependencies:
+  - name: web-research-ops
+    kind: recommended
+    reason: "Supports software-license-compliance-engineer with current primary sources, dates, contradictions, and attributable evidence."
+  - name: security-scanning
+    kind: conditional
+    reason: "Supports software-license-compliance-engineer with authorized scanner configuration, baselines, result triage, and security quality gates."
+    when: "Authorized automated scanner configuration, existing scan evidence, or quality-gate triage is needed."
+  - name: repo-ready
+    kind: conditional
+    reason: "Supports software-license-compliance-engineer with stack-aware repository instructions, contribution commands, CI, and release hygiene."
+    when: "Repository-wide contributor, quality, or release hygiene is included in the approved scope."
 tags:
   - licensing
   - open-source

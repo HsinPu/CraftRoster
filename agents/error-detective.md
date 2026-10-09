@@ -9,10 +9,17 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - observability-engineering
-  - logging-patterns
-  - incident-response-postmortems
+skill-dependencies:
+  - name: observability-engineering
+    kind: recommended
+    reason: "Supports error-detective with service objectives, low-cardinality telemetry, diagnostics, and alert validation."
+  - name: logging-patterns
+    kind: recommended
+    reason: "Supports error-detective with stable event names, levels, structured fields, and secret-safe diagnostics."
+  - name: incident-response-postmortems
+    kind: conditional
+    reason: "Supports error-detective with software-service incident evidence, recovery decisions, and corrective actions."
+    when: "The scope includes a software-service incident, operational recovery, or postmortem."
 tags:
   - error-analysis
   - logs

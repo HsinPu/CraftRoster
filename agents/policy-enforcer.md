@@ -9,11 +9,22 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - security-scanning
-  - github-actions-ci
-  - coding-standards
-  - context-governance
+skill-dependencies:
+  - name: security-scanning
+    kind: conditional
+    reason: "Supports policy-enforcer with authorized scanner configuration, baselines, result triage, and security quality gates."
+    when: "Authorized automated scanner configuration, existing scan evidence, or quality-gate triage is needed."
+  - name: github-actions-ci
+    kind: conditional
+    reason: "Supports policy-enforcer with GitHub Actions events, runners, permissions, artifacts, and quality gates."
+    when: "The affected delivery or enforcement platform is GitHub Actions."
+  - name: coding-standards
+    kind: conditional
+    reason: "Supports policy-enforcer with team-wide JavaScript, TypeScript, React, or Node conventions."
+    when: "The task defines or audits team-wide JavaScript, TypeScript, React, or Node conventions."
+  - name: context-governance
+    kind: optional
+    reason: "An opt-in extension of policy-enforcer provides a compact authoritative context record with precedence and provenance."
 tags:
   - policy
   - governance

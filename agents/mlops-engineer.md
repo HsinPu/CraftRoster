@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - deployment-operations
-  - docker-development
-  - observability-engineering
-  - llm-evals
+skill-dependencies:
+  - name: deployment-operations
+    kind: recommended
+    reason: "Supports mlops-engineer with mode-aware artifact, rollout, health, abort, and recovery evidence."
+  - name: docker-development
+    kind: conditional
+    reason: "Supports mlops-engineer with container build, image, Compose, healthcheck, and local runtime contracts."
+    when: "The chosen build or runtime path uses Docker or Compose."
+  - name: observability-engineering
+    kind: recommended
+    reason: "Supports mlops-engineer with service objectives, low-cardinality telemetry, diagnostics, and alert validation."
+  - name: llm-evals
+    kind: conditional
+    reason: "Supports mlops-engineer with versioned LLM cases, rubrics, graders, baselines, and regression gates."
+    when: "The model under evaluation is an LLM or an LLM-backed application."
 tags:
   - mlops
   - model-registry

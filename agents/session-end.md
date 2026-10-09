@@ -9,11 +9,23 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - context-governance
-  - summary-ops
-  - git-operations
-  - todo-first
+skill-dependencies:
+  - name: context-governance
+    kind: recommended
+    reason: "Supports session-end with a compact authoritative context record with precedence and provenance."
+  - name: summary-ops
+    kind: optional
+    reason: "An opt-in extension of session-end provides faithful condensation of supplied source text with preserved uncertainty and attribution."
+  - name: git-operations
+    kind: conditional
+    reason: "Supports session-end with exact Git scope, current state, history, and safe repository operations."
+    when: "The work uses Git history, a repository diff, or an explicitly authorized Git operation."
+  - name: todo-first
+    kind: optional
+    reason: "An opt-in extension of session-end provides a live runtime-neutral dependency plan and evidence-linked progress tracking."
+  - name: session-handoff
+    kind: recommended
+    reason: "Supports session-end with a compact evidence-linked continuation and current-state resumption check."
 tags:
   - session
   - handoff

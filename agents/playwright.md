@@ -9,11 +9,20 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - playwright-automation
-  - browser-automation
-  - e2e-testing-patterns
-  - frontend-testing
+skill-dependencies:
+  - name: playwright-automation
+    kind: recommended
+    reason: "Supports playwright with Playwright locators, isolated state, controlled waits, screenshots, and traces."
+  - name: browser-automation
+    kind: recommended
+    reason: "Supports playwright with real-browser interaction, state inspection, and repeatable capture."
+  - name: e2e-testing-patterns
+    kind: recommended
+    reason: "Supports playwright with deterministic browser journeys, fixtures, selectors, and flakiness controls."
+  - name: frontend-testing
+    kind: conditional
+    reason: "Supports playwright with React or TypeScript component and hook behavior tests."
+    when: "The task covers React or TypeScript component or hook tests."
 tags:
   - playwright
   - browser-testing

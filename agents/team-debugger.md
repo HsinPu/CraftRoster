@@ -9,11 +9,22 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - subagent-architecture
-  - logging-patterns
-  - observability-engineering
-  - testing-strategy
+skill-dependencies:
+  - name: subagent-architecture
+    kind: recommended
+    reason: "Supports team-debugger with focused delegation, exclusive ownership, dependency gates, and verified fan-in."
+  - name: logging-patterns
+    kind: conditional
+    reason: "Supports team-debugger with stable event names, levels, structured fields, and secret-safe diagnostics."
+    when: "The work writes, reviews, or correlates structured application logs."
+  - name: observability-engineering
+    kind: conditional
+    reason: "Supports team-debugger with service objectives, low-cardinality telemetry, diagnostics, and alert validation."
+    when: "Service objectives, telemetry, operational diagnostics, or monitoring design are in scope."
+  - name: testing-strategy
+    kind: conditional
+    reason: "Supports team-debugger with risk-based test levels, fixtures, boundaries, and meaningful coverage."
+    when: "The deliverable includes software test design, coverage analysis, or regression proof."
 tags:
   - team-debugging
   - root-cause

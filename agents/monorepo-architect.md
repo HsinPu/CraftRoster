@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - project-architecture-review
-  - jvm-build-tooling
-  - repo-ready
-  - testing-strategy
+skill-dependencies:
+  - name: project-architecture-review
+    kind: recommended
+    reason: "Supports monorepo-architect with existing repository boundaries, dependency evidence, and incremental architecture decisions."
+  - name: jvm-build-tooling
+    kind: conditional
+    reason: "Supports monorepo-architect with Maven or Gradle wrappers, toolchains, dependency resolution, and builds."
+    when: "The project uses Maven or Gradle and build or dependency behavior is in scope."
+  - name: repo-ready
+    kind: conditional
+    reason: "Supports monorepo-architect with stack-aware repository instructions, contribution commands, CI, and release hygiene."
+    when: "Repository-wide contributor, quality, or release hygiene is included in the approved scope."
+  - name: testing-strategy
+    kind: recommended
+    reason: "Supports monorepo-architect with risk-based test levels, fixtures, boundaries, and meaningful coverage."
 tags:
   - monorepo
   - build-system

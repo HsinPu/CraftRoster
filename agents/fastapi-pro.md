@@ -9,11 +9,28 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - python-backend-development
-  - python-api-client-development
-  - api-contract-design
-  - auth-integration
+skill-dependencies:
+  - name: python-backend-development
+    kind: recommended
+    reason: "Supports fastapi-pro with Python HTTP, framework, ORM, migration, and worker boundaries."
+  - name: python-api-client-development
+    kind: conditional
+    reason: "Supports fastapi-pro with Python HTTP clients, auth, pagination, retries, and transport errors."
+    when: "The affected Python code consumes an external HTTP API or SDK."
+  - name: api-contract-design
+    kind: conditional
+    reason: "Supports fastapi-pro with versioned requests, responses, errors, pagination, and compatibility contracts."
+    when: "The work defines or changes consumer-visible API, event, or webhook contracts."
+  - name: auth-integration
+    kind: conditional
+    reason: "Supports fastapi-pro with session, OAuth or OIDC, callback, identity, and authorization boundaries."
+    when: "Authentication, session, identity federation, or authorization integration is in scope."
+  - name: python-development
+    kind: recommended
+    reason: "Supports fastapi-pro with the mandatory Python implementation owner and specialist-routing baseline."
+  - name: python-testing-engineering
+    kind: recommended
+    reason: "Supports fastapi-pro with pytest or unittest tests, fixtures, regression plans, and deterministic evidence."
 tags:
   - fastapi
   - python

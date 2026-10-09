@@ -9,12 +9,25 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - short-video-script
-  - storyboard-creation
-  - web-research-ops
-  - humanizer
-  - summary-ops
+skill-dependencies:
+  - name: short-video-script
+    kind: conditional
+    reason: "Supports screenwriter with short social-video hooks, pacing, speech, captions, and calls to action."
+    when: "The requested narrative is a short social-video script."
+  - name: storyboard-creation
+    kind: conditional
+    reason: "Supports screenwriter with approved scene intent converted into shot IDs, timing, camera, audio, and continuity."
+    when: "An approved audiovisual concept needs shot planning, timing, or storyboard handoff."
+  - name: web-research-ops
+    kind: recommended
+    reason: "Supports screenwriter with current primary sources, dates, contradictions, and attributable evidence."
+  - name: humanizer
+    kind: optional
+    reason: "An opt-in extension of screenwriter provides optional prose polishing that preserves the author and confirmed meaning."
+  - name: summary-ops
+    kind: conditional
+    reason: "Supports screenwriter with faithful condensation of supplied source text with preserved uncertainty and attribution."
+    when: "Supplied text, records, or an accepted transcript needs faithful condensation before analysis or writing."
 tags:
   - screenwriting
   - screenplay

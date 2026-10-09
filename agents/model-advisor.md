@@ -9,11 +9,22 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - llm-evals
-  - openai-api-development
-  - agents-sdk-development
-  - deployment-operations
+skill-dependencies:
+  - name: llm-evals
+    kind: recommended
+    reason: "Supports model-advisor with versioned LLM cases, rubrics, graders, baselines, and regression gates."
+  - name: openai-api-development
+    kind: conditional
+    reason: "Supports model-advisor with OpenAI API input, output, tool, retry, streaming, and provider contracts."
+    when: "The selected model provider or affected integration is OpenAI."
+  - name: agents-sdk-development
+    kind: conditional
+    reason: "Supports model-advisor with OpenAI Agents SDK tools, handoffs, guardrails, and tracing."
+    when: "The application uses the OpenAI Agents SDK."
+  - name: deployment-operations
+    kind: conditional
+    reason: "Supports model-advisor with mode-aware artifact, rollout, health, abort, and recovery evidence."
+    when: "An environment promotion, artifact rollout, or recovery plan is part of the authorized mode."
 tags:
   - model-selection
   - cost

@@ -9,10 +9,17 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - llm-evals
-  - specification-authoring
-  - summary-ops
+skill-dependencies:
+  - name: llm-evals
+    kind: recommended
+    reason: "Supports eval-judge with versioned LLM cases, rubrics, graders, baselines, and regression gates."
+  - name: specification-authoring
+    kind: conditional
+    reason: "Supports eval-judge with a formal technical Spec with the explicitly requested fixed document structure."
+    when: "The user explicitly requests a formal technical Spec with the prescribed document structure."
+  - name: summary-ops
+    kind: optional
+    reason: "An opt-in extension of eval-judge provides faithful condensation of supplied source text with preserved uncertainty and attribution."
 tags:
   - evaluation
   - judging

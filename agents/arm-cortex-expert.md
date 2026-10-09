@@ -9,11 +9,17 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - coding-standards
-  - testing-strategy
-  - security-code-review
-  - terminal-ops
+skill-dependencies:
+  - name: testing-strategy
+    kind: recommended
+    reason: "Supports arm-cortex-expert with risk-based test levels, fixtures, boundaries, and meaningful coverage."
+  - name: security-code-review
+    kind: conditional
+    reason: "Supports arm-cortex-expert with exploit-path, trust-boundary, vulnerability-confidence, and remediation evidence."
+    when: "The scope includes a code-level trust boundary, exploitable path, or security review."
+  - name: terminal-ops
+    kind: recommended
+    reason: "Supports arm-cortex-expert with exact commands, repository state, scoped execution, and reproducible verification."
 tags:
   - arm-cortex
   - embedded

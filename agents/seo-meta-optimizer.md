@@ -9,11 +9,22 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - ux-writing
-  - web-research-ops
-  - frontend-design-review
-  - i18n-localization
+skill-dependencies:
+  - name: ux-writing
+    kind: conditional
+    reason: "Supports seo-meta-optimizer with clear interface labels, instructions, error states, and truthful user guidance."
+    when: "The requested copy is interface microcopy or an explicitly identified product state."
+  - name: web-research-ops
+    kind: recommended
+    reason: "Supports seo-meta-optimizer with current primary sources, dates, contradictions, and attributable evidence."
+  - name: frontend-design-review
+    kind: conditional
+    reason: "Supports seo-meta-optimizer with read-only interface usability, accessibility, and visual-quality evidence."
+    when: "An implemented web surface needs independent UX, accessibility, or visual evidence."
+  - name: i18n-localization
+    kind: conditional
+    reason: "Supports seo-meta-optimizer with locale keys, plurals, Unicode, bidi, formatting, and fallback behavior."
+    when: "The task includes locale resources, translated text, plurals, bidi, or locale-aware formatting."
 tags:
   - seo
   - metadata

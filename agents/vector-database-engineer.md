@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - rag-vector-search
-  - database-design
-  - python-data-engineering
-  - llm-evals
+skill-dependencies:
+  - name: rag-vector-search
+    kind: recommended
+    reason: "Supports vector-database-engineer with corpus lineage, chunking, retrieval, relevance, and access-aware evaluation."
+  - name: database-design
+    kind: recommended
+    reason: "Supports vector-database-engineer with logical schemas, integrity constraints, access patterns, and migration design."
+  - name: python-data-engineering
+    kind: conditional
+    reason: "Supports vector-database-engineer with reproducible Python dataframe or dataset transformation with data checks."
+    when: "The analysis or pipeline implements dataset transformations in Python."
+  - name: llm-evals
+    kind: conditional
+    reason: "Supports vector-database-engineer with versioned LLM cases, rubrics, graders, baselines, and regression gates."
+    when: "The model under evaluation is an LLM or an LLM-backed application."
 tags:
   - vector-database
   - semantic-search

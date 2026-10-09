@@ -9,11 +9,25 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - code-review
-  - testing-strategy
-  - context-governance
-  - terminal-ops
+skill-dependencies:
+  - name: code-review
+    kind: conditional
+    reason: "Supports receipt-verifier with risk-calibrated evidence, failure scenarios, severity, and an independent review verdict."
+    when: "The verification target includes software source or a code change."
+  - name: testing-strategy
+    kind: conditional
+    reason: "Supports receipt-verifier with risk-based test levels, fixtures, boundaries, and meaningful coverage."
+    when: "The deliverable includes software test design, coverage analysis, or regression proof."
+  - name: context-governance
+    kind: conditional
+    reason: "Supports receipt-verifier with a compact authoritative context record with precedence and provenance."
+    when: "Durable context, shared decisions, or context-budget behavior needs governance."
+  - name: terminal-ops
+    kind: recommended
+    reason: "Supports receipt-verifier with exact commands, repository state, scoped execution, and reproducible verification."
+  - name: verification-before-completion
+    kind: recommended
+    reason: "Supports receipt-verifier with acceptance-to-evidence coverage and fresh verification before a completion claim."
 tags:
   - verification
   - evidence

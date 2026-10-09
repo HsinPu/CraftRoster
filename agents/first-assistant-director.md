@@ -9,12 +9,24 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - video-production-workflow
-  - spreadsheet-ops
-  - data-organization-system
-  - context-governance
-  - agent-action-governance
+skill-dependencies:
+  - name: video-production-workflow
+    kind: recommended
+    reason: "Supports first-assistant-director with the canonical production artifacts, stage gates, accepted lineage, and sequential fallback."
+  - name: spreadsheet-ops
+    kind: conditional
+    reason: "Supports first-assistant-director with workbook or tabular input, formulas, units, calculation, and output validation."
+    when: "The primary source or requested output is a workbook or tabular calculation artifact."
+  - name: data-organization-system
+    kind: optional
+    reason: "An opt-in extension of first-assistant-director provides a durable taxonomy, metadata, lifecycle, retention, and retrieval system."
+  - name: context-governance
+    kind: conditional
+    reason: "Supports first-assistant-director with a compact authoritative context record with precedence and provenance."
+    when: "Durable context, shared decisions, or context-budget behavior needs governance."
+  - name: agent-action-governance
+    kind: optional
+    reason: "An opt-in extension of first-assistant-director provides explicit authority, tool-action policies, approval windows, and attributable receipts."
 tags:
   - assistant-direction
   - shooting-schedule

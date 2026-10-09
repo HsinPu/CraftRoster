@@ -9,11 +9,18 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - data-organization-system
-  - spreadsheet-ops
-  - specification-authoring
-  - agent-action-governance
+skill-dependencies:
+  - name: data-organization-system
+    kind: conditional
+    reason: "Supports operations-manager with a durable taxonomy, metadata, lifecycle, retention, and retrieval system."
+    when: "The scope designs a reusable taxonomy, metadata, retention, or retrieval system beyond one report."
+  - name: spreadsheet-ops
+    kind: conditional
+    reason: "Supports operations-manager with workbook or tabular input, formulas, units, calculation, and output validation."
+    when: "The primary source or requested output is a workbook or tabular calculation artifact."
+  - name: agent-action-governance
+    kind: optional
+    reason: "An opt-in extension of operations-manager provides explicit authority, tool-action policies, approval windows, and attributable receipts."
 tags:
   - operations-management
   - process-improvement

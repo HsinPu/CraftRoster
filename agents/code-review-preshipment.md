@@ -9,11 +9,20 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - code-review
-  - deployment-operations
-  - testing-strategy
-  - security-code-review
+skill-dependencies:
+  - name: code-review
+    kind: recommended
+    reason: "Supports code-review-preshipment with risk-calibrated evidence, failure scenarios, severity, and an independent review verdict."
+  - name: deployment-operations
+    kind: recommended
+    reason: "Supports code-review-preshipment with mode-aware artifact, rollout, health, abort, and recovery evidence."
+  - name: testing-strategy
+    kind: recommended
+    reason: "Supports code-review-preshipment with risk-based test levels, fixtures, boundaries, and meaningful coverage."
+  - name: security-code-review
+    kind: conditional
+    reason: "Supports code-review-preshipment with exploit-path, trust-boundary, vulnerability-confidence, and remediation evidence."
+    when: "The scope includes a code-level trust boundary, exploitable path, or security review."
 tags:
   - pre-shipment
   - release-review

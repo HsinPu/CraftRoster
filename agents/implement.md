@@ -9,12 +9,24 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - code-change-workflow
-  - incremental-implementation
-  - testing-strategy
-  - coding-standards
-  - terminal-ops
+skill-dependencies:
+  - name: code-change-workflow
+    kind: recommended
+    reason: "Supports implement with pre-edit ownership, call-path, compatibility, and verification inspection."
+  - name: incremental-implementation
+    kind: conditional
+    reason: "Supports implement with dependency-aware verified slices and reversible integration checkpoints."
+    when: "The change spans risky boundaries or needs independently verified reversible slices."
+  - name: testing-strategy
+    kind: recommended
+    reason: "Supports implement with risk-based test levels, fixtures, boundaries, and meaningful coverage."
+  - name: coding-standards
+    kind: conditional
+    reason: "Supports implement with team-wide JavaScript, TypeScript, React, or Node conventions."
+    when: "The task defines or audits team-wide JavaScript, TypeScript, React, or Node conventions."
+  - name: terminal-ops
+    kind: recommended
+    reason: "Supports implement with exact commands, repository state, scoped execution, and reproducible verification."
 tags:
   - implementation
   - specification

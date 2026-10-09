@@ -9,12 +9,30 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - wordpress-development
-  - security-code-review
-  - database-design
-  - frontend-testing
-  - deployment-operations
+skill-dependencies:
+  - name: wordpress-development
+    kind: conditional
+    reason: "Supports cms-platform-engineer with WordPress hooks, extensions, content, migrations, backup, and staged-release safeguards."
+    when: "The affected CMS is WordPress and its code, content, migration, or runtime surface is in scope."
+  - name: security-code-review
+    kind: conditional
+    reason: "Supports cms-platform-engineer with exploit-path, trust-boundary, vulnerability-confidence, and remediation evidence."
+    when: "The scope includes a code-level trust boundary, exploitable path, or security review."
+  - name: database-design
+    kind: conditional
+    reason: "Supports cms-platform-engineer with logical schemas, integrity constraints, access patterns, and migration design."
+    when: "Schema, persistent data integrity, storage ownership, or migration design is in scope."
+  - name: frontend-testing
+    kind: conditional
+    reason: "Supports cms-platform-engineer with React or TypeScript component and hook behavior tests."
+    when: "The task covers React or TypeScript component or hook tests."
+  - name: deployment-operations
+    kind: conditional
+    reason: "Supports cms-platform-engineer with mode-aware artifact, rollout, health, abort, and recovery evidence."
+    when: "An environment promotion, artifact rollout, or recovery plan is part of the authorized mode."
+  - name: code-change-workflow
+    kind: recommended
+    reason: "Supports cms-platform-engineer with pre-edit ownership, call-path, compatibility, and verification inspection."
 tags:
   - cms
   - wordpress

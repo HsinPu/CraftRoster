@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - mcp-creator-design
-  - mcp-ops
-  - api-contract-design
-  - security-code-review
+skill-dependencies:
+  - name: mcp-creator-design
+    kind: recommended
+    reason: "Supports mcp-developer with MCP capability boundaries, tools, resources, schemas, and integration tests."
+  - name: mcp-ops
+    kind: conditional
+    reason: "Supports mcp-developer with MCP discovery, configuration, authentication, and narrow tool calls."
+    when: "A host integration needs discovery, authentication, configuration, or an explicitly authorized MCP call."
+  - name: api-contract-design
+    kind: conditional
+    reason: "Supports mcp-developer with versioned requests, responses, errors, pagination, and compatibility contracts."
+    when: "The work defines or changes consumer-visible API, event, or webhook contracts."
+  - name: security-code-review
+    kind: recommended
+    reason: "Supports mcp-developer with exploit-path, trust-boundary, vulnerability-confidence, and remediation evidence."
 tags:
   - mcp
   - protocol

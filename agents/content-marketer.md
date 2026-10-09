@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - short-video-script
-  - humanizer
-  - web-research-ops
-  - markdown-writer
+skill-dependencies:
+  - name: short-video-script
+    kind: conditional
+    reason: "Supports content-marketer with short social-video hooks, pacing, speech, captions, and calls to action."
+    when: "The requested narrative is a short social-video script."
+  - name: humanizer
+    kind: optional
+    reason: "An opt-in extension of content-marketer provides optional prose polishing that preserves the author and confirmed meaning."
+  - name: web-research-ops
+    kind: recommended
+    reason: "Supports content-marketer with current primary sources, dates, contradictions, and attributable evidence."
+  - name: markdown-writer
+    kind: conditional
+    reason: "Supports content-marketer with clear GFM structure, source-preserving documentation, and links."
+    when: "The requested artifact is Markdown or GFM documentation."
 tags:
   - editorial
   - distribution

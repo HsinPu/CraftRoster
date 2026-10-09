@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - llm-evals
-  - python-data-engineering
-  - testing-strategy
-  - observability-engineering
+skill-dependencies:
+  - name: llm-evals
+    kind: recommended
+    reason: "Supports eval-orchestrator with versioned LLM cases, rubrics, graders, baselines, and regression gates."
+  - name: python-data-engineering
+    kind: conditional
+    reason: "Supports eval-orchestrator with reproducible Python dataframe or dataset transformation with data checks."
+    when: "The analysis or pipeline implements dataset transformations in Python."
+  - name: testing-strategy
+    kind: recommended
+    reason: "Supports eval-orchestrator with risk-based test levels, fixtures, boundaries, and meaningful coverage."
+  - name: observability-engineering
+    kind: conditional
+    reason: "Supports eval-orchestrator with service objectives, low-cardinality telemetry, diagnostics, and alert validation."
+    when: "Service objectives, telemetry, operational diagnostics, or monitoring design are in scope."
 tags:
   - evaluations
   - benchmarks

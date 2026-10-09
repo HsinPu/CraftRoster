@@ -9,12 +9,33 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - specification-authoring
-  - product-experimentation
-  - web-research-ops
-  - data-organization-system
-  - spreadsheet-ops
+skill-dependencies:
+  - name: specification-authoring
+    kind: conditional
+    reason: "Supports product-manager with a formal technical Spec with the explicitly requested fixed document structure."
+    when: "The user explicitly requests a formal technical Spec with the prescribed document structure."
+  - name: product-experimentation
+    kind: conditional
+    reason: "Supports product-manager with predeclared hypotheses, assignment integrity, guardrails, and causal decision gates."
+    when: "The decision needs a controlled product experiment or its assignment and telemetry evidence."
+  - name: web-research-ops
+    kind: recommended
+    reason: "Supports product-manager with current primary sources, dates, contradictions, and attributable evidence."
+  - name: data-organization-system
+    kind: conditional
+    reason: "Supports product-manager with a durable taxonomy, metadata, lifecycle, retention, and retrieval system."
+    when: "The scope designs a reusable taxonomy, metadata, retention, or retrieval system beyond one report."
+  - name: spreadsheet-ops
+    kind: conditional
+    reason: "Supports product-manager with workbook or tabular input, formulas, units, calculation, and output validation."
+    when: "The primary source or requested output is a workbook or tabular calculation artifact."
+  - name: solution-discovery
+    kind: recommended
+    reason: "Supports product-manager with proportionate alternatives, tradeoffs, and an explicit direction decision."
+  - name: market-research
+    kind: conditional
+    reason: "Supports product-manager with a dated market and audience evidence ledger leading to a decision memo."
+    when: "A market, audience, competitor, positioning, or launch decision needs a dated research memo."
 tags:
   - product-management
   - discovery

@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - frontend-design
-  - design-consultation
-  - color-font-skill
-  - responsive-design
+skill-dependencies:
+  - name: frontend-design
+    kind: conditional
+    reason: "Supports ui-designer with the visible web implementation baseline and rendered user-state verification."
+    when: "A visible web implementation handoff is requested; a separate write-capable owner performs the implementation."
+  - name: design-consultation
+    kind: recommended
+    reason: "Supports ui-designer with web interface visual direction before implementation."
+  - name: color-font-skill
+    kind: recommended
+    reason: "Supports ui-designer with web visual direction, typography, palette, and contrast choices."
+  - name: responsive-design
+    kind: conditional
+    reason: "Supports ui-designer with complex web layout reflow, fluid sizing, breakpoints, and touch-target contracts."
+    when: "The web deliverable needs complex responsive layout or reflow guidance."
 tags:
   - visual-hierarchy
   - responsive

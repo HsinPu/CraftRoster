@@ -9,11 +9,22 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - aws-operations
-  - observability-engineering
-  - terraform-infrastructure
-  - spreadsheet-ops
+skill-dependencies:
+  - name: aws-operations
+    kind: conditional
+    reason: "Supports finops-engineer with AWS account, regional service, IAM, and workload-specific operational evidence."
+    when: "The selected provider or affected workload is AWS."
+  - name: observability-engineering
+    kind: conditional
+    reason: "Supports finops-engineer with service objectives, low-cardinality telemetry, diagnostics, and alert validation."
+    when: "Service objectives, telemetry, operational diagnostics, or monitoring design are in scope."
+  - name: terraform-infrastructure
+    kind: conditional
+    reason: "Supports finops-engineer with Terraform or OpenTofu modules, provider state, plans, and safe infrastructure review."
+    when: "The chosen infrastructure contract uses Terraform or OpenTofu."
+  - name: spreadsheet-ops
+    kind: recommended
+    reason: "Supports finops-engineer with workbook or tabular input, formulas, units, calculation, and output validation."
 tags:
   - finops
   - cloud-cost

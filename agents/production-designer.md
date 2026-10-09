@@ -9,12 +9,18 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - video-production-workflow
-  - design-consultation
-  - color-font-skill
-  - ai-image-prompt-design
-  - image-utils
+skill-dependencies:
+  - name: video-production-workflow
+    kind: recommended
+    reason: "Supports production-designer with the canonical production artifacts, stage gates, accepted lineage, and sequential fallback."
+  - name: ai-image-prompt-design
+    kind: conditional
+    reason: "Supports production-designer with new image briefs expressed as composition, subject, lighting, and prompt variants."
+    when: "The approved work requires new prompts for generated still assets or storyboard panels."
+  - name: image-utils
+    kind: conditional
+    reason: "Supports production-designer with non-destructive deterministic crop, resize, conversion, and pixel inspection."
+    when: "The authorized work needs deterministic still-image operations or pixel-level inspection."
 tags:
   - production-design
   - visual-worldbuilding

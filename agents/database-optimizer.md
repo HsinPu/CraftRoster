@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - sql-best-practices
-  - postgres-operations
-  - database-design
-  - observability-engineering
+skill-dependencies:
+  - name: sql-best-practices
+    kind: recommended
+    reason: "Supports database-optimizer with SQL grain, null, join, parameterization, and query-plan correctness."
+  - name: postgres-operations
+    kind: conditional
+    reason: "Supports database-optimizer with PostgreSQL plans, locks, roles, backups, replication, and maintenance evidence."
+    when: "The selected or affected database is PostgreSQL."
+  - name: database-design
+    kind: conditional
+    reason: "Supports database-optimizer with logical schemas, integrity constraints, access patterns, and migration design."
+    when: "Schema, persistent data integrity, storage ownership, or migration design is in scope."
+  - name: observability-engineering
+    kind: recommended
+    reason: "Supports database-optimizer with service objectives, low-cardinality telemetry, diagnostics, and alert validation."
 tags:
   - database-performance
   - query-plans

@@ -9,12 +9,24 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - video-production-workflow
-  - agent-action-governance
-  - data-organization-system
-  - context-governance
-  - terminal-ops
+skill-dependencies:
+  - name: video-production-workflow
+    kind: recommended
+    reason: "Supports video-producer with the canonical production artifacts, stage gates, accepted lineage, and sequential fallback."
+  - name: agent-action-governance
+    kind: conditional
+    reason: "Supports video-producer with explicit authority, tool-action policies, approval windows, and attributable receipts."
+    when: "The scope includes AI tool-action policy, approval windows, signed receipts, or execution handoffs."
+  - name: data-organization-system
+    kind: optional
+    reason: "An opt-in extension of video-producer provides a durable taxonomy, metadata, lifecycle, retention, and retrieval system."
+  - name: context-governance
+    kind: conditional
+    reason: "Supports video-producer with a compact authoritative context record with precedence and provenance."
+    when: "Durable context, shared decisions, or context-budget behavior needs governance."
+  - name: terminal-ops
+    kind: recommended
+    reason: "Supports video-producer with exact commands, repository state, scoped execution, and reproducible verification."
 tags:
   - video-production
   - production-planning

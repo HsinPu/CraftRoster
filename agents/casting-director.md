@@ -9,12 +9,24 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - video-production-workflow
-  - web-research-ops
-  - audio-transcription
-  - spreadsheet-ops
-  - agent-action-governance
+skill-dependencies:
+  - name: video-production-workflow
+    kind: recommended
+    reason: "Supports casting-director with the canonical production artifacts, stage gates, accepted lineage, and sequential fallback."
+  - name: web-research-ops
+    kind: recommended
+    reason: "Supports casting-director with current primary sources, dates, contradictions, and attributable evidence."
+  - name: audio-transcription
+    kind: conditional
+    reason: "Supports casting-director with speech extraction, speaker labeling, and source-linked transcript evidence."
+    when: "Raw audio or video speech needs extraction and no accepted matching transcript exists."
+  - name: spreadsheet-ops
+    kind: conditional
+    reason: "Supports casting-director with workbook or tabular input, formulas, units, calculation, and output validation."
+    when: "The primary source or requested output is a workbook or tabular calculation artifact."
+  - name: agent-action-governance
+    kind: optional
+    reason: "An opt-in extension of casting-director provides explicit authority, tool-action policies, approval windows, and attributable receipts."
 tags:
   - casting
   - audition-evaluation

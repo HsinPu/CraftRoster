@@ -9,12 +9,18 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - video-production-workflow
-  - remotion-video-toolkit
-  - animation-best-practices
-  - color-font-skill
-  - video-edit
+skill-dependencies:
+  - name: video-production-workflow
+    kind: recommended
+    reason: "Supports motion-graphics-designer with the canonical production artifacts, stage gates, accepted lineage, and sequential fallback."
+  - name: remotion-video-toolkit
+    kind: conditional
+    reason: "Supports motion-graphics-designer with Remotion or React compositions, timing, captions, audio, and render validation."
+    when: "The selected composition or render path is Remotion or React video."
+  - name: video-edit
+    kind: conditional
+    reason: "Supports motion-graphics-designer with existing-footage inspection, local editing, controlled transcodes, and media verification."
+    when: "Existing media needs local inspection, frame extraction, editing, transcoding, or delivery QC."
 tags:
   - motion-graphics
   - kinetic-typography

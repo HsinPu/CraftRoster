@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - coding-standards
-  - testing-strategy
-  - observability-engineering
-  - database-design
+skill-dependencies:
+  - name: testing-strategy
+    kind: recommended
+    reason: "Supports elixir-pro with risk-based test levels, fixtures, boundaries, and meaningful coverage."
+  - name: observability-engineering
+    kind: conditional
+    reason: "Supports elixir-pro with service objectives, low-cardinality telemetry, diagnostics, and alert validation."
+    when: "Service objectives, telemetry, operational diagnostics, or monitoring design are in scope."
+  - name: database-design
+    kind: conditional
+    reason: "Supports elixir-pro with logical schemas, integrity constraints, access patterns, and migration design."
+    when: "Schema, persistent data integrity, storage ownership, or migration design is in scope."
+  - name: code-change-workflow
+    kind: recommended
+    reason: "Supports elixir-pro with pre-edit ownership, call-path, compatibility, and verification inspection."
 tags:
   - elixir
   - otp

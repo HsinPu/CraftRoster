@@ -9,11 +9,18 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - web-research-ops
-  - specification-authoring
-  - spreadsheet-ops
-  - word-document-ops
+skill-dependencies:
+  - name: web-research-ops
+    kind: recommended
+    reason: "Supports grant-strategist with current primary sources, dates, contradictions, and attributable evidence."
+  - name: spreadsheet-ops
+    kind: conditional
+    reason: "Supports grant-strategist with workbook or tabular input, formulas, units, calculation, and output validation."
+    when: "The primary source or requested output is a workbook or tabular calculation artifact."
+  - name: word-document-ops
+    kind: conditional
+    reason: "Supports grant-strategist with DOCX formatting, tracked changes, tables, and validated editable output."
+    when: "The requested input or output is a formatted DOCX document."
 tags:
   - grants
   - funding-strategy

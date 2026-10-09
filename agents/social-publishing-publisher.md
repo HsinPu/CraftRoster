@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - short-video-script
-  - subtitle-captions
-  - humanizer
-  - ux-writing
+skill-dependencies:
+  - name: short-video-script
+    kind: conditional
+    reason: "Supports social-publishing-publisher with short social-video hooks, pacing, speech, captions, and calls to action."
+    when: "The requested narrative is a short social-video script."
+  - name: subtitle-captions
+    kind: conditional
+    reason: "Supports social-publishing-publisher with same-language caption authoring, timing, conversion, and caption QC."
+    when: "The approved deliverable needs caption authoring, timing, conversion, or caption QC."
+  - name: humanizer
+    kind: optional
+    reason: "An opt-in extension of social-publishing-publisher provides optional prose polishing that preserves the author and confirmed meaning."
+  - name: brand-voice
+    kind: recommended
+    reason: "Supports social-publishing-publisher with a source-derived tone, vocabulary, and messaging profile."
 tags:
   - social-media
   - publishing

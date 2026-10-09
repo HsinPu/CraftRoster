@@ -9,12 +9,25 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - code-review
-  - pipeline-review
-  - security-code-review
-  - testing-strategy
-  - git-operations
+skill-dependencies:
+  - name: code-review
+    kind: recommended
+    reason: "Supports code-reviewer with risk-calibrated evidence, failure scenarios, severity, and an independent review verdict."
+  - name: pipeline-review
+    kind: conditional
+    reason: "Supports code-reviewer with a serialized implementation-stage gate with an independently validated report."
+    when: "The review is an explicit implementation-stage or release gate with a persisted report."
+  - name: security-code-review
+    kind: conditional
+    reason: "Supports code-reviewer with exploit-path, trust-boundary, vulnerability-confidence, and remediation evidence."
+    when: "The review risk profile identifies a concrete security-sensitive path needing specialist exploitability assessment."
+  - name: testing-strategy
+    kind: recommended
+    reason: "Supports code-reviewer with risk-based test levels, fixtures, boundaries, and meaningful coverage."
+  - name: git-operations
+    kind: conditional
+    reason: "Supports code-reviewer with exact Git scope, current state, history, and safe repository operations."
+    when: "The work uses Git history, a repository diff, or an explicitly authorized Git operation."
 tags:
   - review
   - quality

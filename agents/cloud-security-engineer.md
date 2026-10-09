@@ -9,11 +9,22 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - threat-modeling
-  - terraform-infrastructure
-  - kubernetes-operations
-  - aws-operations
+skill-dependencies:
+  - name: threat-modeling
+    kind: recommended
+    reason: "Supports cloud-security-engineer with assets, actors, data flows, abuse cases, mitigations, and residual-risk ownership."
+  - name: terraform-infrastructure
+    kind: conditional
+    reason: "Supports cloud-security-engineer with Terraform or OpenTofu modules, provider state, plans, and safe infrastructure review."
+    when: "The chosen infrastructure contract uses Terraform or OpenTofu."
+  - name: kubernetes-operations
+    kind: conditional
+    reason: "Supports cloud-security-engineer with Kubernetes workload, namespace, rollout, RBAC, and health contracts."
+    when: "The selected platform or affected workload uses Kubernetes."
+  - name: aws-operations
+    kind: conditional
+    reason: "Supports cloud-security-engineer with AWS account, regional service, IAM, and workload-specific operational evidence."
+    when: "The selected provider or affected workload is AWS."
 tags:
   - cloud-security
   - policy-as-code

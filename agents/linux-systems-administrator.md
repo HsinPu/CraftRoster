@@ -9,11 +9,22 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - terminal-ops
-  - security-scanning
-  - observability-engineering
-  - deployment-operations
+skill-dependencies:
+  - name: terminal-ops
+    kind: recommended
+    reason: "Supports linux-systems-administrator with exact commands, repository state, scoped execution, and reproducible verification."
+  - name: security-scanning
+    kind: conditional
+    reason: "Supports linux-systems-administrator with authorized scanner configuration, baselines, result triage, and security quality gates."
+    when: "Authorized automated scanner configuration, existing scan evidence, or quality-gate triage is needed."
+  - name: observability-engineering
+    kind: conditional
+    reason: "Supports linux-systems-administrator with service objectives, low-cardinality telemetry, diagnostics, and alert validation."
+    when: "Service objectives, telemetry, operational diagnostics, or monitoring design are in scope."
+  - name: deployment-operations
+    kind: conditional
+    reason: "Supports linux-systems-administrator with mode-aware artifact, rollout, health, abort, and recovery evidence."
+    when: "An environment promotion, artifact rollout, or recovery plan is part of the authorized mode."
 tags:
   - linux-administration
   - systemd

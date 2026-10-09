@@ -9,11 +9,18 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - web-research-ops
-  - spreadsheet-ops
-  - data-organization-system
-  - specification-authoring
+skill-dependencies:
+  - name: web-research-ops
+    kind: recommended
+    reason: "Supports clinical-data-manager with current primary sources, dates, contradictions, and attributable evidence."
+  - name: spreadsheet-ops
+    kind: conditional
+    reason: "Supports clinical-data-manager with workbook or tabular input, formulas, units, calculation, and output validation."
+    when: "The primary source or requested output is a workbook or tabular calculation artifact."
+  - name: data-organization-system
+    kind: conditional
+    reason: "Supports clinical-data-manager with a durable taxonomy, metadata, lifecycle, retention, and retrieval system."
+    when: "The scope designs a reusable taxonomy, metadata, retention, or retrieval system beyond one report."
 tags:
   - clinical-data-management
   - clinical-research

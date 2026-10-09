@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - markdown-writer
-  - git-readme-writer
-  - web-research-ops
-  - terminal-ops
+skill-dependencies:
+  - name: markdown-writer
+    kind: recommended
+    reason: "Supports technical-writer with clear GFM structure, source-preserving documentation, and links."
+  - name: git-readme-writer
+    kind: conditional
+    reason: "Supports technical-writer with repository-specific setup, usage, and README navigation."
+    when: "The requested documentation is a repository README."
+  - name: web-research-ops
+    kind: conditional
+    reason: "Supports technical-writer with current primary sources, dates, contradictions, and attributable evidence."
+    when: "Current external facts, primary requirements, or source contradictions need verification."
+  - name: terminal-ops
+    kind: recommended
+    reason: "Supports technical-writer with exact commands, repository state, scoped execution, and reproducible verification."
 tags:
   - technical-writing
   - user-guides

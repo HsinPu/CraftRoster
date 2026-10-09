@@ -9,11 +9,22 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - web-research-ops
-  - threat-modeling
-  - security-scanning
-  - incident-response-postmortems
+skill-dependencies:
+  - name: web-research-ops
+    kind: recommended
+    reason: "Supports threat-intelligence-analyst with current primary sources, dates, contradictions, and attributable evidence."
+  - name: threat-modeling
+    kind: conditional
+    reason: "Supports threat-intelligence-analyst with assets, actors, data flows, abuse cases, mitigations, and residual-risk ownership."
+    when: "The scope maps architecture or intelligence evidence into actionable threat and mitigation models."
+  - name: security-scanning
+    kind: conditional
+    reason: "Supports threat-intelligence-analyst with authorized scanner configuration, baselines, result triage, and security quality gates."
+    when: "Authorized automated scanner configuration, existing scan evidence, or quality-gate triage is needed."
+  - name: incident-response-postmortems
+    kind: conditional
+    reason: "Supports threat-intelligence-analyst with software-service incident evidence, recovery decisions, and corrective actions."
+    when: "The scope includes a software-service incident, operational recovery, or postmortem."
 tags:
   - threat-intelligence
   - adversary-tracking

@@ -9,11 +9,13 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - incident-response-postmortems
-  - testing-strategy
-  - specification-authoring
-  - agent-action-governance
+skill-dependencies:
+  - name: agent-action-governance
+    kind: optional
+    reason: "An opt-in extension of emergency-preparedness-coordinator provides explicit authority, tool-action policies, approval windows, and attributable receipts."
+  - name: web-research-ops
+    kind: recommended
+    reason: "Supports emergency-preparedness-coordinator with current primary sources, dates, contradictions, and attributable evidence."
 tags:
   - emergency-preparedness
   - healthcare-continuity

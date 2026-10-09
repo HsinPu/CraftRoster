@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - java-development
-  - java-testing
-  - jvm-build-tooling
-  - security-code-review
+skill-dependencies:
+  - name: java-development
+    kind: recommended
+    reason: "Supports minecraft-bukkit-pro with the mandatory Java implementation owner and specialist-routing baseline."
+  - name: java-testing
+    kind: recommended
+    reason: "Supports minecraft-bukkit-pro with JUnit, Mockito, Testcontainers, and deterministic JVM regression evidence."
+  - name: jvm-build-tooling
+    kind: conditional
+    reason: "Supports minecraft-bukkit-pro with Maven or Gradle wrappers, toolchains, dependency resolution, and builds."
+    when: "The project uses Maven or Gradle and build or dependency behavior is in scope."
+  - name: security-code-review
+    kind: conditional
+    reason: "Supports minecraft-bukkit-pro with exploit-path, trust-boundary, vulnerability-confidence, and remediation evidence."
+    when: "The scope includes a code-level trust boundary, exploitable path, or security review."
 tags:
   - minecraft
   - bukkit

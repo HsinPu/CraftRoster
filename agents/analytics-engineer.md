@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - sql-best-practices
-  - data-pipeline-orchestration
-  - database-design
-  - testing-strategy
+skill-dependencies:
+  - name: sql-best-practices
+    kind: recommended
+    reason: "Supports analytics-engineer with SQL grain, null, join, parameterization, and query-plan correctness."
+  - name: data-pipeline-orchestration
+    kind: conditional
+    reason: "Supports analytics-engineer with idempotent data delivery, lineage, scheduling, quality gates, and recovery."
+    when: "Governed transformations, scheduling, lineage, or repeatable data delivery are in scope."
+  - name: database-design
+    kind: recommended
+    reason: "Supports analytics-engineer with logical schemas, integrity constraints, access patterns, and migration design."
+  - name: testing-strategy
+    kind: conditional
+    reason: "Supports analytics-engineer with risk-based test levels, fixtures, boundaries, and meaningful coverage."
+    when: "The deliverable includes software test design, coverage analysis, or regression proof."
 tags:
   - analytics-engineering
   - dimensional-modeling

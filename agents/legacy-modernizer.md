@@ -9,11 +9,20 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - legacy-frontend-modernization
-  - code-refactoring
-  - incremental-implementation
-  - testing-strategy
+skill-dependencies:
+  - name: legacy-frontend-modernization
+    kind: conditional
+    reason: "Supports legacy-modernizer with incremental coexistence and migration of legacy web interfaces."
+    when: "The legacy system includes a web frontend with coexistence or framework-migration concerns."
+  - name: code-refactoring
+    kind: recommended
+    reason: "Supports legacy-modernizer with small structural changes that preserve characterized behavior."
+  - name: incremental-implementation
+    kind: recommended
+    reason: "Supports legacy-modernizer with dependency-aware verified slices and reversible integration checkpoints."
+  - name: testing-strategy
+    kind: recommended
+    reason: "Supports legacy-modernizer with risk-based test levels, fixtures, boundaries, and meaningful coverage."
 tags:
   - legacy
   - modernization

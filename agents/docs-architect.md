@@ -9,11 +9,22 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - markdown-writer
-  - git-readme-writer
-  - api-doc-comments
-  - openapi-spec-generation
+skill-dependencies:
+  - name: markdown-writer
+    kind: recommended
+    reason: "Supports docs-architect with clear GFM structure, source-preserving documentation, and links."
+  - name: git-readme-writer
+    kind: conditional
+    reason: "Supports docs-architect with repository-specific setup, usage, and README navigation."
+    when: "The requested documentation is a repository README."
+  - name: api-doc-comments
+    kind: conditional
+    reason: "Supports docs-architect with verified code-level docstrings and exported API comments."
+    when: "The requested artifact includes code-level API comments or docstrings."
+  - name: openapi-spec-generation
+    kind: conditional
+    reason: "Supports docs-architect with a validated OpenAPI schema and implementation-contract drift checks."
+    when: "The API uses OpenAPI or the requested handoff includes a formal OpenAPI specification."
 tags:
   - documentation
   - information-architecture

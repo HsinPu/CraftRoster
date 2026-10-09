@@ -9,11 +9,20 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - video-production-workflow
-  - video-edit
-  - subtitle-captions
-  - terminal-ops
+skill-dependencies:
+  - name: video-production-workflow
+    kind: recommended
+    reason: "Supports delivery-mastering-specialist with the canonical production artifacts, stage gates, accepted lineage, and sequential fallback."
+  - name: video-edit
+    kind: recommended
+    reason: "Supports delivery-mastering-specialist with existing-footage inspection, local editing, controlled transcodes, and media verification."
+  - name: subtitle-captions
+    kind: conditional
+    reason: "Supports delivery-mastering-specialist with same-language caption authoring, timing, conversion, and caption QC."
+    when: "The approved deliverable needs caption authoring, timing, conversion, or caption QC."
+  - name: terminal-ops
+    kind: recommended
+    reason: "Supports delivery-mastering-specialist with exact commands, repository state, scoped execution, and reproducible verification."
 tags:
   - video-mastering
   - delivery-variants

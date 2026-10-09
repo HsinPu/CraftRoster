@@ -9,11 +9,22 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - project-architecture-review
-  - api-contract-design
-  - database-design
-  - deployment-operations
+skill-dependencies:
+  - name: project-architecture-review
+    kind: recommended
+    reason: "Supports architect with existing repository boundaries, dependency evidence, and incremental architecture decisions."
+  - name: api-contract-design
+    kind: conditional
+    reason: "Supports architect with versioned requests, responses, errors, pagination, and compatibility contracts."
+    when: "The work defines or changes consumer-visible API, event, or webhook contracts."
+  - name: database-design
+    kind: conditional
+    reason: "Supports architect with logical schemas, integrity constraints, access patterns, and migration design."
+    when: "Schema, persistent data integrity, storage ownership, or migration design is in scope."
+  - name: deployment-operations
+    kind: conditional
+    reason: "Supports architect with mode-aware artifact, rollout, health, abort, and recovery evidence."
+    when: "An environment promotion, artifact rollout, or recovery plan is part of the authorized mode."
 tags:
   - architecture
   - system-design

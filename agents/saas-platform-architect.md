@@ -9,11 +9,20 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - project-architecture-review
-  - api-contract-design
-  - database-design
-  - deployment-operations
+skill-dependencies:
+  - name: project-architecture-review
+    kind: recommended
+    reason: "Supports saas-platform-architect with existing repository boundaries, dependency evidence, and incremental architecture decisions."
+  - name: api-contract-design
+    kind: recommended
+    reason: "Supports saas-platform-architect with versioned requests, responses, errors, pagination, and compatibility contracts."
+  - name: database-design
+    kind: recommended
+    reason: "Supports saas-platform-architect with logical schemas, integrity constraints, access patterns, and migration design."
+  - name: deployment-operations
+    kind: conditional
+    reason: "Supports saas-platform-architect with mode-aware artifact, rollout, health, abort, and recovery evidence."
+    when: "An environment promotion, artifact rollout, or recovery plan is part of the authorized mode."
 tags:
   - saas
   - multi-tenancy

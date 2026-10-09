@@ -9,11 +9,20 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - observability-engineering
-  - logging-patterns
-  - security-scanning
-  - testing-strategy
+skill-dependencies:
+  - name: observability-engineering
+    kind: recommended
+    reason: "Supports threat-detection-engineer with service objectives, low-cardinality telemetry, diagnostics, and alert validation."
+  - name: logging-patterns
+    kind: recommended
+    reason: "Supports threat-detection-engineer with stable event names, levels, structured fields, and secret-safe diagnostics."
+  - name: security-scanning
+    kind: conditional
+    reason: "Supports threat-detection-engineer with authorized scanner configuration, baselines, result triage, and security quality gates."
+    when: "Authorized automated scanner configuration, existing scan evidence, or quality-gate triage is needed."
+  - name: testing-strategy
+    kind: recommended
+    reason: "Supports threat-detection-engineer with risk-based test levels, fixtures, boundaries, and meaningful coverage."
 tags:
   - detection-engineering
   - detection-as-code

@@ -9,11 +9,22 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - aws-operations
-  - kubernetes-operations
-  - observability-engineering
-  - security-scanning
+skill-dependencies:
+  - name: aws-operations
+    kind: conditional
+    reason: "Supports network-engineer with AWS account, regional service, IAM, and workload-specific operational evidence."
+    when: "The selected provider or affected workload is AWS."
+  - name: kubernetes-operations
+    kind: conditional
+    reason: "Supports network-engineer with Kubernetes workload, namespace, rollout, RBAC, and health contracts."
+    when: "The selected platform or affected workload uses Kubernetes."
+  - name: observability-engineering
+    kind: recommended
+    reason: "Supports network-engineer with service objectives, low-cardinality telemetry, diagnostics, and alert validation."
+  - name: security-scanning
+    kind: conditional
+    reason: "Supports network-engineer with authorized scanner configuration, baselines, result triage, and security quality gates."
+    when: "Authorized automated scanner configuration, existing scan evidence, or quality-gate triage is needed."
 tags:
   - networking
   - dns

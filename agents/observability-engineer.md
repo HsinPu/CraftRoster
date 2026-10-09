@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - observability-engineering
-  - logging-patterns
-  - deployment-operations
-  - security-scanning
+skill-dependencies:
+  - name: observability-engineering
+    kind: recommended
+    reason: "Supports observability-engineer with service objectives, low-cardinality telemetry, diagnostics, and alert validation."
+  - name: logging-patterns
+    kind: recommended
+    reason: "Supports observability-engineer with stable event names, levels, structured fields, and secret-safe diagnostics."
+  - name: deployment-operations
+    kind: conditional
+    reason: "Supports observability-engineer with mode-aware artifact, rollout, health, abort, and recovery evidence."
+    when: "An environment promotion, artifact rollout, or recovery plan is part of the authorized mode."
+  - name: security-scanning
+    kind: conditional
+    reason: "Supports observability-engineer with authorized scanner configuration, baselines, result triage, and security quality gates."
+    when: "Authorized automated scanner configuration, existing scan evidence, or quality-gate triage is needed."
 tags:
   - observability
   - metrics

@@ -9,12 +9,24 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - video-production-workflow
-  - storyboard-creation
-  - audio-transcription
-  - video-edit
-  - data-organization-system
+skill-dependencies:
+  - name: video-production-workflow
+    kind: recommended
+    reason: "Supports script-supervisor with the canonical production artifacts, stage gates, accepted lineage, and sequential fallback."
+  - name: storyboard-creation
+    kind: recommended
+    reason: "Supports script-supervisor with approved scene intent converted into shot IDs, timing, camera, audio, and continuity."
+  - name: audio-transcription
+    kind: conditional
+    reason: "Supports script-supervisor with speech extraction, speaker labeling, and source-linked transcript evidence."
+    when: "Raw audio or video speech needs extraction and no accepted matching transcript exists."
+  - name: video-edit
+    kind: conditional
+    reason: "Supports script-supervisor with existing-footage inspection, local editing, controlled transcodes, and media verification."
+    when: "Existing media needs local inspection, frame extraction, editing, transcoding, or delivery QC."
+  - name: data-organization-system
+    kind: optional
+    reason: "An opt-in extension of script-supervisor provides a durable taxonomy, metadata, lifecycle, retention, and retrieval system."
 tags:
   - script-supervision
   - take-logging

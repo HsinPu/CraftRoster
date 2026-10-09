@@ -9,11 +9,24 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - github-code-review
-  - code-change-workflow
-  - testing-strategy
-  - git-operations
+skill-dependencies:
+  - name: github-code-review
+    kind: conditional
+    reason: "Supports review-feedback-resolver with GitHub PR baselines, checks, comments, and review-round evidence."
+    when: "The feedback being resolved belongs to a GitHub pull request."
+  - name: code-change-workflow
+    kind: recommended
+    reason: "Supports review-feedback-resolver with pre-edit ownership, call-path, compatibility, and verification inspection."
+  - name: testing-strategy
+    kind: recommended
+    reason: "Supports review-feedback-resolver with risk-based test levels, fixtures, boundaries, and meaningful coverage."
+  - name: git-operations
+    kind: conditional
+    reason: "Supports review-feedback-resolver with exact Git scope, current state, history, and safe repository operations."
+    when: "The work uses Git history, a repository diff, or an explicitly authorized Git operation."
+  - name: receiving-code-review
+    kind: recommended
+    reason: "Supports review-feedback-resolver with claim-by-claim review-feedback validation and scoped remediation evidence."
 tags:
   - review-feedback
   - remediation

@@ -9,11 +9,17 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - flutter-development
-  - mobile-app-testing
-  - app-store-release
-  - responsive-design
+skill-dependencies:
+  - name: flutter-development
+    kind: recommended
+    reason: "Supports flutter-expert with Dart widgets, Flutter state, navigation, lifecycle, and platform validation."
+  - name: mobile-app-testing
+    kind: recommended
+    reason: "Supports flutter-expert with device, OS, lifecycle, permission, offline, and native accessibility checks."
+  - name: app-store-release
+    kind: conditional
+    reason: "Supports flutter-expert with store-specific signing boundaries, submission metadata, and rollout readiness."
+    when: "The task includes mobile store submission, staged rollout, or release-readiness requirements."
 tags:
   - flutter
   - dart

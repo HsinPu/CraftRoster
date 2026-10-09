@@ -9,11 +9,27 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - llm-evals
-  - python-data-engineering
-  - python-testing-engineering
-  - testing-strategy
+skill-dependencies:
+  - name: llm-evals
+    kind: conditional
+    reason: "Supports model-validation-specialist with versioned LLM cases, rubrics, graders, baselines, and regression gates."
+    when: "The model under evaluation is an LLM or an LLM-backed application."
+  - name: python-data-engineering
+    kind: conditional
+    reason: "Supports model-validation-specialist with reproducible Python dataframe or dataset transformation with data checks."
+    when: "The analysis or pipeline implements dataset transformations in Python."
+  - name: python-testing-engineering
+    kind: conditional
+    reason: "Supports model-validation-specialist with pytest or unittest tests, fixtures, regression plans, and deterministic evidence."
+    when: "The supplied validation evidence includes Python tests or a requested Python test plan; independent review remains read-only."
+  - name: testing-strategy
+    kind: conditional
+    reason: "Supports model-validation-specialist with risk-based test levels, fixtures, boundaries, and meaningful coverage."
+    when: "The deliverable includes software test design, coverage analysis, or regression proof."
+  - name: product-experimentation
+    kind: conditional
+    reason: "Supports model-validation-specialist with predeclared hypotheses, assignment integrity, guardrails, and causal decision gates."
+    when: "The decision needs a controlled product experiment or its assignment and telemetry evidence."
 tags:
   - model-validation
   - model-risk

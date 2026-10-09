@@ -14,6 +14,11 @@ PROJECT_PLATFORM_OPTION_EXPLICIT=0
 TYPE="skill"
 NAME=""
 CATEGORY=""
+BUNDLE="all"
+BUNDLE_OPTION_EXPLICIT=0
+AGENT_SKILL_POLICY=""
+AGENT_SKILL_INCLUDE=""
+AGENT_SKILL_EXCLUDE=""
 INSTALL_DIR=""
 SOURCE_DIR=""
 DRY_RUN=0
@@ -40,6 +45,10 @@ EXPECTED_SKILL_META_SHA256=""
 EXPECTED_SKILL_META_STATE=""
 SKILL_MOVE_PRESERVED_PATH=""
 EXACT_MOVE_PRESERVED_PATH=""
+COMBINED_PLAN_TRACKING=0
+COMBINED_PLAN_WRITES_STARTED=0
+COMBINED_PLAN_COMPLETED=0
+COMBINED_PLAN_LABELS=()
 
 usage() {
   cat <<'EOF'
@@ -48,6 +57,7 @@ CraftRoster installer
 Usage:
   scripts/install.sh --target <target> [--type skill] [--name <skill> | --category <category>] [--dir path] [--dry-run] [--force]
   scripts/install.sh --target <target> --type agent [--name <role> | --category <category>] [--dir path] [--enable-auto-delegation] [--dry-run] [--force]
+  scripts/install.sh --target <target> --type bundle [--bundle all|id1,id2] [--agent-skill-policy required|recommended] [--dir path] [--dry-run]
 
 Compatibility aliases:
   --agent is an alias for --target; --skill selects a Skill by name.
@@ -57,6 +67,11 @@ Compatibility aliases:
   Omit --name and --category to install every available component of the selected Type.
   Skill installs include required dependencies; conditional and optional dependencies are not installed automatically.
   The source checkout must include scripts/data/install-skill-dependencies.tsv.
+  --bundle selects unified usage categories containing both Skills and Agents; default: all.
+  --agent-skill-policy legacy|required|recommended controls Agent companions (agent default: legacy; bundle default: recommended).
+  --agent-skill-include <CSV> adds Skills associated with selected Agents; --agent-skill-exclude <CSV> omits recommended companions.
+  Required companions, category members, and required Skill dependencies always remain in the plan.
+  Bundle installs require scripts/data/install-bundles.tsv and install-agent-skill-dependencies.tsv.
 
 Skill targets:
   codex, claude, cursor, vscode, copilot, opencode, project
@@ -90,6 +105,36 @@ EOF
 log_info() { printf '==> %s\n' "$1"; }
 log_success() { printf 'OK  %s\n' "$1"; }
 log_error() { printf 'Error: %s\n' "$1" >&2; }
+
+mark_combined_writes_started() {
+  if [[ "$COMBINED_PLAN_TRACKING" -eq 1 ]]; then COMBINED_PLAN_WRITES_STARTED=1; fi
+  return 0
+}
+
+mark_combined_step_completed() {
+  if [[ "$COMBINED_PLAN_TRACKING" -eq 1 ]]; then
+    COMBINED_PLAN_COMPLETED=$((COMBINED_PLAN_COMPLETED + 1))
+  fi
+  return 0
+}
+
+report_combined_install_failure() {
+  local item_index total="${#COMBINED_PLAN_LABELS[@]}"
+  printf 'Installation stopped; completed packages remain installed.\n' >&2
+  printf 'Completed (%s):\n' "$COMBINED_PLAN_COMPLETED" >&2
+  if [[ "$COMBINED_PLAN_COMPLETED" -eq 0 ]]; then printf '  (none)\n' >&2; fi
+  for ((item_index = 0; item_index < COMBINED_PLAN_COMPLETED; item_index++)); do
+    printf '  %s\n' "${COMBINED_PLAN_LABELS[$item_index]}" >&2
+  done
+  printf 'Pending (%s):\n' "$((total - COMBINED_PLAN_COMPLETED))" >&2
+  if [[ "$COMBINED_PLAN_COMPLETED" -eq "$total" ]]; then printf '  (none)\n' >&2; fi
+  for ((item_index = COMBINED_PLAN_COMPLETED; item_index < total; item_index++)); do
+    printf '  %s\n' "${COMBINED_PLAN_LABELS[$item_index]}" >&2
+  done
+  if [[ "$COMBINED_PLAN_COMPLETED" -lt "$total" ]]; then
+    printf 'The failed step remains pending; see the diagnostics above for rollback or manual recovery.\n' >&2
+  fi
+}
 
 require_option_value() {
   local option="$1" value="${2:-}"
@@ -204,6 +249,10 @@ while [[ $# -gt 0 ]]; do
     --type) require_option_value "$1" "${2:-}"; TYPE="$2"; shift 2 ;;
     --name) require_option_value "$1" "${2:-}"; NAME="$2"; shift 2 ;;
     --category) require_option_value "$1" "${2:-}"; CATEGORY="$2"; shift 2 ;;
+    --bundle) require_option_value "$1" "${2:-}"; BUNDLE="$2"; BUNDLE_OPTION_EXPLICIT=1; shift 2 ;;
+    --agent-skill-policy) require_option_value "$1" "${2:-}"; AGENT_SKILL_POLICY="$2"; shift 2 ;;
+    --agent-skill-include) require_option_value "$1" "${2:-}"; AGENT_SKILL_INCLUDE="$2"; shift 2 ;;
+    --agent-skill-exclude) require_option_value "$1" "${2:-}"; AGENT_SKILL_EXCLUDE="$2"; shift 2 ;;
     --skill) require_option_value "$1" "${2:-}"; TYPE="skill"; NAME="$2"; shift 2 ;;
     --agent-profile) require_option_value "$1" "${2:-}"; TYPE="agent"; NAME="$2"; shift 2 ;;
     --branch) require_option_value "$1" "${2:-}"; BRANCH="$2"; shift 2 ;;
@@ -1448,6 +1497,7 @@ install_skill() {
   if [[ "$DRY_RUN" -eq 1 ]]; then printf 'DRY-RUN %s Skill %s -> %s\n' "$INSTALL_ACTION" "$name" "$target"; return; fi
 
   mkdir -p "$destination_root"
+  mark_combined_writes_started
   staged="$(mktemp -d "$destination_root/.craftroster-skill-stage.XXXXXXXX")"
   SKILL_ACTIVE_TARGET="$target"
   SKILL_ACTIVE_STAGE="$staged"
@@ -1703,6 +1753,7 @@ install_agent_profile() {
   if [[ "$DRY_RUN" -eq 1 ]]; then printf 'DRY-RUN %s Agent %s -> %s\n' "$INSTALL_ACTION" "$agent_id" "$target"; return; fi
 
   mkdir -p "$destination_root"
+  mark_combined_writes_started
   now="$(date -u '+%Y-%m-%dT%H:%M:%SZ')"
   installed_at="${EXISTING_INSTALLED_AT:-$now}"
   staged_agent="$(mktemp "$destination_root/.craftroster-agent.XXXXXXXX")"
@@ -2451,6 +2502,7 @@ apply_auto_delegation_plan() {
 
   parent="$(dirname "$AUTO_CONFIG_PATH")"
   mkdir -p "$parent"
+  mark_combined_writes_started
   staged="$(mktemp "$parent/.craftroster-config.XXXXXXXX")"
   AUTO_STAGED="$staged"
   cat "$AUTO_NEW_TEXT" > "$staged"
@@ -2498,7 +2550,46 @@ apply_auto_delegation_plan() {
 validate_test_fault_config
 if [[ -z "$TARGET" ]]; then usage; log_error "Target is required."; exit 1; fi
 if [[ -n "$NAME" && -n "$CATEGORY" ]]; then log_error "Name and Category cannot be used together."; exit 1; fi
-if [[ "$TYPE" != "skill" && "$TYPE" != "agent" ]]; then log_error "Type must be skill or agent."; exit 1; fi
+if [[ "$TYPE" != "skill" && "$TYPE" != "agent" && "$TYPE" != "bundle" ]]; then log_error "Type must be skill, agent, or bundle."; exit 1; fi
+if [[ "$TYPE" == "bundle" && ( -n "$NAME" || -n "$CATEGORY" ) ]]; then
+  log_error "Bundle cannot be combined with Name or Category; use --bundle for usage categories."
+  exit 1
+fi
+if [[ "$BUNDLE_OPTION_EXPLICIT" -eq 1 && "$TYPE" != "bundle" ]]; then
+  log_error "--bundle is only supported with --type bundle."
+  exit 1
+fi
+if [[ -z "$AGENT_SKILL_POLICY" ]]; then
+  AGENT_SKILL_POLICY="legacy"
+  [[ "$TYPE" != "bundle" ]] || AGENT_SKILL_POLICY="recommended"
+fi
+case "$AGENT_SKILL_POLICY" in
+  legacy|required|recommended) ;;
+  *) log_error "Agent Skill policy must be legacy, required, or recommended."; exit 1 ;;
+esac
+if [[ "$TYPE" == "bundle" && "$AGENT_SKILL_POLICY" == "legacy" ]]; then
+  log_error "Bundle installs require the required or recommended Agent Skill policy."
+  exit 1
+fi
+if [[ "$TYPE" == "skill" && ( "$AGENT_SKILL_POLICY" != "legacy" || -n "$AGENT_SKILL_INCLUDE" || -n "$AGENT_SKILL_EXCLUDE" ) ]]; then
+  log_error "Agent Skill policy and custom companions only support Agent or bundle installs."
+  exit 1
+fi
+if [[ "$AGENT_SKILL_POLICY" == "legacy" && ( -n "$AGENT_SKILL_INCLUDE" || -n "$AGENT_SKILL_EXCLUDE" ) ]]; then
+  log_error "Custom Agent companions require the required or recommended policy."
+  exit 1
+fi
+for selection in "$BUNDLE" "$AGENT_SKILL_INCLUDE" "$AGENT_SKILL_EXCLUDE"; do
+  [[ -z "$selection" ]] && continue
+  if [[ ! "$selection" =~ ^[a-z0-9]+(-[a-z0-9]+)*(,[a-z0-9]+(-[a-z0-9]+)*)*$ ]]; then
+    log_error "Bundle and companion selections must use comma-separated lowercase hyphen-case names."
+    exit 1
+  fi
+done
+if [[ "$BUNDLE" != "all" && ",$BUNDLE," == *,all,* ]]; then
+  log_error "Bundle 'all' cannot be combined with specific usage categories."
+  exit 1
+fi
 if [[ ! "$REPO" =~ ^[A-Za-z0-9._-]+/[A-Za-z0-9._-]+$ ]]; then
   log_error "Invalid GitHub repository '$REPO'. Expected owner/name using letters, numbers, dot, underscore, or hyphen."
   exit 1
@@ -2520,8 +2611,8 @@ REQUESTED_PROJECT_PLATFORM="$PROJECT_PLATFORM"
 if [[ "$PROJECT_PLATFORM" == "vscode" ]]; then PROJECT_PLATFORM="copilot"; fi
 REQUESTED_TARGET="$TARGET"
 if [[ "$TARGET" == "vscode" ]]; then TARGET="copilot"; fi
-if [[ "$ENABLE_AUTO_DELEGATION" -eq 1 && "$TYPE" != "agent" ]]; then
-  log_error "--enable-auto-delegation is only supported with --type agent."
+if [[ "$ENABLE_AUTO_DELEGATION" -eq 1 && "$TYPE" != "agent" && "$TYPE" != "bundle" ]]; then
+  log_error "--enable-auto-delegation is only supported with --type agent or bundle."
   exit 1
 fi
 if [[ "$ENABLE_AUTO_DELEGATION" -eq 1 && "$TARGET" != "codex" && "$TARGET" != "opencode" ]]; then
@@ -2541,7 +2632,7 @@ if [[ "$TARGET" == "project" && -n "$INSTALL_DIR" ]]; then
     *) PROJECT_ROOT="${INSTALL_DIR%/}" ;;
   esac
 fi
-if [[ "$TYPE" == "agent" ]]; then
+if [[ "$TYPE" == "agent" || "$TYPE" == "bundle" ]]; then
   configure_agent_profiles
 else
   configure_skill_profiles 1
@@ -2555,7 +2646,7 @@ if [[ "$TARGET" == "project" ]]; then
   fi
   log_info "Project platform: $PROJECT_PLATFORM"
 fi
-if [[ "$TYPE" == "agent" ]]; then
+if [[ "$TYPE" == "agent" || "$TYPE" == "bundle" ]]; then
   for destination in "${AGENT_DESTINATIONS[@]}"; do
     log_info "Destination: $destination"
   done
@@ -2574,11 +2665,18 @@ AUTO_CAPTURED_BACKUP=""
 AUTO_CAPTURED_PATH=""
 AUTO_SIBLING_PATH=""
 cleanup() {
+  local exit_status="$?"
+  trap - EXIT
+  set +e
   restore_captured_config || true
   rollback_active_skill_transaction || true
   [[ -z "$AUTO_STAGED" ]] || rm -f "$AUTO_STAGED"
   [[ -z "$TMP_DIR" ]] || rm -rf "$TMP_DIR"
   [[ -z "$AUTO_PLAN_DIR" ]] || rm -rf "$AUTO_PLAN_DIR"
+  if [[ "$exit_status" -ne 0 && "$COMBINED_PLAN_WRITES_STARTED" -eq 1 ]]; then
+    report_combined_install_failure
+  fi
+  exit "$exit_status"
 }
 trap cleanup EXIT
 if [[ -n "$SOURCE_DIR" ]]; then
@@ -2675,6 +2773,272 @@ skill_source_path() {
   printf '%s' "$candidate"
 }
 
+load_agent_bundle_indexes() {
+  local catalog="$REPO_ROOT/scripts/data/install-category-index.tsv"
+  local relations="$REPO_ROOT/scripts/data/install-agent-skill-dependencies.tsv"
+  local bundles="$REPO_ROOT/scripts/data/install-bundles.tsv"
+  local index_path bytes line row_type row_category row_name row_agent row_skill row_kind row_when row_reason
+  local row_bundle row_title row_description profile_index suffix adapter_root source role skill_path
+  local -a files=("$catalog" "$relations")
+  [[ "$TYPE" != "bundle" ]] || files+=("$bundles")
+  require_command awk
+  require_command od
+  for index_path in "${files[@]}"; do
+    if [[ ! -f "$index_path" || -L "$index_path" ]]; then
+      log_error "配套安裝索引 / Bundled install index is missing or is not a regular file: $index_path. Update the source checkout and matching installer."
+      return 1
+    fi
+    bytes="$(LC_ALL=C od -An -v -tx1 "$index_path")" || return 1
+    if [[ "$bytes" =~ (^|[[:space:]])00([[:space:]]|$) ]]; then
+      log_error "Bundled install index contains a NUL byte: $index_path"
+      return 1
+    fi
+  done
+  LC_ALL=C awk -F '\t' '
+    function fail(message) {
+      print "Error: Bundled install index " message " (" FILENAME ":" FNR ")" > "/dev/stderr"
+      bad = 1
+      exit 1
+    }
+    function name(value) { return value ~ /^[a-z0-9]+(-[a-z0-9]+)*$/ }
+    function text(value) { return value !~ /[[:cntrl:]]/ && value !~ /^[[:space:]]*$/ }
+    { sub(/\r$/, "") }
+    FNR == 1 {
+      table++
+      if (table == 1 && $0 != "type\tcategory\tname") fail("has an invalid catalog header")
+      if (table == 2 && $0 != "agent\tskill\tkind\twhen\treason") fail("has an invalid Agent Skill header")
+      if (table == 3 && $0 != "bundle\ttitle\tdescription\ttype\tname") fail("has an invalid bundle header")
+      next
+    }
+    table == 1 {
+      if (NF != 3 || ($1 != "agent" && $1 != "skill") || !name($2) || !name($3)) fail("contains an invalid catalog row")
+      key = $1 ":" $3
+      if (inventory[key]++) fail("contains a duplicate catalog member " key)
+      next
+    }
+    table == 2 {
+      if (NF != 5 || !name($1) || !inventory["agent:" $1]) fail("contains an invalid or unknown Agent")
+      if ($2 == "-") {
+        if ($3 != "none" || $4 != "-" || $5 != "-" || agent_rows[$1]++) fail("contains an invalid empty Agent relation")
+        empty_agent[$1] = 1
+        next
+      }
+      if (!name($2) || !inventory["skill:" $2] || !text($5) || $5 == "-" ||
+          ($3 != "required" && $3 != "recommended" && $3 != "conditional" && $3 != "optional") ||
+          ($3 == "conditional" && (!text($4) || $4 == "-")) ||
+          ($3 != "conditional" && $4 != "-")) fail("contains an invalid or unknown Agent Skill relation")
+      if (empty_agent[$1]) fail("mixes empty and nonempty Agent relations")
+      if (relations[$1 ":" $2]++) fail("contains a duplicate Agent Skill relation")
+      agent_rows[$1]++
+      next
+    }
+    table == 3 {
+      if (NF != 5 || !name($1) || $1 == "all" || !text($2) || !text($3) ||
+          ($4 != "agent" && $4 != "skill") || !name($5) || !inventory[$4 ":" $5]) fail("contains an invalid or unknown bundle member")
+      if (bundle_rows[$1] && (titles[$1] != $2 || descriptions[$1] != $3)) fail("contains inconsistent bundle titles or descriptions")
+      titles[$1] = $2
+      descriptions[$1] = $3
+      bundle_rows[$1]++
+      if (members[$1 ":" $4 ":" $5]++) fail("contains a duplicate bundle member")
+      bundled[$4 ":" $5] = 1
+    }
+    END {
+      if (bad) exit 1
+      if (table < 2) fail("is incomplete")
+      for (key in inventory) {
+        if (key ~ /^agent:/ && !agent_rows[substr(key, 7)]) fail("does not cover Agent " substr(key, 7))
+        if (table == 3 && !bundled[key]) fail("does not cover component " key)
+      }
+    }
+  ' "${files[@]}" || return 1
+  INSTALL_CATALOG_AGENTS=()
+  INSTALL_CATALOG_SKILLS=()
+  INSTALL_CATALOG_AGENT_SET=$'\n'
+  INSTALL_CATALOG_SKILL_SET=$'\n'
+  while IFS= read -r line || [[ -n "$line" ]]; do
+    line="${line%$'\r'}"
+    [[ "$line" != $'type\tcategory\tname' ]] || continue
+    IFS=$'\t' read -r row_type row_category row_name <<< "$line"
+    if [[ "$row_type" == "agent" ]]; then
+      INSTALL_CATALOG_AGENTS+=("$row_name")
+      INSTALL_CATALOG_AGENT_SET+="$row_name"$'\n'
+    else
+      INSTALL_CATALOG_SKILLS+=("$row_name")
+      INSTALL_CATALOG_SKILL_SET+="$row_name"$'\n'
+      skill_source_path "$row_name" >/dev/null || return 1
+    fi
+  done < "$catalog"
+  # Check source inventories too: an omitted generated row must not hide a package.
+  for skill_path in "$REPO_ROOT/skills"/*; do
+    [[ -f "$skill_path/SKILL.md" ]] || continue
+    row_name="${skill_path##*/}"
+    case "$INSTALL_CATALOG_SKILL_SET" in
+      *$'\n'"$row_name"$'\n'*) ;;
+      *) log_error "Skill source is missing from the install catalog: $row_name"; return 1 ;;
+    esac
+  done
+  for ((profile_index = 0; profile_index < ${#AGENT_PLATFORMS[@]}; profile_index++)); do
+    suffix="${AGENT_SUFFIXES[$profile_index]}"
+    adapter_root="$REPO_ROOT/adapters/${AGENT_PLATFORMS[$profile_index]}"
+    for role in "${INSTALL_CATALOG_AGENTS[@]}"; do
+      if [[ ! -f "$adapter_root/$role$suffix" || -L "$adapter_root/$role$suffix" ]]; then
+        log_error "Agent source does not match the install catalog: $role (${AGENT_PLATFORMS[$profile_index]})"
+        return 1
+      fi
+    done
+    for source in "$adapter_root"/*"$suffix"; do
+      [[ -f "$source" ]] || continue
+      role="${source##*/}"
+      role="${role%"$suffix"}"
+      case "$INSTALL_CATALOG_AGENT_SET" in
+        *$'\n'"$role"$'\n'*) ;;
+        *) log_error "Agent adapter is missing from the install catalog: $role"; return 1 ;;
+      esac
+    done
+  done
+  AGENT_DEP_ROLES=()
+  AGENT_DEP_SKILLS=()
+  AGENT_DEP_KINDS=()
+  AGENT_DEP_WHENS=()
+  AGENT_DEP_REASONS=()
+  while IFS= read -r line || [[ -n "$line" ]]; do
+    line="${line%$'\r'}"
+    [[ "$line" != $'agent\tskill\tkind\twhen\treason' ]] || continue
+    IFS=$'\t' read -r row_agent row_skill row_kind row_when row_reason <<< "$line"
+    [[ "$row_kind" != "none" ]] || continue
+    AGENT_DEP_ROLES+=("$row_agent")
+    AGENT_DEP_SKILLS+=("$row_skill")
+    AGENT_DEP_KINDS+=("$row_kind")
+    AGENT_DEP_WHENS+=("$row_when")
+    AGENT_DEP_REASONS+=("$row_reason")
+  done < "$relations"
+  BUNDLE_AGENT_ROOTS=()
+  BUNDLE_SKILL_ROOTS=()
+  if [[ "$TYPE" == "bundle" ]]; then
+    BUNDLE_IDS=()
+    BUNDLE_TITLES=()
+    BUNDLE_DESCRIPTIONS=()
+    BUNDLE_MEMBER_TYPES=()
+    BUNDLE_MEMBER_NAMES=()
+    BUNDLE_MEMBER_IDS=()
+    local bundle_seen=$'\n' agent_seen=$'\n' skill_seen=$'\n'
+    local -a requested=()
+    IFS=',' read -r -a requested <<< "$BUNDLE"
+    while IFS= read -r line || [[ -n "$line" ]]; do
+      line="${line%$'\r'}"
+      [[ "$line" != $'bundle\ttitle\tdescription\ttype\tname' ]] || continue
+      IFS=$'\t' read -r row_bundle row_title row_description row_type row_name <<< "$line"
+      case "$bundle_seen" in
+        *$'\n'"$row_bundle"$'\n'*) ;;
+        *) BUNDLE_IDS+=("$row_bundle"); BUNDLE_TITLES+=("$row_title"); BUNDLE_DESCRIPTIONS+=("$row_description"); bundle_seen+="$row_bundle"$'\n' ;;
+      esac
+      if [[ "$BUNDLE" != "all" && ",$BUNDLE," != *,"$row_bundle",* ]]; then continue; fi
+      BUNDLE_MEMBER_IDS+=("$row_bundle")
+      BUNDLE_MEMBER_TYPES+=("$row_type")
+      BUNDLE_MEMBER_NAMES+=("$row_name")
+      if [[ "$row_type" == "agent" ]]; then
+        case "$agent_seen" in
+          *$'\n'"$row_name"$'\n'*) ;;
+          *) BUNDLE_AGENT_ROOTS+=("$row_name"); agent_seen+="$row_name"$'\n' ;;
+        esac
+      else
+        case "$skill_seen" in
+          *$'\n'"$row_name"$'\n'*) ;;
+          *) BUNDLE_SKILL_ROOTS+=("$row_name"); skill_seen+="$row_name"$'\n' ;;
+        esac
+      fi
+    done < "$bundles"
+    for row_bundle in "${requested[@]}"; do
+      [[ "$row_bundle" != "all" ]] || continue
+      case "$bundle_seen" in
+        *$'\n'"$row_bundle"$'\n'*) ;;
+        *) log_error "Unknown usage category / bundle: $row_bundle"; return 1 ;;
+      esac
+    done
+    if [[ "$BUNDLE" == "all" ]]; then
+      BUNDLE_AGENT_ROOTS=("${INSTALL_CATALOG_AGENTS[@]}")
+      BUNDLE_SKILL_ROOTS=("${INSTALL_CATALOG_SKILLS[@]}")
+      log_info "Selected all ${#BUNDLE_AGENT_ROOTS[@]} Agent(s) and ${#BUNDLE_SKILL_ROOTS[@]} Skill(s)."
+    else
+      for ((profile_index = 0; profile_index < ${#BUNDLE_IDS[@]}; profile_index++)); do
+        row_bundle="${BUNDLE_IDS[$profile_index]}"
+        [[ ",$BUNDLE," == *,"$row_bundle",* ]] || continue
+        log_info "Usage category: ${BUNDLE_TITLES[$profile_index]} [$row_bundle] — ${BUNDLE_DESCRIPTIONS[$profile_index]}"
+      done
+      log_info "Category roots: ${#BUNDLE_AGENT_ROOTS[@]} unique Agent(s), ${#BUNDLE_SKILL_ROOTS[@]} unique Skill(s)."
+    fi
+  fi
+}
+
+add_agent_skill_root() {
+  local skill_name="$1" reason="$2" source
+  log_info "Skill reason: $skill_name <- $reason"
+  case "$AGENT_SKILL_ROOT_SET" in *$'\n'"$skill_name"$'\n'*) return ;; esac
+  source="$(skill_source_path "$skill_name")" || return 1
+  AGENT_SKILL_ROOT_SET+="$skill_name"$'\n'
+  AGENT_SKILL_ROOT_SOURCES+=("$source")
+}
+
+add_selected_agent_companions() {
+  local role row_index skill_name kind requested item_index selected_set=$'\n' recommended_set=$'\n' relation_set=$'\n'
+  local included_set=$'\n' excluded_set=$'\n'
+  local -a included=() excluded=()
+  [[ -z "$AGENT_SKILL_INCLUDE" ]] || IFS=',' read -r -a included <<< "$AGENT_SKILL_INCLUDE"
+  [[ -z "$AGENT_SKILL_EXCLUDE" ]] || IFS=',' read -r -a excluded <<< "$AGENT_SKILL_EXCLUDE"
+  for ((item_index = 0; item_index < ${#AGENT_JOB_ROLES[@]}; item_index++)); do
+    role="${AGENT_JOB_ROLES[$item_index]}"
+    case "$selected_set" in *$'\n'"$role"$'\n'*) ;; *) selected_set+="$role"$'\n' ;; esac
+  done
+  for ((row_index = 0; row_index < ${#AGENT_DEP_ROLES[@]}; row_index++)); do
+    role="${AGENT_DEP_ROLES[$row_index]}"
+    case "$selected_set" in *$'\n'"$role"$'\n'*) ;; *) continue ;; esac
+    skill_name="${AGENT_DEP_SKILLS[$row_index]}"
+    relation_set+="$skill_name"$'\n'
+    [[ "${AGENT_DEP_KINDS[$row_index]}" != "recommended" ]] || recommended_set+="$skill_name"$'\n'
+  done
+  for ((item_index = 0; item_index < ${#included[@]}; item_index++)); do
+    requested="${included[$item_index]}"
+    case "$relation_set" in
+      *$'\n'"$requested"$'\n'*) included_set+="$requested"$'\n' ;;
+      *) log_error "Included Skill is not associated with a selected Agent: $requested"; return 1 ;;
+    esac
+  done
+  for ((item_index = 0; item_index < ${#excluded[@]}; item_index++)); do
+    requested="${excluded[$item_index]}"
+    case "$recommended_set" in
+      *$'\n'"$requested"$'\n'*) excluded_set+="$requested"$'\n' ;;
+      *) log_error "Only recommended companions of selected Agents can be excluded: $requested"; return 1 ;;
+    esac
+    case "$included_set" in
+      *$'\n'"$requested"$'\n'*) log_error "A Skill cannot be both included and excluded: $requested"; return 1 ;;
+    esac
+  done
+  log_info "Agent Skill policy: $AGENT_SKILL_POLICY"
+  for ((row_index = 0; row_index < ${#AGENT_DEP_ROLES[@]}; row_index++)); do
+    role="${AGENT_DEP_ROLES[$row_index]}"
+    case "$selected_set" in *$'\n'"$role"$'\n'*) ;; *) continue ;; esac
+    skill_name="${AGENT_DEP_SKILLS[$row_index]}"
+    kind="${AGENT_DEP_KINDS[$row_index]}"
+    if [[ "$kind" == "required" ]]; then
+      add_agent_skill_root "$skill_name" "Agent $role (required): ${AGENT_DEP_REASONS[$row_index]}" || return 1
+    elif [[ ",$AGENT_SKILL_INCLUDE," == *,"$skill_name",* ]]; then
+      add_agent_skill_root "$skill_name" "Agent $role (explicit $kind): ${AGENT_DEP_REASONS[$row_index]}" || return 1
+    elif [[ "$kind" == "recommended" && "$AGENT_SKILL_POLICY" == "recommended" && ",$AGENT_SKILL_EXCLUDE," != *,"$skill_name",* ]]; then
+      add_agent_skill_root "$skill_name" "Agent $role (recommended): ${AGENT_DEP_REASONS[$row_index]}" || return 1
+    elif [[ "$kind" == "conditional" ]]; then
+      log_info "Conditional Agent companion not auto-installed: $role -> $skill_name (${AGENT_DEP_WHENS[$row_index]})"
+    else
+      log_info "Agent companion not auto-installed: $role -> $skill_name ($kind)"
+    fi
+  done
+  for ((item_index = 0; item_index < ${#excluded[@]}; item_index++)); do
+    requested="${excluded[$item_index]}"
+    case "$AGENT_SKILL_ROOT_SET" in
+      *$'\n'"$requested"$'\n'*) log_info "Excluded recommended reason retained as a category member or required companion: $requested" ;;
+    esac
+  done
+}
+
 load_skill_dependency_rows() {
   local index_path="$REPO_ROOT/scripts/data/install-skill-dependencies.tsv"
   local line line_number=0 row_skill row_dependency row_kind row_when remainder key component_name index_bytes
@@ -2751,6 +3115,7 @@ visit_required_skill() {
   DEPENDENCY_VISITING+="$skill_name"$'\n'
   for ((row_index = 0; row_index < ${#DEPENDENCY_SKILLS[@]}; row_index++)); do
     if [[ "${DEPENDENCY_SKILLS[$row_index]}" == "$skill_name" && "${DEPENDENCY_KINDS[$row_index]}" == "required" ]]; then
+      log_info "Required Skill dependency: $skill_name -> ${DEPENDENCY_NAMES[$row_index]}"
       visit_required_skill "${DEPENDENCY_NAMES[$row_index]}" "$chain$skill_name -> " || return 1
     fi
   done
@@ -2787,7 +3152,7 @@ expand_required_skill_sources() {
 }
 
 build_skill_jobs() {
-  local src skill_name profile_index destination
+  local src skill_name profile_index destination job_key seen_jobs=$'\n'
   SKILL_JOB_SOURCES=()
   SKILL_JOB_NAMES=()
   SKILL_JOB_DESTINATIONS=()
@@ -2796,6 +3161,9 @@ build_skill_jobs() {
     skill_name="$(basename "$src")"
     for ((profile_index = 0; profile_index < ${#SKILL_DESTINATIONS[@]}; profile_index++)); do
       destination="$(resolve_skill_profile_destination "${SKILL_DESTINATIONS[$profile_index]}" "$skill_name" "${SKILL_CODEX_LEGACY_CHECKS[$profile_index]}" "$src/SKILL.md")" || return 1
+      job_key="$skill_name:$destination"
+      case "$seen_jobs" in *$'\n'"$job_key"$'\n'*) continue ;; esac
+      seen_jobs+="$job_key"$'\n'
       SKILL_JOB_SOURCES+=("$src")
       SKILL_JOB_NAMES+=("$skill_name")
       SKILL_JOB_DESTINATIONS+=("$destination")
@@ -2840,6 +3208,7 @@ install_skill_jobs() {
   for ((job_index = 0; job_index < ${#SKILL_JOB_SOURCES[@]}; job_index++)); do
     profile_index="${SKILL_JOB_PROFILE_INDEXES[$job_index]}"
     install_skill "${SKILL_JOB_SOURCES[$job_index]}" "${SKILL_JOB_DESTINATIONS[$job_index]}" "${SKILL_OWNERSHIP_TARGETS[$profile_index]}" "${SKILL_LEGACY_TARGETS[$profile_index]}"
+    mark_combined_step_completed
   done
 }
 
@@ -2848,7 +3217,12 @@ if [[ -n "$CATEGORY" ]]; then
   log_info "Selected ${#CATEGORY_NAMES[@]} $TYPE component(s) from category '$CATEGORY'"
 fi
 
-if [[ "$TYPE" == "agent" ]]; then
+if [[ "$TYPE" == "agent" || "$TYPE" == "bundle" ]]; then
+  if [[ "$AGENT_SKILL_POLICY" != "legacy" ]]; then
+    load_agent_bundle_indexes
+  else
+    log_info "Agent Skill policy: legacy (role companion requirements are not resolved)."
+  fi
   if [[ "$DRY_RUN" -eq 0 ]]; then
     require_command mktemp
     require_command cksum
@@ -2860,6 +3234,12 @@ if [[ "$TYPE" == "agent" ]]; then
   AGENT_JOB_OWNERSHIP_TARGETS=()
   AGENT_JOB_SUFFIXES=()
   AGENT_JOB_LEGACY_TARGETS=()
+  if [[ "$TYPE" == "bundle" && "$BUNDLE" != "all" ]]; then
+    for ((member_index = 0; member_index < ${#BUNDLE_MEMBER_IDS[@]}; member_index++)); do
+      [[ "${BUNDLE_MEMBER_TYPES[$member_index]}" == "agent" ]] || continue
+      log_info "Agent reason: ${BUNDLE_MEMBER_NAMES[$member_index]} <- usage category ${BUNDLE_MEMBER_IDS[$member_index]} (direct member)"
+    done
+  fi
   for ((profile_index = 0; profile_index < ${#AGENT_PLATFORMS[@]}; profile_index++)); do
     PLATFORM="${AGENT_PLATFORMS[$profile_index]}"
     SUFFIX="${AGENT_SUFFIXES[$profile_index]}"
@@ -2868,7 +3248,24 @@ if [[ "$TYPE" == "agent" ]]; then
     LEGACY_TARGETS="${AGENT_LEGACY_TARGETS[$profile_index]}"
     ADAPTER_ROOT="$REPO_ROOT/adapters/$PLATFORM"
     PROFILE_SOURCE_COUNT=0
-    if [[ -n "$NAME" ]]; then
+    if [[ "$TYPE" == "bundle" ]]; then
+      for ((bundle_role_index = 0; bundle_role_index < ${#BUNDLE_AGENT_ROOTS[@]}; bundle_role_index++)); do
+        ROLE="${BUNDLE_AGENT_ROOTS[$bundle_role_index]}"
+        SOURCE="$ADAPTER_ROOT/$ROLE$SUFFIX"
+        if [[ ! -f "$SOURCE" ]]; then
+          log_error "Usage categories do not match the available $PLATFORM Agent inventory: $ROLE"
+          exit 1
+        fi
+        AGENT_JOB_SOURCES+=("$SOURCE")
+        AGENT_JOB_ROLES+=("$ROLE")
+        AGENT_JOB_PLATFORMS+=("$PLATFORM")
+        AGENT_JOB_DESTINATIONS+=("$DESTINATION")
+        AGENT_JOB_OWNERSHIP_TARGETS+=("$OWNERSHIP_TARGET")
+        AGENT_JOB_SUFFIXES+=("$SUFFIX")
+        AGENT_JOB_LEGACY_TARGETS+=("$LEGACY_TARGETS")
+        PROFILE_SOURCE_COUNT=$((PROFILE_SOURCE_COUNT + 1))
+      done
+    elif [[ -n "$NAME" ]]; then
       SOURCE="$ADAPTER_ROOT/$NAME$SUFFIX"
       if [[ ! -f "$SOURCE" ]]; then log_error "Agent adapter not found in archive: $NAME ($PLATFORM)"; exit 1; fi
       ROLE="$NAME"
@@ -2911,7 +3308,7 @@ if [[ "$TYPE" == "agent" ]]; then
         PROFILE_SOURCE_COUNT=$((PROFILE_SOURCE_COUNT + 1))
       done
     fi
-    if [[ "$PROFILE_SOURCE_COUNT" -eq 0 ]]; then log_error "No Agent adapters were found for $PLATFORM."; exit 1; fi
+    if [[ "$PROFILE_SOURCE_COUNT" -eq 0 && "$TYPE" != "bundle" ]]; then log_error "No Agent adapters were found for $PLATFORM."; exit 1; fi
   done
   for ((job_index = 0; job_index < ${#AGENT_JOB_SOURCES[@]}; job_index++)); do
     preflight_agent_profile \
@@ -2930,13 +3327,29 @@ if [[ "$TYPE" == "agent" ]]; then
   COMPANION_OWNERSHIP_TARGETS=()
   COMPANION_LEGACY_TARGETS=()
   COMPANION_SOURCE=""
-  if [[ ( -z "$NAME" && -z "$CATEGORY" ) || "$ENABLE_AUTO_DELEGATION" -eq 1 ]]; then
+  AGENT_SKILL_ROOT_SOURCES=()
+  AGENT_SKILL_ROOT_SET=$'\n'
+  if [[ "$TYPE" == "bundle" ]]; then
+    if [[ "$BUNDLE" == "all" ]]; then
+      for ((bundle_skill_index = 0; bundle_skill_index < ${#BUNDLE_SKILL_ROOTS[@]}; bundle_skill_index++)); do
+        add_agent_skill_root "${BUNDLE_SKILL_ROOTS[$bundle_skill_index]}" "all catalog Skills"
+      done
+    else
+      for ((member_index = 0; member_index < ${#BUNDLE_MEMBER_IDS[@]}; member_index++)); do
+        [[ "${BUNDLE_MEMBER_TYPES[$member_index]}" == "skill" ]] || continue
+        add_agent_skill_root "${BUNDLE_MEMBER_NAMES[$member_index]}" "usage category ${BUNDLE_MEMBER_IDS[$member_index]} (direct member)"
+      done
+    fi
+  fi
+  if [[ "$AGENT_SKILL_POLICY" != "legacy" ]]; then add_selected_agent_companions; fi
+  if [[ ( "$TYPE" == "agent" && -z "$NAME" && -z "$CATEGORY" ) || ( "$TYPE" == "bundle" && "$BUNDLE" == "all" ) || "$ENABLE_AUTO_DELEGATION" -eq 1 ]]; then
+    add_agent_skill_root "subagent-architecture" "full Agent install or explicit proactive delegation"
+  fi
+  if [[ "${#AGENT_SKILL_ROOT_SOURCES[@]}" -gt 0 ]]; then
     INSTALL_COMPANION_SKILL=1
-    COMPANION_SOURCE="$REPO_ROOT/skills/subagent-architecture"
-    if [[ ! -f "$COMPANION_SOURCE/SKILL.md" ]]; then log_error "Companion Skill not found in archive: subagent-architecture"; exit 1; fi
-    configure_skill_profiles 0
+    if [[ "$TYPE" == "bundle" ]]; then configure_skill_profiles 1; else configure_skill_profiles 0; fi
     load_skill_dependency_rows
-    expand_required_skill_sources "$COMPANION_SOURCE"
+    expand_required_skill_sources "${AGENT_SKILL_ROOT_SOURCES[@]}"
     build_skill_jobs "${EXPANDED_SKILL_SOURCES[@]}"
     preflight_skill_jobs
     for ((job_index = 0; job_index < ${#SKILL_JOB_SOURCES[@]}; job_index++)); do
@@ -2962,6 +3375,34 @@ if [[ "$TYPE" == "agent" ]]; then
     fi
   fi
 
+  logical_agent_set=$'\n'
+  logical_agent_count=0
+  for ((job_index = 0; job_index < ${#AGENT_JOB_ROLES[@]}; job_index++)); do
+    ROLE="${AGENT_JOB_ROLES[$job_index]}"
+    case "$logical_agent_set" in *$'\n'"$ROLE"$'\n'*) ;; *) logical_agent_set+="$ROLE"$'\n'; logical_agent_count=$((logical_agent_count + 1)) ;; esac
+  done
+  logical_skill_count=0
+  skill_file_count=0
+  if [[ "$INSTALL_COMPANION_SKILL" -eq 1 ]]; then
+    logical_skill_count="${#EXPANDED_SKILL_SOURCES[@]}"
+    skill_file_count="${#SKILL_JOB_SOURCES[@]}"
+  fi
+  log_info "Complete preflight passed: $logical_agent_count unique Agent(s), $logical_skill_count unique Skill(s); ${#AGENT_JOB_SOURCES[@]} Agent file destination(s), $skill_file_count Skill package destination(s)."
+  if [[ "$DRY_RUN" -eq 0 ]]; then
+    COMBINED_PLAN_LABELS=()
+    if [[ "$INSTALL_COMPANION_SKILL" -eq 1 ]]; then
+      for ((job_index = 0; job_index < ${#SKILL_JOB_SOURCES[@]}; job_index++)); do
+        COMBINED_PLAN_LABELS+=("Skill ${SKILL_JOB_NAMES[$job_index]} -> ${SKILL_JOB_DESTINATIONS[$job_index]%/}/${SKILL_JOB_NAMES[$job_index]}")
+      done
+    fi
+    for ((job_index = 0; job_index < ${#AGENT_JOB_SOURCES[@]}; job_index++)); do
+      COMBINED_PLAN_LABELS+=("Agent ${AGENT_JOB_ROLES[$job_index]} (${AGENT_JOB_PLATFORMS[$job_index]}) -> ${AGENT_JOB_DESTINATIONS[$job_index]%/}/${AGENT_JOB_ROLES[$job_index]}${AGENT_JOB_SUFFIXES[$job_index]}")
+    done
+    if [[ "$ENABLE_AUTO_DELEGATION" -eq 1 ]]; then
+      COMBINED_PLAN_LABELS+=("$AUTO_RUNTIME auto-delegation -> $AUTO_CONFIG_PATH")
+    fi
+    COMBINED_PLAN_TRACKING=1
+  fi
   if [[ "$INSTALL_COMPANION_SKILL" -eq 1 ]]; then
     install_skill_jobs
   fi
@@ -2976,8 +3417,12 @@ if [[ "$TYPE" == "agent" ]]; then
       "${AGENT_JOB_OWNERSHIP_TARGETS[$job_index]}" \
       "${AGENT_JOB_SUFFIXES[$job_index]}" \
       "${AGENT_JOB_LEGACY_TARGETS[$job_index]}"
+    mark_combined_step_completed
   done
-  if [[ "$ENABLE_AUTO_DELEGATION" -eq 1 ]]; then apply_auto_delegation_plan; fi
+  if [[ "$ENABLE_AUTO_DELEGATION" -eq 1 ]]; then
+    apply_auto_delegation_plan
+    mark_combined_step_completed
+  fi
 else
   SOURCES=()
   SKILLS_ROOT="$REPO_ROOT/skills"

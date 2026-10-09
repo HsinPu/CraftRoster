@@ -9,11 +9,24 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - python-backend-development
-  - python-testing-engineering
-  - database-design
-  - auth-integration
+skill-dependencies:
+  - name: python-backend-development
+    kind: recommended
+    reason: "Supports django-pro with Python HTTP, framework, ORM, migration, and worker boundaries."
+  - name: python-testing-engineering
+    kind: recommended
+    reason: "Supports django-pro with pytest or unittest tests, fixtures, regression plans, and deterministic evidence."
+  - name: database-design
+    kind: conditional
+    reason: "Supports django-pro with logical schemas, integrity constraints, access patterns, and migration design."
+    when: "Schema, persistent data integrity, storage ownership, or migration design is in scope."
+  - name: auth-integration
+    kind: conditional
+    reason: "Supports django-pro with session, OAuth or OIDC, callback, identity, and authorization boundaries."
+    when: "Authentication, session, identity federation, or authorization integration is in scope."
+  - name: python-development
+    kind: recommended
+    reason: "Supports django-pro with the mandatory Python implementation owner and specialist-routing baseline."
 tags:
   - django
   - python

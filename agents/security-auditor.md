@@ -9,11 +9,22 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - security-code-review
-  - vulnerability-variant-analysis
-  - security-scanning
-  - auth-integration
+skill-dependencies:
+  - name: security-code-review
+    kind: recommended
+    reason: "Supports security-auditor with exploit-path, trust-boundary, vulnerability-confidence, and remediation evidence."
+  - name: vulnerability-variant-analysis
+    kind: conditional
+    reason: "Supports security-auditor with authorized known-vulnerability seeds, family predicates, variant coverage, and regressions."
+    when: "A credible authorized vulnerability seed calls for related-instance or fix-family analysis."
+  - name: security-scanning
+    kind: conditional
+    reason: "Supports security-auditor with authorized scanner configuration, baselines, result triage, and security quality gates."
+    when: "Authorized scan results or a permitted scanner are needed as evidence; findings remain independently validated."
+  - name: auth-integration
+    kind: conditional
+    reason: "Supports security-auditor with session, OAuth or OIDC, callback, identity, and authorization boundaries."
+    when: "Authentication, session, identity federation, or authorization integration is in scope."
 tags:
   - security
   - audit

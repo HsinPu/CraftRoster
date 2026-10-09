@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - web-research-ops
-  - markdown-writer
-  - summary-ops
-  - api-doc-comments
+skill-dependencies:
+  - name: web-research-ops
+    kind: recommended
+    reason: "Supports reference-builder with current primary sources, dates, contradictions, and attributable evidence."
+  - name: markdown-writer
+    kind: recommended
+    reason: "Supports reference-builder with clear GFM structure, source-preserving documentation, and links."
+  - name: summary-ops
+    kind: conditional
+    reason: "Supports reference-builder with faithful condensation of supplied source text with preserved uncertainty and attribution."
+    when: "Supplied text, records, or an accepted transcript needs faithful condensation before analysis or writing."
+  - name: api-doc-comments
+    kind: conditional
+    reason: "Supports reference-builder with verified code-level docstrings and exported API comments."
+    when: "The requested artifact includes code-level API comments or docstrings."
 tags:
   - reference
   - documentation

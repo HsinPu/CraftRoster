@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - mobile-app-testing
-  - react-native-expo
-  - auth-integration
-  - security-code-review
+skill-dependencies:
+  - name: mobile-app-testing
+    kind: recommended
+    reason: "Supports mobile-security-coder with device, OS, lifecycle, permission, offline, and native accessibility checks."
+  - name: react-native-expo
+    kind: conditional
+    reason: "Supports mobile-security-coder with React Native or Expo state, navigation, native integration, and EAS contracts."
+    when: "The affected mobile application uses React Native or Expo."
+  - name: auth-integration
+    kind: conditional
+    reason: "Supports mobile-security-coder with session, OAuth or OIDC, callback, identity, and authorization boundaries."
+    when: "Authentication, session, identity federation, or authorization integration is in scope."
+  - name: security-code-review
+    kind: recommended
+    reason: "Supports mobile-security-coder with exploit-path, trust-boundary, vulnerability-confidence, and remediation evidence."
 tags:
   - mobile-security
   - ios

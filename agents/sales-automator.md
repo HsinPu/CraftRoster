@@ -9,11 +9,19 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - workspace-google-ops
-  - data-organization-system
-  - ux-writing
-  - web-research-ops
+skill-dependencies:
+  - name: workspace-google-ops
+    kind: conditional
+    reason: "Supports sales-automator with explicitly authorized Google Workspace CLI inputs and account-scoped operations."
+    when: "The approved scope explicitly uses Google Workspace CLI automation and authorized account data."
+  - name: data-organization-system
+    kind: conditional
+    reason: "Supports sales-automator with a durable taxonomy, metadata, lifecycle, retention, and retrieval system."
+    when: "The scope designs a reusable taxonomy, metadata, retention, or retrieval system beyond one report."
+  - name: web-research-ops
+    kind: conditional
+    reason: "Supports sales-automator with current primary sources, dates, contradictions, and attributable evidence."
+    when: "Current external facts, primary requirements, or source contradictions need verification."
 tags:
   - sales
   - automation

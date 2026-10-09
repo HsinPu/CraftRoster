@@ -9,11 +9,22 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - javascript-development
-  - frontend-testing
-  - browser-compatibility-testing
-  - security-scanning
+skill-dependencies:
+  - name: javascript-development
+    kind: recommended
+    reason: "Supports javascript-pro with browser or Node JavaScript modules, async flow, cancellation, and errors."
+  - name: frontend-testing
+    kind: conditional
+    reason: "Supports javascript-pro with React or TypeScript component and hook behavior tests."
+    when: "The task covers React or TypeScript component or hook tests."
+  - name: browser-compatibility-testing
+    kind: conditional
+    reason: "Supports javascript-pro with a supported browser and viewport matrix with compatibility evidence."
+    when: "Supported browser differences or a cross-browser release matrix are in scope."
+  - name: security-scanning
+    kind: conditional
+    reason: "Supports javascript-pro with authorized scanner configuration, baselines, result triage, and security quality gates."
+    when: "Authorized automated scanner configuration, existing scan evidence, or quality-gate triage is needed."
 tags:
   - javascript
   - nodejs

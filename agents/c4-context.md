@@ -9,10 +9,14 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - project-architecture-review
-  - drawio-skill
-  - specification-authoring
+skill-dependencies:
+  - name: project-architecture-review
+    kind: recommended
+    reason: "Supports c4-context with existing repository boundaries, dependency evidence, and incremental architecture decisions."
+  - name: drawio-skill
+    kind: conditional
+    reason: "Supports c4-context with editable draw.io diagrams and verified export artifacts."
+    when: "The requested diagram deliverable must be editable in draw.io or exported from draw.io."
 tags:
   - c4
   - system-context

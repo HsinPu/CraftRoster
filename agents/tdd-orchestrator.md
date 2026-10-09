@@ -9,11 +9,23 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - testing-strategy
-  - incremental-implementation
-  - code-change-workflow
-  - code-refactoring
+skill-dependencies:
+  - name: testing-strategy
+    kind: recommended
+    reason: "Supports tdd-orchestrator with risk-based test levels, fixtures, boundaries, and meaningful coverage."
+  - name: incremental-implementation
+    kind: conditional
+    reason: "Supports tdd-orchestrator with dependency-aware verified slices and reversible integration checkpoints."
+    when: "The change spans risky boundaries or needs independently verified reversible slices."
+  - name: code-change-workflow
+    kind: recommended
+    reason: "Supports tdd-orchestrator with pre-edit ownership, call-path, compatibility, and verification inspection."
+  - name: code-refactoring
+    kind: recommended
+    reason: "Supports tdd-orchestrator with small structural changes that preserve characterized behavior."
+  - name: test-driven-development
+    kind: recommended
+    reason: "Supports tdd-orchestrator with the RED-GREEN-REFACTOR cycle required by the TDD role contract."
 tags:
   - tdd
   - testing

@@ -9,10 +9,18 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - project-architecture-review
-  - drawio-skill
-  - api-contract-design
+skill-dependencies:
+  - name: project-architecture-review
+    kind: recommended
+    reason: "Supports c4-component with existing repository boundaries, dependency evidence, and incremental architecture decisions."
+  - name: drawio-skill
+    kind: conditional
+    reason: "Supports c4-component with editable draw.io diagrams and verified export artifacts."
+    when: "The requested diagram deliverable must be editable in draw.io or exported from draw.io."
+  - name: api-contract-design
+    kind: conditional
+    reason: "Supports c4-component with versioned requests, responses, errors, pagination, and compatibility contracts."
+    when: "The work defines or changes consumer-visible API, event, or webhook contracts."
 tags:
   - c4
   - components

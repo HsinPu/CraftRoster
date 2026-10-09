@@ -9,12 +9,25 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - video-production-workflow
-  - audio-transcription
-  - video-edit
-  - terminal-ops
-  - data-organization-system
+skill-dependencies:
+  - name: video-production-workflow
+    kind: recommended
+    reason: "Supports production-sound-mixer with the canonical production artifacts, stage gates, accepted lineage, and sequential fallback."
+  - name: audio-transcription
+    kind: conditional
+    reason: "Supports production-sound-mixer with speech extraction, speaker labeling, and source-linked transcript evidence."
+    when: "Raw audio or video speech needs extraction and no accepted matching transcript exists."
+  - name: video-edit
+    kind: conditional
+    reason: "Supports production-sound-mixer with existing-footage inspection, local editing, controlled transcodes, and media verification."
+    when: "Existing media needs local inspection, frame extraction, editing, transcoding, or delivery QC."
+  - name: terminal-ops
+    kind: recommended
+    reason: "Supports production-sound-mixer with exact commands, repository state, scoped execution, and reproducible verification."
+  - name: data-organization-system
+    kind: conditional
+    reason: "Supports production-sound-mixer with a durable taxonomy, metadata, lifecycle, retention, and retrieval system."
+    when: "The scope designs a reusable taxonomy, metadata, retention, or retrieval system beyond one report."
 tags:
   - production-sound
   - sync-audio

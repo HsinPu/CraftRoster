@@ -45,6 +45,9 @@ jobs:
       - name: Test install category index generation
         run: npm run test:install-categories
 
+      - name: Test Agent Skill relationships and unified install bundles
+        run: npm run test:install-bundles
+
       - name: Validate Skill evals
         run: npm run validate:skill-evals
 

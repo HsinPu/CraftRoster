@@ -9,10 +9,18 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - api-contract-design
-  - database-design
-  - auth-integration
+skill-dependencies:
+  - name: api-contract-design
+    kind: recommended
+    reason: "Supports graphql-architect with versioned requests, responses, errors, pagination, and compatibility contracts."
+  - name: database-design
+    kind: conditional
+    reason: "Supports graphql-architect with logical schemas, integrity constraints, access patterns, and migration design."
+    when: "Schema, persistent data integrity, storage ownership, or migration design is in scope."
+  - name: auth-integration
+    kind: conditional
+    reason: "Supports graphql-architect with session, OAuth or OIDC, callback, identity, and authorization boundaries."
+    when: "Authentication, session, identity federation, or authorization integration is in scope."
 tags:
   - graphql
   - api

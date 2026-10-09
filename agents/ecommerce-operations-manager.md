@@ -9,11 +9,22 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - spreadsheet-ops
-  - data-organization-system
-  - web-research-ops
-  - dashboard-design
+skill-dependencies:
+  - name: spreadsheet-ops
+    kind: recommended
+    reason: "Supports ecommerce-operations-manager with workbook or tabular input, formulas, units, calculation, and output validation."
+  - name: data-organization-system
+    kind: conditional
+    reason: "Supports ecommerce-operations-manager with a durable taxonomy, metadata, lifecycle, retention, and retrieval system."
+    when: "The scope designs a reusable taxonomy, metadata, retention, or retrieval system beyond one report."
+  - name: web-research-ops
+    kind: conditional
+    reason: "Supports ecommerce-operations-manager with current primary sources, dates, contradictions, and attributable evidence."
+    when: "Current external facts, primary requirements, or source contradictions need verification."
+  - name: dashboard-design
+    kind: conditional
+    reason: "Supports ecommerce-operations-manager with visible web dashboard hierarchy, states, comparisons, and drill-down design."
+    when: "The requested deliverable includes a visible web dashboard rather than only an analytical report."
 tags:
   - ecommerce
   - store-operations

@@ -9,10 +9,14 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - drawio-skill
-  - markdown-writer
-  - project-architecture-review
+skill-dependencies:
+  - name: markdown-writer
+    kind: recommended
+    reason: "Supports mermaid-expert with clear GFM structure, source-preserving documentation, and links."
+  - name: project-architecture-review
+    kind: conditional
+    reason: "Supports mermaid-expert with existing repository boundaries, dependency evidence, and incremental architecture decisions."
+    when: "Existing repository architecture, module boundaries, or a migration decision is in scope."
 tags:
   - mermaid
   - diagrams

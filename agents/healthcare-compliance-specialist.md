@@ -9,11 +9,14 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - web-research-ops
-  - security-code-review
-  - spreadsheet-ops
-  - specification-authoring
+skill-dependencies:
+  - name: web-research-ops
+    kind: recommended
+    reason: "Supports healthcare-compliance-specialist with current primary sources, dates, contradictions, and attributable evidence."
+  - name: spreadsheet-ops
+    kind: conditional
+    reason: "Supports healthcare-compliance-specialist with workbook or tabular input, formulas, units, calculation, and output validation."
+    when: "The primary source or requested output is a workbook or tabular calculation artifact."
 tags:
   - healthcare-compliance
   - control-readiness

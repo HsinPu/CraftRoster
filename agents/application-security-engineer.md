@@ -9,12 +9,24 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - threat-modeling
-  - security-code-review
-  - vulnerability-variant-analysis
-  - security-scanning
-  - github-actions-ci
+skill-dependencies:
+  - name: threat-modeling
+    kind: recommended
+    reason: "Supports application-security-engineer with assets, actors, data flows, abuse cases, mitigations, and residual-risk ownership."
+  - name: security-code-review
+    kind: recommended
+    reason: "Supports application-security-engineer with exploit-path, trust-boundary, vulnerability-confidence, and remediation evidence."
+  - name: vulnerability-variant-analysis
+    kind: conditional
+    reason: "Supports application-security-engineer with authorized known-vulnerability seeds, family predicates, variant coverage, and regressions."
+    when: "A credible authorized vulnerability seed calls for related-instance or fix-family analysis."
+  - name: security-scanning
+    kind: recommended
+    reason: "Supports application-security-engineer with authorized scanner configuration, baselines, result triage, and security quality gates."
+  - name: github-actions-ci
+    kind: conditional
+    reason: "Supports application-security-engineer with GitHub Actions events, runners, permissions, artifacts, and quality gates."
+    when: "The affected delivery or enforcement platform is GitHub Actions."
 tags:
   - appsec
   - secure-sdlc

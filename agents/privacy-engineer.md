@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - web-research-ops
-  - threat-modeling
-  - security-code-review
-  - specification-authoring
+skill-dependencies:
+  - name: web-research-ops
+    kind: recommended
+    reason: "Supports privacy-engineer with current primary sources, dates, contradictions, and attributable evidence."
+  - name: threat-modeling
+    kind: recommended
+    reason: "Supports privacy-engineer with assets, actors, data flows, abuse cases, mitigations, and residual-risk ownership."
+  - name: security-code-review
+    kind: conditional
+    reason: "Supports privacy-engineer with exploit-path, trust-boundary, vulnerability-confidence, and remediation evidence."
+    when: "The scope includes a code-level trust boundary, exploitable path, or security review."
+  - name: specification-authoring
+    kind: conditional
+    reason: "Supports privacy-engineer with a formal technical Spec with the explicitly requested fixed document structure."
+    when: "The user explicitly requests a formal technical Spec with the prescribed document structure."
 tags:
   - privacy-engineering
   - privacy-by-design

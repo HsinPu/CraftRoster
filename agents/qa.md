@@ -9,11 +9,22 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - testing-strategy
-  - e2e-testing-patterns
-  - frontend-testing
-  - browser-compatibility-testing
+skill-dependencies:
+  - name: testing-strategy
+    kind: recommended
+    reason: "Supports qa with risk-based test levels, fixtures, boundaries, and meaningful coverage."
+  - name: e2e-testing-patterns
+    kind: conditional
+    reason: "Supports qa with deterministic browser journeys, fixtures, selectors, and flakiness controls."
+    when: "The task covers browser end-to-end user journeys."
+  - name: frontend-testing
+    kind: conditional
+    reason: "Supports qa with React or TypeScript component and hook behavior tests."
+    when: "The task covers React or TypeScript component or hook tests."
+  - name: browser-compatibility-testing
+    kind: conditional
+    reason: "Supports qa with a supported browser and viewport matrix with compatibility evidence."
+    when: "Supported browser differences or a cross-browser release matrix are in scope."
 tags:
   - qa
   - test-design

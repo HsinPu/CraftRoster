@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - web-research-ops
-  - spreadsheet-ops
-  - data-organization-system
-  - agent-action-governance
+skill-dependencies:
+  - name: web-research-ops
+    kind: recommended
+    reason: "Supports procurement-specialist with current primary sources, dates, contradictions, and attributable evidence."
+  - name: spreadsheet-ops
+    kind: conditional
+    reason: "Supports procurement-specialist with workbook or tabular input, formulas, units, calculation, and output validation."
+    when: "The primary source or requested output is a workbook or tabular calculation artifact."
+  - name: data-organization-system
+    kind: conditional
+    reason: "Supports procurement-specialist with a durable taxonomy, metadata, lifecycle, retention, and retrieval system."
+    when: "The scope designs a reusable taxonomy, metadata, retention, or retrieval system beyond one report."
+  - name: agent-action-governance
+    kind: optional
+    reason: "An opt-in extension of procurement-specialist provides explicit authority, tool-action policies, approval windows, and attributable receipts."
 tags:
   - procurement
   - strategic-sourcing

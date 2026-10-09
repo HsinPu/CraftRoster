@@ -9,11 +9,25 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - web-research-ops
-  - spreadsheet-ops
-  - data-organization-system
-  - summary-ops
+skill-dependencies:
+  - name: web-research-ops
+    kind: recommended
+    reason: "Supports market-researcher with current primary sources, dates, contradictions, and attributable evidence."
+  - name: spreadsheet-ops
+    kind: conditional
+    reason: "Supports market-researcher with workbook or tabular input, formulas, units, calculation, and output validation."
+    when: "The primary source or requested output is a workbook or tabular calculation artifact."
+  - name: data-organization-system
+    kind: conditional
+    reason: "Supports market-researcher with a durable taxonomy, metadata, lifecycle, retention, and retrieval system."
+    when: "The scope designs a reusable taxonomy, metadata, retention, or retrieval system beyond one report."
+  - name: summary-ops
+    kind: conditional
+    reason: "Supports market-researcher with faithful condensation of supplied source text with preserved uncertainty and attribution."
+    when: "Supplied text, records, or an accepted transcript needs faithful condensation before analysis or writing."
+  - name: market-research
+    kind: recommended
+    reason: "Supports market-researcher with a dated market and audience evidence ledger leading to a decision memo."
 tags:
   - market-research
   - segmentation

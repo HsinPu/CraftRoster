@@ -9,11 +9,22 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - frontend-code-review
-  - security-code-review
-  - auth-integration
-  - frontend-testing
+skill-dependencies:
+  - name: frontend-code-review
+    kind: conditional
+    reason: "Supports frontend-security-coder with frontend-specific state, browser, accessibility, and regression review."
+    when: "The repaired frontend diff needs a separate browser-state and regression review."
+  - name: security-code-review
+    kind: recommended
+    reason: "Supports frontend-security-coder with exploit-path, trust-boundary, vulnerability-confidence, and remediation evidence."
+  - name: auth-integration
+    kind: conditional
+    reason: "Supports frontend-security-coder with session, OAuth or OIDC, callback, identity, and authorization boundaries."
+    when: "The confirmed browser risk involves authentication, session, callback, or client identity integration."
+  - name: frontend-testing
+    kind: conditional
+    reason: "Supports frontend-security-coder with React or TypeScript component and hook behavior tests."
+    when: "The task covers React or TypeScript component or hook tests."
 tags:
   - frontend-security
   - xss

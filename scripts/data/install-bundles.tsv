@@ -1,0 +1,582 @@
+bundle	title	description	type	name
+image-graphics	畫圖與圖像處理	Still-image generation, image prompts, visual references, logos, and deterministic image processing.	agent	gallery-researcher
+image-graphics	畫圖與圖像處理	Still-image generation, image prompts, visual references, logos, and deterministic image processing.	agent	image-generator
+image-graphics	畫圖與圖像處理	Still-image generation, image prompts, visual references, logos, and deterministic image processing.	skill	ai-image-prompt-design
+image-graphics	畫圖與圖像處理	Still-image generation, image prompts, visual references, logos, and deterministic image processing.	skill	ai-image-prompts-skill
+image-graphics	畫圖與圖像處理	Still-image generation, image prompts, visual references, logos, and deterministic image processing.	skill	baoyu-image-gen
+image-graphics	畫圖與圖像處理	Still-image generation, image prompts, visual references, logos, and deterministic image processing.	skill	image-utils
+image-graphics	畫圖與圖像處理	Still-image generation, image prompts, visual references, logos, and deterministic image processing.	skill	logo-design
+image-graphics	畫圖與圖像處理	Still-image generation, image prompts, visual references, logos, and deterministic image processing.	skill	stable-diffusion-image-generation
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	api-contract-architect
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	architect
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	architect-review
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	backend-architect
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	backend-developer
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	bash-pro
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	blockchain-developer
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	c-pro
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	cms-platform-engineer
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	cpp-pro
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	csharp-pro
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	debugger
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	dependency-manager
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	developer-tooling-engineer
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	django-pro
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	dotnet-architect
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	elixir-pro
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	event-sourcing-architect
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	fastapi-pro
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	golang-pro
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	graphql-architect
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	haskell-pro
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	implement
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	internationalization-engineer
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	java-pro
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	javascript-pro
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	julia-pro
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	legacy-modernizer
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	minecraft-bukkit-pro
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	monorepo-architect
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	payment-integration
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	php-pro
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	posix-shell-pro
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	powershell-pro
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	python-pro
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	realtime-systems-engineer
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	refactoring-specialist
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	reverse-engineer
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	ruby-pro
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	rust-pro
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	saas-platform-architect
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	scala-pro
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	team-implementer
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	temporal-python-pro
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	typescript-pro
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	api-contract-design
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	auth-integration
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	autoresearch
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	code-change-workflow
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	code-refactoring
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	coding-standards
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	domain-modeling
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	event-sourcing-cqrs
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	git-advanced
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	git-operations
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	i18n-localization
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	incremental-implementation
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	java-architecture
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	java-development
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	javascript-development
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	jpa-hibernate-development
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	jquery-4-migration
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	jquery-development
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	jquery-version-migration
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	jvm-build-tooling
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	karpathy-guidelines
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	logging-patterns
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	mybatis-development
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	project-architecture-review
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	python-api-client-development
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	python-automation-scripting
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	python-backend-development
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	python-concurrency-patterns
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	python-development
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	python-packaging-release
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	spring-cloud-microservices
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	spring-development
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	spring-security
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	spring-webflux
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	stripe-payments
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	temporal-workflow-engineering
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	throwaway-prototyping
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	typescript-development
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	verified-software-delivery
+software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	skill	wordpress-development
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	agent	accessibility-expert
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	agent	browser-runtime-debugger
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	agent	design-system-architect
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	agent	frontend-developer
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	agent	frontend-security-coder
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	agent	internationalization-engineer
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	agent	ui-designer
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	agent	ui-ux-designer
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	agent	ui-visual-validator
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	agent	ux-researcher
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	agent	ux-writer
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	accessibility-testing
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	animation-best-practices
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	color-font-skill
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	command-palette
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	css-development
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	dashboard-design
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	design-consultation
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	design-intelligence-search
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	design-system
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	design-system-patterns
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	figma-to-code
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	frontend-design
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	frontend-stack-inference
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	hotkey
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	i18n-localization
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	image-to-code
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	image-to-code-assets
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	interaction-patterns
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	javascript-development
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	legacy-frontend-modernization
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	lobe-icons-usage
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	lobe-ui-development
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	nextjs-development
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	nuxt-development
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	pinia-state-management
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	react-ui-patterns
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	responsive-design
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	shadcn-ui
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	tailwind-development
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	tailwind-patterns
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	taste-skill
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	typescript-development
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	ui-styling
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	ux-writing
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	vite
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	vue-composition-api
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	vue-development
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	vue-router-patterns
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	web-page-design-to-code
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	website-redesign-to-code
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	agent	accessibility-expert
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	agent	browser-runtime-debugger
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	agent	code-review-preshipment
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	agent	code-reviewer
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	agent	debugger
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	agent	performance-engineer
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	agent	playwright
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	agent	qa
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	agent	receipt-verifier
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	agent	review-feedback-resolver
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	agent	review-policy-author
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	agent	tdd-orchestrator
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	agent	team-debugger
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	agent	team-reviewer
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	agent	test-automator
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	agent	ui-visual-validator
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	skill	accessibility-testing
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	skill	api-contract-testing
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	skill	autoresearch
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	skill	browser-compatibility-testing
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	skill	chrome-devtools-debugging
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	skill	code-review
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	skill	e2e-testing-patterns
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	skill	frontend-code-review
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	skill	frontend-design-review
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	skill	frontend-testing
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	skill	github-code-review
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	skill	github-inline-review
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	skill	java-testing
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	skill	mobile-app-testing
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	skill	pipeline-review
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	skill	python-observability-debugging
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	skill	python-testing-engineering
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	skill	react-perf
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	skill	receiving-code-review
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	skill	swift-testing
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	skill	systematic-debugging
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	skill	test-driven-development
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	skill	testing-strategy
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	skill	verification-before-completion
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	skill	visual-regression-testing
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	skill	vue-debug-guides
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	skill	vue-testing
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	skill	webapp-testing
+data-analysis	資料庫與資料分析	Database design and operations, governed data pipelines, analytics, geospatial processing, and model-data validation.	agent	analytics-engineer
+data-analysis	資料庫與資料分析	Database design and operations, governed data pipelines, analytics, geospatial processing, and model-data validation.	agent	business-intelligence-analyst
+data-analysis	資料庫與資料分析	Database design and operations, governed data pipelines, analytics, geospatial processing, and model-data validation.	agent	data-engineer
+data-analysis	資料庫與資料分析	Database design and operations, governed data pipelines, analytics, geospatial processing, and model-data validation.	agent	data-governance-engineer
+data-analysis	資料庫與資料分析	Database design and operations, governed data pipelines, analytics, geospatial processing, and model-data validation.	agent	data-scientist
+data-analysis	資料庫與資料分析	Database design and operations, governed data pipelines, analytics, geospatial processing, and model-data validation.	agent	database-admin
+data-analysis	資料庫與資料分析	Database design and operations, governed data pipelines, analytics, geospatial processing, and model-data validation.	agent	database-architect
+data-analysis	資料庫與資料分析	Database design and operations, governed data pipelines, analytics, geospatial processing, and model-data validation.	agent	database-optimizer
+data-analysis	資料庫與資料分析	Database design and operations, governed data pipelines, analytics, geospatial processing, and model-data validation.	agent	experimentation-methodologist
+data-analysis	資料庫與資料分析	Database design and operations, governed data pipelines, analytics, geospatial processing, and model-data validation.	agent	gis-analyst
+data-analysis	資料庫與資料分析	Database design and operations, governed data pipelines, analytics, geospatial processing, and model-data validation.	agent	quant-analyst
+data-analysis	資料庫與資料分析	Database design and operations, governed data pipelines, analytics, geospatial processing, and model-data validation.	agent	revenue-operations-analyst
+data-analysis	資料庫與資料分析	Database design and operations, governed data pipelines, analytics, geospatial processing, and model-data validation.	agent	search-relevance-engineer
+data-analysis	資料庫與資料分析	Database design and operations, governed data pipelines, analytics, geospatial processing, and model-data validation.	agent	sql-pro
+data-analysis	資料庫與資料分析	Database design and operations, governed data pipelines, analytics, geospatial processing, and model-data validation.	agent	vector-database-engineer
+data-analysis	資料庫與資料分析	Database design and operations, governed data pipelines, analytics, geospatial processing, and model-data validation.	skill	data-pipeline-orchestration
+data-analysis	資料庫與資料分析	Database design and operations, governed data pipelines, analytics, geospatial processing, and model-data validation.	skill	database-design
+data-analysis	資料庫與資料分析	Database design and operations, governed data pipelines, analytics, geospatial processing, and model-data validation.	skill	database-migration-workflow
+data-analysis	資料庫與資料分析	Database design and operations, governed data pipelines, analytics, geospatial processing, and model-data validation.	skill	firebase-development
+data-analysis	資料庫與資料分析	Database design and operations, governed data pipelines, analytics, geospatial processing, and model-data validation.	skill	mongodb-development
+data-analysis	資料庫與資料分析	Database design and operations, governed data pipelines, analytics, geospatial processing, and model-data validation.	skill	postgres-operations
+data-analysis	資料庫與資料分析	Database design and operations, governed data pipelines, analytics, geospatial processing, and model-data validation.	skill	prisma-drizzle
+data-analysis	資料庫與資料分析	Database design and operations, governed data pipelines, analytics, geospatial processing, and model-data validation.	skill	product-experimentation
+data-analysis	資料庫與資料分析	Database design and operations, governed data pipelines, analytics, geospatial processing, and model-data validation.	skill	python-data-engineering
+data-analysis	資料庫與資料分析	Database design and operations, governed data pipelines, analytics, geospatial processing, and model-data validation.	skill	redis-upstash
+data-analysis	資料庫與資料分析	Database design and operations, governed data pipelines, analytics, geospatial processing, and model-data validation.	skill	spreadsheet-ops
+data-analysis	資料庫與資料分析	Database design and operations, governed data pipelines, analytics, geospatial processing, and model-data validation.	skill	sql-best-practices
+data-analysis	資料庫與資料分析	Database design and operations, governed data pipelines, analytics, geospatial processing, and model-data validation.	skill	supabase-development
+ai-llm	AI與LLM	LLM and ML application contracts, prompts, retrieval, model advice, safety evaluation, and reproducible evaluation.	agent	ai-engineer
+ai-llm	AI與LLM	LLM and ML application contracts, prompts, retrieval, model advice, safety evaluation, and reproducible evaluation.	agent	ai-safety-evaluator
+ai-llm	AI與LLM	LLM and ML application contracts, prompts, retrieval, model advice, safety evaluation, and reproducible evaluation.	agent	eval-judge
+ai-llm	AI與LLM	LLM and ML application contracts, prompts, retrieval, model advice, safety evaluation, and reproducible evaluation.	agent	eval-orchestrator
+ai-llm	AI與LLM	LLM and ML application contracts, prompts, retrieval, model advice, safety evaluation, and reproducible evaluation.	agent	llm-platform-engineer
+ai-llm	AI與LLM	LLM and ML application contracts, prompts, retrieval, model advice, safety evaluation, and reproducible evaluation.	agent	ml-engineer
+ai-llm	AI與LLM	LLM and ML application contracts, prompts, retrieval, model advice, safety evaluation, and reproducible evaluation.	agent	mlops-engineer
+ai-llm	AI與LLM	LLM and ML application contracts, prompts, retrieval, model advice, safety evaluation, and reproducible evaluation.	agent	model-advisor
+ai-llm	AI與LLM	LLM and ML application contracts, prompts, retrieval, model advice, safety evaluation, and reproducible evaluation.	agent	model-validation-specialist
+ai-llm	AI與LLM	LLM and ML application contracts, prompts, retrieval, model advice, safety evaluation, and reproducible evaluation.	agent	prompt-crafter
+ai-llm	AI與LLM	LLM and ML application contracts, prompts, retrieval, model advice, safety evaluation, and reproducible evaluation.	agent	prompt-engineer
+ai-llm	AI與LLM	LLM and ML application contracts, prompts, retrieval, model advice, safety evaluation, and reproducible evaluation.	agent	search-relevance-engineer
+ai-llm	AI與LLM	LLM and ML application contracts, prompts, retrieval, model advice, safety evaluation, and reproducible evaluation.	agent	vector-database-engineer
+ai-llm	AI與LLM	LLM and ML application contracts, prompts, retrieval, model advice, safety evaluation, and reproducible evaluation.	skill	agents-sdk-development
+ai-llm	AI與LLM	LLM and ML application contracts, prompts, retrieval, model advice, safety evaluation, and reproducible evaluation.	skill	autoresearch
+ai-llm	AI與LLM	LLM and ML application contracts, prompts, retrieval, model advice, safety evaluation, and reproducible evaluation.	skill	llm-application-delivery-workflow
+ai-llm	AI與LLM	LLM and ML application contracts, prompts, retrieval, model advice, safety evaluation, and reproducible evaluation.	skill	llm-evals
+ai-llm	AI與LLM	LLM and ML application contracts, prompts, retrieval, model advice, safety evaluation, and reproducible evaluation.	skill	openai-api-development
+ai-llm	AI與LLM	LLM and ML application contracts, prompts, retrieval, model advice, safety evaluation, and reproducible evaluation.	skill	prompt-engineering
+ai-llm	AI與LLM	LLM and ML application contracts, prompts, retrieval, model advice, safety evaluation, and reproducible evaluation.	skill	rag-vector-search
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	agent	aws-solutions-architect
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	agent	chaos-engineer
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	agent	cloud-architect
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	agent	database-admin
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	agent	deploy-with-verification
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	agent	deployment-engineer
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	agent	devops-troubleshooter
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	agent	dx-optimizer
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	agent	error-detective
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	agent	finops-engineer
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	agent	hybrid-cloud-architect
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	agent	incident-responder
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	agent	it-service-manager
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	agent	kubernetes-architect
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	agent	linux-systems-administrator
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	agent	llm-platform-engineer
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	agent	mlops-engineer
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	agent	network-engineer
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	agent	observability-engineer
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	agent	platform-engineer
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	agent	prod-logs-health-check
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	agent	service-mesh-expert
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	agent	sre-engineer
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	agent	terraform-specialist
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	agent	windows-infrastructure-admin
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	skill	aws-operations
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	skill	cloudflare-development
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	skill	deployment-operations
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	skill	docker-development
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	skill	github-actions-ci
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	skill	github-operations
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	skill	incident-response-postmortems
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	skill	kubernetes-operations
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	skill	observability-engineering
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	skill	repo-ready
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	skill	service-mesh-engineering
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	skill	terminal-ops
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	skill	terraform-infrastructure
+cloud-operations	雲端部署與維運	Cloud and host architecture, containers, infrastructure as code, delivery pipelines, observability, and reliability.	skill	vercel-deployment
+security-governance	資安與治理	Security engineering, authorized assessment, threat analysis, privacy, control readiness, and professional governance.	agent	application-security-engineer
+security-governance	資安與治理	Security engineering, authorized assessment, threat analysis, privacy, control readiness, and professional governance.	agent	backend-security-coder
+security-governance	資安與治理	Security engineering, authorized assessment, threat analysis, privacy, control readiness, and professional governance.	agent	cloud-security-engineer
+security-governance	資安與治理	Security engineering, authorized assessment, threat analysis, privacy, control readiness, and professional governance.	agent	compliance-auditor
+security-governance	資安與治理	Security engineering, authorized assessment, threat analysis, privacy, control readiness, and professional governance.	agent	firmware-analyst
+security-governance	資安與治理	Security engineering, authorized assessment, threat analysis, privacy, control readiness, and professional governance.	agent	frontend-security-coder
+security-governance	資安與治理	Security engineering, authorized assessment, threat analysis, privacy, control readiness, and professional governance.	agent	health-information-manager
+security-governance	資安與治理	Security engineering, authorized assessment, threat analysis, privacy, control readiness, and professional governance.	agent	healthcare-compliance-specialist
+security-governance	資安與治理	Security engineering, authorized assessment, threat analysis, privacy, control readiness, and professional governance.	agent	identity-access-engineer
+security-governance	資安與治理	Security engineering, authorized assessment, threat analysis, privacy, control readiness, and professional governance.	agent	legal-advisor
+security-governance	資安與治理	Security engineering, authorized assessment, threat analysis, privacy, control readiness, and professional governance.	agent	malware-analyst
+security-governance	資安與治理	Security engineering, authorized assessment, threat analysis, privacy, control readiness, and professional governance.	agent	mobile-security-coder
+security-governance	資安與治理	Security engineering, authorized assessment, threat analysis, privacy, control readiness, and professional governance.	agent	penetration-tester
+security-governance	資安與治理	Security engineering, authorized assessment, threat analysis, privacy, control readiness, and professional governance.	agent	policy-enforcer
+security-governance	資安與治理	Security engineering, authorized assessment, threat analysis, privacy, control readiness, and professional governance.	agent	privacy-engineer
+security-governance	資安與治理	Security engineering, authorized assessment, threat analysis, privacy, control readiness, and professional governance.	agent	reverse-engineer
+security-governance	資安與治理	Security engineering, authorized assessment, threat analysis, privacy, control readiness, and professional governance.	agent	review-policy-author
+security-governance	資安與治理	Security engineering, authorized assessment, threat analysis, privacy, control readiness, and professional governance.	agent	risk-manager
+security-governance	資安與治理	Security engineering, authorized assessment, threat analysis, privacy, control readiness, and professional governance.	agent	security-auditor
+security-governance	資安與治理	Security engineering, authorized assessment, threat analysis, privacy, control readiness, and professional governance.	agent	software-license-compliance-engineer
+security-governance	資安與治理	Security engineering, authorized assessment, threat analysis, privacy, control readiness, and professional governance.	agent	threat-detection-engineer
+security-governance	資安與治理	Security engineering, authorized assessment, threat analysis, privacy, control readiness, and professional governance.	agent	threat-intelligence-analyst
+security-governance	資安與治理	Security engineering, authorized assessment, threat analysis, privacy, control readiness, and professional governance.	agent	threat-modeling-expert
+security-governance	資安與治理	Security engineering, authorized assessment, threat analysis, privacy, control readiness, and professional governance.	skill	agent-action-governance
+security-governance	資安與治理	Security engineering, authorized assessment, threat analysis, privacy, control readiness, and professional governance.	skill	python-security-hardening
+security-governance	資安與治理	Security engineering, authorized assessment, threat analysis, privacy, control readiness, and professional governance.	skill	reverse-engineering
+security-governance	資安與治理	Security engineering, authorized assessment, threat analysis, privacy, control readiness, and professional governance.	skill	security-code-review
+security-governance	資安與治理	Security engineering, authorized assessment, threat analysis, privacy, control readiness, and professional governance.	skill	security-scanning
+security-governance	資安與治理	Security engineering, authorized assessment, threat analysis, privacy, control readiness, and professional governance.	skill	skill-security-review
+security-governance	資安與治理	Security engineering, authorized assessment, threat analysis, privacy, control readiness, and professional governance.	skill	threat-modeling
+security-governance	資安與治理	Security engineering, authorized assessment, threat analysis, privacy, control readiness, and professional governance.	skill	vulnerability-variant-analysis
+video-audio	影片與音訊製作	Video production, shot planning, footage editing, sound, captions, localization, accessibility, and delivery mastering.	agent	audiovisual-localization-producer
+video-audio	影片與音訊製作	Video production, shot planning, footage editing, sound, captions, localization, accessibility, and delivery mastering.	agent	casting-director
+video-audio	影片與音訊製作	Video production, shot planning, footage editing, sound, captions, localization, accessibility, and delivery mastering.	agent	cinematographer
+video-audio	影片與音訊製作	Video production, shot planning, footage editing, sound, captions, localization, accessibility, and delivery mastering.	agent	colorist
+video-audio	影片與音訊製作	Video production, shot planning, footage editing, sound, captions, localization, accessibility, and delivery mastering.	agent	delivery-mastering-specialist
+video-audio	影片與音訊製作	Video production, shot planning, footage editing, sound, captions, localization, accessibility, and delivery mastering.	agent	first-assistant-director
+video-audio	影片與音訊製作	Video production, shot planning, footage editing, sound, captions, localization, accessibility, and delivery mastering.	agent	location-manager
+video-audio	影片與音訊製作	Video production, shot planning, footage editing, sound, captions, localization, accessibility, and delivery mastering.	agent	media-accessibility-producer
+video-audio	影片與音訊製作	Video production, shot planning, footage editing, sound, captions, localization, accessibility, and delivery mastering.	agent	media-ingest-manager
+video-audio	影片與音訊製作	Video production, shot planning, footage editing, sound, captions, localization, accessibility, and delivery mastering.	agent	media-library-researcher
+video-audio	影片與音訊製作	Video production, shot planning, footage editing, sound, captions, localization, accessibility, and delivery mastering.	agent	motion-graphics-designer
+video-audio	影片與音訊製作	Video production, shot planning, footage editing, sound, captions, localization, accessibility, and delivery mastering.	agent	music-supervisor
+video-audio	影片與音訊製作	Video production, shot planning, footage editing, sound, captions, localization, accessibility, and delivery mastering.	agent	production-designer
+video-audio	影片與音訊製作	Video production, shot planning, footage editing, sound, captions, localization, accessibility, and delivery mastering.	agent	production-sound-mixer
+video-audio	影片與音訊製作	Video production, shot planning, footage editing, sound, captions, localization, accessibility, and delivery mastering.	agent	screenwriter
+video-audio	影片與音訊製作	Video production, shot planning, footage editing, sound, captions, localization, accessibility, and delivery mastering.	agent	script-supervisor
+video-audio	影片與音訊製作	Video production, shot planning, footage editing, sound, captions, localization, accessibility, and delivery mastering.	agent	sound-designer
+video-audio	影片與音訊製作	Video production, shot planning, footage editing, sound, captions, localization, accessibility, and delivery mastering.	agent	storyboard-artist
+video-audio	影片與音訊製作	Video production, shot planning, footage editing, sound, captions, localization, accessibility, and delivery mastering.	agent	vfx-supervisor
+video-audio	影片與音訊製作	Video production, shot planning, footage editing, sound, captions, localization, accessibility, and delivery mastering.	agent	video-director
+video-audio	影片與音訊製作	Video production, shot planning, footage editing, sound, captions, localization, accessibility, and delivery mastering.	agent	video-editor
+video-audio	影片與音訊製作	Video production, shot planning, footage editing, sound, captions, localization, accessibility, and delivery mastering.	agent	video-producer
+video-audio	影片與音訊製作	Video production, shot planning, footage editing, sound, captions, localization, accessibility, and delivery mastering.	agent	visual-continuity-supervisor
+video-audio	影片與音訊製作	Video production, shot planning, footage editing, sound, captions, localization, accessibility, and delivery mastering.	skill	ai-video-generation
+video-audio	影片與音訊製作	Video production, shot planning, footage editing, sound, captions, localization, accessibility, and delivery mastering.	skill	ai-video-prompting
+video-audio	影片與音訊製作	Video production, shot planning, footage editing, sound, captions, localization, accessibility, and delivery mastering.	skill	audio-generation
+video-audio	影片與音訊製作	Video production, shot planning, footage editing, sound, captions, localization, accessibility, and delivery mastering.	skill	audio-transcription
+video-audio	影片與音訊製作	Video production, shot planning, footage editing, sound, captions, localization, accessibility, and delivery mastering.	skill	avatar-video-generation
+video-audio	影片與音訊製作	Video production, shot planning, footage editing, sound, captions, localization, accessibility, and delivery mastering.	skill	remotion-video-toolkit
+video-audio	影片與音訊製作	Video production, shot planning, footage editing, sound, captions, localization, accessibility, and delivery mastering.	skill	short-video-script
+video-audio	影片與音訊製作	Video production, shot planning, footage editing, sound, captions, localization, accessibility, and delivery mastering.	skill	storyboard-creation
+video-audio	影片與音訊製作	Video production, shot planning, footage editing, sound, captions, localization, accessibility, and delivery mastering.	skill	subtitle-captions
+video-audio	影片與音訊製作	Video production, shot planning, footage editing, sound, captions, localization, accessibility, and delivery mastering.	skill	text-to-speech
+video-audio	影片與音訊製作	Video production, shot planning, footage editing, sound, captions, localization, accessibility, and delivery mastering.	skill	ugc-video-ads
+video-audio	影片與音訊製作	Video production, shot planning, footage editing, sound, captions, localization, accessibility, and delivery mastering.	skill	video-edit
+video-audio	影片與音訊製作	Video production, shot planning, footage editing, sound, captions, localization, accessibility, and delivery mastering.	skill	video-production-workflow
+video-audio	影片與音訊製作	Video production, shot planning, footage editing, sound, captions, localization, accessibility, and delivery mastering.	skill	vlog-production
+documents-office	文件與辦公	Editable documents, spreadsheets, presentations, PDFs, diagrams, technical references, and organized workspaces.	agent	api-documenter
+documents-office	文件與辦公	Editable documents, spreadsheets, presentations, PDFs, diagrams, technical references, and organized workspaces.	agent	c4-code
+documents-office	文件與辦公	Editable documents, spreadsheets, presentations, PDFs, diagrams, technical references, and organized workspaces.	agent	c4-component
+documents-office	文件與辦公	Editable documents, spreadsheets, presentations, PDFs, diagrams, technical references, and organized workspaces.	agent	c4-container
+documents-office	文件與辦公	Editable documents, spreadsheets, presentations, PDFs, diagrams, technical references, and organized workspaces.	agent	c4-context
+documents-office	文件與辦公	Editable documents, spreadsheets, presentations, PDFs, diagrams, technical references, and organized workspaces.	agent	docs-architect
+documents-office	文件與辦公	Editable documents, spreadsheets, presentations, PDFs, diagrams, technical references, and organized workspaces.	agent	mermaid-expert
+documents-office	文件與辦公	Editable documents, spreadsheets, presentations, PDFs, diagrams, technical references, and organized workspaces.	agent	reference-builder
+documents-office	文件與辦公	Editable documents, spreadsheets, presentations, PDFs, diagrams, technical references, and organized workspaces.	agent	technical-writer
+documents-office	文件與辦公	Editable documents, spreadsheets, presentations, PDFs, diagrams, technical references, and organized workspaces.	agent	tutorial-engineer
+documents-office	文件與辦公	Editable documents, spreadsheets, presentations, PDFs, diagrams, technical references, and organized workspaces.	skill	api-doc-comments
+documents-office	文件與辦公	Editable documents, spreadsheets, presentations, PDFs, diagrams, technical references, and organized workspaces.	skill	data-organization-system
+documents-office	文件與辦公	Editable documents, spreadsheets, presentations, PDFs, diagrams, technical references, and organized workspaces.	skill	document-to-markdown
+documents-office	文件與辦公	Editable documents, spreadsheets, presentations, PDFs, diagrams, technical references, and organized workspaces.	skill	downloads-desktop-cleanup
+documents-office	文件與辦公	Editable documents, spreadsheets, presentations, PDFs, diagrams, technical references, and organized workspaces.	skill	drawio-skill
+documents-office	文件與辦公	Editable documents, spreadsheets, presentations, PDFs, diagrams, technical references, and organized workspaces.	skill	file-organizer
+documents-office	文件與辦公	Editable documents, spreadsheets, presentations, PDFs, diagrams, technical references, and organized workspaces.	skill	folder-structure-cleanup
+documents-office	文件與辦公	Editable documents, spreadsheets, presentations, PDFs, diagrams, technical references, and organized workspaces.	skill	git-readme-writer
+documents-office	文件與辦公	Editable documents, spreadsheets, presentations, PDFs, diagrams, technical references, and organized workspaces.	skill	markdown-writer
+documents-office	文件與辦公	Editable documents, spreadsheets, presentations, PDFs, diagrams, technical references, and organized workspaces.	skill	openapi-spec-generation
+documents-office	文件與辦公	Editable documents, spreadsheets, presentations, PDFs, diagrams, technical references, and organized workspaces.	skill	pdf-operations
+documents-office	文件與辦公	Editable documents, spreadsheets, presentations, PDFs, diagrams, technical references, and organized workspaces.	skill	presentation-ops
+documents-office	文件與辦公	Editable documents, spreadsheets, presentations, PDFs, diagrams, technical references, and organized workspaces.	skill	spreadsheet-ops
+documents-office	文件與辦公	Editable documents, spreadsheets, presentations, PDFs, diagrams, technical references, and organized workspaces.	skill	summary-ops
+documents-office	文件與辦公	Editable documents, spreadsheets, presentations, PDFs, diagrams, technical references, and organized workspaces.	skill	word-document-ops
+documents-office	文件與辦公	Editable documents, spreadsheets, presentations, PDFs, diagrams, technical references, and organized workspaces.	skill	workspace-google-ops
+research-planning	研究、需求與專案規劃	Evidence-led research, user and domain discovery, specifications, product decisions, and accountable delivery planning.	agent	business-analyst
+research-planning	研究、需求與專案規劃	Evidence-led research, user and domain discovery, specifications, product decisions, and accountable delivery planning.	agent	business-strategy-consultant
+research-planning	研究、需求與專案規劃	Evidence-led research, user and domain discovery, specifications, product decisions, and accountable delivery planning.	agent	clinical-data-manager
+research-planning	研究、需求與專案規劃	Evidence-led research, user and domain discovery, specifications, product decisions, and accountable delivery planning.	agent	clinical-evidence-reviewer
+research-planning	研究、需求與專案規劃	Evidence-led research, user and domain discovery, specifications, product decisions, and accountable delivery planning.	agent	competitive-intelligence-analyst
+research-planning	研究、需求與專案規劃	Evidence-led research, user and domain discovery, specifications, product decisions, and accountable delivery planning.	agent	emergency-preparedness-coordinator
+research-planning	研究、需求與專案規劃	Evidence-led research, user and domain discovery, specifications, product decisions, and accountable delivery planning.	agent	experimentation-methodologist
+research-planning	研究、需求與專案規劃	Evidence-led research, user and domain discovery, specifications, product decisions, and accountable delivery planning.	agent	grant-strategist
+research-planning	研究、需求與專案規劃	Evidence-led research, user and domain discovery, specifications, product decisions, and accountable delivery planning.	agent	market-researcher
+research-planning	研究、需求與專案規劃	Evidence-led research, user and domain discovery, specifications, product decisions, and accountable delivery planning.	agent	model-advisor
+research-planning	研究、需求與專案規劃	Evidence-led research, user and domain discovery, specifications, product decisions, and accountable delivery planning.	agent	patient-safety-officer
+research-planning	研究、需求與專案規劃	Evidence-led research, user and domain discovery, specifications, product decisions, and accountable delivery planning.	agent	product-manager
+research-planning	研究、需求與專案規劃	Evidence-led research, user and domain discovery, specifications, product decisions, and accountable delivery planning.	agent	product-spec-orchestrator
+research-planning	研究、需求與專案規劃	Evidence-led research, user and domain discovery, specifications, product decisions, and accountable delivery planning.	agent	project-manager
+research-planning	研究、需求與專案規劃	Evidence-led research, user and domain discovery, specifications, product decisions, and accountable delivery planning.	agent	release-manager
+research-planning	研究、需求與專案規劃	Evidence-led research, user and domain discovery, specifications, product decisions, and accountable delivery planning.	agent	search-specialist
+research-planning	研究、需求與專案規劃	Evidence-led research, user and domain discovery, specifications, product decisions, and accountable delivery planning.	agent	startup-analyst
+research-planning	研究、需求與專案規劃	Evidence-led research, user and domain discovery, specifications, product decisions, and accountable delivery planning.	agent	technical-product-manager
+research-planning	研究、需求與專案規劃	Evidence-led research, user and domain discovery, specifications, product decisions, and accountable delivery planning.	agent	ux-researcher
+research-planning	研究、需求與專案規劃	Evidence-led research, user and domain discovery, specifications, product decisions, and accountable delivery planning.	skill	ask-questions-if-underspecified
+research-planning	研究、需求與專案規劃	Evidence-led research, user and domain discovery, specifications, product decisions, and accountable delivery planning.	skill	context-governance
+research-planning	研究、需求與專案規劃	Evidence-led research, user and domain discovery, specifications, product decisions, and accountable delivery planning.	skill	design-intelligence-search
+research-planning	研究、需求與專案規劃	Evidence-led research, user and domain discovery, specifications, product decisions, and accountable delivery planning.	skill	domain-modeling
+research-planning	研究、需求與專案規劃	Evidence-led research, user and domain discovery, specifications, product decisions, and accountable delivery planning.	skill	market-research
+research-planning	研究、需求與專案規劃	Evidence-led research, user and domain discovery, specifications, product decisions, and accountable delivery planning.	skill	multi-session-planning
+research-planning	研究、需求與專案規劃	Evidence-led research, user and domain discovery, specifications, product decisions, and accountable delivery planning.	skill	product-experimentation
+research-planning	研究、需求與專案規劃	Evidence-led research, user and domain discovery, specifications, product decisions, and accountable delivery planning.	skill	requirements-deep-dive
+research-planning	研究、需求與專案規劃	Evidence-led research, user and domain discovery, specifications, product decisions, and accountable delivery planning.	skill	session-handoff
+research-planning	研究、需求與專案規劃	Evidence-led research, user and domain discovery, specifications, product decisions, and accountable delivery planning.	skill	solution-discovery
+research-planning	研究、需求與專案規劃	Evidence-led research, user and domain discovery, specifications, product decisions, and accountable delivery planning.	skill	spec-flow
+research-planning	研究、需求與專案規劃	Evidence-led research, user and domain discovery, specifications, product decisions, and accountable delivery planning.	skill	specification-authoring
+research-planning	研究、需求與專案規劃	Evidence-led research, user and domain discovery, specifications, product decisions, and accountable delivery planning.	skill	todo-first
+research-planning	研究、需求與專案規劃	Evidence-led research, user and domain discovery, specifications, product decisions, and accountable delivery planning.	skill	ux-research
+research-planning	研究、需求與專案規劃	Evidence-led research, user and domain discovery, specifications, product decisions, and accountable delivery planning.	skill	web-research-ops
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	agent	accounting-controller
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	agent	article-writer
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	agent	brand-strategist
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	agent	business-strategy-consultant
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	agent	change-management-consultant
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	agent	content-editor
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	agent	content-marketer
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	agent	copywriter
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	agent	creative-director
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	agent	customer-success-manager
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	agent	customer-support
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	agent	developer-advocate
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	agent	ecommerce-operations-manager
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	agent	fpa-analyst
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	agent	hr-pro
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	agent	learning-development-specialist
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	agent	marketing-measurement-specialist
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	agent	operations-manager
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	agent	paid-media-auditor
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	agent	partnership-manager
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	agent	pricing-strategist
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	agent	procurement-specialist
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	agent	revenue-operations-analyst
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	agent	sales-automator
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	agent	sales-engineer
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	agent	seo-authority-builder
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	agent	seo-cannibalization-detector
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	agent	seo-content-auditor
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	agent	seo-content-planner
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	agent	seo-content-refresher
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	agent	seo-content-writer
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	agent	seo-keyword-strategist
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	agent	seo-meta-optimizer
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	agent	seo-snippet-hunter
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	agent	seo-structure-architect
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	agent	social-publishing-publisher
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	agent	technical-writer
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	agent	ux-writer
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	skill	answer-writing
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	skill	article-writing
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	skill	brand-voice
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	skill	content-repurposing
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	skill	humanizer
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	skill	market-research
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	skill	product-pitch-writing
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	skill	short-video-script
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	skill	summary-ops
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	skill	ugc-video-ads
+writing-business	寫作與商務營運	Editorial writing, brand and marketing, sales, finance, customer operations, and evidence-backed business decisions.	skill	ux-writing
+mobile-desktop-embedded	行動桌面與嵌入式開發	Native and cross-platform apps, Electron, Unity, embedded firmware, mobile testing, and platform release readiness.	agent	arm-cortex-expert
+mobile-desktop-embedded	行動桌面與嵌入式開發	Native and cross-platform apps, Electron, Unity, embedded firmware, mobile testing, and platform release readiness.	agent	c-pro
+mobile-desktop-embedded	行動桌面與嵌入式開發	Native and cross-platform apps, Electron, Unity, embedded firmware, mobile testing, and platform release readiness.	agent	cpp-pro
+mobile-desktop-embedded	行動桌面與嵌入式開發	Native and cross-platform apps, Electron, Unity, embedded firmware, mobile testing, and platform release readiness.	agent	csharp-pro
+mobile-desktop-embedded	行動桌面與嵌入式開發	Native and cross-platform apps, Electron, Unity, embedded firmware, mobile testing, and platform release readiness.	agent	electron-pro
+mobile-desktop-embedded	行動桌面與嵌入式開發	Native and cross-platform apps, Electron, Unity, embedded firmware, mobile testing, and platform release readiness.	agent	firmware-analyst
+mobile-desktop-embedded	行動桌面與嵌入式開發	Native and cross-platform apps, Electron, Unity, embedded firmware, mobile testing, and platform release readiness.	agent	flutter-expert
+mobile-desktop-embedded	行動桌面與嵌入式開發	Native and cross-platform apps, Electron, Unity, embedded firmware, mobile testing, and platform release readiness.	agent	ios-developer
+mobile-desktop-embedded	行動桌面與嵌入式開發	Native and cross-platform apps, Electron, Unity, embedded firmware, mobile testing, and platform release readiness.	agent	mobile-developer
+mobile-desktop-embedded	行動桌面與嵌入式開發	Native and cross-platform apps, Electron, Unity, embedded firmware, mobile testing, and platform release readiness.	agent	mobile-release-engineer
+mobile-desktop-embedded	行動桌面與嵌入式開發	Native and cross-platform apps, Electron, Unity, embedded firmware, mobile testing, and platform release readiness.	agent	mobile-security-coder
+mobile-desktop-embedded	行動桌面與嵌入式開發	Native and cross-platform apps, Electron, Unity, embedded firmware, mobile testing, and platform release readiness.	agent	rust-pro
+mobile-desktop-embedded	行動桌面與嵌入式開發	Native and cross-platform apps, Electron, Unity, embedded firmware, mobile testing, and platform release readiness.	agent	unity-developer
+mobile-desktop-embedded	行動桌面與嵌入式開發	Native and cross-platform apps, Electron, Unity, embedded firmware, mobile testing, and platform release readiness.	skill	app-store-release
+mobile-desktop-embedded	行動桌面與嵌入式開發	Native and cross-platform apps, Electron, Unity, embedded firmware, mobile testing, and platform release readiness.	skill	desktop-development
+mobile-desktop-embedded	行動桌面與嵌入式開發	Native and cross-platform apps, Electron, Unity, embedded firmware, mobile testing, and platform release readiness.	skill	flutter-development
+mobile-desktop-embedded	行動桌面與嵌入式開發	Native and cross-platform apps, Electron, Unity, embedded firmware, mobile testing, and platform release readiness.	skill	ios-architecture
+mobile-desktop-embedded	行動桌面與嵌入式開發	Native and cross-platform apps, Electron, Unity, embedded firmware, mobile testing, and platform release readiness.	skill	mobile-app-testing
+mobile-desktop-embedded	行動桌面與嵌入式開發	Native and cross-platform apps, Electron, Unity, embedded firmware, mobile testing, and platform release readiness.	skill	react-native-expo
+mobile-desktop-embedded	行動桌面與嵌入式開發	Native and cross-platform apps, Electron, Unity, embedded firmware, mobile testing, and platform release readiness.	skill	swift-concurrency
+mobile-desktop-embedded	行動桌面與嵌入式開發	Native and cross-platform apps, Electron, Unity, embedded firmware, mobile testing, and platform release readiness.	skill	swift-testing
+mobile-desktop-embedded	行動桌面與嵌入式開發	Native and cross-platform apps, Electron, Unity, embedded firmware, mobile testing, and platform release readiness.	skill	swiftui-development
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	agent	frontend-developer
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	agent	performance-engineer
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	agent	realtime-systems-engineer
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	agent	ui-visual-validator
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-accessibility
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-animation-system
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-assets-gltf
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-atmosphere-aerial-perspective
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-bloom
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-cad-bim
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-camera-direction
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-capture-recording
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-csg-modeling
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-data-visualization
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-deformable-simulation
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-development
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-editor-authoring
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-exposure-color-grading
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-framework-integrations
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-gameplay-systems
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-geometry
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-image-pipeline
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-interaction-input
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-large-worlds-geospatial
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-materials-lighting
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-math-transforms
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-navigation-crowds
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-networked-experiences
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-offscreen-workers
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-parallax-occlusion-mapping
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-path-tracing
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-performance-memory
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-physics-audio
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-physics-simulation
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-point-clouds-splats
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-postprocessing
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-precipitation-surfaces
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-procedural-animation
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-procedural-architecture
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-procedural-characters
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-procedural-fields
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-procedural-geometry
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-procedural-materials
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-procedural-planets
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-procedural-vegetation
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-procedural-vfx
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-project-architecture
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-raymarched-space-effects
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-react-three-fiber
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-rendering-platforms
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-scene-lifecycle
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-screen-space-ambient-occlusion
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-security-deployment
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-shaders
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-shadow-systems
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-spatial-audio
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-spectral-ocean
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-temporal-surfaces
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-testing-debugging
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-ui-overlays
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-version-migration
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-visual-validation
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-volumetric-clouds
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-water-optics
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-webgpu-tsl
+threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	skill	threejs-webxr-accessibility
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	agent	agent-designer
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	agent	agent-harness-optimizer
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	agent	codebase-onboarding-engineer
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	agent	conductor-validator
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	agent	context-manager
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	agent	developer-tooling-engineer
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	agent	mcp-developer
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	agent	orchestrate
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	agent	sales-automator
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	agent	session-end
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	agent	session-start
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	agent	team-debugger
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	agent	team-implementer
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	agent	team-lead
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	agent	team-reviewer
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	skill	agent-creator-design
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	skill	agent-instructions-authoring
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	skill	agent-introspection-debugging
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	skill	agent-reach-ops
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	skill	agents-sdk-development
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	skill	browser-automation
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	skill	context-governance
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	skill	mcp-creator-design
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	skill	mcp-ops
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	skill	playwright-automation
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	skill	python-automation-scripting
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	skill	python-web-scraping
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	skill	self-improvement
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	skill	session-handoff
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	skill	skill-audit
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	skill	skill-creator-design
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	skill	skill-executor
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	skill	skill-explorer
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	skill	skill-gap-analyzer
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	skill	skill-lint
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	skill	skill-scan
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	skill	skill-security-review
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	skill	skillctl
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	skill	skillforge
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	skill	subagent-architecture
+agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	skill	todo-first

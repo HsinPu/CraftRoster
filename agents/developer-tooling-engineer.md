@@ -9,11 +9,20 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - code-change-workflow
-  - terminal-ops
-  - testing-strategy
-  - github-actions-ci
+skill-dependencies:
+  - name: code-change-workflow
+    kind: recommended
+    reason: "Supports developer-tooling-engineer with pre-edit ownership, call-path, compatibility, and verification inspection."
+  - name: terminal-ops
+    kind: recommended
+    reason: "Supports developer-tooling-engineer with exact commands, repository state, scoped execution, and reproducible verification."
+  - name: testing-strategy
+    kind: recommended
+    reason: "Supports developer-tooling-engineer with risk-based test levels, fixtures, boundaries, and meaningful coverage."
+  - name: github-actions-ci
+    kind: conditional
+    reason: "Supports developer-tooling-engineer with GitHub Actions events, runners, permissions, artifacts, and quality gates."
+    when: "The affected delivery or enforcement platform is GitHub Actions."
 tags:
   - developer-tooling
   - cli

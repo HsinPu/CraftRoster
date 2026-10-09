@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - subagent-architecture
-  - code-review
-  - security-code-review
-  - project-architecture-review
+skill-dependencies:
+  - name: subagent-architecture
+    kind: recommended
+    reason: "Supports team-reviewer with focused delegation, exclusive ownership, dependency gates, and verified fan-in."
+  - name: code-review
+    kind: recommended
+    reason: "Supports team-reviewer with risk-calibrated evidence, failure scenarios, severity, and an independent review verdict."
+  - name: security-code-review
+    kind: conditional
+    reason: "Supports team-reviewer with exploit-path, trust-boundary, vulnerability-confidence, and remediation evidence."
+    when: "The scope includes a code-level trust boundary, exploitable path, or security review."
+  - name: project-architecture-review
+    kind: conditional
+    reason: "Supports team-reviewer with existing repository boundaries, dependency evidence, and incremental architecture decisions."
+    when: "Existing repository architecture, module boundaries, or a migration decision is in scope."
 tags:
   - team-review
   - quality-gate

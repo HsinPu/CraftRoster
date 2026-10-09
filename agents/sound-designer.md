@@ -9,12 +9,26 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - video-production-workflow
-  - audio-generation
-  - text-to-speech
-  - audio-transcription
-  - video-edit
+skill-dependencies:
+  - name: video-production-workflow
+    kind: recommended
+    reason: "Supports sound-designer with the canonical production artifacts, stage gates, accepted lineage, and sequential fallback."
+  - name: audio-generation
+    kind: conditional
+    reason: "Supports sound-designer with generation of non-speech music, sound effects, and ambience assets."
+    when: "The approved sound or music plan calls for generated non-speech assets."
+  - name: text-to-speech
+    kind: conditional
+    reason: "Supports sound-designer with authorized synthetic speech, voice selection, timing, and voiceover evidence."
+    when: "The approved production needs generated speech or voiceover with appropriate consent."
+  - name: audio-transcription
+    kind: conditional
+    reason: "Supports sound-designer with speech extraction, speaker labeling, and source-linked transcript evidence."
+    when: "Raw audio or video speech needs extraction and no accepted matching transcript exists."
+  - name: video-edit
+    kind: conditional
+    reason: "Supports sound-designer with existing-footage inspection, local editing, controlled transcodes, and media verification."
+    when: "Existing media needs local inspection, frame extraction, editing, transcoding, or delivery QC."
 tags:
   - sound-design
   - audio-cue-sheet

@@ -9,12 +9,26 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - ux-research
-  - design-consultation
-  - web-research-ops
-  - accessibility-testing
-  - spreadsheet-ops
+skill-dependencies:
+  - name: ux-research
+    kind: required
+    reason: "Task 1 explicitly uses ux-research to define the ethical protocol, research questions, participant criteria, and evidence thresholds."
+  - name: design-consultation
+    kind: conditional
+    reason: "Supports ux-researcher with web interface visual direction before implementation."
+    when: "The requested design direction or research handoff concerns a web interface."
+  - name: web-research-ops
+    kind: conditional
+    reason: "Supports ux-researcher with current primary sources, dates, contradictions, and attributable evidence."
+    when: "Current external facts, primary requirements, or source contradictions need verification."
+  - name: accessibility-testing
+    kind: conditional
+    reason: "Supports ux-researcher with hands-on semantic, keyboard, screen-reader, and reflow validation."
+    when: "The requested evidence includes implemented web or mobile accessibility behavior."
+  - name: spreadsheet-ops
+    kind: conditional
+    reason: "Supports ux-researcher with workbook or tabular input, formulas, units, calculation, and output validation."
+    when: "The primary source or requested output is a workbook or tabular calculation artifact."
 tags:
   - ux-research
   - user-evidence

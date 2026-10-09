@@ -9,11 +9,22 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - ux-writing
-  - interaction-patterns
-  - i18n-localization
-  - accessibility-testing
+skill-dependencies:
+  - name: ux-writing
+    kind: recommended
+    reason: "Supports ux-writer with clear interface labels, instructions, error states, and truthful user guidance."
+  - name: interaction-patterns
+    kind: conditional
+    reason: "Supports ux-writer with web navigation, scrolling, focus, and transition interaction rules."
+    when: "The task designs or evaluates web navigation, scroll, focus, or transition behavior."
+  - name: i18n-localization
+    kind: conditional
+    reason: "Supports ux-writer with locale keys, plurals, Unicode, bidi, formatting, and fallback behavior."
+    when: "The task includes locale resources, translated text, plurals, bidi, or locale-aware formatting."
+  - name: accessibility-testing
+    kind: conditional
+    reason: "Supports ux-writer with hands-on semantic, keyboard, screen-reader, and reflow validation."
+    when: "The requested evidence includes implemented web or mobile accessibility behavior."
 tags:
   - ux-writing
   - microcopy

@@ -9,11 +9,18 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - web-research-ops
-  - specification-authoring
-  - security-code-review
-  - data-organization-system
+skill-dependencies:
+  - name: web-research-ops
+    kind: recommended
+    reason: "Supports compliance-auditor with current primary sources, dates, contradictions, and attributable evidence."
+  - name: security-code-review
+    kind: conditional
+    reason: "Supports compliance-auditor with exploit-path, trust-boundary, vulnerability-confidence, and remediation evidence."
+    when: "The scope includes a code-level trust boundary, exploitable path, or security review."
+  - name: data-organization-system
+    kind: conditional
+    reason: "Supports compliance-auditor with a durable taxonomy, metadata, lifecycle, retention, and retrieval system."
+    when: "The scope designs a reusable taxonomy, metadata, retention, or retrieval system beyond one report."
 tags:
   - compliance
   - controls

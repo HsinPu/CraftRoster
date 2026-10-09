@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - frontend-design-review
-  - visual-regression-testing
-  - responsive-design
-  - browser-compatibility-testing
+skill-dependencies:
+  - name: frontend-design-review
+    kind: recommended
+    reason: "Supports ui-visual-validator with read-only interface usability, accessibility, and visual-quality evidence."
+  - name: visual-regression-testing
+    kind: recommended
+    reason: "Supports ui-visual-validator with reproducible screenshot comparisons, baselines, matrices, and fidelity evidence."
+  - name: responsive-design
+    kind: conditional
+    reason: "Supports ui-visual-validator with complex web layout reflow, fluid sizing, breakpoints, and touch-target contracts."
+    when: "The web deliverable needs complex responsive layout or reflow guidance."
+  - name: browser-compatibility-testing
+    kind: conditional
+    reason: "Supports ui-visual-validator with a supported browser and viewport matrix with compatibility evidence."
+    when: "Supported browser differences or a cross-browser release matrix are in scope."
 tags:
   - visual-validation
   - responsive

@@ -9,10 +9,17 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - project-architecture-review
-  - drawio-skill
-  - api-doc-comments
+skill-dependencies:
+  - name: project-architecture-review
+    kind: recommended
+    reason: "Supports c4-code with existing repository boundaries, dependency evidence, and incremental architecture decisions."
+  - name: drawio-skill
+    kind: conditional
+    reason: "Supports c4-code with editable draw.io diagrams and verified export artifacts."
+    when: "The requested diagram deliverable must be editable in draw.io or exported from draw.io."
+  - name: api-doc-comments
+    kind: optional
+    reason: "An opt-in extension of c4-code provides verified code-level docstrings and exported API comments."
 tags:
   - c4
   - code

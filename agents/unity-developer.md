@@ -9,11 +9,17 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - coding-standards
-  - testing-strategy
-  - observability-engineering
-  - mobile-app-testing
+skill-dependencies:
+  - name: testing-strategy
+    kind: recommended
+    reason: "Supports unity-developer with risk-based test levels, fixtures, boundaries, and meaningful coverage."
+  - name: mobile-app-testing
+    kind: conditional
+    reason: "Supports unity-developer with device, OS, lifecycle, permission, offline, and native accessibility checks."
+    when: "The supported product target includes Android or iOS device behavior."
+  - name: code-change-workflow
+    kind: recommended
+    reason: "Supports unity-developer with pre-edit ownership, call-path, compatibility, and verification inspection."
 tags:
   - unity
   - csharp

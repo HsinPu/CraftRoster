@@ -9,11 +9,19 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - incident-response-postmortems
-  - security-scanning
-  - deployment-operations
-  - specification-authoring
+skill-dependencies:
+  - name: incident-response-postmortems
+    kind: conditional
+    reason: "Supports risk-manager with software-service incident evidence, recovery decisions, and corrective actions."
+    when: "The scope includes a software-service incident, operational recovery, or postmortem."
+  - name: security-scanning
+    kind: conditional
+    reason: "Supports risk-manager with authorized scanner configuration, baselines, result triage, and security quality gates."
+    when: "Authorized automated scanner configuration, existing scan evidence, or quality-gate triage is needed."
+  - name: deployment-operations
+    kind: conditional
+    reason: "Supports risk-manager with mode-aware artifact, rollout, health, abort, and recovery evidence."
+    when: "An environment promotion, artifact rollout, or recovery plan is part of the authorized mode."
 tags:
   - risk-management
   - controls

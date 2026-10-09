@@ -9,11 +9,16 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - coding-standards
-  - python-data-engineering
-  - testing-strategy
-  - terminal-ops
+skill-dependencies:
+  - name: testing-strategy
+    kind: recommended
+    reason: "Supports julia-pro with risk-based test levels, fixtures, boundaries, and meaningful coverage."
+  - name: terminal-ops
+    kind: recommended
+    reason: "Supports julia-pro with exact commands, repository state, scoped execution, and reproducible verification."
+  - name: code-change-workflow
+    kind: recommended
+    reason: "Supports julia-pro with pre-edit ownership, call-path, compatibility, and verification inspection."
 tags:
   - julia
   - numerical-computing

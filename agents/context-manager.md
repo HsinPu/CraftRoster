@@ -9,11 +9,20 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - context-governance
-  - summary-ops
-  - data-organization-system
-  - todo-first
+skill-dependencies:
+  - name: context-governance
+    kind: recommended
+    reason: "Supports context-manager with a compact authoritative context record with precedence and provenance."
+  - name: summary-ops
+    kind: recommended
+    reason: "Supports context-manager with faithful condensation of supplied source text with preserved uncertainty and attribution."
+  - name: data-organization-system
+    kind: conditional
+    reason: "Supports context-manager with a durable taxonomy, metadata, lifecycle, retention, and retrieval system."
+    when: "The scope designs a reusable taxonomy, metadata, retention, or retrieval system beyond one report."
+  - name: todo-first
+    kind: optional
+    reason: "An opt-in extension of context-manager provides a live runtime-neutral dependency plan and evidence-linked progress tracking."
 tags:
   - context
   - governance

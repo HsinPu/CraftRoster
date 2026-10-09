@@ -9,12 +9,25 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - video-production-workflow
-  - subtitle-captions
-  - audio-transcription
-  - text-to-speech
-  - accessibility-testing
+skill-dependencies:
+  - name: video-production-workflow
+    kind: recommended
+    reason: "Supports media-accessibility-producer with the canonical production artifacts, stage gates, accepted lineage, and sequential fallback."
+  - name: subtitle-captions
+    kind: recommended
+    reason: "Supports media-accessibility-producer with same-language caption authoring, timing, conversion, and caption QC."
+  - name: audio-transcription
+    kind: conditional
+    reason: "Supports media-accessibility-producer with speech extraction, speaker labeling, and source-linked transcript evidence."
+    when: "Raw audio or video speech needs extraction and no accepted matching transcript exists."
+  - name: text-to-speech
+    kind: conditional
+    reason: "Supports media-accessibility-producer with authorized synthetic speech, voice selection, timing, and voiceover evidence."
+    when: "The approved production needs generated speech or voiceover with appropriate consent."
+  - name: accessibility-testing
+    kind: conditional
+    reason: "Supports media-accessibility-producer with hands-on semantic, keyboard, screen-reader, and reflow validation."
+    when: "The plan includes verification of the implemented player or interface; media alternatives alone do not activate UI testing."
 tags:
   - media-accessibility
   - captions

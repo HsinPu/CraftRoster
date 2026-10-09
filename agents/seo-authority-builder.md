@@ -9,11 +9,18 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - web-research-ops
-  - markdown-writer
-  - git-readme-writer
-  - data-organization-system
+skill-dependencies:
+  - name: web-research-ops
+    kind: recommended
+    reason: "Supports seo-authority-builder with current primary sources, dates, contradictions, and attributable evidence."
+  - name: markdown-writer
+    kind: conditional
+    reason: "Supports seo-authority-builder with clear GFM structure, source-preserving documentation, and links."
+    when: "The requested artifact is Markdown or GFM documentation."
+  - name: data-organization-system
+    kind: conditional
+    reason: "Supports seo-authority-builder with a durable taxonomy, metadata, lifecycle, retention, and retrieval system."
+    when: "The scope designs a reusable taxonomy, metadata, retention, or retrieval system beyond one report."
 tags:
   - seo
   - authority

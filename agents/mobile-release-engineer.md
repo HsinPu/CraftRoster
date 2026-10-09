@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - app-store-release
-  - mobile-app-testing
-  - github-actions-ci
-  - deployment-operations
+skill-dependencies:
+  - name: app-store-release
+    kind: recommended
+    reason: "Supports mobile-release-engineer with store-specific signing boundaries, submission metadata, and rollout readiness."
+  - name: mobile-app-testing
+    kind: recommended
+    reason: "Supports mobile-release-engineer with device, OS, lifecycle, permission, offline, and native accessibility checks."
+  - name: github-actions-ci
+    kind: conditional
+    reason: "Supports mobile-release-engineer with GitHub Actions events, runners, permissions, artifacts, and quality gates."
+    when: "The affected delivery or enforcement platform is GitHub Actions."
+  - name: deployment-operations
+    kind: conditional
+    reason: "Supports mobile-release-engineer with mode-aware artifact, rollout, health, abort, and recovery evidence."
+    when: "An environment promotion, artifact rollout, or recovery plan is part of the authorized mode."
 tags:
   - mobile-release
   - app-store

@@ -9,11 +9,22 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - agent-creator-design
-  - subagent-architecture
-  - agent-instructions-authoring
-  - context-governance
+skill-dependencies:
+  - name: agent-creator-design
+    kind: recommended
+    reason: "Supports agent-designer with the canonical Agent metadata, four-part contract, and focused role templates."
+  - name: subagent-architecture
+    kind: conditional
+    reason: "Supports agent-designer with focused delegation, exclusive ownership, dependency gates, and verified fan-in."
+    when: "The proposed Agent participates in a delegated team with ownership, dependencies, or handoff contracts."
+  - name: agent-instructions-authoring
+    kind: conditional
+    reason: "Supports agent-designer with repository instruction authoring and scoped instruction-file ownership."
+    when: "The work includes repository-level instruction files or shared agent guidance."
+  - name: context-governance
+    kind: conditional
+    reason: "Supports agent-designer with a compact authoritative context record with precedence and provenance."
+    when: "Durable context, shared decisions, or context-budget behavior needs governance."
 tags:
   - agent-design
   - system-prompts

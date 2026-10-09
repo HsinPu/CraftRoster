@@ -9,11 +9,22 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - security-code-review
-  - auth-integration
-  - security-scanning
-  - python-security-hardening
+skill-dependencies:
+  - name: security-code-review
+    kind: recommended
+    reason: "Supports backend-security-coder with exploit-path, trust-boundary, vulnerability-confidence, and remediation evidence."
+  - name: auth-integration
+    kind: conditional
+    reason: "Supports backend-security-coder with session, OAuth or OIDC, callback, identity, and authorization boundaries."
+    when: "Authentication, session, identity federation, or authorization integration is in scope."
+  - name: security-scanning
+    kind: conditional
+    reason: "Supports backend-security-coder with authorized scanner configuration, baselines, result triage, and security quality gates."
+    when: "Authorized automated scanner configuration, existing scan evidence, or quality-gate triage is needed."
+  - name: python-security-hardening
+    kind: conditional
+    reason: "Supports backend-security-coder with Python trust-boundary fixes for secrets, paths, subprocesses, and untrusted data."
+    when: "The confirmed vulnerable implementation is Python."
 tags:
   - backend-security
   - authorization

@@ -9,12 +9,23 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - video-production-workflow
-  - audio-generation
-  - web-research-ops
-  - agent-action-governance
-  - data-organization-system
+skill-dependencies:
+  - name: video-production-workflow
+    kind: recommended
+    reason: "Supports music-supervisor with the canonical production artifacts, stage gates, accepted lineage, and sequential fallback."
+  - name: audio-generation
+    kind: conditional
+    reason: "Supports music-supervisor with generation of non-speech music, sound effects, and ambience assets."
+    when: "The approved sound or music plan calls for generated non-speech assets."
+  - name: web-research-ops
+    kind: recommended
+    reason: "Supports music-supervisor with current primary sources, dates, contradictions, and attributable evidence."
+  - name: agent-action-governance
+    kind: optional
+    reason: "An opt-in extension of music-supervisor provides explicit authority, tool-action policies, approval windows, and attributable receipts."
+  - name: data-organization-system
+    kind: optional
+    reason: "An opt-in extension of music-supervisor provides a durable taxonomy, metadata, lifecycle, retention, and retrieval system."
 tags:
   - music-supervision
   - music-spotting

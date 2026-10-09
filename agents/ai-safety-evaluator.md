@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - llm-evals
-  - threat-modeling
-  - agent-action-governance
-  - specification-authoring
+skill-dependencies:
+  - name: llm-evals
+    kind: recommended
+    reason: "Supports ai-safety-evaluator with versioned LLM cases, rubrics, graders, baselines, and regression gates."
+  - name: threat-modeling
+    kind: recommended
+    reason: "Supports ai-safety-evaluator with assets, actors, data flows, abuse cases, mitigations, and residual-risk ownership."
+  - name: agent-action-governance
+    kind: conditional
+    reason: "Supports ai-safety-evaluator with explicit authority, tool-action policies, approval windows, and attributable receipts."
+    when: "The scope includes AI tool-action policy, approval windows, signed receipts, or execution handoffs."
+  - name: specification-authoring
+    kind: conditional
+    reason: "Supports ai-safety-evaluator with a formal technical Spec with the explicitly requested fixed document structure."
+    when: "The user explicitly requests a formal technical Spec with the prescribed document structure."
 tags:
   - ai-safety
   - responsible-ai

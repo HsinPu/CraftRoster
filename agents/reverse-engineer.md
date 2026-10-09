@@ -9,11 +9,25 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - project-architecture-review
-  - code-review
-  - terminal-ops
-  - specification-authoring
+skill-dependencies:
+  - name: project-architecture-review
+    kind: conditional
+    reason: "Supports reverse-engineer with existing repository boundaries, dependency evidence, and incremental architecture decisions."
+    when: "Existing repository architecture, module boundaries, or a migration decision is in scope."
+  - name: code-review
+    kind: conditional
+    reason: "Supports reverse-engineer with risk-calibrated evidence, failure scenarios, severity, and an independent review verdict."
+    when: "The verification target includes software source or a code change."
+  - name: terminal-ops
+    kind: recommended
+    reason: "Supports reverse-engineer with exact commands, repository state, scoped execution, and reproducible verification."
+  - name: specification-authoring
+    kind: conditional
+    reason: "Supports reverse-engineer with a formal technical Spec with the explicitly requested fixed document structure."
+    when: "The user explicitly requests a formal technical Spec with the prescribed document structure."
+  - name: reverse-engineering
+    kind: recommended
+    reason: "Supports reverse-engineer with authorized artifact provenance, static structure, and controlled analysis evidence."
 tags:
   - behavior
   - compatibility

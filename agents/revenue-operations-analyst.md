@@ -9,11 +9,18 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - spreadsheet-ops
-  - sql-best-practices
-  - data-organization-system
-  - dashboard-design
+skill-dependencies:
+  - name: spreadsheet-ops
+    kind: recommended
+    reason: "Supports revenue-operations-analyst with workbook or tabular input, formulas, units, calculation, and output validation."
+  - name: sql-best-practices
+    kind: conditional
+    reason: "Supports revenue-operations-analyst with SQL grain, null, join, parameterization, and query-plan correctness."
+    when: "The requested evidence or implementation includes SQL queries and their data semantics."
+  - name: data-organization-system
+    kind: conditional
+    reason: "Supports revenue-operations-analyst with a durable taxonomy, metadata, lifecycle, retention, and retrieval system."
+    when: "The scope designs a reusable taxonomy, metadata, retention, or retrieval system beyond one report."
 tags:
   - revenue-operations
   - pipeline-analysis

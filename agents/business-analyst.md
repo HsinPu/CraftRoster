@@ -9,12 +9,26 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - requirements-deep-dive
-  - solution-discovery
-  - domain-modeling
-  - data-organization-system
-  - spreadsheet-ops
+skill-dependencies:
+  - name: requirements-deep-dive
+    kind: conditional
+    reason: "Supports business-analyst with a deliberate stakeholder decision interview for consequential unresolved choices."
+    when: "Several consequential unresolved choices require an explicit stakeholder decision interview."
+  - name: solution-discovery
+    kind: recommended
+    reason: "Supports business-analyst with proportionate alternatives, tradeoffs, and an explicit direction decision."
+  - name: domain-modeling
+    kind: conditional
+    reason: "Supports business-analyst with technology-neutral business language, identity, invariants, and ownership."
+    when: "Ambiguous terminology, invariants, ownership, or lifecycle would change the decision or contract."
+  - name: data-organization-system
+    kind: conditional
+    reason: "Supports business-analyst with a durable taxonomy, metadata, lifecycle, retention, and retrieval system."
+    when: "The scope designs a reusable taxonomy, metadata, retention, or retrieval system beyond one report."
+  - name: spreadsheet-ops
+    kind: conditional
+    reason: "Supports business-analyst with workbook or tabular input, formulas, units, calculation, and output validation."
+    when: "The primary source or requested output is a workbook or tabular calculation artifact."
 tags:
   - business-analysis
   - requirements

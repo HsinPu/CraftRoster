@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - aws-operations
-  - terraform-infrastructure
-  - deployment-operations
-  - observability-engineering
+skill-dependencies:
+  - name: aws-operations
+    kind: recommended
+    reason: "Supports aws-solutions-architect with AWS account, regional service, IAM, and workload-specific operational evidence."
+  - name: terraform-infrastructure
+    kind: conditional
+    reason: "Supports aws-solutions-architect with Terraform or OpenTofu modules, provider state, plans, and safe infrastructure review."
+    when: "The chosen infrastructure contract uses Terraform or OpenTofu."
+  - name: deployment-operations
+    kind: conditional
+    reason: "Supports aws-solutions-architect with mode-aware artifact, rollout, health, abort, and recovery evidence."
+    when: "An environment promotion, artifact rollout, or recovery plan is part of the authorized mode."
+  - name: observability-engineering
+    kind: recommended
+    reason: "Supports aws-solutions-architect with service objectives, low-cardinality telemetry, diagnostics, and alert validation."
 tags:
   - aws
   - well-architected

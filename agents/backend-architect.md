@@ -9,11 +9,20 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - api-contract-design
-  - database-design
-  - auth-integration
-  - observability-engineering
+skill-dependencies:
+  - name: api-contract-design
+    kind: recommended
+    reason: "Supports backend-architect with versioned requests, responses, errors, pagination, and compatibility contracts."
+  - name: database-design
+    kind: recommended
+    reason: "Supports backend-architect with logical schemas, integrity constraints, access patterns, and migration design."
+  - name: auth-integration
+    kind: conditional
+    reason: "Supports backend-architect with session, OAuth or OIDC, callback, identity, and authorization boundaries."
+    when: "Authentication, session, identity federation, or authorization integration is in scope."
+  - name: observability-engineering
+    kind: recommended
+    reason: "Supports backend-architect with service objectives, low-cardinality telemetry, diagnostics, and alert validation."
 tags:
   - backend
   - api

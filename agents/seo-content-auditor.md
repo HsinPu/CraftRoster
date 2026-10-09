@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - web-research-ops
-  - frontend-design-review
-  - humanizer
-  - summary-ops
+skill-dependencies:
+  - name: web-research-ops
+    kind: recommended
+    reason: "Supports seo-content-auditor with current primary sources, dates, contradictions, and attributable evidence."
+  - name: frontend-design-review
+    kind: conditional
+    reason: "Supports seo-content-auditor with read-only interface usability, accessibility, and visual-quality evidence."
+    when: "An implemented web surface needs independent UX, accessibility, or visual evidence."
+  - name: humanizer
+    kind: optional
+    reason: "An opt-in extension of seo-content-auditor provides optional prose polishing that preserves the author and confirmed meaning."
+  - name: summary-ops
+    kind: conditional
+    reason: "Supports seo-content-auditor with faithful condensation of supplied source text with preserved uncertainty and attribution."
+    when: "Supplied text, records, or an accepted transcript needs faithful condensation before analysis or writing."
 tags:
   - seo
   - content-audit

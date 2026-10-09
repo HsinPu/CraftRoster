@@ -9,11 +9,22 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - project-architecture-review
-  - deployment-operations
-  - kubernetes-operations
-  - terraform-infrastructure
+skill-dependencies:
+  - name: project-architecture-review
+    kind: conditional
+    reason: "Supports platform-engineer with existing repository boundaries, dependency evidence, and incremental architecture decisions."
+    when: "Existing repository architecture, module boundaries, or a migration decision is in scope."
+  - name: deployment-operations
+    kind: recommended
+    reason: "Supports platform-engineer with mode-aware artifact, rollout, health, abort, and recovery evidence."
+  - name: kubernetes-operations
+    kind: conditional
+    reason: "Supports platform-engineer with Kubernetes workload, namespace, rollout, RBAC, and health contracts."
+    when: "The selected platform or affected workload uses Kubernetes."
+  - name: terraform-infrastructure
+    kind: conditional
+    reason: "Supports platform-engineer with Terraform or OpenTofu modules, provider state, plans, and safe infrastructure review."
+    when: "The chosen infrastructure contract uses Terraform or OpenTofu."
 tags:
   - platform-engineering
   - developer-platform

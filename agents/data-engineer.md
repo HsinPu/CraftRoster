@@ -9,11 +9,25 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - python-data-engineering
-  - database-design
-  - sql-best-practices
-  - observability-engineering
+skill-dependencies:
+  - name: python-data-engineering
+    kind: conditional
+    reason: "Supports data-engineer with reproducible Python dataframe or dataset transformation with data checks."
+    when: "The analysis or pipeline implements dataset transformations in Python."
+  - name: database-design
+    kind: conditional
+    reason: "Supports data-engineer with logical schemas, integrity constraints, access patterns, and migration design."
+    when: "Schema, persistent data integrity, storage ownership, or migration design is in scope."
+  - name: sql-best-practices
+    kind: conditional
+    reason: "Supports data-engineer with SQL grain, null, join, parameterization, and query-plan correctness."
+    when: "The requested evidence or implementation includes SQL queries and their data semantics."
+  - name: observability-engineering
+    kind: recommended
+    reason: "Supports data-engineer with service objectives, low-cardinality telemetry, diagnostics, and alert validation."
+  - name: data-pipeline-orchestration
+    kind: recommended
+    reason: "Supports data-engineer with idempotent data delivery, lineage, scheduling, quality gates, and recovery."
 tags:
   - pipelines
   - data-quality

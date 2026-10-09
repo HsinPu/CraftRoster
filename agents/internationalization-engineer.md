@@ -9,11 +9,22 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - i18n-localization
-  - frontend-testing
-  - browser-compatibility-testing
-  - accessibility-testing
+skill-dependencies:
+  - name: i18n-localization
+    kind: recommended
+    reason: "Supports internationalization-engineer with locale keys, plurals, Unicode, bidi, formatting, and fallback behavior."
+  - name: frontend-testing
+    kind: conditional
+    reason: "Supports internationalization-engineer with React or TypeScript component and hook behavior tests."
+    when: "The task covers React or TypeScript component or hook tests."
+  - name: browser-compatibility-testing
+    kind: conditional
+    reason: "Supports internationalization-engineer with a supported browser and viewport matrix with compatibility evidence."
+    when: "Supported browser differences or a cross-browser release matrix are in scope."
+  - name: accessibility-testing
+    kind: conditional
+    reason: "Supports internationalization-engineer with hands-on semantic, keyboard, screen-reader, and reflow validation."
+    when: "The requested evidence includes implemented web or mobile accessibility behavior."
 tags:
   - internationalization
   - localization

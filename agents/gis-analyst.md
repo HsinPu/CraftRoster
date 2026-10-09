@@ -9,11 +9,22 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - python-data-engineering
-  - database-design
-  - data-organization-system
-  - testing-strategy
+skill-dependencies:
+  - name: python-data-engineering
+    kind: conditional
+    reason: "Supports gis-analyst with reproducible Python dataframe or dataset transformation with data checks."
+    when: "The analysis or pipeline implements dataset transformations in Python."
+  - name: database-design
+    kind: conditional
+    reason: "Supports gis-analyst with logical schemas, integrity constraints, access patterns, and migration design."
+    when: "Schema, persistent data integrity, storage ownership, or migration design is in scope."
+  - name: data-organization-system
+    kind: conditional
+    reason: "Supports gis-analyst with a durable taxonomy, metadata, lifecycle, retention, and retrieval system."
+    when: "The scope designs a reusable taxonomy, metadata, retention, or retrieval system beyond one report."
+  - name: testing-strategy
+    kind: recommended
+    reason: "Supports gis-analyst with risk-based test levels, fixtures, boundaries, and meaningful coverage."
 tags:
   - gis
   - geospatial

@@ -9,11 +9,18 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - spreadsheet-ops
-  - web-research-ops
-  - data-organization-system
-  - specification-authoring
+skill-dependencies:
+  - name: spreadsheet-ops
+    kind: conditional
+    reason: "Supports pricing-strategist with workbook or tabular input, formulas, units, calculation, and output validation."
+    when: "The primary source or requested output is a workbook or tabular calculation artifact."
+  - name: web-research-ops
+    kind: recommended
+    reason: "Supports pricing-strategist with current primary sources, dates, contradictions, and attributable evidence."
+  - name: data-organization-system
+    kind: conditional
+    reason: "Supports pricing-strategist with a durable taxonomy, metadata, lifecycle, retention, and retrieval system."
+    when: "The scope designs a reusable taxonomy, metadata, retention, or retrieval system beyond one report."
 tags:
   - pricing
   - packaging

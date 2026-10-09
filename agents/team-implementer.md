@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - code-change-workflow
-  - incremental-implementation
-  - testing-strategy
-  - context-governance
+skill-dependencies:
+  - name: code-change-workflow
+    kind: recommended
+    reason: "Supports team-implementer with pre-edit ownership, call-path, compatibility, and verification inspection."
+  - name: incremental-implementation
+    kind: conditional
+    reason: "Supports team-implementer with dependency-aware verified slices and reversible integration checkpoints."
+    when: "The change spans risky boundaries or needs independently verified reversible slices."
+  - name: testing-strategy
+    kind: recommended
+    reason: "Supports team-implementer with risk-based test levels, fixtures, boundaries, and meaningful coverage."
+  - name: context-governance
+    kind: conditional
+    reason: "Supports team-implementer with a compact authoritative context record with precedence and provenance."
+    when: "Durable context, shared decisions, or context-budget behavior needs governance."
 tags:
   - team-implementation
   - ownership

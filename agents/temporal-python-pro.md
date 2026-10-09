@@ -9,11 +9,23 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - python-development
-  - python-concurrency-patterns
-  - python-testing-engineering
-  - observability-engineering
+skill-dependencies:
+  - name: python-development
+    kind: recommended
+    reason: "Supports temporal-python-pro with the mandatory Python implementation owner and specialist-routing baseline."
+  - name: python-concurrency-patterns
+    kind: recommended
+    reason: "Supports temporal-python-pro with Python task lifetimes, cancellation, bounded queues, and backpressure."
+  - name: python-testing-engineering
+    kind: recommended
+    reason: "Supports temporal-python-pro with pytest or unittest tests, fixtures, regression plans, and deterministic evidence."
+  - name: observability-engineering
+    kind: conditional
+    reason: "Supports temporal-python-pro with service objectives, low-cardinality telemetry, diagnostics, and alert validation."
+    when: "Service objectives, telemetry, operational diagnostics, or monitoring design are in scope."
+  - name: temporal-workflow-engineering
+    kind: recommended
+    reason: "Supports temporal-python-pro with deterministic durable workflows, activities, retries, replay, and versioning."
 tags:
   - temporal
   - python

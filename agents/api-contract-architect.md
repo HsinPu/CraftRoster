@@ -9,11 +9,22 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - api-contract-design
-  - openapi-spec-generation
-  - threat-modeling
-  - specification-authoring
+skill-dependencies:
+  - name: api-contract-design
+    kind: recommended
+    reason: "Supports api-contract-architect with versioned requests, responses, errors, pagination, and compatibility contracts."
+  - name: openapi-spec-generation
+    kind: conditional
+    reason: "Supports api-contract-architect with a validated OpenAPI schema and implementation-contract drift checks."
+    when: "An OpenAPI document is requested; the read-only role proposes and validates contracts without generating clients."
+  - name: threat-modeling
+    kind: conditional
+    reason: "Supports api-contract-architect with assets, actors, data flows, abuse cases, mitigations, and residual-risk ownership."
+    when: "The scope maps architecture or intelligence evidence into actionable threat and mitigation models."
+  - name: specification-authoring
+    kind: conditional
+    reason: "Supports api-contract-architect with a formal technical Spec with the explicitly requested fixed document structure."
+    when: "The user explicitly requests a formal technical Spec with the prescribed document structure."
 tags:
   - api-contracts
   - compatibility

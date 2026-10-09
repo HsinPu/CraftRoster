@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - sql-best-practices
-  - database-design
-  - postgres-operations
-  - testing-strategy
+skill-dependencies:
+  - name: sql-best-practices
+    kind: recommended
+    reason: "Supports sql-pro with SQL grain, null, join, parameterization, and query-plan correctness."
+  - name: database-design
+    kind: conditional
+    reason: "Supports sql-pro with logical schemas, integrity constraints, access patterns, and migration design."
+    when: "Schema, persistent data integrity, storage ownership, or migration design is in scope."
+  - name: postgres-operations
+    kind: conditional
+    reason: "Supports sql-pro with PostgreSQL plans, locks, roles, backups, replication, and maintenance evidence."
+    when: "The selected or affected database is PostgreSQL."
+  - name: testing-strategy
+    kind: recommended
+    reason: "Supports sql-pro with risk-based test levels, fixtures, boundaries, and meaningful coverage."
 tags:
   - sql
   - queries

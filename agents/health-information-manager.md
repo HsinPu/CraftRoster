@@ -9,11 +9,17 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - web-research-ops
-  - data-organization-system
-  - agent-action-governance
-  - specification-authoring
+skill-dependencies:
+  - name: web-research-ops
+    kind: recommended
+    reason: "Supports health-information-manager with current primary sources, dates, contradictions, and attributable evidence."
+  - name: data-organization-system
+    kind: recommended
+    reason: "Supports health-information-manager with a durable taxonomy, metadata, lifecycle, retention, and retrieval system."
+  - name: agent-action-governance
+    kind: conditional
+    reason: "Supports health-information-manager with explicit authority, tool-action policies, approval windows, and attributable receipts."
+    when: "The reviewed release or retention workflow uses AI tool-action controls or attributable approval receipts."
 tags:
   - health-information
   - record-integrity

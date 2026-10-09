@@ -26,9 +26,9 @@ Usage:
                         [--branch name] [--dry-run] [--force]
   curl -fsSL https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/setup.sh | bash
 
-Choose a platform, user global or current project, Skills / Agents / both, then
-all components or numbered categories. Multiple categories accept comma or
-space-separated numbers.
+Choose a platform, user global or current project, then all Skills and Agents
+or unified usage categories. Each category installs related Skills and Agents
+together. Multiple categories accept comma or space-separated numbers.
 Enter uses the displayed default; q cancels. Invalid answers allow three tries.
 An explicit y is required before installation. --dry-run previews the complete
 plan without a write-confirmation prompt or destination writes.
@@ -131,16 +131,15 @@ setup_choose_scope() {
   done
 }
 
-setup_choose_content() {
+setup_choose_mode() {
   local attempt
-  printf '\nContent\n  1) Skills\n  2) Agents\n  3) Both Skills and Agents\n'
+  printf '\nInstallation mode\n  1) All Skills and Agents\n  2) Select categories\n'
   for attempt in 1 2 3; do
-    setup_read_answer 'Content [3] (q to cancel)'
-    case "${SETUP_REPLY:-3}" in
-      1) SETUP_TYPES=(skill); return ;;
-      2) SETUP_TYPES=(agent); return ;;
-      3) SETUP_TYPES=(skill agent); return ;;
-      *) setup_invalid_answer "$attempt" 'Choose 1 (Skills), 2 (Agents), or 3 (both).' ;;
+    setup_read_answer 'Installation mode [1] (q to cancel)'
+    case "${SETUP_REPLY:-1}" in
+      1) SETUP_BUNDLE="all"; return ;;
+      2) SETUP_BUNDLE=""; return ;;
+      *) setup_invalid_answer "$attempt" 'Choose 1 (all Skills and Agents) or 2 (select categories).' ;;
     esac
   done
 }
@@ -176,64 +175,78 @@ setup_acquire_source() {
   fi
   [[ -f "$SETUP_ROOT/scripts/install.sh" && ! -L "$SETUP_ROOT/scripts/install.sh" ]] ||
     setup_die "Backend installer not found as a regular file: $SETUP_ROOT/scripts/install.sh"
-  SETUP_INDEX="$SETUP_ROOT/scripts/data/install-category-index.tsv"
+  # Match parsed option cases, rather than help text, before invoking any backend.
+  # Bash rejects unknown options, but source validation gives an actionable error.
+  setup_require_command grep
+  if ! grep -Eq -- '^[[:space:]]*--bundle\)' "$SETUP_ROOT/scripts/install.sh" ||
+     ! grep -Eq -- '^[[:space:]]*--agent-skill-policy\)' "$SETUP_ROOT/scripts/install.sh"; then
+    setup_die 'This source backend does not support bundled installation. Update --source-dir or --branch and use the matching setup script.'
+  fi
+  if [[ "$SETUP_TARGET" == "project" && "$SETUP_PLATFORM" != "all" ]] &&
+     ! grep -Eq -- '^[[:space:]]*--project-platform\)' "$SETUP_ROOT/scripts/install.sh"; then
+    setup_die 'This source backend does not support a single project platform. Update --source-dir or --branch.'
+  fi
+  SETUP_INDEX="$SETUP_ROOT/scripts/data/install-bundles.tsv"
   [[ -f "$SETUP_INDEX" && ! -L "$SETUP_INDEX" ]] ||
-    setup_die "Install category index not found as a regular file: $SETUP_INDEX"
+    setup_die "Bundled usage category index not found as a regular file: $SETUP_INDEX"
+  [[ -f "$SETUP_ROOT/scripts/data/install-agent-skill-dependencies.tsv" && ! -L "$SETUP_ROOT/scripts/data/install-agent-skill-dependencies.tsv" ]] ||
+    setup_die 'Agent Skill companion index is missing. Update --source-dir or --branch.'
 }
 
 setup_load_categories() {
   setup_require_command awk
-  setup_require_command sort
+  setup_require_command od
+  local bytes
+  bytes="$(LC_ALL=C od -An -v -tx1 "$SETUP_INDEX")" || setup_die 'Cannot inspect the bundled category index.'
+  if [[ "$bytes" =~ (^|[[:space:]])00([[:space:]]|$) ]]; then setup_die 'Bundled category index contains a NUL byte.'; fi
   # Validate the generated table before it supplies any menu or backend argument.
   SETUP_CATEGORY_SUMMARY="$(LC_ALL=C awk -F '\t' '
     function fail(message) {
-      print "Error: Install category index " message ": " FILENAME > "/dev/stderr"
+      print "Error: Bundled category index " message ": " FILENAME > "/dev/stderr"
       bad = 1
       exit 1
     }
     { sub(/\r$/, "") }
     NR == 1 {
-      if ($0 != "type\tcategory\tname") fail("has an invalid header")
+      if ($0 != "bundle\ttitle\tdescription\ttype\tname") fail("has an invalid header")
       next
     }
     {
-      if (NF != 3 || ($1 != "skill" && $1 != "agent") ||
-          $2 !~ /^[a-z0-9]+(-[a-z0-9]+)*$/ || $3 !~ /^[a-z0-9]+(-[a-z0-9]+)*$/)
+      if (NF != 5 || $1 !~ /^[a-z0-9]+(-[a-z0-9]+)*$/ || $1 == "all" ||
+          $2 ~ /[[:cntrl:]]/ || $2 ~ /^[[:space:]]*$/ || $3 ~ /[[:cntrl:]]/ || $3 ~ /^[[:space:]]*$/ ||
+          ($4 != "skill" && $4 != "agent") || $5 !~ /^[a-z0-9]+(-[a-z0-9]+)*$/)
         fail("contains an invalid row " NR)
-      if (seen[$1 ":" $3]++) fail("contains duplicate " $1 " name " $3)
-      counts[$1 "\t" $2]++
+      if (seen[$1 ":" $4 ":" $5]++) fail("contains duplicate member " $5)
+      if (titles[$1] && (titles[$1] != $2 || descriptions[$1] != $3)) fail("contains inconsistent display metadata")
+      if (!titles[$1]) order[++total] = $1
+      titles[$1] = $2
+      descriptions[$1] = $3
+      counts[$1 ":" $4]++
     }
     END {
       if (bad) exit 1
       if (NR < 2) fail("contains no components")
-      for (key in counts) print key "\t" counts[key]
+      for (i = 1; i <= total; i++) {
+        key = order[i]
+        print key "\t" titles[key] "\t" descriptions[key] "\t" (counts[key ":skill"] + 0) "\t" (counts[key ":agent"] + 0)
+      }
     }
-  ' "$SETUP_INDEX" | LC_ALL=C sort)" || setup_die 'Cannot build category menus from this source.'
+  ' "$SETUP_INDEX")" || setup_die 'Cannot build bundled category menus from this source.'
 }
 
 setup_choose_categories() {
-  local type="$1" label="Skills" row_type category count total=0 attempt token selected_index
+  local category title description skill_count agent_count count attempt token selected_index
   local valid seen pattern='^[1-9][0-9]*([[:space:]]*,[[:space:]]*[1-9][0-9]*|[[:space:]]+[1-9][0-9]*)*$'
-  local -a categories=() counts=() tokens=() selected=()
-  [[ "$type" != "agent" ]] || label="Agents"
-  printf '\n%s categories\n' "$label"
-  while IFS=$'\t' read -r row_type category count; do
-    [[ "$row_type" == "$type" ]] || continue
+  local -a categories=() tokens=() selected=()
+  printf '\nUsage categories\n'
+  while IFS=$'\t' read -r category title description skill_count agent_count; do
     categories+=("$category")
-    counts+=("$count")
-    total=$((total + count))
-    printf '  %d) %s (%s)\n' "${#categories[@]}" "$category" "$count"
+    printf '  %d) %s [%s] (%s Skills + %s Agents)\n     %s\n' "${#categories[@]}" "$title" "$category" "$skill_count" "$agent_count" "$description"
   done <<< "$SETUP_CATEGORY_SUMMARY"
-  [[ "${#categories[@]}" -gt 0 ]] || setup_die "No $label categories are available in this source."
-  printf '  0) All %s (%d)\n' "$label" "$total"
+  [[ "${#categories[@]}" -gt 0 ]] || setup_die 'No usage categories are available in this source.'
+  printf 'Related Agent companions and required Skill dependencies are added after selection.\n'
   for attempt in 1 2 3; do
-    setup_read_answer "$label categories [0 = all] (comma/space-separated numbers, q to cancel)"
-    if [[ -z "$SETUP_REPLY" || "$SETUP_REPLY" == "0" ]]; then
-      SETUP_JOB_TYPES+=("$type")
-      SETUP_JOB_CATEGORIES+=("")
-      SETUP_JOB_COUNTS+=("$total")
-      return
-    fi
+    setup_read_answer 'Usage categories (comma/space-separated numbers, q to cancel)'
     valid=1
     selected=()
     seen=$'\n'
@@ -254,13 +267,12 @@ setup_choose_categories() {
     fi
     if [[ "$valid" -eq 1 && "${#selected[@]}" -gt 0 ]]; then
       for selected_index in "${selected[@]}"; do
-        SETUP_JOB_TYPES+=("$type")
-        SETUP_JOB_CATEGORIES+=("${categories[$selected_index]}")
-        SETUP_JOB_COUNTS+=("${counts[$selected_index]}")
+        [[ -z "$SETUP_BUNDLE" ]] || SETUP_BUNDLE+=","
+        SETUP_BUNDLE+="${categories[$selected_index]}"
       done
       return
     fi
-    setup_invalid_answer "$attempt" "Choose 0 for all, or category numbers from 1 to ${#categories[@]} separated by commas or spaces."
+    setup_invalid_answer "$attempt" "Choose category numbers from 1 to ${#categories[@]} separated by commas or spaces. Blank input does not select all."
   done
 }
 
@@ -291,18 +303,17 @@ setup_yes_no() {
   done
 }
 
-setup_run_batch() {
-  local job="$1" preview="$2"
-  local -a args=(--target "$SETUP_TARGET" --type "${SETUP_JOB_TYPES[$job]}" --source-dir "$SETUP_ROOT" --branch "$SETUP_BRANCH")
+setup_run_plan() {
+  local preview="$1"
+  local -a args=(--target "$SETUP_TARGET" --type bundle --bundle "$SETUP_BUNDLE" --agent-skill-policy recommended --source-dir "$SETUP_ROOT" --branch "$SETUP_BRANCH")
   if [[ "$SETUP_TARGET" == "project" && "$SETUP_PLATFORM" != "all" ]]; then
     args+=(--project-platform "$SETUP_PLATFORM")
   fi
   [[ "$SETUP_REPO_EXPLICIT" -eq 0 ]] || args+=(--repo "$SETUP_REPO")
   [[ -z "$SETUP_INSTALL_DIR" ]] || args+=(--dir "$SETUP_INSTALL_DIR")
-  [[ -z "${SETUP_JOB_CATEGORIES[$job]}" ]] || args+=(--category "${SETUP_JOB_CATEGORIES[$job]}")
   [[ "$SETUP_FORCE" -eq 0 ]] || args+=(--force)
   [[ "$preview" -eq 0 ]] || args+=(--dry-run)
-  if [[ "${SETUP_JOB_TYPES[$job]}" == "agent" && "$SETUP_AUTO_DELEGATION" -eq 1 ]]; then
+  if [[ "$SETUP_AUTO_DELEGATION" -eq 1 ]]; then
     args+=(--enable-auto-delegation)
   fi
   # The backend has no interactive prompts and must not consume queued answers.
@@ -310,11 +321,8 @@ setup_run_batch() {
 }
 
 setup_main() {
-  local type job platform_label scope_label
-  SETUP_TYPES=()
-  SETUP_JOB_TYPES=()
-  SETUP_JOB_CATEGORIES=()
-  SETUP_JOB_COUNTS=()
+  local platform_label scope_label
+  SETUP_BUNDLE=""
   while [[ $# -gt 0 ]]; do
     case "$1" in
       --source-dir) setup_option_value "$1" "${2:-}"; SETUP_SOURCE_DIR="$2"; shift 2 ;;
@@ -347,21 +355,19 @@ setup_main() {
   printf 'CraftRoster interactive setup\n'
   setup_choose_platform
   setup_choose_scope
-  setup_choose_content
-  setup_acquire_source
-  setup_load_categories
-  for type in "${SETUP_TYPES[@]}"; do setup_choose_categories "$type"; done
   if [[ "$SETUP_TARGET" == "project" && -z "$SETUP_INSTALL_DIR" ]]; then
     setup_read_answer "Project root [$SETUP_CALLER_DIR] (q to cancel)"
     SETUP_INSTALL_DIR="${SETUP_REPLY:-$SETUP_CALLER_DIR}"
   fi
   [[ -z "$SETUP_INSTALL_DIR" ]] || setup_absolute_install_dir "$SETUP_INSTALL_DIR"
-  for type in "${SETUP_TYPES[@]}"; do
-    if [[ "$type" == "agent" && ( "$SETUP_TARGET" == "codex" || "$SETUP_TARGET" == "opencode" ) ]]; then
-      setup_yes_no 'Enable proactive Agent delegation? [y/N] (q to cancel)'
-      SETUP_AUTO_DELEGATION="$SETUP_YES"
-    fi
-  done
+  setup_choose_mode
+  setup_acquire_source
+  setup_load_categories
+  [[ "$SETUP_BUNDLE" == "all" ]] || setup_choose_categories
+  if [[ "$SETUP_TARGET" == "codex" || "$SETUP_TARGET" == "opencode" ]]; then
+    setup_yes_no 'Enable proactive Agent delegation? [y/N] (q to cancel)'
+    SETUP_AUTO_DELEGATION="$SETUP_YES"
+  fi
 
   platform_label="$SETUP_PLATFORM"
   [[ "$SETUP_PLATFORM" != "all" ]] || platform_label="all platforms"
@@ -373,33 +379,27 @@ setup_main() {
   elif [[ -n "$SETUP_INSTALL_DIR" ]]; then
     printf '  Destination override: %s\n' "$SETUP_INSTALL_DIR"
   fi
-  for ((job = 0; job < ${#SETUP_JOB_TYPES[@]}; job++)); do
-    printf '  %s: %s (%s selected components)\n' "${SETUP_JOB_TYPES[$job]}" "${SETUP_JOB_CATEGORIES[$job]:-all}" "${SETUP_JOB_COUNTS[$job]}"
-  done
+  printf '  Usage categories: %s\n  Agent Skill policy: recommended (required + recommended companions)\n' "$SETUP_BUNDLE"
   printf '  Proactive Agent delegation: %s\n' "$(if [[ "$SETUP_AUTO_DELEGATION" -eq 1 ]]; then printf enabled; else printf disabled; fi)"
   printf '  Force overwrite: %s\n' "$(if [[ "$SETUP_FORCE" -eq 1 ]]; then printf enabled; else printf disabled; fi)"
-  printf 'Required Skill dependencies and companion Skills follow the backend rules.\n'
+  printf 'Related Skills and Agents are installed together; shared Skills are planned once per destination.\n'
   printf 'The preflight below lists the exact destinations and any configuration changes.\n'
-  for ((job = 0; job < ${#SETUP_JOB_TYPES[@]}; job++)); do
-    printf '\nPreflight %d/%d: %s / %s\n' "$((job + 1))" "${#SETUP_JOB_TYPES[@]}" "${SETUP_JOB_TYPES[$job]}" "${SETUP_JOB_CATEGORIES[$job]:-all}"
-    if ! setup_run_batch "$job" 1; then
-      setup_die 'Preflight failed; no installation was started and no destination writes were allowed.'
-    fi
-  done
-  printf '\nAll selected batches passed preflight.\n'
+  printf '\nPreflight complete bundled plan\n'
+  if ! setup_run_plan 1; then
+    setup_die 'Preflight failed; no installation was started and no destination writes were allowed.'
+  fi
+  printf '\nThe complete plan passed preflight.\n'
   if [[ "$SETUP_DRY_RUN" -eq 1 ]]; then
     printf 'Dry run complete; no installation was started.\n'
     return
   fi
-  printf 'Batches install sequentially; completed batches are not rolled back if a later batch fails.\n'
+  printf 'Packages install sequentially; completed packages are not rolled back if a later package fails.\n'
   setup_yes_no 'Install this plan? [y/N] (q to cancel)'
   [[ "$SETUP_YES" -eq 1 ]] || setup_cancel
-  for ((job = 0; job < ${#SETUP_JOB_TYPES[@]}; job++)); do
-    printf '\nInstalling %d/%d: %s / %s\n' "$((job + 1))" "${#SETUP_JOB_TYPES[@]}" "${SETUP_JOB_TYPES[$job]}" "${SETUP_JOB_CATEGORIES[$job]:-all}"
-    if ! setup_run_batch "$job" 0; then
-      setup_die 'Installation stopped; earlier batches may have completed. No rollback of completed batches was attempted.'
-    fi
-  done
+  printf '\nInstalling the complete bundled plan\n'
+  if ! setup_run_plan 0; then
+    setup_die 'Installation stopped; backend diagnostics identify completed and pending steps when writes began. Completed packages were not rolled back as a group.'
+  fi
   printf '\nCraftRoster setup complete.\n'
 }
 

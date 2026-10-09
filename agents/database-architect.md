@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - database-design
-  - sql-best-practices
-  - postgres-operations
-  - mongodb-development
+skill-dependencies:
+  - name: database-design
+    kind: recommended
+    reason: "Supports database-architect with logical schemas, integrity constraints, access patterns, and migration design."
+  - name: sql-best-practices
+    kind: recommended
+    reason: "Supports database-architect with SQL grain, null, join, parameterization, and query-plan correctness."
+  - name: postgres-operations
+    kind: conditional
+    reason: "Supports database-architect with PostgreSQL plans, locks, roles, backups, replication, and maintenance evidence."
+    when: "The selected or affected database is PostgreSQL."
+  - name: mongodb-development
+    kind: conditional
+    reason: "Supports database-architect with MongoDB document modeling, indexes, aggregation, and transaction behavior."
+    when: "The selected or affected database is MongoDB."
 tags:
   - database
   - schema

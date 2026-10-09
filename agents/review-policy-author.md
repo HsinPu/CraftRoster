@@ -9,11 +9,22 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - code-review
-  - github-code-review
-  - specification-authoring
-  - github-actions-ci
+skill-dependencies:
+  - name: code-review
+    kind: recommended
+    reason: "Supports review-policy-author with risk-calibrated evidence, failure scenarios, severity, and an independent review verdict."
+  - name: github-code-review
+    kind: conditional
+    reason: "Supports review-policy-author with GitHub PR baselines, checks, comments, and review-round evidence."
+    when: "The review baseline or feedback is a GitHub pull request."
+  - name: specification-authoring
+    kind: conditional
+    reason: "Supports review-policy-author with a formal technical Spec with the explicitly requested fixed document structure."
+    when: "The user explicitly requests a formal technical Spec with the prescribed document structure."
+  - name: github-actions-ci
+    kind: conditional
+    reason: "Supports review-policy-author with GitHub Actions events, runners, permissions, artifacts, and quality gates."
+    when: "The affected delivery or enforcement platform is GitHub Actions."
 tags:
   - code-review
   - policy

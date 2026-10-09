@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - ai-image-prompts-skill
-  - web-research-ops
-  - design-consultation
-  - summary-ops
+skill-dependencies:
+  - name: ai-image-prompts-skill
+    kind: conditional
+    reason: "Supports gallery-researcher with adaptation of supplied image-prompt patterns and reusable variants."
+    when: "The user supplies or chooses an image-prompt pattern to adapt."
+  - name: web-research-ops
+    kind: recommended
+    reason: "Supports gallery-researcher with current primary sources, dates, contradictions, and attributable evidence."
+  - name: design-consultation
+    kind: conditional
+    reason: "Supports gallery-researcher with web interface visual direction before implementation."
+    when: "The visual-reference brief specifically concerns web interface visual direction."
+  - name: summary-ops
+    kind: optional
+    reason: "An opt-in extension of gallery-researcher provides faithful condensation of supplied source text with preserved uncertainty and attribution."
 tags:
   - visual-research
   - references

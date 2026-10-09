@@ -9,11 +9,22 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - openai-api-development
-  - agents-sdk-development
-  - rag-vector-search
-  - llm-evals
+skill-dependencies:
+  - name: openai-api-development
+    kind: conditional
+    reason: "Supports ai-engineer with OpenAI API input, output, tool, retry, streaming, and provider contracts."
+    when: "The selected model provider or affected integration is OpenAI."
+  - name: agents-sdk-development
+    kind: conditional
+    reason: "Supports ai-engineer with OpenAI Agents SDK tools, handoffs, guardrails, and tracing."
+    when: "The application uses the OpenAI Agents SDK."
+  - name: rag-vector-search
+    kind: conditional
+    reason: "Supports ai-engineer with corpus lineage, chunking, retrieval, relevance, and access-aware evaluation."
+    when: "The selected design uses retrieval, embeddings, RAG, or a vector index."
+  - name: llm-evals
+    kind: recommended
+    reason: "Supports ai-engineer with versioned LLM cases, rubrics, graders, baselines, and regression gates."
 tags:
   - ai-engineering
   - llm

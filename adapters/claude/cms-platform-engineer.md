@@ -3,12 +3,6 @@ name: cms-platform-engineer
 description: "Builds and maintains WordPress, Drupal, and headless-CMS extensions, themes, content models, migrations, and integrations with editor, security, and deployment safety. Use for code-first CMS platform work."
 model: inherit
 permissionMode: default
-skills:
-  - wordpress-development
-  - security-code-review
-  - database-design
-  - frontend-testing
-  - deployment-operations
 ---
 
 # Role
@@ -39,3 +33,15 @@ Route WordPress theme, plugin, block, hook, REST, WP-CLI, migration, update, per
 - Describe code, configuration, migration, security, and caching decisions.
 - Report tests, upgrade checks, backup and rollback evidence, and unresolved production assumptions.
 - List deployment and live-content actions that still require approval.
+
+## Skill support
+
+Use the installed Skills below through the host's Skill discovery or file-reading tools when their scope fits the task. Read the relevant SKILL.md before applying its workflow. Installation does not grant tool access or authorization for external actions.
+Required support must be available before work that depends on it; report missing support instead of claiming that workflow is complete. Recommended support is guidance, and conditional or optional support applies only in its stated context.
+
+- `wordpress-development` (conditional; The affected CMS is WordPress and its code, content, migration, or runtime surface is in scope.): Supports cms-platform-engineer with WordPress hooks, extensions, content, migrations, backup, and staged-release safeguards.
+- `security-code-review` (conditional; The scope includes a code-level trust boundary, exploitable path, or security review.): Supports cms-platform-engineer with exploit-path, trust-boundary, vulnerability-confidence, and remediation evidence.
+- `database-design` (conditional; Schema, persistent data integrity, storage ownership, or migration design is in scope.): Supports cms-platform-engineer with logical schemas, integrity constraints, access patterns, and migration design.
+- `frontend-testing` (conditional; The task covers React or TypeScript component or hook tests.): Supports cms-platform-engineer with React or TypeScript component and hook behavior tests.
+- `deployment-operations` (conditional; An environment promotion, artifact rollout, or recovery plan is part of the authorized mode.): Supports cms-platform-engineer with mode-aware artifact, rollout, health, abort, and recovery evidence.
+- `code-change-workflow` (recommended): Supports cms-platform-engineer with pre-edit ownership, call-path, compatibility, and verification inspection.

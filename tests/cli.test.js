@@ -125,6 +125,25 @@ const successCases = [
     stdout: /code-reviewer/,
   },
   {
+    name: 'shows Agent relation kinds and conditions with an explicit paired install command',
+    args: ['info', 'code-reviewer', '--type', 'agent'],
+    status: 0,
+    stdout: /\[建議\] code-review[\s\S]*\[條件\] pipeline-review[\s\S]*The review is an explicit[\s\S]*AgentSkillPolicy recommended/,
+    notOutput: /undefined/,
+  },
+  {
+    name: 'lists the unified installation purposes',
+    args: ['bundles'],
+    status: 0,
+    stdout: /用途分類 \(15 類[\s\S]*image-graphics[\s\S]*software-development[\s\S]*threejs-graphics/,
+  },
+  {
+    name: 'shows direct bundle members and distinguishes additional support',
+    args: ['bundles', 'image-graphics'],
+    status: 0,
+    stdout: /畫圖與圖像處理[\s\S]*Skills \(\d+\):[\s\S]*Agents \(\d+\):[\s\S]*image-generator[\s\S]*必需／建議配套[\s\S]*--type bundle --bundle image-graphics --dry-run/,
+  },
+  {
     name: 'allows an installed catalog target',
     args: ['list', '--installed', '--target', 'codex'],
     status: 0,
@@ -139,6 +158,24 @@ const successCases = [
 ];
 
 const usageErrorCases = [
+  {
+    name: 'rejects multiple bundle IDs in a catalog detail query',
+    args: ['bundles', 'image-graphics', 'software-development'],
+    status: 2,
+    stderr: /bundles/,
+  },
+  {
+    name: 'rejects source taxonomy options for unified purposes',
+    args: ['bundles', '--type', 'agent'],
+    status: 2,
+    stderr: /bundles/,
+  },
+  {
+    name: 'rejects installed filtering for unified purposes',
+    args: ['bundles', '--installed'],
+    status: 2,
+    stderr: /bundles/,
+  },
   {
     name: 'rejects an unknown command',
     args: ['wat'],
@@ -305,6 +342,12 @@ const usageErrorCases = [
 ];
 
 const notFoundCases = [
+  {
+    name: 'returns not found for an unknown unified purpose',
+    args: ['bundles', MISSING_NAME],
+    status: 1,
+    stderr: /找不到用途分類/,
+  },
   {
     name: 'returns not found for missing Skill info',
     args: ['info', MISSING_NAME],

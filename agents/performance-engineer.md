@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - observability-engineering
-  - react-perf
-  - python-observability-debugging
-  - testing-strategy
+skill-dependencies:
+  - name: observability-engineering
+    kind: recommended
+    reason: "Supports performance-engineer with service objectives, low-cardinality telemetry, diagnostics, and alert validation."
+  - name: react-perf
+    kind: conditional
+    reason: "Supports performance-engineer with React render, bundle, waterfall, and component-cost diagnosis."
+    when: "The measured bottleneck is in an affected React application."
+  - name: python-observability-debugging
+    kind: conditional
+    reason: "Supports performance-engineer with Python traceback, failure, hang, profiling, and root-cause evidence."
+    when: "The performance or failure evidence is a Python traceback, hang, profile, or memory issue."
+  - name: testing-strategy
+    kind: recommended
+    reason: "Supports performance-engineer with risk-based test levels, fixtures, boundaries, and meaningful coverage."
 tags:
   - performance
   - profiling

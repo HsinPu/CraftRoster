@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - auth-integration
-  - agent-action-governance
-  - threat-modeling
-  - security-code-review
+skill-dependencies:
+  - name: auth-integration
+    kind: recommended
+    reason: "Supports identity-access-engineer with session, OAuth or OIDC, callback, identity, and authorization boundaries."
+  - name: agent-action-governance
+    kind: conditional
+    reason: "Supports identity-access-engineer with explicit authority, tool-action policies, approval windows, and attributable receipts."
+    when: "The scope includes AI tool-action policy, approval windows, signed receipts, or execution handoffs."
+  - name: threat-modeling
+    kind: conditional
+    reason: "Supports identity-access-engineer with assets, actors, data flows, abuse cases, mitigations, and residual-risk ownership."
+    when: "The scope maps architecture or intelligence evidence into actionable threat and mitigation models."
+  - name: security-code-review
+    kind: recommended
+    reason: "Supports identity-access-engineer with exploit-path, trust-boundary, vulnerability-confidence, and remediation evidence."
 tags:
   - identity
   - federation

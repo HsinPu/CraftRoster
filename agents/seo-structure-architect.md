@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - project-architecture-review
-  - frontend-design-review
-  - data-organization-system
-  - web-research-ops
+skill-dependencies:
+  - name: project-architecture-review
+    kind: conditional
+    reason: "Supports seo-structure-architect with existing repository boundaries, dependency evidence, and incremental architecture decisions."
+    when: "The site architecture decision affects repository module, route, dependency, or migration boundaries."
+  - name: frontend-design-review
+    kind: conditional
+    reason: "Supports seo-structure-architect with read-only interface usability, accessibility, and visual-quality evidence."
+    when: "An implemented web surface needs independent UX, accessibility, or visual evidence."
+  - name: data-organization-system
+    kind: recommended
+    reason: "Supports seo-structure-architect with a durable taxonomy, metadata, lifecycle, retention, and retrieval system."
+  - name: web-research-ops
+    kind: recommended
+    reason: "Supports seo-structure-architect with current primary sources, dates, contradictions, and attributable evidence."
 tags:
   - seo
   - information-architecture

@@ -24,6 +24,7 @@ const COMMAND_ALIASES = new Map([
   ['ls', 'list'],
   ['search', 'search'],
   ['s', 'search'],
+  ['bundles', 'bundles'],
 ]);
 const VALUE_OPTIONS = new Map([
   ['--agent', { key: 'target', label: '--target/--agent' }],
@@ -250,6 +251,13 @@ function validateCommandGrammar(parsed) {
   if (parsed.command === 'help') {
     if (parsed.provided.size > 0 || parsed.positionals.length > 0) {
       return reportUsageError('help 指令不接受其他參數或選項。');
+    }
+    return true;
+  }
+
+  if (parsed.command === 'bundles') {
+    if (parsed.provided.size > 0 || parsed.positionals.length > 1) {
+      return reportUsageError('bundles 只接受一個選用用途 id，不接受類型、分類或安裝狀態選項。');
     }
     return true;
   }
@@ -625,6 +633,9 @@ function showAgentInfo(agentId) {
     reportNotFound(`找不到 Agent "${agentId}"；請使用角色名稱。`);
     return;
   }
+  const labels = { required: '必需', recommended: '建議', conditional: '條件', optional: '可選' };
+  const support = (agent.skillDependencies || []).map((entry) =>
+    `  [${labels[entry.kind] || entry.kind}] ${entry.name}: ${entry.reason}${entry.when ? `；條件: ${entry.when}` : ''}`).join('\n');
   console.log(`
 ${agent.id}
 ${agent.description}
@@ -637,16 +648,37 @@ ${agent.description}
 來源: ${agent.source}
 授權: ${agent.license}
 相關 Skills: ${agent.skills.join(', ')}
+配套關係（預設配套安裝加入必需與建議；條件與可選需明確選取）:
+${support || '  此角色沒有 Skill 配套。'}
 
 Codex 安裝:
-  powershell -ExecutionPolicy Bypass -NoProfile -Command '$s = irm https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/install.ps1; & ([scriptblock]::Create($s)) -Target codex -Type agent -Name ${agent.id}'
+  powershell -ExecutionPolicy Bypass -NoProfile -Command '$s = irm https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/install.ps1; & ([scriptblock]::Create($s)) -Target codex -Type agent -Name ${agent.id} -AgentSkillPolicy recommended'
 
 Claude Code 安裝:
-  curl -fsSL https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/install.sh | bash -s -- --target claude --type agent --name ${agent.id}
+  curl -fsSL https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/install.sh | bash -s -- --target claude --type agent --name ${agent.id} --agent-skill-policy recommended
 
 OpenCode 安裝:
-  curl -fsSL https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/install.sh | bash -s -- --target opencode --type agent --name ${agent.id}
+  curl -fsSL https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/install.sh | bash -s -- --target opencode --type agent --name ${agent.id} --agent-skill-policy recommended
 `);
+}
+
+function showBundles(id) {
+  try {
+    const registry = JSON.parse(fs.readFileSync(path.join(__dirname, 'scripts/data/install-bundles.json'), 'utf8'));
+    const { validateBundleRegistry } = require('./scripts/lib/install-bundles');
+    validateBundleRegistry(registry, loadAgentsJson(), loadSkillsJson());
+    if (id) {
+      const bundle = registry.bundles.find((entry) => entry.id === id);
+      if (!bundle) { reportNotFound(`找不到用途分類 "${id}"。`); return; }
+      console.log(`${bundle.title} (${bundle.id})\n${bundle.description}\n\n分類直接包含:\nSkills (${bundle.skills.length}): ${bundle.skills.join(', ')}\nAgents (${bundle.agents.length}): ${bundle.agents.join(', ')}\n\n安裝時還會加入角色必需／建議配套與 Skill 必需依賴，並按目的地去重。\n預覽: bash scripts/install.sh --target codex --type bundle --bundle ${bundle.id} --dry-run`);
+    } else {
+      console.log(`用途分類 (${registry.bundles.length} 類；數量是分類直接成員，安裝時另計配套):`);
+      registry.bundles.forEach((entry) => console.log(`  ${entry.id} — ${entry.title}: ${entry.skills.length} Skills / ${entry.agents.length} Agents`));
+      console.log('\n用法: craftroster bundles <用途 id>\n安裝入口: scripts/setup.ps1 或 scripts/setup.sh');
+    }
+  } catch (error) {
+    reportNotFound(`無法讀取用途分類: ${error.message}`);
+  }
 }
 
 function showHelp() {
@@ -662,6 +694,7 @@ CraftRoster - AI Agents, Skills & Workflows Catalog
   list --installed      列出已安裝的元件
   search <關鍵字>       搜尋 catalog
   info <名稱>           顯示詳細資訊
+  bundles [用途 id]     列出統一用途分類，或查看分類內的 Skills 與子代理
 
 選項:
   --type skill|agent    Catalog 類型（預設: skill）
@@ -682,11 +715,13 @@ Skill 與 Agent targets:
   craftroster list --type agent --category quality-assurance
   craftroster search reviewer --type agent
   craftroster info code-reviewer --type agent
+  craftroster bundles
+  craftroster bundles image-graphics
   craftroster list --installed --type agent --target codex
 
 安裝請使用免 Node installer:
   required（必要）依賴會自動安裝；conditional（條件）與 optional（可選）依賴不自動安裝。
-  powershell -ExecutionPolicy Bypass -NoProfile -Command '$s = irm https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/install.ps1; & ([scriptblock]::Create($s)) -Agent codex'
+  powershell -ExecutionPolicy Bypass -NoProfile -Command '$s = irm https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/setup.ps1; & ([scriptblock]::Create($s))'
 `);
 }
 
@@ -698,6 +733,8 @@ if (cli && validateCommandGrammar(cli)) {
 
   if (cli.command === 'help' || cli.help) {
     showHelp();
+  } else if (cli.command === 'bundles') {
+    showBundles(param);
   } else if (cli.command === 'list') {
     if (cli.installed) {
       if (cli.all) {

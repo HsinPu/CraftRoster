@@ -9,10 +9,14 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - spreadsheet-ops
-  - data-organization-system
-  - specification-authoring
+skill-dependencies:
+  - name: spreadsheet-ops
+    kind: recommended
+    reason: "Supports accounting-controller with workbook or tabular input, formulas, units, calculation, and output validation."
+  - name: data-organization-system
+    kind: conditional
+    reason: "Supports accounting-controller with a durable taxonomy, metadata, lifecycle, retention, and retrieval system."
+    when: "The scope designs a reusable taxonomy, metadata, retention, or retrieval system beyond one report."
 tags:
   - accounting
   - reconciliation

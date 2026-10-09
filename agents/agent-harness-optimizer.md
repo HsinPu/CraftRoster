@@ -9,11 +9,33 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - agent-creator-design
-  - subagent-architecture
-  - context-governance
-  - skill-audit
+skill-dependencies:
+  - name: agent-creator-design
+    kind: conditional
+    reason: "Supports agent-harness-optimizer with the canonical Agent metadata, four-part contract, and focused role templates."
+    when: "The work changes an Agent contract rather than only discovery or installation behavior."
+  - name: subagent-architecture
+    kind: optional
+    reason: "An opt-in extension of agent-harness-optimizer provides focused delegation, exclusive ownership, dependency gates, and verified fan-in."
+  - name: context-governance
+    kind: conditional
+    reason: "Supports agent-harness-optimizer with a compact authoritative context record with precedence and provenance."
+    when: "Durable context, shared decisions, or context-budget behavior needs governance."
+  - name: skill-audit
+    kind: conditional
+    reason: "Supports agent-harness-optimizer with package-level invocation, workflow, evidence, provenance, and safety review."
+    when: "A Skill package needs semantic, provenance, workflow, or safety assessment."
+  - name: skillctl
+    kind: recommended
+    reason: "Supports agent-harness-optimizer with platform-aware Skill discovery, installation, and CLI operation routing."
+  - name: skill-lint
+    kind: conditional
+    reason: "Supports agent-harness-optimizer with deterministic Skill identity, package, reference, and contract validation."
+    when: "The installation or discovery issue involves deterministic Skill metadata, package, or reference validation."
+  - name: agent-introspection-debugging
+    kind: conditional
+    reason: "Supports agent-harness-optimizer with trace-based diagnosis of routing, context, tool, and handoff failures."
+    when: "Runtime traces show routing, context, tool, or handoff divergence."
 tags:
   - agent-harness
   - adapters

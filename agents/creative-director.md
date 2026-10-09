@@ -9,12 +9,29 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - design-consultation
-  - color-font-skill
-  - web-research-ops
-  - storyboard-creation
-  - ux-writing
+skill-dependencies:
+  - name: design-consultation
+    kind: conditional
+    reason: "Supports creative-director with web interface visual direction before implementation."
+    when: "The requested design direction or research handoff concerns a web interface."
+  - name: color-font-skill
+    kind: conditional
+    reason: "Supports creative-director with web visual direction, typography, palette, and contrast choices."
+    when: "The approved visual work concerns a web interface palette or typography."
+  - name: web-research-ops
+    kind: recommended
+    reason: "Supports creative-director with current primary sources, dates, contradictions, and attributable evidence."
+  - name: storyboard-creation
+    kind: conditional
+    reason: "Supports creative-director with approved scene intent converted into shot IDs, timing, camera, audio, and continuity."
+    when: "An approved audiovisual concept needs shot planning, timing, or storyboard handoff."
+  - name: ux-writing
+    kind: conditional
+    reason: "Supports creative-director with clear interface labels, instructions, error states, and truthful user guidance."
+    when: "The requested copy is interface microcopy or an explicitly identified product state."
+  - name: brand-voice
+    kind: recommended
+    reason: "Supports creative-director with a source-derived tone, vocabulary, and messaging profile."
 tags:
   - creative-direction
   - visual-governance

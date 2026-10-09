@@ -9,11 +9,22 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - terraform-infrastructure
-  - aws-operations
-  - security-scanning
-  - deployment-operations
+skill-dependencies:
+  - name: terraform-infrastructure
+    kind: recommended
+    reason: "Supports terraform-specialist with Terraform or OpenTofu modules, provider state, plans, and safe infrastructure review."
+  - name: aws-operations
+    kind: conditional
+    reason: "Supports terraform-specialist with AWS account, regional service, IAM, and workload-specific operational evidence."
+    when: "The selected provider or affected workload is AWS."
+  - name: security-scanning
+    kind: conditional
+    reason: "Supports terraform-specialist with authorized scanner configuration, baselines, result triage, and security quality gates."
+    when: "Authorized automated scanner configuration, existing scan evidence, or quality-gate triage is needed."
+  - name: deployment-operations
+    kind: conditional
+    reason: "Supports terraform-specialist with mode-aware artifact, rollout, health, abort, and recovery evidence."
+    when: "An environment promotion, artifact rollout, or recovery plan is part of the authorized mode."
 tags:
   - terraform
   - opentofu

@@ -9,11 +9,30 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - python-data-engineering
-  - python-development
-  - llm-evals
-  - spreadsheet-ops
+skill-dependencies:
+  - name: python-data-engineering
+    kind: conditional
+    reason: "Supports data-scientist with reproducible Python dataframe or dataset transformation with data checks."
+    when: "The analysis or pipeline implements dataset transformations in Python."
+  - name: python-development
+    kind: conditional
+    reason: "Supports data-scientist with the mandatory Python implementation owner and specialist-routing baseline."
+    when: "The affected code, runtime contract, or diagnostic evidence is Python."
+  - name: llm-evals
+    kind: conditional
+    reason: "Supports data-scientist with versioned LLM cases, rubrics, graders, baselines, and regression gates."
+    when: "The model under evaluation is an LLM or an LLM-backed application."
+  - name: spreadsheet-ops
+    kind: conditional
+    reason: "Supports data-scientist with workbook or tabular input, formulas, units, calculation, and output validation."
+    when: "The primary source or requested output is a workbook or tabular calculation artifact."
+  - name: product-experimentation
+    kind: conditional
+    reason: "Supports data-scientist with predeclared hypotheses, assignment integrity, guardrails, and causal decision gates."
+    when: "The decision needs a controlled product experiment or its assignment and telemetry evidence."
+  - name: testing-strategy
+    kind: recommended
+    reason: "Supports data-scientist with risk-based test levels, fixtures, boundaries, and meaningful coverage."
 tags:
   - data-science
   - experiments

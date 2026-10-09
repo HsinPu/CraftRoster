@@ -9,12 +9,24 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - video-production-workflow
-  - web-research-ops
-  - agent-reach-ops
-  - data-organization-system
-  - agent-action-governance
+skill-dependencies:
+  - name: video-production-workflow
+    kind: recommended
+    reason: "Supports media-library-researcher with the canonical production artifacts, stage gates, accepted lineage, and sequential fallback."
+  - name: web-research-ops
+    kind: recommended
+    reason: "Supports media-library-researcher with current primary sources, dates, contradictions, and attributable evidence."
+  - name: agent-reach-ops
+    kind: conditional
+    reason: "Supports media-library-researcher with platform-specific source identity, timestamps, revisions, and transcript collection."
+    when: "Evidence must be collected from platform-specific social, transcript, code-hosting, or RSS surfaces."
+  - name: data-organization-system
+    kind: conditional
+    reason: "Supports media-library-researcher with a durable taxonomy, metadata, lifecycle, retention, and retrieval system."
+    when: "The scope designs a reusable taxonomy, metadata, retention, or retrieval system beyond one report."
+  - name: agent-action-governance
+    kind: optional
+    reason: "An opt-in extension of media-library-researcher provides explicit authority, tool-action policies, approval windows, and attributable receipts."
 tags:
   - media-research
   - stock-and-archive

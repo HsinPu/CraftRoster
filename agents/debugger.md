@@ -9,10 +9,20 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - code-change-workflow
-  - logging-patterns
-  - testing-strategy
+skill-dependencies:
+  - name: code-change-workflow
+    kind: recommended
+    reason: "Supports debugger with pre-edit ownership, call-path, compatibility, and verification inspection."
+  - name: logging-patterns
+    kind: conditional
+    reason: "Supports debugger with stable event names, levels, structured fields, and secret-safe diagnostics."
+    when: "The work writes, reviews, or correlates structured application logs."
+  - name: testing-strategy
+    kind: recommended
+    reason: "Supports debugger with risk-based test levels, fixtures, boundaries, and meaningful coverage."
+  - name: systematic-debugging
+    kind: recommended
+    reason: "Supports debugger with a reproduced failure, competing hypotheses, and the smallest proven cause."
 tags:
   - debugging
   - root-cause

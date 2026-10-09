@@ -9,11 +9,24 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - frontend-design-review
-  - frontend-testing
-  - browser-compatibility-testing
-  - responsive-design
+skill-dependencies:
+  - name: frontend-design-review
+    kind: recommended
+    reason: "Supports accessibility-expert with read-only interface usability, accessibility, and visual-quality evidence."
+  - name: frontend-testing
+    kind: conditional
+    reason: "Supports accessibility-expert with React or TypeScript component and hook behavior tests."
+    when: "The task covers React or TypeScript component or hook tests."
+  - name: browser-compatibility-testing
+    kind: conditional
+    reason: "Supports accessibility-expert with a supported browser and viewport matrix with compatibility evidence."
+    when: "Supported browser differences or a cross-browser release matrix are in scope."
+  - name: responsive-design
+    kind: optional
+    reason: "An opt-in extension of accessibility-expert provides complex web layout reflow, fluid sizing, breakpoints, and touch-target contracts."
+  - name: accessibility-testing
+    kind: recommended
+    reason: "Supports accessibility-expert with hands-on semantic, keyboard, screen-reader, and reflow validation."
 tags:
   - accessibility
   - wcag

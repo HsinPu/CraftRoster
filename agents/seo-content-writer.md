@@ -9,11 +9,20 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - web-research-ops
-  - humanizer
-  - markdown-writer
-  - ux-writing
+skill-dependencies:
+  - name: web-research-ops
+    kind: recommended
+    reason: "Supports seo-content-writer with current primary sources, dates, contradictions, and attributable evidence."
+  - name: humanizer
+    kind: optional
+    reason: "An opt-in extension of seo-content-writer provides optional prose polishing that preserves the author and confirmed meaning."
+  - name: markdown-writer
+    kind: recommended
+    reason: "Supports seo-content-writer with clear GFM structure, source-preserving documentation, and links."
+  - name: ux-writing
+    kind: conditional
+    reason: "Supports seo-content-writer with clear interface labels, instructions, error states, and truthful user guidance."
+    when: "The requested copy is interface microcopy or an explicitly identified product state."
 tags:
   - seo
   - content-writing

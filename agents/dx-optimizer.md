@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - repo-ready
-  - terminal-ops
-  - git-readme-writer
-  - github-actions-ci
+skill-dependencies:
+  - name: repo-ready
+    kind: recommended
+    reason: "Supports dx-optimizer with stack-aware repository instructions, contribution commands, CI, and release hygiene."
+  - name: terminal-ops
+    kind: recommended
+    reason: "Supports dx-optimizer with exact commands, repository state, scoped execution, and reproducible verification."
+  - name: git-readme-writer
+    kind: conditional
+    reason: "Supports dx-optimizer with repository-specific setup, usage, and README navigation."
+    when: "The requested documentation is a repository README."
+  - name: github-actions-ci
+    kind: conditional
+    reason: "Supports dx-optimizer with GitHub Actions events, runners, permissions, artifacts, and quality gates."
+    when: "The affected delivery or enforcement platform is GitHub Actions."
 tags:
   - developer-experience
   - onboarding

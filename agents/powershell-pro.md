@@ -9,11 +9,17 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - terminal-ops
-  - coding-standards
-  - security-scanning
-  - testing-strategy
+skill-dependencies:
+  - name: terminal-ops
+    kind: recommended
+    reason: "Supports powershell-pro with exact commands, repository state, scoped execution, and reproducible verification."
+  - name: security-scanning
+    kind: conditional
+    reason: "Supports powershell-pro with authorized scanner configuration, baselines, result triage, and security quality gates."
+    when: "Authorized automated scanner configuration, existing scan evidence, or quality-gate triage is needed."
+  - name: testing-strategy
+    kind: recommended
+    reason: "Supports powershell-pro with risk-based test levels, fixtures, boundaries, and meaningful coverage."
 tags:
   - powershell
   - windows

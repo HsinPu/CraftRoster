@@ -9,10 +9,14 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - terminal-ops
-  - python-automation-scripting
-  - security-scanning
+skill-dependencies:
+  - name: terminal-ops
+    kind: recommended
+    reason: "Supports bash-pro with exact commands, repository state, scoped execution, and reproducible verification."
+  - name: security-scanning
+    kind: conditional
+    reason: "Supports bash-pro with authorized scanner configuration, baselines, result triage, and security quality gates."
+    when: "Authorized automated scanner configuration, existing scan evidence, or quality-gate triage is needed."
 tags:
   - bash
   - shell

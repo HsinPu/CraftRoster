@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: workspace-write
-skills:
-  - python-development
-  - python-testing-engineering
-  - python-security-hardening
-  - python-packaging-release
+skill-dependencies:
+  - name: python-development
+    kind: recommended
+    reason: "Supports python-pro with the mandatory Python implementation owner and specialist-routing baseline."
+  - name: python-testing-engineering
+    kind: recommended
+    reason: "Supports python-pro with pytest or unittest tests, fixtures, regression plans, and deterministic evidence."
+  - name: python-security-hardening
+    kind: conditional
+    reason: "Supports python-pro with Python trust-boundary fixes for secrets, paths, subprocesses, and untrusted data."
+    when: "The implementation changes a security-sensitive Python trust boundary."
+  - name: python-packaging-release
+    kind: conditional
+    reason: "Supports python-pro with Python distribution metadata, artifacts, compatibility, and release evidence."
+    when: "The task changes Python packaging or validates distribution and release artifacts."
 tags:
   - python
   - typing

@@ -9,11 +9,21 @@ source: HsinPu/CraftRoster
 license: Apache-2.0
 model: inherit
 permission: read-only
-skills:
-  - subagent-architecture
-  - context-governance
-  - todo-first
-  - testing-strategy
+skill-dependencies:
+  - name: subagent-architecture
+    kind: recommended
+    reason: "Supports conductor-validator with focused delegation, exclusive ownership, dependency gates, and verified fan-in."
+  - name: context-governance
+    kind: conditional
+    reason: "Supports conductor-validator with a compact authoritative context record with precedence and provenance."
+    when: "Durable context, shared decisions, or context-budget behavior needs governance."
+  - name: todo-first
+    kind: optional
+    reason: "An opt-in extension of conductor-validator provides a live runtime-neutral dependency plan and evidence-linked progress tracking."
+  - name: testing-strategy
+    kind: conditional
+    reason: "Supports conductor-validator with risk-based test levels, fixtures, boundaries, and meaningful coverage."
+    when: "The deliverable includes software test design, coverage analysis, or regression proof."
 tags:
   - orchestration
   - validation
