@@ -44,14 +44,31 @@
 | 獨立程式審查 | elevated review；問答、argv、計畫、配套策略、索引和 EXIT／cleanup 無 actionable findings |
 | Linux 正式互動整合 | 33 個不同案例通過、零跳過（完整執行的前 26 個，加 parser 修正後補驗的 7 個） |
 | Linux 真實 PTY | 4 個 pipeline／控制終端案例實際執行並通過：腳本完整、q、EOF、Ctrl+C |
+| Windows Git Bash 正式互動整合 | 29 個不同案例分批通過（26 個一般案例 + 最後版本 3 個補驗）；Windows 跳過 1 組 POSIX PTY，4 個情境由原生 Linux／macOS 驗證 |
 
 整合 fixture 使用獨立使用者與專案目錄，未安裝到實際使用者設定。Linux 使用已有映像的無網路、唯讀 repository、`--rm` 容器；已確認自己的容器移除，未拉映像或修改既有 volumes。
 
-## 正在收尾的驗證
+Git Bash 分批程序最後在舊版中途故障報告 parser 的 assertion 停止；修正 parser 後，該案例與 remote／no-TTY 案例已用最後版本單獨通過。沒有把舊程序的 exit 1 記為完整 suite 成功。最初 90 秒 timeout 發生於 Windows fork／digest／owned update 成本；26 個一般案例後續均在較嚴的 300 秒上限內通過。最終 test harness 僅將 Windows Bash 安裝 budget 設為 600 秒，其他 Bash 平台仍為 90 秒，EOF／probe 界限沒有放寬。專用暫存和自己的 Bash 程序均已清理。
 
-Windows PowerShell 5.1、PowerShell 7 和 Linux 的共享 suite 已完成多用途／全部、單平台／跨平台、ownership、全計畫衝突、取消／EOF、舊來源能力閘門、非法索引及中途失敗復原。Git Bash 的正式 suite 正在收尾；macOS Bash 3.2 與新版本完整 CI 尚待本次提交後驗證。Windows Git Bash 的 test harness 使用 600 秒安裝 budget，以容納該主機的 fork／digest 成本；其他 Bash 平台仍為 90 秒，前置 EOF 及輸入界限沒有放寬。
+## GitHub 跨平台驗證
 
-上一個基準 commit 的 [CI 37913553970](https://github.com/HsinPu/CraftRoster/actions/runs/37913553970) 安裝及 runtime jobs 通過，但 Pinned source integrity 已因上游 `supatest-ai/awesome-claude-code-sub-agents` 的 GitHub API 回傳 301 失敗。此為既有遠端來源檢查問題，不把基準 CI 或本次尚未執行的 CI 記為全綠。
+功能提交：`8342206137233db2c6da8c58593574687f32f9ac`。[CI 37929602368](https://github.com/HsinPu/CraftRoster/actions/runs/37929602368) 驗證該提交：9 個 jobs 中 8 個成功、1 個既有遠端來源閘門失敗。下表不以本機結果代替 CI 結果；後續補驗提交只更新本報告，安裝程式與生成索引維持此功能提交的內容。
+
+| Job | 實際結果 |
+| --- | --- |
+| Node 22／24 runtime | 兩個 jobs 通過，包含新配套、既有依賴、CLI、catalog 與 package tests |
+| catalog | 通過 |
+| Legacy Skill digest history | 通過 |
+| Ubuntu Bash | 通過；Bash 5.2.21，原有完整 smoke 驗證 286 Skills／237 Agents，互動 33 個不同案例、零跳過，包含 4 個真實 PTY 情境 |
+| macOS Bash | 通過；`/bin/bash` 3.2.57，互動 33 個不同案例、零跳過，包含 4 個真實 PTY 情境；quick smoke 與注入故障傳遞通過 |
+| macOS 從 GitHub 遠端實裝 | 通過；隔離 HOME，實裝 286 Skills、237 Agents，啟用 Codex 委派；沿用進階單類型指令 |
+| Windows PowerShell 5.1 | 通過；5.1.26100.33438，29 個互動案例、零跳過，原有完整 smoke 驗證 286 Skills／237 Agents，Windows executor／holdout 檢查通過 |
+| Windows PowerShell 7 | 通過；7.6.6，29 個互動案例、零跳過，原有完整 smoke 驗證 286 Skills／237 Agents，ownership、遷移及委派回歸通過 |
+| Pinned source integrity | 失敗；Agent 上游 commit API 三次回傳 301，後續遠端來源／原創性步驟未執行 |
+
+上游 `supatest-ai/awesome-claude-code-sub-agents` 的 commit `85d8ceac2fdfee5f27a3d3f38d83e925b4c6bd6d` API 在本次 CI 及上一個基準提交的 [CI 37913553970](https://github.com/HsinPu/CraftRoster/actions/runs/37913553970) 都回傳 301。這是既有遠端來源檢查問題，本次未修改來源查核或放寬 provenance 閘門；不把整個 CI 記為全綠。
+
+等待 PowerShell 5.1 時另做唯讀審查：`smoke-install.ps1` 與基準相同，未指定配套策略的舊 Agent 入口仍使用 `legacy`，沒有進入新配套遍歷。EOF、重試上限、stderr 排空和退出碼檢查未發現新的無限等待或吞錯路徑。此審查不替代測試；最後以 CI 的完整 smoke 成功結果結案。
 
 ## 證據範圍
 
