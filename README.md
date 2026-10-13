@@ -160,6 +160,8 @@ curl -fsSL https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/ins
 
 遠端分類安裝仍會下載完整 repository archive，但只把選取的元件與必要配套寫入安裝目錄。
 
+Windows ZIP 來源以內建 .NET 解壓並先驗證 entries；暫存只展開安裝所需來源，避開頂層歷史文件的深層路徑。Skills 的資源完整保留。若曾遇到 `Expand-Archive` 後大量 `Remove-Item PathNotFound`，請重新執行最新安裝指令；詳見[互動安裝說明](docs/interactive-installation.md)。
+
 ### 只安裝單一元件
 
 Windows PowerShell：
@@ -558,6 +560,7 @@ npm run test:skill-sources
 npm run test:package
 
 # Installer smoke tests
+npm run test:installer-archive
 npm run test:interactive-install
 npm run smoke:install:powershell
 npm run smoke:install:bash

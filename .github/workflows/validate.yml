@@ -331,6 +331,9 @@ jobs:
           Write-Host "ImageOS=$env:ImageOS"
           Write-Host "ImageVersion=$env:ImageVersion"
 
+      - name: Test Windows source archive extraction and failure diagnostics
+        run: npm run test:installer-archive -- --powershell '${{ matrix.powershell }}'
+
       - name: Test interactive installer with isolated destinations
         run: npm run test:interactive-install -- --shell powershell --powershell '${{ matrix.powershell }}'
 

@@ -47,6 +47,139 @@ For non-interactive automation or individual names, use scripts/install.ps1.
 "@
 }
 
+function Expand-InstallerSourceArchive {
+    param([string]$ArchivePath, [string]$DestinationPath)
+
+    # Both bootstrap entrypoints contain this function because setup may run from
+    # a downloaded scriptblock before any shared source file is available.
+    Add-Type -AssemblyName System.IO.Compression.FileSystem -ErrorAction Stop
+    $destination = [System.IO.Path]::GetFullPath($DestinationPath)
+    $separator = [System.IO.Path]::DirectorySeparatorChar
+    $destinationPrefix = $destination.TrimEnd('\', '/') + $separator
+    $archive = $null
+    $entryName = '<archive>'
+    try {
+        $archive = [System.IO.Compression.ZipFile]::OpenRead($ArchivePath)
+        $entries = New-Object 'System.Collections.Generic.List[object]'
+        $seen = New-Object 'System.Collections.Generic.HashSet[string]' ([StringComparer]::OrdinalIgnoreCase)
+        $files = New-Object 'System.Collections.Generic.HashSet[string]' ([StringComparer]::OrdinalIgnoreCase)
+        $flatSkills = New-Object 'System.Collections.Generic.HashSet[string]' ([StringComparer]::OrdinalIgnoreCase)
+        $archiveRoot = $null
+        foreach ($entry in $archive.Entries) {
+            $entryName = $entry.FullName
+            $normalized = $entryName.Replace('\', '/')
+            if ([string]::IsNullOrWhiteSpace($normalized) -or $normalized.StartsWith('/') -or
+                $normalized -match '[\x00-\x1f\x7f<>:"|?*]') {
+                throw "Unsafe ZIP entry name."
+            }
+            $directory = $normalized.EndsWith('/')
+            $relative = if ($directory) { $normalized.Substring(0, $normalized.Length - 1) } else { $normalized }
+            $parts = $relative.Split('/')
+            foreach ($part in $parts) {
+                if ([string]::IsNullOrEmpty($part) -or $part -eq '.' -or $part -eq '..' -or
+                    $part.EndsWith('.') -or $part.EndsWith(' ') -or
+                    $part -match '^(?i:CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9])(?:\.|$)') {
+                    throw "Unsafe ZIP path component."
+                }
+            }
+            if ((($entry.ExternalAttributes -shr 16) -band 0xF000) -eq 0xA000 -or
+                ($entry.ExternalAttributes -band 0x400) -ne 0) {
+                throw "ZIP links and reparse points are not supported."
+            }
+            if ($directory -and $entry.Length -ne 0) { throw "ZIP directory contains file data." }
+            if (-not $seen.Add($relative)) { throw "Duplicate ZIP path or case collision." }
+            if (-not $directory) { [void]$files.Add($relative) }
+            if ($null -eq $archiveRoot) { $archiveRoot = $parts[0] }
+            elseif ($archiveRoot -cne $parts[0]) { throw "Expected one repository directory in the ZIP archive." }
+            if ($parts.Count -eq 1 -and -not $directory) {
+                throw "Expected a repository directory, not a file, at the ZIP root."
+            }
+            if (-not $directory -and $parts.Count -eq 3 -and $parts[2] -ceq 'SKILL.md') {
+                [void]$flatSkills.Add($parts[1])
+            }
+            $entries.Add([pscustomobject]@{
+                Entry = $entry; Name = $entryName; Relative = $relative
+                Parts = $parts; Directory = $directory
+            })
+        }
+        if ($entries.Count -eq 0) { throw "ZIP archive is empty." }
+
+        # Validate the entire archive before filtering. Unsafe paths in excluded
+        # historical docs/tests must still reject the archive without any writes.
+        foreach ($item in $entries) {
+            $entryName = $item.Name
+            $ancestor = $item.Relative
+            while ($ancestor.Contains('/')) {
+                $ancestor = $ancestor.Substring(0, $ancestor.LastIndexOf('/'))
+                if ($files.Contains($ancestor)) { throw "ZIP file conflicts with a parent directory." }
+            }
+        }
+
+        $plans = New-Object 'System.Collections.Generic.List[object]'
+        foreach ($item in $entries) {
+            $entryName = $item.Name
+            $parts = $item.Parts
+            $include = $parts.Count -le 2 -and (-not $item.Directory -or $parts.Count -eq 1)
+            if ($parts.Count -ge 2 -and (
+                $parts[1] -in @('scripts', 'skills', 'adapters', 'agents') -or $flatSkills.Contains($parts[1]))) {
+                $include = $true
+            }
+            if (-not $include) { continue }
+            # A short fixed root also avoids long branch names increasing every
+            # destination path. Repository identity remains in installer metadata.
+            $mapped = 'r'
+            if ($parts.Count -gt 1) {
+                $mapped += $separator + (($parts[1..($parts.Count - 1)]) -join $separator)
+            }
+            $target = [System.IO.Path]::GetFullPath([System.IO.Path]::Combine($destination, $mapped))
+            if (-not $target.StartsWith($destinationPrefix, [StringComparison]::OrdinalIgnoreCase)) {
+                throw "ZIP destination escapes the temporary source directory."
+            }
+            $parent = if ($item.Directory) { $target } else { [System.IO.Path]::GetDirectoryName($target) }
+            if ($PSVersionTable.PSVersion.Major -lt 6 -and ($target.Length -ge 260 -or $parent.Length -ge 248)) {
+                throw "Installer source path is too long for Windows PowerShell 5.1 ($($target.Length) characters). Use a shorter TEMP/TMP directory or PowerShell 7."
+            }
+            $plans.Add([pscustomobject]@{ Item = $item; Target = $target; Parent = $parent })
+        }
+
+        if ([System.IO.Directory]::Exists($destination)) {
+            if (([System.IO.File]::GetAttributes($destination) -band [System.IO.FileAttributes]::ReparsePoint) -ne 0 -or
+                [System.IO.Directory]::GetFileSystemEntries($destination).Length -ne 0) {
+                throw "ZIP extraction requires an empty, non-link temporary directory."
+            }
+        }
+        [void][System.IO.Directory]::CreateDirectory($destination)
+        foreach ($plan in $plans) {
+            $entryName = $plan.Item.Name
+            [void][System.IO.Directory]::CreateDirectory($plan.Parent)
+            $parent = $plan.Parent
+            while ($parent.StartsWith($destinationPrefix, [StringComparison]::OrdinalIgnoreCase) -or $parent -eq $destination) {
+                if (([System.IO.File]::GetAttributes($parent) -band [System.IO.FileAttributes]::ReparsePoint) -ne 0) {
+                    throw "ZIP destination contains a reparse point."
+                }
+                if ($parent -eq $destination) { break }
+                $parent = [System.IO.Path]::GetDirectoryName($parent)
+            }
+            if ($plan.Item.Directory) { continue }
+            $inputStream = $null
+            $outputStream = $null
+            try {
+                $inputStream = $plan.Item.Entry.Open()
+                $outputStream = [System.IO.File]::Open($plan.Target, [System.IO.FileMode]::CreateNew,
+                    [System.IO.FileAccess]::Write, [System.IO.FileShare]::None)
+                $inputStream.CopyTo($outputStream)
+            } finally {
+                if ($null -ne $outputStream) { $outputStream.Dispose() }
+                if ($null -ne $inputStream) { $inputStream.Dispose() }
+            }
+        }
+    } catch {
+        throw "Source archive extraction failed at '$entryName': $($_.Exception.Message)"
+    } finally {
+        if ($null -ne $archive) { $archive.Dispose() }
+    }
+}
+
 function Read-SetupAnswer {
     param([string]$Prompt)
     try {
@@ -453,7 +586,7 @@ try {
         New-Item -ItemType Directory -Path $extractRoot | Out-Null
         Write-Host "==> Downloading $Repo@$Branch (one source archive)"
         Invoke-WebRequest -UseBasicParsing -Uri "https://codeload.github.com/$Repo/zip/refs/heads/$Branch" -OutFile $archivePath
-        Expand-Archive -LiteralPath $archivePath -DestinationPath $extractRoot
+        Expand-InstallerSourceArchive -ArchivePath $archivePath -DestinationPath $extractRoot
         $archiveRoots = @(Get-ChildItem -Force -LiteralPath $extractRoot)
         if ($archiveRoots.Count -ne 1 -or -not $archiveRoots[0].PSIsContainer) {
             throw "Expected one repository directory in the downloaded archive."

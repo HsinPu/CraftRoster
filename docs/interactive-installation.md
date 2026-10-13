@@ -114,6 +114,8 @@ Claude Code 的原生 `skills` 欄位會預載完整 Skill，因此產生器只�
 
 Wrapper 只下載一次來源 archive，預覽與正式安裝使用同一份快照。確認之前，安裝器已對整份 Agent、Skill 與委派設定計畫完成預檢。
 
+Windows 來源 ZIP 使用內建 .NET 解壓，不依賴 `Microsoft.PowerShell.Archive` 模組。所有 ZIP entries 先檢查路徑與連結，再展開安裝需要的來源；repository 頂層歷史 `docs/`、`tests/` 不展開到暫存。Skills 自己的完整資源及平鋪 `<skill>/SKILL.md` repository 仍保留。ZIP 根映射為短目錄，避免分支名稱拉長路徑；若 PowerShell 5.1 的必要資源仍超過路徑上限，會在寫入前指出 entry，請使用較短的 `TEMP`／`TMP` 或 PowerShell 7。
+
 既有 ownership、來源及內容 digest 保護持續適用。使用者檔案或被修改的已安裝內容會阻擋覆寫；`Force`／`--force` 是明確覆寫選項，會傳入後端。正常重新安裝不會刪除其他分類、共用內容或未選項目。
 
 寫入期間每個套件有個別還原措施；整個計畫不是單一交易。若途中失敗，會列出已完成與待安裝項目，先前完成的套件會保留，修正原因後可重試。
