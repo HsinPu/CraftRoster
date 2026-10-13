@@ -215,8 +215,3 @@ try {
   fs.rmSync(resolved, { recursive: true, force: true });
   assert.ok(!fs.existsSync(resolved), 'Owned fixture root removed');
 }
-
-
-
-
-
