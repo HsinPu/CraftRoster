@@ -38,4 +38,5 @@ Required support must be available before work that depends on it; report missin
 - `visual-regression-testing` (recommended): Supports ui-visual-validator with reproducible screenshot comparisons, baselines, matrices, and fidelity evidence.
 - `responsive-design` (conditional; The web deliverable needs complex responsive layout or reflow guidance.): Supports ui-visual-validator with complex web layout reflow, fluid sizing, breakpoints, and touch-target contracts.
 - `browser-compatibility-testing` (conditional; Supported browser differences or a cross-browser release matrix are in scope.): Supports ui-visual-validator with a supported browser and viewport matrix with compatibility evidence.
+- `svg-visual-validation` (conditional; The task needs reproducible SVG rendering or comparison evidence.): Supports ui-visual-validator with the requested SVG workflow while preserving its role permissions.
 """

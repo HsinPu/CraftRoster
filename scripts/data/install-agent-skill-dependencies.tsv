@@ -372,6 +372,8 @@ frontend-developer	frontend-design	recommended	-	Supports frontend-developer wit
 frontend-developer	javascript-development	recommended	-	Supports frontend-developer with browser or Node JavaScript modules, async flow, cancellation, and errors.
 frontend-developer	react-ui-patterns	conditional	The affected web interface uses React and its component-state contracts.	Supports frontend-developer with React loading, error, empty, optimistic, and concurrent UI states.
 frontend-developer	responsive-design	recommended	-	Supports frontend-developer with complex web layout reflow, fluid sizing, breakpoints, and touch-target contracts.
+frontend-developer	svg-animation	conditional	The SVG deliverable includes motion, morphing, or interactive state transitions.	Supports frontend-developer with the requested SVG workflow while preserving its role permissions.
+frontend-developer	svg-development	conditional	The requested interface includes SVG authoring, repair, or integration.	Supports frontend-developer with the requested SVG workflow while preserving its role permissions.
 frontend-developer	typescript-development	conditional	The affected source or compiler contract is TypeScript.	Supports frontend-developer with TypeScript source, compiler configuration, strict contracts, and typed APIs.
 frontend-security-coder	auth-integration	conditional	The confirmed browser risk involves authentication, session, callback, or client identity integration.	Supports frontend-security-coder with session, OAuth or OIDC, callback, identity, and authorization boundaries.
 frontend-security-coder	frontend-code-review	conditional	The repaired frontend diff needs a separate browser-state and regression review.	Supports frontend-security-coder with frontend-specific state, browser, accessibility, and regression review.
@@ -420,6 +422,8 @@ image-generator	ai-image-prompt-design	recommended	-	Supports image-generator wi
 image-generator	baoyu-image-gen	recommended	-	Supports image-generator with provider-backed still-image creation with reference and output validation.
 image-generator	image-utils	conditional	The authorized work needs deterministic still-image operations or pixel-level inspection.	Supports image-generator with non-destructive deterministic crop, resize, conversion, and pixel inspection.
 image-generator	logo-design	conditional	The user requests a logo or brand-mark asset.	Supports image-generator with brand-mark briefs, simple concepts, and editable logo directions.
+image-generator	svg-illustration	conditional	The requested output is a newly authored editable SVG scene or character.	Supports image-generator with the requested SVG workflow while preserving its role permissions.
+image-generator	svg-vectorization	conditional	A supplied raster must be reconstructed as editable vector geometry.	Supports image-generator with the requested SVG workflow while preserving its role permissions.
 implement	code-change-workflow	recommended	-	Supports implement with pre-edit ownership, call-path, compatibility, and verification inspection.
 implement	coding-standards	conditional	The task defines or audits team-wide JavaScript, TypeScript, React, or Node conventions.	Supports implement with team-wide JavaScript, TypeScript, React, or Node conventions.
 implement	incremental-implementation	conditional	The change spans risky boundaries or needs independently verified reversible slices.	Supports implement with dependency-aware verified slices and reversible integration checkpoints.
@@ -913,6 +917,7 @@ ui-designer	color-font-skill	recommended	-	Supports ui-designer with web visual 
 ui-designer	design-consultation	recommended	-	Supports ui-designer with web interface visual direction before implementation.
 ui-designer	frontend-design	conditional	A visible web implementation handoff is requested; a separate write-capable owner performs the implementation.	Supports ui-designer with the visible web implementation baseline and rendered user-state verification.
 ui-designer	responsive-design	conditional	The web deliverable needs complex responsive layout or reflow guidance.	Supports ui-designer with complex web layout reflow, fluid sizing, breakpoints, and touch-target contracts.
+ui-designer	svg-design	conditional	The SVG task needs detailed geometry, paint, sprite, or embedding work. This read-only role supplies design guidance; a write-capable owner implements the asset.	Supports ui-designer with the requested SVG workflow while preserving its role permissions.
 ui-ux-designer	design-consultation	recommended	-	Supports ui-ux-designer with web interface visual direction before implementation.
 ui-ux-designer	frontend-design	conditional	The read-only design produces acceptance guidance for a visible web implementation owner.	Supports ui-ux-designer with the visible web implementation baseline and rendered user-state verification.
 ui-ux-designer	interaction-patterns	conditional	The task designs or evaluates web navigation, scroll, focus, or transition behavior.	Supports ui-ux-designer with web navigation, scrolling, focus, and transition interaction rules.
@@ -920,6 +925,7 @@ ui-ux-designer	ux-writing	recommended	-	Supports ui-ux-designer with clear inter
 ui-visual-validator	browser-compatibility-testing	conditional	Supported browser differences or a cross-browser release matrix are in scope.	Supports ui-visual-validator with a supported browser and viewport matrix with compatibility evidence.
 ui-visual-validator	frontend-design-review	recommended	-	Supports ui-visual-validator with read-only interface usability, accessibility, and visual-quality evidence.
 ui-visual-validator	responsive-design	conditional	The web deliverable needs complex responsive layout or reflow guidance.	Supports ui-visual-validator with complex web layout reflow, fluid sizing, breakpoints, and touch-target contracts.
+ui-visual-validator	svg-visual-validation	conditional	The task needs reproducible SVG rendering or comparison evidence.	Supports ui-visual-validator with the requested SVG workflow while preserving its role permissions.
 ui-visual-validator	visual-regression-testing	recommended	-	Supports ui-visual-validator with reproducible screenshot comparisons, baselines, matrices, and fidelity evidence.
 unity-developer	code-change-workflow	recommended	-	Supports unity-developer with pre-edit ownership, call-path, compatibility, and verification inspection.
 unity-developer	mobile-app-testing	conditional	The supported product target includes Android or iOS device behavior.	Supports unity-developer with device, OS, lifecycle, permission, offline, and native accessibility checks.

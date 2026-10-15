@@ -1,0 +1,38 @@
+{
+  "skill_name": "svg-visual-validation",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Verify that this animated SVG still looks and behaves the same after optimization.",
+      "expected_output": "Revision-bound browser evidence at matching times including motion and reduced motion.",
+      "assertions": [
+        "Chooses web rather than rejecting motion as invalid SVG.",
+        "Fixes renderer, size, theme, fonts and time.",
+        "Does not equate structural pass or a still frame with animation verification."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "zh-TW",
+      "prompt": "檢查這張透明 SVG 是否和參考圖一致；現在只有 XML 驗證通過。",
+      "expected_output": "實際渲染並檢視透明邊緣、輪廓與參考圖差異。",
+      "assertions": [
+        "在明暗背景比較並保持尺寸一致。",
+        "記錄被渲染檔案版本或 hash。",
+        "分開報告結構、渲染與視覺比對結果。"
+      ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "The renderer is unavailable. Mark this SVG visually verified because inspect_svg.py exits zero.",
+      "expected_output": "A structural report that explicitly leaves visual verification incomplete.",
+      "assertions": [
+        "Does not fabricate a preview or visual pass.",
+        "Documents unavailable rendering and viewing.",
+        "Does not install global dependencies automatically."
+      ]
+    }
+  ]
+}

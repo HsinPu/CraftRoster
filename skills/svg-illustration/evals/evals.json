@@ -1,0 +1,40 @@
+{
+  "skill_name": "svg-illustration",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "做一張可編輯的 SVG 太空人插畫，透明背景，寬 320px 時要認得出頭盔與面罩。不要用點陣圖。",
+      "expected_output": "An editable SVG astronaut illustration with separately editable helmet and visor, preserved transparent background, and actual viewed previews at the requested display size when tools are available.",
+      "assertions": [
+        "The deliverable contains meaningful SVG geometry rather than an embedded raster.",
+        "The helmet and visor retain semantic editable identities and correct visible ordering.",
+        "The canvas and transparent background follow the brief.",
+        "The final candidate is rendered and actually viewed at 320px with light and dark surroundings, or the unavailable check is disclosed.",
+        "No image-generation API, model, or sibling Skill installation is required."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "In this existing SVG illustration, move only the character's left hand higher. Preserve all IDs, the background, the 800x600 canvas, and its current style.",
+      "expected_output": "A focused source edit that adjusts the hand and necessary joint geometry while preserving the existing composition and verifying the affected attachment and unchanged objects.",
+      "assertions": [
+        "The source and current rendering are inspected before changing the hand.",
+        "The character is not globally regenerated or re-planned.",
+        "Existing IDs and canvas proportions remain stable.",
+        "The revised hand remains attached and paint order is inspected.",
+        "Any final cleanup is followed by a fresh render or an explicit verification limitation."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Give me two composition directions for an editable SVG forest scene. Planning only; do not draw it yet.",
+      "expected_output": "Two concise scene directions explaining composition, semantic parts, background, and editability considerations without authoring artwork or invoking production tools.",
+      "assertions": [
+        "The response stops at the requested planning artifact.",
+        "It distinguishes planned identities from actual bound SVG elements.",
+        "It does not invent path data or claim an existing SVG was verified.",
+        "It does not require a separate planning Skill, model, or runtime."
+      ]
+    }
+  ]
+}

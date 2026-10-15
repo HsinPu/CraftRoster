@@ -1,6 +1,6 @@
 {
   "version": "3.0.0",
-  "updated": "2026-10-09T12:05:24.669Z",
+  "updated": "2026-10-15T10:36:50.577Z",
   "total": 237,
   "categories": 31,
   "uniqueRoles": 237,
@@ -5186,7 +5186,9 @@
         "javascript-development",
         "typescript-development",
         "react-ui-patterns",
-        "responsive-design"
+        "responsive-design",
+        "svg-development",
+        "svg-animation"
       ],
       "skillDependencies": [
         {
@@ -5215,6 +5217,18 @@
           "name": "responsive-design",
           "kind": "recommended",
           "reason": "Supports frontend-developer with complex web layout reflow, fluid sizing, breakpoints, and touch-target contracts."
+        },
+        {
+          "name": "svg-development",
+          "kind": "conditional",
+          "when": "The requested interface includes SVG authoring, repair, or integration.",
+          "reason": "Supports frontend-developer with the requested SVG workflow while preserving its role permissions."
+        },
+        {
+          "name": "svg-animation",
+          "kind": "conditional",
+          "when": "The SVG deliverable includes motion, morphing, or interactive state transitions.",
+          "reason": "Supports frontend-developer with the requested SVG workflow while preserving its role permissions."
         }
       ],
       "tags": [
@@ -5893,7 +5907,9 @@
         "baoyu-image-gen",
         "ai-image-prompt-design",
         "image-utils",
-        "logo-design"
+        "logo-design",
+        "svg-illustration",
+        "svg-vectorization"
       ],
       "skillDependencies": [
         {
@@ -5917,6 +5933,18 @@
           "kind": "conditional",
           "when": "The user requests a logo or brand-mark asset.",
           "reason": "Supports image-generator with brand-mark briefs, simple concepts, and editable logo directions."
+        },
+        {
+          "name": "svg-illustration",
+          "kind": "conditional",
+          "when": "The requested output is a newly authored editable SVG scene or character.",
+          "reason": "Supports image-generator with the requested SVG workflow while preserving its role permissions."
+        },
+        {
+          "name": "svg-vectorization",
+          "kind": "conditional",
+          "when": "A supplied raster must be reconstructed as editable vector geometry.",
+          "reason": "Supports image-generator with the requested SVG workflow while preserving its role permissions."
         }
       ],
       "tags": [
@@ -12798,7 +12826,8 @@
         "frontend-design",
         "design-consultation",
         "color-font-skill",
-        "responsive-design"
+        "responsive-design",
+        "svg-design"
       ],
       "skillDependencies": [
         {
@@ -12822,6 +12851,12 @@
           "kind": "conditional",
           "when": "The web deliverable needs complex responsive layout or reflow guidance.",
           "reason": "Supports ui-designer with complex web layout reflow, fluid sizing, breakpoints, and touch-target contracts."
+        },
+        {
+          "name": "svg-design",
+          "kind": "conditional",
+          "when": "The SVG task needs detailed geometry, paint, sprite, or embedding work. This read-only role supplies design guidance; a write-capable owner implements the asset.",
+          "reason": "Supports ui-designer with the requested SVG workflow while preserving its role permissions."
         }
       ],
       "tags": [
@@ -12909,7 +12944,8 @@
         "frontend-design-review",
         "visual-regression-testing",
         "responsive-design",
-        "browser-compatibility-testing"
+        "browser-compatibility-testing",
+        "svg-visual-validation"
       ],
       "skillDependencies": [
         {
@@ -12933,6 +12969,12 @@
           "kind": "conditional",
           "when": "Supported browser differences or a cross-browser release matrix are in scope.",
           "reason": "Supports ui-visual-validator with a supported browser and viewport matrix with compatibility evidence."
+        },
+        {
+          "name": "svg-visual-validation",
+          "kind": "conditional",
+          "when": "The task needs reproducible SVG rendering or comparison evidence.",
+          "reason": "Supports ui-visual-validator with the requested SVG workflow while preserving its role permissions."
         }
       ],
       "tags": [

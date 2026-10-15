@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "skill_name": "svg-illustration",
+  "cases": [
+    {
+      "id": "editable-character-zh",
+      "kind": "positive",
+      "prompt": "畫一個可分開編輯頭、手、身體的 SVG 小機器人插畫。",
+      "expected_skills": ["svg-illustration"],
+      "excluded_skills": ["svg-vectorization"],
+      "allowed_skills": ["svg-development", "svg-design", "svg-visual-validation"]
+    },
+    {
+      "id": "local-illustration-edit-en",
+      "kind": "positive",
+      "prompt": "Change just the wing shape in this existing editable SVG bird illustration and preserve its IDs and style.",
+      "expected_skills": ["svg-illustration"],
+      "excluded_skills": ["svg-vectorization"],
+      "allowed_skills": ["svg-development", "svg-design", "svg-visual-validation"]
+    },
+    {
+      "id": "faithful-raster-near-match",
+      "kind": "near_match",
+      "prompt": "Convert this supplied PNG illustration to SVG with the same outlines and colors; do not redesign it.",
+      "expected_skills": ["svg-vectorization"],
+      "excluded_skills": ["svg-illustration"],
+      "allowed_skills": ["svg-development", "svg-design", "svg-visual-validation"]
+    },
+    {
+      "id": "css-layout-negative-zh",
+      "kind": "negative",
+      "prompt": "只調整網頁卡片的 CSS 間距，不要修改卡片中的 SVG 插畫。",
+      "expected_skills": ["frontend-design", "css-development"],
+      "excluded_skills": ["svg-illustration"],
+      "allowed_skills": ["code-change-workflow"]
+    }
+  ]
+}

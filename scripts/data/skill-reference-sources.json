@@ -301,6 +301,131 @@
       "skills": {
         "prompt-engineering": [{ "path": "SKILL.md", "blob": "85225a687af3745ef5a1fdb0a0d669400dbc73cd" }]
       }
+    },
+    {
+      "repo": "tryopendata/skills",
+      "commit": "f97583ecb7eeb8a0c2a193fe9b80e55806d29823",
+      "tree": "6df2f70c95ef4072e15647998e7618fdce0b9a5e",
+      "license": "MIT",
+      "licenseEvidence": {
+        "kind": "license-file",
+        "path": "LICENSE.md",
+        "blob": "80ab2284812147348702ab233d0d522611f5f6c6"
+      },
+      "skills": {
+        "svg-development": [
+          {
+            "path": "plugins/opendesign/skills/svg-design/SKILL.md",
+            "blob": "724330143d44b8181699f71258a4016c744d9be8"
+          },
+          {
+            "path": "plugins/opendesign/skills/svg-design/references/editing-workflow.md",
+            "blob": "6ef335cb363aff9c8e178fa5d0b3abf6fc5ea9dc"
+          }
+        ],
+        "svg-design": [
+          {
+            "path": "plugins/opendesign/skills/svg-design/SKILL.md",
+            "blob": "724330143d44b8181699f71258a4016c744d9be8"
+          },
+          {
+            "path": "plugins/opendesign/skills/svg-design/references/editing-workflow.md",
+            "blob": "6ef335cb363aff9c8e178fa5d0b3abf6fc5ea9dc"
+          },
+          {
+            "path": "plugins/opendesign/skills/svg-design/references/accessibility-and-pitfalls.md",
+            "blob": "c023a19c0ed9bdbb3910415943e1a182650c2d6a"
+          }
+        ],
+        "svg-optimization": [
+          {
+            "path": "plugins/opendesign/skills/svg-design/SKILL.md",
+            "blob": "724330143d44b8181699f71258a4016c744d9be8"
+          },
+          {
+            "path": "plugins/opendesign/skills/svg-design/references/optimization.md",
+            "blob": "ed9b67cea5372369731a367a338d696a924bfa8e"
+          }
+        ]
+      }
+    },
+    {
+      "repo": "syi0808/svg-skills",
+      "commit": "c5937c2bed48aff98c12cda43ccba2ed6f2880f0",
+      "tree": "d9a988c971d6c135ce298c2b9dfe310fee387997",
+      "license": "MIT",
+      "licenseEvidence": {
+        "kind": "license-file",
+        "path": "LICENSE",
+        "blob": "02b0959e4335de86dcddd860595a84cdb54c11e3"
+      },
+      "skills": {
+        "svg-illustration": [
+          {
+            "path": "illustration-plan/SKILL.md",
+            "blob": "eb6f33f778ceb3aa904162364c1b92aa9b470842"
+          },
+          {
+            "path": "vector-illustration/SKILL.md",
+            "blob": "2835d82c20d8488a71616fd9d1379972d7baffe3"
+          },
+          {
+            "path": "vector-illustration/references/svg-authoring.md",
+            "blob": "0442d13966cd6a85eb50b0022e97bf046b1532b9"
+          },
+          {
+            "path": "vector-illustration/references/visual-review.md",
+            "blob": "630242d584f5cac9c42f1fe65088701456d19569"
+          }
+        ],
+        "svg-vectorization": [
+          {
+            "path": "image-to-svg/SKILL.md",
+            "blob": "beaf80bef517effae1921385578743187e066cae"
+          },
+          {
+            "path": "image-to-svg/references/conversion-modes.md",
+            "blob": "8eb32f26066d1740d58fb942e8032662ea0bef40"
+          },
+          {
+            "path": "vector-illustration/references/svg-authoring.md",
+            "blob": "0442d13966cd6a85eb50b0022e97bf046b1532b9"
+          },
+          {
+            "path": "vector-illustration/references/visual-review.md",
+            "blob": "630242d584f5cac9c42f1fe65088701456d19569"
+          }
+        ],
+        "svg-visual-validation": [
+          {
+            "path": "vector-illustration/references/tooling.md",
+            "blob": "8cb11ee3fa7c4b46eaa8ee69b95c7b22ce1c5b0f"
+          },
+          {
+            "path": "vector-illustration/references/visual-review.md",
+            "blob": "630242d584f5cac9c42f1fe65088701456d19569"
+          }
+        ]
+      }
+    },
+    {
+      "repo": "molauu/svg-character-animator",
+      "commit": "5ee1e7845caefe2c9ab51c64a2aa6f386e72ef5b",
+      "tree": "02e0844136680df26e847b9375e0111411899ec9",
+      "license": "MIT",
+      "licenseEvidence": {
+        "kind": "license-file",
+        "path": "LICENSE",
+        "blob": "54c3f7acecd74af04c678b69952d35d1c2596e63"
+      },
+      "skills": {
+        "svg-animation": [
+          {
+            "path": "SKILL.md",
+            "blob": "123e73852b9efdc7d32ac95e1627fd7562ffded8"
+          }
+        ]
+      }
     }
   ]
 }

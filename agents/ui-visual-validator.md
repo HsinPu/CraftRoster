@@ -24,6 +24,10 @@ skill-dependencies:
     kind: conditional
     reason: "Supports ui-visual-validator with a supported browser and viewport matrix with compatibility evidence."
     when: "Supported browser differences or a cross-browser release matrix are in scope."
+  - name: svg-visual-validation
+    kind: conditional
+    reason: "Supports ui-visual-validator with the requested SVG workflow while preserving its role permissions."
+    when: "The task needs reproducible SVG rendering or comparison evidence."
 tags:
   - visual-validation
   - responsive

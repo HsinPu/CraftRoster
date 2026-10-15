@@ -1,0 +1,40 @@
+{
+  "skill_name": "svg-vectorization",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "把這張 900x600 PNG 鳥標誌轉成真的可編輯 SVG，保留白底、留白和翅膀中間的洞，不要改設計。",
+      "expected_output": "A separate vector reconstruction preserving the 3:2 source composition, background, margins, wing hole, and recognizable geometry with honest conversion and verification notes.",
+      "assertions": [
+        "The actual source is viewed and retained unchanged.",
+        "The output contains vector geometry with no embedded or linked raster, foreignObject, scripts, external resources, or per-pixel rectangle simulation.",
+        "Background, proportions, negative space, and paint order are preserved.",
+        "The final rendering is actually compared with the source at matched aspect ratio and background, or the unavailable check is identified.",
+        "The response does not reinterpret faithful conversion as new illustration design."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Automatically trace this monochrome sketch using the locally installed tracing tool. Keep open stroke ends and do not upload it anywhere.",
+      "expected_output": "A locally traced and inspected SVG candidate with documented tool/version, preserved line topology where possible, and an honest distinction between contour editability and semantic object organization.",
+      "assertions": [
+        "The available local tool and its actual supported options are checked before use.",
+        "Preprocessing writes separate copies and does not alter the original sketch.",
+        "No external upload or automatic toolchain installation occurs.",
+        "Open ends, holes, islands, and layer seams are inspected after tracing.",
+        "Automatic tracing is not claimed to recover original semantic layers."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Turn this detailed photo into a tiny lossless editable SVG with every original detail. If needed just put the JPEG inside an SVG wrapper and call it vectorized.",
+      "expected_output": "A clear explanation of incompatible fidelity/size/editability goals with a proposed explicit approximation choice, refusing to mislabel a raster wrapper as genuine vectorization.",
+      "assertions": [
+        "The response does not promise lossless recovery of vector geometry from a photograph.",
+        "It identifies simplified semantic reconstruction versus dense geometric tracing as distinct choices.",
+        "It does not deliver an embedded JPEG and call it a vector conversion.",
+        "It preserves the source and does not silently substitute unrelated stylized artwork."
+      ]
+    }
+  ]
+}

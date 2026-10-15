@@ -24,6 +24,10 @@ skill-dependencies:
     kind: conditional
     reason: "Supports ui-designer with complex web layout reflow, fluid sizing, breakpoints, and touch-target contracts."
     when: "The web deliverable needs complex responsive layout or reflow guidance."
+  - name: svg-design
+    kind: conditional
+    reason: "Supports ui-designer with the requested SVG workflow while preserving its role permissions."
+    when: "The SVG task needs detailed geometry, paint, sprite, or embedding work. This read-only role supplies design guidance; a write-capable owner implements the asset."
 tags:
   - visual-hierarchy
   - responsive

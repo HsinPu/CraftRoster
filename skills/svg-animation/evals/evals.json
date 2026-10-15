@@ -1,0 +1,38 @@
+{
+  "skill_name": "svg-animation",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "讓這三個同 viewBox 的角色 SVG 能在開心、思考、難過狀態間切換。快速連點時不能閃回舊狀態，並保留原本的眼睛和漸層。",
+      "expected_output": "An interruptible state transition implementation using per-part correspondence and preserved paint references.",
+      "assertions": [
+        "Uses the existing project framework and identifies shared and state-specific parts without requiring React or Figma.",
+        "Selects transforms, compatible coordinate interpolation, or an explicit alternative per part; accounts for transforms and subpaths.",
+        "Cancels active frame callbacks and delayed entrances, then starts from current rendered values.",
+        "Tests intermediate frames, rapid changes, reduced motion, and teardown; does not claim static raster output proves playback."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Animate the supplied static SVG loading icon in our existing plain HTML page. Keep the center aligned and honor reduced motion. No framework or package installation.",
+      "expected_output": "A small browser-compatible SVG/CSS change with an intentional reduced-motion still.",
+      "assertions": [
+        "Uses existing HTML/CSS without introducing React, a CDN, or a morph package.",
+        "Defines transform ownership and pivot in the relevant SVG coordinate space.",
+        "Preserves the accessible loading meaning in reduced-motion mode.",
+        "Reports actual browser playback checks or explicitly unverified visual behavior."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Morph these compound filled paths with holes and separate open stroke subpaths. Their command sequences differ. Please do not replace all curves with crude polygons.",
+      "expected_output": "An explicit per-part strategy preserving compound fill semantics and checking tool support.",
+      "assertions": [
+        "Does not equate matching command letters with correct correspondence or interpolate arc flags as arbitrary floats.",
+        "Does not blindly split filled compound subpaths and lose their holes.",
+        "Evaluates the actual chosen morph library or uses re-authored correspondence/crossfade where appropriate.",
+        "Preserves original paths, declares any optional library/version, and verifies intermediate results."
+      ]
+    }
+  ]
+}

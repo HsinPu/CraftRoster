@@ -53,15 +53,15 @@ npm run test:package
 <!-- CRAFTROSTER_RELEASE_BASELINE_START -->
 | Evidence | Current baseline |
 |---|---:|
-| Skills | 286 |
+| Skills | 293 |
 | Agents | 237 |
 | Skill categories | 16 |
 | Agent coverage categories | 31／31 |
-| Required eval packages | 117 |
-| Output case definitions／assertions | 291／1237 |
-| Routing case definitions | 85 |
-| Referenced Skills／repositories／paths | 62／18／131 |
-| Provenance lock mappings | 62 Skills／18 repositories／115 path entries |
+| Required eval packages | 124 |
+| Output case definitions／assertions | 312／1316 |
+| Routing case definitions | 117 |
+| Referenced Skills／repositories／paths | 69／21／146 |
+| Provenance lock mappings | 69 Skills／21 repositories／133 path entries |
 <!-- CRAFTROSTER_RELEASE_BASELINE_END -->
 
 這個區塊由 `npm run generate:release-baseline` 從 catalog、來源與評估案例定義產生，`npm run validate` 檢查一致性。案例數量不是實際模型任務成功數；routing self-report、實際 Skill activation 與 task outcome 必須另附執行證據。改動 Skills 或 evals 後請重新產生此區塊，不要更新歷史審查報告。

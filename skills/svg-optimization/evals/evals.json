@@ -1,0 +1,38 @@
+{
+  "skill_name": "svg-optimization",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "請縮小這個會依 CSS 狀態顯示隱藏群組的 SVG，外部 JS 會用 ID 更新標題，還有漸層和 ARIA。不要破壞動畫。",
+      "expected_output": "A conservative optimization derivative with preserved host interfaces and measured evidence.",
+      "assertions": [
+        "Inspects external ID, CSS, JavaScript, ARIA, paint-server, and animated visibility consumers.",
+        "Writes a distinct output and preserves the original source, responsive viewBox, descriptions, and needed groups.",
+        "Uses the project's pinned optimizer only if available and does not auto-install global tooling.",
+        "Compares equivalent renderer, viewport, backgrounds, and animation states before accepting byte savings."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Clean redundant indentation and attributes in this standalone SVG. There is no package.json, no installed SVGO, and no permission to add dependencies.",
+      "expected_output": "A bounded manual cleanup with an independent output and honest validation.",
+      "assertions": [
+        "Does not fetch an implicit npx executable, install globally, or create package dependencies.",
+        "Retains the standalone namespace, viewBox, accessibility, and attribution notices.",
+        "Distinguishes serialization cleanup from geometry simplification.",
+        "Reports measured size changes and explicitly leaves visual equivalence unverified if no renderer is available."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Make a reusable SVG sprite from these detailed icons. They contain the same gradient IDs, and one icon will be displayed at 800px. Can you round every coordinate to two decimals?",
+      "expected_output": "An instance-safe sprite and precision decision based on display scale and contract checks.",
+      "assertions": [
+        "Namespaces symbol IDs and consistently updates internal references without breaking host-used IDs.",
+        "Chooses a scale-aware precision tolerance instead of a universal two-decimal rule.",
+        "Checks holes, thin strokes, theme inheritance, accessibility, actual use embedding, and large-size rendering.",
+        "Reports real payload tradeoffs and does not claim sprites automatically reduce all network cost."
+      ]
+    }
+  ]
+}

@@ -1,12 +1,19 @@
 bundle	title	description	type	name
-image-graphics	畫圖與圖像處理	Still-image generation, image prompts, visual references, logos, and deterministic image processing.	agent	gallery-researcher
-image-graphics	畫圖與圖像處理	Still-image generation, image prompts, visual references, logos, and deterministic image processing.	agent	image-generator
-image-graphics	畫圖與圖像處理	Still-image generation, image prompts, visual references, logos, and deterministic image processing.	skill	ai-image-prompt-design
-image-graphics	畫圖與圖像處理	Still-image generation, image prompts, visual references, logos, and deterministic image processing.	skill	ai-image-prompts-skill
-image-graphics	畫圖與圖像處理	Still-image generation, image prompts, visual references, logos, and deterministic image processing.	skill	baoyu-image-gen
-image-graphics	畫圖與圖像處理	Still-image generation, image prompts, visual references, logos, and deterministic image processing.	skill	image-utils
-image-graphics	畫圖與圖像處理	Still-image generation, image prompts, visual references, logos, and deterministic image processing.	skill	logo-design
-image-graphics	畫圖與圖像處理	Still-image generation, image prompts, visual references, logos, and deterministic image processing.	skill	stable-diffusion-image-generation
+image-graphics	畫圖與圖像處理	Still-image generation, visual references, logos, editable SVG design, illustration, vectorization, animation, optimization, and validation.	agent	gallery-researcher
+image-graphics	畫圖與圖像處理	Still-image generation, visual references, logos, editable SVG design, illustration, vectorization, animation, optimization, and validation.	agent	image-generator
+image-graphics	畫圖與圖像處理	Still-image generation, visual references, logos, editable SVG design, illustration, vectorization, animation, optimization, and validation.	skill	ai-image-prompt-design
+image-graphics	畫圖與圖像處理	Still-image generation, visual references, logos, editable SVG design, illustration, vectorization, animation, optimization, and validation.	skill	ai-image-prompts-skill
+image-graphics	畫圖與圖像處理	Still-image generation, visual references, logos, editable SVG design, illustration, vectorization, animation, optimization, and validation.	skill	baoyu-image-gen
+image-graphics	畫圖與圖像處理	Still-image generation, visual references, logos, editable SVG design, illustration, vectorization, animation, optimization, and validation.	skill	image-utils
+image-graphics	畫圖與圖像處理	Still-image generation, visual references, logos, editable SVG design, illustration, vectorization, animation, optimization, and validation.	skill	logo-design
+image-graphics	畫圖與圖像處理	Still-image generation, visual references, logos, editable SVG design, illustration, vectorization, animation, optimization, and validation.	skill	stable-diffusion-image-generation
+image-graphics	畫圖與圖像處理	Still-image generation, visual references, logos, editable SVG design, illustration, vectorization, animation, optimization, and validation.	skill	svg-animation
+image-graphics	畫圖與圖像處理	Still-image generation, visual references, logos, editable SVG design, illustration, vectorization, animation, optimization, and validation.	skill	svg-design
+image-graphics	畫圖與圖像處理	Still-image generation, visual references, logos, editable SVG design, illustration, vectorization, animation, optimization, and validation.	skill	svg-development
+image-graphics	畫圖與圖像處理	Still-image generation, visual references, logos, editable SVG design, illustration, vectorization, animation, optimization, and validation.	skill	svg-illustration
+image-graphics	畫圖與圖像處理	Still-image generation, visual references, logos, editable SVG design, illustration, vectorization, animation, optimization, and validation.	skill	svg-optimization
+image-graphics	畫圖與圖像處理	Still-image generation, visual references, logos, editable SVG design, illustration, vectorization, animation, optimization, and validation.	skill	svg-vectorization
+image-graphics	畫圖與圖像處理	Still-image generation, visual references, logos, editable SVG design, illustration, vectorization, animation, optimization, and validation.	skill	svg-visual-validation
 software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	api-contract-architect
 software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	architect
 software-development	程式開發	General software implementation, language and backend engineering, architecture, refactoring, and version control.	agent	architect-review
@@ -131,6 +138,11 @@ web-interface	網頁與介面設計	Web UI implementation, design systems, inter
 web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	react-ui-patterns
 web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	responsive-design
 web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	shadcn-ui
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	svg-animation
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	svg-design
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	svg-development
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	svg-optimization
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	svg-visual-validation
 web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	tailwind-development
 web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	tailwind-patterns
 web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	taste-skill

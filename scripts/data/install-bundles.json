@@ -4,7 +4,7 @@
     {
       "id": "image-graphics",
       "title": "畫圖與圖像處理",
-      "description": "Still-image generation, image prompts, visual references, logos, and deterministic image processing.",
+      "description": "Still-image generation, visual references, logos, editable SVG design, illustration, vectorization, animation, optimization, and validation.",
       "agents": [
         "image-generator",
         "gallery-researcher"
@@ -15,7 +15,14 @@
         "baoyu-image-gen",
         "image-utils",
         "logo-design",
-        "stable-diffusion-image-generation"
+        "stable-diffusion-image-generation",
+        "svg-development",
+        "svg-design",
+        "svg-illustration",
+        "svg-vectorization",
+        "svg-animation",
+        "svg-optimization",
+        "svg-visual-validation"
       ]
     },
     {
@@ -169,7 +176,12 @@
         "typescript-development",
         "i18n-localization",
         "ux-writing",
-        "accessibility-testing"
+        "accessibility-testing",
+        "svg-development",
+        "svg-design",
+        "svg-animation",
+        "svg-optimization",
+        "svg-visual-validation"
       ]
     },
     {

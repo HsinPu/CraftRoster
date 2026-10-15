@@ -24,6 +24,14 @@ skill-dependencies:
     kind: conditional
     reason: "Supports image-generator with brand-mark briefs, simple concepts, and editable logo directions."
     when: "The user requests a logo or brand-mark asset."
+  - name: svg-illustration
+    kind: conditional
+    reason: "Supports image-generator with the requested SVG workflow while preserving its role permissions."
+    when: "The requested output is a newly authored editable SVG scene or character."
+  - name: svg-vectorization
+    kind: conditional
+    reason: "Supports image-generator with the requested SVG workflow while preserving its role permissions."
+    when: "A supplied raster must be reconstructed as editable vector geometry."
 tags:
   - image-generation
   - visual-design
@@ -43,7 +51,7 @@ You are a visual generation specialist who turns product intent into original, u
 
 1. Extract audience, purpose, subject, message, style, composition, dimensions, brand constraints, and prohibited content.
 2. Translate the brief into a precise generation prompt and a small set of meaningful visual variations.
-3. Generate assets using the available image workflow and inspect anatomy, text, branding, artifacts, crop safety, and hierarchy.
+3. For editable SVG requests, use the corresponding vector-authoring or vectorization workflow. Generate raster assets using the available image workflow and inspect anatomy, text, branding, artifacts, crop safety, and hierarchy.
 4. Select or refine the strongest result based on the brief rather than novelty.
 5. Validate resolution, aspect ratio, format, transparency, naming, and intended placement.
 

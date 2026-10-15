@@ -1,7 +1,7 @@
 {
   "version": "2.0.0",
-  "updated": "2026-10-09T00:00:00Z",
-  "total": 286,
+  "updated": "2026-10-15T00:00:00Z",
+  "total": 293,
   "categories": [
     {
       "id": "workflow-planning",
@@ -4707,6 +4707,11 @@
           "when": "When the user needs a new brand mark."
         },
         {
+          "name": "svg-design",
+          "kind": "related",
+          "when": "The chosen asset needs SVG geometry, paint, or embedding edits after its brand or icon choice is established."
+        },
+        {
           "name": "ui-styling",
           "kind": "alternative",
           "when": "When icon integration is part of broader React or Tailwind visual styling."
@@ -4803,6 +4808,11 @@
           "name": "lobe-icons-usage",
           "kind": "alternative",
           "when": "the user needs existing AI/provider/product icons rather than a new logo."
+        },
+        {
+          "name": "svg-design",
+          "kind": "related",
+          "when": "The chosen asset needs SVG geometry, paint, or embedding edits after its brand or icon choice is established."
         }
       ]
     },
@@ -8433,6 +8443,286 @@
           "when": "When the task requires SQL review or query optimization."
         }
       ]
+    },
+    {
+      "name": "svg-animation",
+      "description": "Animate SVG icons, illustrations, and characters with CSS, SMIL, or JavaScript; build state transitions, path morphs, and interruptible idle motion. Use when SVG motion is the requested output, rather than static vector editing or general video production.",
+      "category": "frontend-design",
+      "author": "HsinPu",
+      "source": "HsinPu/CraftRoster",
+      "license": "Apache-2.0",
+      "tags": [
+        "svg",
+        "vector-graphics",
+        "animation"
+      ],
+      "dependencies": [
+        {
+          "name": "svg-design",
+          "kind": "conditional",
+          "when": "The SVG task needs detailed geometry, paint, sprite, or embedding work."
+        },
+        {
+          "name": "svg-visual-validation",
+          "kind": "conditional",
+          "when": "The task needs reproducible SVG rendering or comparison evidence."
+        }
+      ],
+      "reference": {
+        "source": "molauu/svg-character-animator",
+        "license": "MIT",
+        "revision": "5ee1e7845caefe2c9ab51c64a2aa6f386e72ef5b"
+      }
+    },
+    {
+      "name": "svg-design",
+      "description": "Author and repair SVG paths, icons, shapes, gradients, masks, clips, symbols, and sprites, including responsive and accessible embedding. Use for editable vector asset work; brand strategy, raster reconstruction, and motion have separate workflows.",
+      "category": "frontend-design",
+      "author": "HsinPu",
+      "source": "HsinPu/CraftRoster",
+      "license": "Apache-2.0",
+      "tags": [
+        "svg",
+        "vector-graphics",
+        "design"
+      ],
+      "dependencies": [
+        {
+          "name": "svg-animation",
+          "kind": "conditional",
+          "when": "The SVG deliverable includes motion, morphing, or interactive state transitions."
+        },
+        {
+          "name": "svg-illustration",
+          "kind": "conditional",
+          "when": "The requested output is a newly authored editable SVG scene or character."
+        },
+        {
+          "name": "svg-optimization",
+          "kind": "conditional",
+          "when": "Measured SVG size or complexity reduction is requested or needed for the delivery budget."
+        },
+        {
+          "name": "svg-vectorization",
+          "kind": "conditional",
+          "when": "A supplied raster must be reconstructed as editable vector geometry."
+        },
+        {
+          "name": "svg-visual-validation",
+          "kind": "conditional",
+          "when": "The task needs reproducible SVG rendering or comparison evidence."
+        }
+      ],
+      "reference": {
+        "source": "tryopendata/skills",
+        "license": "MIT",
+        "revision": "f97583ecb7eeb8a0c2a193fe9b80e55806d29823"
+      }
+    },
+    {
+      "name": "svg-development",
+      "description": "Create, edit, debug, or integrate SVG assets and route multi-part SVG work to design, illustration, vectorization, animation, optimization, and visual validation. Use when the requested artifact or affected behavior is SVG; unrelated page edits do not activate this Skill.",
+      "category": "frontend-design",
+      "author": "HsinPu",
+      "source": "HsinPu/CraftRoster",
+      "license": "Apache-2.0",
+      "tags": [
+        "svg",
+        "vector-graphics",
+        "development"
+      ],
+      "dependencies": [
+        {
+          "name": "svg-animation",
+          "kind": "conditional",
+          "when": "The SVG deliverable includes motion, morphing, or interactive state transitions."
+        },
+        {
+          "name": "svg-design",
+          "kind": "conditional",
+          "when": "The SVG task needs detailed geometry, paint, sprite, or embedding work."
+        },
+        {
+          "name": "svg-illustration",
+          "kind": "conditional",
+          "when": "The requested output is a newly authored editable SVG scene or character."
+        },
+        {
+          "name": "svg-optimization",
+          "kind": "conditional",
+          "when": "Measured SVG size or complexity reduction is requested or needed for the delivery budget."
+        },
+        {
+          "name": "svg-vectorization",
+          "kind": "conditional",
+          "when": "A supplied raster must be reconstructed as editable vector geometry."
+        },
+        {
+          "name": "svg-visual-validation",
+          "kind": "conditional",
+          "when": "The task needs reproducible SVG rendering or comparison evidence."
+        }
+      ],
+      "reference": {
+        "source": "tryopendata/skills",
+        "license": "MIT",
+        "revision": "f97583ecb7eeb8a0c2a193fe9b80e55806d29823"
+      }
+    },
+    {
+      "name": "svg-illustration",
+      "description": "Create or edit editable SVG illustrations, characters, and composed scenes. Use for vector artwork and local illustration changes; faithful conversion of an existing raster belongs to svg-vectorization, and page layout alone does not activate this skill.",
+      "category": "frontend-design",
+      "author": "HsinPu",
+      "source": "HsinPu/CraftRoster",
+      "license": "Apache-2.0",
+      "tags": [
+        "svg",
+        "vector-graphics",
+        "illustration"
+      ],
+      "dependencies": [
+        {
+          "name": "svg-animation",
+          "kind": "conditional",
+          "when": "The SVG deliverable includes motion, morphing, or interactive state transitions."
+        },
+        {
+          "name": "svg-design",
+          "kind": "conditional",
+          "when": "The SVG task needs detailed geometry, paint, sprite, or embedding work."
+        },
+        {
+          "name": "svg-optimization",
+          "kind": "conditional",
+          "when": "Measured SVG size or complexity reduction is requested or needed for the delivery budget."
+        },
+        {
+          "name": "svg-visual-validation",
+          "kind": "conditional",
+          "when": "The task needs reproducible SVG rendering or comparison evidence."
+        }
+      ],
+      "reference": {
+        "source": "syi0808/svg-skills",
+        "license": "MIT",
+        "revision": "c5937c2bed48aff98c12cda43ccba2ed6f2880f0"
+      }
+    },
+    {
+      "name": "svg-optimization",
+      "description": "Reduce SVG bytes, path complexity, or repeated icon markup while preserving rendering, responsiveness, accessibility, animation, and referenced IDs. Use for SVG cleanup, precision budgets, safe SVGO configuration, and sprite optimization; not raster-to-vector reconstruction.",
+      "category": "frontend-design",
+      "author": "HsinPu",
+      "source": "HsinPu/CraftRoster",
+      "license": "Apache-2.0",
+      "tags": [
+        "svg",
+        "vector-graphics",
+        "optimization"
+      ],
+      "dependencies": [
+        {
+          "name": "svg-animation",
+          "kind": "conditional",
+          "when": "The SVG deliverable includes motion, morphing, or interactive state transitions."
+        },
+        {
+          "name": "svg-design",
+          "kind": "conditional",
+          "when": "The SVG task needs detailed geometry, paint, sprite, or embedding work."
+        },
+        {
+          "name": "svg-visual-validation",
+          "kind": "conditional",
+          "when": "The task needs reproducible SVG rendering or comparison evidence."
+        }
+      ],
+      "reference": {
+        "source": "tryopendata/skills",
+        "license": "MIT",
+        "revision": "f97583ecb7eeb8a0c2a193fe9b80e55806d29823"
+      }
+    },
+    {
+      "name": "svg-vectorization",
+      "description": "Reconstruct a supplied raster logo, icon, sketch, or illustration as editable SVG geometry. Use for image-to-SVG conversion and tracing; exclude bitmap wrapping, new art merely inspired by an image, and screenshot-to-webpage implementation.",
+      "category": "frontend-design",
+      "author": "HsinPu",
+      "source": "HsinPu/CraftRoster",
+      "license": "Apache-2.0",
+      "tags": [
+        "svg",
+        "vector-graphics",
+        "vectorization"
+      ],
+      "dependencies": [
+        {
+          "name": "svg-animation",
+          "kind": "conditional",
+          "when": "The SVG deliverable includes motion, morphing, or interactive state transitions."
+        },
+        {
+          "name": "svg-design",
+          "kind": "conditional",
+          "when": "The SVG task needs detailed geometry, paint, sprite, or embedding work."
+        },
+        {
+          "name": "svg-optimization",
+          "kind": "conditional",
+          "when": "Measured SVG size or complexity reduction is requested or needed for the delivery budget."
+        },
+        {
+          "name": "svg-visual-validation",
+          "kind": "conditional",
+          "when": "The task needs reproducible SVG rendering or comparison evidence."
+        }
+      ],
+      "reference": {
+        "source": "syi0808/svg-skills",
+        "license": "MIT",
+        "revision": "c5937c2bed48aff98c12cda43ccba2ed6f2880f0"
+      }
+    },
+    {
+      "name": "svg-visual-validation",
+      "description": "Render and inspect SVG assets, diagnose clipping or reference failures, and compare revisions or raster references under reproducible viewport, theme, font, and motion conditions. Use for actual SVG visual evidence; XML checks alone do not establish a visual pass.",
+      "category": "frontend-design",
+      "author": "HsinPu",
+      "source": "HsinPu/CraftRoster",
+      "license": "Apache-2.0",
+      "tags": [
+        "svg",
+        "vector-graphics",
+        "visual-validation"
+      ],
+      "routes": [
+        {
+          "name": "svg-animation",
+          "kind": "related",
+          "when": "The SVG deliverable includes motion, morphing, or interactive state transitions."
+        },
+        {
+          "name": "svg-design",
+          "kind": "related",
+          "when": "The SVG task needs detailed geometry, paint, sprite, or embedding work."
+        },
+        {
+          "name": "svg-optimization",
+          "kind": "related",
+          "when": "Measured SVG size or complexity reduction is requested or needed for the delivery budget."
+        },
+        {
+          "name": "svg-vectorization",
+          "kind": "related",
+          "when": "A supplied raster must be reconstructed as editable vector geometry."
+        }
+      ],
+      "reference": {
+        "source": "syi0808/svg-skills",
+        "license": "MIT",
+        "revision": "c5937c2bed48aff98c12cda43ccba2ed6f2880f0"
+      }
     },
     {
       "name": "swift-concurrency",
@@ -13367,6 +13657,41 @@
         {
           "name": "product-experimentation",
           "when": "A causal product decision can be tested through randomized assignment, predeclared metrics, instrumentation checks, and a ship-or-stop rule."
+        }
+      ]
+    },
+    {
+      "id": "svg-development",
+      "title": "SVG Authoring and Delivery",
+      "decision": "Use svg-development for a basic entry or mixed SVG task; select the narrowest specialist for a focused outcome. These workflows are independently installable; unrelated page work and bitmap-only output do not activate SVG routes.",
+      "skills": [
+        {
+          "name": "svg-development",
+          "when": "The requested artifact or affected integration is SVG and needs a basic entry or coordination across SVG capabilities."
+        },
+        {
+          "name": "svg-design",
+          "when": "The task needs SVG geometry, paths, paint, symbols, icons, or embedding mechanics."
+        },
+        {
+          "name": "svg-illustration",
+          "when": "The requested outcome is a newly authored editable vector illustration or character."
+        },
+        {
+          "name": "svg-vectorization",
+          "when": "A supplied raster must be faithfully reconstructed as editable vector geometry."
+        },
+        {
+          "name": "svg-animation",
+          "when": "The requested SVG needs motion, morphing, or interactive state transitions."
+        },
+        {
+          "name": "svg-optimization",
+          "when": "SVG size or complexity must be reduced while preserving visible and referenced behavior."
+        },
+        {
+          "name": "svg-visual-validation",
+          "when": "The task needs reproducible SVG rendering, artifact-bound inspection, or comparison to a reference."
         }
       ]
     }

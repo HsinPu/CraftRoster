@@ -1,0 +1,38 @@
+{
+  "skill_name": "svg-design",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Fix the duplicate gradient IDs when this inline SVG component appears twice; keep both accessible names.",
+      "expected_output": "A corrected component with isolated IDs and references per instance.",
+      "assertions": [
+        "Updates url and ARIA references consistently.",
+        "Retains gradient appearance and contextual names.",
+        "Tests repeated instances in the host."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "zh-TW",
+      "prompt": "修改這個 SVG 圖示的鏤空形狀，保留尺寸與可編輯文字。",
+      "expected_output": "保留文字與座標合約的 SVG 修訂及實際檢視結果。",
+      "assertions": [
+        "檢查 winding 與 fill-rule 對孔洞的影響。",
+        "不自動將文字轉成路徑或重畫品牌。",
+        "檢查小尺寸與放大後的鏤空和裁切。"
+      ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Make the color of an SVG loaded through img follow the button currentColor.",
+      "expected_output": "A working embedding solution with the accessibility contract retained.",
+      "assertions": [
+        "Recognizes external image does not inherit host color like inline SVG.",
+        "Uses an appropriate inline or other deliberate solution within scope.",
+        "Checks resulting button sizing and naming."
+      ]
+    }
+  ]
+}

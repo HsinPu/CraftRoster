@@ -1,0 +1,38 @@
+{
+  "skill_name": "svg-development",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Repair a clipped 24px SVG icon in an existing HTML button; keep its label and currentColor behavior.",
+      "expected_output": "An edited SVG in the same host with clipping repaired and an inspected preview.",
+      "assertions": [
+        "Limits the edit to the SVG and its sizing contract.",
+        "Checks stroke/filter bounds and preserves the named button.",
+        "Does not require all six specialists or claim a visual pass from parsing."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "zh-TW",
+      "prompt": "把我提供的角色 PNG 做成可編輯 SVG，再加上兩種表情切換，請保留原圖。",
+      "expected_output": "實際向量重建與表情切換成果，保留原圖並說明比對證據。",
+      "assertions": [
+        "選擇向量化與動畫主責並保留同一組語意 ID。",
+        "交付實際向量幾何而非包入點陣圖。",
+        "若工具或預覽未執行，明確列出缺口。"
+      ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Use only the installed svg-development Skill to create a simple two-color SVG badge.",
+      "expected_output": "A standalone editable badge and truthful check results without forcing other Skill installs.",
+      "assertions": [
+        "Creates actual editable SVG.",
+        "No mandatory specialist or runtime installation.",
+        "Checks actual rendering when available and names missing visual checks."
+      ]
+    }
+  ]
+}

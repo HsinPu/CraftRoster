@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "skill_name": "svg-development",
+  "cases": [
+    {
+      "id": "explicit-svg-en",
+      "kind": "positive",
+      "locale": "en",
+      "prompt": "Create an SVG badge and animate its reveal.",
+      "expected_skills": [
+        "svg-development"
+      ],
+      "excluded_skills": []
+    },
+    {
+      "id": "explicit-svg-zh",
+      "kind": "positive",
+      "locale": "zh-TW",
+      "prompt": "幫我修正 SVG 顯示裁切。",
+      "expected_skills": [
+        "svg-development"
+      ],
+      "excluded_skills": []
+    },
+    {
+      "id": "nearby-different-owner",
+      "kind": "near_match",
+      "locale": "en",
+      "prompt": "Rewrite unrelated footer copy in a repository that contains SVG images.",
+      "expected_skills": [
+        "frontend-design"
+      ],
+      "excluded_skills": [
+        "svg-development"
+      ]
+    },
+    {
+      "id": "plain-translation",
+      "kind": "negative",
+      "locale": "en",
+      "prompt": "Translate the words scalable vector graphics into Chinese; do not create or edit any file.",
+      "expected_skills": [],
+      "excluded_skills": [
+        "svg-development"
+      ]
+    }
+  ]
+}

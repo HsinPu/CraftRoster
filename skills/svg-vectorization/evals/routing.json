@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "skill_name": "svg-vectorization",
+  "cases": [
+    {
+      "id": "faithful-png-conversion-zh",
+      "kind": "positive",
+      "prompt": "將這張 PNG 標誌忠實重建為可編輯的 SVG 路徑，保留原本字樣與白底。",
+      "expected_skills": ["svg-vectorization"],
+      "excluded_skills": ["svg-illustration"],
+      "allowed_skills": ["svg-development", "svg-design", "svg-visual-validation"]
+    },
+    {
+      "id": "sketch-tracing-en",
+      "kind": "positive",
+      "prompt": "Trace the supplied line drawing into editable SVG contours with the available local tool and compare it to the source.",
+      "expected_skills": ["svg-vectorization"],
+      "excluded_skills": ["svg-illustration"],
+      "allowed_skills": ["svg-development", "svg-design", "svg-visual-validation"]
+    },
+    {
+      "id": "new-inspired-art-near-match",
+      "kind": "near_match",
+      "prompt": "Create a new SVG forest illustration inspired by this photo; invent a different composition rather than tracing it.",
+      "expected_skills": ["svg-illustration"],
+      "excluded_skills": ["svg-vectorization"],
+      "allowed_skills": ["svg-development", "svg-design", "svg-visual-validation"]
+    },
+    {
+      "id": "existing-svg-edit-negative-zh",
+      "kind": "negative",
+      "prompt": "這已經是 SVG，只幫我修正 viewBox 與 clipPath，不要轉成點陣圖重新描圖。",
+      "expected_skills": ["svg-design"],
+      "excluded_skills": ["svg-vectorization"],
+      "allowed_skills": ["svg-development", "svg-visual-validation"]
+    }
+  ]
+}

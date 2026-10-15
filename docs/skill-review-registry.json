@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "review_date": "2026-10-09",
+  "review_date": "2026-10-15",
   "baseline_commit": "7acca1fb8865903dc67ee4c76c147d0881cb9e1b",
   "entry_hash_normalization": "utf8-lf",
-  "scope": "Entry instructions and all reviewed package dependency/route relationships across 286 Skills; see docs/audits/skill-installability-2026-10-09/remediation-status.json. Static instruction/installability review and case definitions do not certify live model behavior.",
+  "scope": "Entry and dependency review across 293 Skills. Existing decisions retain their prior evidence; seven SVG additions are documented in docs/svg-skills.md. Case definitions and structural/install tests do not certify live model behavior.",
   "category_representatives": [
     {
       "category": "workflow-planning",
@@ -1922,6 +1922,76 @@
       "next_action": "Use the verified required closure for selective/category installation. Live task behavior remains unrun; any later model trial needs its own current-source evidence.",
       "entry_sha256": "413980cf461a448f9cdb16bf983f4cc2957de0455e3f631ebee57b9248c322f7",
       "runtime_status": "not_run"
+    },
+    {
+      "name": "svg-animation",
+      "category": "frontend-design",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Distinct SVG outcome with self-contained resources, pinned MIT attribution, conditional companion workflows, and behavioral case definitions.",
+      "next_action": "Run representative tasks in the target renderer when applying the Skill; retain actual artifact and visual evidence.",
+      "runtime_status": "not_run",
+      "entry_sha256": "c599206a8117350061fd312e5b4cb3a4dcc24459694a5184a087344d032664f7"
+    },
+    {
+      "name": "svg-design",
+      "category": "frontend-design",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Distinct SVG outcome with self-contained resources, pinned MIT attribution, conditional companion workflows, and behavioral case definitions.",
+      "next_action": "Run representative tasks in the target renderer when applying the Skill; retain actual artifact and visual evidence.",
+      "runtime_status": "not_run",
+      "entry_sha256": "0b36054206b87cb12d1ce3ef3b62a1c3eb048e31a47716d0fa63c89127c84f3a"
+    },
+    {
+      "name": "svg-development",
+      "category": "frontend-design",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Distinct SVG outcome with self-contained resources, pinned MIT attribution, conditional companion workflows, and behavioral case definitions.",
+      "next_action": "Run representative tasks in the target renderer when applying the Skill; retain actual artifact and visual evidence.",
+      "runtime_status": "not_run",
+      "entry_sha256": "23ba1738e689e8b48e7b97c0852011df333de1ee6759c7dfbdac61ad1c4057dc"
+    },
+    {
+      "name": "svg-illustration",
+      "category": "frontend-design",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Distinct SVG outcome with self-contained resources, pinned MIT attribution, conditional companion workflows, and behavioral case definitions.",
+      "next_action": "Run representative tasks in the target renderer when applying the Skill; retain actual artifact and visual evidence.",
+      "runtime_status": "not_run",
+      "entry_sha256": "2ddc6c952beb0eee550aec19d7ffac34a3068ab3eaabe39cb4172b578e7c7767"
+    },
+    {
+      "name": "svg-optimization",
+      "category": "frontend-design",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Distinct SVG outcome with self-contained resources, pinned MIT attribution, conditional companion workflows, and behavioral case definitions.",
+      "next_action": "Run representative tasks in the target renderer when applying the Skill; retain actual artifact and visual evidence.",
+      "runtime_status": "not_run",
+      "entry_sha256": "7f9142bf0b2362ce7825fca101330718ddf566eaba626151fe1707cb35910b96"
+    },
+    {
+      "name": "svg-vectorization",
+      "category": "frontend-design",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Distinct SVG outcome with self-contained resources, pinned MIT attribution, conditional companion workflows, and behavioral case definitions.",
+      "next_action": "Run representative tasks in the target renderer when applying the Skill; retain actual artifact and visual evidence.",
+      "runtime_status": "not_run",
+      "entry_sha256": "6971c9d3c1aa58d41c6927a633a565226a6d019ce92e572b380fa73cfc0b109a"
+    },
+    {
+      "name": "svg-visual-validation",
+      "category": "frontend-design",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Distinct SVG outcome with self-contained resources, pinned MIT attribution, conditional companion workflows, and behavioral case definitions.",
+      "next_action": "Run representative tasks in the target renderer when applying the Skill; retain actual artifact and visual evidence.",
+      "runtime_status": "not_run",
+      "entry_sha256": "aa38a662300b489814ba38df3543dc31fafe9023752ea805e3d7d8d891f965e7"
     },
     {
       "name": "swift-concurrency",

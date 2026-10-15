@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "skill_name": "svg-visual-validation",
+  "cases": [
+    {
+      "id": "explicit-svg-en",
+      "kind": "positive",
+      "locale": "en",
+      "prompt": "Render and compare the current SVG revision against the baseline.",
+      "expected_skills": [
+        "svg-visual-validation"
+      ],
+      "excluded_skills": []
+    },
+    {
+      "id": "explicit-svg-zh",
+      "kind": "positive",
+      "locale": "zh-TW",
+      "prompt": "請比對 SVG 在明暗背景的透明邊緣。",
+      "expected_skills": [
+        "svg-visual-validation"
+      ],
+      "excluded_skills": []
+    },
+    {
+      "id": "nearby-different-owner",
+      "kind": "near_match",
+      "locale": "en",
+      "prompt": "Write a Python CLI parser with no image or SVG output.",
+      "expected_skills": [
+        "python-development"
+      ],
+      "excluded_skills": [
+        "svg-visual-validation"
+      ]
+    },
+    {
+      "id": "plain-translation",
+      "kind": "negative",
+      "locale": "en",
+      "prompt": "Translate the words scalable vector graphics into Chinese; do not create or edit any file.",
+      "expected_skills": [],
+      "excluded_skills": [
+        "svg-visual-validation"
+      ]
+    }
+  ]
+}

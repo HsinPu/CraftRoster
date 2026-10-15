@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "skill_name": "svg-optimization",
+  "cases": [
+    {
+      "id": "reduce-file",
+      "kind": "positive",
+      "prompt": "縮小這個 SVG 的檔案大小，保留 IDs、無障礙標籤與原始畫面。",
+      "expected_skills": [
+        "svg-optimization"
+      ],
+      "excluded_skills": [
+        "svg-vectorization"
+      ],
+      "allowed_skills": [],
+      "locale": "zh-TW"
+    },
+    {
+      "id": "sprite-cleanup",
+      "kind": "positive",
+      "prompt": "Optimize these SVG icons into a reusable sprite and preserve referenced gradients.",
+      "expected_skills": [
+        "svg-optimization"
+      ],
+      "excluded_skills": [
+        "svg-illustration"
+      ],
+      "allowed_skills": [],
+      "locale": "en"
+    },
+    {
+      "id": "raster-reconstruction",
+      "kind": "near_match",
+      "prompt": "把這張 PNG 重新畫成可編輯的真正 SVG 向量圖，不是壓縮 PNG。",
+      "expected_skills": [
+        "svg-vectorization"
+      ],
+      "excluded_skills": [
+        "svg-optimization"
+      ],
+      "allowed_skills": [],
+      "locale": "zh-TW"
+    },
+    {
+      "id": "new-motion",
+      "kind": "near_match",
+      "prompt": "Create new SVG path morph transitions between these states. There is no file-size task.",
+      "expected_skills": [
+        "svg-animation"
+      ],
+      "excluded_skills": [
+        "svg-optimization"
+      ],
+      "allowed_skills": [],
+      "locale": "en"
+    },
+    {
+      "id": "compress-jpeg",
+      "kind": "negative",
+      "prompt": "幫我壓縮 JPEG 照片，不需要 SVG。",
+      "expected_skills": [],
+      "excluded_skills": [
+        "svg-optimization"
+      ],
+      "allowed_skills": [],
+      "locale": "zh-TW"
+    },
+    {
+      "id": "database-performance",
+      "kind": "negative",
+      "prompt": "Optimize a SQL query and explain its index plan.",
+      "expected_skills": [],
+      "excluded_skills": [
+        "svg-optimization"
+      ],
+      "allowed_skills": [],
+      "locale": "en"
+    }
+  ]
+}

@@ -38,4 +38,5 @@ Required support must be available before work that depends on it; report missin
 - `design-consultation` (recommended): Supports ui-designer with web interface visual direction before implementation.
 - `color-font-skill` (recommended): Supports ui-designer with web visual direction, typography, palette, and contrast choices.
 - `responsive-design` (conditional; The web deliverable needs complex responsive layout or reflow guidance.): Supports ui-designer with complex web layout reflow, fluid sizing, breakpoints, and touch-target contracts.
+- `svg-design` (conditional; The SVG task needs detailed geometry, paint, sprite, or embedding work. This read-only role supplies design guidance; a write-capable owner implements the asset.): Supports ui-designer with the requested SVG workflow while preserving its role permissions.
 """

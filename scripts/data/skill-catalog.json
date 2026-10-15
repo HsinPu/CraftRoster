@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "updated": "2026-10-09T00:00:00Z",
+  "updated": "2026-10-15T00:00:00Z",
   "categories": [
     {
       "id": "workflow-planning",
@@ -4134,6 +4134,11 @@
           "name": "ui-styling",
           "kind": "alternative",
           "when": "When icon integration is part of broader React or Tailwind visual styling."
+        },
+        {
+          "name": "svg-design",
+          "kind": "related",
+          "when": "The chosen asset needs SVG geometry, paint, or embedding edits after its brand or icon choice is established."
         }
       ]
     },
@@ -4212,6 +4217,11 @@
           "name": "lobe-icons-usage",
           "kind": "alternative",
           "when": "the user needs existing AI/provider/product icons rather than a new logo."
+        },
+        {
+          "name": "svg-design",
+          "kind": "related",
+          "when": "The chosen asset needs SVG geometry, paint, or embedding edits after its brand or icon choice is established."
         }
       ]
     },
@@ -10652,6 +10662,217 @@
           "when": "The requested outcome is document formatting rather than Workspace CLI transport."
         }
       ]
+    },
+    "svg-development": {
+      "category": "frontend-design",
+      "tags": [
+        "svg",
+        "vector-graphics",
+        "development"
+      ],
+      "dependencies": [
+        {
+          "name": "svg-design",
+          "kind": "conditional",
+          "when": "The SVG task needs detailed geometry, paint, sprite, or embedding work."
+        },
+        {
+          "name": "svg-illustration",
+          "kind": "conditional",
+          "when": "The requested output is a newly authored editable SVG scene or character."
+        },
+        {
+          "name": "svg-vectorization",
+          "kind": "conditional",
+          "when": "A supplied raster must be reconstructed as editable vector geometry."
+        },
+        {
+          "name": "svg-animation",
+          "kind": "conditional",
+          "when": "The SVG deliverable includes motion, morphing, or interactive state transitions."
+        },
+        {
+          "name": "svg-optimization",
+          "kind": "conditional",
+          "when": "Measured SVG size or complexity reduction is requested or needed for the delivery budget."
+        },
+        {
+          "name": "svg-visual-validation",
+          "kind": "conditional",
+          "when": "The task needs reproducible SVG rendering or comparison evidence."
+        }
+      ]
+    },
+    "svg-design": {
+      "category": "frontend-design",
+      "tags": [
+        "svg",
+        "vector-graphics",
+        "design"
+      ],
+      "dependencies": [
+        {
+          "name": "svg-illustration",
+          "kind": "conditional",
+          "when": "The requested output is a newly authored editable SVG scene or character."
+        },
+        {
+          "name": "svg-vectorization",
+          "kind": "conditional",
+          "when": "A supplied raster must be reconstructed as editable vector geometry."
+        },
+        {
+          "name": "svg-animation",
+          "kind": "conditional",
+          "when": "The SVG deliverable includes motion, morphing, or interactive state transitions."
+        },
+        {
+          "name": "svg-optimization",
+          "kind": "conditional",
+          "when": "Measured SVG size or complexity reduction is requested or needed for the delivery budget."
+        },
+        {
+          "name": "svg-visual-validation",
+          "kind": "conditional",
+          "when": "The task needs reproducible SVG rendering or comparison evidence."
+        }
+      ]
+    },
+    "svg-illustration": {
+      "category": "frontend-design",
+      "tags": [
+        "svg",
+        "vector-graphics",
+        "illustration"
+      ],
+      "dependencies": [
+        {
+          "name": "svg-design",
+          "kind": "conditional",
+          "when": "The SVG task needs detailed geometry, paint, sprite, or embedding work."
+        },
+        {
+          "name": "svg-animation",
+          "kind": "conditional",
+          "when": "The SVG deliverable includes motion, morphing, or interactive state transitions."
+        },
+        {
+          "name": "svg-optimization",
+          "kind": "conditional",
+          "when": "Measured SVG size or complexity reduction is requested or needed for the delivery budget."
+        },
+        {
+          "name": "svg-visual-validation",
+          "kind": "conditional",
+          "when": "The task needs reproducible SVG rendering or comparison evidence."
+        }
+      ]
+    },
+    "svg-vectorization": {
+      "category": "frontend-design",
+      "tags": [
+        "svg",
+        "vector-graphics",
+        "vectorization"
+      ],
+      "dependencies": [
+        {
+          "name": "svg-design",
+          "kind": "conditional",
+          "when": "The SVG task needs detailed geometry, paint, sprite, or embedding work."
+        },
+        {
+          "name": "svg-animation",
+          "kind": "conditional",
+          "when": "The SVG deliverable includes motion, morphing, or interactive state transitions."
+        },
+        {
+          "name": "svg-optimization",
+          "kind": "conditional",
+          "when": "Measured SVG size or complexity reduction is requested or needed for the delivery budget."
+        },
+        {
+          "name": "svg-visual-validation",
+          "kind": "conditional",
+          "when": "The task needs reproducible SVG rendering or comparison evidence."
+        }
+      ]
+    },
+    "svg-animation": {
+      "category": "frontend-design",
+      "tags": [
+        "svg",
+        "vector-graphics",
+        "animation"
+      ],
+      "dependencies": [
+        {
+          "name": "svg-design",
+          "kind": "conditional",
+          "when": "The SVG task needs detailed geometry, paint, sprite, or embedding work."
+        },
+        {
+          "name": "svg-visual-validation",
+          "kind": "conditional",
+          "when": "The task needs reproducible SVG rendering or comparison evidence."
+        }
+      ]
+    },
+    "svg-optimization": {
+      "category": "frontend-design",
+      "tags": [
+        "svg",
+        "vector-graphics",
+        "optimization"
+      ],
+      "dependencies": [
+        {
+          "name": "svg-design",
+          "kind": "conditional",
+          "when": "The SVG task needs detailed geometry, paint, sprite, or embedding work."
+        },
+        {
+          "name": "svg-animation",
+          "kind": "conditional",
+          "when": "The SVG deliverable includes motion, morphing, or interactive state transitions."
+        },
+        {
+          "name": "svg-visual-validation",
+          "kind": "conditional",
+          "when": "The task needs reproducible SVG rendering or comparison evidence."
+        }
+      ]
+    },
+    "svg-visual-validation": {
+      "category": "frontend-design",
+      "tags": [
+        "svg",
+        "vector-graphics",
+        "visual-validation"
+      ],
+      "dependencies": [],
+      "routes": [
+        {
+          "name": "svg-design",
+          "kind": "related",
+          "when": "The SVG task needs detailed geometry, paint, sprite, or embedding work."
+        },
+        {
+          "name": "svg-vectorization",
+          "kind": "related",
+          "when": "A supplied raster must be reconstructed as editable vector geometry."
+        },
+        {
+          "name": "svg-animation",
+          "kind": "related",
+          "when": "The SVG deliverable includes motion, morphing, or interactive state transitions."
+        },
+        {
+          "name": "svg-optimization",
+          "kind": "related",
+          "when": "Measured SVG size or complexity reduction is requested or needed for the delivery budget."
+        }
+      ]
     }
   },
   "routingGroups": [
@@ -11626,6 +11847,41 @@
         {
           "name": "product-experimentation",
           "when": "A causal product decision can be tested through randomized assignment, predeclared metrics, instrumentation checks, and a ship-or-stop rule."
+        }
+      ]
+    },
+    {
+      "id": "svg-development",
+      "title": "SVG Authoring and Delivery",
+      "decision": "Use svg-development for a basic entry or mixed SVG task; select the narrowest specialist for a focused outcome. These workflows are independently installable; unrelated page work and bitmap-only output do not activate SVG routes.",
+      "skills": [
+        {
+          "name": "svg-development",
+          "when": "The requested artifact or affected integration is SVG and needs a basic entry or coordination across SVG capabilities."
+        },
+        {
+          "name": "svg-design",
+          "when": "The task needs SVG geometry, paths, paint, symbols, icons, or embedding mechanics."
+        },
+        {
+          "name": "svg-illustration",
+          "when": "The requested outcome is a newly authored editable vector illustration or character."
+        },
+        {
+          "name": "svg-vectorization",
+          "when": "A supplied raster must be faithfully reconstructed as editable vector geometry."
+        },
+        {
+          "name": "svg-animation",
+          "when": "The requested SVG needs motion, morphing, or interactive state transitions."
+        },
+        {
+          "name": "svg-optimization",
+          "when": "SVG size or complexity must be reduced while preserving visible and referenced behavior."
+        },
+        {
+          "name": "svg-visual-validation",
+          "when": "The task needs reproducible SVG rendering, artifact-bound inspection, or comparison to a reference."
         }
       ]
     }

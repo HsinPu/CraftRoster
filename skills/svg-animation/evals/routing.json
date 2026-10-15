@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "skill_name": "svg-animation",
+  "cases": [
+    {
+      "id": "animated-mascot",
+      "kind": "positive",
+      "prompt": "幫我把這個 SVG 吉祥物做成可中斷的待機與開心狀態動畫。",
+      "expected_skills": [
+        "svg-animation"
+      ],
+      "excluded_skills": [
+        "svg-optimization"
+      ],
+      "allowed_skills": [],
+      "locale": "zh-TW"
+    },
+    {
+      "id": "stroke-reveal",
+      "kind": "positive",
+      "prompt": "Animate the SVG stroke drawing in our existing HTML page and support reduced motion.",
+      "expected_skills": [
+        "svg-animation"
+      ],
+      "excluded_skills": [
+        "svg-vectorization"
+      ],
+      "allowed_skills": [],
+      "locale": "en"
+    },
+    {
+      "id": "static-icon-edit",
+      "kind": "near_match",
+      "prompt": "只把這個 SVG 靜態圖示的線條改粗，不需要任何動畫。",
+      "expected_skills": [
+        "svg-design"
+      ],
+      "excluded_skills": [
+        "svg-animation"
+      ],
+      "allowed_skills": [],
+      "locale": "zh-TW"
+    },
+    {
+      "id": "optimize-animated-file",
+      "kind": "near_match",
+      "prompt": "Reduce this animated SVG's bytes without changing its existing motion. Do not redesign the animation.",
+      "expected_skills": [
+        "svg-optimization"
+      ],
+      "excluded_skills": [
+        "svg-animation"
+      ],
+      "allowed_skills": [],
+      "locale": "en"
+    },
+    {
+      "id": "explain-term",
+      "kind": "negative",
+      "prompt": "用一句話解釋動畫是什麼，不要建立檔案。",
+      "expected_skills": [],
+      "excluded_skills": [
+        "svg-animation"
+      ],
+      "allowed_skills": [],
+      "locale": "zh-TW"
+    },
+    {
+      "id": "video-edit",
+      "kind": "negative",
+      "prompt": "Cut my MP4 interview from three minutes to one minute; there is no vector artwork.",
+      "expected_skills": [],
+      "excluded_skills": [
+        "svg-animation"
+      ],
+      "allowed_skills": [],
+      "locale": "en"
+    }
+  ]
+}

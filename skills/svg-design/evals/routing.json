@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "skill_name": "svg-design",
+  "cases": [
+    {
+      "id": "explicit-svg-en",
+      "kind": "positive",
+      "locale": "en",
+      "prompt": "Repair a compound SVG path hole and broken gradient IDs.",
+      "expected_skills": [
+        "svg-design"
+      ],
+      "excluded_skills": []
+    },
+    {
+      "id": "explicit-svg-zh",
+      "kind": "positive",
+      "locale": "zh-TW",
+      "prompt": "幫我製作可編輯 SVG 圖示。",
+      "expected_skills": [
+        "svg-design"
+      ],
+      "excluded_skills": []
+    },
+    {
+      "id": "nearby-different-owner",
+      "kind": "near_match",
+      "locale": "en",
+      "prompt": "Choose an existing OpenAI provider icon from Lobe Icons without editing its geometry.",
+      "expected_skills": [
+        "lobe-icons-usage"
+      ],
+      "excluded_skills": [
+        "svg-design"
+      ]
+    },
+    {
+      "id": "plain-translation",
+      "kind": "negative",
+      "locale": "en",
+      "prompt": "Translate the words scalable vector graphics into Chinese; do not create or edit any file.",
+      "expected_skills": [],
+      "excluded_skills": [
+        "svg-design"
+      ]
+    }
+  ]
+}

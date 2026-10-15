@@ -27,6 +27,14 @@ skill-dependencies:
   - name: responsive-design
     kind: recommended
     reason: "Supports frontend-developer with complex web layout reflow, fluid sizing, breakpoints, and touch-target contracts."
+  - name: svg-development
+    kind: conditional
+    reason: "Supports frontend-developer with the requested SVG workflow while preserving its role permissions."
+    when: "The requested interface includes SVG authoring, repair, or integration."
+  - name: svg-animation
+    kind: conditional
+    reason: "Supports frontend-developer with the requested SVG workflow while preserving its role permissions."
+    when: "The SVG deliverable includes motion, morphing, or interactive state transitions."
 tags:
   - frontend
   - user-interface

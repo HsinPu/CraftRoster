@@ -697,6 +697,30 @@ supabase-development	auth-integration	conditional	When the application needs log
 supabase-development	database-design	conditional	When the task needs relational modeling or index design.
 supabase-development	security-code-review	conditional	When policies or secret exposure require an independent security review.
 supabase-development	sql-best-practices	conditional	When the task requires SQL review or query optimization.
+svg-animation	svg-design	conditional	The SVG task needs detailed geometry, paint, sprite, or embedding work.
+svg-animation	svg-visual-validation	conditional	The task needs reproducible SVG rendering or comparison evidence.
+svg-design	svg-animation	conditional	The SVG deliverable includes motion, morphing, or interactive state transitions.
+svg-design	svg-illustration	conditional	The requested output is a newly authored editable SVG scene or character.
+svg-design	svg-optimization	conditional	Measured SVG size or complexity reduction is requested or needed for the delivery budget.
+svg-design	svg-vectorization	conditional	A supplied raster must be reconstructed as editable vector geometry.
+svg-design	svg-visual-validation	conditional	The task needs reproducible SVG rendering or comparison evidence.
+svg-development	svg-animation	conditional	The SVG deliverable includes motion, morphing, or interactive state transitions.
+svg-development	svg-design	conditional	The SVG task needs detailed geometry, paint, sprite, or embedding work.
+svg-development	svg-illustration	conditional	The requested output is a newly authored editable SVG scene or character.
+svg-development	svg-optimization	conditional	Measured SVG size or complexity reduction is requested or needed for the delivery budget.
+svg-development	svg-vectorization	conditional	A supplied raster must be reconstructed as editable vector geometry.
+svg-development	svg-visual-validation	conditional	The task needs reproducible SVG rendering or comparison evidence.
+svg-illustration	svg-animation	conditional	The SVG deliverable includes motion, morphing, or interactive state transitions.
+svg-illustration	svg-design	conditional	The SVG task needs detailed geometry, paint, sprite, or embedding work.
+svg-illustration	svg-optimization	conditional	Measured SVG size or complexity reduction is requested or needed for the delivery budget.
+svg-illustration	svg-visual-validation	conditional	The task needs reproducible SVG rendering or comparison evidence.
+svg-optimization	svg-animation	conditional	The SVG deliverable includes motion, morphing, or interactive state transitions.
+svg-optimization	svg-design	conditional	The SVG task needs detailed geometry, paint, sprite, or embedding work.
+svg-optimization	svg-visual-validation	conditional	The task needs reproducible SVG rendering or comparison evidence.
+svg-vectorization	svg-animation	conditional	The SVG deliverable includes motion, morphing, or interactive state transitions.
+svg-vectorization	svg-design	conditional	The SVG task needs detailed geometry, paint, sprite, or embedding work.
+svg-vectorization	svg-optimization	conditional	Measured SVG size or complexity reduction is requested or needed for the delivery budget.
+svg-vectorization	svg-visual-validation	conditional	The task needs reproducible SVG rendering or comparison evidence.
 swift-concurrency	ios-architecture	conditional	When concurrency issues expose feature ownership, module boundaries, dependency direction, or a larger migration decision.
 swift-concurrency	mobile-app-testing	conditional	When the task requires background or foreground transitions, permissions, deep links, push, purchases, network interruptions, or device automation.
 swift-testing	swift-concurrency	conditional	Actor ownership, Sendable, task lifetime, continuations, or cancellation must first be corrected in production code.

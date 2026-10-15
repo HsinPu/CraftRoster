@@ -41,3 +41,5 @@ Required support must be available before work that depends on it; report missin
 - `typescript-development` (conditional; The affected source or compiler contract is TypeScript.): Supports frontend-developer with TypeScript source, compiler configuration, strict contracts, and typed APIs.
 - `react-ui-patterns` (conditional; The affected web interface uses React and its component-state contracts.): Supports frontend-developer with React loading, error, empty, optimistic, and concurrent UI states.
 - `responsive-design` (recommended): Supports frontend-developer with complex web layout reflow, fluid sizing, breakpoints, and touch-target contracts.
+- `svg-development` (conditional; The requested interface includes SVG authoring, repair, or integration.): Supports frontend-developer with the requested SVG workflow while preserving its role permissions.
+- `svg-animation` (conditional; The SVG deliverable includes motion, morphing, or interactive state transitions.): Supports frontend-developer with the requested SVG workflow while preserving its role permissions.
