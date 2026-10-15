@@ -1,6 +1,6 @@
 {
   "name": "craftroster",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Cross-platform AI agent, skill, and workflow catalog with no-Node installers and a query CLI",
   "license": "Apache-2.0",
   "author": "HsinPu",

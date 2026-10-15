@@ -106,12 +106,15 @@ try {
   if (!options.definitions) {
     const helper = path.join(root, 'skills/svg-visual-validation/scripts/inspect_svg.py');
     const python = options.python || (process.platform === 'win32' ? 'python' : 'python3');
+    const helperEnvironment = { ...process.env, PYTHONDONTWRITEBYTECODE: '1' };
     let fixture = 0;
     function inspect(content, profile = 'static', expected = 0) {
       const input = path.join(temporary, `input-${++fixture}.svg`);
       fs.writeFileSync(input, content);
       const digest = hash(input);
-      const result = execute(python, [helper, '--profile', profile, input], { timeout: 30000 });
+      const result = execute(python, [helper, '--profile', profile, input], {
+        timeout: 30000, env: helperEnvironment
+      });
       assert.equal(result.status, expected, result.output);
       const report = JSON.parse(result.stdout);
       assert.equal(report.schema_version, 1);
@@ -147,6 +150,84 @@ try {
         assert(report.errors.some(error => /Missing local reference/.test(error)), `${attribute} skipped local-reference checking`);
       }
     });
+    test('CSS comments and ordinary quoted strings do not invent local references', () => {
+      const report = inspect(wrap(`<style>
+        /* url(#missing-comment) */
+        path { fill: red; --example: "url(#missing-string)"; }
+        text::before { content: 'url(#missing-content)'; }
+      </style><path style="/* url(#missing-inline) */ fill:red"/>`), 'web');
+      assert(!report.errors.some(error => /Missing local reference/.test(error)));
+      assert(!report.features.includes('external-reference'));
+    });
+    test('CSS escaped URL function names and fragment IDs resolve actual references', () => {
+      const style = String.raw`path { fill: u\72l(#\67 radient); stroke: URL("#gradient"); }`;
+      inspect(wrap(`<defs><linearGradient id="gradient"/></defs><style>${style}</style><path/>`), 'web');
+      const missing = inspect(wrap(`<style>${style}</style><path/>`), 'web', 1);
+      assert(missing.errors.some(error => /Missing local reference: gradient/.test(error)));
+    });
+    test('CSS imports and unsupported URL syntax request host review without guessed references', () => {
+      for (const css of ['@import "https://example.invalid/art.css";',
+        String.raw`@\69mport url("https://example.invalid/art.css");`]) {
+        const report = inspect(wrap(`<style>${css}</style>`), 'web');
+        assert(report.features.includes('external-reference'), 'A stylesheet import was overlooked');
+        assert(report.warnings.length > 0);
+        inspect(wrap(`<style>${css}</style>`), 'static', 1);
+      }
+      for (const css of ['path { fill: url(#missing; }', 'path { fill: url("#missing" junk); }']) {
+        const report = inspect(wrap(`<style>${css}</style>`), 'web');
+        assert(report.warnings.some(warning => /url|syntax|unsupported/i.test(warning)),
+          'Malformed CSS URL must be identified for host review');
+        assert(!report.errors.some(error => /Missing local reference/.test(error)),
+          'Malformed CSS must not fabricate a fragment reference');
+      }
+    });
+    test('custom namespace attributes remain metadata rather than SVG behavior', () => {
+      const body = '<path xmlns:meta="urn:craftroster:test-metadata" meta:oncall="support" ' +
+        'meta:href="#missing-href" meta:style="fill:url(#missing-style)" ' +
+        'meta:fill="url(#missing-fill)" meta:aria-labelledby="missing-label" d="M1 1L19 19"/>';
+      for (const profile of ['static', 'web']) {
+        const report = inspect(wrap(body), profile);
+        assert.deepEqual(report.features, [], 'Metadata attributes activated SVG feature detection');
+      }
+      const editorMetadata = '<metadata xmlns:editor="urn:craftroster:editor">' +
+        '<editor:style href="#missing-editor" onclick="saved-handler">' +
+        'path { fill: url(#not-svg); }</editor:style></metadata>';
+      const webReport = inspect(wrap(editorMetadata), 'web');
+      assert.deepEqual(webReport.errors, [], 'Foreign editor metadata was interpreted as SVG content');
+      assert.deepEqual(webReport.features, ['foreign-content']);
+      const staticReport = inspect(wrap(editorMetadata), 'static', 1);
+      assert.deepEqual(staticReport.features, ['foreign-content']);
+      assert(staticReport.errors.every(error => /foreign-content/.test(error)),
+        'Static metadata rejection invented executable behavior or missing references');
+      inspect(wrap('<path onclick="alert(1)"/>'), 'static', 1);
+    });
+    test('SVG2 href takes precedence while xlink-only targets are still checked', () => {
+      const declaration = 'xmlns:xlink="http://www.w3.org/1999/xlink"';
+      for (const profile of ['static', 'web']) {
+        inspect(wrap(`<defs><path id="real"/></defs><use ${declaration} href="#real" xlink:href="#missing"/>`), profile);
+        inspect(wrap(`<defs><path id="real"/></defs><use ${declaration} href="#real" xlink:href="https://example.invalid/art.svg"/>`), profile);
+        inspect(wrap(`<defs><path id="real"/></defs><use ${declaration} xlink:href="#real"/>`), profile);
+        const missing = inspect(wrap(`<use ${declaration} xlink:href="#missing"/>`), profile, 1);
+        assert(missing.errors.some(error => /Missing local reference: missing/.test(error)));
+        inspect(wrap(`<defs><path id="real"/></defs><use ${declaration} href="" xlink:href="#missing"/>`), profile);
+      }
+    });
+    test('viewBox follows SVG numeric and separator grammar rather than Python float syntax', () => {
+      const valid = ['0 0 20 20', '0,0,20,20', ' +0 , -0 , .5 , 2. ',
+        '0\t0\n2e1\r2E+1', '-1.5 +2.5 2e-1 3.0E+2'];
+      const invalid = ['0 0 2_0 20', '0,,0,20,20', ',0 0 20 20', '0 0 20 20,',
+        '0 0 1.2.3', '0 0 20+20', '0 0 + 20', '0 0 NaN 20', '0 0 1e999 20',
+        '0 0 0 20', '0 0 -1 20', '0\u00a00 20 20'];
+      for (const viewBox of valid) {
+        inspect(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="${viewBox}"/>`);
+      }
+      for (const viewBox of invalid) {
+        for (const profile of ['static', 'web']) {
+          const report = inspect(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="${viewBox}"/>`, profile, 1);
+          assert(report.errors.some(error => /viewBox/.test(error)));
+        }
+      }
+    });
     test('broken local references, duplicate IDs and malformed viewBox fail both profiles', () => {
       for (const profile of ['static', 'web']) {
         inspect(wrap('<path id="same"/><g id="same"/>'), profile, 1);
@@ -163,7 +244,7 @@ try {
     });
     test('missing input returns a structured input error without producing output artifacts', () => {
       const missing = path.join(temporary, 'missing.svg');
-      const result = execute(python, [helper, '--profile', 'static', missing], { timeout: 30000 });
+      const result = execute(python, [helper, '--profile', 'static', missing], { timeout: 30000, env: helperEnvironment });
       assert.equal(result.status, 2, result.output);
       assert(JSON.parse(result.stdout).errors.length > 0);
       assert(!fs.existsSync(missing));
@@ -171,7 +252,7 @@ try {
     test('oversized and excessively nested SVG inputs fail within the documented bounds', () => {
       const oversized = path.join(temporary, 'oversized.svg');
       fs.writeFileSync(oversized, Buffer.alloc(5 * 1024 * 1024 + 1, 32));
-      const result = execute(python, [helper, oversized], { timeout: 30000 });
+      const result = execute(python, [helper, oversized], { timeout: 30000, env: helperEnvironment });
       assert.equal(result.status, 1, result.output);
       const report = JSON.parse(result.stdout);
       assert.equal(report.input_sha256, null, 'A bounded prefix must not be advertised as the full input hash');

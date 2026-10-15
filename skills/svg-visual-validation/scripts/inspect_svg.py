@@ -15,13 +15,126 @@ import sys
 import xml.etree.ElementTree as ET
 
 SVG = "http://www.w3.org/2000/svg"
+XLINK_HREF = "{http://www.w3.org/1999/xlink}href"
 MAX_BYTES = 5 * 1024 * 1024
 MAX_ELEMENTS = 10000
 MAX_DEPTH = 128
 MOTION = {"animate", "animateMotion", "animateTransform", "set"}
 URL_ATTRIBUTES = {"fill", "stroke", "filter", "clip-path", "mask", "marker",
                   "marker-start", "marker-mid", "marker-end", "cursor", "style"}
-URL = re.compile(r"url\(\s*(['\"]?)(.*?)\1\s*\)", re.I)
+SPACE = " \t\r\n\f"
+NUMBER = r"[+-]?(?:[0-9]+(?:\.[0-9]*)?|\.[0-9]+)(?:[eE][+-]?[0-9]+)?"
+SEPARATOR = r"(?:[ \t\r\n]+(?:,[ \t\r\n]*)?|,[ \t\r\n]*)"
+VIEWBOX = re.compile(rf"[ \t\r\n]*{NUMBER}(?:{SEPARATOR}{NUMBER}){{3}}[ \t\r\n]*")
+
+
+def css_urls(text):
+    """Scan URL tokens, skipping comments/ordinary strings; not a CSS parser.
+
+    Each character is consumed once, including escaped identifiers and strings.
+    Unsupported URL syntax is surfaced for host review instead of guessed.
+    """
+    targets, features = [], set()
+    index, size = 0, len(text)
+    importing = False
+
+    def escape(start):
+        end = start + 1
+        if end == size:
+            return "\ufffd", end
+        if text[end] in "\r\n\f":
+            return "", end + (2 if text[end:end + 2] == "\r\n" else 1)
+        if text[end] in "0123456789abcdefABCDEF":
+            stop = end
+            while stop < size and stop - end < 6 and text[stop] in "0123456789abcdefABCDEF":
+                stop += 1
+            number = int(text[end:stop], 16)
+            value = chr(number) if 0 < number <= 0x10ffff and not 0xd800 <= number <= 0xdfff else "\ufffd"
+            if stop < size and text[stop] in SPACE:
+                stop += 2 if text[stop:stop + 2] == "\r\n" else 1
+            return value, stop
+        return text[end], end + 1
+
+    def string(start):
+        quote, output, end = text[start], [], start + 1
+        while end < size:
+            char = text[end]
+            if char == quote:
+                return "".join(output), end + 1, True
+            if char in "\r\n\f":
+                return "", end + 1, False
+            if char == "\\":
+                value, end = escape(end)
+                output.append(value)
+            else:
+                output.append(char)
+                end += 1
+        return "", end, False
+
+    while index < size:
+        char = text[index]
+        if text.startswith("/*", index):
+            stop = text.find("*/", index + 2)
+            if stop < 0:
+                features.add("unparsed-css-url")
+                break
+            index = stop + 2
+            continue
+        if char in "\"'":
+            _, index, _ = string(index)
+            continue
+        if char in ";{}":
+            importing = False
+        if char.isalnum() or char in "_-\\" or ord(char) >= 128:
+            start, word = index, []
+            while index < size:
+                char = text[index]
+                if char == "\\":
+                    value, index = escape(index)
+                    word.append(value)
+                elif char.isalnum() or char in "_-" or ord(char) >= 128:
+                    word.append(char)
+                    index += 1
+                else:
+                    break
+            name = "".join(word).lower()
+            if name == "import" and start > 0 and text[start - 1] == "@":
+                importing = True
+                features.update({"stylesheet-import", "external-reference"})
+            if name != "url" or index == size or text[index] != "(":
+                continue
+            index += 1
+            while index < size and text[index] in SPACE:
+                index += 1
+            valid = True
+            if index < size and text[index] in "\"'":
+                value, index, valid = string(index)
+            else:
+                output = []
+                while index < size and text[index] != ")" and text[index] not in SPACE:
+                    char = text[index]
+                    if char in "\"'(" or ord(char) < 32:
+                        valid = False
+                    if char == "\\":
+                        if index + 1 == size or text[index + 1] in "\r\n\f":
+                            valid = False
+                        value, index = escape(index)
+                        output.append(value)
+                    else:
+                        output.append(char)
+                        index += 1
+                value = "".join(output)
+            while index < size and text[index] in SPACE:
+                index += 1
+            if not valid or index == size or text[index] != ")":
+                features.add("unparsed-css-url")
+            else:
+                if not importing:
+                    targets.append(value)
+                index += 1
+            continue
+        index += 1
+    return targets, features
 
 
 def inspect(file, profile):
@@ -67,6 +180,8 @@ def inspect(file, profile):
         report["warnings"].append("Missing viewBox; verify host sizing and scaling")
     else:
         try:
+            if VIEWBOX.fullmatch(viewbox) is None:
+                raise ValueError()
             values = [float(value) for value in re.split(r"[\s,]+", viewbox.strip())]
             if len(values) != 4 or not all(math.isfinite(value) for value in values) or min(values[2:]) <= 0:
                 raise ValueError()
@@ -87,20 +202,23 @@ def inspect(file, profile):
             features.add("external-reference")
 
     def urls(value):
-        for match in URL.finditer(value):
-            target(match.group(2))
+        found, extra = css_urls(value)
+        features.update(extra)
+        for value in found:
+            target(value)
 
     for element in root.iter():
         tag = element.tag.rsplit("}", 1)[-1]
         tags[tag] += 1
-        if not element.tag.startswith(f"{{{SVG}}}"):
+        is_svg = element.tag.startswith(f"{{{SVG}}}")
+        if not is_svg:
             features.add("foreign-content")
-        if tag in MOTION:
+        if is_svg and tag in MOTION:
             features.add("animation")
-        if tag == "style":
+        if is_svg and tag == "style":
             features.add("css")
             urls("".join(element.itertext()))
-        if tag in {"script", "foreignObject", "image", "feImage"}:
+        if is_svg and tag in {"script", "foreignObject", "image", "feImage"}:
             features.add({"script": "script", "foreignObject": "foreign-content",
                           "image": "bitmap-or-linked-image", "feImage": "bitmap-or-linked-image"}[tag])
         identity = element.get("id")
@@ -110,14 +228,21 @@ def inspect(file, profile):
             if identity in ids:
                 report["errors"].append(f"Duplicate ID: {identity}")
             ids.add(identity)
-        for attribute, value in element.attrib.items():
-            name = attribute.rsplit("}", 1)[-1]
+        if not is_svg:
+            continue
+        href = element.get("href", element.get(XLINK_HREF))
+        if href is not None:
+            target(href)
+        if "href" in element.attrib and XLINK_HREF in element.attrib and element.get("href") != element.get(XLINK_HREF):
+            report["warnings"].append("href overrides a different xlink:href; check legacy viewers if required")
+        for name, value in element.attrib.items():
+            # Namespaced editor metadata is not an SVG event, style or IDREF.
+            if name.startswith("{"):
+                continue
             if name.lower().startswith("on"):
                 features.add("event-handler")
             if name == "style":
                 features.add("css")
-            if name == "href":
-                target(value)
             if name in {"aria-labelledby", "aria-describedby"}:
                 references.update(value.split())
             if name in URL_ATTRIBUTES:

@@ -78,3 +78,5 @@ bash scripts/install.sh --source-dir . --target codex --type skill --name svg-de
 新增 21 個成果案例定義與 32 個路由案例定義，用來描述真實任務的預期結果，**不等於模型任務已執行或每種 SVG 都已通過視覺測試**。結構通過、渲染成功、實際看圖、參考圖一致是四種不同證據。靜態預檢不支援的 CSS／動畫，應由 `web` profile 加上目標瀏覽器檢查；程式不會刪除功能來製造通過，也不是上傳檔案的安全清洗器。
 
 本次實際執行的驗證、環境與限制見 [驗證紀錄](audits/svg-series-2026-10-15/verification.md)。
+
+1.1.1 補強 CSS／命名空間／連結與 viewBox 預檢，並提供已實測的動畫範例，詳見 [優化檢查紀錄](audits/svg-series-2026-10-15/optimization-review.md)。分類與安裝指令沿用原有方式。

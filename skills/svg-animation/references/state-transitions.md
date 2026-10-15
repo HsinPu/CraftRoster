@@ -33,4 +33,58 @@ In a declarative framework, establish whether the framework or an imperative ani
 
 ## Evidence
 
+### Small browser recipes
+
+For a rotation inside an authored placement, keep the placement on the outer group and give the animated group an explicit reference box. This one-shot motion ends in its natural still state; component styles and identifiers should be scoped to the host.
+
+```html
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 80" aria-hidden="true">
+  <g transform="translate(48 40)">
+    <g class="svg-example-pivot">
+      <rect x="-18" y="-10" width="36" height="20" rx="4" fill="#287b92" />
+    </g>
+  </g>
+  <style>
+    .svg-example-pivot {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: svg-example-turn 800ms ease-out forwards;
+    }
+    @keyframes svg-example-turn {
+      from { transform: rotate(-35deg); }
+      to { transform: rotate(0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .svg-example-pivot { animation: none; }
+    }
+  </style>
+</svg>
+```
+
+For a simple open stroke, `pathLength="1"` normalizes dash distances. Use unitless values; dash percentages use a viewport-based length and are not percentages of the path. Preserve a visible final state when motion is reduced. Filled compound contours and multiple subpaths need their own reveal design.
+
+```html
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 48" aria-hidden="true">
+  <path class="svg-example-reveal" pathLength="1" d="M8 24 Q30 2 48 24 T88 24"
+    fill="none" stroke="#287b92" stroke-width="4" stroke-linecap="round" />
+  <style>
+    .svg-example-reveal {
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      animation: svg-example-draw 900ms linear forwards;
+    }
+    @keyframes svg-example-draw { to { stroke-dashoffset: 0; } }
+    @media (prefers-reduced-motion: reduce) {
+      .svg-example-reveal { animation: none; stroke-dashoffset: 0; }
+    }
+  </style>
+</svg>
+```
+
+These decorative examples are inline SVG. Adapt naming for informative art, and verify the receiving viewer rather than assuming scripts or host styling can reach an external image.
+
+Official references: [transform-box](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/transform-box), [pathLength](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/pathLength), [stroke-dasharray](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/stroke-dasharray).
+
+### Evidence for the requested artwork
+
 Test every authored pose and representative transition pairs, especially pairs with different topology or missing parts. Sample the middle of the transition, repeat A→B→C before A→B completes, pause/resume, test reduced motion, and remount the host component when relevant. Report the actual library/version and target embedding mode. A static endpoint screenshot proves neither intermediate geometry nor cancellation.
