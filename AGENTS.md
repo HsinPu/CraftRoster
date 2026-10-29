@@ -1,5 +1,25 @@
 # Repository Agent Guidance
 
+## Project Architecture
+
+- CraftRoster is a catalog and distribution layer for Skills and custom Agents, not an Agent runtime or an application UI.
+- Canonical Skill instructions live in `skills/<name>/SKILL.md`. `scripts/data/skill-catalog.json` owns categories, tags, dependencies, and routes; `scripts/data/install-bundles.json` owns user-facing installation purposes.
+- `agents.json`, `skills.json`, `adapters/`, and generated TSV indexes are derived artifacts. Keep their generators and canonical inputs authoritative.
+- Installer entrypoints are `scripts/setup.ps1` / `setup.sh` for interactive selection and `scripts/install.ps1` / `install.sh` for parameter-based installation. Development uses Node.js 22+; ordinary installation does not require Node.js.
+
+## Task Workflow and Knowledge
+
+- Start each task by reading root `AGENTS.md`, `MEMORY.md`, and `README.md`. Create a missing knowledge file from verified repository evidence.
+- At completion, review and update these documents as needed. Keep `AGENTS.md` focused on durable architecture and working rules; keep `MEMORY.md` focused on verified decisions and lessons. Remove obsolete or duplicated knowledge.
+- Read `DESIGN.md` before designing or changing an actual UI. If absent, record only established design evidence and mark unresolved choices explicitly. Catalog research alone does not establish a product design system.
+- Keep research proposals clearly separate from installed capabilities. Do not change catalog membership, install upstream tools, or enable hooks merely because a source was researched.
+- Review README headings, internal links, installation instructions, version information, and feature claims after relevant changes. Preserve valid existing content and use relative repository links.
+
+## Versioning and Git
+
+- Use the existing `package.json` version and semantic versioning: MAJOR for incompatible changes, MINOR for compatible features, PATCH for bug or compatibility fixes. Update `CHANGELOG.md` and affected README information with substantive code changes. Documentation-only work does not increase the version.
+- Commit only changes belonging to the completed task, including its documentation and version updates. Do not automatically push; a new explicit push request is required.
+
 ## Custom Agent Routing
 
 - When a task benefits from delegation, select the best matching available custom Agent from its name and description. The user does not need to name the Agent explicitly.
@@ -17,4 +37,5 @@
 ## Verification
 
 - Run `npm run validate` after changing Agents, Skills, adapters, catalogs, installers, or README catalog metadata.
+- Run relevant focused checks for changed executable behavior. A case definition or a structural pass does not establish actual runtime or visual success.
 - Inspect `git diff --check` and the final Git status before handing off changes.

@@ -41,6 +41,8 @@ CraftRoster 是 catalog 與 distribution layer，**不是**另一套 Agent runti
 
 ## 快速開始
 
+目前版本為 **1.1.1**；發行變更見 [CHANGELOG](CHANGELOG.md)，正式版本以 [package.json](package.json) 為準。
+
 ### 互動式安裝
 
 只需執行一行命令，再選環境、全域或專案、全部安裝或指定用途分類。相關 Skills 與子代理一起安裝。一般安裝不需要 Node.js，也不需要管理員／`sudo`。
@@ -492,6 +494,10 @@ Catalog 來源是 [`skills.json`](skills.json) 與 [`agents.json`](agents.json)�
 ### SVG 系列
 
 新增 7 個 `svg-` Skills，以 `svg-development` 作為總入口，涵蓋設計、插畫、點陣圖向量重建、動畫、最佳化與視覺驗證。各 Skill 可獨立安裝；互動安裝選「畫圖與圖像處理」會加入全部 7 個及該分類子代理，選「網頁與介面設計」會加入網頁常用的 5 個。詳細能力、配套與固定上游來源見 [SVG Skills 指南](docs/svg-skills.md)。
+
+### 跨平台介面品質（研究規劃）
+
+現有 [`frontend-design-review`](skills/frontend-design-review/) 已區分 critique、audit 與 polish 的網頁審查視角。針對網頁、Windows／macOS 桌面軟體與原生手機 App 的共用入口、平台差異及用途分類建議，見 [Impeccable 與跨平台介面品質研究](docs/interface-quality-skill-plan.md)。這是待實作提案，目前仍維持 15 個用途分類，沒有新增安裝項目。
 
 ## 專案架構
 
