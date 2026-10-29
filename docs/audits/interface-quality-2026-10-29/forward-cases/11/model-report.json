@@ -1,0 +1,62 @@
+{
+  "original_preserved": true,
+  "target": "macOS 13+ / SwiftUI",
+  "changed_files": [
+    "isolated/SettingsView.swift"
+  ],
+  "checks": [
+    {
+      "passed": true,
+      "check": "Source contains: ScrollView"
+    },
+    {
+      "passed": true,
+      "check": "Source contains: text: $name"
+    },
+    {
+      "passed": true,
+      "check": "Source contains: Button(action: save)"
+    },
+    {
+      "passed": true,
+      "check": "Source contains: .accessibilityLabel(\"Save\")"
+    },
+    {
+      "passed": true,
+      "check": "Source contains: .windowBackgroundColor"
+    },
+    {
+      "passed": true,
+      "check": "Source excludes: .frame(width:"
+    },
+    {
+      "passed": true,
+      "check": "Source excludes: .lineLimit(1)"
+    },
+    {
+      "passed": true,
+      "check": "Source excludes: .background(Color.white)"
+    },
+    {
+      "passed": true,
+      "check": "Source excludes: .foregroundColor(.black)"
+    },
+    {
+      "passed": true,
+      "check": "No trailing whitespace"
+    }
+  ],
+  "tools": {
+    "xcodebuild_available": false,
+    "swift_available": false
+  },
+  "mode": "authorized source fix",
+  "outcome": "Source-only repairs implemented; all checks are literal source inspections, not compilation or native execution.",
+  "missing_native_checks": [
+    "Target build and type checking: no Apple SDK/Xcode or complete project",
+    "Native narrow layout / large text / long content and appearance checks",
+    "Native keyboard and save callback interaction / navigation and retained edits",
+    "Native accessibility hierarchy and VoiceOver walkthrough"
+  ],
+  "behavior_change": "Removed fixed view and field dimensions, title line cap, and black/white colors; scrollable flexible settings retain compact spacing. Name label stacks above field to support narrow windows. Save exposes an action name and help. Binding and closure unchanged."
+}

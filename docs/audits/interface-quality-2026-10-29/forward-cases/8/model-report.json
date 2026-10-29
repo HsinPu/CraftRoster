@@ -1,0 +1,70 @@
+{
+  "original_preserved": true,
+  "target": "macOS 13+ / AppKit",
+  "changed_files": [
+    "isolated/SettingsController.swift"
+  ],
+  "checks": [
+    {
+      "passed": true,
+      "check": "Source contains: wrappingLabelWithString"
+    },
+    {
+      "passed": true,
+      "check": "Source contains: maximumNumberOfLines = 0"
+    },
+    {
+      "passed": true,
+      "check": "Source contains: titleLabel.trailingAnchor"
+    },
+    {
+      "passed": true,
+      "check": "Source contains: accountName.trailingAnchor"
+    },
+    {
+      "passed": true,
+      "check": "Source contains: setAccessibilityLabel"
+    },
+    {
+      "passed": true,
+      "check": "Source contains: onSave(accountName.stringValue)"
+    },
+    {
+      "passed": true,
+      "check": "Source excludes: equalToConstant: 340"
+    },
+    {
+      "passed": true,
+      "check": "Source excludes: equalToConstant: 20"
+    },
+    {
+      "passed": true,
+      "check": "Source excludes: .byClipping"
+    },
+    {
+      "passed": true,
+      "check": "Source excludes: NSColor.white"
+    },
+    {
+      "passed": true,
+      "check": "Source excludes: .textColor = .black"
+    },
+    {
+      "passed": true,
+      "check": "No trailing whitespace"
+    }
+  ],
+  "tools": {
+    "xcodebuild_available": false,
+    "swift_available": false
+  },
+  "mode": "authorized source fix",
+  "outcome": "Source-only repairs implemented; all checks are literal source inspections, not compilation or native execution.",
+  "missing_native_checks": [
+    "Target build and type checking: no Apple SDK/Xcode or complete project",
+    "Native narrow layout / large text / long content and appearance checks",
+    "Native keyboard and save callback interaction / navigation and retained edits",
+    "Native accessibility hierarchy and VoiceOver walkthrough"
+  ],
+  "behavior_change": "Removed fixed heading height and both 340-point widths; heading wraps and field follows window width with existing 20-point margins. Save now has a localized accessible name and tooltip. Native window supplies background; label uses semantic color. Existing text field and selector/callback retained."
+}

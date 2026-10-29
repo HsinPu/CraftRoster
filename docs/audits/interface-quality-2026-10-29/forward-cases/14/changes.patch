@@ -1,0 +1,40 @@
+--- a/ProfileView.swift
++++ b/ProfileView.swift
+@@ -8,10 +8,10 @@
+-        VStack(alignment: .leading, spacing: 12) {
+-            Text("Display name shown to your team")
+-                .font(.system(size: 20))
+-                .lineLimit(1)
+-                .frame(height: 24)
+-            TextField("Display name", text: $displayName)
+-                .textFieldStyle(.roundedBorder)
+-            Spacer()
+-            Button(action: save) { Image(systemName: "checkmark") }
+-                .tint(.blue)
++        ScrollView {
++            VStack(alignment: .leading, spacing: 12) {
++                Text("Display name shown to your team")
++                    .font(.title3)
++                    .fixedSize(horizontal: false, vertical: true)
++                TextField("Display name", text: $displayName)
++                    .textFieldStyle(.roundedBorder)
++            }
++            .frame(maxWidth: .infinity, alignment: .leading)
++            .padding(16)
+@@ -19,5 +19,11 @@
+-        .padding(16)
+-        .frame(height: 240)
+-        .foregroundStyle(.black)
+-        .background(.white)
+-        .ignoresSafeArea(.keyboard)
++        .safeAreaInset(edge: .bottom) {
++            Button(action: save) {
++                Label("Save", systemImage: "checkmark")
++                    .frame(maxWidth: .infinity, minHeight: 44)
++            }
++            .tint(.blue)
++            .padding(16)
++            .background(Color(uiColor: .systemBackground))
++        }
++        .foregroundStyle(.primary)
++        .background(Color(uiColor: .systemBackground))

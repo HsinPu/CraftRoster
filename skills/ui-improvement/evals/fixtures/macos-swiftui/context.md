@@ -1,0 +1,2 @@
+# Fixture context
+Original partial macOS SwiftUI view for a macOS 13+ settings window. Host WindowGroup supplies the name binding and save closure. This is not an iOS target and no Xcode project/runtime evidence is provided. Keep native menu/scene ownership in the host; preserve the action and branded compact spacing while making narrow windows, system appearance and VoiceOver usable. Copy into an isolated workspace before edits.

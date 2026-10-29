@@ -1,0 +1,2 @@
+# Fixture context
+Original partial iOS SwiftUI view, iOS 16+ phone app. NavigationStack and persistence are owned by the parent. Save must keep calling the supplied closure; preserve user input during keyboard presentation and navigation. Existing brand uses ordinary native text fields and blue action styling. Large Dynamic Type, dark mode and VoiceOver are supported. This is not a buildable project and no simulator/device evidence is supplied. Copy into an isolated workspace before edits.

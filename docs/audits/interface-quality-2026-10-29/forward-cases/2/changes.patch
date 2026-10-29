@@ -1,0 +1,20 @@
+--- a/SettingsPanel.xaml
++++ b/SettingsPanel.xaml
+@@ -4,7 +4,10 @@
+-    <StackPanel Width="360" Height="120" Spacing="8" Background="White">
+-        <TextBlock Text="Account notification preferences" FontSize="20"
+-                   Foreground="Black" Height="24" TextWrapping="NoWrap" />
+-        <TextBox Text="{Binding AccountName, Mode=TwoWay}" Height="28" />
+-        <Button Content="&#xE74E;" FontFamily="Segoe Fluent Icons"
+-                Command="{Binding SaveCommand}" />
+-    </StackPanel>
++    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto"
++                  HorizontalContentAlignment="Stretch">
++        <StackPanel MaxWidth="360" Spacing="8" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
++            <TextBlock Text="Account notification preferences" FontSize="20"
++                       Foreground="{ThemeResource TextFillColorPrimaryBrush}" TextWrapping="Wrap" />
++            <TextBox Text="{Binding AccountName, Mode=TwoWay}" AutomationProperties.Name="Account name" />
++            <Button Content="&#xE74E;" FontFamily="Segoe Fluent Icons"
++                    AutomationProperties.Name="Save" Command="{Binding SaveCommand}" />
++        </StackPanel>
++    </ScrollViewer>

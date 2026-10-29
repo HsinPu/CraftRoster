@@ -1,0 +1,2 @@
+# Fixture context
+Original partial Android Views/XML screen: minSdk 26, targetSdk 35, AndroidX ComponentActivity and core WindowCompat. Host uses edge-to-edge; parent supplies name state and existing save listener outside this excerpt. Preserve profileName/saveProfile IDs and parent navigation. Support enlarged font, system night mode, IME, TalkBack and rotation. No Gradle project, resources beyond this layout, or device evidence is supplied. Copy into an isolated workspace before edits.

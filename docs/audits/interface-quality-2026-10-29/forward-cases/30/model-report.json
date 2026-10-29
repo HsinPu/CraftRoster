@@ -1,0 +1,23 @@
+{
+  "case_id": 30,
+  "mode": "polish/fix",
+  "changed_files": [
+    "main.cjs",
+    "settings.html"
+  ],
+  "changes": [
+    "Native menu copy role; retained separate Copy Profile action targeting focused window; renderer fluid sizing and visible focus; security flags retained"
+  ],
+  "checks": [
+    "Stubbed main code: native copy role has no hijacking click",
+    "Stubbed main code: custom action sends to focused window; absent window is safe",
+    "Trust settings preserved",
+    "node --check main.cjs passed",
+    "Browser 320x640: scrollWidth 320; input width 272; associated label; Tab reaches Save with 3px outline"
+  ],
+  "remaining_limits": [
+    "vm smoke test uses isolated Electron stub, not native runtime",
+    "No package manifest or Electron bundle; version unknown; Windows/macOS actual copy/menus/focus not executed",
+    "No supplied Save handler; backend/persistence not validated"
+  ]
+}

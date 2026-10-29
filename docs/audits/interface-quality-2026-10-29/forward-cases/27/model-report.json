@@ -1,0 +1,19 @@
+{
+  "case_id": 27,
+  "mode": "polish/fix",
+  "changed_files": [
+    "index.html"
+  ],
+  "changes": [
+    "Fluid bounded layout, wrapping associated label, visible blue focus, light/dark semantic colors; preserved blue action and POST /profile displayName contract"
+  ],
+  "checks": [
+    "Source contract checks passed",
+    "Browser 320x640: scrollWidth 320; label wraps to 48px; accessible field name correct; typed value retained; Tab reaches Save with blue 3px outline",
+    "Browser 1024x768: scrollWidth 1024; main width 620; no console warning/error entries"
+  ],
+  "remaining_limits": [
+    "Dark media CSS source-reviewed; actual dark render not exercised",
+    "Backend, screen reader and long translated-string runtime checks not available"
+  ]
+}

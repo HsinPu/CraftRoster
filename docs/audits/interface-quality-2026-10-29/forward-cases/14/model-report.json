@@ -1,0 +1,70 @@
+{
+  "original_preserved": true,
+  "target": "iOS 16+ / SwiftUI",
+  "changed_files": [
+    "isolated/ProfileView.swift"
+  ],
+  "checks": [
+    {
+      "passed": true,
+      "check": "Source contains: ScrollView"
+    },
+    {
+      "passed": true,
+      "check": "Source contains: .font(.title3)"
+    },
+    {
+      "passed": true,
+      "check": "Source contains: text: $displayName"
+    },
+    {
+      "passed": true,
+      "check": "Source contains: .safeAreaInset(edge: .bottom)"
+    },
+    {
+      "passed": true,
+      "check": "Source contains: Button(action: save)"
+    },
+    {
+      "passed": true,
+      "check": "Source contains: Label(\"Save\""
+    },
+    {
+      "passed": true,
+      "check": "Source contains: .systemBackground"
+    },
+    {
+      "passed": true,
+      "check": "Source excludes: .ignoresSafeArea(.keyboard)"
+    },
+    {
+      "passed": true,
+      "check": "Source excludes: .frame(height: 240)"
+    },
+    {
+      "passed": true,
+      "check": "Source excludes: .lineLimit(1)"
+    },
+    {
+      "passed": true,
+      "check": "Source excludes: .frame(height: 24)"
+    },
+    {
+      "passed": true,
+      "check": "No trailing whitespace"
+    }
+  ],
+  "tools": {
+    "xcodebuild_available": false,
+    "swift_available": false
+  },
+  "mode": "authorized source fix",
+  "outcome": "Source-only repairs implemented; all checks are literal source inspections, not compilation or native execution.",
+  "missing_native_checks": [
+    "Target build and type checking: no Apple SDK/Xcode or complete project",
+    "Native narrow layout / large text / long content and appearance checks",
+    "Native keyboard and save callback interaction / navigation and retained edits",
+    "Native accessibility hierarchy and VoiceOver walkthrough"
+  ],
+  "behavior_change": "Removed fixed form/title heights and keyboard safe-area bypass. Heading uses Dynamic Type and wraps; form scrolls, while visible Save occupies a bottom safe-area inset that accommodates keyboard. Semantic appearance and original binding/save closure retained."
+}

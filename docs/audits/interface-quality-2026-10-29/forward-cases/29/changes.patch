@@ -1,0 +1,32 @@
+--- a/ProfileScreen.tsx
++++ b/ProfileScreen.tsx
+@@ -2 +2 @@
+-import {View, Text, TextInput, Pressable, StyleSheet} from 'react-native';
++import {ScrollView, Text, TextInput, Pressable, StyleSheet, useColorScheme} from 'react-native';
+@@ -6,5 +6,12 @@
+-  return <View style={styles.screen}>
+-    <Text numberOfLines={1} style={styles.heading}>Display name shown to collaborators</Text>
+-    <TextInput value={name} onChangeText={onNameChange} style={styles.input}/>
+-    <Pressable onPress={onSave}><Text>✓</Text></Pressable>
+-  </View>;
++  const dark = useColorScheme() === 'dark';
++  const colors = dark ? {backgroundColor: '#17191d', color: '#f5f5f5'} : {backgroundColor: '#fff', color: '#000'};
++  // Parent retains safe-area and keyboard-resize ownership.
++  return <ScrollView style={[styles.screen, {backgroundColor: colors.backgroundColor}]}
++    contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
++    <Text style={[styles.heading, {color: colors.color}]}>Display name shown to collaborators</Text>
++    <TextInput accessibilityLabel="Display name" value={name} onChangeText={onNameChange}
++      style={[styles.input, {color: colors.color, borderColor: colors.color}]}/>
++    <Pressable accessibilityRole="button" accessibilityLabel="Save" onPress={onSave} style={styles.save}>
++      <Text style={{color: colors.color}}>✓</Text>
++    </Pressable>
++  </ScrollView>;
+@@ -13,3 +20,5 @@
+-  screen: {width: 360, height: 200, padding: 16, backgroundColor: '#fff'},
+-  heading: {height: 24, fontSize: 20, color: '#000'},
+-  input: {height: 32, borderWidth: 1},
++  screen: {flex: 1},
++  content: {padding: 16},
++  heading: {fontSize: 20, flexShrink: 1, marginBottom: 12},
++  input: {minHeight: 44, borderWidth: 1, padding: 8, fontSize: 16},
++  save: {minHeight: 48, minWidth: 48, alignSelf: 'flex-end', alignItems: 'center', justifyContent: 'center', padding: 12},

@@ -1,0 +1,2 @@
+# Fixture context
+Original partial source, not a complete buildable app. Product: WinUI 3 Windows settings pane, Windows App SDK 1.6, minimum Windows 10 1809. ViewModel already exposes AccountName and SaveCommand. Preserve bindings and the compact brand; supported settings include large Windows text, dark theme, keyboard operation and narrow windows. No runtime evidence is supplied. Copy this fixture into an isolated workspace before edits.

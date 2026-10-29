@@ -10,6 +10,10 @@ license: Apache-2.0
 model: inherit
 permission: workspace-write
 skill-dependencies:
+  - name: ui-improvement
+    kind: conditional
+    reason: "Supports existing-interface quality corrections with platform-specific repair and evidence rules."
+    when: "The task reviews or improves the visible interface within this role's documented platform scope."
   - name: frontend-design
     kind: recommended
     reason: "Supports frontend-developer with the visible web implementation baseline and rendered user-state verification."

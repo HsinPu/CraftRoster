@@ -1,0 +1,18 @@
+{
+  "changes": "Removes empty Back interception to restore Navigator ownership. Applies and consumes Scaffold padding, adds remaining IME space and scrolling, removes clipping heights/line limit, uses inherited Material colors and retains hoisted callbacks.",
+  "changed_files": [
+    "work/ProfileScreen.kt"
+  ],
+  "mode": "authorized source repair in isolated work copy",
+  "missing": [
+    "No Gradle project or exact dependency versions; gradle, kotlinc and adb unavailable. No Android compile/lint/device or emulator test.",
+    "System bars/cutout, keyboard last-field/action reachability, Back completion/cancellation, rotation/state, enlarged font/night theme and TalkBack unexecuted."
+  ],
+  "outcome": "Source repair completed; source checks passed; native acceptance unverified",
+  "original_sources": "Original fixture files retained unchanged; only work copies and result.json written.",
+  "checks": [
+    "Source inspection of Scaffold inset ownership",
+    "Static source check passed for inset consumption, IME handling, absent BackHandler and unchanged callbacks"
+  ],
+  "framework": "Android Compose Material 3; minSdk 26, targetSdk 35; exact AndroidX versions absent"
+}

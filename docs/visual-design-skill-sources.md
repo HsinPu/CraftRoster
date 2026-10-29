@@ -4,6 +4,8 @@ This document records the public references consulted for CraftRoster's visual-d
 
 Research snapshot: 2026-07-15.
 
+The later cross-platform implementation is recorded in [interface-quality.md](interface-quality.md), with Impeccable pinned at `5e745ace7e151feb2a93d360d0281fe39448b857` on 2026-10-29. The table below retains the original visual-design research snapshot; the new Skill packages its own license notice and native repair references.
+
 | Reference | License status reviewed | Mechanism studied | CraftRoster adaptation and boundary |
 | --- | --- | --- | --- |
 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) | MIT | Contextual taste and image-to-code direction | Primary reference metadata remains on `taste-skill` and `image-to-code`; their contracts, routing, verification, and text are independently rewritten. |

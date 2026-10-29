@@ -1,0 +1,18 @@
+{
+  "changes": "Content sizes heading/input and pane, wraps heading, bounds width with MaxWidth and supports vertical overflow. Uses native theme brushes and accessible input/save names; bindings preserved.",
+  "changed_files": [
+    "work/SettingsPanel.xaml"
+  ],
+  "mode": "authorized source repair in isolated work copy",
+  "missing": [
+    "No complete project; dotnet unavailable. No XAML compile, WinUI render, text/display scaling or narrow-window interaction run.",
+    "Dark/high contrast, keyboard/UI Automation and Narrator unexecuted."
+  ],
+  "outcome": "Source repair completed; source checks passed; native acceptance unverified",
+  "original_sources": "Original fixture files retained unchanged; only work copies and result.json written.",
+  "checks": [
+    "PowerShell [xml] parse passed",
+    "Static content-size/wrapping/theme and binding checks passed"
+  ],
+  "framework": "WinUI 3, Windows App SDK 1.6, Windows 10 1809 minimum"
+}

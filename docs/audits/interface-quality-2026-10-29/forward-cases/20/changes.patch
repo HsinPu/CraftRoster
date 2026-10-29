@@ -1,0 +1,34 @@
+--- a/ProfileScreen.kt
++++ b/ProfileScreen.kt
+@@ -3,2 +2,0 @@
+-import androidx.activity.compose.BackHandler
+-import androidx.compose.foundation.background
+@@ -5,0 +4,2 @@
++import androidx.compose.foundation.rememberScrollState
++import androidx.compose.foundation.verticalScroll
+@@ -9 +8,0 @@
+-import androidx.compose.ui.graphics.Color
+@@ -15,5 +14,12 @@
+-    BackHandler(enabled = true) { }
+-    Scaffold { _ ->
+-        Column(Modifier.fillMaxSize().background(Color.White).padding(16.dp)) {
+-            Text("Display name shown to your team", color = Color.Black,
+-                fontSize = 20.sp, maxLines = 1, modifier = Modifier.height(24.dp))
++    // Normal Back remains owned by the parent Navigator.
++    Scaffold { innerPadding ->
++        Column(
++            Modifier.fillMaxSize()
++                .padding(innerPadding)
++                .consumeWindowInsets(innerPadding)
++                .imePadding()
++                .verticalScroll(rememberScrollState())
++                .padding(16.dp),
++            verticalArrangement = Arrangement.spacedBy(8.dp)
++        ) {
++            Text("Display name shown to your team", fontSize = 20.sp)
+@@ -21,3 +27,2 @@
+-                label = { Text("Display name") }, modifier = Modifier.height(40.dp))
+-            Spacer(Modifier.weight(1f))
+-            Button(onClick = onSave, modifier = Modifier.fillMaxWidth().height(32.dp)) {
++                label = { Text("Display name") }, modifier = Modifier.fillMaxWidth())
++            Button(onClick = onSave, modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp)) {

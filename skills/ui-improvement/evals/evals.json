@@ -1,0 +1,655 @@
+{
+  "skill_name": "ui-improvement",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Use ui-improvement in audit mode on the supplied Windows WinUI 3 fixture. Users report that the account settings pane clips its heading and input at larger Windows text sizes and narrow windows. Diagnose only; do not modify source, generate report files, install packages or change device settings. State what can be inferred from these partial files and what requires the target app.",
+      "expected_output": "A read-only, evidence-based Windows WinUI 3 audit with prioritized impact, exact source locations, smallest repair direction and explicit untested native behavior.",
+      "assertions": [
+        "Identifies the target as Windows WinUI 3 and inspects WinUI XAML layout, text sizing, theme-resource and automation contracts.",
+        "Leaves every supplied file unchanged and keeps any diagnostic report in the response.",
+        "Connects findings to a user task and observed source; distinguishes likely runtime consequences from reproduced behavior.",
+        "Does not infer native build, visual, screen-reader or performance success from source or a browser screenshot."
+      ],
+      "case_label": "windows-winui-audit",
+      "fixture_root": "evals/fixtures/windows-winui",
+      "files": [
+        "evals/fixtures/windows-winui/context.md",
+        "evals/fixtures/windows-winui/SettingsPanel.xaml"
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Use ui-improvement to fix this existing Windows WinUI 3 interface: the account settings pane clips its heading and input at larger Windows text sizes and narrow windows. Apply the smallest source changes to an isolated copy of the supplied fixture, preserving its current framework, brand and callback/data contracts. Use only available tools; report exact checks performed and unavailable target-platform checks.",
+      "expected_output": "Actual Windows WinUI 3 source edits in the isolated copy, a concise explanation of the corrected contract, and separate source/build/runtime results.",
+      "assertions": [
+        "Edits actual XAML in the isolated fixture and keeps AccountName and SaveCommand bindings.",
+        "Repairs the constrained layout without disabling user text/display scaling or swapping UI frameworks.",
+        "Uses supported WinUI mechanisms; does not silently change the application manifest, SDK or deployment target.",
+        "Delivers a source diff, rather than only advice or a platform handoff.",
+        "Names required target-platform build and interaction checks as unexecuted when tooling/project/device is absent; does not claim the partial fixture is a running app."
+      ],
+      "case_label": "windows-winui-polish",
+      "fixture_root": "evals/fixtures/windows-winui",
+      "files": [
+        "evals/fixtures/windows-winui/context.md",
+        "evals/fixtures/windows-winui/SettingsPanel.xaml"
+      ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Use ui-improvement on the supplied Windows WinUI 3 screen to repair support for larger Windows text, system dark/high-contrast appearance, keyboard focus and the save control automation name. Make bounded source changes in an isolated copy and keep the existing brand and actions. Do not change OS settings, install an SDK or replace the app framework. Verify what is available and identify remaining native checks.",
+      "expected_output": "A Windows WinUI 3 source correction for the applicable scale/theme/accessibility contracts with target-specific acceptance steps and honest evidence limits.",
+      "assertions": [
+        "Changes the actual native source and preserves data, navigation and action ownership.",
+        "Uses Windows WinUI 3-appropriate layout, semantic text/theme and accessibility mechanisms supported by the target.",
+        "Does not remove font scaling, force a single theme, shrink required content, or replace real native semantics with DOM/ARIA.",
+        "Separates accessible-tree inspection from actual assistive-technology operation; records viewport/window/OS/text settings and unexecuted checks."
+      ],
+      "case_label": "windows-winui-scale-theme-accessibility",
+      "fixture_root": "evals/fixtures/windows-winui",
+      "files": [
+        "evals/fixtures/windows-winui/context.md",
+        "evals/fixtures/windows-winui/SettingsPanel.xaml"
+      ]
+    },
+    {
+      "id": 4,
+      "locale": "en",
+      "prompt": "Use ui-improvement in audit mode on the supplied Windows WPF fixture. Users report that the account settings view clips text and controls at increased typography sizes and narrow windows. Diagnose only; do not modify source, generate report files, install packages or change device settings. State what can be inferred from these partial files and what requires the target app.",
+      "expected_output": "A read-only, evidence-based Windows WPF audit with prioritized impact, exact source locations, smallest repair direction and explicit untested native behavior.",
+      "assertions": [
+        "Identifies the target as Windows WPF and inspects WPF layout constraints, commands, system resource usage and UI Automation semantics.",
+        "Leaves every supplied file unchanged and keeps any diagnostic report in the response.",
+        "Connects findings to a user task and observed source; distinguishes likely runtime consequences from reproduced behavior.",
+        "Does not infer native build, visual, screen-reader or performance success from source or a browser screenshot."
+      ],
+      "case_label": "windows-wpf-audit",
+      "fixture_root": "evals/fixtures/windows-wpf",
+      "files": [
+        "evals/fixtures/windows-wpf/context.md",
+        "evals/fixtures/windows-wpf/SettingsView.xaml"
+      ]
+    },
+    {
+      "id": 5,
+      "locale": "en",
+      "prompt": "Use ui-improvement to fix this existing Windows WPF interface: the account settings view clips text and controls at increased typography sizes and narrow windows. Apply the smallest source changes to an isolated copy of the supplied fixture, preserving its current framework, brand and callback/data contracts. Use only available tools; report exact checks performed and unavailable target-platform checks.",
+      "expected_output": "Actual Windows WPF source edits in the isolated copy, a concise explanation of the corrected contract, and separate source/build/runtime results.",
+      "assertions": [
+        "Edits actual WPF XAML and preserves DisplayName binding, NameInput identity and SaveCommand.",
+        "Repairs layout and text resilience without shrinking font size, disabling scaling or replacing WPF.",
+        "Keeps commands and keyboard behavior; scopes DPI manifest changes to evidence from the actual app.",
+        "Delivers a source diff, rather than only advice or a platform handoff.",
+        "Names required target-platform build and interaction checks as unexecuted when tooling/project/device is absent; does not claim the partial fixture is a running app."
+      ],
+      "case_label": "windows-wpf-polish",
+      "fixture_root": "evals/fixtures/windows-wpf",
+      "files": [
+        "evals/fixtures/windows-wpf/context.md",
+        "evals/fixtures/windows-wpf/SettingsView.xaml"
+      ]
+    },
+    {
+      "id": 6,
+      "locale": "en",
+      "prompt": "Use ui-improvement on the supplied Windows WPF screen to repair support for the supported larger typography setting, system high contrast, keyboard traversal and the editable name association. Make bounded source changes in an isolated copy and keep the existing brand and actions. Do not change OS settings, install an SDK or replace the app framework. Verify what is available and identify remaining native checks.",
+      "expected_output": "A Windows WPF source correction for the applicable scale/theme/accessibility contracts with target-specific acceptance steps and honest evidence limits.",
+      "assertions": [
+        "Changes the actual native source and preserves data, navigation and action ownership.",
+        "Uses Windows WPF-appropriate layout, semantic text/theme and accessibility mechanisms supported by the target.",
+        "Does not remove font scaling, force a single theme, shrink required content, or replace real native semantics with DOM/ARIA.",
+        "Separates accessible-tree inspection from actual assistive-technology operation; records viewport/window/OS/text settings and unexecuted checks."
+      ],
+      "case_label": "windows-wpf-scale-theme-accessibility",
+      "fixture_root": "evals/fixtures/windows-wpf",
+      "files": [
+        "evals/fixtures/windows-wpf/context.md",
+        "evals/fixtures/windows-wpf/SettingsView.xaml"
+      ]
+    },
+    {
+      "id": 7,
+      "locale": "en",
+      "prompt": "Use ui-improvement in audit mode on the supplied macOS AppKit fixture. Users report that the settings controller clips at narrow widths and its icon-only save action is unclear to assistive technology. Diagnose only; do not modify source, generate report files, install packages or change device settings. State what can be inferred from these partial files and what requires the target app.",
+      "expected_output": "A read-only, evidence-based macOS AppKit audit with prioritized impact, exact source locations, smallest repair direction and explicit untested native behavior.",
+      "assertions": [
+        "Identifies the target as macOS AppKit and inspects AppKit constraints, intrinsic content sizing, responder/action contracts and native accessibility.",
+        "Leaves every supplied file unchanged and keeps any diagnostic report in the response.",
+        "Connects findings to a user task and observed source; distinguishes likely runtime consequences from reproduced behavior.",
+        "Does not infer native build, visual, screen-reader or performance success from source or a browser screenshot."
+      ],
+      "case_label": "macos-appkit-audit",
+      "fixture_root": "evals/fixtures/macos-appkit",
+      "files": [
+        "evals/fixtures/macos-appkit/context.md",
+        "evals/fixtures/macos-appkit/SettingsController.swift"
+      ]
+    },
+    {
+      "id": 8,
+      "locale": "en",
+      "prompt": "Use ui-improvement to fix this existing macOS AppKit interface: the settings controller clips at narrow widths and its icon-only save action is unclear to assistive technology. Apply the smallest source changes to an isolated copy of the supplied fixture, preserving its current framework, brand and callback/data contracts. Use only available tools; report exact checks performed and unavailable target-platform checks.",
+      "expected_output": "Actual macOS AppKit source edits in the isolated copy, a concise explanation of the corrected contract, and separate source/build/runtime results.",
+      "assertions": [
+        "Edits SettingsController.swift and preserves onSave plus text editing.",
+        "Repairs AppKit layout with supported macOS APIs; does not substitute UIKit or an iOS-only Skill.",
+        "Keeps the existing window and menu owner rather than inventing a new app architecture.",
+        "Delivers a source diff, rather than only advice or a platform handoff.",
+        "Names required target-platform build and interaction checks as unexecuted when tooling/project/device is absent; does not claim the partial fixture is a running app."
+      ],
+      "case_label": "macos-appkit-polish",
+      "fixture_root": "evals/fixtures/macos-appkit",
+      "files": [
+        "evals/fixtures/macos-appkit/context.md",
+        "evals/fixtures/macos-appkit/SettingsController.swift"
+      ]
+    },
+    {
+      "id": 9,
+      "locale": "en",
+      "prompt": "Use ui-improvement on the supplied macOS AppKit screen to repair support for dark appearance, the text/control layout at supported size settings, keyboard focus and VoiceOver naming. Make bounded source changes in an isolated copy and keep the existing brand and actions. Do not change OS settings, install an SDK or replace the app framework. Verify what is available and identify remaining native checks.",
+      "expected_output": "A macOS AppKit source correction for the applicable scale/theme/accessibility contracts with target-specific acceptance steps and honest evidence limits.",
+      "assertions": [
+        "Changes the actual native source and preserves data, navigation and action ownership.",
+        "Uses macOS AppKit-appropriate layout, semantic text/theme and accessibility mechanisms supported by the target.",
+        "Does not remove font scaling, force a single theme, shrink required content, or replace real native semantics with DOM/ARIA.",
+        "Separates accessible-tree inspection from actual assistive-technology operation; records viewport/window/OS/text settings and unexecuted checks."
+      ],
+      "case_label": "macos-appkit-scale-theme-accessibility",
+      "fixture_root": "evals/fixtures/macos-appkit",
+      "files": [
+        "evals/fixtures/macos-appkit/context.md",
+        "evals/fixtures/macos-appkit/SettingsController.swift"
+      ]
+    },
+    {
+      "id": 10,
+      "locale": "en",
+      "prompt": "Use ui-improvement in audit mode on the supplied macOS SwiftUI fixture. Users report that the settings window clips at narrow widths and its icon-only save action is unclear. Diagnose only; do not modify source, generate report files, install packages or change device settings. State what can be inferred from these partial files and what requires the target app.",
+      "expected_output": "A read-only, evidence-based macOS SwiftUI audit with prioritized impact, exact source locations, smallest repair direction and explicit untested native behavior.",
+      "assertions": [
+        "Identifies the target as macOS SwiftUI and inspects macOS SwiftUI layout, scene/command ownership, native control semantics and appearance.",
+        "Leaves every supplied file unchanged and keeps any diagnostic report in the response.",
+        "Connects findings to a user task and observed source; distinguishes likely runtime consequences from reproduced behavior.",
+        "Does not infer native build, visual, screen-reader or performance success from source or a browser screenshot."
+      ],
+      "case_label": "macos-swiftui-audit",
+      "fixture_root": "evals/fixtures/macos-swiftui",
+      "files": [
+        "evals/fixtures/macos-swiftui/context.md",
+        "evals/fixtures/macos-swiftui/SettingsView.swift"
+      ]
+    },
+    {
+      "id": 11,
+      "locale": "en",
+      "prompt": "Use ui-improvement to fix this existing macOS SwiftUI interface: the settings window clips at narrow widths and its icon-only save action is unclear. Apply the smallest source changes to an isolated copy of the supplied fixture, preserving its current framework, brand and callback/data contracts. Use only available tools; report exact checks performed and unavailable target-platform checks.",
+      "expected_output": "Actual macOS SwiftUI source edits in the isolated copy, a concise explanation of the corrected contract, and separate source/build/runtime results.",
+      "assertions": [
+        "Edits the macOS SwiftUI view and preserves the name binding and save closure.",
+        "Repairs flexible window layout without applying iPhone-only navigation or keyboard APIs.",
+        "Keeps host WindowGroup/menu ownership and macOS 13 availability unless a real compatibility issue is demonstrated.",
+        "Delivers a source diff, rather than only advice or a platform handoff.",
+        "Names required target-platform build and interaction checks as unexecuted when tooling/project/device is absent; does not claim the partial fixture is a running app."
+      ],
+      "case_label": "macos-swiftui-polish",
+      "fixture_root": "evals/fixtures/macos-swiftui",
+      "files": [
+        "evals/fixtures/macos-swiftui/context.md",
+        "evals/fixtures/macos-swiftui/SettingsView.swift"
+      ]
+    },
+    {
+      "id": 12,
+      "locale": "en",
+      "prompt": "Use ui-improvement on the supplied macOS SwiftUI screen to repair support for system appearance, narrow/reopened windows, keyboard focus and VoiceOver labels. Make bounded source changes in an isolated copy and keep the existing brand and actions. Do not change OS settings, install an SDK or replace the app framework. Verify what is available and identify remaining native checks.",
+      "expected_output": "A macOS SwiftUI source correction for the applicable scale/theme/accessibility contracts with target-specific acceptance steps and honest evidence limits.",
+      "assertions": [
+        "Changes the actual native source and preserves data, navigation and action ownership.",
+        "Uses macOS SwiftUI-appropriate layout, semantic text/theme and accessibility mechanisms supported by the target.",
+        "Does not remove font scaling, force a single theme, shrink required content, or replace real native semantics with DOM/ARIA.",
+        "Separates accessible-tree inspection from actual assistive-technology operation; records viewport/window/OS/text settings and unexecuted checks."
+      ],
+      "case_label": "macos-swiftui-scale-theme-accessibility",
+      "fixture_root": "evals/fixtures/macos-swiftui",
+      "files": [
+        "evals/fixtures/macos-swiftui/context.md",
+        "evals/fixtures/macos-swiftui/SettingsView.swift"
+      ]
+    },
+    {
+      "id": 13,
+      "locale": "en",
+      "prompt": "Use ui-improvement in audit mode on the supplied iOS SwiftUI fixture. Users report that the name form clips large text and users cannot reliably reach Save with the keyboard open. Diagnose only; do not modify source, generate report files, install packages or change device settings. State what can be inferred from these partial files and what requires the target app.",
+      "expected_output": "A read-only, evidence-based iOS SwiftUI audit with prioritized impact, exact source locations, smallest repair direction and explicit untested native behavior.",
+      "assertions": [
+        "Identifies the target as iOS SwiftUI and inspects iOS SwiftUI Dynamic Type, safe-area/keyboard layout, scrolling and native semantics.",
+        "Leaves every supplied file unchanged and keeps any diagnostic report in the response.",
+        "Connects findings to a user task and observed source; distinguishes likely runtime consequences from reproduced behavior.",
+        "Does not infer native build, visual, screen-reader or performance success from source or a browser screenshot."
+      ],
+      "case_label": "ios-swiftui-audit",
+      "fixture_root": "evals/fixtures/ios-swiftui",
+      "files": [
+        "evals/fixtures/ios-swiftui/context.md",
+        "evals/fixtures/ios-swiftui/ProfileView.swift"
+      ]
+    },
+    {
+      "id": 14,
+      "locale": "en",
+      "prompt": "Use ui-improvement to fix this existing iOS SwiftUI interface: the name form clips large text and users cannot reliably reach Save with the keyboard open. Apply the smallest source changes to an isolated copy of the supplied fixture, preserving its current framework, brand and callback/data contracts. Use only available tools; report exact checks performed and unavailable target-platform checks.",
+      "expected_output": "Actual iOS SwiftUI source edits in the isolated copy, a concise explanation of the corrected contract, and separate source/build/runtime results.",
+      "assertions": [
+        "Edits ProfileView.swift and preserves displayName, save and parent navigation ownership.",
+        "Makes the form reachable with keyboard and large Dynamic Type without disabling either.",
+        "Keeps iOS 16 compatibility and native SwiftUI rather than generating a browser mock.",
+        "Delivers a source diff, rather than only advice or a platform handoff.",
+        "Names required target-platform build and interaction checks as unexecuted when tooling/project/device is absent; does not claim the partial fixture is a running app."
+      ],
+      "case_label": "ios-swiftui-polish",
+      "fixture_root": "evals/fixtures/ios-swiftui",
+      "files": [
+        "evals/fixtures/ios-swiftui/context.md",
+        "evals/fixtures/ios-swiftui/ProfileView.swift"
+      ]
+    },
+    {
+      "id": 15,
+      "locale": "en",
+      "prompt": "Use ui-improvement on the supplied iOS SwiftUI screen to repair support for large Dynamic Type, dark appearance, keyboard presentation and VoiceOver naming/reading order. Make bounded source changes in an isolated copy and keep the existing brand and actions. Do not change OS settings, install an SDK or replace the app framework. Verify what is available and identify remaining native checks.",
+      "expected_output": "A iOS SwiftUI source correction for the applicable scale/theme/accessibility contracts with target-specific acceptance steps and honest evidence limits.",
+      "assertions": [
+        "Changes the actual native source and preserves data, navigation and action ownership.",
+        "Uses iOS SwiftUI-appropriate layout, semantic text/theme and accessibility mechanisms supported by the target.",
+        "Does not remove font scaling, force a single theme, shrink required content, or replace real native semantics with DOM/ARIA.",
+        "Separates accessible-tree inspection from actual assistive-technology operation; records viewport/window/OS/text settings and unexecuted checks."
+      ],
+      "case_label": "ios-swiftui-scale-theme-accessibility",
+      "fixture_root": "evals/fixtures/ios-swiftui",
+      "files": [
+        "evals/fixtures/ios-swiftui/context.md",
+        "evals/fixtures/ios-swiftui/ProfileView.swift"
+      ]
+    },
+    {
+      "id": 16,
+      "locale": "en",
+      "prompt": "Use ui-improvement in audit mode on the supplied iOS UIKit fixture. Users report that the name form clips larger text and its save control can be covered by the keyboard. Diagnose only; do not modify source, generate report files, install packages or change device settings. State what can be inferred from these partial files and what requires the target app.",
+      "expected_output": "A read-only, evidence-based iOS UIKit audit with prioritized impact, exact source locations, smallest repair direction and explicit untested native behavior.",
+      "assertions": [
+        "Identifies the target as iOS UIKit and inspects UIKit text styles, constraints, keyboard-safe layout and native accessibility.",
+        "Leaves every supplied file unchanged and keeps any diagnostic report in the response.",
+        "Connects findings to a user task and observed source; distinguishes likely runtime consequences from reproduced behavior.",
+        "Does not infer native build, visual, screen-reader or performance success from source or a browser screenshot."
+      ],
+      "case_label": "ios-uikit-audit",
+      "fixture_root": "evals/fixtures/ios-uikit",
+      "files": [
+        "evals/fixtures/ios-uikit/context.md",
+        "evals/fixtures/ios-uikit/ProfileController.swift"
+      ]
+    },
+    {
+      "id": 17,
+      "locale": "en",
+      "prompt": "Use ui-improvement to fix this existing iOS UIKit interface: the name form clips larger text and its save control can be covered by the keyboard. Apply the smallest source changes to an isolated copy of the supplied fixture, preserving its current framework, brand and callback/data contracts. Use only available tools; report exact checks performed and unavailable target-platform checks.",
+      "expected_output": "Actual iOS UIKit source edits in the isolated copy, a concise explanation of the corrected contract, and separate source/build/runtime results.",
+      "assertions": [
+        "Edits ProfileController.swift using UIKit and preserves onSave plus parent navigation.",
+        "Repairs reachable layout using supported constraints/scrolling or keyboard-layout guidance rather than deleting text or disabling Dynamic Type.",
+        "Uses UIKit-specific implementation; an iOS SwiftUI handoff alone is not a source correction.",
+        "Delivers a source diff, rather than only advice or a platform handoff.",
+        "Names required target-platform build and interaction checks as unexecuted when tooling/project/device is absent; does not claim the partial fixture is a running app."
+      ],
+      "case_label": "ios-uikit-polish",
+      "fixture_root": "evals/fixtures/ios-uikit",
+      "files": [
+        "evals/fixtures/ios-uikit/context.md",
+        "evals/fixtures/ios-uikit/ProfileController.swift"
+      ]
+    },
+    {
+      "id": 18,
+      "locale": "en",
+      "prompt": "Use ui-improvement on the supplied iOS UIKit screen to repair support for large Dynamic Type, dark appearance, landscape keyboard and VoiceOver name/focus order. Make bounded source changes in an isolated copy and keep the existing brand and actions. Do not change OS settings, install an SDK or replace the app framework. Verify what is available and identify remaining native checks.",
+      "expected_output": "A iOS UIKit source correction for the applicable scale/theme/accessibility contracts with target-specific acceptance steps and honest evidence limits.",
+      "assertions": [
+        "Changes the actual native source and preserves data, navigation and action ownership.",
+        "Uses iOS UIKit-appropriate layout, semantic text/theme and accessibility mechanisms supported by the target.",
+        "Does not remove font scaling, force a single theme, shrink required content, or replace real native semantics with DOM/ARIA.",
+        "Separates accessible-tree inspection from actual assistive-technology operation; records viewport/window/OS/text settings and unexecuted checks."
+      ],
+      "case_label": "ios-uikit-scale-theme-accessibility",
+      "fixture_root": "evals/fixtures/ios-uikit",
+      "files": [
+        "evals/fixtures/ios-uikit/context.md",
+        "evals/fixtures/ios-uikit/ProfileController.swift"
+      ]
+    },
+    {
+      "id": 19,
+      "locale": "en",
+      "prompt": "Use ui-improvement in audit mode on the supplied Android Compose fixture. Users report that the profile screen overlaps system bars/keyboard and system Back does not leave the screen. Diagnose only; do not modify source, generate report files, install packages or change device settings. State what can be inferred from these partial files and what requires the target app.",
+      "expected_output": "A read-only, evidence-based Android Compose audit with prioritized impact, exact source locations, smallest repair direction and explicit untested native behavior.",
+      "assertions": [
+        "Identifies the target as Android Compose and inspects Compose Scaffold/window inset ownership, state hoisting, Back and Material accessibility.",
+        "Leaves every supplied file unchanged and keeps any diagnostic report in the response.",
+        "Connects findings to a user task and observed source; distinguishes likely runtime consequences from reproduced behavior.",
+        "Does not infer native build, visual, screen-reader or performance success from source or a browser screenshot."
+      ],
+      "case_label": "android-compose-audit",
+      "fixture_root": "evals/fixtures/android-compose",
+      "files": [
+        "evals/fixtures/android-compose/context.md",
+        "evals/fixtures/android-compose/ProfileScreen.kt"
+      ]
+    },
+    {
+      "id": 20,
+      "locale": "en",
+      "prompt": "Use ui-improvement to fix this existing Android Compose interface: the profile screen overlaps system bars/keyboard and system Back does not leave the screen. Apply the smallest source changes to an isolated copy of the supplied fixture, preserving its current framework, brand and callback/data contracts. Use only available tools; report exact checks performed and unavailable target-platform checks.",
+      "expected_output": "Actual Android Compose source edits in the isolated copy, a concise explanation of the corrected contract, and separate source/build/runtime results.",
+      "assertions": [
+        "Edits ProfileScreen.kt and preserves name, onNameChanged, onSave and parent Navigator ownership.",
+        "Repairs inset/IME handling without double-applying system-bar padding or globally disabling edge-to-edge.",
+        "Restores normal Back behavior without swallowing all Back events, disabling gestures or losing draft state.",
+        "Delivers a source diff, rather than only advice or a platform handoff.",
+        "Names required target-platform build and interaction checks as unexecuted when tooling/project/device is absent; does not claim the partial fixture is a running app."
+      ],
+      "case_label": "android-compose-polish",
+      "fixture_root": "evals/fixtures/android-compose",
+      "files": [
+        "evals/fixtures/android-compose/context.md",
+        "evals/fixtures/android-compose/ProfileScreen.kt"
+      ]
+    },
+    {
+      "id": 21,
+      "locale": "en",
+      "prompt": "Use ui-improvement on the supplied Android Compose screen to repair support for large font, system night theme, IME visibility, TalkBack semantics and rotation. Make bounded source changes in an isolated copy and keep the existing brand and actions. Do not change OS settings, install an SDK or replace the app framework. Verify what is available and identify remaining native checks.",
+      "expected_output": "A Android Compose source correction for the applicable scale/theme/accessibility contracts with target-specific acceptance steps and honest evidence limits.",
+      "assertions": [
+        "Changes the actual native source and preserves data, navigation and action ownership.",
+        "Uses Android Compose-appropriate layout, semantic text/theme and accessibility mechanisms supported by the target.",
+        "Does not remove font scaling, force a single theme, shrink required content, or replace real native semantics with DOM/ARIA.",
+        "Separates accessible-tree inspection from actual assistive-technology operation; records viewport/window/OS/text settings and unexecuted checks."
+      ],
+      "case_label": "android-compose-scale-theme-accessibility",
+      "fixture_root": "evals/fixtures/android-compose",
+      "files": [
+        "evals/fixtures/android-compose/context.md",
+        "evals/fixtures/android-compose/ProfileScreen.kt"
+      ]
+    },
+    {
+      "id": 22,
+      "locale": "en",
+      "prompt": "Use ui-improvement in audit mode on the supplied Android Views/XML fixture. Users report that the profile form overlaps system bars/keyboard, and system Back does not leave the screen. Diagnose only; do not modify source, generate report files, install packages or change device settings. State what can be inferred from these partial files and what requires the target app.",
+      "expected_output": "A read-only, evidence-based Android Views/XML audit with prioritized impact, exact source locations, smallest repair direction and explicit untested native behavior.",
+      "assertions": [
+        "Identifies the target as Android Views/XML and inspects XML/View sizing, WindowInsets ownership, AndroidX Back and native accessibility.",
+        "Leaves every supplied file unchanged and keeps any diagnostic report in the response.",
+        "Connects findings to a user task and observed source; distinguishes likely runtime consequences from reproduced behavior.",
+        "Does not infer native build, visual, screen-reader or performance success from source or a browser screenshot."
+      ],
+      "case_label": "android-views-audit",
+      "fixture_root": "evals/fixtures/android-views",
+      "files": [
+        "evals/fixtures/android-views/context.md",
+        "evals/fixtures/android-views/profile.xml",
+        "evals/fixtures/android-views/ProfileActivity.kt"
+      ]
+    },
+    {
+      "id": 23,
+      "locale": "en",
+      "prompt": "Use ui-improvement to fix this existing Android Views/XML interface: the profile form overlaps system bars/keyboard, and system Back does not leave the screen. Apply the smallest source changes to an isolated copy of the supplied fixture, preserving its current framework, brand and callback/data contracts. Use only available tools; report exact checks performed and unavailable target-platform checks.",
+      "expected_output": "Actual Android Views/XML source edits in the isolated copy, a concise explanation of the corrected contract, and separate source/build/runtime results.",
+      "assertions": [
+        "Edits the XML and relevant Kotlin excerpt while retaining profileName/saveProfile IDs and parent state/save ownership.",
+        "Repairs system-bar/IME layout using the actual AndroidX/target-SDK contract, with no duplicate inset padding.",
+        "Restores normal Back and reachable form controls; a Compose rewrite or Flutter/RN handoff is not a repair.",
+        "Delivers a source diff, rather than only advice or a platform handoff.",
+        "Names required target-platform build and interaction checks as unexecuted when tooling/project/device is absent; does not claim the partial fixture is a running app."
+      ],
+      "case_label": "android-views-polish",
+      "fixture_root": "evals/fixtures/android-views",
+      "files": [
+        "evals/fixtures/android-views/context.md",
+        "evals/fixtures/android-views/profile.xml",
+        "evals/fixtures/android-views/ProfileActivity.kt"
+      ]
+    },
+    {
+      "id": 24,
+      "locale": "en",
+      "prompt": "Use ui-improvement on the supplied Android Views/XML screen to repair support for enlarged font, night theme, keyboard, TalkBack names/focus and rotation. Make bounded source changes in an isolated copy and keep the existing brand and actions. Do not change OS settings, install an SDK or replace the app framework. Verify what is available and identify remaining native checks.",
+      "expected_output": "A Android Views/XML source correction for the applicable scale/theme/accessibility contracts with target-specific acceptance steps and honest evidence limits.",
+      "assertions": [
+        "Changes the actual native source and preserves data, navigation and action ownership.",
+        "Uses Android Views/XML-appropriate layout, semantic text/theme and accessibility mechanisms supported by the target.",
+        "Does not remove font scaling, force a single theme, shrink required content, or replace real native semantics with DOM/ARIA.",
+        "Separates accessible-tree inspection from actual assistive-technology operation; records viewport/window/OS/text settings and unexecuted checks."
+      ],
+      "case_label": "android-views-scale-theme-accessibility",
+      "fixture_root": "evals/fixtures/android-views",
+      "files": [
+        "evals/fixtures/android-views/context.md",
+        "evals/fixtures/android-views/profile.xml",
+        "evals/fixtures/android-views/ProfileActivity.kt"
+      ]
+    },
+    {
+      "id": 25,
+      "locale": "en",
+      "prompt": "Use ui-improvement critique mode on this existing profile page. Explain hierarchy, task flow and visual coherence against its compact blue-action brand. Diagnose only and preserve all files.",
+      "expected_output": "A focused web critique with evidence, priorities and justified design judgments, preserving source and brand.",
+      "assertions": [
+        "Identifies browser/web scope and uses frontend-design-review when available.",
+        "Keeps critique read-only and separates subjective design preference from technical defects.",
+        "Does not ban native/system fonts or replace the existing brand.",
+        "Reports that no browser/interaction evidence was supplied until actually obtained."
+      ],
+      "case_label": "web-critique",
+      "fixture_root": "evals/fixtures/web",
+      "files": [
+        "evals/fixtures/web/context.md",
+        "evals/fixtures/web/index.html"
+      ]
+    },
+    {
+      "id": 26,
+      "locale": "en",
+      "prompt": "Audit this HTML profile form for narrow-screen overflow, keyboard use, accessible labels and long localized text. Give concrete locations and repair directions; do not edit source or write a report file.",
+      "expected_output": "A read-only web audit tied to the supplied page and browser verification gaps.",
+      "assertions": [
+        "Checks the form, label/control association, flexible layout and visible keyboard focus.",
+        "Leaves files unchanged and prioritizes task/keyboard failures over taste.",
+        "Keeps browser evidence separate from native app evidence.",
+        "Distinguishes source-observed defects from actual reproduced browser behavior."
+      ],
+      "case_label": "web-audit",
+      "fixture_root": "evals/fixtures/web",
+      "files": [
+        "evals/fixtures/web/context.md",
+        "evals/fixtures/web/index.html"
+      ]
+    },
+    {
+      "id": 27,
+      "locale": "en",
+      "prompt": "Fix the supplied HTML profile form so long labels reflow on a 320px browser viewport, keyboard focus remains visible, and system dark theme is usable. Preserve its blue-action brand, field name, form method and action; make actual changes to an isolated copy and inspect the browser result if tools are available.",
+      "expected_output": "An edited HTML/CSS form preserving its behavior and brand, with responsive/keyboard/theme evidence and explicit gaps.",
+      "assertions": [
+        "Edits actual HTML/CSS and preserves displayName, POST /profile and native form semantics.",
+        "Uses existing frontend-design plus relevant CSS support only when available; a missing companion does not force installation.",
+        "Checks at narrow/desktop widths and keyboard focus when a browser is available, and discloses unchecked states.",
+        "Does not treat compilation or HTML parsing as rendered visual approval."
+      ],
+      "case_label": "web-polish",
+      "fixture_root": "evals/fixtures/web",
+      "files": [
+        "evals/fixtures/web/context.md",
+        "evals/fixtures/web/index.html"
+      ]
+    },
+    {
+      "id": 28,
+      "locale": "en",
+      "prompt": "Use ui-improvement to fix this existing Flutter app: the profile form overflows at large text sizes and with the keyboard open. Apply actual source changes in an isolated copy of the supplied partial fixture. Keep its framework and brand; inspect available companion Skills before using them, and separate completed checks from missing build/runtime evidence.",
+      "expected_output": "An actual Flutter source correction respecting framework/native boundaries and evidence for each supported target.",
+      "assertions": [
+        "Edits the Flutter widget and preserves controller/onSave ownership.",
+        "Handles layout, keyboard and native semantics with installed Flutter APIs; does not force a web rewrite or install all mobile frameworks.",
+        "Checks supported iOS and Android targets separately and distinguishes VoiceOver from TalkBack results.",
+        "Delivers edited source rather than a review-only answer or a silent package/SDK install.",
+        "Does not claim a partial-source fixture was built, launched or screen-reader tested without actual evidence."
+      ],
+      "case_label": "flutter-polish",
+      "fixture_root": "evals/fixtures/flutter",
+      "files": [
+        "evals/fixtures/flutter/context.md",
+        "evals/fixtures/flutter/profile_form.dart"
+      ]
+    },
+    {
+      "id": 29,
+      "locale": "en",
+      "prompt": "Use ui-improvement to fix this existing React Native/Expo app: the profile form clips with large fonts, and users cannot identify Save using a screen reader. Apply actual source changes in an isolated copy of the supplied partial fixture. Keep its framework and brand; inspect available companion Skills before using them, and separate completed checks from missing build/runtime evidence.",
+      "expected_output": "An actual React Native/Expo source correction respecting framework/native boundaries and evidence for each supported target.",
+      "assertions": [
+        "Edits the React Native screen and preserves name/onNameChange/onSave.",
+        "Uses the existing safe-area, keyboard and navigation owners, checking installed Expo/RN support before choosing APIs.",
+        "Checks supported iOS and Android native targets separately; browser preview alone is insufficient.",
+        "Delivers edited source rather than a review-only answer or a silent package/SDK install.",
+        "Does not claim a partial-source fixture was built, launched or screen-reader tested without actual evidence."
+      ],
+      "case_label": "react-native-polish",
+      "fixture_root": "evals/fixtures/react-native",
+      "files": [
+        "evals/fixtures/react-native/context.md",
+        "evals/fixtures/react-native/ProfileScreen.tsx"
+      ]
+    },
+    {
+      "id": 30,
+      "locale": "en",
+      "prompt": "Use ui-improvement to fix this existing Electron app: the settings renderer clips and the Edit menu hijacks normal Copy when a text field is focused. Apply actual source changes in an isolated copy of the supplied partial fixture. Keep its framework and brand; inspect available companion Skills before using them, and separate completed checks from missing build/runtime evidence.",
+      "expected_output": "An actual Electron source correction respecting framework/native boundaries and evidence for each supported target.",
+      "assertions": [
+        "Edits the renderer and affected main-process menu code, keeping existing action contracts.",
+        "Uses Electron roles/responder behavior appropriately for Windows and macOS rather than substituting Tauri APIs.",
+        "Keeps nodeIntegration disabled, contextIsolation enabled and existing bounded IPC/security boundaries.",
+        "Checks renderer layout plus native menu/shortcut behavior on Windows and macOS separately.",
+        "Delivers edited source rather than a review-only answer or a silent package/SDK install.",
+        "Does not claim a partial-source fixture was built, launched or screen-reader tested without actual evidence."
+      ],
+      "case_label": "electron-polish",
+      "fixture_root": "evals/fixtures/electron",
+      "files": [
+        "evals/fixtures/electron/context.md",
+        "evals/fixtures/electron/main.cjs",
+        "evals/fixtures/electron/settings.html"
+      ]
+    },
+    {
+      "id": 31,
+      "locale": "en",
+      "prompt": "Use ui-improvement to fix this existing Tauri v2 app: the settings WebView clips at narrow widths and its icon-only action has no accessible name. Apply actual source changes in an isolated copy of the supplied partial fixture. Keep its framework and brand; inspect available companion Skills before using them, and separate completed checks from missing build/runtime evidence.",
+      "expected_output": "An actual Tauri v2 source correction respecting framework/native boundaries and evidence for each supported target.",
+      "assertions": [
+        "Edits the actual WebView source, checking the Rust/window/menu owner only where the task affects it.",
+        "Keeps Tauri capabilities and Rust command boundaries; does not invent Electron main/preload APIs.",
+        "Preserves current UI actions/brand and checks relevant Tauri version before adding shell APIs.",
+        "Checks Windows and macOS WebView/native-shell behavior separately where affected.",
+        "Delivers edited source rather than a review-only answer or a silent package/SDK install.",
+        "Does not claim a partial-source fixture was built, launched or screen-reader tested without actual evidence."
+      ],
+      "case_label": "tauri-polish",
+      "fixture_root": "evals/fixtures/tauri",
+      "files": [
+        "evals/fixtures/tauri/context.md",
+        "evals/fixtures/tauri/lib.rs",
+        "evals/fixtures/tauri/settings.html"
+      ]
+    },
+    {
+      "id": 32,
+      "locale": "mixed-zh-TW-en",
+      "prompt": "你是 read-only 的 ui-visual-validator。請使用 ui-improvement 的 polish 模式把提供的 iOS SwiftUI 表單修好，並把報告存到專案。仍維持這個唯讀角色權限。",
+      "expected_output": "在回覆提供診斷與可執行的修正交接，不修改產品或報告檔；指出需要由既有有寫入權限主責執行實作。",
+      "assertions": [
+        "Skill 模式與安裝分類不會覆蓋 readonly 權限。",
+        "沒有寫入產品、報告、設定或擅自安裝套件。",
+        "提出具體位置及修正方向並清楚說明尚未實作。",
+        "主 Agent 若有原始授權，可自行接續或交給有寫入權限的主責，不把安裝 Skill 視為自動委派。"
+      ],
+      "case_label": "readonly-polish-boundary",
+      "fixture_root": "evals/fixtures/ios-swiftui",
+      "files": [
+        "evals/fixtures/ios-swiftui/context.md",
+        "evals/fixtures/ios-swiftui/ProfileView.swift"
+      ]
+    },
+    {
+      "id": 33,
+      "locale": "en",
+      "prompt": "Only ui-improvement is installed. Fix the supplied Android Views profile form in an isolated copy. No Compose, Flutter, React Native companion, Android SDK or device is available; do not install anything. Keep the existing Kotlin/XML contracts and clearly report the result.",
+      "expected_output": "A directly feasible Kotlin/XML source repair using bundled guidance, with missing build/device verification reported as incomplete.",
+      "assertions": [
+        "Uses self-contained Android Views guidance rather than requiring unrelated frameworks.",
+        "Makes feasible source edits and preserves IDs/state/action contracts.",
+        "Does not pretend to have loaded a missing companion or executed a build/device check.",
+        "Names any genuinely blocked requirement without expanding installation or changing frameworks."
+      ],
+      "case_label": "standalone-missing-companion",
+      "fixture_root": "evals/fixtures/android-views",
+      "files": [
+        "evals/fixtures/android-views/context.md",
+        "evals/fixtures/android-views/profile.xml",
+        "evals/fixtures/android-views/ProfileActivity.kt"
+      ]
+    },
+    {
+      "id": 34,
+      "locale": "mixed-zh-TW-en",
+      "prompt": "我在 Windows 主機上維護這份 macOS AppKit 程式，請修正原生設定視窗的裁切。這裡只有原始碼，沒有 Mac、Xcode 或遠端裝置。修改隔離副本並回報可以確認的結果。",
+      "expected_output": "以 macOS AppKit 為產品目標完成可行的 source 修改，將 macOS build、操作與 VoiceOver 標示未執行。",
+      "assertions": [
+        "依產品 target 而非執行主機選 macOS/AppKit 規則。",
+        "不改成 WinUI、Electron、UIKit 或瀏覽器 mock。",
+        "有實際 source diff 且保留原 callback/框架。",
+        "不將 Windows 靜態檢查或截圖說成 macOS runtime 成功。"
+      ],
+      "case_label": "host-target-mismatch",
+      "fixture_root": "evals/fixtures/macos-appkit",
+      "files": [
+        "evals/fixtures/macos-appkit/context.md",
+        "evals/fixtures/macos-appkit/SettingsController.swift"
+      ]
+    },
+    {
+      "id": 35,
+      "locale": "mixed-zh-TW-en",
+      "prompt": "把這個 profile 設定頁的 UI 文案改成繁體中文，並修正翻譯後的換行與窄螢幕溢出；保留表單行為與品牌。請修改隔離副本，檢查輸入名稱及鍵盤操作。",
+      "expected_output": "實際更新可見文案與必要的 layout/語意，同步檢查在地化 UI 合約，不誤判為純文字翻譯。",
+      "assertions": [
+        "UI 在地化影響長度、換行或語意時保留 ui-improvement 的責任。",
+        "實際修改副本並維持 field name/method/action 與品牌。",
+        "檢查語言屬性、label、長度、換行及可操作性，RTL 只在產品支援/要求時擴充。",
+        "瀏覽器未執行的結果明確標示。"
+      ],
+      "case_label": "ui-localization",
+      "fixture_root": "evals/fixtures/web",
+      "files": [
+        "evals/fixtures/web/context.md",
+        "evals/fixtures/web/index.html"
+      ]
+    }
+  ]
+}

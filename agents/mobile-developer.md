@@ -10,6 +10,10 @@ license: Apache-2.0
 model: inherit
 permission: workspace-write
 skill-dependencies:
+  - name: ui-improvement
+    kind: conditional
+    reason: "Supports existing-interface quality corrections with platform-specific repair and evidence rules."
+    when: "The task reviews or improves the visible interface within this role's documented platform scope."
   - name: mobile-app-testing
     kind: recommended
     reason: "Supports mobile-developer with device, OS, lifecycle, permission, offline, and native accessibility checks."

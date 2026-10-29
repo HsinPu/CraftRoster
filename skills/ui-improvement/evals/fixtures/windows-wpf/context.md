@@ -1,0 +1,2 @@
+# Fixture context
+Original partial WPF UserControl source, not a full application. Product targets .NET 8 Windows; SettingsViewModel exposes DisplayName and SaveCommand. Users report clipping with larger text and narrow windows; the app supports Windows high contrast and keyboard input. Preserve WPF, data binding and command semantics. No build/runtime or screen-reader evidence exists. Copy into an isolated workspace before edits.

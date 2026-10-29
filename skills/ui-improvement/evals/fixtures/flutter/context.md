@@ -1,0 +1,2 @@
+# Fixture context
+Original partial Flutter form for supported iOS and Android phones; the host MaterialApp supplies theme and Navigator. Existing controller and save closure must be preserved. Keyboard-open, increased text scale, long content and VoiceOver/TalkBack are in scope. No pubspec, app shell, device or runtime result is supplied. Use actual installed Flutter APIs before adding newer constructs. Copy into an isolated workspace before edits.

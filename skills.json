@@ -1,7 +1,7 @@
 {
   "version": "2.0.0",
-  "updated": "2026-10-15T00:00:00Z",
-  "total": 293,
+  "updated": "2026-10-29T00:00:00Z",
+  "total": 294,
   "categories": [
     {
       "id": "workflow-planning",
@@ -15,8 +15,8 @@
     },
     {
       "id": "frontend-design",
-      "name": "Frontend & Design",
-      "description": "Web frontend development, visual direction, design systems, responsive UI, interaction patterns, and design-to-code."
+      "name": "Frontend & Interface Design",
+      "description": "Web frontend development, cross-platform interface quality, visual direction, design systems, responsive UI, interaction patterns, and design-to-code. Individual Skills retain their declared platform scope."
     },
     {
       "id": "threejs-graphics",
@@ -3036,7 +3036,7 @@
     },
     {
       "name": "frontend-design-review",
-      "description": "Frontend UI review workflow that separates experience critique, production web audit, and optical polish while evaluating implemented pages, components, and PRs for usability, accessibility, responsive behavior, design-system compliance, state completeness, performance, and visual craft. Use for UI, UX, accessibility, responsive, theme, or design-quality reviews after implementation exists.",
+      "description": "Frontend UI review workflow that separates experience critique, production web audit, and optical polish while evaluating implemented pages, components, and PRs for usability, accessibility, responsive behavior, design-system compliance, state completeness, performance, and visual craft. Use for web UI, UX, accessibility, responsive, theme, or design-quality reviews after implementation exists.",
       "category": "testing-quality",
       "author": "HsinPu",
       "source": "HsinPu/CraftRoster",
@@ -3064,6 +3064,13 @@
         {
           "name": "webapp-testing",
           "kind": "optional"
+        }
+      ],
+      "routes": [
+        {
+          "name": "ui-improvement",
+          "kind": "alternative",
+          "when": "The review target is native Windows, macOS, iOS or Android rather than web, or a combined cross-platform improvement flow needs a shared owner."
         }
       ]
     },
@@ -11426,6 +11433,88 @@
       ]
     },
     {
+      "name": "ui-improvement",
+      "description": "Inspect and improve an existing web, Windows, macOS, iOS, or Android interface through design critique, technical audit, or scoped source fixes. Use for visible UI quality, layout, themes, accessibility, navigation, and interaction-state improvements; backend-only work and translation without an affected UI contract do not activate this Skill.",
+      "category": "frontend-design",
+      "author": "HsinPu",
+      "source": "HsinPu/CraftRoster",
+      "license": "Apache-2.0",
+      "tags": [
+        "ui",
+        "interface-quality",
+        "native-desktop",
+        "windows",
+        "macos",
+        "ios",
+        "android",
+        "critique",
+        "audit",
+        "polish"
+      ],
+      "dependencies": [
+        {
+          "name": "accessibility-testing",
+          "kind": "conditional",
+          "when": "A distinct accessibility audit or assistive-technology matrix is requested or needed."
+        },
+        {
+          "name": "desktop-development",
+          "kind": "conditional",
+          "when": "The affected UI contract belongs to an Electron shell, main process or preload boundary."
+        },
+        {
+          "name": "flutter-development",
+          "kind": "conditional",
+          "when": "The affected iOS or Android interface uses Flutter."
+        },
+        {
+          "name": "frontend-design",
+          "kind": "conditional",
+          "when": "Authorized source corrections affect visible browser UI or a desktop renderer/WebView."
+        },
+        {
+          "name": "frontend-design-review",
+          "kind": "conditional",
+          "when": "The affected web or desktop renderer interface needs read-only design or technical review."
+        },
+        {
+          "name": "ios-architecture",
+          "kind": "conditional",
+          "when": "The iOS repair materially affects lifecycle, restoration or state ownership across modules."
+        },
+        {
+          "name": "mobile-app-testing",
+          "kind": "conditional",
+          "when": "The change needs a native device, lifecycle, permission or mobile UI automation matrix."
+        },
+        {
+          "name": "react-native-expo",
+          "kind": "conditional",
+          "when": "The affected iOS or Android interface uses React Native or Expo."
+        },
+        {
+          "name": "swift-concurrency",
+          "kind": "conditional",
+          "when": "The native Swift repair changes task lifetime, actor isolation or cancellation."
+        },
+        {
+          "name": "swiftui-development",
+          "kind": "conditional",
+          "when": "The affected native iOS target uses SwiftUI; macOS SwiftUI is handled by the bundled macOS rules."
+        },
+        {
+          "name": "visual-regression-testing",
+          "kind": "conditional",
+          "when": "The affected web interface needs reproducible screenshot baseline comparisons."
+        }
+      ],
+      "reference": {
+        "source": "pbakaus/impeccable",
+        "license": "Apache-2.0",
+        "revision": "5e745ace7e151feb2a93d360d0281fe39448b857"
+      }
+    },
+    {
       "name": "ui-styling",
       "description": "Visible shadcn, Radix, or Tailwind React UI changes require frontend-design plus this styling specialist. Use for polished colors, buttons, forms, layouts, states, spacing, themes, and accessible visual treatment.",
       "category": "frontend-design",
@@ -12768,7 +12857,7 @@
         },
         {
           "name": "frontend-design-review",
-          "when": "An implemented interface exists and needs an independent usability, accessibility, responsive, state, and optical review."
+          "when": "An implemented web interface exists and needs an independent usability, accessibility, responsive, state, and optical review."
         },
         {
           "name": "visual-regression-testing",
@@ -13692,6 +13781,41 @@
         {
           "name": "svg-visual-validation",
           "when": "The task needs reproducible SVG rendering, artifact-bound inspection, or comparison to a reference."
+        }
+      ]
+    },
+    {
+      "id": "interface-quality",
+      "title": "Existing Interface Quality and Platform Ownership",
+      "decision": "Use ui-improvement for existing interface critique, audit and authorized source correction; identify target OS, actual framework and host separately. Keep web review read-only and framework companions conditional. Backend-only work and text translation without a UI contract are outside this route.",
+      "skills": [
+        {
+          "name": "ui-improvement",
+          "when": "An existing web, Windows, macOS, iOS or Android interface needs diagnosis or scoped quality improvement, including native source repairs."
+        },
+        {
+          "name": "frontend-design-review",
+          "when": "An implemented web surface needs read-only design or technical review."
+        },
+        {
+          "name": "frontend-design",
+          "when": "Authorized modifications affect visible browser UI or desktop renderer/WebView components."
+        },
+        {
+          "name": "desktop-development",
+          "when": "An Electron UI change affects native windows, menus, main/preload or IPC ownership."
+        },
+        {
+          "name": "swiftui-development",
+          "when": "The affected native iOS target uses SwiftUI, not macOS SwiftUI."
+        },
+        {
+          "name": "flutter-development",
+          "when": "The affected iOS/Android product uses Flutter."
+        },
+        {
+          "name": "react-native-expo",
+          "when": "The affected iOS/Android product uses React Native or Expo."
         }
       ]
     }

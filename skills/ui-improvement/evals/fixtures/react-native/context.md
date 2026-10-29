@@ -1,0 +1,2 @@
+# Fixture context
+Original partial React Native screen, existing Expo app supports iOS and Android phones. Parent navigation, screen safe-area provider and persistence remain the owners; keep name/onNameChange/onSave contracts. Keyboard, enlarged system font, dark mode, VoiceOver/TalkBack and rotation are in scope. Installed Expo/RN versions must be inspected before choosing safe-area or keyboard dependencies. No package manifest, native build or runtime evidence is supplied. Copy into an isolated workspace before edits.

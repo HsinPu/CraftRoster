@@ -1,6 +1,8 @@
 # 跨平台介面品質 Skills：分類與實作規劃
 
-研究與規劃日期：2026-10-29。範圍為既有網頁、Windows／macOS 桌面軟體及 iOS／Android 介面的診斷、原始碼修改與驗證；沿用已研究的 Impeccable。本文是待實作方案，尚未新增 Skill、Agent、安裝分類、上游 engine 或 hook。
+研究與規劃日期：2026-10-29。範圍為既有網頁、Windows／macOS 桌面軟體及 iOS／Android 介面的診斷、原始碼修改與驗證；沿用已研究的 Impeccable。本文保留當時的設計方案與完整驗收要求。
+
+實作狀態：1.2.0 已加入 `ui-improvement`、`ui-improvement-engineer` 與第 16 個用途分類 `interface-quality`；最新能力及配套以[使用指南](interface-quality.md)為準。下文的「建議／待實作」是規劃時語境，不是當前安裝狀態。完整 native build／runtime 矩陣尚未執行，不能因規則及案例已加入而視為平台實測完成；實際證據另見[驗證紀錄](audits/interface-quality-2026-10-29/README.md)。未引入上游 engine 或 hooks。
 
 ## 建議放在哪一組
 

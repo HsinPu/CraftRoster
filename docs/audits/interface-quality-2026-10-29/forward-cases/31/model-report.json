@@ -1,0 +1,19 @@
+{
+  "case_id": 31,
+  "mode": "polish/fix",
+  "changed_files": [
+    "settings.html"
+  ],
+  "changes": [
+    "Fluid bounded WebView form and wrapping labels; named Save icon; visible focus; Rust core/capabilities unchanged"
+  ],
+  "checks": [
+    "Source action-name check passed",
+    "Browser 320x640: scrollWidth 320; AX exposes named Save button"
+  ],
+  "remaining_limits": [
+    "No Tauri config, Cargo manifest, capability file or complete bundle; no native sizing/API change attempted",
+    "Chromium browser check does not validate actual Tauri WebView or macOS WKWebView",
+    "No supplied action handler; retained existing behavior; native accessibility and input tests unexecuted"
+  ]
+}

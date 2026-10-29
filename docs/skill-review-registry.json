@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "review_date": "2026-10-15",
+  "review_date": "2026-10-29",
   "baseline_commit": "7acca1fb8865903dc67ee4c76c147d0881cb9e1b",
   "entry_hash_normalization": "utf8-lf",
-  "scope": "Entry and dependency review across 293 Skills. Existing decisions retain their prior evidence; seven SVG additions are documented in docs/svg-skills.md. Case definitions and structural/install tests do not certify live model behavior.",
+  "scope": "Entry and dependency review across 294 Skills. Existing decisions retain prior evidence; ui-improvement is reviewed in docs/interface-quality.md. Case definitions and structural/install tests do not certify native runtime behavior.",
   "category_representatives": [
     {
       "category": "workflow-planning",
@@ -758,9 +758,9 @@
       "category": "testing-quality",
       "decision": "improve",
       "review_depth": "dependency-review",
-      "reason": "Installability repair: 0 original findings resolved; core, conditional, resource, and alternative ownership checked against current evidence. See the 2026-10-09 remediation record.",
+      "reason": "Keeps the existing read-only web review lenses and clarifies native-platform and authorized implementation routing without elevating reviewer permissions.",
       "next_action": "Use the verified required closure for selective/category installation. Live task behavior remains unrun; any later model trial needs its own current-source evidence.",
-      "entry_sha256": "926e6e4e8e2116cb4d79fbbfc24fd396c24912bc20cef69180eaaa378881eb88",
+      "entry_sha256": "6354005492e98b5f62d8d762c4b72bd8ca249f6e5f240bcfbd480d99629dd6de",
       "runtime_status": "not_run"
     },
     {
@@ -2792,6 +2792,16 @@
       "next_action": "Use the verified required closure for selective/category installation. Live task behavior remains unrun; any later model trial needs its own current-source evidence.",
       "entry_sha256": "8e85a1795ff03f7437d29ad14b1de2991b5ca76039b9bc266af4a65e4164f70b",
       "runtime_status": "not_run"
+    },
+    {
+      "name": "ui-improvement",
+      "category": "frontend-design",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Independently installable platform-aware critique, audit and source-correction workflow with native repair references, pinned provenance and explicit execution-evidence boundaries.",
+      "next_action": "Run current-revision model tasks and target-native builds, interactions and assistive-technology checks; retain actual artifacts and mark unavailable target evidence unexecuted.",
+      "runtime_status": "not_run",
+      "entry_sha256": "6f4ecc1633e4eb2dc61c2b3fd503aab49a100e3f7bb075f4ea1b442d33977ab7"
     },
     {
       "name": "ui-styling",

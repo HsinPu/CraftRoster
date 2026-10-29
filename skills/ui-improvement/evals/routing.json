@@ -1,0 +1,274 @@
+{
+  "schema_version": 1,
+  "skill_name": "ui-improvement",
+  "cases": [
+    {
+      "id": "web-existing-polish",
+      "kind": "positive",
+      "locale": "en",
+      "prompt": "Improve the existing profile web interface: fix crowded spacing, keyboard focus and narrow-screen overflow while keeping its brand and behavior.",
+      "expected_skills": [
+        "ui-improvement"
+      ],
+      "excluded_skills": [],
+      "allowed_skills": [
+        "frontend-design",
+        "css-development"
+      ]
+    },
+    {
+      "id": "windows-winui-audit",
+      "kind": "positive",
+      "locale": "en",
+      "prompt": "Audit this existing Windows WinUI settings window for text scaling, keyboard focus and system theme. Diagnose only.",
+      "expected_skills": [
+        "ui-improvement"
+      ],
+      "excluded_skills": []
+    },
+    {
+      "id": "windows-wpf-polish",
+      "kind": "positive",
+      "locale": "mixed-zh-TW-en",
+      "prompt": "幫我修正既有 Windows WPF 設定視窗的大字裁切，保留 XAML 和 Command。",
+      "expected_skills": [
+        "ui-improvement"
+      ],
+      "excluded_skills": []
+    },
+    {
+      "id": "macos-appkit-polish",
+      "kind": "positive",
+      "locale": "en",
+      "prompt": "Fix the cramped existing macOS AppKit settings window and its keyboard/menu behavior; preserve AppKit.",
+      "expected_skills": [
+        "ui-improvement"
+      ],
+      "excluded_skills": []
+    },
+    {
+      "id": "macos-swiftui-audit",
+      "kind": "positive",
+      "locale": "en",
+      "prompt": "Audit my existing macOS SwiftUI app for window layout, menus, appearance and VoiceOver. Do not edit code.",
+      "expected_skills": [
+        "ui-improvement"
+      ],
+      "excluded_skills": []
+    },
+    {
+      "id": "ios-swiftui-polish",
+      "kind": "positive",
+      "locale": "mixed-zh-TW-en",
+      "prompt": "修正現有 iOS SwiftUI 表單的鍵盤遮擋及 Dynamic Type，保持品牌。",
+      "expected_skills": [
+        "ui-improvement"
+      ],
+      "excluded_skills": []
+    },
+    {
+      "id": "ios-uikit-polish",
+      "kind": "positive",
+      "locale": "en",
+      "prompt": "Fix the existing UIKit screen so its form stays reachable with the keyboard and large Dynamic Type.",
+      "expected_skills": [
+        "ui-improvement"
+      ],
+      "excluded_skills": []
+    },
+    {
+      "id": "android-compose-polish",
+      "kind": "positive",
+      "locale": "en",
+      "prompt": "Fix the existing Android Compose profile screen: system Back, keyboard insets and TalkBack naming.",
+      "expected_skills": [
+        "ui-improvement"
+      ],
+      "excluded_skills": []
+    },
+    {
+      "id": "android-views-polish",
+      "kind": "positive",
+      "locale": "mixed-zh-TW-en",
+      "prompt": "請改善既有 Android XML Views 設定畫面的字體縮放和夜間主題，保留 Kotlin 與資料狀態。",
+      "expected_skills": [
+        "ui-improvement"
+      ],
+      "excluded_skills": []
+    },
+    {
+      "id": "flutter-mobile-polish",
+      "kind": "positive",
+      "locale": "en",
+      "prompt": "Polish this existing Flutter iOS and Android form so it handles large text, keyboard and native semantics.",
+      "expected_skills": [
+        "ui-improvement"
+      ],
+      "excluded_skills": [],
+      "allowed_skills": [
+        "flutter-development",
+        "mobile-app-testing"
+      ]
+    },
+    {
+      "id": "react-native-polish",
+      "kind": "positive",
+      "locale": "en",
+      "prompt": "Improve the existing React Native Expo profile screen across iOS and Android without replacing its navigation.",
+      "expected_skills": [
+        "ui-improvement"
+      ],
+      "excluded_skills": [],
+      "allowed_skills": [
+        "react-native-expo",
+        "mobile-app-testing"
+      ]
+    },
+    {
+      "id": "electron-renderer-shell",
+      "kind": "positive",
+      "locale": "en",
+      "prompt": "Polish the Electron settings UI: repair renderer clipping and native menu shortcuts on Windows and macOS.",
+      "expected_skills": [
+        "ui-improvement"
+      ],
+      "excluded_skills": [],
+      "allowed_skills": [
+        "frontend-design",
+        "desktop-development"
+      ]
+    },
+    {
+      "id": "tauri-webview-shell",
+      "kind": "positive",
+      "locale": "en",
+      "prompt": "Improve this existing Tauri v2 settings interface and its native window interaction; keep the Rust capability boundary.",
+      "expected_skills": [
+        "ui-improvement"
+      ],
+      "excluded_skills": []
+    },
+    {
+      "id": "windows-host-macos-target",
+      "kind": "positive",
+      "locale": "en",
+      "prompt": "On this Windows host, repair the existing macOS AppKit settings UI source and state which Mac runtime checks remain unavailable.",
+      "expected_skills": [
+        "ui-improvement"
+      ],
+      "excluded_skills": []
+    },
+    {
+      "id": "core-only-missing-sdk",
+      "kind": "positive",
+      "locale": "en",
+      "prompt": "Use only ui-improvement to repair existing Android XML layout. No SDK, emulator or companion Skill is installed; do not install them.",
+      "expected_skills": [
+        "ui-improvement"
+      ],
+      "excluded_skills": []
+    },
+    {
+      "id": "reviewer-mode-permissions",
+      "kind": "positive",
+      "locale": "en",
+      "prompt": "Use ui-improvement to audit the existing iOS UI as a read-only reviewer; keep findings in the reply and preserve files.",
+      "expected_skills": [
+        "ui-improvement"
+      ],
+      "excluded_skills": []
+    },
+    {
+      "id": "ui-localization-wrap",
+      "kind": "positive",
+      "locale": "mixed-zh-TW-en",
+      "prompt": "翻譯現有設定頁的 UI 文案並修正長字串換行、語言屬性與鍵盤可及性，保留互動。",
+      "expected_skills": [
+        "ui-improvement"
+      ],
+      "excluded_skills": [],
+      "allowed_skills": [
+        "frontend-design",
+        "ux-writing"
+      ]
+    },
+    {
+      "id": "new-web-implementation",
+      "kind": "near_match",
+      "locale": "en",
+      "prompt": "Build a new HTML contact page from this supplied approved layout. No existing interface is being reviewed or improved.",
+      "expected_skills": [
+        "frontend-design"
+      ],
+      "excluded_skills": [
+        "ui-improvement"
+      ]
+    },
+    {
+      "id": "backend-endpoint",
+      "kind": "near_match",
+      "locale": "en",
+      "prompt": "Fix the Python API endpoint transaction and typed response. No UI or user-visible contract changes.",
+      "expected_skills": [
+        "python-development"
+      ],
+      "excluded_skills": [
+        "ui-improvement"
+      ]
+    },
+    {
+      "id": "electron-ipc-only",
+      "kind": "near_match",
+      "locale": "en",
+      "prompt": "Refactor only the Electron main-process IPC payload validator; request schema and visible UI behavior stay unchanged.",
+      "expected_skills": [
+        "desktop-development"
+      ],
+      "excluded_skills": [
+        "ui-improvement"
+      ]
+    },
+    {
+      "id": "tauri-core-rust-only",
+      "kind": "near_match",
+      "locale": "en",
+      "prompt": "Optimize the Rust file parser used by a Tauri app. Keep the command schema, events and UI behavior unchanged.",
+      "expected_skills": [
+        "code-change-workflow"
+      ],
+      "excluded_skills": [
+        "ui-improvement"
+      ]
+    },
+    {
+      "id": "plain-translation",
+      "kind": "negative",
+      "locale": "en",
+      "prompt": "Translate the sentence \"The settings screen is open\" into Traditional Chinese. Do not inspect or change an interface.",
+      "expected_skills": [],
+      "excluded_skills": [
+        "ui-improvement"
+      ]
+    },
+    {
+      "id": "os-settings-support",
+      "kind": "negative",
+      "locale": "en",
+      "prompt": "Tell me how to increase the font size in Windows Settings. I am using an app, not developing or reviewing its UI.",
+      "expected_skills": [],
+      "excluded_skills": [
+        "ui-improvement"
+      ]
+    },
+    {
+      "id": "license-document",
+      "kind": "negative",
+      "locale": "en",
+      "prompt": "Summarize this software license text; the repository happens to contain a mobile application.",
+      "expected_skills": [],
+      "excluded_skills": [
+        "ui-improvement"
+      ]
+    }
+  ]
+}

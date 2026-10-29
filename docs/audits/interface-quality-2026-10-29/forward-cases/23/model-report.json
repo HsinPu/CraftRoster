@@ -1,0 +1,19 @@
+{
+  "changes": "Single root inset owner uses baseline padding and combined bars/cutout/IME maximum. Requests insets on attach, retains resize IME behavior, removes swallowing Back callback. Scroll form uses content heights, themed colors and 48dp action with Save description; parent name/save IDs retained.",
+  "changed_files": [
+    "work/ProfileActivity.kt",
+    "work/profile.xml"
+  ],
+  "mode": "authorized source repair in isolated work copy",
+  "missing": [
+    "No Gradle project/dependency versions; gradle, kotlinc and adb unavailable. No native compile/lint/device or emulator test.",
+    "Repeated inset dispatch, bars/cutout, IME focused-field/action reachability, Back completion/cancellation, rotation/state, night/large-font appearance and TalkBack unexecuted."
+  ],
+  "outcome": "Source repair completed; source checks passed; native acceptance unverified",
+  "original_sources": "Original fixture files retained unchanged; only work copies and result.json written.",
+  "checks": [
+    "PowerShell [xml] parse passed",
+    "Source inspection and static check passed for baseline-relative padding, IME union and absent Back interception"
+  ],
+  "framework": "Android Views/XML ComponentActivity; minSdk 26, targetSdk 35"
+}

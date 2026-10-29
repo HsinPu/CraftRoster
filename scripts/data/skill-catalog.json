@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "updated": "2026-10-15T00:00:00Z",
+  "updated": "2026-10-29T00:00:00Z",
   "categories": [
     {
       "id": "workflow-planning",
@@ -14,8 +14,8 @@
     },
     {
       "id": "frontend-design",
-      "name": "Frontend & Design",
-      "description": "Web frontend development, visual direction, design systems, responsive UI, interaction patterns, and design-to-code."
+      "name": "Frontend & Interface Design",
+      "description": "Web frontend development, cross-platform interface quality, visual direction, design systems, responsive UI, interaction patterns, and design-to-code. Individual Skills retain their declared platform scope."
     },
     {
       "id": "threejs-graphics",
@@ -2678,6 +2678,13 @@
         {
           "name": "webapp-testing",
           "kind": "optional"
+        }
+      ],
+      "routes": [
+        {
+          "name": "ui-improvement",
+          "kind": "alternative",
+          "when": "The review target is native Windows, macOS, iOS or Android rather than web, or a combined cross-platform improvement flow needs a shared owner."
         }
       ]
     },
@@ -10873,6 +10880,78 @@
           "when": "Measured SVG size or complexity reduction is requested or needed for the delivery budget."
         }
       ]
+    },
+    "ui-improvement": {
+      "category": "frontend-design",
+      "tags": [
+        "ui",
+        "interface-quality",
+        "native-desktop",
+        "windows",
+        "macos",
+        "ios",
+        "android",
+        "critique",
+        "audit",
+        "polish"
+      ],
+      "dependencies": [
+        {
+          "name": "frontend-design-review",
+          "kind": "conditional",
+          "when": "The affected web or desktop renderer interface needs read-only design or technical review."
+        },
+        {
+          "name": "frontend-design",
+          "kind": "conditional",
+          "when": "Authorized source corrections affect visible browser UI or a desktop renderer/WebView."
+        },
+        {
+          "name": "desktop-development",
+          "kind": "conditional",
+          "when": "The affected UI contract belongs to an Electron shell, main process or preload boundary."
+        },
+        {
+          "name": "swiftui-development",
+          "kind": "conditional",
+          "when": "The affected native iOS target uses SwiftUI; macOS SwiftUI is handled by the bundled macOS rules."
+        },
+        {
+          "name": "ios-architecture",
+          "kind": "conditional",
+          "when": "The iOS repair materially affects lifecycle, restoration or state ownership across modules."
+        },
+        {
+          "name": "swift-concurrency",
+          "kind": "conditional",
+          "when": "The native Swift repair changes task lifetime, actor isolation or cancellation."
+        },
+        {
+          "name": "flutter-development",
+          "kind": "conditional",
+          "when": "The affected iOS or Android interface uses Flutter."
+        },
+        {
+          "name": "react-native-expo",
+          "kind": "conditional",
+          "when": "The affected iOS or Android interface uses React Native or Expo."
+        },
+        {
+          "name": "accessibility-testing",
+          "kind": "conditional",
+          "when": "A distinct accessibility audit or assistive-technology matrix is requested or needed."
+        },
+        {
+          "name": "mobile-app-testing",
+          "kind": "conditional",
+          "when": "The change needs a native device, lifecycle, permission or mobile UI automation matrix."
+        },
+        {
+          "name": "visual-regression-testing",
+          "kind": "conditional",
+          "when": "The affected web interface needs reproducible screenshot baseline comparisons."
+        }
+      ]
     }
   },
   "routingGroups": [
@@ -10958,7 +11037,7 @@
         },
         {
           "name": "frontend-design-review",
-          "when": "An implemented interface exists and needs an independent usability, accessibility, responsive, state, and optical review."
+          "when": "An implemented web interface exists and needs an independent usability, accessibility, responsive, state, and optical review."
         },
         {
           "name": "visual-regression-testing",
@@ -11882,6 +11961,41 @@
         {
           "name": "svg-visual-validation",
           "when": "The task needs reproducible SVG rendering, artifact-bound inspection, or comparison to a reference."
+        }
+      ]
+    },
+    {
+      "id": "interface-quality",
+      "title": "Existing Interface Quality and Platform Ownership",
+      "decision": "Use ui-improvement for existing interface critique, audit and authorized source correction; identify target OS, actual framework and host separately. Keep web review read-only and framework companions conditional. Backend-only work and text translation without a UI contract are outside this route.",
+      "skills": [
+        {
+          "name": "ui-improvement",
+          "when": "An existing web, Windows, macOS, iOS or Android interface needs diagnosis or scoped quality improvement, including native source repairs."
+        },
+        {
+          "name": "frontend-design-review",
+          "when": "An implemented web surface needs read-only design or technical review."
+        },
+        {
+          "name": "frontend-design",
+          "when": "Authorized modifications affect visible browser UI or desktop renderer/WebView components."
+        },
+        {
+          "name": "desktop-development",
+          "when": "An Electron UI change affects native windows, menus, main/preload or IPC ownership."
+        },
+        {
+          "name": "swiftui-development",
+          "when": "The affected native iOS target uses SwiftUI, not macOS SwiftUI."
+        },
+        {
+          "name": "flutter-development",
+          "when": "The affected iOS/Android product uses Flutter."
+        },
+        {
+          "name": "react-native-expo",
+          "when": "The affected iOS/Android product uses React Native or Expo."
         }
       ]
     }

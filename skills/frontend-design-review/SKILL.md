@@ -1,6 +1,6 @@
 ---
 name: frontend-design-review
-description: Frontend UI review workflow that separates experience critique, production web audit, and optical polish while evaluating implemented pages, components, and PRs for usability, accessibility, responsive behavior, design-system compliance, state completeness, performance, and visual craft. Use for UI, UX, accessibility, responsive, theme, or design-quality reviews after implementation exists.
+description: Frontend UI review workflow that separates experience critique, production web audit, and optical polish while evaluating implemented pages, components, and PRs for usability, accessibility, responsive behavior, design-system compliance, state completeness, performance, and visual craft. Use for web UI, UX, accessibility, responsive, theme, or design-quality reviews after implementation exists.
 license: Apache-2.0
 metadata:
   author: "HsinPu"
@@ -10,6 +10,8 @@ metadata:
 # Frontend Design Review
 
 Use this skill when the review target is user-visible UI quality. Use `frontend-code-review` for functional frontend bugs, `design-system` for broader token/system audits, and `webapp-testing` for local browser verification.
+
+This is the web review entry; its polish lens produces findings. Native Windows/macOS/iOS/Android review or a combined cross-platform repair flow belongs to `ui-improvement` when available. Authorized web implementation belongs to `frontend-design`; a read-only reviewer does not gain write permission from a Skill mode.
 
 ## Choose the Review Lens
 

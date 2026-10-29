@@ -1,0 +1,18 @@
+{
+  "case_id": 29,
+  "mode": "polish/fix",
+  "changed_files": [
+    "ProfileScreen.tsx"
+  ],
+  "changes": [
+    "Flexible ScrollView and naturally sized heading/field; system font scaling retained; appearance colors; Save button accessibilityRole/name; controlled props and parent ownership preserved"
+  ],
+  "checks": [
+    "Source fixed-clipping checks passed",
+    "Save accessibility and callback checks passed"
+  ],
+  "remaining_limits": [
+    "Manifest absent; RN/Expo SDK version unknown; no new dependency or workflow migration",
+    "Type/build and iOS/Android runtime, IME integration, rotation, actual large fonts/themes, VoiceOver/TalkBack unexecuted"
+  ]
+}

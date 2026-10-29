@@ -1,6 +1,6 @@
 {
   "name": "craftroster",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Cross-platform AI agent, skill, and workflow catalog with no-Node installers and a query CLI",
   "license": "Apache-2.0",
   "author": "HsinPu",
@@ -95,7 +95,8 @@
     "test:skill-responses-transport": "node tests/skill-responses-transport.test.js",
     "test:skill-responses-comparison": "node tests/skill-responses-comparison.test.js",
     "test:skill-mcp-fixtures": "node tests/skill-mcp-fixtures.test.js",
-    "test:svg-series": "node tests/svg-series.test.js"
+    "test:svg-series": "node tests/svg-series.test.js",
+    "test:interface-quality": "node tests/interface-quality.test.js"
   },
   "files": [
     "craftroster-cli.js",
@@ -210,7 +211,8 @@
     "tests/skill-responses-comparison.test.js",
     "tests/skill-mcp-fixtures.test.js",
     "tests/svg-series.test.js",
-    "CHANGELOG.md"
+    "CHANGELOG.md",
+    "tests/interface-quality.test.js"
   ],
   "engines": {
     "node": ">=22"

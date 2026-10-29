@@ -365,6 +365,7 @@ first-assistant-director	video-production-workflow	recommended	-	Supports first-
 flutter-expert	app-store-release	conditional	The task includes mobile store submission, staged rollout, or release-readiness requirements.	Supports flutter-expert with store-specific signing boundaries, submission metadata, and rollout readiness.
 flutter-expert	flutter-development	recommended	-	Supports flutter-expert with Dart widgets, Flutter state, navigation, lifecycle, and platform validation.
 flutter-expert	mobile-app-testing	recommended	-	Supports flutter-expert with device, OS, lifecycle, permission, offline, and native accessibility checks.
+flutter-expert	ui-improvement	conditional	The task reviews or improves the visible interface within this role's documented platform scope.	Supports existing-interface quality corrections with platform-specific repair and evidence rules.
 fpa-analyst	data-organization-system	conditional	The scope designs a reusable taxonomy, metadata, retention, or retrieval system beyond one report.	Supports fpa-analyst with a durable taxonomy, metadata, lifecycle, retention, and retrieval system.
 fpa-analyst	spreadsheet-ops	recommended	-	Supports fpa-analyst with workbook or tabular input, formulas, units, calculation, and output validation.
 fpa-analyst	web-research-ops	conditional	Current external facts, primary requirements, or source contradictions need verification.	Supports fpa-analyst with current primary sources, dates, contradictions, and attributable evidence.
@@ -375,6 +376,7 @@ frontend-developer	responsive-design	recommended	-	Supports frontend-developer w
 frontend-developer	svg-animation	conditional	The SVG deliverable includes motion, morphing, or interactive state transitions.	Supports frontend-developer with the requested SVG workflow while preserving its role permissions.
 frontend-developer	svg-development	conditional	The requested interface includes SVG authoring, repair, or integration.	Supports frontend-developer with the requested SVG workflow while preserving its role permissions.
 frontend-developer	typescript-development	conditional	The affected source or compiler contract is TypeScript.	Supports frontend-developer with TypeScript source, compiler configuration, strict contracts, and typed APIs.
+frontend-developer	ui-improvement	conditional	The task reviews or improves the visible interface within this role's documented platform scope.	Supports existing-interface quality corrections with platform-specific repair and evidence rules.
 frontend-security-coder	auth-integration	conditional	The confirmed browser risk involves authentication, session, callback, or client identity integration.	Supports frontend-security-coder with session, OAuth or OIDC, callback, identity, and authorization boundaries.
 frontend-security-coder	frontend-code-review	conditional	The repaired frontend diff needs a separate browser-state and regression review.	Supports frontend-security-coder with frontend-specific state, browser, accessibility, and regression review.
 frontend-security-coder	frontend-testing	conditional	The task covers React or TypeScript component or hook tests.	Supports frontend-security-coder with React or TypeScript component and hook behavior tests.
@@ -442,6 +444,7 @@ ios-developer	ios-architecture	recommended	-	Supports ios-developer with native 
 ios-developer	mobile-app-testing	recommended	-	Supports ios-developer with device, OS, lifecycle, permission, offline, and native accessibility checks.
 ios-developer	swift-concurrency	conditional	The native iOS task changes Swift concurrency, isolation, cancellation, or task ownership.	Supports ios-developer with Swift task ownership, actor isolation, cancellation, and Sendable boundaries.
 ios-developer	swiftui-development	conditional	The affected native iOS interface uses SwiftUI.	Supports ios-developer with native SwiftUI states, view identity, navigation, and platform behavior.
+ios-developer	ui-improvement	conditional	The task reviews or improves the visible interface within this role's documented platform scope.	Supports existing-interface quality corrections with platform-specific repair and evidence rules.
 it-service-manager	data-organization-system	recommended	-	Supports it-service-manager with a durable taxonomy, metadata, lifecycle, retention, and retrieval system.
 it-service-manager	deployment-operations	conditional	An environment promotion, artifact rollout, or recovery plan is part of the authorized mode.	Supports it-service-manager with mode-aware artifact, rollout, health, abort, and recovery evidence.
 it-service-manager	incident-response-postmortems	recommended	-	Supports it-service-manager with software-service incident evidence, recovery decisions, and corrective actions.
@@ -537,6 +540,7 @@ mobile-developer	app-store-release	conditional	The task includes mobile store su
 mobile-developer	flutter-development	conditional	The affected application uses Flutter and Dart.	Supports mobile-developer with Dart widgets, Flutter state, navigation, lifecycle, and platform validation.
 mobile-developer	mobile-app-testing	recommended	-	Supports mobile-developer with device, OS, lifecycle, permission, offline, and native accessibility checks.
 mobile-developer	react-native-expo	conditional	The affected mobile application uses React Native or Expo.	Supports mobile-developer with React Native or Expo state, navigation, native integration, and EAS contracts.
+mobile-developer	ui-improvement	conditional	The task reviews or improves the visible interface within this role's documented platform scope.	Supports existing-interface quality corrections with platform-specific repair and evidence rules.
 mobile-release-engineer	app-store-release	recommended	-	Supports mobile-release-engineer with store-specific signing boundaries, submission metadata, and rollout readiness.
 mobile-release-engineer	deployment-operations	conditional	An environment promotion, artifact rollout, or recovery plan is part of the authorized mode.	Supports mobile-release-engineer with mode-aware artifact, rollout, health, abort, and recovery evidence.
 mobile-release-engineer	github-actions-ci	conditional	The affected delivery or enforcement platform is GitHub Actions.	Supports mobile-release-engineer with GitHub Actions events, runners, permissions, artifacts, and quality gates.
@@ -918,15 +922,27 @@ ui-designer	design-consultation	recommended	-	Supports ui-designer with web inte
 ui-designer	frontend-design	conditional	A visible web implementation handoff is requested; a separate write-capable owner performs the implementation.	Supports ui-designer with the visible web implementation baseline and rendered user-state verification.
 ui-designer	responsive-design	conditional	The web deliverable needs complex responsive layout or reflow guidance.	Supports ui-designer with complex web layout reflow, fluid sizing, breakpoints, and touch-target contracts.
 ui-designer	svg-design	conditional	The SVG task needs detailed geometry, paint, sprite, or embedding work. This read-only role supplies design guidance; a write-capable owner implements the asset.	Supports ui-designer with the requested SVG workflow while preserving its role permissions.
-ui-ux-designer	design-consultation	recommended	-	Supports ui-ux-designer with web interface visual direction before implementation.
+ui-improvement-engineer	accessibility-testing	conditional	The task requires a distinct accessibility audit or assistive-technology acceptance matrix.	Supports a targeted accessibility audit beyond the immediate repair checks.
+ui-improvement-engineer	desktop-development	conditional	The UI correction affects an Electron shell, main process or preload boundary.	Owns Electron shell, process, window and IPC conventions.
+ui-improvement-engineer	flutter-development	conditional	The affected iOS or Android interface uses Flutter.	Provides Flutter widget, layout and state implementation guidance.
+ui-improvement-engineer	frontend-design	conditional	The authorized repair changes browser UI or a desktop renderer/WebView.	Provides the existing web implementation baseline.
+ui-improvement-engineer	frontend-design-review	conditional	An implemented web surface needs a design or technical quality review.	Provides the existing read-only web review lenses before or after repair.
+ui-improvement-engineer	mobile-app-testing	conditional	The repair needs a mobile OS/device or lifecycle test matrix.	Supports native device, lifecycle, permission and interaction verification.
+ui-improvement-engineer	react-native-expo	conditional	The affected iOS or Android interface uses React Native or Expo.	Provides React Native and Expo workflow guidance for the installed project stack.
+ui-improvement-engineer	swiftui-development	conditional	The affected interface uses SwiftUI in an iOS target.	Provides iOS SwiftUI implementation guidance without implying macOS coverage.
+ui-improvement-engineer	ui-improvement	recommended	-	Provides platform-aware diagnosis, source repair recipes and evidence boundaries for existing interfaces.
+ui-improvement-engineer	visual-regression-testing	conditional	The affected web interface needs reproducible baseline comparisons.	Supports the existing web screenshot comparison workflow.
+ui-ux-designer	design-consultation	conditional	The task needs bounded web visual-direction consultation.	Supports ui-ux-designer with web interface visual direction before implementation.
 ui-ux-designer	frontend-design	conditional	The read-only design produces acceptance guidance for a visible web implementation owner.	Supports ui-ux-designer with the visible web implementation baseline and rendered user-state verification.
 ui-ux-designer	interaction-patterns	conditional	The task designs or evaluates web navigation, scroll, focus, or transition behavior.	Supports ui-ux-designer with web navigation, scrolling, focus, and transition interaction rules.
+ui-ux-designer	ui-improvement	recommended	-	Provides cross-platform critique and evidence boundaries without authorizing this read-only role to implement changes.
 ui-ux-designer	ux-writing	recommended	-	Supports ui-ux-designer with clear interface labels, instructions, error states, and truthful user guidance.
 ui-visual-validator	browser-compatibility-testing	conditional	Supported browser differences or a cross-browser release matrix are in scope.	Supports ui-visual-validator with a supported browser and viewport matrix with compatibility evidence.
-ui-visual-validator	frontend-design-review	recommended	-	Supports ui-visual-validator with read-only interface usability, accessibility, and visual-quality evidence.
+ui-visual-validator	frontend-design-review	conditional	The reviewed interface is web or a desktop renderer/WebView.	Supports ui-visual-validator with read-only interface usability, accessibility, and visual-quality evidence.
 ui-visual-validator	responsive-design	conditional	The web deliverable needs complex responsive layout or reflow guidance.	Supports ui-visual-validator with complex web layout reflow, fluid sizing, breakpoints, and touch-target contracts.
 ui-visual-validator	svg-visual-validation	conditional	The task needs reproducible SVG rendering or comparison evidence.	Supports ui-visual-validator with the requested SVG workflow while preserving its role permissions.
-ui-visual-validator	visual-regression-testing	recommended	-	Supports ui-visual-validator with reproducible screenshot comparisons, baselines, matrices, and fidelity evidence.
+ui-visual-validator	ui-improvement	recommended	-	Provides cross-platform interface evidence and native acceptance guidance while preserving this role's read-only permission.
+ui-visual-validator	visual-regression-testing	conditional	The reviewed web interface needs screenshot baseline comparisons.	Supports ui-visual-validator with reproducible screenshot comparisons, baselines, matrices, and fidelity evidence.
 unity-developer	code-change-workflow	recommended	-	Supports unity-developer with pre-edit ownership, call-path, compatibility, and verification inspection.
 unity-developer	mobile-app-testing	conditional	The supported product target includes Android or iOS device behavior.	Supports unity-developer with device, OS, lifecycle, permission, offline, and native accessibility checks.
 unity-developer	testing-strategy	recommended	-	Supports unity-developer with risk-based test levels, fixtures, boundaries, and meaningful coverage.

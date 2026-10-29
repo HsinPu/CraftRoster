@@ -169,6 +169,13 @@
       "tree": "795aaa9862440d4a0f2df213116e523feea0d731",
       "license": "MIT",
       "licensePath": "LICENSE"
+    },
+    {
+      "repo": "pbakaus/impeccable",
+      "commit": "5e745ace7e151feb2a93d360d0281fe39448b857",
+      "tree": "43e7d9e1e4e59f4354c0e55e6ffd4d4f6925c03c",
+      "license": "Apache-2.0",
+      "licensePath": "LICENSE"
     }
   ]
 }

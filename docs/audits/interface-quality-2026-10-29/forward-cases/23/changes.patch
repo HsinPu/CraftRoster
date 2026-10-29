@@ -1,0 +1,70 @@
+--- a/profile.xml
++++ b/profile.xml
+@@ -2 +2 @@
+-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+@@ -4,13 +4,17 @@
+-    android:layout_height="match_parent" android:orientation="vertical"
+-    android:padding="16dp" android:background="#ffffff">
+-    <TextView android:layout_width="match_parent" android:layout_height="24dp"
+-        android:text="Display name shown to your team" android:textSize="20sp"
+-        android:maxLines="1" android:textColor="#000000" />
+-    <EditText android:id="@+id/profileName" android:layout_width="match_parent"
+-        android:layout_height="32dp" android:hint="Display name"
+-        android:inputType="textPersonName" />
+-    <Space android:layout_width="match_parent" android:layout_height="0dp"
+-        android:layout_weight="1" />
+-    <ImageButton android:id="@+id/saveProfile" android:layout_width="40dp"
+-        android:layout_height="32dp" android:src="@android:drawable/ic_menu_save" />
+-</LinearLayout>
++    android:layout_height="match_parent" android:fillViewport="true"
++    android:padding="16dp" android:background="?android:attr/colorBackground">
++    <LinearLayout android:layout_width="match_parent"
++        android:layout_height="wrap_content" android:orientation="vertical">
++        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
++            android:text="Display name shown to your team" android:textSize="20sp"
++            android:textColor="?android:attr/textColorPrimary" />
++        <EditText android:id="@+id/profileName" android:layout_width="match_parent"
++            android:layout_height="wrap_content" android:minHeight="48dp" android:hint="Display name"
++            android:inputType="textPersonName" />
++        <Space android:layout_width="match_parent" android:layout_height="0dp"
++            android:layout_weight="1" />
++        <ImageButton android:id="@+id/saveProfile" android:layout_width="48dp"
++            android:layout_height="wrap_content" android:minHeight="48dp"
++            android:contentDescription="Save" android:src="@android:drawable/ic_menu_save" />
++    </LinearLayout>
++</ScrollView>
+--- a/ProfileActivity.kt
++++ b/ProfileActivity.kt
+@@ -3,0 +4,2 @@
++import android.view.View
++import android.view.WindowManager
+@@ -5 +7 @@
+-import androidx.activity.OnBackPressedCallback
++import androidx.core.view.ViewCompat
+@@ -6,0 +9,2 @@
++import androidx.core.view.WindowInsetsCompat
++import androidx.core.view.doOnAttach
+@@ -11,0 +16 @@
++        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
+@@ -13,3 +18,17 @@
+-        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+-            override fun handleOnBackPressed() { }
+-        })
++        val root = findViewById<View>(R.id.profileRoot)
++        val left = root.paddingLeft
++        val top = root.paddingTop
++        val right = root.paddingRight
++        val bottom = root.paddingBottom
++        ViewCompat.setOnApplyWindowInsetsListener(root) { view, insets ->
++            val overlap = insets.getInsets(
++                WindowInsetsCompat.Type.systemBars() or
++                    WindowInsetsCompat.Type.displayCutout() or
++                    WindowInsetsCompat.Type.ime()
++            )
++            view.setPadding(left + overlap.left, top + overlap.top,
++                right + overlap.right, bottom + overlap.bottom)
++            insets
++        }
++        root.doOnAttach { ViewCompat.requestApplyInsets(it) }
++        // Normal Back remains with the existing navigation owner.

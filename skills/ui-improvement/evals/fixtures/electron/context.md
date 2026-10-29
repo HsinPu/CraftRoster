@@ -1,0 +1,2 @@
+# Fixture context
+Original partial Electron desktop utility supporting Windows and macOS. Main process owns windows/menus; renderer is ordinary local HTML. Node integration is disabled, contextIsolation enabled and preload exposes a bounded API in the real app. Keep those trust settings and existing application actions. Users report broken text editing shortcuts and clipping at narrow window sizes. No package manifest, app bundle or runtime observation is supplied. Copy into an isolated workspace before edits.

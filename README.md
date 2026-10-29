@@ -2,32 +2,32 @@
 
 [![Validate](https://github.com/HsinPu/CraftRoster/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/HsinPu/CraftRoster/actions/workflows/validate.yml)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
-![Skills](https://img.shields.io/badge/Skills-293-7c3aed)
-![Agents](https://img.shields.io/badge/Agents-237-2563eb)
+![Skills](https://img.shields.io/badge/Skills-294-7c3aed)
+![Agents](https://img.shields.io/badge/Agents-238-2563eb)
 ![Node.js](https://img.shields.io/badge/Node.js-%3E%3D22-339933?logo=nodedotjs&logoColor=white)
 
 **可跨工具安裝、查詢與驗證的 AI Agent／Skill catalog。**
 
-CraftRoster 收錄 237 個專業 Agents 與 293 個可重用 Skills，可安裝到 Codex、Claude Code、Cursor、VS Code／GitHub Copilot 與 OpenCode。專案同時提供免 Node.js 安裝器、五平台 Agent adapters、ownership-aware 更新機制，以及離線 catalog CLI。
+CraftRoster 收錄 238 個專業 Agents 與 294 個可重用 Skills，可安裝到 Codex、Claude Code、Cursor、VS Code／GitHub Copilot 與 OpenCode。專案同時提供免 Node.js 安裝器、五平台 Agent adapters、ownership-aware 更新機制，以及離線 catalog CLI。
 
 CraftRoster 是 catalog 與 distribution layer，**不是**另一套 Agent runtime 或 orchestration framework；它讓現有 coding agent 直接取得可攜、可追溯、可驗證的角色與工作流程。
 
-[快速開始](#快速開始) · [15 個用途分類](#用途分類與配套) · [Skill 配套清單](docs/audits/skill-installability-2026-10-09/README.md) · [支援平台](#支援平台與安裝位置) · [Catalog CLI](#catalog-cli) · [Agents](#agents) · [Skills](#skills) · [開發與驗證](#開發與驗證) · [Issues](https://github.com/HsinPu/CraftRoster/issues)
+[快速開始](#快速開始) · [16 個用途分類](#用途分類與配套) · [Skill 配套清單](docs/audits/skill-installability-2026-10-09/README.md) · [支援平台](#支援平台與安裝位置) · [Catalog CLI](#catalog-cli) · [Agents](#agents) · [Skills](#skills) · [開發與驗證](#開發與驗證) · [Issues](https://github.com/HsinPu/CraftRoster/issues)
 
 ## 專案內容
 
 | 類型 | 數量 | 用途 | Source of truth |
 |---|---:|---|---|
-| Skills | **293 Skills**／16 類 | 可重用的工作流程、規範、工具指引與領域知識 | [`skills/<name>/SKILL.md`](skills/) |
-| Agents | 237／31 類 | 可委派的專業角色，包含權限、限制與輸出契約 | [`agents/<role>.md`](agents/) |
-| 安裝用途分類 | 15 類 | 每類一起安裝相關 Skills 與子代理 | [`install-bundles.json`](scripts/data/install-bundles.json) |
-| Codex adapters | 237 | Codex custom Agent TOML | [`adapters/codex/`](adapters/codex/) |
-| Claude adapters | 237 | Claude Code subagent Markdown | [`adapters/claude/`](adapters/claude/) |
-| Cursor adapters | 237 | Cursor subagent Markdown | [`adapters/cursor/`](adapters/cursor/) |
-| Copilot adapters | 237 | VS Code／GitHub Copilot `.agent.md` | [`adapters/copilot/`](adapters/copilot/) |
-| OpenCode adapters | 237 | OpenCode subagent Markdown | [`adapters/opencode/`](adapters/opencode/) |
-| All pinned Agent references | 329 paths／24 repositories | 固定 commit、tree、路徑與授權證據 | [`agent-reference-sources.json`](scripts/data/agent-reference-sources.json) |
-| Additional Agent references | 131 paths／23 repositories | 非 `wshobson/agents` 的逐角色 reference metadata | [`agents/`](agents/) |
+| Skills | **294 Skills**／16 類 | 可重用的工作流程、規範、工具指引與領域知識 | [`skills/<name>/SKILL.md`](skills/) |
+| Agents | 238／31 類 | 可委派的專業角色，包含權限、限制與輸出契約 | [`agents/<role>.md`](agents/) |
+| 安裝用途分類 | 16 類 | 每類一起安裝相關 Skills 與子代理 | [`install-bundles.json`](scripts/data/install-bundles.json) |
+| Codex adapters | 238 | Codex custom Agent TOML | [`adapters/codex/`](adapters/codex/) |
+| Claude adapters | 238 | Claude Code subagent Markdown | [`adapters/claude/`](adapters/claude/) |
+| Cursor adapters | 238 | Cursor subagent Markdown | [`adapters/cursor/`](adapters/cursor/) |
+| Copilot adapters | 238 | VS Code／GitHub Copilot `.agent.md` | [`adapters/copilot/`](adapters/copilot/) |
+| OpenCode adapters | 238 | OpenCode subagent Markdown | [`adapters/opencode/`](adapters/opencode/) |
+| All pinned Agent references | 330 paths／25 repositories | 固定 commit、tree、路徑與授權證據 | [`agent-reference-sources.json`](scripts/data/agent-reference-sources.json) |
+| Additional Agent references | 132 paths／24 repositories | 非 `wshobson/agents` 的逐角色 reference metadata | [`agents/`](agents/) |
 
 | | Agent | Skill |
 |---|---|---|
@@ -41,7 +41,7 @@ CraftRoster 是 catalog 與 distribution layer，**不是**另一套 Agent runti
 
 ## 快速開始
 
-目前版本為 **1.1.1**；發行變更見 [CHANGELOG](CHANGELOG.md)，正式版本以 [package.json](package.json) 為準。
+目前版本為 **1.2.0**；發行變更見 [CHANGELOG](CHANGELOG.md)，正式版本以 [package.json](package.json) 為準。
 
 ### 互動式安裝
 
@@ -77,15 +77,15 @@ curl -fsSL https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/set
 
 ### 用途分類與配套
 
-一般安裝使用以下 15 個統一用途分類。數量是分類直接成員，安裝時另加入角色配套與 Skill 必需依賴；跨類成員會按目的地去重。原本的 16 類 Skills／31 類 Agents 仍用於進階查詢與單類型安裝。
+一般安裝使用以下 16 個統一用途分類。數量是分類直接成員，安裝時另加入角色配套與 Skill 必需依賴；跨類成員會按目的地去重。原本的 16 類 Skills／31 類 Agents 仍用於進階查詢與單類型安裝。
 
 <!-- INSTALL_BUNDLES_START -->
 | 用途分類 | Skills | 子代理 |
 |---|---:|---:|
 | 畫圖與圖像處理 (`image-graphics`) | 13 | 2 |
 | 程式開發 (`software-development`) | 40 | 45 |
-| 網頁與介面設計 (`web-interface`) | 45 | 11 |
-| 測試與程式審查 (`testing-review`) | 28 | 16 |
+| 網頁與介面設計 (`web-interface`) | 48 | 11 |
+| 測試與程式審查 (`testing-review`) | 29 | 16 |
 | 資料庫與資料分析 (`data-analysis`) | 13 | 15 |
 | AI與LLM (`ai-llm`) | 7 | 13 |
 | 雲端部署與維運 (`cloud-operations`) | 14 | 25 |
@@ -94,9 +94,10 @@ curl -fsSL https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/set
 | 文件與辦公 (`documents-office`) | 16 | 10 |
 | 研究、需求與專案規劃 (`research-planning`) | 15 | 19 |
 | 寫作與商務營運 (`writing-business`) | 11 | 38 |
-| 行動桌面與嵌入式開發 (`mobile-desktop-embedded`) | 9 | 13 |
+| 行動桌面與嵌入式開發 (`mobile-desktop-embedded`) | 10 | 14 |
 | 3D與互動圖形 (`threejs-graphics`) | 62 | 4 |
 | Agent、Skill與自動化工具 (`agent-automation`) | 26 | 15 |
+| 跨平台介面檢查與改善 (`interface-quality`) | 1 | 3 |
 <!-- INSTALL_BUNDLES_END -->
 
 查看成員：`node craftroster-cli.js bundles` 或 `node craftroster-cli.js bundles image-graphics`。配套關係由 canonical Agent 的 `skill-dependencies` 定義，分為必需、建議、條件與可選；分類本身直接包含的元件固定加入，條件／可選關聯只在明確選取時追加。審核與邊界修正見 [Agent／Skill 配套審核](docs/audits/agent-skill-bundles-2026-10-09/README.md)。
@@ -134,7 +135,7 @@ bash scripts/install.sh --source-dir . --target codex --type bundle --bundle ima
 
 ### 依分類安裝
 
-Skill 分類安裝會選取該分類元件，再補齊必要依賴（可能跨分類）；條件與可選依賴不自動安裝。例如 `frontend-design` 有 41 個 Skills，加上 5 個跨分類必要配套，去重後會安裝 46 個套件。各分類的數量與配套可在 [Skill 配套清單](docs/audits/skill-installability-2026-10-09/README.md#分類安裝數量) 查看。
+Skill 分類安裝會選取該分類元件，再補齊必要依賴（可能跨分類）；條件與可選依賴不自動安裝。例如 `frontend-design` 有 42 個 Skills，加上 5 個跨分類必要配套，去重後會安裝 47 個套件。各分類的數量與配套可在 [Skill 配套清單](docs/audits/skill-installability-2026-10-09/README.md#分類安裝數量) 查看。
 
 Windows PowerShell：
 
@@ -204,7 +205,7 @@ Linux／macOS：
 curl -fsSL https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/install.sh | bash -s -- --target codex --type bundle --bundle all --enable-auto-delegation
 ```
 
-這會安裝全部 293 個 Skills、237 個 Agents，並為 Codex 啟用全域主動委派。安裝完成後請開啟新的 Codex 工作階段，讓 runtime 重新載入內容。
+這會安裝全部 294 個 Skills、238 個 Agents，並為 Codex 啟用全域主動委派。安裝完成後請開啟新的 Codex 工作階段，讓 runtime 重新載入內容。
 
 > [!NOTE]
 > Codex 的初始 Skill metadata 清單最多使用 context window 的 2%，context 大小未知時上限為 8,000 字元；大量全域 Skills 可能先被縮短描述，再有部分項目被省略。檔案仍會保留在安裝目錄，但若需要保證載入，請明確使用 `$skill-name`。例如 Three.js 網頁工作可輸入 `$threejs-development 請用 Three.js 建立單檔 HTML`。CraftRoster 的 frontend、CSS 與 JavaScript 入口會在任務確實涉及 3D 場景或整合邊界時路由至 Three.js；repo 其他位置有 `three` 本身不足以觸發。部分安裝下請先確認條件依賴可用。詳見 [OpenAI Build skills](https://learn.chatgpt.com/docs/build-skills.md)。
@@ -396,15 +397,15 @@ Catalog 來源是 [`skills.json`](skills.json) 與 [`agents.json`](agents.json)�
 每個 Agent 都有唯一 role、明確使用時機、權限模式、相關 Skills，以及一致的 `Role → Task → Constraints → Output` 結構。
 
 <!-- AGENT_COUNT_START -->
-目前共收錄 **237** 個不重複 Agents。
+目前共收錄 **238** 個不重複 Agents。
 <!-- AGENT_COUNT_END -->
 
 角色目錄依 [Agent Coverage Matrix](docs/agent-coverage-matrix.md) 在本專案宣告的 scope 內完成 31／31 類核心責任鏈覆蓋。這表示常見工作都有責任 owner、handoff 與 authority boundary，不表示收錄現實世界的每個職稱。
 
-另外 105 個 Agents 來自其餘 23 個 reference repositories；所有正式 prompt 都以 CraftRoster 的角色、權限與輸出契約重新設計。
+另外 106 個 Agents 來自其餘 24 個 reference repositories；所有正式 prompt 都以 CraftRoster 的角色、權限與輸出契約重新設計。
 
 <details>
-<summary><strong>展開 31 類、237 個 Agents 的完整索引</strong></summary>
+<summary><strong>展開 31 類、238 個 Agents 的完整索引</strong></summary>
 
 <!-- AGENT_SUMMARY_START -->
 | Category | Count | Agents |
@@ -419,7 +420,7 @@ Catalog 來源是 [`skills.json`](skills.json) 與 [`agents.json`](agents.json)�
 | `customer-operations` | 2 | [`customer-success-manager`](agents/customer-success-manager.md), [`customer-support`](agents/customer-support.md) |
 | `data` | 9 | [`analytics-engineer`](agents/analytics-engineer.md), [`data-engineer`](agents/data-engineer.md), [`data-governance-engineer`](agents/data-governance-engineer.md), [`data-scientist`](agents/data-scientist.md), [`database-admin`](agents/database-admin.md), [`gis-analyst`](agents/gis-analyst.md), [`search-relevance-engineer`](agents/search-relevance-engineer.md), [`sql-pro`](agents/sql-pro.md), [`vector-database-engineer`](agents/vector-database-engineer.md) |
 | `developer-experience` | 8 | [`agent-designer`](agents/agent-designer.md), [`agent-harness-optimizer`](agents/agent-harness-optimizer.md), [`codebase-onboarding-engineer`](agents/codebase-onboarding-engineer.md), [`dependency-manager`](agents/dependency-manager.md), [`developer-advocate`](agents/developer-advocate.md), [`developer-tooling-engineer`](agents/developer-tooling-engineer.md), [`dx-optimizer`](agents/dx-optimizer.md), [`platform-engineer`](agents/platform-engineer.md) |
-| `development` | 35 | [`backend-developer`](agents/backend-developer.md), [`bash-pro`](agents/bash-pro.md), [`blockchain-developer`](agents/blockchain-developer.md), [`c-pro`](agents/c-pro.md), [`cms-platform-engineer`](agents/cms-platform-engineer.md), [`cpp-pro`](agents/cpp-pro.md), [`csharp-pro`](agents/csharp-pro.md), [`debugger`](agents/debugger.md), [`django-pro`](agents/django-pro.md), [`electron-pro`](agents/electron-pro.md), [`elixir-pro`](agents/elixir-pro.md), [`fastapi-pro`](agents/fastapi-pro.md), [`flutter-expert`](agents/flutter-expert.md), [`frontend-developer`](agents/frontend-developer.md), [`golang-pro`](agents/golang-pro.md), [`haskell-pro`](agents/haskell-pro.md), [`internationalization-engineer`](agents/internationalization-engineer.md), [`ios-developer`](agents/ios-developer.md), [`java-pro`](agents/java-pro.md), [`javascript-pro`](agents/javascript-pro.md), [`julia-pro`](agents/julia-pro.md), [`minecraft-bukkit-pro`](agents/minecraft-bukkit-pro.md), [`mobile-developer`](agents/mobile-developer.md), [`php-pro`](agents/php-pro.md), [`posix-shell-pro`](agents/posix-shell-pro.md), [`powershell-pro`](agents/powershell-pro.md), [`python-pro`](agents/python-pro.md), [`realtime-systems-engineer`](agents/realtime-systems-engineer.md), [`refactoring-specialist`](agents/refactoring-specialist.md), [`ruby-pro`](agents/ruby-pro.md), [`rust-pro`](agents/rust-pro.md), [`scala-pro`](agents/scala-pro.md), [`temporal-python-pro`](agents/temporal-python-pro.md), [`typescript-pro`](agents/typescript-pro.md), [`unity-developer`](agents/unity-developer.md) |
+| `development` | 36 | [`backend-developer`](agents/backend-developer.md), [`bash-pro`](agents/bash-pro.md), [`blockchain-developer`](agents/blockchain-developer.md), [`c-pro`](agents/c-pro.md), [`cms-platform-engineer`](agents/cms-platform-engineer.md), [`cpp-pro`](agents/cpp-pro.md), [`csharp-pro`](agents/csharp-pro.md), [`debugger`](agents/debugger.md), [`django-pro`](agents/django-pro.md), [`electron-pro`](agents/electron-pro.md), [`elixir-pro`](agents/elixir-pro.md), [`fastapi-pro`](agents/fastapi-pro.md), [`flutter-expert`](agents/flutter-expert.md), [`frontend-developer`](agents/frontend-developer.md), [`golang-pro`](agents/golang-pro.md), [`haskell-pro`](agents/haskell-pro.md), [`internationalization-engineer`](agents/internationalization-engineer.md), [`ios-developer`](agents/ios-developer.md), [`java-pro`](agents/java-pro.md), [`javascript-pro`](agents/javascript-pro.md), [`julia-pro`](agents/julia-pro.md), [`minecraft-bukkit-pro`](agents/minecraft-bukkit-pro.md), [`mobile-developer`](agents/mobile-developer.md), [`php-pro`](agents/php-pro.md), [`posix-shell-pro`](agents/posix-shell-pro.md), [`powershell-pro`](agents/powershell-pro.md), [`python-pro`](agents/python-pro.md), [`realtime-systems-engineer`](agents/realtime-systems-engineer.md), [`refactoring-specialist`](agents/refactoring-specialist.md), [`ruby-pro`](agents/ruby-pro.md), [`rust-pro`](agents/rust-pro.md), [`scala-pro`](agents/scala-pro.md), [`temporal-python-pro`](agents/temporal-python-pro.md), [`typescript-pro`](agents/typescript-pro.md), [`ui-improvement-engineer`](agents/ui-improvement-engineer.md), [`unity-developer`](agents/unity-developer.md) |
 | `documentation` | 9 | [`api-documenter`](agents/api-documenter.md), [`c4-code`](agents/c4-code.md), [`c4-component`](agents/c4-component.md), [`c4-container`](agents/c4-container.md), [`c4-context`](agents/c4-context.md), [`docs-architect`](agents/docs-architect.md), [`mermaid-expert`](agents/mermaid-expert.md), [`reference-builder`](agents/reference-builder.md), [`tutorial-engineer`](agents/tutorial-engineer.md) |
 | `embedded-systems` | 2 | [`arm-cortex-expert`](agents/arm-cortex-expert.md), [`firmware-analyst`](agents/firmware-analyst.md) |
 | `finance` | 2 | [`accounting-controller`](agents/accounting-controller.md), [`fpa-analyst`](agents/fpa-analyst.md) |
@@ -448,15 +449,15 @@ Catalog 來源是 [`skills.json`](skills.json) 與 [`agents.json`](agents.json)�
 
 ## Skills
 
-293 個 Skills 分成 16 類。完整 package 位於 [`skills/`](skills/)，generated metadata 與 routing groups 位於 [`skills.json`](skills.json)。
+294 個 Skills 分成 16 類。完整 package 位於 [`skills/`](skills/)，generated metadata 與 routing groups 位於 [`skills.json`](skills.json)。
 
-[Skill 安裝配套與修訂清單](docs/audits/skill-installability-2026-10-09/README.md)保留原有 286 個 Skills 的配套與修訂證據；新增 7 個項目見 [SVG Skills 指南](docs/svg-skills.md)。下表 Count 是目前分類本身的數量；實際安裝還會加入跨分類必要配套。
+[Skill 安裝配套與修訂清單](docs/audits/skill-installability-2026-10-09/README.md)保留原有 286 個 Skills 的配套與修訂證據；後續新增項目見 [SVG Skills 指南](docs/svg-skills.md)與[跨平台介面品質指南](docs/interface-quality.md)。下表 Count 是目前分類本身的數量；實際安裝還會加入跨分類必要配套。
 
 | Category | Count | 範圍 |
 |---|---:|---|
 | `workflow-planning` | 12 | 需求、規劃、分段實作、handoff 與交付 |
 | `software-engineering` | 21 | 程式設計、架構、語言、重構與版本控制 |
-| `frontend-design` | 41 | Frontend、design system、互動、responsive、SVG 與 design-to-code |
+| `frontend-design` | 42 | Web frontend、跨平台介面品質、design system、互動、SVG 與 design-to-code |
 | `threejs-graphics` | 62 | Three.js 架構、渲染、模擬、程序化圖形、效能、驗證與部署 |
 | `backend-data` | 26 | 後端、API、資料庫、資料工程與 migration |
 | `ai-llm` | 5 | LLM 應用、OpenAI API、prompt engineering、RAG、eval 與 AI delivery |
@@ -477,6 +478,7 @@ Catalog 來源是 [`skills.json`](skills.json) 與 [`agents.json`](agents.json)�
 |---|---|
 | 完整軟體交付 | [`verified-software-delivery`](skills/verified-software-delivery/) |
 | Python 開發 | [`python-development`](skills/python-development/) |
+| 既有網頁／桌面／手機介面改善 | [`ui-improvement`](skills/ui-improvement/) |
 | iOS 架構 | [`ios-architecture`](skills/ios-architecture/) |
 | 產品／系統賣點演講稿 | [`product-pitch-writing`](skills/product-pitch-writing/) |
 | Three.js 全流程 | [`threejs-development`](skills/threejs-development/)；路由至 61 個 specialists |
@@ -495,9 +497,11 @@ Catalog 來源是 [`skills.json`](skills.json) 與 [`agents.json`](agents.json)�
 
 新增 7 個 `svg-` Skills，以 `svg-development` 作為總入口，涵蓋設計、插畫、點陣圖向量重建、動畫、最佳化與視覺驗證。各 Skill 可獨立安裝；互動安裝選「畫圖與圖像處理」會加入全部 7 個及該分類子代理，選「網頁與介面設計」會加入網頁常用的 5 個。詳細能力、配套與固定上游來源見 [SVG Skills 指南](docs/svg-skills.md)。
 
-### 跨平台介面品質（研究規劃）
+### 跨平台介面檢查與改善
 
-現有 [`frontend-design-review`](skills/frontend-design-review/) 已區分 critique、audit 與 polish 的網頁審查視角。[跨平台介面品質規劃](docs/interface-quality-skill-plan.md)進一步列出網頁、Windows／macOS、iOS／Android 的規則、實際修改路徑、平台驗證、子代理與安裝配套，以及分階段驗收清單。這是待實作提案，目前仍維持 15 個用途分類，沒有新增安裝項目。
+[`ui-improvement`](skills/ui-improvement/) 提供 critique（設計診斷）、audit（技術檢查）與 polish（實際修改），包含 Windows WinUI／WPF、macOS AppKit／SwiftUI、iOS SwiftUI／UIKit、Android Compose／Views XML，以及網頁與跨平台框架的規則。互動安裝選「跨平台介面檢查與改善」`interface-quality`，會一起裝入共用 Skill、實作子代理與兩個唯讀審查角色；框架配套只在需要時選取。單顆 Skill 也可獨立安裝。
+
+原有 [`frontend-design-review`](skills/frontend-design-review/) 保留網頁唯讀審查責任，網頁、測試與行動桌面分類也共用新入口。安裝本身不授予修改權限；原生 build、操作與讀屏驗證需在對應平台執行。用法、來源及驗證限制見[跨平台介面品質指南](docs/interface-quality.md)，原始設計決策保留於[規劃文件](docs/interface-quality-skill-plan.md)。
 
 ## 專案架構
 
@@ -562,6 +566,7 @@ npm run test:catalog
 npm run test:skill-catalog
 npm run test:install-categories
 npm run test:install-bundles
+npm run test:interface-quality
 npm run test:skill-contracts
 npm run test:skill-evals
 npm run test:skill-routing
@@ -602,21 +607,22 @@ npm run eval:skill-routing -- --skill solution-discovery --max-cases 3 --output 
 所有正式 Agent／Skill metadata 與 installer ownership 都以 `HsinPu/CraftRoster` 為 canonical source。外部專案只作為固定 revision 的研究與 coverage reference，不是整個複製進來的 prompt 集合。
 
 - Agent references 固定 commit、tree、paths 與 license evidence；Skill references 另外固定逐檔 blob 與 review-controlled lock。
-- `npm run audit:agent-originality` 會針對 237 個 canonical Agent prompt 與 pinned upstream references 檢查長行及逐字片段重疊。
+- `npm run audit:agent-originality` 會針對 238 個 canonical Agent prompt 與 pinned upstream references 檢查長行及逐字片段重疊。
 - Skill originality audit 會逐一比對有 reference 的 canonical packages 與固定 upstream files。
-- Eval gate 目前具名保護 124／293 個 Skill packages、312 個 output evals、1316 個 assertions 與 117 個 routing cases；這些是案例定義，不宣稱所有 Skills 都有 eval 或已執行模型任務。
+- Eval gate 目前具名保護 125／294 個 Skill packages、347 個 output evals、1470 個 assertions 與 141 個 routing cases；這些是案例定義，不宣稱所有 Skills 都有 eval 或已執行模型任務。
 - Workflow contract gate 目前涵蓋 7 組跨 Skill contracts；Agent responsibility coverage 由 [31 類 matrix](docs/agent-coverage-matrix.md) 驗證。
 
 詳細來源與改寫紀錄：
 
 - [Three.js Skill sources](docs/threejs-skill-sources.md)
 - [SVG Skills 與上游來源](docs/svg-skills.md)
+- [跨平台介面品質與固定上游來源](docs/interface-quality.md)
 - [Visual design Skill sources](docs/visual-design-skill-sources.md)
 - [Matt Pocock Skill adaptations](docs/matt-pocock-skill-adaptations.md)
 - [Agent reference manifest](scripts/data/agent-reference-sources.json)
 - [Skill reference manifest](scripts/data/skill-reference-sources.json)
 
-Repository 與全部 237 個 Agents 採 Apache-2.0。Skills 以個別 package metadata 宣告為準；目前 292 個為 Apache-2.0，[`karpathy-guidelines`](skills/karpathy-guidelines/) 保留 MIT。SVG 改寫內容另保留各上游 MIT 通知，安裝時會隨 Skill 一起帶入。
+Repository 與全部 238 個 Agents 採 Apache-2.0。Skills 以個別 package metadata 宣告為準；目前 293 個為 Apache-2.0，[`karpathy-guidelines`](skills/karpathy-guidelines/) 保留 MIT。SVG 改寫內容另保留各上游 MIT 通知，安裝時會隨 Skill 一起帶入。
 
 ## 疑難排解
 

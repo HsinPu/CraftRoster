@@ -1,0 +1,641 @@
+{
+  "date": "2026-10-29",
+  "scope": "16 explicitly invoked sample tasks; not an automatic routing run or complete native acceptance matrix",
+  "host": "Windows",
+  "cases": [
+    {
+      "id": 2,
+      "case": "windows-winui-polish",
+      "model_execution": "explicit Skill load; expected answers withheld",
+      "source_result": "actual source correction; target-native acceptance remains unexecuted where applicable",
+      "inputs": [
+        {
+          "path": "evals/fixtures/windows-winui/context.md",
+          "sha256": "4b4df184db83eae29d52faca82cbd1faf7626d000019e69cae4e4be2f6381569"
+        },
+        {
+          "path": "evals/fixtures/windows-winui/SettingsPanel.xaml",
+          "sha256": "1f44f1b3a1522fc334a06d54a8c8d7e6bd35e1d7607f99934f9af9fd3ddfbd7d"
+        }
+      ],
+      "changes": [
+        {
+          "file": "SettingsPanel.xaml",
+          "output_sha256_utf8_lf": "e267f690895d8e77f1d9dbfa130530c598409b71af01dedcb4ab83b5ae7268fa"
+        }
+      ],
+      "native_runtime": "not_run",
+      "browser_evidence": "not_run",
+      "artifacts": {
+        "diff": "forward-cases/2/changes.patch",
+        "model_report": "forward-cases/2/model-report.json"
+      }
+    },
+    {
+      "id": 5,
+      "case": "windows-wpf-polish",
+      "model_execution": "explicit Skill load; expected answers withheld",
+      "source_result": "actual source correction; target-native acceptance remains unexecuted where applicable",
+      "inputs": [
+        {
+          "path": "evals/fixtures/windows-wpf/context.md",
+          "sha256": "a7952bf84964e652901a8125b23e36a7504d74d34563970558769df36c9bca35"
+        },
+        {
+          "path": "evals/fixtures/windows-wpf/SettingsView.xaml",
+          "sha256": "e9390cd9c9190e7b81da8961d93f525c5a460449258fdca551235cfc81b75c0b"
+        }
+      ],
+      "changes": [
+        {
+          "file": "SettingsView.xaml",
+          "output_sha256_utf8_lf": "52105fa67edfc6b11686e66af6f21ea449d93ac85063d4b03a4dab6e19a241bf"
+        }
+      ],
+      "native_runtime": "not_run",
+      "browser_evidence": "not_run",
+      "artifacts": {
+        "diff": "forward-cases/5/changes.patch",
+        "model_report": "forward-cases/5/model-report.json"
+      }
+    },
+    {
+      "id": 8,
+      "case": "macos-appkit-polish",
+      "model_execution": "explicit Skill load; expected answers withheld",
+      "source_result": "actual source correction; target-native acceptance remains unexecuted where applicable",
+      "inputs": [
+        {
+          "path": "evals/fixtures/macos-appkit/context.md",
+          "sha256": "4625ddad763e91f96f0ead7ad2dacfb15261da67fa29e406103af6adb083e554"
+        },
+        {
+          "path": "evals/fixtures/macos-appkit/SettingsController.swift",
+          "sha256": "30cae3a8c1d848b28ff566ceb7e4979e19ae0ecd75d074c35d16ae580f6c8870"
+        }
+      ],
+      "changes": [
+        {
+          "file": "SettingsController.swift",
+          "output_sha256_utf8_lf": "fc2ddfc4a92f222810983c0d933607b1cb43003158975ee8fec69cffa8b57343"
+        }
+      ],
+      "native_runtime": "not_run",
+      "browser_evidence": "not_run",
+      "artifacts": {
+        "diff": "forward-cases/8/changes.patch",
+        "model_report": "forward-cases/8/model-report.json"
+      }
+    },
+    {
+      "id": 11,
+      "case": "macos-swiftui-polish",
+      "model_execution": "explicit Skill load; expected answers withheld",
+      "source_result": "actual source correction; target-native acceptance remains unexecuted where applicable",
+      "inputs": [
+        {
+          "path": "evals/fixtures/macos-swiftui/context.md",
+          "sha256": "d701400c8af88afc22df618dfc17f586715877d65da226668241311bab1e3cdc"
+        },
+        {
+          "path": "evals/fixtures/macos-swiftui/SettingsView.swift",
+          "sha256": "0ec82fd778a89c560fcdd15c9cd6dcae0f5d7fc0191bcbc682abc41e0ed7c88b"
+        }
+      ],
+      "changes": [
+        {
+          "file": "SettingsView.swift",
+          "output_sha256_utf8_lf": "904a580a022b1d0a758a9d9ad485dd24283da7996960f1f0c40cddc21bcb080f"
+        }
+      ],
+      "native_runtime": "not_run",
+      "browser_evidence": "not_run",
+      "artifacts": {
+        "diff": "forward-cases/11/changes.patch",
+        "model_report": "forward-cases/11/model-report.json"
+      }
+    },
+    {
+      "id": 14,
+      "case": "ios-swiftui-polish",
+      "model_execution": "explicit Skill load; expected answers withheld",
+      "source_result": "actual source correction; target-native acceptance remains unexecuted where applicable",
+      "inputs": [
+        {
+          "path": "evals/fixtures/ios-swiftui/context.md",
+          "sha256": "a1cabdd4cef29ab24784e80ab676bfbf9327f376fd9048e38b68fc60465f2c27"
+        },
+        {
+          "path": "evals/fixtures/ios-swiftui/ProfileView.swift",
+          "sha256": "2a06255593bbcddce82ab6cdf26cffdca587e17f9cdc184aebc077f766a7e432"
+        }
+      ],
+      "changes": [
+        {
+          "file": "ProfileView.swift",
+          "output_sha256_utf8_lf": "8494311ea4524250fe9eeefb53e4c04127fdcc8735bd5be3b6c7e81e90005d96"
+        }
+      ],
+      "native_runtime": "not_run",
+      "browser_evidence": "not_run",
+      "artifacts": {
+        "diff": "forward-cases/14/changes.patch",
+        "model_report": "forward-cases/14/model-report.json"
+      }
+    },
+    {
+      "id": 17,
+      "case": "ios-uikit-polish",
+      "model_execution": "explicit Skill load; expected answers withheld",
+      "source_result": "actual source correction; target-native acceptance remains unexecuted where applicable",
+      "inputs": [
+        {
+          "path": "evals/fixtures/ios-uikit/context.md",
+          "sha256": "4228499dbf0e03d608bdf2aedb7fc13c13b0a1de46dc631e8bbf440aac74571d"
+        },
+        {
+          "path": "evals/fixtures/ios-uikit/ProfileController.swift",
+          "sha256": "10db94674d5458a5ec2d2e73fe96bdba912a3d8ef1a238996547fa7a5dc1d84e"
+        }
+      ],
+      "changes": [
+        {
+          "file": "ProfileController.swift",
+          "output_sha256_utf8_lf": "4ceb984dfda037a6d0dd7332f6f037e3a0a5c0875ef40dbe0722f4cd124809fe"
+        }
+      ],
+      "native_runtime": "not_run",
+      "browser_evidence": "not_run",
+      "artifacts": {
+        "diff": "forward-cases/17/changes.patch",
+        "model_report": "forward-cases/17/model-report.json"
+      }
+    },
+    {
+      "id": 20,
+      "case": "android-compose-polish",
+      "model_execution": "explicit Skill load; expected answers withheld",
+      "source_result": "actual source correction; target-native acceptance remains unexecuted where applicable",
+      "inputs": [
+        {
+          "path": "evals/fixtures/android-compose/context.md",
+          "sha256": "70e95444b974d9b21fc8a59c5c2fd107154cca84fad0a1a34528662e286101e9"
+        },
+        {
+          "path": "evals/fixtures/android-compose/ProfileScreen.kt",
+          "sha256": "f252f2f59d6c5af4670d29ce5ecd225a64092900aadf731d604a391f819f392c"
+        }
+      ],
+      "changes": [
+        {
+          "file": "ProfileScreen.kt",
+          "output_sha256_utf8_lf": "1ad6a8c529034f1c7235ccc3960de78f45d007060f3a575afa9d185e28bba543"
+        }
+      ],
+      "native_runtime": "not_run",
+      "browser_evidence": "not_run",
+      "artifacts": {
+        "diff": "forward-cases/20/changes.patch",
+        "model_report": "forward-cases/20/model-report.json"
+      }
+    },
+    {
+      "id": 23,
+      "case": "android-views-polish",
+      "model_execution": "explicit Skill load; expected answers withheld",
+      "source_result": "actual source correction; target-native acceptance remains unexecuted where applicable",
+      "inputs": [
+        {
+          "path": "evals/fixtures/android-views/context.md",
+          "sha256": "3095f774b195a8801152978f50dd118e6b840f6eea65b6dca4865308174595fb"
+        },
+        {
+          "path": "evals/fixtures/android-views/profile.xml",
+          "sha256": "c49a77d443c2767235abf38f1dfd316711cdbe6486bf6c5986f0ba7fd548d412"
+        },
+        {
+          "path": "evals/fixtures/android-views/ProfileActivity.kt",
+          "sha256": "2525a9c61111556088a82da4d226e821eb0b73ce6d736f8071fa432927a07739"
+        }
+      ],
+      "changes": [
+        {
+          "file": "profile.xml",
+          "output_sha256_utf8_lf": "43d350616e7263a7a0353b22191562a0a9e06ef4a2ae4b5dcee4faea5e882b08"
+        },
+        {
+          "file": "ProfileActivity.kt",
+          "output_sha256_utf8_lf": "f0194323b3fd8317910f1b3f7e840fc09d31a6652b3ae1cd5763a85545f8a6be"
+        }
+      ],
+      "native_runtime": "not_run",
+      "browser_evidence": "not_run",
+      "artifacts": {
+        "diff": "forward-cases/23/changes.patch",
+        "model_report": "forward-cases/23/model-report.json"
+      }
+    },
+    {
+      "id": 25,
+      "case": "web-critique",
+      "model_execution": "explicit Skill load; expected answers withheld",
+      "source_result": "diagnosis returned in chat; source and directory unchanged",
+      "inputs": [
+        {
+          "path": "evals/fixtures/web/context.md",
+          "sha256": "bed36a1f1b5f5ee9fb48164f191dcb3c04966d8de71b99c35a69f057498c0333"
+        },
+        {
+          "path": "evals/fixtures/web/index.html",
+          "sha256": "28bf7a338f28db279aa3a867e454ed12d4261f6d4ce6aae21aefca02c9b9a44f"
+        }
+      ],
+      "changes": [],
+      "native_runtime": "not_applicable",
+      "browser_evidence": "not_run"
+    },
+    {
+      "id": 26,
+      "case": "web-audit",
+      "model_execution": "explicit Skill load; expected answers withheld",
+      "source_result": "diagnosis returned in chat; source and directory unchanged",
+      "inputs": [
+        {
+          "path": "evals/fixtures/web/context.md",
+          "sha256": "bed36a1f1b5f5ee9fb48164f191dcb3c04966d8de71b99c35a69f057498c0333"
+        },
+        {
+          "path": "evals/fixtures/web/index.html",
+          "sha256": "28bf7a338f28db279aa3a867e454ed12d4261f6d4ce6aae21aefca02c9b9a44f"
+        }
+      ],
+      "changes": [],
+      "native_runtime": "not_applicable",
+      "browser_evidence": "not_run"
+    },
+    {
+      "id": 27,
+      "case": "web-polish",
+      "model_execution": "explicit Skill load; expected answers withheld",
+      "source_result": "actual source correction; target-native acceptance remains unexecuted where applicable",
+      "inputs": [
+        {
+          "path": "evals/fixtures/web/context.md",
+          "sha256": "bed36a1f1b5f5ee9fb48164f191dcb3c04966d8de71b99c35a69f057498c0333"
+        },
+        {
+          "path": "evals/fixtures/web/index.html",
+          "sha256": "28bf7a338f28db279aa3a867e454ed12d4261f6d4ce6aae21aefca02c9b9a44f"
+        }
+      ],
+      "changes": [
+        {
+          "file": "index.html",
+          "output_sha256_utf8_lf": "2ddb761537ed0d3716351a773d59546400c5463f0140f72d2e57c12a810c400a"
+        }
+      ],
+      "native_runtime": "not_applicable",
+      "browser_evidence": "executed; see model report",
+      "artifacts": {
+        "diff": "forward-cases/27/changes.patch",
+        "model_report": "forward-cases/27/model-report.json"
+      }
+    },
+    {
+      "id": 28,
+      "case": "flutter-polish",
+      "model_execution": "explicit Skill load; expected answers withheld",
+      "source_result": "actual source correction; target-native acceptance remains unexecuted where applicable",
+      "inputs": [
+        {
+          "path": "evals/fixtures/flutter/context.md",
+          "sha256": "6091e4d4b70b1a4384865b1798ebbad43f2b999f316a1489b9b9f67fcb441e10"
+        },
+        {
+          "path": "evals/fixtures/flutter/profile_form.dart",
+          "sha256": "ec539c03d291a51ab4f4f71e8c01d51e91d8a61718960577ee7627f47c932b26"
+        }
+      ],
+      "changes": [
+        {
+          "file": "profile_form.dart",
+          "output_sha256_utf8_lf": "744d1f029c2722e2991f90dc6d69dd9bb641595bb85d9c36ff768ff00d57b14f"
+        }
+      ],
+      "native_runtime": "not_run",
+      "browser_evidence": "not_run",
+      "artifacts": {
+        "diff": "forward-cases/28/changes.patch",
+        "model_report": "forward-cases/28/model-report.json"
+      }
+    },
+    {
+      "id": 29,
+      "case": "react-native-polish",
+      "model_execution": "explicit Skill load; expected answers withheld",
+      "source_result": "actual source correction; target-native acceptance remains unexecuted where applicable",
+      "inputs": [
+        {
+          "path": "evals/fixtures/react-native/context.md",
+          "sha256": "a1890fad6841aab4850d81f39b9c076ed531e066cab20f37d0f8fbb7b5098ad9"
+        },
+        {
+          "path": "evals/fixtures/react-native/ProfileScreen.tsx",
+          "sha256": "0efa0f82de211ad85129b198bcf2c03f5e9eda7c68033d24107960538ce3f0d4"
+        }
+      ],
+      "changes": [
+        {
+          "file": "ProfileScreen.tsx",
+          "output_sha256_utf8_lf": "292d16a214c0c9707fb21c2a38f8d16ac28fd37649b4d0603b190a68c2f070d8"
+        }
+      ],
+      "native_runtime": "not_run",
+      "browser_evidence": "not_run",
+      "artifacts": {
+        "diff": "forward-cases/29/changes.patch",
+        "model_report": "forward-cases/29/model-report.json"
+      }
+    },
+    {
+      "id": 30,
+      "case": "electron-polish",
+      "model_execution": "explicit Skill load; expected answers withheld",
+      "source_result": "actual source correction; target-native acceptance remains unexecuted where applicable",
+      "inputs": [
+        {
+          "path": "evals/fixtures/electron/context.md",
+          "sha256": "cde5b11f8f182707c5eb3a4ea613c438163d1126743c6ecdbe10c5ed85c2e134"
+        },
+        {
+          "path": "evals/fixtures/electron/main.cjs",
+          "sha256": "fad870ce91c14d53f485ccb937ac841dab3a4737b5020a9a62d613b61f6ba574"
+        },
+        {
+          "path": "evals/fixtures/electron/settings.html",
+          "sha256": "bde7c5af023240dfbbee2355fac8dcb0daff0df0d11b9755d0948ffec755ab56"
+        }
+      ],
+      "changes": [
+        {
+          "file": "main.cjs",
+          "output_sha256_utf8_lf": "63ce28c8888caf0b5832c8531296f58ca9b4e084d6c21f9442fd085c4c66ba11"
+        },
+        {
+          "file": "settings.html",
+          "output_sha256_utf8_lf": "fe1459f20e2782647b27aad27d47c169d00c5d7ae5505c472c4df51d93a0ce3d"
+        }
+      ],
+      "native_runtime": "not_run",
+      "browser_evidence": "executed; see model report",
+      "artifacts": {
+        "diff": "forward-cases/30/changes.patch",
+        "model_report": "forward-cases/30/model-report.json"
+      }
+    },
+    {
+      "id": 31,
+      "case": "tauri-polish",
+      "model_execution": "explicit Skill load; expected answers withheld",
+      "source_result": "actual source correction; target-native acceptance remains unexecuted where applicable",
+      "inputs": [
+        {
+          "path": "evals/fixtures/tauri/context.md",
+          "sha256": "57976c182ab4589515063aaddc3ba4e3cbf09da648115d282d024b19882bd45d"
+        },
+        {
+          "path": "evals/fixtures/tauri/lib.rs",
+          "sha256": "82e0d7e778677fdeaaaafcdaefa258136ac253d53783512ecb23af98ad6e7415"
+        },
+        {
+          "path": "evals/fixtures/tauri/settings.html",
+          "sha256": "96af6b425aee7310dbe40828efdcad60bdf9c98e4d7a5a649a3d63ee241f4fda"
+        }
+      ],
+      "changes": [
+        {
+          "file": "settings.html",
+          "output_sha256_utf8_lf": "ca138cd88a0f7d87079c54d836ab36e6c36cb5c101e95694577754ebcf12d46f"
+        }
+      ],
+      "native_runtime": "not_run",
+      "browser_evidence": "executed; see model report",
+      "artifacts": {
+        "diff": "forward-cases/31/changes.patch",
+        "model_report": "forward-cases/31/model-report.json"
+      }
+    },
+    {
+      "id": 32,
+      "case": "readonly-polish-boundary",
+      "model_execution": "explicit Skill load; expected answers withheld",
+      "source_result": "diagnosis returned in chat; source and directory unchanged",
+      "inputs": [
+        {
+          "path": "evals/fixtures/ios-swiftui/context.md",
+          "sha256": "a1cabdd4cef29ab24784e80ab676bfbf9327f376fd9048e38b68fc60465f2c27"
+        },
+        {
+          "path": "evals/fixtures/ios-swiftui/ProfileView.swift",
+          "sha256": "2a06255593bbcddce82ab6cdf26cffdca587e17f9cdc184aebc077f766a7e432"
+        }
+      ],
+      "changes": [],
+      "native_runtime": "not_run",
+      "browser_evidence": "not_run"
+    }
+  ],
+  "skill_revision_files": [
+    {
+      "path": "skills/ui-improvement/evals/evals.json",
+      "sha256_utf8_lf": "e7a440247eefe4b3791893bd234a50b8a2b42605f421854f1b8d185e0ac79aef"
+    },
+    {
+      "path": "skills/ui-improvement/evals/fixtures/android-compose/context.md",
+      "sha256_utf8_lf": "70e95444b974d9b21fc8a59c5c2fd107154cca84fad0a1a34528662e286101e9"
+    },
+    {
+      "path": "skills/ui-improvement/evals/fixtures/android-compose/ProfileScreen.kt",
+      "sha256_utf8_lf": "f252f2f59d6c5af4670d29ce5ecd225a64092900aadf731d604a391f819f392c"
+    },
+    {
+      "path": "skills/ui-improvement/evals/fixtures/android-views/context.md",
+      "sha256_utf8_lf": "3095f774b195a8801152978f50dd118e6b840f6eea65b6dca4865308174595fb"
+    },
+    {
+      "path": "skills/ui-improvement/evals/fixtures/android-views/profile.xml",
+      "sha256_utf8_lf": "c49a77d443c2767235abf38f1dfd316711cdbe6486bf6c5986f0ba7fd548d412"
+    },
+    {
+      "path": "skills/ui-improvement/evals/fixtures/android-views/ProfileActivity.kt",
+      "sha256_utf8_lf": "2525a9c61111556088a82da4d226e821eb0b73ce6d736f8071fa432927a07739"
+    },
+    {
+      "path": "skills/ui-improvement/evals/fixtures/electron/context.md",
+      "sha256_utf8_lf": "cde5b11f8f182707c5eb3a4ea613c438163d1126743c6ecdbe10c5ed85c2e134"
+    },
+    {
+      "path": "skills/ui-improvement/evals/fixtures/electron/main.cjs",
+      "sha256_utf8_lf": "fad870ce91c14d53f485ccb937ac841dab3a4737b5020a9a62d613b61f6ba574"
+    },
+    {
+      "path": "skills/ui-improvement/evals/fixtures/electron/settings.html",
+      "sha256_utf8_lf": "bde7c5af023240dfbbee2355fac8dcb0daff0df0d11b9755d0948ffec755ab56"
+    },
+    {
+      "path": "skills/ui-improvement/evals/fixtures/flutter/context.md",
+      "sha256_utf8_lf": "6091e4d4b70b1a4384865b1798ebbad43f2b999f316a1489b9b9f67fcb441e10"
+    },
+    {
+      "path": "skills/ui-improvement/evals/fixtures/flutter/profile_form.dart",
+      "sha256_utf8_lf": "ec539c03d291a51ab4f4f71e8c01d51e91d8a61718960577ee7627f47c932b26"
+    },
+    {
+      "path": "skills/ui-improvement/evals/fixtures/ios-swiftui/context.md",
+      "sha256_utf8_lf": "a1cabdd4cef29ab24784e80ab676bfbf9327f376fd9048e38b68fc60465f2c27"
+    },
+    {
+      "path": "skills/ui-improvement/evals/fixtures/ios-swiftui/ProfileView.swift",
+      "sha256_utf8_lf": "2a06255593bbcddce82ab6cdf26cffdca587e17f9cdc184aebc077f766a7e432"
+    },
+    {
+      "path": "skills/ui-improvement/evals/fixtures/ios-uikit/context.md",
+      "sha256_utf8_lf": "4228499dbf0e03d608bdf2aedb7fc13c13b0a1de46dc631e8bbf440aac74571d"
+    },
+    {
+      "path": "skills/ui-improvement/evals/fixtures/ios-uikit/ProfileController.swift",
+      "sha256_utf8_lf": "10db94674d5458a5ec2d2e73fe96bdba912a3d8ef1a238996547fa7a5dc1d84e"
+    },
+    {
+      "path": "skills/ui-improvement/evals/fixtures/macos-appkit/context.md",
+      "sha256_utf8_lf": "4625ddad763e91f96f0ead7ad2dacfb15261da67fa29e406103af6adb083e554"
+    },
+    {
+      "path": "skills/ui-improvement/evals/fixtures/macos-appkit/SettingsController.swift",
+      "sha256_utf8_lf": "30cae3a8c1d848b28ff566ceb7e4979e19ae0ecd75d074c35d16ae580f6c8870"
+    },
+    {
+      "path": "skills/ui-improvement/evals/fixtures/macos-swiftui/context.md",
+      "sha256_utf8_lf": "d701400c8af88afc22df618dfc17f586715877d65da226668241311bab1e3cdc"
+    },
+    {
+      "path": "skills/ui-improvement/evals/fixtures/macos-swiftui/SettingsView.swift",
+      "sha256_utf8_lf": "0ec82fd778a89c560fcdd15c9cd6dcae0f5d7fc0191bcbc682abc41e0ed7c88b"
+    },
+    {
+      "path": "skills/ui-improvement/evals/fixtures/react-native/context.md",
+      "sha256_utf8_lf": "a1890fad6841aab4850d81f39b9c076ed531e066cab20f37d0f8fbb7b5098ad9"
+    },
+    {
+      "path": "skills/ui-improvement/evals/fixtures/react-native/ProfileScreen.tsx",
+      "sha256_utf8_lf": "0efa0f82de211ad85129b198bcf2c03f5e9eda7c68033d24107960538ce3f0d4"
+    },
+    {
+      "path": "skills/ui-improvement/evals/fixtures/tauri/context.md",
+      "sha256_utf8_lf": "57976c182ab4589515063aaddc3ba4e3cbf09da648115d282d024b19882bd45d"
+    },
+    {
+      "path": "skills/ui-improvement/evals/fixtures/tauri/lib.rs",
+      "sha256_utf8_lf": "82e0d7e778677fdeaaaafcdaefa258136ac253d53783512ecb23af98ad6e7415"
+    },
+    {
+      "path": "skills/ui-improvement/evals/fixtures/tauri/settings.html",
+      "sha256_utf8_lf": "96af6b425aee7310dbe40828efdcad60bdf9c98e4d7a5a649a3d63ee241f4fda"
+    },
+    {
+      "path": "skills/ui-improvement/evals/fixtures/web/context.md",
+      "sha256_utf8_lf": "bed36a1f1b5f5ee9fb48164f191dcb3c04966d8de71b99c35a69f057498c0333"
+    },
+    {
+      "path": "skills/ui-improvement/evals/fixtures/web/index.html",
+      "sha256_utf8_lf": "28bf7a338f28db279aa3a867e454ed12d4261f6d4ce6aae21aefca02c9b9a44f"
+    },
+    {
+      "path": "skills/ui-improvement/evals/fixtures/windows-winui/context.md",
+      "sha256_utf8_lf": "4b4df184db83eae29d52faca82cbd1faf7626d000019e69cae4e4be2f6381569"
+    },
+    {
+      "path": "skills/ui-improvement/evals/fixtures/windows-winui/SettingsPanel.xaml",
+      "sha256_utf8_lf": "1f44f1b3a1522fc334a06d54a8c8d7e6bd35e1d7607f99934f9af9fd3ddfbd7d"
+    },
+    {
+      "path": "skills/ui-improvement/evals/fixtures/windows-wpf/context.md",
+      "sha256_utf8_lf": "a7952bf84964e652901a8125b23e36a7504d74d34563970558769df36c9bca35"
+    },
+    {
+      "path": "skills/ui-improvement/evals/fixtures/windows-wpf/SettingsView.xaml",
+      "sha256_utf8_lf": "e9390cd9c9190e7b81da8961d93f525c5a460449258fdca551235cfc81b75c0b"
+    },
+    {
+      "path": "skills/ui-improvement/evals/routing.json",
+      "sha256_utf8_lf": "61c54ebd3016efa06541dfa0a7b2d10480e006c95177ee7a336c01e9879f47c0"
+    },
+    {
+      "path": "skills/ui-improvement/references/android.md",
+      "sha256_utf8_lf": "b940c3d60c284ecf47d76e16ac74fa6d1c113e5ab17ca16edbfcd564947938e3"
+    },
+    {
+      "path": "skills/ui-improvement/references/cross-platform-frameworks.md",
+      "sha256_utf8_lf": "887282785175183b8a434ba4c127506665b31b9897684e13eef6bbc2cb655310"
+    },
+    {
+      "path": "skills/ui-improvement/references/impeccable-LICENSE.txt",
+      "sha256_utf8_lf": "02bb8c3b4e70190e3986c0404ad2fd8d639b4f534252d82379cc1b502b6d1812"
+    },
+    {
+      "path": "skills/ui-improvement/references/ios.md",
+      "sha256_utf8_lf": "b33cba1ad4e24c5393b9a523c44687059d5fd8112b882d20312070ecb09f317a"
+    },
+    {
+      "path": "skills/ui-improvement/references/macos.md",
+      "sha256_utf8_lf": "2a26387c6a6581e5da95ae7100fd9cba9a422c55f6b2ce8d6f73611890c6d567"
+    },
+    {
+      "path": "skills/ui-improvement/references/upstream-notice.md",
+      "sha256_utf8_lf": "15fa353eaa32a99428359eab7d39a7e35f617a2900fe2b2a4c0832271fb8ac51"
+    },
+    {
+      "path": "skills/ui-improvement/references/web.md",
+      "sha256_utf8_lf": "ea7e0c759fdb4e19e84e6c6ca2cca3ae5ceacb07e1bb8a86b05049a005eda0f3"
+    },
+    {
+      "path": "skills/ui-improvement/references/windows.md",
+      "sha256_utf8_lf": "95bec2ec73a61a310fa588f73710c7310a103eda76bba7d7fc8b4e4c888e90f3"
+    },
+    {
+      "path": "skills/ui-improvement/references/workflow-and-evidence.md",
+      "sha256_utf8_lf": "b79555c0e4c99c87b3f376421084fcda48a9bc9106c65b46c32fa3580b6278c4"
+    },
+    {
+      "path": "skills/ui-improvement/SKILL.md",
+      "sha256_utf8_lf": "6f4ecc1633e4eb2dc61c2b3fd503aab49a100e3f7bb075f4ea1b442d33977ab7"
+    }
+  ],
+  "unexecuted_output_case_ids": [
+    1,
+    3,
+    4,
+    6,
+    7,
+    9,
+    10,
+    12,
+    13,
+    15,
+    16,
+    18,
+    19,
+    21,
+    22,
+    24,
+    33,
+    34,
+    35
+  ],
+  "routing_model_cases": "not_run (definitions validated only)",
+  "limits": [
+    "Original fixtures are partial source inputs, not complete buildable applications.",
+    "No native target build/runtime or assistive-technology journey executed.",
+    "Browser evidence for Electron/Tauri covers HTML only, not native shells."
+  ]
+}

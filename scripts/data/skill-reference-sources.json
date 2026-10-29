@@ -426,6 +426,41 @@
           }
         ]
       }
+    },
+    {
+      "repo": "pbakaus/impeccable",
+      "commit": "5e745ace7e151feb2a93d360d0281fe39448b857",
+      "tree": "43e7d9e1e4e59f4354c0e55e6ffd4d4f6925c03c",
+      "license": "Apache-2.0",
+      "licenseEvidence": {
+        "kind": "license-file",
+        "path": "LICENSE",
+        "blob": "bb3f6d23b1f8025514a62a12b51b47d73e3c9aa9"
+      },
+      "skills": {
+        "ui-improvement": [
+          {
+            "path": "skill/SKILL.src.md",
+            "blob": "2aedc373dc6834d11a823816fac6696f47af4bfe"
+          },
+          {
+            "path": "skill/reference/critique.md",
+            "blob": "03acd2f77a484abb736fd4f8230bc3bc78503565"
+          },
+          {
+            "path": "skill/reference/audit.native.md",
+            "blob": "b158b602f0d79367487d0012c745a6317499fa9b"
+          },
+          {
+            "path": "skill/reference/polish.md",
+            "blob": "f2146990505863574e3c8298613a37d4c31ee73c"
+          },
+          {
+            "path": "NOTICE.md",
+            "blob": "0468271c904ae334cfaf27da6f8df3d5f419a1f0"
+          }
+        ]
+      }
     }
   ]
 }

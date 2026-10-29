@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.2.0 — 2026-10-29
+
+Minor release: add an independently installable cross-platform interface improvement workflow and implementation Agent, preserving existing installer commands and web capabilities.
+
+- Add `ui-improvement` with critique/audit/source-fix modes and native WinUI/WPF, AppKit/macOS SwiftUI, iOS SwiftUI/UIKit, Compose/Views repair rules; distinguish web, Flutter/RN and Electron/Tauri ownership.
+- Add `ui-improvement-engineer`, preserve read-only reviewers, and regenerate adapters for all five coding environments.
+- Add the `interface-quality` purpose and integrate the core into web, mobile/desktop and testing bundles. Keep framework companions conditional and preserve the web bundle's previous final capabilities.
+- Pin reviewed Impeccable source/license evidence, package attribution, and add 35 output plus 24 routing definitions with original partial-source fixtures.
+- Add isolated real-install/update regressions and CI coverage. Runtime evidence remains target-specific; fixture definitions and installation checks do not certify native builds, accessibility or visuals.
+- Synchronize catalog, guides and release baseline: 294 Skills, 238 Agents, 16 purposes, 16 Skill categories.
+
 ## 1.1.1 — 2026-10-15
 
 Patch release: improve SVG inspection accuracy and repair a stale source-policy fixture while preserving the existing Skill names, independent installation, and purpose bundles.

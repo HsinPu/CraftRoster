@@ -1,0 +1,23 @@
+--- a/SettingsController.swift
++++ b/SettingsController.swift
+@@ -4 +4 @@
+-    private let titleLabel = NSTextField(labelWithString: "Account notification preferences")
++    private let titleLabel = NSTextField(wrappingLabelWithString: "Account notification preferences")
+@@ -11,2 +10,0 @@
+-        view.wantsLayer = true
+-        view.layer?.backgroundColor = NSColor.white.cgColor
+@@ -14,2 +12,5 @@
+-        titleLabel.textColor = .black
+-        titleLabel.lineBreakMode = .byClipping
++        titleLabel.textColor = .labelColor
++        titleLabel.lineBreakMode = .byWordWrapping
++        titleLabel.maximumNumberOfLines = 0
++        saveButton.setAccessibilityLabel(NSLocalizedString("Save", comment: "Save account preferences"))
++        saveButton.toolTip = NSLocalizedString("Save", comment: "Save account preferences")
+@@ -23,2 +24 @@
+-            titleLabel.widthAnchor.constraint(equalToConstant: 340),
+-            titleLabel.heightAnchor.constraint(equalToConstant: 20),
++            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+@@ -27 +27 @@
+-            accountName.widthAnchor.constraint(equalToConstant: 340),
++            accountName.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),

@@ -66,6 +66,9 @@ jobs:
       - name: Test SVG catalog integration
         run: npm run test:svg-series -- --definitions
 
+      - name: Test interface quality catalog integration
+        run: npm run test:interface-quality -- --definitions
+
       - name: Validate Skill review registry
         run: npm run validate:skill-review
 
@@ -343,6 +346,9 @@ jobs:
       - name: Test independent SVG packages and bundled updates
         run: npm run test:svg-series -- --powershell '${{ matrix.powershell }}'
 
+      - name: Test interface quality packages and bundled updates
+        run: npm run test:interface-quality -- --powershell '${{ matrix.powershell }}'
+
       - name: Test Windows Codex executor with fake processes
         if: matrix.powershell == 'powershell.exe'
         run: npm run test:skill-codex-executor
@@ -380,6 +386,9 @@ jobs:
       - name: Test independent SVG packages and bundled updates
         run: npm run test:svg-series -- --shell bash
 
+      - name: Test interface quality packages and bundled updates
+        run: npm run test:interface-quality -- --shell bash
+
   installer-bash-macos:
     name: Installer smoke (Bash, macOS quick)
     runs-on: macos-latest
@@ -399,6 +408,9 @@ jobs:
 
       - name: Test interactive installer on macOS Bash
         run: npm run test:interactive-install -- --shell bash --bash /bin/bash --require-pty
+
+      - name: Test interface quality packages and bundled updates
+        run: npm run test:interface-quality -- --shell bash
 
       - name: Verify smoke failure propagation
         run: |

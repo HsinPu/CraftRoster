@@ -1,0 +1,78 @@
+{
+  "original_preserved": true,
+  "target": "iOS 16+ / UIKit",
+  "changed_files": [
+    "isolated/ProfileController.swift"
+  ],
+  "checks": [
+    {
+      "passed": true,
+      "check": "Source contains: UIFontMetrics"
+    },
+    {
+      "passed": true,
+      "check": "Source contains: adjustsFontForContentSizeCategory = true"
+    },
+    {
+      "passed": true,
+      "check": "Source contains: heading.numberOfLines = 0"
+    },
+    {
+      "passed": true,
+      "check": "Source contains: UIScrollView"
+    },
+    {
+      "passed": true,
+      "check": "Source contains: contentLayoutGuide"
+    },
+    {
+      "passed": true,
+      "check": "Source contains: frameLayoutGuide"
+    },
+    {
+      "passed": true,
+      "check": "Source contains: view.keyboardLayoutGuide.topAnchor"
+    },
+    {
+      "passed": true,
+      "check": "Source contains: saveButton.accessibilityLabel"
+    },
+    {
+      "passed": true,
+      "check": "Source contains: onSave(nameField.text ?? \"\")"
+    },
+    {
+      "passed": true,
+      "check": "Source excludes: heading.heightAnchor"
+    },
+    {
+      "passed": true,
+      "check": "Source excludes: constraint(equalTo: view.bottomAnchor"
+    },
+    {
+      "passed": true,
+      "check": "Source excludes: equalToConstant: 32"
+    },
+    {
+      "passed": true,
+      "check": "Source excludes: heading.numberOfLines = 1"
+    },
+    {
+      "passed": true,
+      "check": "No trailing whitespace"
+    }
+  ],
+  "tools": {
+    "xcodebuild_available": false,
+    "swift_available": false
+  },
+  "mode": "authorized source fix",
+  "outcome": "Source-only repairs implemented; all checks are literal source inspections, not compilation or native execution.",
+  "missing_native_checks": [
+    "Target build and type checking: no Apple SDK/Xcode or complete project",
+    "Native narrow layout / large text / long content and appearance checks",
+    "Native keyboard and save callback interaction / navigation and retained edits",
+    "Native accessibility hierarchy and VoiceOver walkthrough"
+  ],
+  "behavior_change": "Heading now scales and wraps without fixed height; name field supports Dynamic Type. Replaced fixed bottom action layout with a vertically scrolling stack constrained above keyboardLayoutGuide, with complete content and width constraints and minimum 44-point controls. Semantic colors, Save accessibility name, and original callback retained."
+}

@@ -904,6 +904,17 @@ typescript-development	vue-testing	conditional	The affected TypeScript task incl
 ugc-video-ads	avatar-video-generation	conditional	AI avatar or talking-head generation
 ugc-video-ads	storyboard-creation	conditional	shot breakdowns
 ugc-video-ads	video-edit	conditional	final clip edits
+ui-improvement	accessibility-testing	conditional	A distinct accessibility audit or assistive-technology matrix is requested or needed.
+ui-improvement	desktop-development	conditional	The affected UI contract belongs to an Electron shell, main process or preload boundary.
+ui-improvement	flutter-development	conditional	The affected iOS or Android interface uses Flutter.
+ui-improvement	frontend-design	conditional	Authorized source corrections affect visible browser UI or a desktop renderer/WebView.
+ui-improvement	frontend-design-review	conditional	The affected web or desktop renderer interface needs read-only design or technical review.
+ui-improvement	ios-architecture	conditional	The iOS repair materially affects lifecycle, restoration or state ownership across modules.
+ui-improvement	mobile-app-testing	conditional	The change needs a native device, lifecycle, permission or mobile UI automation matrix.
+ui-improvement	react-native-expo	conditional	The affected iOS or Android interface uses React Native or Expo.
+ui-improvement	swift-concurrency	conditional	The native Swift repair changes task lifetime, actor isolation or cancellation.
+ui-improvement	swiftui-development	conditional	The affected native iOS target uses SwiftUI; macOS SwiftUI is handled by the bundled macOS rules.
+ui-improvement	visual-regression-testing	conditional	The affected web interface needs reproducible screenshot baseline comparisons.
 ui-styling	frontend-design	required	-
 ui-styling	shadcn-ui	conditional	When the work requires shadcn-specific component composition.
 ui-styling	tailwind-development	conditional	When the styling work requires Tailwind configuration, utility, or build mechanics.

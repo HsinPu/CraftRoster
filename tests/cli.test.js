@@ -135,7 +135,7 @@ const successCases = [
     name: 'lists the unified installation purposes',
     args: ['bundles'],
     status: 0,
-    stdout: /用途分類 \(15 類[\s\S]*image-graphics[\s\S]*software-development[\s\S]*threejs-graphics/,
+    stdout: /用途分類 \(16 類[\s\S]*image-graphics[\s\S]*software-development[\s\S]*threejs-graphics[\s\S]*interface-quality/,
   },
   {
     name: 'shows direct bundle members and distinguishes additional support',

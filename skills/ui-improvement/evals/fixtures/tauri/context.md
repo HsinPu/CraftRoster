@@ -1,0 +1,2 @@
+# Fixture context
+Original partial Tauri v2 app supporting Windows and macOS. WebView source is local HTML; the Rust core owns native menu and command capabilities. Keep bounded existing capabilities; no Electron main/preload APIs exist. Users report clipped settings and an icon control with no name. Inspect the actual Tauri project configuration before adjusting window/menu/capability APIs. These excerpts are not a complete Cargo project or runnable bundle; no runtime evidence is supplied. Copy into an isolated workspace before edits.

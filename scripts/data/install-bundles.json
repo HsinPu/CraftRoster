@@ -181,7 +181,10 @@
         "svg-design",
         "svg-animation",
         "svg-optimization",
-        "svg-visual-validation"
+        "svg-visual-validation",
+        "ui-improvement",
+        "frontend-design-review",
+        "visual-regression-testing"
       ]
     },
     {
@@ -234,7 +237,8 @@
         "vue-debug-guides",
         "vue-testing",
         "webapp-testing",
-        "autoresearch"
+        "autoresearch",
+        "ui-improvement"
       ]
     },
     {
@@ -590,7 +594,8 @@
         "mobile-release-engineer",
         "mobile-security-coder",
         "rust-pro",
-        "unity-developer"
+        "unity-developer",
+        "ui-improvement-engineer"
       ],
       "skills": [
         "app-store-release",
@@ -601,7 +606,8 @@
         "swift-concurrency",
         "swiftui-development",
         "swift-testing",
-        "mobile-app-testing"
+        "mobile-app-testing",
+        "ui-improvement"
       ]
     },
     {
@@ -727,6 +733,19 @@
         "session-handoff",
         "self-improvement",
         "todo-first"
+      ]
+    },
+    {
+      "id": "interface-quality",
+      "title": "跨平台介面檢查與改善",
+      "description": "Inspect and improve existing web, Windows, macOS, iOS and Android interfaces using platform-specific source repair and verification rules. Framework companions are conditional.",
+      "agents": [
+        "ui-improvement-engineer",
+        "ui-ux-designer",
+        "ui-visual-validator"
+      ],
+      "skills": [
+        "ui-improvement"
       ]
     }
   ]

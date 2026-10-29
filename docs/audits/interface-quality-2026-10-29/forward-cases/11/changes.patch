@@ -1,0 +1,36 @@
+--- a/SettingsView.swift
++++ b/SettingsView.swift
+@@ -8,9 +8,13 @@
+-        VStack(alignment: .leading, spacing: 12) {
+-            Text("Account notification preferences")
+-                .font(.system(size: 20))
+-                .lineLimit(1)
+-                .frame(width: 360, height: 24)
+-            HStack {
+-                Text("Display name")
+-                TextField("", text: $name)
+-                    .frame(width: 240)
++        ScrollView {
++            VStack(alignment: .leading, spacing: 12) {
++                Text("Account notification preferences")
++                    .font(.system(size: 20))
++                    .fixedSize(horizontal: false, vertical: true)
++                VStack(alignment: .leading, spacing: 4) {
++                    Text("Display name")
++                    TextField("", text: $name)
++                        .accessibilityLabel("Display name")
++                }
++                Button(action: save) { Image(systemName: "checkmark") }
++                    .accessibilityLabel("Save")
++                    .help("Save")
+@@ -18 +22,2 @@
+-            Button(action: save) { Image(systemName: "checkmark") }
++            .frame(maxWidth: .infinity, alignment: .leading)
++            .padding(20)
+@@ -20,4 +25,2 @@
+-        .padding(20)
+-        .frame(width: 400, height: 160)
+-        .foregroundColor(.black)
+-        .background(Color.white)
++        .foregroundColor(.primary)
++        .background(Color(nsColor: .windowBackgroundColor))

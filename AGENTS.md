@@ -15,6 +15,8 @@
 - Keep research proposals clearly separate from installed capabilities. Do not change catalog membership, install upstream tools, or enable hooks merely because a source was researched.
 - For cross-platform interface work, distinguish the product target OS, actual UI framework, and execution host. Check each existing Skill's documented scope; an Electron or iOS-specific name does not establish native Windows/macOS coverage.
 - Purpose-bundle membership and Skill mode names do not grant execution permissions. Keep read-only roles read-only and match runtime, accessibility and performance claims to the evidence actually obtained.
+- `ui-improvement` owns existing-interface quality across declared platforms; load only relevant framework references. `frontend-design-review` remains the web review entry, and native source fixtures are not complete buildable apps or runtime evidence.
+- When changing shared reviewer recommendations, compare final installation plans. Preserve web-specific support explicitly in `web-interface` when it becomes conditional on a cross-platform role.
 - Review README headings, internal links, installation instructions, version information, and feature claims after relevant changes. Preserve valid existing content and use relative repository links.
 
 ## Versioning and Git

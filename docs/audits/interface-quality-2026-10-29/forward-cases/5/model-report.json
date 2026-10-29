@@ -1,0 +1,18 @@
+{
+  "changes": "Auto grid rows, wrapping heading, flexible maximum width, content-sized controls and vertical scrolling. System dynamic brushes preserve contrast settings; existing NameInput, binding and command retained.",
+  "changed_files": [
+    "work/SettingsView.xaml"
+  ],
+  "mode": "authorized source repair in isolated work copy",
+  "missing": [
+    "No complete project; dotnet unavailable. No WPF build, actual typography settings, narrow-window render or keyboard interaction run.",
+    "High contrast, UI Automation and Narrator unexecuted."
+  ],
+  "outcome": "Source repair completed; source checks passed; native acceptance unverified",
+  "original_sources": "Original fixture files retained unchanged; only work copies and result.json written.",
+  "checks": [
+    "PowerShell [xml] parse passed",
+    "Static content-size/wrapping/theme and binding checks passed"
+  ],
+  "framework": "WPF, .NET 8 Windows"
+}

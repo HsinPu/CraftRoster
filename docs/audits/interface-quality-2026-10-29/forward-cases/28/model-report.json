@@ -1,0 +1,19 @@
+{
+  "case_id": 28,
+  "mode": "polish/fix",
+  "changed_files": [
+    "profile_form.dart"
+  ],
+  "changes": [
+    "SingleChildScrollView with content-sized Column; removed fixed form/label/field dimensions and Spacer; theme-aware title, labeled field, named Save tooltip; external controller/save retained"
+  ],
+  "checks": [
+    "Source rigid ancestor and truncation checks passed",
+    "Controller and save callback contract checks passed"
+  ],
+  "remaining_limits": [
+    "Flutter/Dart commands unavailable and pubspec absent; SDK version cannot be determined; no compile/analyze/widget pass",
+    "Partial fixture lacks actual parent Scaffold/keyboard viewport owner; verify bounded scroller and IME resizing in host",
+    "iOS/Android large text, keyboard, appearance, VoiceOver/TalkBack unexecuted"
+  ]
+}

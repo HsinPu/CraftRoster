@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Profile settings</title>
+<style>
+body { margin: 0; font: 1rem system-ui; color: #111; background: #fff; }
+main { width: 620px; margin: 32px auto; padding: 24px; box-sizing: border-box; }
+.row { display: flex; gap: 16px; height: 32px; align-items: center; }
+label { white-space: nowrap; }
+input { width: 460px; }
+button { color: white; background: #135ac4; border: 0; padding: 8px 16px; }
+button:focus, input:focus { outline: none; }
+</style>
+<main>
+<h1>Profile settings</h1>
+<form action="/profile" method="post">
+<div class="row"><label>Display name shown to collaborators</label><input name="displayName" required></div>
+<p><button type="submit">Save</button></p>
+</form>
+</main>
+</html>

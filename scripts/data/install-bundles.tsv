@@ -122,6 +122,7 @@ web-interface	網頁與介面設計	Web UI implementation, design systems, inter
 web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	design-system-patterns
 web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	figma-to-code
 web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	frontend-design
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	frontend-design-review
 web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	frontend-stack-inference
 web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	hotkey
 web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	i18n-localization
@@ -147,8 +148,10 @@ web-interface	網頁與介面設計	Web UI implementation, design systems, inter
 web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	tailwind-patterns
 web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	taste-skill
 web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	typescript-development
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	ui-improvement
 web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	ui-styling
 web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	ux-writing
+web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	visual-regression-testing
 web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	vite
 web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	vue-composition-api
 web-interface	網頁與介面設計	Web UI implementation, design systems, interaction, accessibility, localization, and design-to-code workflows.	skill	vue-development
@@ -194,6 +197,7 @@ testing-review	測試與程式審查	Risk-based software testing, failure diagno
 testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	skill	systematic-debugging
 testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	skill	test-driven-development
 testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	skill	testing-strategy
+testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	skill	ui-improvement
 testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	skill	verification-before-completion
 testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	skill	visual-regression-testing
 testing-review	測試與程式審查	Risk-based software testing, failure diagnosis, code review, visual regression, and evidence-based completion gates.	skill	vue-debug-guides
@@ -475,6 +479,7 @@ mobile-desktop-embedded	行動桌面與嵌入式開發	Native and cross-platform
 mobile-desktop-embedded	行動桌面與嵌入式開發	Native and cross-platform apps, Electron, Unity, embedded firmware, mobile testing, and platform release readiness.	agent	mobile-release-engineer
 mobile-desktop-embedded	行動桌面與嵌入式開發	Native and cross-platform apps, Electron, Unity, embedded firmware, mobile testing, and platform release readiness.	agent	mobile-security-coder
 mobile-desktop-embedded	行動桌面與嵌入式開發	Native and cross-platform apps, Electron, Unity, embedded firmware, mobile testing, and platform release readiness.	agent	rust-pro
+mobile-desktop-embedded	行動桌面與嵌入式開發	Native and cross-platform apps, Electron, Unity, embedded firmware, mobile testing, and platform release readiness.	agent	ui-improvement-engineer
 mobile-desktop-embedded	行動桌面與嵌入式開發	Native and cross-platform apps, Electron, Unity, embedded firmware, mobile testing, and platform release readiness.	agent	unity-developer
 mobile-desktop-embedded	行動桌面與嵌入式開發	Native and cross-platform apps, Electron, Unity, embedded firmware, mobile testing, and platform release readiness.	skill	app-store-release
 mobile-desktop-embedded	行動桌面與嵌入式開發	Native and cross-platform apps, Electron, Unity, embedded firmware, mobile testing, and platform release readiness.	skill	desktop-development
@@ -485,6 +490,7 @@ mobile-desktop-embedded	行動桌面與嵌入式開發	Native and cross-platform
 mobile-desktop-embedded	行動桌面與嵌入式開發	Native and cross-platform apps, Electron, Unity, embedded firmware, mobile testing, and platform release readiness.	skill	swift-concurrency
 mobile-desktop-embedded	行動桌面與嵌入式開發	Native and cross-platform apps, Electron, Unity, embedded firmware, mobile testing, and platform release readiness.	skill	swift-testing
 mobile-desktop-embedded	行動桌面與嵌入式開發	Native and cross-platform apps, Electron, Unity, embedded firmware, mobile testing, and platform release readiness.	skill	swiftui-development
+mobile-desktop-embedded	行動桌面與嵌入式開發	Native and cross-platform apps, Electron, Unity, embedded firmware, mobile testing, and platform release readiness.	skill	ui-improvement
 threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	agent	frontend-developer
 threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	agent	performance-engineer
 threejs-graphics	3D與互動圖形	Three.js and WebGL or WebGPU scenes, assets, simulation, rendering, interaction, performance, and visual verification.	agent	realtime-systems-engineer
@@ -592,3 +598,7 @@ agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill desig
 agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	skill	skillforge
 agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	skill	subagent-architecture
 agent-automation	Agent、Skill與自動化工具	Canonical Agent and Skill design, harness integration, MCP, browser automation, delegated workflows, and traceable handoffs.	skill	todo-first
+interface-quality	跨平台介面檢查與改善	Inspect and improve existing web, Windows, macOS, iOS and Android interfaces using platform-specific source repair and verification rules. Framework companions are conditional.	agent	ui-improvement-engineer
+interface-quality	跨平台介面檢查與改善	Inspect and improve existing web, Windows, macOS, iOS and Android interfaces using platform-specific source repair and verification rules. Framework companions are conditional.	agent	ui-ux-designer
+interface-quality	跨平台介面檢查與改善	Inspect and improve existing web, Windows, macOS, iOS and Android interfaces using platform-specific source repair and verification rules. Framework companions are conditional.	agent	ui-visual-validator
+interface-quality	跨平台介面檢查與改善	Inspect and improve existing web, Windows, macOS, iOS and Android interfaces using platform-specific source repair and verification rules. Framework companions are conditional.	skill	ui-improvement

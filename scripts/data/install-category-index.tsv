@@ -102,6 +102,7 @@ agent	development	rust-pro
 agent	development	scala-pro
 agent	development	temporal-python-pro
 agent	development	typescript-pro
+agent	development	ui-improvement-engineer
 agent	development	unity-developer
 agent	documentation	api-documenter
 agent	documentation	c4-code
@@ -347,6 +348,7 @@ skill	frontend-design	svg-visual-validation
 skill	frontend-design	tailwind-development
 skill	frontend-design	tailwind-patterns
 skill	frontend-design	taste-skill
+skill	frontend-design	ui-improvement
 skill	frontend-design	ui-styling
 skill	frontend-design	vite
 skill	frontend-design	vue-composition-api

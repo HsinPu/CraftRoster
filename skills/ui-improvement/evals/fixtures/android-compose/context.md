@@ -1,0 +1,2 @@
+# Fixture context
+Original partial Compose screen using Material 3 and activity-compose, minSdk 26 and targetSdk 35. Host activity enables edge-to-edge; the app already uses a Navigator that owns normal Back. Parent retains draft name through state hoisting. Keep onNameChanged and onSave contracts. Phones support keyboard, enlarged font, system dark theme, TalkBack and rotation. Exact installed AndroidX versions must be checked in the real project before adding APIs. No Gradle project or emulator/device evidence exists. Copy into an isolated workspace before edits.

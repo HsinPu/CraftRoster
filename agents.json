@@ -1,9 +1,9 @@
 {
   "version": "3.0.0",
-  "updated": "2026-10-15T10:36:50.577Z",
-  "total": 237,
+  "updated": "2026-10-29T10:28:57.606Z",
+  "total": 238,
   "categories": 31,
-  "uniqueRoles": 237,
+  "uniqueRoles": 238,
   "agents": [
     {
       "id": "accessibility-expert",
@@ -5083,11 +5083,18 @@
       "model": "inherit",
       "permission": "workspace-write",
       "skills": [
+        "ui-improvement",
         "flutter-development",
         "mobile-app-testing",
         "app-store-release"
       ],
       "skillDependencies": [
+        {
+          "name": "ui-improvement",
+          "kind": "conditional",
+          "when": "The task reviews or improves the visible interface within this role's documented platform scope.",
+          "reason": "Supports existing-interface quality corrections with platform-specific repair and evidence rules."
+        },
         {
           "name": "flutter-development",
           "kind": "recommended",
@@ -5182,6 +5189,7 @@
       "model": "inherit",
       "permission": "workspace-write",
       "skills": [
+        "ui-improvement",
         "frontend-design",
         "javascript-development",
         "typescript-development",
@@ -5191,6 +5199,12 @@
         "svg-animation"
       ],
       "skillDependencies": [
+        {
+          "name": "ui-improvement",
+          "kind": "conditional",
+          "when": "The task reviews or improves the visible interface within this role's documented platform scope.",
+          "reason": "Supports existing-interface quality corrections with platform-specific repair and evidence rules."
+        },
         {
           "name": "frontend-design",
           "kind": "recommended",
@@ -6141,6 +6155,7 @@
       "model": "inherit",
       "permission": "workspace-write",
       "skills": [
+        "ui-improvement",
         "mobile-app-testing",
         "app-store-release",
         "auth-integration",
@@ -6149,6 +6164,12 @@
         "swiftui-development"
       ],
       "skillDependencies": [
+        {
+          "name": "ui-improvement",
+          "kind": "conditional",
+          "when": "The task reviews or improves the visible interface within this role's documented platform scope.",
+          "reason": "Supports existing-interface quality corrections with platform-specific repair and evidence rules."
+        },
         {
           "name": "mobile-app-testing",
           "kind": "recommended",
@@ -7477,12 +7498,19 @@
       "model": "inherit",
       "permission": "workspace-write",
       "skills": [
+        "ui-improvement",
         "mobile-app-testing",
         "react-native-expo",
         "flutter-development",
         "app-store-release"
       ],
       "skillDependencies": [
+        {
+          "name": "ui-improvement",
+          "kind": "conditional",
+          "when": "The task reviews or improves the visible interface within this role's documented platform scope.",
+          "reason": "Supports existing-interface quality corrections with platform-specific repair and evidence rules."
+        },
         {
           "name": "mobile-app-testing",
           "kind": "recommended",
@@ -12874,6 +12902,106 @@
       }
     },
     {
+      "id": "ui-improvement-engineer",
+      "name": "ui-improvement-engineer",
+      "role": "ui-improvement-engineer",
+      "description": "Repairs and refines existing web, Windows, macOS, iOS, and Android interfaces in their actual frameworks, preserving design, input and state contracts. Use when UI source modifications and target-appropriate verification are authorized.",
+      "category": "development",
+      "author": "HsinPu",
+      "source": "HsinPu/CraftRoster",
+      "license": "Apache-2.0",
+      "model": "inherit",
+      "permission": "workspace-write",
+      "skills": [
+        "ui-improvement",
+        "frontend-design",
+        "frontend-design-review",
+        "desktop-development",
+        "swiftui-development",
+        "flutter-development",
+        "react-native-expo",
+        "accessibility-testing",
+        "mobile-app-testing",
+        "visual-regression-testing"
+      ],
+      "skillDependencies": [
+        {
+          "name": "ui-improvement",
+          "kind": "recommended",
+          "reason": "Provides platform-aware diagnosis, source repair recipes and evidence boundaries for existing interfaces."
+        },
+        {
+          "name": "frontend-design",
+          "kind": "conditional",
+          "when": "The authorized repair changes browser UI or a desktop renderer/WebView.",
+          "reason": "Provides the existing web implementation baseline."
+        },
+        {
+          "name": "frontend-design-review",
+          "kind": "conditional",
+          "when": "An implemented web surface needs a design or technical quality review.",
+          "reason": "Provides the existing read-only web review lenses before or after repair."
+        },
+        {
+          "name": "desktop-development",
+          "kind": "conditional",
+          "when": "The UI correction affects an Electron shell, main process or preload boundary.",
+          "reason": "Owns Electron shell, process, window and IPC conventions."
+        },
+        {
+          "name": "swiftui-development",
+          "kind": "conditional",
+          "when": "The affected interface uses SwiftUI in an iOS target.",
+          "reason": "Provides iOS SwiftUI implementation guidance without implying macOS coverage."
+        },
+        {
+          "name": "flutter-development",
+          "kind": "conditional",
+          "when": "The affected iOS or Android interface uses Flutter.",
+          "reason": "Provides Flutter widget, layout and state implementation guidance."
+        },
+        {
+          "name": "react-native-expo",
+          "kind": "conditional",
+          "when": "The affected iOS or Android interface uses React Native or Expo.",
+          "reason": "Provides React Native and Expo workflow guidance for the installed project stack."
+        },
+        {
+          "name": "accessibility-testing",
+          "kind": "conditional",
+          "when": "The task requires a distinct accessibility audit or assistive-technology acceptance matrix.",
+          "reason": "Supports a targeted accessibility audit beyond the immediate repair checks."
+        },
+        {
+          "name": "mobile-app-testing",
+          "kind": "conditional",
+          "when": "The repair needs a mobile OS/device or lifecycle test matrix.",
+          "reason": "Supports native device, lifecycle, permission and interaction verification."
+        },
+        {
+          "name": "visual-regression-testing",
+          "kind": "conditional",
+          "when": "The affected web interface needs reproducible baseline comparisons.",
+          "reason": "Supports the existing web screenshot comparison workflow."
+        }
+      ],
+      "tags": [
+        "user-interface",
+        "native-desktop",
+        "mobile",
+        "accessibility",
+        "implementation"
+      ],
+      "path": "agents/ui-improvement-engineer.md",
+      "references": {
+        "repo": "pbakaus/impeccable",
+        "paths": [
+          "skill/reference/polish.md"
+        ],
+        "tree": "43e7d9e1e4e59f4354c0e55e6ffd4d4f6925c03c"
+      }
+    },
+    {
       "id": "ui-ux-designer",
       "name": "ui-ux-designer",
       "role": "ui-ux-designer",
@@ -12885,6 +13013,7 @@
       "model": "inherit",
       "permission": "read-only",
       "skills": [
+        "ui-improvement",
         "design-consultation",
         "frontend-design",
         "ux-writing",
@@ -12892,8 +13021,14 @@
       ],
       "skillDependencies": [
         {
-          "name": "design-consultation",
+          "name": "ui-improvement",
           "kind": "recommended",
+          "reason": "Provides cross-platform critique and evidence boundaries without authorizing this read-only role to implement changes."
+        },
+        {
+          "name": "design-consultation",
+          "kind": "conditional",
+          "when": "The task needs bounded web visual-direction consultation.",
           "reason": "Supports ui-ux-designer with web interface visual direction before implementation."
         },
         {
@@ -12941,6 +13076,7 @@
       "model": "inherit",
       "permission": "read-only",
       "skills": [
+        "ui-improvement",
         "frontend-design-review",
         "visual-regression-testing",
         "responsive-design",
@@ -12949,13 +13085,20 @@
       ],
       "skillDependencies": [
         {
-          "name": "frontend-design-review",
+          "name": "ui-improvement",
           "kind": "recommended",
+          "reason": "Provides cross-platform interface evidence and native acceptance guidance while preserving this role's read-only permission."
+        },
+        {
+          "name": "frontend-design-review",
+          "kind": "conditional",
+          "when": "The reviewed interface is web or a desktop renderer/WebView.",
           "reason": "Supports ui-visual-validator with read-only interface usability, accessibility, and visual-quality evidence."
         },
         {
           "name": "visual-regression-testing",
-          "kind": "recommended",
+          "kind": "conditional",
+          "when": "The reviewed web interface needs screenshot baseline comparisons.",
           "reason": "Supports ui-visual-validator with reproducible screenshot comparisons, baselines, matrices, and fidelity evidence."
         },
         {

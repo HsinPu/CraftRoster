@@ -1,0 +1,37 @@
+--- a/profile_form.dart
++++ b/profile_form.dart
+@@ -9,9 +9,25 @@
+-  Widget build(BuildContext context) => Container(
+-    width: 360, height: 200, color: Colors.white,
+-    child: Column(children: [
+-      const SizedBox(height: 24, child: Text('Display name shown to collaborators',
+-        maxLines: 1, style: TextStyle(fontSize: 20, color: Colors.black))),
+-      SizedBox(height: 32, child: TextField(controller: controller)),
+-      const Spacer(),
+-      IconButton(icon: const Icon(Icons.check), onPressed: onSave),
+-    ]),
++  Widget build(BuildContext context) => SingleChildScrollView(
++    // The host Scaffold owns keyboard resizing; do not add IME insets twice.
++    padding: const EdgeInsets.all(16),
++    child: Column(
++      crossAxisAlignment: CrossAxisAlignment.stretch,
++      mainAxisSize: MainAxisSize.min,
++      children: [
++        Text('Display name shown to collaborators',
++          style: Theme.of(context).textTheme.titleLarge),
++        const SizedBox(height: 12),
++        TextField(
++          controller: controller,
++          decoration: const InputDecoration(labelText: 'Display name'),
++        ),
++        const SizedBox(height: 16),
++        Align(
++          alignment: AlignmentDirectional.centerEnd,
++          child: IconButton(
++            tooltip: 'Save',
++            icon: const Icon(Icons.check),
++            onPressed: onSave,
++          ),
++        ),
++      ],
++    ),

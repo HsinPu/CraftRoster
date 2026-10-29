@@ -1,0 +1,2 @@
+# Fixture context
+Original partial AppKit controller for a macOS 13+ document utility; not an Xcode project. Existing owner loads this controller in an NSWindow and persists accountName through its normal model. Keep AppKit, text editing and the existing save action. Current narrow-window layout and icon-only save control need review. System appearance and VoiceOver are supported. No macOS host, build or runtime observation is supplied. Copy into an isolated workspace before edits.

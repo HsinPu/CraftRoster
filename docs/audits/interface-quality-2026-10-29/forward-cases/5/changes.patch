@@ -1,0 +1,32 @@
+--- a/SettingsView.xaml
++++ b/SettingsView.xaml
+@@ -3,13 +3,16 @@
+-    <Grid Width="380" Background="White">
+-        <Grid.RowDefinitions>
+-            <RowDefinition Height="28" />
+-            <RowDefinition Height="28" />
+-            <RowDefinition Height="28" />
+-        </Grid.RowDefinitions>
+-        <TextBlock Text="Display name shown to collaborators" FontSize="20"
+-                   Foreground="Black" TextWrapping="NoWrap" />
+-        <TextBox x:Name="NameInput" Grid.Row="1" FontSize="20"
+-                 Text="{Binding DisplayName, UpdateSourceTrigger=PropertyChanged}" />
+-        <Button Grid.Row="2" Content="Save" Width="72" Height="24"
+-                Command="{Binding SaveCommand}" />
+-    </Grid>
++    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto"
++                  HorizontalContentAlignment="Stretch">
++        <Grid MaxWidth="380" Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}">
++            <Grid.RowDefinitions>
++                <RowDefinition Height="Auto" />
++                <RowDefinition Height="Auto" />
++                <RowDefinition Height="Auto" />
++            </Grid.RowDefinitions>
++            <TextBlock Text="Display name shown to collaborators" FontSize="20"
++                       Foreground="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}" TextWrapping="Wrap" />
++            <TextBox x:Name="NameInput" Grid.Row="1" FontSize="20" AutomationProperties.Name="Display name"
++                     Text="{Binding DisplayName, UpdateSourceTrigger=PropertyChanged}" />
++            <Button Grid.Row="2" Content="Save" MinWidth="72" HorizontalAlignment="Left"
++                    Command="{Binding SaveCommand}" />
++        </Grid>
++    </ScrollViewer>
