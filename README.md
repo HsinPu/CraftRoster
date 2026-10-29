@@ -140,7 +140,7 @@ Skill 分類安裝會選取該分類元件，再補齊必要依賴（可能跨�
 Windows PowerShell：
 
 ```powershell
-# 預覽 Frontend & Design Skills 與必要配套
+# 預覽 Frontend & Interface Design Skills 與必要配套
 powershell -ExecutionPolicy Bypass -NoProfile -Command '$s = irm https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/install.ps1; & ([scriptblock]::Create($s)) -Target codex -Type skill -Category frontend-design -DryRun'
 
 # 預覽 Quality Assurance Agents
@@ -150,7 +150,7 @@ powershell -ExecutionPolicy Bypass -NoProfile -Command '$s = irm https://raw.git
 Linux／macOS：
 
 ```bash
-# 預覽 Frontend & Design Skills 與必要配套
+# 預覽 Frontend & Interface Design Skills 與必要配套
 curl -fsSL https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/install.sh | bash -s -- --target codex --type skill --category frontend-design --dry-run
 
 # 預覽 Quality Assurance Agents
@@ -228,6 +228,8 @@ Linux／macOS：
 ```bash
 curl -fsSL https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/install.sh | bash -s -- --target project --type skill && curl -fsSL https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/install.sh | bash -s -- --target project --type agent
 ```
+
+<a id="從本機-checkout-安裝"></a>
 
 <details>
 <summary><strong>從本機 checkout 安裝</strong></summary>
@@ -380,7 +382,7 @@ craftroster list
 | `list` | `ls` | 依分類列出 Skills 或 Agents |
 | `search <query>` | `s` | 搜尋名稱、描述與 tags |
 | `info <name>` | — | 顯示 metadata、授權、routing 與安裝命令 |
-| `bundles [id]` | — | 列出 15 個安裝用途，或查閱其 Skills 與子代理 |
+| `bundles [id]` | — | 列出安裝用途，或查閱其 Skills 與子代理 |
 
 | Option | 用途 |
 |---|---|

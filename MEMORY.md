@@ -15,6 +15,7 @@ Record verified, durable project decisions and lessons here. Current catalog and
 - Changes to the source manifest can invalidate explicit local digests in evaluation fixtures. Recheck `tests/skill-three-provenance-fixtures.test.js` and the referenced policy fixture when `scripts/data/skill-reference-sources.json` changes.
 - Use a supported Node runtime before interpreting test failures; sandbox child-process errors such as `EPERM` can prevent a test from executing at all. Distinguish environment failures, actual failures, unexecuted cases and successful checks.
 - Some package and installation tests create temporary files while running. Wait for their processes and cleanup to finish before staging; inspect the staged diff to exclude test sentinels and Python caches.
+- Purpose and category changes can leave stale counts or names in README CLI tables and command comments outside generated blocks. Check those separately, and give linked HTML `details` sections explicit anchors rather than relying on their visible `summary` text.
 
 ## Interface-quality implementation — 2026-10-29
 

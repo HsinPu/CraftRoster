@@ -46,11 +46,19 @@ PowerShell 5.1.19041.6093 與 PowerShell 7.6.5 的完整測試各 **10 通過／
 
 [forward-results.json](forward-results.json) 記錄輸入 digest、Skill 修訂、未執行案例及每個成果位置；`forward-cases/<id>/changes.patch` 為零 context 的 unified diff，`model-report.json` 保留執行者的檢查及限制。臨時測試目錄不屬於可安裝內容。
 
+## 第二輪整合檢查
+
+再次以 `73a112c` 的實作與遠端基線比對 Skills、canonical Agents、generated adapters、分類及安裝閉包。兩份獨立審查沒有發現功能缺陷：1190 份五環境 adapter 與 canonical generator 的唯讀輸出比對完全一致；`interface-quality` 仍是 2 Skills／3 Agents，`web-interface` 由 55 Skills／11 Agents 變為 56／11，唯一新增 `ui-improvement`，舊能力完整保留。
+
+修正 README 的 4 處文件遺漏：兩個安裝範例的舊分類名稱、CLI 表格中過時的「15 個用途」，以及本機 checkout 說明缺少的頁內連結錨點。CLI 表格移除重複的硬編碼數量。這次只有文件與知識紀錄修正，版本維持 1.2.0。
+
+重新執行正式 `npm run validate`、前述相關回歸及 package inventory，全部通過；PowerShell 5.1.19041.6093 與 7.6.5 再次各 10 通過／0 失敗／0 略過。另核對全部 41 個 Skill 修訂雜湊、16 個既有案例輸入與成果位置，沒有缺漏；這是證據一致性檢查，沒有宣稱重新執行模型任務。文件檢查涵蓋 68 個 Markdown 檔、351 個相對連結及頁內錨點，修正後通過。
+
 ## 仍未驗證
 
 - 8 個原生 framework targets 的完整 build／runtime／讀屏矩陣；fixtures 只有部分 source，不能拿它們冒充可建置應用。
 - Flutter／RN 的 iOS、Android；Electron／Tauri 的 Windows、macOS 原生流程與跨裝置效能。
 - 其餘 19 個成果案例的模型執行，以及 24 個路由案例的自動選擇／activation。
-- 本機沒有執行 Linux／macOS Bash 安裝；已加入相應 CI jobs，未 Push 的本次 Commit 尚未產生新的雲端 CI 結果。
+- 本機沒有執行 Linux／macOS Bash 安裝；已加入相應 CI jobs，雲端執行結果應以對應 Commit 的 CI 紀錄為準。
 
 這些缺口是平台驗收限制；Skill 原始碼、角色／依賴與分類整合已實作，不將所有平台描述為已驗證可發布。
