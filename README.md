@@ -497,7 +497,7 @@ Catalog 來源是 [`skills.json`](skills.json) 與 [`agents.json`](agents.json)�
 
 ### 跨平台介面品質（研究規劃）
 
-現有 [`frontend-design-review`](skills/frontend-design-review/) 已區分 critique、audit 與 polish 的網頁審查視角。針對網頁、Windows／macOS 桌面軟體與原生手機 App 的共用入口、平台差異及用途分類建議，見 [Impeccable 與跨平台介面品質研究](docs/interface-quality-skill-plan.md)。這是待實作提案，目前仍維持 15 個用途分類，沒有新增安裝項目。
+現有 [`frontend-design-review`](skills/frontend-design-review/) 已區分 critique、audit 與 polish 的網頁審查視角。[跨平台介面品質規劃](docs/interface-quality-skill-plan.md)進一步列出網頁、Windows／macOS、iOS／Android 的規則、實際修改路徑、平台驗證、子代理與安裝配套，以及分階段驗收清單。這是待實作提案，目前仍維持 15 個用途分類，沒有新增安裝項目。
 
 ## 專案架構
 

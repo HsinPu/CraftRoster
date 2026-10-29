@@ -13,6 +13,8 @@
 - At completion, review and update these documents as needed. Keep `AGENTS.md` focused on durable architecture and working rules; keep `MEMORY.md` focused on verified decisions and lessons. Remove obsolete or duplicated knowledge.
 - Read `DESIGN.md` before designing or changing an actual UI. If absent, record only established design evidence and mark unresolved choices explicitly. Catalog research alone does not establish a product design system.
 - Keep research proposals clearly separate from installed capabilities. Do not change catalog membership, install upstream tools, or enable hooks merely because a source was researched.
+- For cross-platform interface work, distinguish the product target OS, actual UI framework, and execution host. Check each existing Skill's documented scope; an Electron or iOS-specific name does not establish native Windows/macOS coverage.
+- Purpose-bundle membership and Skill mode names do not grant execution permissions. Keep read-only roles read-only and match runtime, accessibility and performance claims to the evidence actually obtained.
 - Review README headings, internal links, installation instructions, version information, and feature claims after relevant changes. Preserve valid existing content and use relative repository links.
 
 ## Versioning and Git
