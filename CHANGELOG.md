@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.3 — 2026-10-30
+
+Patch release: repair Apache-2.0 source verification and Windows CI configuration-test paths.
+
+- Add the missing Apache-2.0 license-file matcher using the standard version header and copyright/patent grant sections; preserve all commit, tree and blob checks.
+- Add a regression using Impeccable's pinned license, plus negative cases for other versions, incomplete terms and changed license blobs. Source pins and attribution remain unchanged.
+- Canonicalize temporary fixture and cleanup paths with native filesystem resolution so Windows 8.3 aliases match PowerShell's full paths without weakening instruction assertions.
+
 ## 1.2.2 — 2026-10-30
 
 Patch release: unblock OpenCode auto-delegation installation with JSONC or coexisting JSON/JSONC configuration files.

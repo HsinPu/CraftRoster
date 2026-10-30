@@ -41,7 +41,7 @@ CraftRoster 是 catalog 與 distribution layer，**不是**另一套 Agent runti
 
 ## 快速開始
 
-目前版本為 **1.2.2**；發行變更見 [CHANGELOG](CHANGELOG.md)，正式版本以 [package.json](package.json) 為準。
+目前版本為 **1.2.3**；發行變更見 [CHANGELOG](CHANGELOG.md)，正式版本以 [package.json](package.json) 為準。
 
 ### 互動式安裝
 

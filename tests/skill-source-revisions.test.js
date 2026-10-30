@@ -10,6 +10,7 @@ const {
   CANONICAL_AUTHOR,
   CANONICAL_SOURCE,
   computeReferenceLock,
+  licenseEvidenceMatches,
   parseArguments,
   validateRepository,
   verifyRemote,
@@ -317,6 +318,34 @@ async function main() {
       () => verifyRemote(state, () => snapshot),
       /content does not match declared license MIT/
     );
+  });
+
+  await test('accepts the pinned Impeccable Apache-2.0 license in remote verification', async () => {
+    const source = validateRepository(ROOT).sources.find((entry) => entry.repo === 'pbakaus/impeccable');
+    assert(source && source.license === 'Apache-2.0');
+    const licenseText = fs.readFileSync(path.join(ROOT, 'skills/ui-improvement/references/impeccable-LICENSE.txt'), 'utf8');
+    const result = await verifyRemote({ sources: [source] }, () => remoteSnapshot(source, { licenseText }));
+    assert.deepEqual(result, { sourceCount: 1, pathCount: new Set(source.pathEvidence.map((entry) => entry.path)).size, licenseCount: 1 });
+  });
+
+  await test('Apache-2.0 matching rejects other versions, short notices and incomplete terms', () => {
+    const licenseText = fs.readFileSync(path.join(ROOT, 'skills/ui-improvement/references/impeccable-LICENSE.txt'), 'utf8');
+    for (const invalid of [
+      'Licensed under the Apache License, Version 2.0',
+      licenseText.replace('Version 2.0, January 2004', 'Version 1.1, January 2004'),
+      licenseText.replace('Grant of Patent License.', 'Missing section.'),
+      'MIT License\nPermission is hereby granted, free of charge.',
+    ]) assert.equal(licenseEvidenceMatches('Apache-2.0', 'license-file', invalid), false);
+    assert.equal(licenseEvidenceMatches('Apache-2.0', 'terms', licenseText), false);
+    assert.equal(licenseEvidenceMatches('MIT', 'license-file', licenseText), false);
+  });
+
+  await test('Apache-2.0 acceptance retains pinned license blob verification', async () => {
+    const source = validateRepository(ROOT).sources.find((entry) => entry.repo === 'pbakaus/impeccable');
+    const licenseText = fs.readFileSync(path.join(ROOT, 'skills/ui-improvement/references/impeccable-LICENSE.txt'), 'utf8');
+    const snapshot = remoteSnapshot(source, { licenseText });
+    snapshot.blobs[source.licenseEvidence.path] = SHA_B;
+    await assert.rejects(verifyRemote({ sources: [source] }, () => snapshot), /LICENSE blob .* does not match manifest/);
   });
 
   await test('reports remote resolution failures explicitly', async () => {

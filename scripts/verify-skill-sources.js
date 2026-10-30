@@ -171,6 +171,13 @@ function licenseEvidenceMatches(license, kind, text) {
     return normalized.includes('permission is hereby granted, free of charge, to any person obtaining a copy')
       && normalized.includes('the software is provided "as is"');
   }
+  if (license === 'Apache-2.0') {
+    return normalized.includes('apache license')
+      && normalized.includes('version 2.0, january 2004')
+      && normalized.includes('terms and conditions for use, reproduction, and distribution')
+      && normalized.includes('grant of copyright license.')
+      && normalized.includes('grant of patent license.');
+  }
   if (license === 'AGPL-3.0') {
     return normalized.includes('gnu affero general public license')
       && normalized.includes('version 3, 19 november 2007');

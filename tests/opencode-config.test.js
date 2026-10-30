@@ -14,7 +14,9 @@ for (let i = 2; i < process.argv.length; i++) {
   assert(value && !value.startsWith('--'), `${key} requires an executable`);
   options[key] = value;
 }
-const temporary = fs.mkdtempSync(path.join(fs.realpathSync(os.tmpdir()), 'craftroster-opencode-config-'));
+// Windows CI can expose TEMP through an 8.3 alias (RUNNER~1). Use the native
+// canonical path for both fixtures and cleanup, matching .NET file resolution.
+const temporary = fs.realpathSync.native(fs.mkdtempSync(path.join(fs.realpathSync.native(os.tmpdir()), 'craftroster-opencode-config-')));
 const shell = fs.readFileSync(path.join(root, 'scripts/install.sh'), 'utf8').replace(/\r\n/g, '\n');
 let passed = 0, skipped = 0, sequence = 0;
 function test(name, run) { run(); passed++; console.log(`PASS ${name}`); }
@@ -236,7 +238,7 @@ try {
   if(options.bash)bashTests(options.bash);
   console.log(`OpenCode config tests passed: ${passed}; skipped: ${skipped}`);
 } finally {
-  const relative=path.relative(fs.realpathSync(os.tmpdir()),temporary);
+  const relative=path.relative(fs.realpathSync.native(os.tmpdir()),temporary);
   assert(relative&&!relative.startsWith('..')&&!path.isAbsolute(relative));
   fs.rmSync(temporary,{recursive:true,force:true});
 }
