@@ -41,7 +41,7 @@ CraftRoster 是 catalog 與 distribution layer，**不是**另一套 Agent runti
 
 ## 快速開始
 
-目前版本為 **1.2.0**；發行變更見 [CHANGELOG](CHANGELOG.md)，正式版本以 [package.json](package.json) 為準。
+目前版本為 **1.2.1**；發行變更見 [CHANGELOG](CHANGELOG.md)，正式版本以 [package.json](package.json) 為準。
 
 ### 互動式安裝
 
@@ -574,6 +574,7 @@ npm run test:skill-evals
 npm run test:skill-routing
 npm run test:skill-originality
 npm run test:skill-sources
+npm run test:agent-references
 npm run test:package
 
 # Installer smoke tests
@@ -592,6 +593,8 @@ npm run verify:skill-sources:remote
 npm run audit:agent-originality
 npm run audit:skill-originality
 ```
+
+Agent 來源驗證支援最多 5 次、限於 `https://api.github.com` 同一來源的 HTTPS 轉址；上游搬移後仍核對原本固定的 commit、tree、檔案與授權。
 
 Skill routing corpus 可以先離線驗證；使用目前 Codex 登入與模型額度時，可執行選用回報實驗：
 

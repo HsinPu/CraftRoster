@@ -42,6 +42,7 @@ npm run test:release-baseline
 npm run test:skill-review
 npm run test:skill-originality
 npm run test:skill-sources
+npm run test:agent-references
 npm run test:skill-contracts
 npm run test:package
 ```

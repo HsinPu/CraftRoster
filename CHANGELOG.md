@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.1 — 2026-10-30
+
+Patch release: repair remote Agent reference verification when GitHub redirects a moved repository, preserving pinned source checks.
+
+- Follow at most five HTTPS redirects within `api.github.com`; reject loops, invalid destinations and cross-origin credential forwarding.
+- Continue verifying the original commit, tree, reference files and license after redirects; keep upstream source pins unchanged.
+- Add offline request and provenance regression tests to the Node 22/24 CI matrix and package inventory.
+
 ## 1.2.0 — 2026-10-29
 
 Minor release: add an independently installable cross-platform interface improvement workflow and implementation Agent, preserving existing installer commands and web capabilities.

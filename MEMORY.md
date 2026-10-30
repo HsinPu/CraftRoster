@@ -16,6 +16,7 @@ Record verified, durable project decisions and lessons here. Current catalog and
 - Use a supported Node runtime before interpreting test failures; sandbox child-process errors such as `EPERM` can prevent a test from executing at all. Distinguish environment failures, actual failures, unexecuted cases and successful checks.
 - Some package and installation tests create temporary files while running. Wait for their processes and cleanup to finish before staging; inspect the staged diff to exclude test sentinels and Python caches.
 - Purpose and category changes can leave stale counts or names in README CLI tables and command comments outside generated blocks. Check those separately, and give linked HTML `details` sections explicit anchors rather than relying on their visible `summary` text.
+- GitHub can return HTTP 301 for a moved public repository even when its pinned commit and tree remain intact. `supatest-ai/awesome-claude-code-sub-agents` moved to `tryalan-ai` with unchanged pinned evidence; the Agent verifier must follow bounded HTTPS redirects within `api.github.com`, including `/repositories/<id>/git/...`, and retain all provenance checks. `test:agent-references` covers redirects, failures and rejected provenance without network access.
 
 ## Interface-quality implementation — 2026-10-29
 

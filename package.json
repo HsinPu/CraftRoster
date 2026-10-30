@@ -1,6 +1,6 @@
 {
   "name": "craftroster",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Cross-platform AI agent, skill, and workflow catalog with no-Node installers and a query CLI",
   "license": "Apache-2.0",
   "author": "HsinPu",
@@ -47,6 +47,7 @@
     "test:skill-routing": "node tests/skill-routing-evals.test.js",
     "test:skill-originality": "node tests/skill-originality.test.js",
     "test:skill-sources": "node tests/skill-source-revisions.test.js",
+    "test:agent-references": "node tests/agent-reference-requests.test.js",
     "test:package": "node tests/package-inventory.test.js",
     "smoke:install:powershell": "set \"PSModuleAnalysisCachePath=NUL\"&& powershell -NoProfile -ExecutionPolicy Bypass -File scripts/smoke-install.ps1",
     "smoke:install:bash": "bash scripts/smoke-install.sh",
@@ -212,7 +213,8 @@
     "tests/skill-mcp-fixtures.test.js",
     "tests/svg-series.test.js",
     "CHANGELOG.md",
-    "tests/interface-quality.test.js"
+    "tests/interface-quality.test.js",
+    "tests/agent-reference-requests.test.js"
   ],
   "engines": {
     "node": ">=22"

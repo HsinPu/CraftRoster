@@ -11,6 +11,9 @@ const shaPattern = /^[0-9a-f]{40}$/;
 const repoPattern = /^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/;
 const relativePathPattern = /^[A-Za-z0-9._-]+(?:\/[A-Za-z0-9._-]+)*$/;
 const supportedLicenses = new Set(['MIT', 'MIT-0', 'Apache-2.0']);
+const githubApiOrigin = 'https://api.github.com';
+const maximumRedirects = 5;
+const redirectStatuses = new Set([301, 302, 303, 307, 308]);
 
 function usage() {
   console.log(`Usage: node scripts/verify-agent-references.js [--remote]
@@ -116,7 +119,19 @@ function loadReferenceState() {
   return { catalog, manifest, pathsByRepo };
 }
 
-function githubJson(apiPath) {
+function githubJson(apiPath, redirectsRemaining = maximumRedirects, visited = new Set()) {
+  let url;
+  try {
+    url = new URL(apiPath, `${githubApiOrigin}/`);
+  } catch {
+    return Promise.reject(new Error('GitHub API redirect has an invalid Location'));
+  }
+  if (url.origin !== githubApiOrigin || url.username || url.password || url.hash) {
+    return Promise.reject(new Error('GitHub API redirect must stay on https://api.github.com without credentials or fragments'));
+  }
+  if (visited.has(url.href)) return Promise.reject(new Error('GitHub API redirect loop detected'));
+  visited.add(url.href);
+
   const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
   const headers = {
     Accept: 'application/vnd.github+json',
@@ -126,9 +141,32 @@ function githubJson(apiPath) {
   if (token) headers.Authorization = `Bearer ${token}`;
 
   return new Promise((resolve, reject) => {
-    const request = https.get({ hostname: 'api.github.com', path: apiPath, headers }, (response) => {
+    const request = https.get({ hostname: url.hostname, path: `${url.pathname}${url.search}`, headers }, (response) => {
+      response.on('error', reject);
+      if (redirectStatuses.has(response.statusCode)) {
+        response.resume();
+        if (redirectsRemaining === 0) {
+          reject(new Error(`GitHub API exceeded ${maximumRedirects} redirects`));
+          return;
+        }
+        const location = response.headers.location;
+        if (typeof location !== 'string' || !location.trim()) {
+          reject(new Error('GitHub API redirect is missing Location'));
+          return;
+        }
+        let destination;
+        try {
+          destination = new URL(location, url);
+        } catch {
+          reject(new Error('GitHub API redirect has an invalid Location'));
+          return;
+        }
+        resolve(githubJson(destination.href, redirectsRemaining - 1, visited));
+        return;
+      }
       let body = '';
       response.setEncoding('utf8');
+      response.on('aborted', () => reject(new Error(`GitHub API response was aborted: ${apiPath}`)));
       response.on('data', (chunk) => { body += chunk; });
       response.on('end', () => {
         if (response.statusCode < 200 || response.statusCode >= 300) {
@@ -205,7 +243,11 @@ async function main() {
   }
 }
 
-main().catch((error) => {
-  console.error(`Agent reference verification failed: ${error.message}`);
-  process.exitCode = 1;
-});
+if (require.main === module) {
+  main().catch((error) => {
+    console.error(`Agent reference verification failed: ${error.message}`);
+    process.exitCode = 1;
+  });
+}
+
+module.exports = { githubJson, verifyRemote };
