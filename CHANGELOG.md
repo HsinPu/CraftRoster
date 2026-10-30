@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.2 — 2026-10-30
+
+Patch release: unblock OpenCode auto-delegation installation with JSONC or coexisting JSON/JSONC configuration files.
+
+- Update the higher-priority JSONC file when present, inherit effective instructions only when the target has no array, and preserve comments, trailing commas, BOMs and numeric literals.
+- Retain the untouched configuration files and recheck every input snapshot before package writes and configuration replacement; preserve backups and strict ownership metadata parsing.
+- Add parser, planning, race and real interactive installation regressions across PowerShell 5.1/7 and Bash, with corresponding CI gates.
+
 ## 1.2.1 — 2026-10-30
 
 Patch release: repair remote Agent reference verification when GitHub redirects a moved repository, preserving pinned source checks.

@@ -1928,6 +1928,7 @@ plan_codex_auto_delegation() {
   local managed_end_pattern managed_label is_legacy_migration=0
   config_path="${CODEX_HOME:-$HOME/.codex}/config.toml"
   AUTO_SIBLING_PATH=""
+  AUTO_INPUT_PATHS=() AUTO_INPUT_FILES=()
   if [[ -e "$config_path" || -L "$config_path" ]]; then
     if [[ -L "$config_path" || ! -f "$config_path" ]]; then
       log_error "Refusing to replace a non-regular or linked Codex config: $config_path"
@@ -2045,20 +2046,22 @@ plan_codex_auto_delegation() {
 
 merge_opencode_config_with_python() {
   local python_command="$1" config_path="$2" instruction_path="$3" output_path="$4"
+  shift 4
   local -a python_runner
   if [[ "$python_command" == "py" ]]; then
     python_runner=("$python_command" -3)
   else
     python_runner=("$python_command")
   fi
-  "${python_runner[@]}" - "$config_path" "$instruction_path" "$output_path" <<'PY'
+  "${python_runner[@]}" - "$config_path" "$instruction_path" "$output_path" "$@" <<'PY'
 import codecs
 import json
 import shutil
 import sys
 from decimal import Decimal
 
-config_path, instruction_path, output_path = sys.argv[1:]
+config_path, instruction_path, output_path = sys.argv[1:4]
+fallback_paths = sys.argv[4:]
 
 def reject_constant(value):
     raise ValueError(f"non-standard JSON constant: {value}")
@@ -2071,6 +2074,45 @@ def unique_object(pairs):
         result[key] = value
     return result
 
+def mask_jsonc(text, strip_trailing=True):
+    chars = list(text)
+    i = 0
+    while i < len(text):
+        if text[i] == '"':
+            i += 1
+            while i < len(text):
+                if text[i] == '\\': i += 2
+                elif text[i] == '"':
+                    i += 1
+                    break
+                else: i += 1
+        elif text[i:i+2] == '//':
+            while i < len(text) and text[i] not in '\r\n':
+                chars[i] = ' '
+                i += 1
+        elif text[i:i+2] == '/*':
+            end = text.find('*/', i+2)
+            if end < 0: raise ValueError('unterminated JSONC comment')
+            while i < end+2:
+                if text[i] not in '\r\n': chars[i] = ' '
+                i += 1
+        else: i += 1
+    masked = ''.join(chars)
+    if not strip_trailing: return masked
+    i = 0
+    while i < len(masked):
+        if masked[i] == '"': _, i = json.JSONDecoder().raw_decode(masked, i)
+        else:
+            if masked[i] == ',':
+                j = i+1
+                while j < len(masked) and masked[j] in ' \t\r\n': j += 1
+                if j < len(masked) and masked[j] in ']}':
+                    previous = i-1
+                    while previous >= 0 and masked[previous] in ' \t\r\n': previous -= 1
+                    if previous >= 0 and masked[previous] not in '[{,': chars[i] = ' '
+            i += 1
+    return ''.join(chars)
+
 try:
     with open(config_path, "rb") as handle:
         raw = handle.read()
@@ -2081,9 +2123,11 @@ try:
         parse_constant=reject_constant,
         object_pairs_hook=unique_object,
     )
+    original_text = text
+    text = mask_jsonc(text)
     config = decoder.decode(text)
 except Exception as exc:
-    print(f"OpenCode config is not strict JSON: {exc}", file=sys.stderr)
+    print(f"OpenCode config is not valid JSON/JSONC: {exc}", file=sys.stderr)
     raise SystemExit(4)
 
 if not isinstance(config, dict):
@@ -2098,8 +2142,22 @@ if not isinstance(instructions, list) or any(not isinstance(item, str) for item 
     print("OpenCode instructions must be an array of strings.", file=sys.stderr)
     raise SystemExit(4)
 
+try:
+    inherited = []
+    for fallback in fallback_paths:
+        with open(fallback, 'rb') as handle: value = decoder.decode(mask_jsonc(handle.read().decode('utf-8-sig')))
+        if not isinstance(value, dict): raise ValueError('fallback config must be an object')
+        if any(key.casefold() == 'instructions' and key != 'instructions' for key in value): raise ValueError('case-conflicting Instructions key')
+        if 'instructions' in value:
+            if not isinstance(value['instructions'], list) or any(not isinstance(item, str) for item in value['instructions']): raise ValueError('instructions must be an array of strings')
+            inherited = value['instructions']
+    if 'instructions' not in config: instructions = inherited
+except Exception as exc:
+    print(str(exc), file=sys.stderr)
+    raise SystemExit(4)
+
 normalize = lambda value: value.replace("\\", "/")
-if any(normalize(item) == normalize(instruction_path) for item in instructions):
+if "instructions" in config and any(normalize(item) == normalize(instruction_path) for item in instructions):
     shutil.copyfile(config_path, output_path)
     raise SystemExit(3)
 
@@ -2150,14 +2208,37 @@ except Exception as exc:
 newline = "\r\n" if "\r\n" in text else "\n"
 encoded_path = json.dumps(instruction_path, ensure_ascii=False)
 if instructions_array_end is not None:
-    separator = "," if instructions else ""
-    insertion = separator + newline + "    " + encoded_path + newline + "  "
-    new_text = text[:instructions_array_end] + insertion + text[instructions_array_end:]
+    # Walk root properties and instruction strings to locate the last token.
+    scan = skip_whitespace(root_open + 1)
+    last_end = None
+    while text[scan] != '}':
+        key, key_end = decoder.raw_decode(text, scan)
+        value_start = skip_whitespace(skip_whitespace(key_end) + 1)
+        _, value_end = decoder.raw_decode(text, value_start)
+        if key == 'instructions':
+            cursor = skip_whitespace(value_start + 1)
+            while cursor < instructions_array_end:
+                _, last_end = decoder.raw_decode(text, cursor)
+                cursor = skip_whitespace(last_end)
+                if text[cursor] != ',': break
+                cursor = skip_whitespace(cursor + 1)
+            break
+        scan = skip_whitespace(value_end)
+        if text[scan] == ',': scan = skip_whitespace(scan + 1)
+    close = instructions_array_end
+    values = [instruction_path]
 else:
-    insertion_index = last_value_end if has_properties else root_open + 1
-    separator = "," if has_properties else ""
-    insertion = separator + newline + '  "instructions": [' + newline + "    " + encoded_path + newline + "  ]"
-    new_text = text[:insertion_index] + insertion + text[insertion_index:]
+    close = root_close
+    last_end = last_value_end
+    values = list(instructions) if any(normalize(item) == normalize(instruction_path) for item in instructions) else list(instructions) + [instruction_path]
+# The masked comma is blanked only for trailing commas, comments included.
+trailing = last_end is not None and mask_jsonc(original_text[last_end:close], False).strip().startswith(',')
+rendered = (',' + newline + '    ').join(json.dumps(value, ensure_ascii=False) for value in values)
+entry = rendered if instructions_array_end is not None else '"instructions": [' + newline + '    ' + rendered + newline + '  ]'
+insertion = newline + '    ' + entry + (',' if trailing else '') + newline + '  '
+new_text = original_text[:close] + insertion + original_text[close:]
+if last_end is not None and not trailing:
+    new_text = new_text[:last_end] + ',' + new_text[last_end:]
 
 with open(output_path, "wb") as handle:
     if has_bom:
@@ -2168,11 +2249,12 @@ PY
 
 merge_opencode_config_with_node() {
   local node_command="$1" config_path="$2" instruction_path="$3" output_path="$4"
-  "$node_command" - "$config_path" "$instruction_path" "$output_path" <<'JS'
+  shift 4
+  "$node_command" - "$config_path" "$instruction_path" "$output_path" "$@" <<'JS'
 const fs = require("fs");
 const { TextDecoder } = require("util");
 
-const [configPath, instructionPath, outputPath] = process.argv.slice(2);
+const [configPath, instructionPath, outputPath, ...fallbackPaths] = process.argv.slice(2);
 const raw = fs.readFileSync(configPath);
 const hasBom = raw.length >= 3 && raw[0] === 0xef && raw[1] === 0xbb && raw[2] === 0xbf;
 let text;
@@ -2183,6 +2265,30 @@ try {
   process.exit(4);
 }
 
+function maskJsonc(source, stripTrailing = true) {
+  const chars = source.split('');
+  for (let i = 0; i < source.length;) {
+    if (source[i] === '"') {
+      i++;
+      while (i < source.length) { if (source[i] === '\\') i += 2; else if (source[i++] === '"') break; }
+    } else if (source.slice(i, i+2) === '//') {
+      while (i < source.length && !'\r\n'.includes(source[i])) chars[i++] = ' ';
+    } else if (source.slice(i, i+2) === '/*') {
+      const end = source.indexOf('*/', i+2); if (end < 0) throw new Error('unterminated JSONC comment');
+      while (i < end+2) { if (!'\r\n'.includes(source[i])) chars[i] = ' '; i++; }
+    } else i++;
+  }
+  const masked = chars.join('');
+  if (!stripTrailing) return masked;
+  for (let i=0; i<masked.length; i++) {
+    if (masked[i] === '"') { i++; while (i<masked.length) { if (masked[i] === '\\') i+=2; else if (masked[i++] === '"') break; } i--; }
+    else if (masked[i] === ',') { let j=i+1; while (j<masked.length && /[ \t\r\n]/.test(masked[j])) j++; if (j<masked.length && ']}'.includes(masked[j])) { let previous=i-1; while (previous>=0 && /[ \t\r\n]/.test(masked[previous])) previous--; if (previous>=0 && !'[{,'.includes(masked[previous])) chars[i]=' '; } }
+  }
+  return chars.join('');
+}
+const originalText = text;
+try { text = maskJsonc(text); } catch (error) { console.error(error.message); process.exit(4); }
+
 let index = 0;
 const layout = {
   rootOpen: -1,
@@ -2190,6 +2296,7 @@ const layout = {
   hasProperties: false,
   lastValueEnd: -1,
   instructionsArrayEnd: -1,
+  instructionsLastEnd: -1,
 };
 
 function fail(message) {
@@ -2242,13 +2349,14 @@ function parseLiteral(literal, type) {
 function parseArray(depth) {
   const start = index++;
   let count = 0;
+  let lastEnd = -1;
   skipWhitespace();
-  if (text[index] === "]") return { start, end: ++index, type: "array", count };
+  if (text[index] === "]") return { start, end: ++index, type: "array", count, lastEnd };
   while (true) {
-    parseValue(depth + 1);
+    lastEnd = parseValue(depth + 1).end;
     count += 1;
     skipWhitespace();
-    if (text[index] === "]") return { start, end: ++index, type: "array", count };
+    if (text[index] === "]") return { start, end: ++index, type: "array", count, lastEnd };
     if (text[index] !== ",") fail("expected a comma in JSON array");
     index += 1;
     skipWhitespace();
@@ -2286,6 +2394,7 @@ function parseObject(depth) {
       if (key.value === "instructions") {
         if (value.type !== "array") fail("instructions is not an array");
         layout.instructionsArrayEnd = value.end - 1;
+        layout.instructionsLastEnd = value.lastEnd;
       }
     }
     skipWhitespace();
@@ -2321,34 +2430,44 @@ try {
   if (root.type !== "object") fail("OpenCode config root is not an object");
   config = JSON.parse(text);
 } catch (error) {
-  console.error(`OpenCode config is not strict JSON: ${error.message}`);
+  console.error(`OpenCode config is not valid JSON/JSONC: ${error.message}`);
   process.exit(4);
 }
 
-const instructions = config.instructions ?? [];
+let inherited = [];
+try {
+  for (const fallback of fallbackPaths) {
+    const savedText = text, savedIndex = index, savedLayout = {...layout};
+    text = maskJsonc(new TextDecoder('utf-8', {fatal:true}).decode(fs.readFileSync(fallback))); index=0;
+    skipWhitespace(); const root = parseValue(0); skipWhitespace();
+    if (root.type !== 'object' || index !== text.length) fail('invalid fallback config');
+    const value=JSON.parse(text);
+    if (Object.hasOwn(value,'instructions')) { if (!Array.isArray(value.instructions) || value.instructions.some(item=>typeof item!=='string')) fail('instructions must be an array of strings'); inherited=value.instructions; }
+    text=savedText; index=savedIndex; Object.assign(layout,savedLayout);
+  }
+} catch(error) { console.error(error.message); process.exit(4); }
+const instructions = Object.hasOwn(config,'instructions') ? config.instructions : inherited;
 if (!Array.isArray(instructions) || instructions.some((item) => typeof item !== "string")) {
   console.error("OpenCode instructions must be an array of strings.");
   process.exit(4);
 }
 const normalize = (value) => value.replaceAll("\\", "/");
-if (instructions.some((item) => normalize(item) === normalize(instructionPath))) {
+if (Object.hasOwn(config, "instructions") && instructions.some((item) => normalize(item) === normalize(instructionPath))) {
   fs.copyFileSync(configPath, outputPath);
   process.exit(3);
 }
 
-const newline = text.includes("\r\n") ? "\r\n" : "\n";
-const encodedPath = JSON.stringify(instructionPath);
-let newText;
-if (layout.instructionsArrayEnd >= 0) {
-  const separator = instructions.length > 0 ? "," : "";
-  const insertion = separator + newline + "    " + encodedPath + newline + "  ";
-  newText = text.slice(0, layout.instructionsArrayEnd) + insertion + text.slice(layout.instructionsArrayEnd);
-} else {
-  const insertionIndex = layout.hasProperties ? layout.lastValueEnd : layout.rootOpen + 1;
-  const separator = layout.hasProperties ? "," : "";
-  const insertion = separator + newline + '  "instructions": [' + newline + "    " + encodedPath + newline + "  ]";
-  newText = text.slice(0, insertionIndex) + insertion + text.slice(insertionIndex);
-}
+const newline = originalText.includes('\r\n') ? '\r\n' : '\n';
+const close = layout.instructionsArrayEnd >= 0 ? layout.instructionsArrayEnd : layout.rootClose;
+const lastEnd = layout.instructionsArrayEnd >= 0 ? layout.instructionsLastEnd : layout.lastValueEnd;
+const trailing = lastEnd >= 0 && maskJsonc(originalText.slice(lastEnd,close),false).trimStart().startsWith(',');
+const values = layout.instructionsArrayEnd >= 0 ? [instructionPath] : (instructions.some(item=>normalize(item)===normalize(instructionPath)) ? [...instructions] : [...instructions,instructionPath]);
+const rendered = values.map(value=>JSON.stringify(value)).join(',' + newline + '    ');
+const entry = layout.instructionsArrayEnd >= 0 ? rendered : '"instructions": [' + newline + '    ' + rendered + newline + '  ]';
+const insertion = newline + '    ' + entry + (trailing ? ',' : '') + newline + '  ';
+let newText = originalText.slice(0,close) + insertion + originalText.slice(close);
+if (lastEnd >= 0 && !trailing) newText = newText.slice(0,lastEnd) + ',' + newText.slice(lastEnd);
+
 const output = Buffer.from(newText, "utf8");
 fs.writeFileSync(outputPath, hasBom ? Buffer.concat([Buffer.from([0xef, 0xbb, 0xbf]), output]) : output);
 JS
@@ -2363,43 +2482,57 @@ plan_opencode_auto_delegation() {
   fi
   json_path="$config_root/opencode.json"
   jsonc_path="$config_root/opencode.jsonc"
-  AUTO_SIBLING_PATH="$jsonc_path"
-  for candidate in "$json_path" "$jsonc_path"; do
+  AUTO_INPUT_PATHS=() AUTO_INPUT_FILES=()
+  local candidate target_path input_file target_snapshot="" input_number=0
+  local -a fallback_paths=() candidates=()
+  if [[ "${config_root%/}" == "${XDG_CONFIG_HOME:-$HOME/.config}/opencode" ]]; then
+    candidates+=("$config_root/config.json")
+  fi
+  candidates+=("$json_path" "$jsonc_path")
+  target_path="$json_path"
+  [[ ! -f "$jsonc_path" ]] || target_path="$jsonc_path"
+  for candidate in "${candidates[@]}"; do
+    input_file=""
     if [[ -e "$candidate" || -L "$candidate" ]]; then
       if [[ -L "$candidate" || ! -f "$candidate" ]]; then
-        log_error "Refusing to replace a non-regular or linked OpenCode config: $candidate"
-        exit 1
+        log_error "Refusing to replace a non-regular or linked OpenCode config: $candidate"; exit 1
       fi
+      input_file="$AUTO_PLAN_DIR/opencode-input-$input_number"
+      cp -p "$candidate" "$input_file"
+      if [[ "$candidate" != "$target_path" ]]; then fallback_paths+=("$input_file"); fi
     fi
+    if [[ "$candidate" == "$jsonc_path" && ( ( -n "$input_file" && "$target_path" != "$jsonc_path" ) || ( -z "$input_file" && "$target_path" == "$jsonc_path" ) ) ]]; then
+      log_error "OpenCode config selection changed during installation planning: $candidate"; exit 1
+    fi
+    if [[ "$candidate" == "$target_path" ]]; then target_snapshot="$input_file"; fi
+    if [[ "$candidate" != "$target_path" ]]; then
+      AUTO_INPUT_PATHS+=("$candidate") AUTO_INPUT_FILES+=("$input_file")
+    fi
+    input_number=$((input_number + 1))
   done
-  if [[ -f "$json_path" && -f "$jsonc_path" ]]; then
-    log_error "Refusing to edit OpenCode config because both opencode.json and opencode.jsonc exist in $config_root. Add the instruction path manually."
-    exit 1
-  fi
-  if [[ -f "$jsonc_path" ]]; then
-    log_error "Refusing to rewrite JSONC config $jsonc_path. Add '$instruction_path' to its instructions array manually."
-    exit 1
-  fi
-
+  AUTO_SIBLING_PATH=""
   AUTO_RUNTIME="OpenCode"
-  AUTO_CONFIG_PATH="$json_path"
+  AUTO_CONFIG_PATH="$target_path"
   AUTO_NEW_TEXT="$AUTO_PLAN_DIR/opencode.json"
   AUTO_ORIGINAL_FILE=""
   AUTO_EXISTING=0
-  if [[ ! -f "$json_path" ]]; then
+  if [[ -z "$target_snapshot" && ${#fallback_paths[@]} -eq 0 ]]; then
     escaped_path="$(printf '%s' "$instruction_path" | sed 's/\\/\\\\/g; s/"/\\"/g')"
     printf '{\n  "$schema": "https://opencode.ai/config.json",\n  "instructions": [\n    "%s"\n  ]\n}\n' "$escaped_path" > "$AUTO_NEW_TEXT"
     AUTO_ACTION="install"
     return
   fi
-
-  AUTO_EXISTING=1
   AUTO_ORIGINAL_FILE="$AUTO_PLAN_DIR/opencode-original.json"
-  cp -p "$json_path" "$AUTO_ORIGINAL_FILE"
+  if [[ -n "$target_snapshot" ]]; then
+    AUTO_EXISTING=1
+    cp -p "$target_snapshot" "$AUTO_ORIGINAL_FILE"
+  else
+    printf '{}\n' > "$AUTO_ORIGINAL_FILE"
+  fi
   escaped_path="$(printf '%s' "$instruction_path" | sed 's/\\/\\\\/g; s/"/\\"/g')"
   minimal_path="$AUTO_PLAN_DIR/opencode-minimal.json"
   printf '{\n  "$schema": "https://opencode.ai/config.json",\n  "instructions": [\n    "%s"\n  ]\n}\n' "$escaped_path" > "$minimal_path"
-  if cmp -s "$AUTO_ORIGINAL_FILE" "$minimal_path"; then
+  if [[ ${#fallback_paths[@]} -eq 0 ]] && cmp -s "$AUTO_ORIGINAL_FILE" "$minimal_path"; then
     cp "$AUTO_ORIGINAL_FILE" "$AUTO_NEW_TEXT"
     AUTO_ACTION="unchanged"
     return
@@ -2416,22 +2549,22 @@ plan_opencode_auto_delegation() {
     parser_command="node"; parser_kind="node"
   fi
   if [[ -z "$parser_command" ]]; then
-    log_error "Refusing to rewrite existing OpenCode config $json_path without Python 3 or Node.js for strict JSON validation. Add '$instruction_path' to its instructions array manually."
+    log_error "Refusing to rewrite existing OpenCode config $target_path without Python 3 or Node.js for JSON/JSONC validation. Add '$instruction_path' to its instructions array manually."
     exit 1
   fi
 
   set +e
   if [[ "$parser_kind" == "python" ]]; then
-    merge_opencode_config_with_python "$parser_command" "$AUTO_ORIGINAL_FILE" "$instruction_path" "$AUTO_NEW_TEXT"
+    merge_opencode_config_with_python "$parser_command" "$AUTO_ORIGINAL_FILE" "$instruction_path" "$AUTO_NEW_TEXT" "${fallback_paths[@]}"
   else
-    merge_opencode_config_with_node "$parser_command" "$AUTO_ORIGINAL_FILE" "$instruction_path" "$AUTO_NEW_TEXT"
+    merge_opencode_config_with_node "$parser_command" "$AUTO_ORIGINAL_FILE" "$instruction_path" "$AUTO_NEW_TEXT" "${fallback_paths[@]}"
   fi
   status=$?
   set -e
   case "$status" in
-    0) AUTO_ACTION="update" ;;
+    0) if [[ "$AUTO_EXISTING" -eq 1 ]]; then AUTO_ACTION="update"; else AUTO_ACTION="install"; fi ;;
     3) AUTO_ACTION="unchanged" ;;
-    *) log_error "Refusing to rewrite OpenCode config $json_path. Add '$instruction_path' to its instructions array manually."; exit 1 ;;
+    *) log_error "Refusing to rewrite OpenCode config $target_path. Add '$instruction_path' to its instructions array manually."; exit 1 ;;
   esac
 }
 
@@ -2466,8 +2599,23 @@ restore_captured_config() {
   return 1
 }
 
+assert_auto_config_inputs() {
+  local index input snapshot
+  for ((index=0; index<${#AUTO_INPUT_PATHS[@]}; index++)); do
+    input="${AUTO_INPUT_PATHS[index]}" snapshot="${AUTO_INPUT_FILES[index]}"
+    if [[ -n "$snapshot" ]]; then
+      if [[ -L "$input" || ! -f "$input" ]] || ! cmp -s "$input" "$snapshot"; then
+        log_error "OpenCode config input changed after installation planning: $input"; exit 1
+      fi
+    elif [[ -e "$input" || -L "$input" ]]; then
+      log_error "OpenCode config input appeared after installation planning: $input"; exit 1
+    fi
+  done
+}
+
 apply_auto_delegation_plan() {
   local parent staged backup
+  assert_auto_config_inputs
   if [[ -n "$AUTO_SIBLING_PATH" && ( -e "$AUTO_SIBLING_PATH" || -L "$AUTO_SIBLING_PATH" ) ]]; then
     log_error "Refusing to apply OpenCode auto-delegation because a sibling config appeared: $AUTO_SIBLING_PATH"
     exit 1
@@ -2539,6 +2687,7 @@ apply_auto_delegation_plan() {
     log_error "Refusing to apply OpenCode auto-delegation because a sibling config appeared: $AUTO_SIBLING_PATH"
     exit 1
   fi
+  assert_auto_config_inputs
   if ! move_exact_no_clobber "$staged" "$AUTO_CONFIG_PATH" "discard-transaction"; then
     log_error "Could not atomically install and verify the exact config destination: $AUTO_CONFIG_PATH"
     exit 1
@@ -3386,6 +3535,16 @@ if [[ "$TYPE" == "agent" || "$TYPE" == "bundle" ]]; then
   if [[ "$INSTALL_COMPANION_SKILL" -eq 1 ]]; then
     logical_skill_count="${#EXPANDED_SKILL_SOURCES[@]}"
     skill_file_count="${#SKILL_JOB_SOURCES[@]}"
+  fi
+  if [[ "$ENABLE_AUTO_DELEGATION" -eq 1 ]]; then
+    assert_auto_config_inputs
+    if [[ "$AUTO_EXISTING" -eq 1 ]]; then
+      if [[ -L "$AUTO_CONFIG_PATH" || ! -f "$AUTO_CONFIG_PATH" ]] || ! cmp -s "$AUTO_CONFIG_PATH" "$AUTO_ORIGINAL_FILE"; then
+        log_error "Auto-delegation configuration changed after planning: $AUTO_CONFIG_PATH"; exit 1
+      fi
+    elif [[ -e "$AUTO_CONFIG_PATH" || -L "$AUTO_CONFIG_PATH" ]]; then
+      log_error "Auto-delegation configuration appeared after planning: $AUTO_CONFIG_PATH"; exit 1
+    fi
   fi
   log_info "Complete preflight passed: $logical_agent_count unique Agent(s), $logical_skill_count unique Skill(s); ${#AGENT_JOB_SOURCES[@]} Agent file destination(s), $skill_file_count Skill package destination(s)."
   if [[ "$DRY_RUN" -eq 0 ]]; then

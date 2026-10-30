@@ -41,7 +41,7 @@ CraftRoster 是 catalog 與 distribution layer，**不是**另一套 Agent runti
 
 ## 快速開始
 
-目前版本為 **1.2.1**；發行變更見 [CHANGELOG](CHANGELOG.md)，正式版本以 [package.json](package.json) 為準。
+目前版本為 **1.2.2**；發行變更見 [CHANGELOG](CHANGELOG.md)，正式版本以 [package.json](package.json) 為準。
 
 ### 互動式安裝
 
@@ -353,6 +353,8 @@ Ownership metadata：
 
 `-EnableAutoDelegation`／`--enable-auto-delegation` 只適用於全域 `codex` 或 `opencode` Agent target。安裝器只管理自己的 marker／instruction entry；若偵測到使用者自行管理且衝突的設定，會停止並要求手動合併，即使使用 Force 也不會覆蓋。修改既有 config 前會建立備份。
 
+OpenCode 允許 `opencode.json` 與 `opencode.jsonc` 並存；安裝器優先更新既有 JSONC，支援註解與尾逗號，保留其他設定及原有 instructions。若較高優先檔尚未設定 instructions，會先帶入有效的既有陣列，再加入委派指引。選單將「啟用主動委派」選 `n` 時，只安裝 Skills／子代理，不修改 OpenCode 設定。
+
 ## Catalog CLI
 
 CLI 可離線搜尋 catalog、查看相近 Skill routing，並核對帶有有效 CraftRoster ownership sidecar 的已安裝元件。CLI 需要 Node.js 22+；目前公開 npm registry 尚未發布此 package，請從 repository checkout 執行。
@@ -575,6 +577,7 @@ npm run test:skill-routing
 npm run test:skill-originality
 npm run test:skill-sources
 npm run test:agent-references
+npm run test:opencode-config
 npm run test:package
 
 # Installer smoke tests

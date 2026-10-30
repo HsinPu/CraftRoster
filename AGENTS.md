@@ -43,4 +43,5 @@
 - Run `npm run validate` after changing Agents, Skills, adapters, catalogs, installers, or README catalog metadata.
 - Run relevant focused checks for changed executable behavior. A case definition or a structural pass does not establish actual runtime or visual success.
 - Keep remote provenance pinned when upstream repositories move. Agent API redirects may follow only HTTPS on `api.github.com`, with bounded hops; redirects do not waive commit, tree, path or license verification.
+- OpenCode configuration accepts JSONC and coexisting JSON/JSONC files; preserve effective instruction inheritance and all input snapshots. Ownership metadata remains strict JSON and must not inherit configuration parsing relaxations.
 - Inspect `git diff --check` and the final Git status before handing off changes.

@@ -383,6 +383,61 @@ function commonCases(selectedRuntime) {
     assert.deepEqual(config.instructions.map(item => item.replace(/\\/g, '/')), [shellPath(path.join(configRoot, 'skills/subagent-architecture/references/global-auto-delegation.md'), selectedRuntime).replace(/\\/g, '/')]);
   });
 
+  test(selectedRuntime, 'OpenCode all mode accepts dual JSON JSONC configs and preserves overrides', () => {
+    const current = fixture(selectedRuntime);
+    const configRoot = path.join(current.home, '.config/opencode');
+    const jsonPath = path.join(configRoot, 'opencode.json');
+    const jsoncPath = path.join(configRoot, 'opencode.jsonc');
+    const lower = '{"instructions":["lower.md"],"model":"fixture/lower"}\n';
+    const upper = '// Keep user comments\n{\n  "model": "fixture/upper",\n  "instructions": ["own.md",], // Keep this note\n  "large": 900719925474099312345,\n}\n';
+    write(jsonPath, lower);
+    write(jsoncPath, upper);
+    successful(invoke(current, '5\n1\n1\ny\ny\n', { dir: undefined }));
+    installedAgents(current, path.join(configRoot, 'agents'), agentNames, profiles[4], 'opencode');
+    installedSkills(current, path.join(configRoot, 'skills'), skillNames, 'opencode');
+    assert.equal(fs.readFileSync(jsonPath, 'utf8'), lower);
+    const updated = fs.readFileSync(jsoncPath, 'utf8');
+    for (const preserved of ['// Keep user comments', '// Keep this note', '900719925474099312345', '"fixture/upper"', '"own.md"'])
+      assert(updated.includes(preserved), `Lost original JSONC content: ${preserved}`);
+    assert(!updated.includes('lower.md'), 'Overridden lower-priority instructions were revived');
+    assert(updated.includes('subagent-architecture/references/global-auto-delegation.md'));
+    const backups = fs.readdirSync(configRoot).filter(name => name.startsWith('opencode.jsonc.craftroster-backup-'));
+    assert.equal(backups.length, 1);
+    assert.equal(fs.readFileSync(path.join(configRoot, backups[0]), 'utf8'), upper);
+    successful(invoke(current, '5\n1\n1\ny\ny\n', { dir: undefined }));
+    assert.equal(fs.readFileSync(jsoncPath, 'utf8'), updated);
+    assert.equal(fs.readdirSync(configRoot).filter(name => name.startsWith('opencode.jsonc.craftroster-backup-')).length, 1);
+  });
+
+  test(selectedRuntime, 'OpenCode JSONC inherits existing instructions before adding delegation', () => {
+    const current = fixture(selectedRuntime);
+    const configRoot = path.join(current.home, '.config/opencode');
+    const lower = '{"instructions":["user-rules.md"],"provider":{"enabled":true}}\n';
+    write(path.join(configRoot, 'opencode.json'), lower);
+    write(path.join(configRoot, 'opencode.jsonc'), '{ /* Keep theme */ "theme":"system", }\n');
+    successful(invoke(current, '5\n1\n2\n1\ny\ny\n', { dir: undefined }));
+    assert.equal(fs.readFileSync(path.join(configRoot, 'opencode.json'), 'utf8'), lower);
+    const updated = fs.readFileSync(path.join(configRoot, 'opencode.jsonc'), 'utf8');
+    assert(updated.includes('user-rules.md'));
+    assert(updated.includes('subagent-architecture/references/global-auto-delegation.md'));
+    assert(updated.includes('/* Keep theme */'));
+  });
+
+  test(selectedRuntime, 'OpenCode invalid JSONC blocks the complete bundle before any package writes', () => {
+    const current = fixture(selectedRuntime);
+    const configRoot = path.join(current.home, '.config/opencode');
+    const lower = '{"instructions":["user-rules.md"]}\n';
+    const upper = '{ /* unterminated user comment';
+    write(path.join(configRoot, 'opencode.json'), lower);
+    write(path.join(configRoot, 'opencode.jsonc'), upper);
+    const result = invoke(current, '5\n1\n2\n1\ny\ny\n', { dir: undefined });
+    assert.notEqual(result.status, 0);
+    assert.doesNotMatch(result.output, installationLine);
+    for (const name of ['agents', 'skills']) assert(!fs.existsSync(path.join(configRoot, name)));
+    assert.equal(fs.readFileSync(path.join(configRoot, 'opencode.json'), 'utf8'), lower);
+    assert.equal(fs.readFileSync(path.join(configRoot, 'opencode.jsonc'), 'utf8'), upper);
+  });
+
   test(selectedRuntime, 'confirmation blank n and q cancel the complete bundle without writes', () => {
     for (const answer of ['', 'n', 'q']) {
       const current = fixture(selectedRuntime);

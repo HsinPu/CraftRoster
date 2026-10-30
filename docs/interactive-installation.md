@@ -155,6 +155,7 @@ bash scripts/install.sh --source-dir . --target project --project-platform codex
 
 ## 常見問題
 
+- **OpenCode 同時有 `opencode.json` 與 `opencode.jsonc`**：1.2.2 起允許兩檔並存，優先更新 JSONC 中的委派指引；保留原本設定、註解與備份。若目前使用舊版而想先完成安裝，可將「啟用主動委派」選 `n`。不必刪除或重新命名任何設定檔。
 - **命令以 pipe 啟動，選單沒有輸入**：Bash Wrapper 會從控制終端讀答案，需在互動式終端執行。CI 使用後端的非互動參數；Wrapper 遇到 EOF 不會自動同意。
 - **來源沒有配套索引，或後端不支援新參數**：安裝器會在呼叫後端前停止。改用同一版本的完整 checkout 或較新的來源，不會回退成看似成功的舊流程。
 - **索引內容有重複、未知名稱或沒有涵蓋完整來源**：安裝前拒絕。不要手動編輯 TSV；修正 canonical Agent 或分類 JSON 後執行 `npm run generate:agents`，再 `npm run validate`。

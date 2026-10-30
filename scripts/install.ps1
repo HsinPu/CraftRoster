@@ -981,9 +981,7 @@ function Invoke-CombinedInstallation {
         Test-AgentProfileInstall -Source $source.Source -RuntimeName $source.RuntimeName -AgentId $source.Id -Platform $source.Platform -OutputSuffix $source.OutputSuffix -DestinationRoot $profile.DestinationRoot -TargetName $profile.TargetName -LegacyTargets $profile.LegacyTargets -RepoName $Repo
     }
     if ($autoPlan) {
-        if ($autoPlan.SiblingConfigPath -and (Test-Path -LiteralPath $autoPlan.SiblingConfigPath)) {
-            throw "Auto-delegation sibling configuration appeared after planning: $($autoPlan.SiblingConfigPath)"
-        }
+        Assert-AutoDelegationConfigInputs -Plan $autoPlan
         if ($autoPlan.Existing) {
             Assert-RegularConfigFile -Path $autoPlan.ConfigPath
             if (-not (Test-Path -LiteralPath $autoPlan.ConfigPath -PathType Leaf) -or
@@ -2294,8 +2292,8 @@ function Assert-RegularInstallLeaf {
 
 function Assert-RegularConfigFile {
     param([string]$Path)
-    if (-not (Test-Path -LiteralPath $Path)) { return }
-    $item = Get-Item -Force -LiteralPath $Path
+    $item = Get-Item -Force -LiteralPath $Path -ErrorAction SilentlyContinue
+    if (-not $item) { return }
     if ($item.PSIsContainer -or (($item.Attributes -band [System.IO.FileAttributes]::ReparsePoint) -ne 0)) {
         throw "Refusing to replace a non-regular or linked config file: $Path"
     }
@@ -2313,26 +2311,49 @@ function Get-FileSha256 {
     }
 }
 
-function Assert-StrictJsonText {
-    param([string]$Text, [string]$Path)
+function Get-OpenCodeConfigLayout {
+    param([string]$Text, [string]$Path, [bool]$AllowJsonc = $true)
     $state = @{ Text = $Text; Index = 0; Length = $Text.Length }
     $layout = @{
         RootOpen = -1
         RootClose = -1
+        RootLastValueEnd = -1
+        RootTrailingComma = $false
         InstructionsArrayStart = -1
         InstructionsArrayEnd = -1
+        InstructionsLastValueEnd = -1
+        InstructionsTrailingComma = $false
         HasInstructions = $false
         Instructions = @()
     }
 
     function Throw-StrictJsonError {
         param([string]$Reason)
-        throw "Refusing to rewrite OpenCode config because $Path is not strict JSON: $Reason"
+        throw "Refusing to rewrite OpenCode config because $Path is not valid JSON/JSONC: $Reason"
     }
 
     function Skip-JsonWhitespace {
-        while ($state.Index -lt $state.Length -and " `t`r`n".IndexOf($state.Text[$state.Index]) -ge 0) {
-            $state.Index = $state.Index + 1
+        while ($state.Index -lt $state.Length) {
+            if (" `t`r`n".IndexOf($state.Text[$state.Index]) -ge 0) {
+                $state.Index = $state.Index + 1
+                continue
+            }
+            if (-not $AllowJsonc -or $state.Index + 1 -ge $state.Length -or $state.Text[$state.Index] -ne '/') { break }
+            $next = $state.Text[$state.Index + 1]
+            if ($next -eq '/') {
+                $state.Index = $state.Index + 2
+                while ($state.Index -lt $state.Length -and "`r`n".IndexOf($state.Text[$state.Index]) -lt 0) {
+                    $state.Index = $state.Index + 1
+                }
+                continue
+            }
+            if ($next -eq '*') {
+                $end = $state.Text.IndexOf('*/', $state.Index + 2, [System.StringComparison]::Ordinal)
+                if ($end -lt 0) { Throw-StrictJsonError "unterminated block comment at offset $($state.Index)" }
+                $state.Index = $end + 2
+                continue
+            }
+            break
         }
     }
 
@@ -2380,7 +2401,7 @@ function Assert-StrictJsonText {
         $state.Index = $state.Index + $match.Length
         if ($state.Index -lt $state.Length) {
             $next = $state.Text[$state.Index]
-            if (" `t`r`n,]}".IndexOf($next) -lt 0) {
+            if (" `t`r`n,]}/".IndexOf($next) -lt 0) {
                 Throw-StrictJsonError "invalid number terminator at offset $($state.Index)"
             }
         }
@@ -2406,7 +2427,7 @@ function Assert-StrictJsonText {
         Skip-JsonWhitespace
         if ($state.Index -lt $state.Length -and $state.Text[$state.Index] -eq ']') {
             $state.Index = $state.Index + 1
-            return @{ Type = "array"; Start = $start; End = $state.Index; Items = $items }
+            return @{ Type = "array"; Start = $start; End = $state.Index; Items = $items; LastValueEnd = -1; TrailingComma = $false }
         }
         while ($true) {
             $item = Read-JsonValue -Depth ($Depth + 1)
@@ -2414,13 +2435,17 @@ function Assert-StrictJsonText {
             Skip-JsonWhitespace
             if ($state.Index -lt $state.Length -and $state.Text[$state.Index] -eq ']') {
                 $state.Index = $state.Index + 1
-                return @{ Type = "array"; Start = $start; End = $state.Index; Items = $items }
+                return @{ Type = "array"; Start = $start; End = $state.Index; Items = $items; LastValueEnd = $item.End; TrailingComma = $false }
             }
             if ($state.Index -ge $state.Length -or $state.Text[$state.Index] -ne ',') {
                 Throw-StrictJsonError "expected a comma in an array at offset $($state.Index)"
             }
             $state.Index = $state.Index + 1
             Skip-JsonWhitespace
+            if ($AllowJsonc -and $state.Index -lt $state.Length -and $state.Text[$state.Index] -eq ']') {
+                $state.Index = $state.Index + 1
+                return @{ Type = "array"; Start = $start; End = $state.Index; Items = $items; LastValueEnd = $item.End; TrailingComma = $true }
+            }
         }
     }
 
@@ -2452,6 +2477,7 @@ function Assert-StrictJsonText {
             $value = Read-JsonValue -Depth ($Depth + 1)
             if ($Depth -eq 0) {
                 $layout.RootOpen = $start
+                $layout.RootLastValueEnd = $value.End
                 if ([string]::Equals($key, "instructions", [System.StringComparison]::Ordinal)) {
                     if ($value.Type -ne "array") { Throw-StrictJsonError "instructions is not an array" }
                     $instructionValues = @()
@@ -2463,6 +2489,8 @@ function Assert-StrictJsonText {
                     $layout.Instructions = $instructionValues
                     $layout.InstructionsArrayStart = $value.Start
                     $layout.InstructionsArrayEnd = $value.End - 1
+                    $layout.InstructionsLastValueEnd = $value.LastValueEnd
+                    $layout.InstructionsTrailingComma = $value.TrailingComma
                 }
             }
             Skip-JsonWhitespace
@@ -2476,6 +2504,11 @@ function Assert-StrictJsonText {
             }
             $state.Index = $state.Index + 1
             Skip-JsonWhitespace
+            if ($AllowJsonc -and $state.Index -lt $state.Length -and $state.Text[$state.Index] -eq '}') {
+                $state.Index = $state.Index + 1
+                if ($Depth -eq 0) { $layout.RootClose = $state.Index - 1; $layout.RootTrailingComma = $true }
+                return @{ Type = "object"; Start = $start; End = $state.Index }
+            }
         }
     }
 
@@ -2501,25 +2534,35 @@ function Assert-StrictJsonText {
     return $layout
 }
 
+function Assert-StrictJsonText {
+    param([string]$Text, [string]$Path)
+    return (Get-OpenCodeConfigLayout -Text $Text -Path $Path -AllowJsonc $false)
+}
+
 function Add-OpenCodeInstructionToJsonText {
-    param([string]$Text, [hashtable]$Layout, [string]$InstructionPath, [int]$ExistingInstructionCount)
+    param([string]$Text, [hashtable]$Layout, [string[]]$InstructionPaths)
     $newLine = if ($Text.Contains("`r`n")) { "`r`n" } else { "`n" }
-    $encodedPath = $InstructionPath | ConvertTo-Json -Compress
+    $encodedPaths = @($InstructionPaths | ForEach-Object { $_ | ConvertTo-Json -Compress })
     if ($Layout.InstructionsArrayStart -ge 0) {
         if ($Layout.InstructionsArrayEnd -lt 0) { throw "Could not locate the end of the OpenCode instructions array." }
         $index = $Layout.InstructionsArrayEnd
-        $separator = if ($ExistingInstructionCount -gt 0) { "," } else { "" }
-        $insert = $separator + $newLine + "    " + $encodedPath + $newLine + "  "
-        return $Text.Substring(0, $index) + $insert + $Text.Substring($index)
+        $lastValueEnd = $Layout.InstructionsLastValueEnd
+        $trailingComma = $Layout.InstructionsTrailingComma
+        $entry = $encodedPaths -join ("," + $newLine + "    ")
+        $insert = $newLine + "    " + $entry
+    } else {
+        if ($Layout.RootOpen -lt 0 -or $Layout.RootClose -lt 0) { throw "OpenCode config must contain a JSON object." }
+        $index = $Layout.RootClose
+        $lastValueEnd = $Layout.RootLastValueEnd
+        $trailingComma = $Layout.RootTrailingComma
+        $entry = $encodedPaths -join ("," + $newLine + "    ")
+        $insert = $newLine + "  `"instructions`": [" + $newLine + "    " + $entry + $newLine + "  ]"
     }
-    if ($Layout.RootOpen -lt 0 -or $Layout.RootClose -lt 0) { throw "OpenCode config must contain a JSON object." }
-    $last = $Layout.RootClose - 1
-    while ($last -gt $Layout.RootOpen -and [char]::IsWhiteSpace($Text[$last])) { $last-- }
-    $hasProperties = $last -gt $Layout.RootOpen
-    $index = $last + 1
-    $separator = if ($hasProperties) { "," } else { "" }
-    $insert = $separator + $newLine + "  `"instructions`": [" + $newLine + "    " + $encodedPath + $newLine + "  ]"
-    return $Text.Substring(0, $index) + $insert + $Text.Substring($index)
+    if ($trailingComma) { $insert += ',' }
+    $insert += $newLine + '  '
+    $result = $Text.Insert($index, $insert)
+    if ($lastValueEnd -ge 0 -and -not $trailingComma) { $result = $result.Insert($lastValueEnd, ',') }
+    return $result
 }
 
 function Test-CodexDeveloperInstructionsConflict {
@@ -2652,27 +2695,50 @@ function Get-OpenCodeAutoDelegationPlan {
     $configRoot = Get-OpenCodeConfigRoot
     $jsonPath = Join-Path $configRoot "opencode.json"
     $jsoncPath = Join-Path $configRoot "opencode.jsonc"
-    Assert-RegularConfigFile -Path $jsonPath
-    Assert-RegularConfigFile -Path $jsoncPath
-    $hasJson = Test-Path -LiteralPath $jsonPath -PathType Leaf
-    $hasJsonc = Test-Path -LiteralPath $jsoncPath -PathType Leaf
-    if ($hasJson -and $hasJsonc) {
-        throw "Refusing to edit OpenCode config because both opencode.json and opencode.jsonc exist in $configRoot. Add the CraftRoster instruction path manually."
+    $paths = @($jsonPath, $jsoncPath)
+    $standardRoot = Join-Path (Get-ConfigHome) 'opencode'
+    if ([string]::Equals([System.IO.Path]::GetFullPath($configRoot).TrimEnd('\', '/'),
+        [System.IO.Path]::GetFullPath($standardRoot).TrimEnd('\', '/'), [System.StringComparison]::OrdinalIgnoreCase)) {
+        # Stable OpenCode reads this older filename only in the global directory.
+        $paths = @((Join-Path $configRoot 'config.json')) + $paths
     }
-    if ($hasJsonc) {
-        throw "Refusing to rewrite JSONC config $jsoncPath. Add '$InstructionPath' to its instructions array manually."
+    $inputs = @()
+    $documents = @{}
+    $effectiveInstructions = @()
+    foreach ($path in $paths) {
+        Assert-RegularConfigFile -Path $path
+        $exists = Test-Path -LiteralPath $path -PathType Leaf
+        $hash = $null
+        if ($exists) {
+            $hash = Get-FileSha256 -Path $path
+            $text = Read-StrictUtf8Text -Path $path -Label 'OpenCode config' -AllowBom
+            $bytes = [System.IO.File]::ReadAllBytes($path)
+            $hasBom = $bytes.Length -ge 3 -and $bytes[0] -eq 0xEF -and $bytes[1] -eq 0xBB -and $bytes[2] -eq 0xBF
+            if ((Get-FileSha256 -Path $path) -cne $hash) {
+                throw "Refusing to edit $path because it changed during installation planning. Run the installer again."
+            }
+            $layout = Get-OpenCodeConfigLayout -Text $text -Path $path
+            $documents[$path] = @{ Text = $text; Layout = $layout; HasBom = $hasBom }
+            if ($layout.HasInstructions) { $effectiveInstructions = @($layout.Instructions) }
+        }
+        $inputs += @{ Path = $path; Existing = $exists; OriginalHash = $hash }
     }
-
+    $configPath = if ($documents.ContainsKey($jsoncPath)) { $jsoncPath } else { $jsonPath }
     $portableInstructionPath = [System.IO.Path]::GetFullPath($InstructionPath).Replace('\', '/')
-    if (-not $hasJson) {
+    $guidanceInEffective = @($effectiveInstructions | Where-Object { $_.Replace('\', '/') -ieq $portableInstructionPath }).Count -gt 0
+    $alreadyEnabled = $documents.ContainsKey($configPath) -and $documents[$configPath].Layout.HasInstructions -and $guidanceInEffective
+    $newInstructions = @($effectiveInstructions)
+    if (-not $guidanceInEffective) { $newInstructions += $portableInstructionPath }
+    $targetInput = @($inputs | Where-Object { $_.Path -ceq $configPath })[0]
+    if (-not $targetInput.Existing) {
         $newConfig = [ordered]@{
             '$schema' = 'https://opencode.ai/config.json'
-            instructions = @($portableInstructionPath)
+            instructions = $newInstructions
         }
         return @{
             Runtime = "OpenCode"
-            ConfigPath = $jsonPath
-            SiblingConfigPath = $jsoncPath
+            ConfigPath = $configPath
+            ConfigInputs = $inputs
             Existing = $false
             OriginalHash = $null
             Action = "install"
@@ -2680,34 +2746,40 @@ function Get-OpenCodeAutoDelegationPlan {
         }
     }
 
-    $originalHash = Get-FileSha256 -Path $jsonPath
-    $text = Read-StrictUtf8Text -Path $jsonPath -Label "OpenCode config"
-    if ((Get-FileSha256 -Path $jsonPath) -cne $originalHash) {
-        throw "Refusing to edit $jsonPath because it changed during installation planning. Run the installer again."
+    $document = $documents[$configPath]
+    $newText = $document.Text
+    if (-not $alreadyEnabled) {
+        $additions = if ($document.Layout.HasInstructions) { @($portableInstructionPath) } else { $newInstructions }
+        $newText = Add-OpenCodeInstructionToJsonText -Text $document.Text -Layout $document.Layout -InstructionPaths $additions
+        $null = Get-OpenCodeConfigLayout -Text $newText -Path $configPath
     }
-    $layout = Assert-StrictJsonText -Text $text -Path $jsonPath
-    $instructions = @($layout.Instructions)
-    if ($instructions | Where-Object { $_.Replace('\', '/') -ieq $portableInstructionPath }) {
-        return @{ Runtime = "OpenCode"; ConfigPath = $jsonPath; SiblingConfigPath = $jsoncPath; Existing = $true; OriginalHash = $originalHash; Action = "unchanged"; NewText = $text }
-    }
-    $instructionCount = $instructions.Count
-    $newText = Add-OpenCodeInstructionToJsonText -Text $text -Layout $layout -InstructionPath $portableInstructionPath -ExistingInstructionCount $instructionCount
+    if ($document.HasBom) { $newText = [string][char]0xFEFF + $newText }
     return @{
         Runtime = "OpenCode"
-        ConfigPath = $jsonPath
-        SiblingConfigPath = $jsoncPath
+        ConfigPath = $configPath
+        ConfigInputs = $inputs
         Existing = $true
-        OriginalHash = $originalHash
-        Action = "update"
+        OriginalHash = $targetInput.OriginalHash
+        Action = $(if ($alreadyEnabled) { 'unchanged' } else { 'update' })
         NewText = $newText
+    }
+}
+
+function Assert-AutoDelegationConfigInputs {
+    param([hashtable]$Plan)
+    if (-not $Plan.ConfigInputs) { return }
+    foreach ($inputFile in $Plan.ConfigInputs) {
+        Assert-RegularConfigFile -Path $inputFile.Path
+        $exists = Test-Path -LiteralPath $inputFile.Path -PathType Leaf
+        if ($exists -ne $inputFile.Existing -or ($exists -and (Get-FileSha256 -Path $inputFile.Path) -cne $inputFile.OriginalHash)) {
+            throw "Refusing to apply OpenCode auto-delegation because an input config changed after installation planning: $($inputFile.Path)"
+        }
     }
 }
 
 function Invoke-AutoDelegationPlan {
     param([hashtable]$Plan)
-    if ($Plan.SiblingConfigPath -and (Test-Path -LiteralPath $Plan.SiblingConfigPath)) {
-        throw "Refusing to apply OpenCode auto-delegation because a sibling config appeared: $($Plan.SiblingConfigPath)"
-    }
+    Assert-AutoDelegationConfigInputs -Plan $Plan
     if ($Plan.Action -eq "unchanged") {
         if ($Plan.Existing) {
             Assert-RegularConfigFile -Path $Plan.ConfigPath
@@ -2733,9 +2805,7 @@ function Invoke-AutoDelegationPlan {
     } elseif (Test-Path -LiteralPath $Plan.ConfigPath) {
         throw "Refusing to create $($Plan.ConfigPath) because it appeared after installation planning. Run the installer again."
     }
-    if ($Plan.SiblingConfigPath -and (Test-Path -LiteralPath $Plan.SiblingConfigPath)) {
-        throw "Refusing to apply OpenCode auto-delegation because a sibling config appeared: $($Plan.SiblingConfigPath)"
-    }
+    Assert-AutoDelegationConfigInputs -Plan $Plan
 
     $parent = Split-Path -Parent $Plan.ConfigPath
     New-Item -ItemType Directory -Force -Path $parent | Out-Null
@@ -2747,9 +2817,7 @@ function Invoke-AutoDelegationPlan {
             if (-not (Test-Path -LiteralPath $Plan.ConfigPath -PathType Leaf) -or (Get-FileSha256 -Path $Plan.ConfigPath) -cne $Plan.OriginalHash) {
                 throw "Refusing to replace $($Plan.ConfigPath) because it changed after installation planning. Run the installer again."
             }
-            if ($Plan.SiblingConfigPath -and (Test-Path -LiteralPath $Plan.SiblingConfigPath)) {
-                throw "Refusing to apply OpenCode auto-delegation because a sibling config appeared: $($Plan.SiblingConfigPath)"
-            }
+            Assert-AutoDelegationConfigInputs -Plan $Plan
             $backupPath = "$($Plan.ConfigPath).craftroster-backup-$((Get-Date).ToUniversalTime().ToString('yyyyMMddHHmmssfff'))-$([Guid]::NewGuid().ToString('N'))"
             [System.IO.File]::Replace($tempPath, $Plan.ConfigPath, $backupPath, $true)
             if ((Get-FileSha256 -Path $backupPath) -cne $Plan.OriginalHash) {
@@ -2763,9 +2831,7 @@ function Invoke-AutoDelegationPlan {
             if (Test-Path -LiteralPath $Plan.ConfigPath) {
                 throw "Refusing to create $($Plan.ConfigPath) because it appeared after installation planning. Run the installer again."
             }
-            if ($Plan.SiblingConfigPath -and (Test-Path -LiteralPath $Plan.SiblingConfigPath)) {
-                throw "Refusing to apply OpenCode auto-delegation because a sibling config appeared: $($Plan.SiblingConfigPath)"
-            }
+            Assert-AutoDelegationConfigInputs -Plan $Plan
             [System.IO.File]::Move($tempPath, $Plan.ConfigPath)
         }
     } finally {
