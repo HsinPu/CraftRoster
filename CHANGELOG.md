@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.5.1 — 2026-11-04
+
+Patch release: fix the CLI regression check for the expanded installation catalog.
+
+- Derive the expected purpose count from the canonical bundle registry instead of the obsolete 16-purpose constant, and explicitly verify that the game-development purpose appears in the CLI list. The installed Skills, Agents and bundle contents remain those introduced in 1.5.0.
+
 ## 1.5.0 — 2026-11-04
 
 Minor release: integrate the complete four-source game workflow, including detailed reference-based Blender production, game design and Godot implementation.

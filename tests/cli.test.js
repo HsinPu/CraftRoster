@@ -6,6 +6,7 @@ const path = require('node:path');
 
 const CLI_PATH = path.join(__dirname, '..', 'craftroster-cli.js');
 const EXPECTED_SKILL_COUNT = require('../skills.json').skills.length;
+const EXPECTED_BUNDLE_COUNT = require('../scripts/data/install-bundles.json').bundles.length;
 const MISSING_NAME = 'definitely-not-a-craftroster-component';
 
 function runCli(args, options = {}) {
@@ -135,7 +136,7 @@ const successCases = [
     name: 'lists the unified installation purposes',
     args: ['bundles'],
     status: 0,
-    stdout: /用途分類 \(16 類[\s\S]*image-graphics[\s\S]*software-development[\s\S]*threejs-graphics[\s\S]*interface-quality/,
+    stdout: new RegExp(`用途分類 \\(${EXPECTED_BUNDLE_COUNT} 類[\\s\\S]*image-graphics[\\s\\S]*software-development[\\s\\S]*threejs-graphics[\\s\\S]*interface-quality[\\s\\S]*game-development`),
   },
   {
     name: 'shows direct bundle members and distinguishes additional support',
