@@ -1,0 +1,77 @@
+{
+  "skill_name": "game-design",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Review this concept only, without editing files: In Museum After Hours, players rearrange exhibit labels to change the stories that visitors tell. Our pillar is gentle curiosity. Every failed placement permanently destroys one exhibit. We claim it is proven relaxing but have not playtested. Identify the decisions that need work.",
+      "expected_output": "A bounded critique connecting irreversible destruction to the stated experience, separating a proposed design from a validated claim and explaining a concrete test.",
+      "assertions": [
+        "Does not rewrite project files or implement the game.",
+        "Identifies permanent loss as a tradeoff to examine against gentle curiosity rather than declaring the genre invalid.",
+        "Explains what information and consequences the label-placement choice needs.",
+        "Rejects the unsupported proven-relaxing claim and proposes relevant observation without inventing outcomes."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Design a token economy for the first three sessions. Start at 0, a completed room earns 8 tokens, a required door key costs 20, no cap. A failed door attempt consumes another key; players can revisit earlier rooms. Show arithmetic and failure/recovery paths. Do not add monetization.",
+      "expected_output": "A flow ledger, progression timing and renewable recovery analysis with assumptions separated from player evidence.",
+      "assertions": [
+        "Shows three completions afford one key with 4 tokens left.",
+        "Checks how failure and repeated key costs affect access and recovery through repeatable rooms.",
+        "States units and treats proposed session pacing as an assumption.",
+        "Does not add a store or call arithmetic playtest validation."
+      ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Write a level and encounter spec for our 2D co-op puzzle prototype: two players can carry one battery together, doors need power, players may drop the battery. Controller width and jump height are not measured yet. Include teaching and a generator option, but do not implement anything.",
+      "expected_output": "A usable route/encounter specification with battery ownership, teaching, generator constraints and explicit geometry uncertainty.",
+      "assertions": [
+        "Defines battery drop/recovery and door-power interaction without assuming online networking.",
+        "Specifies observable teaching and uncoached comprehension checks.",
+        "Marks movement/clearance numbers as unresolved blockout assumptions.",
+        "For procedural variation, defines solvability/connectivity constraints and does not claim visual art proves traversability."
+      ]
+    },
+    {
+      "id": 4,
+      "locale": "en",
+      "prompt": "Give brief teaching feedback, no grade and no rewrite. Rubric: a Concept needs a player role, one activity, and an audience. Submission: You are a cloud gardener arranging rain for villages. Intended for puzzle fans. The course does not require an economy, technical architecture or playtest.",
+      "expected_output": "Specific rubric-based feedback acknowledging present requirements and giving a bounded next step.",
+      "assertions": [
+        "Recognizes the supplied role, activity and audience rather than inventing missing mandatory requirements.",
+        "Does not penalize absent economy, architecture or playtest.",
+        "Does not issue a grade or replace the submission.",
+        "Keeps optional clarification distinct from conditions for passing."
+      ]
+    },
+    {
+      "id": 5,
+      "locale": "en",
+      "prompt": "Analyze this playtest: two coworkers who know the design both reached the exit; I showed one the hidden lever first. One said it was fun. Can we claim 100% discoverability and validated enjoyment? Recommend the next test.",
+      "expected_output": "A cautious interpretation with assistance/familiarity limitations and a neutral follow-up protocol.",
+      "assertions": [
+        "Separates observed reaching-exit from unassisted discovery.",
+        "Does not treat one positive quote or two familiar participants as population validation.",
+        "Designs a test with relevant unfamiliar participants, neutral instructions and logged assistance.",
+        "Does not fabricate participant quotes, counts or significance."
+      ]
+    },
+    {
+      "id": 6,
+      "locale": "en",
+      "prompt": "Rewrite this Vision paragraph and draft a small GDD section, as text here: Our pillar is exploration. The player follows a glowing arrow to every discovery. We now want players to infer side routes from landmarks while retaining the arrow on the main path. Keep that approved change and do not invent combat.",
+      "expected_output": "An authorized rewrite with a concrete pillar consequence and linked side-route rules, preserving main-path guidance.",
+      "assertions": [
+        "Performs the requested writing rather than incorrectly treating all design as read-only.",
+        "Preserves the approved main-path arrow and landmark-based side routes.",
+        "Separates vision intent from implementable GDD rules and marks missing specifics as proposals.",
+        "Adds no combat, fixed project budget or engine architecture."
+      ]
+    }
+  ]
+}

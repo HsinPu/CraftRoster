@@ -56,6 +56,17 @@
         "Separates technical, actual visual and target-engine acceptance.",
         "Does not label a hypothetical plan, a structural assertion or unrun workflow as successful execution."
       ]
+    },
+    {
+      "id": 6,
+      "locale": "en",
+      "prompt": "Dull saved character preview on Windows without source macOS HDRI path.",
+      "expected_output": "Validate explicit supported HDRI/transform before scene mutation, preserve owned scene, calibrate neutral rig and exposure before recoloring, fixed review cameras and portable preview.",
+      "assertions": [
+        "Validate explicit supported HDRI/transform before scene mutation, preserve owned scene, calibrate neutral rig and exposure before recoloring, fixed review cameras and portable preview.",
+        "Names the input scope and preserves original source data while making only the requested correction.",
+        "Reports performed checks separately from unavailable visual or engine evidence."
+      ]
     }
   ]
 }

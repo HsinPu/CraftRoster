@@ -56,6 +56,17 @@
         "Uses actual saved outputs and current diagnostic images before claiming completion.",
         "Separates source/roundtrip checks from unavailable engine acceptance."
       ]
+    },
+    {
+      "id": 6,
+      "locale": "en",
+      "prompt": "Existing connected MCP differs from Blender Lab and a timed-out bake may still run.",
+      "expected_output": "Discover schemas, distinguish NUL socket from stdio, no automatic configuration/add-on changes or blind retry; bounded native smoke is separate from host checks.",
+      "assertions": [
+        "Discover schemas, distinguish NUL socket from stdio, no automatic configuration/add-on changes or blind retry; bounded native smoke is separate from host checks.",
+        "Names the input scope and preserves original source data while making only the requested correction.",
+        "Reports performed checks separately from unavailable visual or engine evidence."
+      ]
     }
   ]
 }

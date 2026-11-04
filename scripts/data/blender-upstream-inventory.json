@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "purpose": "Frozen provenance inventory for explicit Blender source adaptation, not an installed upstream runtime.",
+  "purpose": "Frozen provenance inventory for explicit four-source Blender and game-development adaptation, not an installed upstream runtime.",
   "verification": "Source file bytes were compared with Git blob identities from the pinned repository trees during the 2026-11-04 source review. Offline validation checks this declaration and coverage relationships; it does not repeat remote retrieval.",
   "repositories": [
     {
@@ -2350,6 +2350,356 @@
           "kind": "repository-context"
         }
       ]
+    },
+    {
+      "id": "majid",
+      "repo": "majidmanzarpour/blender-game-skills",
+      "commit": "f0ef29385a03de139957e6f700b801cdc00b7e29",
+      "tree": "69b8827f7b2372007e91a361412bffcf13150b30",
+      "files": [
+        {
+          "path": ".gitignore",
+          "blob": "19a531067d1086362ce2a628833efe28804db31c",
+          "size": 1240,
+          "kind": "repository-context"
+        },
+        {
+          "path": "LICENSE",
+          "blob": "0e7cfcfa43d5da2dc6a31768afcd95525fd3000c",
+          "size": 1073,
+          "kind": "license"
+        },
+        {
+          "path": "README.md",
+          "blob": "c5c9af3f70eebf8d5bd71b1894a8866029da0e38",
+          "size": 17881,
+          "kind": "repository-context"
+        },
+        {
+          "path": "skills/blender-image-to-3d/SKILL.md",
+          "blob": "b5736aa9ed3d7aeafa354a326a77e298603921d4",
+          "size": 22609,
+          "kind": "entrypoint"
+        },
+        {
+          "path": "skills/blender-image-to-3d/assets/build_template.py",
+          "blob": "f8b4d485f6bd5cfdd3e185e50a2fa2acbbd9e4e9",
+          "size": 21424,
+          "kind": "package-resource"
+        },
+        {
+          "path": "skills/blender-image-to-3d/evals/evals.json",
+          "blob": "5cb967e9a37f959df8c40c32485af309f0de04de",
+          "size": 3108,
+          "kind": "package-resource"
+        },
+        {
+          "path": "skills/blender-image-to-3d/references/blender-5-notes.md",
+          "blob": "a513ed84574c425d5d74da749424adcf609cabf4",
+          "size": 4308,
+          "kind": "package-reference"
+        },
+        {
+          "path": "skills/blender-image-to-3d/references/categories.md",
+          "blob": "8d510f3cee2db4467d8999c1b0a4bd01041b8a07",
+          "size": 18192,
+          "kind": "package-reference"
+        },
+        {
+          "path": "skills/blender-image-to-3d/references/delivery-and-acceptance.md",
+          "blob": "916ee6293236668113cb32b53b929c3ba717f296",
+          "size": 9230,
+          "kind": "package-reference"
+        },
+        {
+          "path": "skills/blender-image-to-3d/references/rigging-animation.md",
+          "blob": "1bd940892e9ef0f7c29761267493d272c8dacac9",
+          "size": 10353,
+          "kind": "package-reference"
+        },
+        {
+          "path": "skills/blender-image-to-3d/scripts/bake_maps.py",
+          "blob": "53b5618885a3bc9dd43d621879ee3a515c0fb315",
+          "size": 15537,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-image-to-3d/scripts/compose_review.py",
+          "blob": "82a046ab39e52253668c10d421897328748e19c3",
+          "size": 7330,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-image-to-3d/scripts/export_delivery.py",
+          "blob": "c9d67b476ed7d82b5fb232c859a22b530487473d",
+          "size": 11368,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-image-to-3d/scripts/init_master.py",
+          "blob": "7be5063271040b120e29c3a3dbee970090e0b256",
+          "size": 8768,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-image-to-3d/scripts/review_render.py",
+          "blob": "c3f9b04581b15cd480b3d442103b34b58959a5df",
+          "size": 15124,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-image-to-3d/scripts/roundtrip.py",
+          "blob": "934f92561b94c529265d983ece5dbe5d33bf7ada",
+          "size": 7348,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-image-to-3d/scripts/validate.py",
+          "blob": "912725c8149c225541cc73c9aef6f6d238660454",
+          "size": 10976,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-image-to-3d/scripts/world_gate.py",
+          "blob": "6ec38d6fe94fef2d1610b18ae379f7bb9746bb33",
+          "size": 7769,
+          "kind": "package-script"
+        }
+      ],
+      "license": "MIT",
+      "scope": "All pinned repository files, including package resources and separately disposed repository/plugin/distribution context."
+    },
+    {
+      "id": "setcodes",
+      "repo": "setcodes/gamedev-skills",
+      "commit": "096c224aa498a789fa99d476583029fcb9f538e1",
+      "tree": "6f9abcb6086bf426c4f8487f8fb91d3614a4ffce",
+      "files": [
+        {
+          "path": ".claude-plugin/marketplace.json",
+          "blob": "a5b6e558d4666d9d5378003c44076df0b7799273",
+          "size": 359,
+          "kind": "repository-context"
+        },
+        {
+          "path": ".claude-plugin/plugin.json",
+          "blob": "edba3400f2f44581d84fefc2c6e32960fb02fe35",
+          "size": 530,
+          "kind": "repository-context"
+        },
+        {
+          "path": ".gitignore",
+          "blob": "f7fedfba0ba7a8ea7448627482c8021829607221",
+          "size": 39,
+          "kind": "repository-context"
+        },
+        {
+          "path": "LICENSE",
+          "blob": "15770f9c8fb91aa409c90aff11d97ce40f797941",
+          "size": 1099,
+          "kind": "license"
+        },
+        {
+          "path": "README.md",
+          "blob": "06bc24af90119bd18d55debd10ca58f74810ae0b",
+          "size": 12279,
+          "kind": "repository-context"
+        },
+        {
+          "path": "scripts/package_skills.py",
+          "blob": "3f24edba74b035a5dcdf2a1a68c068d4df62630f",
+          "size": 1987,
+          "kind": "repository-context"
+        },
+        {
+          "path": "skills/blender-game-assets/LICENSE",
+          "blob": "15770f9c8fb91aa409c90aff11d97ce40f797941",
+          "size": 1099,
+          "kind": "package-resource"
+        },
+        {
+          "path": "skills/blender-game-assets/SKILL.md",
+          "blob": "8bfeca60efa3c7457e8a19fc37e48999ffca6caa",
+          "size": 10728,
+          "kind": "entrypoint"
+        },
+        {
+          "path": "skills/blender-game-assets/agents/openai.yaml",
+          "blob": "dbb1e64d68faba3bb2d26e23c7ee9c90cf8ca059",
+          "size": 342,
+          "kind": "package-resource"
+        },
+        {
+          "path": "skills/blender-game-assets/references/characters.md",
+          "blob": "27050161af960c3aa416f151794a90d3c3939258",
+          "size": 2976,
+          "kind": "package-reference"
+        },
+        {
+          "path": "skills/blender-game-assets/references/connection.md",
+          "blob": "ec30af9cd1434db97d2ac2b5e786f354107c7398",
+          "size": 2836,
+          "kind": "package-reference"
+        },
+        {
+          "path": "skills/blender-game-assets/references/from-reference.md",
+          "blob": "5ed6b67c8d43e5bb6a671be3044fdc9c3517a049",
+          "size": 7290,
+          "kind": "package-reference"
+        },
+        {
+          "path": "skills/blender-game-assets/references/hard-surface.md",
+          "blob": "e964eb4162a5cf0da5dd1c53df47616907c0bc85",
+          "size": 4263,
+          "kind": "package-reference"
+        },
+        {
+          "path": "skills/blender-game-assets/references/mixamo.md",
+          "blob": "89c87aa2f6747f695aa2316831631bc886f8d317",
+          "size": 4711,
+          "kind": "package-reference"
+        },
+        {
+          "path": "skills/blender-game-assets/references/preview-and-fbx.md",
+          "blob": "f56e88b87c4bf7f4f06bcb5e710daeebb055c3cf",
+          "size": 4506,
+          "kind": "package-reference"
+        },
+        {
+          "path": "skills/blender-game-assets/references/texture-cleanup.md",
+          "blob": "ab4d2fa8fc50b81f46959e88ee6e3253df901ada",
+          "size": 8273,
+          "kind": "package-reference"
+        },
+        {
+          "path": "skills/blender-game-assets/references/vehicles.md",
+          "blob": "c04013ddf8f5de8b21cd8fad7cc0fbbe63fe9f1e",
+          "size": 3229,
+          "kind": "package-reference"
+        },
+        {
+          "path": "skills/blender-game-assets/scripts/bg_verify.py",
+          "blob": "534eeff2f09fd6d5bfa7a4573e5486cac881ae29",
+          "size": 3422,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-game-assets/scripts/blender_exec.py",
+          "blob": "bae3abf1fc280b81e67025650f63cc264380e5d9",
+          "size": 1725,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-game-assets/scripts/blender_mcp_stdio.py",
+          "blob": "880790eae608f7703a306515cd718be4e6d649d3",
+          "size": 6821,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-game-assets/scripts/bpy_lib.py",
+          "blob": "2a3d01f4c381a414c223368944e8577a2a9b801e",
+          "size": 37366,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-game-assets/scripts/maps_post.py",
+          "blob": "8bae8e7e9f355a3c75eeb5f1ae177e309c68d182",
+          "size": 6214,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-game-assets/scripts/replace_glb_albedo.py",
+          "blob": "efa39be855cdfb1ce283c6451ae2a70da57dbd0f",
+          "size": 5965,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-game-assets/scripts/selftest_bg.py",
+          "blob": "d6bfc3e2a6687f1b617f0fc37ba241550e3ddbdf",
+          "size": 5486,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-game-assets/scripts/studio_preview.py",
+          "blob": "0637e1c7592fb622510dfae63dc3d9901c8a2b50",
+          "size": 3883,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-game-assets/scripts/texture_cleanup.py",
+          "blob": "ac43b924c6fb1ff217ec98bf9b9845735370046d",
+          "size": 6201,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-game-assets/scripts/verify_glb.py",
+          "blob": "9419b4c2fb8a03b16088af1703f4b5c68ffa5791",
+          "size": 1212,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/game-designer/LICENSE",
+          "blob": "15770f9c8fb91aa409c90aff11d97ce40f797941",
+          "size": 1099,
+          "kind": "package-resource"
+        },
+        {
+          "path": "skills/game-designer/SKILL.md",
+          "blob": "bd0a6d47a995d655501db76d570f9a53bfaeab32",
+          "size": 6315,
+          "kind": "entrypoint"
+        },
+        {
+          "path": "skills/game-designer/agents/openai.yaml",
+          "blob": "8dab1205eff14b00e0c4a5b6324e214e24c5e729",
+          "size": 263,
+          "kind": "package-resource"
+        },
+        {
+          "path": "skills/game-designer/references/playtesting.md",
+          "blob": "1fadc39a2422f72c6f64781a5f4630c02dd69ddb",
+          "size": 2761,
+          "kind": "package-reference"
+        },
+        {
+          "path": "skills/game-designer/references/system-design.md",
+          "blob": "c045177098f49d72712d22e5e66ace711edf54a0",
+          "size": 4045,
+          "kind": "package-reference"
+        },
+        {
+          "path": "skills/game-designer/references/teaching-feedback.md",
+          "blob": "13f9866baa7fb22f1a8de5e35d4ec61066917fec",
+          "size": 1721,
+          "kind": "package-reference"
+        },
+        {
+          "path": "skills/godot-gamedev/LICENSE",
+          "blob": "15770f9c8fb91aa409c90aff11d97ce40f797941",
+          "size": 1099,
+          "kind": "package-resource"
+        },
+        {
+          "path": "skills/godot-gamedev/SKILL.md",
+          "blob": "0263a40380d02cb0176e04261dc27381de3753eb",
+          "size": 6553,
+          "kind": "entrypoint"
+        },
+        {
+          "path": "skills/godot-gamedev/agents/openai.yaml",
+          "blob": "79d8fc2ebd9455e9fa926cb3ebffc8ecd6b49f53",
+          "size": 271,
+          "kind": "package-resource"
+        },
+        {
+          "path": "skills/godot-gamedev/references/verification.md",
+          "blob": "c2e0b2aecf24e7867f5e23bfe96af97d2218e04e",
+          "size": 3218,
+          "kind": "package-reference"
+        }
+      ],
+      "license": "MIT",
+      "scope": "All pinned repository files, including package resources and separately disposed repository/plugin/distribution context."
     }
   ]
 }

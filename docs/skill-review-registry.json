@@ -3,7 +3,7 @@
   "review_date": "2026-11-04",
   "baseline_commit": "7acca1fb8865903dc67ee4c76c147d0881cb9e1b",
   "entry_hash_normalization": "utf8-lf",
-  "scope": "Entry and dependency review across current Skills. Blender creation and independent technical/visual evidence boundaries are documented in docs/blender-game-development-research.md. This registry does not certify runtime success.",
+  "scope": "Entry and dependency review across current Skills. Four-source game design, Blender production and Godot implementation are mapped in docs/blender-source-coverage.md. Native trial evidence is separately scoped; this registry does not certify runtime or visual success.",
   "category_representatives": [
     {
       "category": "workflow-planning",
@@ -104,6 +104,12 @@
     {
       "category": "blender-creation",
       "skill": "blender-development",
+      "case_id": 1,
+      "status": "definition_only"
+    },
+    {
+      "category": "game-development",
+      "skill": "game-design",
       "case_id": 1,
       "status": "definition_only"
     }
@@ -507,7 +513,7 @@
       "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
       "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
       "runtime_status": "not_run",
-      "entry_sha256": "20090c16e623fc5cefa86394f4c1e041ee43f80a877586b8728d5b0ecdac8295"
+      "entry_sha256": "9ddbfc7671bd0a72c40346057b175fae6e4c18af885919c97a173cb1a5a77800"
     },
     {
       "name": "blender-character-rigging",
@@ -517,7 +523,7 @@
       "reason": "metarig anatomy/roll/bone collections; deform/control/mechanism ownership; IK/FK and pole singularity",
       "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
       "runtime_status": "not_run",
-      "entry_sha256": "32627813ba4049f9ea6bdb200dbb31fe4c6fd83ea3ceba5f85eff0140cd47e97"
+      "entry_sha256": "d663e3eaca84a23a622ea658cabffee79ef103bf73872fd1c4694c0db0dd5274"
     },
     {
       "name": "blender-chibi-style",
@@ -627,7 +633,7 @@
       "reason": "Production planning with task-specific routing and shared asset/revision contracts; Runtime/API discovery, scoped bpy context, shared datablocks and background execution; Style/world handoffs with separate technical, visual and engine evidence",
       "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
       "runtime_status": "not_run",
-      "entry_sha256": "25107554e78eee1040a31366ba86b82690a6aaf7344e868b02a8d82580ef17f5"
+      "entry_sha256": "425102eb24f9ec3a8798b2a88ebc8093e7474a539c9122d9b45a767830672124"
     },
     {
       "name": "blender-dream-surreal-mood",
@@ -677,7 +683,7 @@
       "reason": "Controlled object/texture/clip manifests and exporter operator validation; Fresh-process semantic roundtrip across dimensions, pivot, materials, skeleton and motion; Target-specific handoff, compression compatibility and reproducible delivery evidence",
       "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
       "runtime_status": "not_run",
-      "entry_sha256": "1e2358fab0bdeec3f4fa838273e7c48ddd0fe6eb09e2fbcaded2a93aedf06131"
+      "entry_sha256": "9d9fa8c8691158cead465e0b576e06365cc2f50bcced66f60e751e84c51531f2"
     },
     {
       "name": "blender-facial-shapekeys",
@@ -727,7 +733,7 @@
       "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
       "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
       "runtime_status": "not_run",
-      "entry_sha256": "5dd0a63d99b9d6e57ba217641f3b00d2d6c0187667298566c336c0786f4f0411"
+      "entry_sha256": "35fd5fadd418af989dda568ff6cabe0886029eca0d430ecd16882a766f38e6f8"
     },
     {
       "name": "blender-genre-action-combat",
@@ -877,7 +883,7 @@
       "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
       "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
       "runtime_status": "not_run",
-      "entry_sha256": "dea22fd1af06f9b2e9932780768b1caee539da8aa9a9298fb2371b40d7f6f5b6"
+      "entry_sha256": "e382d6b3103712405a84ecc18747f0784ea1b4c4bddcaeffd35a2711544901c1"
     },
     {
       "name": "blender-hair-grooming",
@@ -907,7 +913,7 @@
       "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
       "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
       "runtime_status": "not_run",
-      "entry_sha256": "221a92cda6994c4ac840ed04220c6a0de138b4632226448fed788801158ca871"
+      "entry_sha256": "f07dda85e4ec2527d7870f520e8655091edfe807891f60aeb81819d5084577ca"
     },
     {
       "name": "blender-hd-2d-style",
@@ -997,7 +1003,7 @@
       "reason": "approved style/reference contract; neutral/beauty/gameplay views; camera/light/source ownership",
       "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
       "runtime_status": "not_run",
-      "entry_sha256": "590e0d52d4013702e2fc18f3cace9491dfe2ef065ce5b3b1f684040cc4fc3473"
+      "entry_sha256": "d2d970ed26b014938e4ab4007e67a53a2eb9016bb5ccaee24668b1ad7c04aeee"
     },
     {
       "name": "blender-lowpoly-style",
@@ -1057,7 +1063,7 @@
       "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
       "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
       "runtime_status": "not_run",
-      "entry_sha256": "fdd51c98938af770ff0b0199da9fd2b5d450984fc688cba316ce805ccca84266"
+      "entry_sha256": "4223ae1c4055d56dd50704dd18e511d9136667112e3f2c165d1490df0df5c8f2"
     },
     {
       "name": "blender-neon-retrofuturism",
@@ -1167,7 +1173,7 @@
       "reason": "Reference authority, landmark selection and camera/scale calibration; Staged reconstruction, uncertainty tracking and controlled image comparison; Mismatch diagnosis without hiding scale or depth errors through registration",
       "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
       "runtime_status": "not_run",
-      "entry_sha256": "588902cf2bc676a18ea1d59533ae632a974a46b98619e3eb1d5dedbb493276eb"
+      "entry_sha256": "094e294fd1bb737f7e8eb0578027a48b83a19a1de707e21e02ac2347a0d053fc"
     },
     {
       "name": "blender-rendering",
@@ -1217,7 +1223,7 @@
       "reason": "Bounded skeleton-to-clip workflow with rest/bind/weight contracts; Stress poses, contact/timing, root travel and position/orientation/velocity loop checks; Action-slot-aware delivery and preservation of editable control rig",
       "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
       "runtime_status": "not_run",
-      "entry_sha256": "cb0e3e76bfedbf70cb98c84ffd9b22c15238a8ce196f2a2f481a5ab9f1a3f052"
+      "entry_sha256": "a6d00df81de14296c6a1a977ca36b1775506301645d7e01bb9c8d01b5c5c7919"
     },
     {
       "name": "blender-scene-assembly",
@@ -1297,7 +1303,7 @@
       "reason": "UV/overlap/triangulation preparation; selected-to-active and every-material targets; cage correspondence and ray isolation",
       "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
       "runtime_status": "not_run",
-      "entry_sha256": "201b73fbe7b517f00aaa19fe036f1e815aefdb6981c5e072b6a451c710672e5d"
+      "entry_sha256": "6b4e94e9b38ddf536403c56c05b93f6d4d02b4b3a8fc3d2f0ff590578f5fdaa1"
     },
     {
       "name": "blender-texturing",
@@ -1307,7 +1313,7 @@
       "reason": "surface causes/layer order; reversible groups/shared ownership; curvature/AO and scale-aware coordinates",
       "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
       "runtime_status": "not_run",
-      "entry_sha256": "4d75c927647d74cc42f00f8e28c6080b1eccde55bd8775cfd627f0c811e987c1"
+      "entry_sha256": "d798fed30a456b5b935441da36c45277d33118038cd013acebf277fdd5ddf7f3"
     },
     {
       "name": "blender-time-of-day",
@@ -1377,7 +1383,7 @@
       "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
       "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
       "runtime_status": "not_run",
-      "entry_sha256": "8f402eeaf439d1c8e917d14b2316efb194481817faeef5165e3a30b1be6fb0f5"
+      "entry_sha256": "a82f3c76b5b9311e688016025337c6b64d819b0518ab0de391b5a7915f9d8deb"
     },
     {
       "name": "blender-vfx-fx",
@@ -1870,6 +1876,16 @@
       "runtime_status": "not_run"
     },
     {
+      "name": "game-design",
+      "category": "game-development",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed complete pinned source, concrete task branches, evidence limits, independent installation and conditional handoffs.",
+      "next_action": "Use focused eval cases for the requested scenario. The isolated native slice is documented separately and does not certify every branch.",
+      "entry_sha256": "4c1f30debda8e8342817b7d086980f9cd0f5dc5b9037cd9b2a05792c37478bef",
+      "runtime_status": "not_run"
+    },
+    {
       "name": "git-advanced",
       "category": "software-engineering",
       "decision": "improve",
@@ -1937,6 +1953,16 @@
       "reason": "Installability repair: 0 original findings resolved; core, conditional, resource, and alternative ownership checked against current evidence. See the 2026-10-09 remediation record.",
       "next_action": "Use the verified required closure for selective/category installation. Live task behavior remains unrun; any later model trial needs its own current-source evidence.",
       "entry_sha256": "dc15c1d8a5c36c7b33fb076ca05d3f4c4b341d854193d1a4c9caffb9b472d6fb",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "godot-development",
+      "category": "game-development",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed complete pinned source, concrete task branches, evidence limits, independent installation and conditional handoffs.",
+      "next_action": "Use focused eval cases for the requested scenario. The isolated native slice is documented separately and does not certify every branch.",
+      "entry_sha256": "63931b6c8aa78d3cc3a713b71da004fa3c010bd63ee4fd0b9a74c270689aa2a8",
       "runtime_status": "not_run"
     },
     {

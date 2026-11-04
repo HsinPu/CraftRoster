@@ -1,0 +1,32 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+PASS: definition Resource shared by two consumers
+PASS: unknown job rejected
+PASS: wrong pickup rejected
+PASS: pickup J1
+PASS: pickup J2
+PASS: pickup J3
+PASS: capacity overflow leaves state unchanged
+PASS: duplicate pickup rejected
+PASS: second runtime inventory isolated after first mutates
+PASS: wrong destination has no state or reward effect
+PASS: valid delivery releases capacity and rewards
+PASS: double reward rejected
+PASS: freed capacity reusable
+PASS: complete J2
+PASS: complete J3
+PASS: complete J4
+PASS: four jobs yield exactly 40 points
+PASS: definition retains static fields without runtime delivery state
+PASS: other session can independently carry same definition
+PASS: new session reset independent
+PASS: synthetic input traverses actual unhandled boundary
+PASS: pause action traverses always-active input owner
+PASS: paused interaction rejected
+PASS: same owner resumes while tree paused
+PASS: held/stale press on resume rejected
+PASS: release then fresh press works after resume
+PASS: repeat without release cannot apply action twice
+FORWARD_TEST_COMPLETE assertions=27 failures=0

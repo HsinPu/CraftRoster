@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "scope": "Explicit information adaptation of 122 canonical upstream entries into 108 local packages, including four retained coordinators.",
+  "scope": "Explicit four-source adaptation of 126 canonical upstream entries into 110 local packages: Blender108 plus standalone game-design and godot-development. Legacy filenames are retained for compatibility.",
   "evidence": {
     "workflow": "not_run",
     "visual": "not_run",
@@ -11003,6 +11003,1700 @@
           "blob": "f89fad5a50ec266b8c3e45fe86f0534c9a96a90a"
         }
       ]
+    },
+    {
+      "id": "majid:skills/blender-image-to-3d/SKILL.md",
+      "repository": "majid",
+      "path": "skills/blender-image-to-3d/SKILL.md",
+      "blob": "b5736aa9ed3d7aeafa354a326a77e298603921d4",
+      "mappedPackages": [
+        "blender-reference-modeling",
+        "blender-development",
+        "blender-modeling",
+        "blender-character-modeling",
+        "blender-texture-baking",
+        "blender-rigging-animation",
+        "blender-export",
+        "blender-lookdev",
+        "blender-visual-review"
+      ],
+      "capabilities": [
+        {
+          "package": "blender-reference-modeling",
+          "description": "Reference-led phase gates, calibrated panel authority, inferred geometry disclosure and a revision-bound technical/visual/engine handoff replace blanket automated completion. Preserve knight, vehicle, modular architecture and multi-panel model-sheet scenarios as task-specific acceptance examples; supplied fixture paths and expected outputs are authored cases, not executed results. Keep character/creature/architecture/vehicle/prop/weapon/environment category-specific measurement, construction, articulation and failure-recheck branches, while routing to their narrow discipline packages. Adapt explicit object/texture/skeleton/clip manifests, screen-space LODs, neutral/game-camera evidence and disclosed inferred sides; example budgets and naming remain project choices. Retain montage and registered comparison artifacts but distinguish bounding-box normalized similarity from world scale, position and current-image visual judgment. Initialize an owned master, calibration axis/ground/reference collections and rerunnable phase layout only after preserving existing work; do not replace a dirty unowned scene. Adapt reproducible clay/material/wire/pose and game-camera evidence with explicit view, light and revision identity; image production alone is not review acceptance. Preserve world-registered metres-per-pixel, ground/axis and per-band silhouette diagnostics without recentering; validate matte/camera authority and interpret metrics plus actual images instead of process exit code.",
+          "localResources": [
+            {
+              "package": "blender-reference-modeling",
+              "path": "skills/blender-reference-modeling/SKILL.md"
+            },
+            {
+              "package": "blender-reference-modeling",
+              "path": "skills/blender-reference-modeling/references/calibration.md"
+            },
+            {
+              "package": "blender-reference-modeling",
+              "path": "skills/blender-reference-modeling/references/majid-mask-comparison.md"
+            },
+            {
+              "package": "blender-reference-modeling",
+              "path": "skills/blender-reference-modeling/references/majid-reference-pipeline.md"
+            },
+            {
+              "package": "blender-reference-modeling",
+              "path": "skills/blender-reference-modeling/references/reference-reconstruction.md"
+            },
+            {
+              "package": "blender-reference-modeling",
+              "path": "skills/blender-reference-modeling/references/setcodes-projection-atlas.md"
+            },
+            {
+              "package": "blender-reference-modeling",
+              "path": "skills/blender-reference-modeling/scripts/compare_reference_masks.py"
+            }
+          ],
+          "limitations": [
+            "Authored adaptation is conditional on the actual runtime, asset/game contract and source/input ownership.",
+            "No complete production workflow, current-image visual acceptance or target-engine behavior is established by this source mapping."
+          ]
+        },
+        {
+          "package": "blender-development",
+          "description": "Reference-led phase gates, calibrated panel authority, inferred geometry disclosure and a revision-bound technical/visual/engine handoff replace blanket automated completion. Adapt measured rebuild constants, owned collection phases and restartable constructors; remove global scene resets and treat placeholders as construction scaffolding rather than finished assets. Discover the actual Blender build, action slots, node/operator sockets and render capabilities; retain datablock ownership and never transplant old API assumptions blindly.",
+          "localResources": [
+            {
+              "package": "blender-development",
+              "path": "skills/blender-development/SKILL.md"
+            },
+            {
+              "package": "blender-development",
+              "path": "skills/blender-development/references/asset-contract.md"
+            },
+            {
+              "package": "blender-development",
+              "path": "skills/blender-development/references/execution-and-ownership.md"
+            },
+            {
+              "package": "blender-development",
+              "path": "skills/blender-development/references/majid-phase-ownership.md"
+            },
+            {
+              "package": "blender-development",
+              "path": "skills/blender-development/references/production-planning.md"
+            },
+            {
+              "package": "blender-development",
+              "path": "skills/blender-development/references/quality-loop.md"
+            },
+            {
+              "package": "blender-development",
+              "path": "skills/blender-development/references/runtime-and-bpy.md"
+            },
+            {
+              "package": "blender-development",
+              "path": "skills/blender-development/references/setcodes-lab-protocol.md"
+            },
+            {
+              "package": "blender-development",
+              "path": "skills/blender-development/references/specialist-index.md"
+            },
+            {
+              "package": "blender-development",
+              "path": "skills/blender-development/references/style-production.md"
+            },
+            {
+              "package": "blender-development",
+              "path": "skills/blender-development/references/world-and-genre-production.md"
+            },
+            {
+              "package": "blender-development",
+              "path": "skills/blender-development/scripts/inspect_runtime.py"
+            },
+            {
+              "package": "blender-development",
+              "path": "skills/blender-development/scripts/run_blender.py"
+            }
+          ],
+          "limitations": [
+            "Authored adaptation is conditional on the actual runtime, asset/game contract and source/input ownership.",
+            "No complete production workflow, current-image visual acceptance or target-engine behavior is established by this source mapping."
+          ]
+        },
+        {
+          "package": "blender-modeling",
+          "description": "Reference-led phase gates, calibrated panel authority, inferred geometry disclosure and a revision-bound technical/visual/engine handoff replace blanket automated completion. Adapt measured rebuild constants, owned collection phases and restartable constructors; remove global scene resets and treat placeholders as construction scaffolding rather than finished assets. Preserve knight, vehicle, modular architecture and multi-panel model-sheet scenarios as task-specific acceptance examples; supplied fixture paths and expected outputs are authored cases, not executed results. Keep character/creature/architecture/vehicle/prop/weapon/environment category-specific measurement, construction, articulation and failure-recheck branches, while routing to their narrow discipline packages. Use evaluated geometry and every finite world coordinate, assigned polygon materials, UV/rig/clip contract checks and explicit skip semantics; naming and sampled checks remain partial.",
+          "localResources": [
+            {
+              "package": "blender-modeling",
+              "path": "skills/blender-modeling/SKILL.md"
+            },
+            {
+              "package": "blender-modeling",
+              "path": "skills/blender-modeling/references/construction.md"
+            },
+            {
+              "package": "blender-modeling",
+              "path": "skills/blender-modeling/references/majid-measured-categories.md"
+            },
+            {
+              "package": "blender-modeling",
+              "path": "skills/blender-modeling/references/production.md"
+            }
+          ],
+          "limitations": [
+            "Authored adaptation is conditional on the actual runtime, asset/game contract and source/input ownership.",
+            "No complete production workflow, current-image visual acceptance or target-engine behavior is established by this source mapping."
+          ]
+        },
+        {
+          "package": "blender-character-modeling",
+          "description": "Reference-led phase gates, calibrated panel authority, inferred geometry disclosure and a revision-bound technical/visual/engine handoff replace blanket automated completion. Adapt measured rebuild constants, owned collection phases and restartable constructors; remove global scene resets and treat placeholders as construction scaffolding rather than finished assets. Keep character/creature/architecture/vehicle/prop/weapon/environment category-specific measurement, construction, articulation and failure-recheck branches, while routing to their narrow discipline packages.",
+          "localResources": [
+            {
+              "package": "blender-character-modeling",
+              "path": "skills/blender-character-modeling/SKILL.md"
+            },
+            {
+              "package": "blender-character-modeling",
+              "path": "skills/blender-character-modeling/references/majid-calibrated-construction.md"
+            },
+            {
+              "package": "blender-character-modeling",
+              "path": "skills/blender-character-modeling/references/production.md"
+            }
+          ],
+          "limitations": [
+            "Authored adaptation is conditional on the actual runtime, asset/game contract and source/input ownership.",
+            "No complete production workflow, current-image visual acceptance or target-engine behavior is established by this source mapping."
+          ]
+        },
+        {
+          "package": "blender-texture-baking",
+          "description": "Reference-led phase gates, calibrated panel authority, inferred geometry disclosure and a revision-bound technical/visual/engine handoff replace blanket automated completion. Discover the actual Blender build, action slots, node/operator sockets and render capabilities; retain datablock ownership and never transplant old API assumptions blindly. Adapt explicit object/texture/skeleton/clip manifests, screen-space LODs, neutral/game-camera evidence and disclosed inferred sides; example budgets and naming remain project choices. Use per-material connected-output signal routing including constants, owned bake targets/cages and restoration; validate map conventions and saved outputs rather than assuming bake invocation means success.",
+          "localResources": [
+            {
+              "package": "blender-texture-baking",
+              "path": "skills/blender-texture-baking/SKILL.md"
+            },
+            {
+              "package": "blender-texture-baking",
+              "path": "skills/blender-texture-baking/references/majid-bake-branches.md"
+            },
+            {
+              "package": "blender-texture-baking",
+              "path": "skills/blender-texture-baking/references/production.md"
+            }
+          ],
+          "limitations": [
+            "Authored adaptation is conditional on the actual runtime, asset/game contract and source/input ownership.",
+            "No complete production workflow, current-image visual acceptance or target-engine behavior is established by this source mapping."
+          ]
+        },
+        {
+          "package": "blender-rigging-animation",
+          "description": "Reference-led phase gates, calibrated panel authority, inferred geometry disclosure and a revision-bound technical/visual/engine handoff replace blanket automated completion. Preserve knight, vehicle, modular architecture and multi-panel model-sheet scenarios as task-specific acceptance examples; supplied fixture paths and expected outputs are authored cases, not executed results. Discover the actual Blender build, action slots, node/operator sockets and render capabilities; retain datablock ownership and never transplant old API assumptions blindly. Preserve rest/bind calibration, deform/control ownership, family stress poses, contact/socket/event contracts, secondary-motion fallbacks and per-clip target checks; generic rig reports do not certify deformation. Use explicit delivery selections, portable texture/clip/skeleton metadata and fresh output checks; preserve source and validate the manifest against exported content. Use evaluated geometry and every finite world coordinate, assigned polygon materials, UV/rig/clip contract checks and explicit skip semantics; naming and sampled checks remain partial.",
+          "localResources": [
+            {
+              "package": "blender-rigging-animation",
+              "path": "skills/blender-rigging-animation/SKILL.md"
+            },
+            {
+              "package": "blender-rigging-animation",
+              "path": "skills/blender-rigging-animation/references/majid-motion-delivery.md"
+            },
+            {
+              "package": "blender-rigging-animation",
+              "path": "skills/blender-rigging-animation/references/motion-contract.md"
+            }
+          ],
+          "limitations": [
+            "Authored adaptation is conditional on the actual runtime, asset/game contract and source/input ownership.",
+            "No complete production workflow, current-image visual acceptance or target-engine behavior is established by this source mapping."
+          ]
+        },
+        {
+          "package": "blender-export",
+          "description": "Reference-led phase gates, calibrated panel authority, inferred geometry disclosure and a revision-bound technical/visual/engine handoff replace blanket automated completion. Preserve knight, vehicle, modular architecture and multi-panel model-sheet scenarios as task-specific acceptance examples; supplied fixture paths and expected outputs are authored cases, not executed results. Adapt explicit object/texture/skeleton/clip manifests, screen-space LODs, neutral/game-camera evidence and disclosed inferred sides; example budgets and naming remain project choices. Use explicit delivery selections, portable texture/clip/skeleton metadata and fresh output checks; preserve source and validate the manifest against exported content. Fresh-process import summaries must be compared with the declared bounds/pivot/material/skin/motion manifest; a successful import or count summary alone is insufficient. Use evaluated geometry and every finite world coordinate, assigned polygon materials, UV/rig/clip contract checks and explicit skip semantics; naming and sampled checks remain partial.",
+          "localResources": [
+            {
+              "package": "blender-export",
+              "path": "skills/blender-export/SKILL.md"
+            },
+            {
+              "package": "blender-export",
+              "path": "skills/blender-export/references/engine-delivery.md"
+            },
+            {
+              "package": "blender-export",
+              "path": "skills/blender-export/references/export-verification-playbook.md"
+            },
+            {
+              "package": "blender-export",
+              "path": "skills/blender-export/references/majid-semantic-roundtrip.md"
+            },
+            {
+              "package": "blender-export",
+              "path": "skills/blender-export/references/setcodes-fbx-package.md"
+            }
+          ],
+          "limitations": [
+            "Authored adaptation is conditional on the actual runtime, asset/game contract and source/input ownership.",
+            "No complete production workflow, current-image visual acceptance or target-engine behavior is established by this source mapping."
+          ]
+        },
+        {
+          "package": "blender-lookdev",
+          "description": "Reference-led phase gates, calibrated panel authority, inferred geometry disclosure and a revision-bound technical/visual/engine handoff replace blanket automated completion. Discover the actual Blender build, action slots, node/operator sockets and render capabilities; retain datablock ownership and never transplant old API assumptions blindly. Adapt explicit object/texture/skeleton/clip manifests, screen-space LODs, neutral/game-camera evidence and disclosed inferred sides; example budgets and naming remain project choices. Adapt reproducible clay/material/wire/pose and game-camera evidence with explicit view, light and revision identity; image production alone is not review acceptance.",
+          "localResources": [
+            {
+              "package": "blender-lookdev",
+              "path": "skills/blender-lookdev/SKILL.md"
+            },
+            {
+              "package": "blender-lookdev",
+              "path": "skills/blender-lookdev/references/look-development.md"
+            },
+            {
+              "package": "blender-lookdev",
+              "path": "skills/blender-lookdev/references/majid-capture-debug.md"
+            },
+            {
+              "package": "blender-lookdev",
+              "path": "skills/blender-lookdev/references/production.md"
+            },
+            {
+              "package": "blender-lookdev",
+              "path": "skills/blender-lookdev/references/setcodes-neutral-preview.md"
+            }
+          ],
+          "limitations": [
+            "Authored adaptation is conditional on the actual runtime, asset/game contract and source/input ownership.",
+            "No complete production workflow, current-image visual acceptance or target-engine behavior is established by this source mapping."
+          ]
+        },
+        {
+          "package": "blender-visual-review",
+          "description": "Reference-led phase gates, calibrated panel authority, inferred geometry disclosure and a revision-bound technical/visual/engine handoff replace blanket automated completion. Adapt explicit object/texture/skeleton/clip manifests, screen-space LODs, neutral/game-camera evidence and disclosed inferred sides; example budgets and naming remain project choices. Retain montage and registered comparison artifacts but distinguish bounding-box normalized similarity from world scale, position and current-image visual judgment. Adapt reproducible clay/material/wire/pose and game-camera evidence with explicit view, light and revision identity; image production alone is not review acceptance. Preserve world-registered metres-per-pixel, ground/axis and per-band silhouette diagnostics without recentering; validate matte/camera authority and interpret metrics plus actual images instead of process exit code.",
+          "localResources": [
+            {
+              "package": "blender-visual-review",
+              "path": "skills/blender-visual-review/SKILL.md"
+            },
+            {
+              "package": "blender-visual-review",
+              "path": "skills/blender-visual-review/references/visual-rubric.md"
+            }
+          ],
+          "limitations": [
+            "Authored adaptation is conditional on the actual runtime, asset/game contract and source/input ownership.",
+            "No complete production workflow, current-image visual acceptance or target-engine behavior is established by this source mapping."
+          ]
+        }
+      ],
+      "sourceResources": [
+        {
+          "path": "LICENSE",
+          "blob": "0e7cfcfa43d5da2dc6a31768afcd95525fd3000c"
+        },
+        {
+          "path": "skills/blender-image-to-3d/SKILL.md",
+          "blob": "b5736aa9ed3d7aeafa354a326a77e298603921d4"
+        },
+        {
+          "path": "skills/blender-image-to-3d/assets/build_template.py",
+          "blob": "f8b4d485f6bd5cfdd3e185e50a2fa2acbbd9e4e9"
+        },
+        {
+          "path": "skills/blender-image-to-3d/evals/evals.json",
+          "blob": "5cb967e9a37f959df8c40c32485af309f0de04de"
+        },
+        {
+          "path": "skills/blender-image-to-3d/references/blender-5-notes.md",
+          "blob": "a513ed84574c425d5d74da749424adcf609cabf4"
+        },
+        {
+          "path": "skills/blender-image-to-3d/references/categories.md",
+          "blob": "8d510f3cee2db4467d8999c1b0a4bd01041b8a07"
+        },
+        {
+          "path": "skills/blender-image-to-3d/references/delivery-and-acceptance.md",
+          "blob": "916ee6293236668113cb32b53b929c3ba717f296"
+        },
+        {
+          "path": "skills/blender-image-to-3d/references/rigging-animation.md",
+          "blob": "1bd940892e9ef0f7c29761267493d272c8dacac9"
+        },
+        {
+          "path": "skills/blender-image-to-3d/scripts/bake_maps.py",
+          "blob": "53b5618885a3bc9dd43d621879ee3a515c0fb315"
+        },
+        {
+          "path": "skills/blender-image-to-3d/scripts/compose_review.py",
+          "blob": "82a046ab39e52253668c10d421897328748e19c3"
+        },
+        {
+          "path": "skills/blender-image-to-3d/scripts/export_delivery.py",
+          "blob": "c9d67b476ed7d82b5fb232c859a22b530487473d"
+        },
+        {
+          "path": "skills/blender-image-to-3d/scripts/init_master.py",
+          "blob": "7be5063271040b120e29c3a3dbee970090e0b256"
+        },
+        {
+          "path": "skills/blender-image-to-3d/scripts/review_render.py",
+          "blob": "c3f9b04581b15cd480b3d442103b34b58959a5df"
+        },
+        {
+          "path": "skills/blender-image-to-3d/scripts/roundtrip.py",
+          "blob": "934f92561b94c529265d983ece5dbe5d33bf7ada"
+        },
+        {
+          "path": "skills/blender-image-to-3d/scripts/validate.py",
+          "blob": "912725c8149c225541cc73c9aef6f6d238660454"
+        },
+        {
+          "path": "skills/blender-image-to-3d/scripts/world_gate.py",
+          "blob": "6ec38d6fe94fef2d1610b18ae379f7bb9746bb33"
+        }
+      ],
+      "resourceAdaptations": [
+        {
+          "path": "LICENSE",
+          "blob": "0e7cfcfa43d5da2dc6a31768afcd95525fd3000c",
+          "disposition": "context-only",
+          "decision": "Preserve pinned MIT attribution separately from authored production capability; a legal notice is not procedural support.",
+          "localResources": []
+        },
+        {
+          "path": "skills/blender-image-to-3d/SKILL.md",
+          "blob": "b5736aa9ed3d7aeafa354a326a77e298603921d4",
+          "disposition": "adapted",
+          "decision": "Reference-led phase gates, calibrated panel authority, inferred geometry disclosure and a revision-bound technical/visual/engine handoff replace blanket automated completion.",
+          "localResources": [
+            {
+              "package": "blender-reference-modeling",
+              "path": "skills/blender-reference-modeling/references/majid-reference-pipeline.md"
+            },
+            {
+              "package": "blender-reference-modeling",
+              "path": "skills/blender-reference-modeling/references/majid-mask-comparison.md"
+            },
+            {
+              "package": "blender-development",
+              "path": "skills/blender-development/references/majid-phase-ownership.md"
+            },
+            {
+              "package": "blender-modeling",
+              "path": "skills/blender-modeling/references/majid-measured-categories.md"
+            },
+            {
+              "package": "blender-character-modeling",
+              "path": "skills/blender-character-modeling/references/majid-calibrated-construction.md"
+            },
+            {
+              "package": "blender-texture-baking",
+              "path": "skills/blender-texture-baking/references/majid-bake-branches.md"
+            },
+            {
+              "package": "blender-rigging-animation",
+              "path": "skills/blender-rigging-animation/references/majid-motion-delivery.md"
+            },
+            {
+              "package": "blender-export",
+              "path": "skills/blender-export/references/majid-semantic-roundtrip.md"
+            },
+            {
+              "package": "blender-lookdev",
+              "path": "skills/blender-lookdev/references/majid-capture-debug.md"
+            },
+            {
+              "package": "blender-visual-review",
+              "path": "skills/blender-visual-review/references/visual-rubric.md"
+            }
+          ]
+        },
+        {
+          "path": "skills/blender-image-to-3d/assets/build_template.py",
+          "blob": "f8b4d485f6bd5cfdd3e185e50a2fa2acbbd9e4e9",
+          "disposition": "adapted",
+          "decision": "Adapt measured rebuild constants, owned collection phases and restartable constructors; remove global scene resets and treat placeholders as construction scaffolding rather than finished assets.",
+          "localResources": [
+            {
+              "package": "blender-development",
+              "path": "skills/blender-development/references/majid-phase-ownership.md"
+            },
+            {
+              "package": "blender-modeling",
+              "path": "skills/blender-modeling/references/majid-measured-categories.md"
+            },
+            {
+              "package": "blender-character-modeling",
+              "path": "skills/blender-character-modeling/references/majid-calibrated-construction.md"
+            }
+          ]
+        },
+        {
+          "path": "skills/blender-image-to-3d/evals/evals.json",
+          "blob": "5cb967e9a37f959df8c40c32485af309f0de04de",
+          "disposition": "evaluation-context",
+          "decision": "Preserve knight, vehicle, modular architecture and multi-panel model-sheet scenarios as task-specific acceptance examples; supplied fixture paths and expected outputs are authored cases, not executed results.",
+          "localResources": [
+            {
+              "package": "blender-reference-modeling",
+              "path": "skills/blender-reference-modeling/references/majid-reference-pipeline.md"
+            },
+            {
+              "package": "blender-reference-modeling",
+              "path": "skills/blender-reference-modeling/references/majid-mask-comparison.md"
+            },
+            {
+              "package": "blender-modeling",
+              "path": "skills/blender-modeling/references/majid-measured-categories.md"
+            },
+            {
+              "package": "blender-rigging-animation",
+              "path": "skills/blender-rigging-animation/references/majid-motion-delivery.md"
+            },
+            {
+              "package": "blender-export",
+              "path": "skills/blender-export/references/majid-semantic-roundtrip.md"
+            }
+          ]
+        },
+        {
+          "path": "skills/blender-image-to-3d/references/blender-5-notes.md",
+          "blob": "a513ed84574c425d5d74da749424adcf609cabf4",
+          "disposition": "adapted",
+          "decision": "Discover the actual Blender build, action slots, node/operator sockets and render capabilities; retain datablock ownership and never transplant old API assumptions blindly.",
+          "localResources": [
+            {
+              "package": "blender-development",
+              "path": "skills/blender-development/references/majid-phase-ownership.md"
+            },
+            {
+              "package": "blender-texture-baking",
+              "path": "skills/blender-texture-baking/references/majid-bake-branches.md"
+            },
+            {
+              "package": "blender-lookdev",
+              "path": "skills/blender-lookdev/references/majid-capture-debug.md"
+            },
+            {
+              "package": "blender-rigging-animation",
+              "path": "skills/blender-rigging-animation/references/majid-motion-delivery.md"
+            }
+          ]
+        },
+        {
+          "path": "skills/blender-image-to-3d/references/categories.md",
+          "blob": "8d510f3cee2db4467d8999c1b0a4bd01041b8a07",
+          "disposition": "adapted",
+          "decision": "Keep character/creature/architecture/vehicle/prop/weapon/environment category-specific measurement, construction, articulation and failure-recheck branches, while routing to their narrow discipline packages.",
+          "localResources": [
+            {
+              "package": "blender-modeling",
+              "path": "skills/blender-modeling/references/majid-measured-categories.md"
+            },
+            {
+              "package": "blender-character-modeling",
+              "path": "skills/blender-character-modeling/references/majid-calibrated-construction.md"
+            },
+            {
+              "package": "blender-reference-modeling",
+              "path": "skills/blender-reference-modeling/references/majid-reference-pipeline.md"
+            }
+          ]
+        },
+        {
+          "path": "skills/blender-image-to-3d/references/delivery-and-acceptance.md",
+          "blob": "916ee6293236668113cb32b53b929c3ba717f296",
+          "disposition": "adapted",
+          "decision": "Adapt explicit object/texture/skeleton/clip manifests, screen-space LODs, neutral/game-camera evidence and disclosed inferred sides; example budgets and naming remain project choices.",
+          "localResources": [
+            {
+              "package": "blender-reference-modeling",
+              "path": "skills/blender-reference-modeling/references/majid-reference-pipeline.md"
+            },
+            {
+              "package": "blender-export",
+              "path": "skills/blender-export/references/majid-semantic-roundtrip.md"
+            },
+            {
+              "package": "blender-texture-baking",
+              "path": "skills/blender-texture-baking/references/majid-bake-branches.md"
+            },
+            {
+              "package": "blender-lookdev",
+              "path": "skills/blender-lookdev/references/majid-capture-debug.md"
+            },
+            {
+              "package": "blender-visual-review",
+              "path": "skills/blender-visual-review/references/visual-rubric.md"
+            }
+          ]
+        },
+        {
+          "path": "skills/blender-image-to-3d/references/rigging-animation.md",
+          "blob": "1bd940892e9ef0f7c29761267493d272c8dacac9",
+          "disposition": "adapted",
+          "decision": "Preserve rest/bind calibration, deform/control ownership, family stress poses, contact/socket/event contracts, secondary-motion fallbacks and per-clip target checks; generic rig reports do not certify deformation.",
+          "localResources": [
+            {
+              "package": "blender-rigging-animation",
+              "path": "skills/blender-rigging-animation/references/majid-motion-delivery.md"
+            }
+          ]
+        },
+        {
+          "path": "skills/blender-image-to-3d/scripts/bake_maps.py",
+          "blob": "53b5618885a3bc9dd43d621879ee3a515c0fb315",
+          "disposition": "adapted",
+          "decision": "Use per-material connected-output signal routing including constants, owned bake targets/cages and restoration; validate map conventions and saved outputs rather than assuming bake invocation means success.",
+          "localResources": [
+            {
+              "package": "blender-texture-baking",
+              "path": "skills/blender-texture-baking/references/majid-bake-branches.md"
+            }
+          ]
+        },
+        {
+          "path": "skills/blender-image-to-3d/scripts/compose_review.py",
+          "blob": "82a046ab39e52253668c10d421897328748e19c3",
+          "disposition": "adapted",
+          "decision": "Retain montage and registered comparison artifacts but distinguish bounding-box normalized similarity from world scale, position and current-image visual judgment.",
+          "localResources": [
+            {
+              "package": "blender-reference-modeling",
+              "path": "skills/blender-reference-modeling/references/majid-mask-comparison.md"
+            },
+            {
+              "package": "blender-reference-modeling",
+              "path": "skills/blender-reference-modeling/scripts/compare_reference_masks.py"
+            },
+            {
+              "package": "blender-visual-review",
+              "path": "skills/blender-visual-review/references/visual-rubric.md"
+            }
+          ]
+        },
+        {
+          "path": "skills/blender-image-to-3d/scripts/export_delivery.py",
+          "blob": "c9d67b476ed7d82b5fb232c859a22b530487473d",
+          "disposition": "adapted",
+          "decision": "Use explicit delivery selections, portable texture/clip/skeleton metadata and fresh output checks; preserve source and validate the manifest against exported content.",
+          "localResources": [
+            {
+              "package": "blender-export",
+              "path": "skills/blender-export/references/majid-semantic-roundtrip.md"
+            },
+            {
+              "package": "blender-rigging-animation",
+              "path": "skills/blender-rigging-animation/references/majid-motion-delivery.md"
+            }
+          ]
+        },
+        {
+          "path": "skills/blender-image-to-3d/scripts/init_master.py",
+          "blob": "7be5063271040b120e29c3a3dbee970090e0b256",
+          "disposition": "adapted",
+          "decision": "Initialize an owned master, calibration axis/ground/reference collections and rerunnable phase layout only after preserving existing work; do not replace a dirty unowned scene.",
+          "localResources": [
+            {
+              "package": "blender-reference-modeling",
+              "path": "skills/blender-reference-modeling/references/majid-reference-pipeline.md"
+            }
+          ]
+        },
+        {
+          "path": "skills/blender-image-to-3d/scripts/review_render.py",
+          "blob": "c3f9b04581b15cd480b3d442103b34b58959a5df",
+          "disposition": "adapted",
+          "decision": "Adapt reproducible clay/material/wire/pose and game-camera evidence with explicit view, light and revision identity; image production alone is not review acceptance.",
+          "localResources": [
+            {
+              "package": "blender-lookdev",
+              "path": "skills/blender-lookdev/references/majid-capture-debug.md"
+            },
+            {
+              "package": "blender-reference-modeling",
+              "path": "skills/blender-reference-modeling/references/majid-reference-pipeline.md"
+            },
+            {
+              "package": "blender-visual-review",
+              "path": "skills/blender-visual-review/references/visual-rubric.md"
+            }
+          ]
+        },
+        {
+          "path": "skills/blender-image-to-3d/scripts/roundtrip.py",
+          "blob": "934f92561b94c529265d983ece5dbe5d33bf7ada",
+          "disposition": "adapted",
+          "decision": "Fresh-process import summaries must be compared with the declared bounds/pivot/material/skin/motion manifest; a successful import or count summary alone is insufficient.",
+          "localResources": [
+            {
+              "package": "blender-export",
+              "path": "skills/blender-export/references/majid-semantic-roundtrip.md"
+            }
+          ]
+        },
+        {
+          "path": "skills/blender-image-to-3d/scripts/validate.py",
+          "blob": "912725c8149c225541cc73c9aef6f6d238660454",
+          "disposition": "adapted",
+          "decision": "Use evaluated geometry and every finite world coordinate, assigned polygon materials, UV/rig/clip contract checks and explicit skip semantics; naming and sampled checks remain partial.",
+          "localResources": [
+            {
+              "package": "blender-modeling",
+              "path": "skills/blender-modeling/references/majid-measured-categories.md"
+            },
+            {
+              "package": "blender-rigging-animation",
+              "path": "skills/blender-rigging-animation/references/majid-motion-delivery.md"
+            },
+            {
+              "package": "blender-export",
+              "path": "skills/blender-export/references/majid-semantic-roundtrip.md"
+            }
+          ]
+        },
+        {
+          "path": "skills/blender-image-to-3d/scripts/world_gate.py",
+          "blob": "6ec38d6fe94fef2d1610b18ae379f7bb9746bb33",
+          "disposition": "adapted",
+          "decision": "Preserve world-registered metres-per-pixel, ground/axis and per-band silhouette diagnostics without recentering; validate matte/camera authority and interpret metrics plus actual images instead of process exit code.",
+          "localResources": [
+            {
+              "package": "blender-reference-modeling",
+              "path": "skills/blender-reference-modeling/references/majid-mask-comparison.md"
+            },
+            {
+              "package": "blender-reference-modeling",
+              "path": "skills/blender-reference-modeling/references/majid-reference-pipeline.md"
+            },
+            {
+              "package": "blender-reference-modeling",
+              "path": "skills/blender-reference-modeling/scripts/compare_reference_masks.py"
+            },
+            {
+              "package": "blender-visual-review",
+              "path": "skills/blender-visual-review/references/visual-rubric.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "setcodes:skills/blender-game-assets/SKILL.md",
+      "repository": "setcodes",
+      "path": "skills/blender-game-assets/SKILL.md",
+      "blob": "8bfeca60efa3c7457e8a19fc37e48999ffca6caa",
+      "mappedPackages": [
+        "blender-texturing",
+        "blender-game-optimization",
+        "blender-hard-surface",
+        "blender-vehicle-modeling",
+        "blender-reference-modeling",
+        "blender-character-rigging",
+        "blender-export",
+        "blender-development",
+        "blender-lookdev"
+      ],
+      "capabilities": [
+        {
+          "package": "blender-texturing",
+          "description": "Dispatch measured source reconstruction, optimized texture repair, rigging handoff, neutral review and project-selected delivery by input class; crowd cost anecdotes and personal preferences are not guarantees. Adapt neutral studio diagnosis before recoloring and a project-selected portable FBX texture/ORM-split package; reject author-specific format/path preferences as authority. Freeze mesh/UV/rig/alpha and registered atlas borders, separate albedo/normal/ORM diagnosis, version conservative candidate pixels and compare same-camera mip/seam evidence. Adapt equal-dimension/channel map pack/split and owned-island fill/normal flatten with preserved scalar masters, finite masks and explicit proxy limitations; never delete source maps by default. Validate bounded GLB chunks/views/accessors/material roles and unsupported extensions, append a new owned material image/texture while preserving original BIN bytes and shared users; require same-atlas dimensions/registration separately and reject unsupported resources explicitly. Use conservative color-aware candidate filtering with finite UV validation, per-island protected borders/alpha, explicit invariant exceptions and collision-safe versioned outputs/reports.",
+          "localResources": [
+            {
+              "package": "blender-texturing",
+              "path": "skills/blender-texturing/SKILL.md"
+            },
+            {
+              "package": "blender-texturing",
+              "path": "skills/blender-texturing/references/production.md"
+            },
+            {
+              "package": "blender-texturing",
+              "path": "skills/blender-texturing/references/setcodes-registered-cleanup.md"
+            },
+            {
+              "package": "blender-texturing",
+              "path": "skills/blender-texturing/scripts/replace_glb_basecolor.py"
+            }
+          ],
+          "limitations": [
+            "Authored adaptation is conditional on the actual runtime, asset/game contract and source/input ownership.",
+            "No complete production workflow, current-image visual acceptance or target-engine behavior is established by this source mapping."
+          ]
+        },
+        {
+          "package": "blender-game-optimization",
+          "description": "Dispatch measured source reconstruction, optimized texture repair, rigging handoff, neutral review and project-selected delivery by input class; crowd cost anecdotes and personal preferences are not guarantees. Calibrate A-pose remesh and region-reduction masks to actual anatomy/scale, preserve facial/hair/hand silhouettes and build semantic seams with face/hand/seam bake rechecks. Replace unsafe monolithic helpers with bounded measured construction, UV/bake, rest-aware rig correction and export recipes; fix constant metallic, rectangular maps, wrapped bleed, global resets and sampled-overlap overclaims.",
+          "localResources": [
+            {
+              "package": "blender-game-optimization",
+              "path": "skills/blender-game-optimization/SKILL.md"
+            },
+            {
+              "package": "blender-game-optimization",
+              "path": "skills/blender-game-optimization/references/cost-and-appearance.md"
+            },
+            {
+              "package": "blender-game-optimization",
+              "path": "skills/blender-game-optimization/references/production.md"
+            },
+            {
+              "package": "blender-game-optimization",
+              "path": "skills/blender-game-optimization/references/setcodes-ai-reduction.md"
+            }
+          ],
+          "limitations": [
+            "Authored adaptation is conditional on the actual runtime, asset/game contract and source/input ownership.",
+            "No complete production workflow, current-image visual acceptance or target-engine behavior is established by this source mapping."
+          ]
+        },
+        {
+          "package": "blender-hard-surface",
+          "description": "Dispatch measured source reconstruction, optimized texture repair, rigging handoff, neutral review and project-selected delivery by input class; crowd cost anecdotes and personal preferences are not guarantees. Adapt pixel/part/view projection UV calibration, bounded background bleed and clean atlas self-bake; resolve conflicting views explicitly and keep external texturing a user-selected handoff. Measure source in a consistent coordinate space, rebuild roof/trim/soffit structure and hidden-face atlas allocation, then selected-to-active bake with bounded underside repair. Replace unsafe monolithic helpers with bounded measured construction, UV/bake, rest-aware rig correction and export recipes; fix constant metallic, rectangular maps, wrapped bleed, global resets and sampled-overlap overclaims.",
+          "localResources": [
+            {
+              "package": "blender-hard-surface",
+              "path": "skills/blender-hard-surface/SKILL.md"
+            },
+            {
+              "package": "blender-hard-surface",
+              "path": "skills/blender-hard-surface/references/production.md"
+            },
+            {
+              "package": "blender-hard-surface",
+              "path": "skills/blender-hard-surface/references/setcodes-source-rebuild.md"
+            }
+          ],
+          "limitations": [
+            "Authored adaptation is conditional on the actual runtime, asset/game contract and source/input ownership.",
+            "No complete production workflow, current-image visual acceptance or target-engine behavior is established by this source mapping."
+          ]
+        },
+        {
+          "package": "blender-vehicle-modeling",
+          "description": "Dispatch measured source reconstruction, optimized texture repair, rigging handoff, neutral review and project-selected delivery by input class; crowd cost anecdotes and personal preferences are not guarantees. Classify thin-shell source meshes, measure wheels and camera-domain rays, construct same-ray-family cross-section cages and protect sharp edges before bounded bake and missing-part repair. Replace unsafe monolithic helpers with bounded measured construction, UV/bake, rest-aware rig correction and export recipes; fix constant metallic, rectangular maps, wrapped bleed, global resets and sampled-overlap overclaims.",
+          "localResources": [
+            {
+              "package": "blender-vehicle-modeling",
+              "path": "skills/blender-vehicle-modeling/SKILL.md"
+            },
+            {
+              "package": "blender-vehicle-modeling",
+              "path": "skills/blender-vehicle-modeling/references/production.md"
+            },
+            {
+              "package": "blender-vehicle-modeling",
+              "path": "skills/blender-vehicle-modeling/references/setcodes-shell-reconstruction.md"
+            }
+          ],
+          "limitations": [
+            "Authored adaptation is conditional on the actual runtime, asset/game contract and source/input ownership.",
+            "No complete production workflow, current-image visual acceptance or target-engine behavior is established by this source mapping."
+          ]
+        },
+        {
+          "package": "blender-reference-modeling",
+          "description": "Dispatch measured source reconstruction, optimized texture repair, rigging handoff, neutral review and project-selected delivery by input class; crowd cost anecdotes and personal preferences are not guarantees. Adapt pixel/part/view projection UV calibration, bounded background bleed and clean atlas self-bake; resolve conflicting views explicitly and keep external texturing a user-selected handoff. Replace unsafe monolithic helpers with bounded measured construction, UV/bake, rest-aware rig correction and export recipes; fix constant metallic, rectangular maps, wrapped bleed, global resets and sampled-overlap overclaims. Adapt equal-dimension/channel map pack/split and owned-island fill/normal flatten with preserved scalar masters, finite masks and explicit proxy limitations; never delete source maps by default.",
+          "localResources": [
+            {
+              "package": "blender-reference-modeling",
+              "path": "skills/blender-reference-modeling/SKILL.md"
+            },
+            {
+              "package": "blender-reference-modeling",
+              "path": "skills/blender-reference-modeling/references/calibration.md"
+            },
+            {
+              "package": "blender-reference-modeling",
+              "path": "skills/blender-reference-modeling/references/majid-mask-comparison.md"
+            },
+            {
+              "package": "blender-reference-modeling",
+              "path": "skills/blender-reference-modeling/references/majid-reference-pipeline.md"
+            },
+            {
+              "package": "blender-reference-modeling",
+              "path": "skills/blender-reference-modeling/references/reference-reconstruction.md"
+            },
+            {
+              "package": "blender-reference-modeling",
+              "path": "skills/blender-reference-modeling/references/setcodes-projection-atlas.md"
+            },
+            {
+              "package": "blender-reference-modeling",
+              "path": "skills/blender-reference-modeling/scripts/compare_reference_masks.py"
+            }
+          ],
+          "limitations": [
+            "Authored adaptation is conditional on the actual runtime, asset/game contract and source/input ownership.",
+            "No complete production workflow, current-image visual acceptance or target-engine behavior is established by this source mapping."
+          ]
+        },
+        {
+          "package": "blender-character-rigging",
+          "description": "Dispatch measured source reconstruction, optimized texture repair, rigging handoff, neutral review and project-selected delivery by input class; crowd cost anecdotes and personal preferences are not guarantees. Calibrate A-pose remesh and region-reduction masks to actual anatomy/scale, preserve facial/hair/hand silhouettes and build semantic seams with face/hand/seam bake rechecks. Use a user-mediated prepared-copy upload, namespace/rest/clip inventory, calibrated head-local jaw masks and crowd finger reduction followed by regenerated clip checks; preserve source transforms and bind semantics. Replace unsafe monolithic helpers with bounded measured construction, UV/bake, rest-aware rig correction and export recipes; fix constant metallic, rectangular maps, wrapped bleed, global resets and sampled-overlap overclaims.",
+          "localResources": [
+            {
+              "package": "blender-character-rigging",
+              "path": "skills/blender-character-rigging/SKILL.md"
+            },
+            {
+              "package": "blender-character-rigging",
+              "path": "skills/blender-character-rigging/references/production.md"
+            },
+            {
+              "package": "blender-character-rigging",
+              "path": "skills/blender-character-rigging/references/setcodes-mixamo-repair.md"
+            }
+          ],
+          "limitations": [
+            "Authored adaptation is conditional on the actual runtime, asset/game contract and source/input ownership.",
+            "No complete production workflow, current-image visual acceptance or target-engine behavior is established by this source mapping."
+          ]
+        },
+        {
+          "package": "blender-export",
+          "description": "Dispatch measured source reconstruction, optimized texture repair, rigging handoff, neutral review and project-selected delivery by input class; crowd cost anecdotes and personal preferences are not guarantees. Use a user-mediated prepared-copy upload, namespace/rest/clip inventory, calibrated head-local jaw masks and crowd finger reduction followed by regenerated clip checks; preserve source transforms and bind semantics. Adapt neutral studio diagnosis before recoloring and a project-selected portable FBX texture/ORM-split package; reject author-specific format/path preferences as authority. Retain fresh-process FBX/GLB semantic comparison for the full manifest object set including tiny props; missing landmarks or unsupported checks are explicit skips, not passes. Replace unsafe monolithic helpers with bounded measured construction, UV/bake, rest-aware rig correction and export recipes; fix constant metallic, rectangular maps, wrapped bleed, global resets and sampled-overlap overclaims. Use bounded container parsing and optional-name/primitive-mode-aware manifest comparisons; mesh/material/skin/action summaries alone are not semantic acceptance.",
+          "localResources": [
+            {
+              "package": "blender-export",
+              "path": "skills/blender-export/SKILL.md"
+            },
+            {
+              "package": "blender-export",
+              "path": "skills/blender-export/references/engine-delivery.md"
+            },
+            {
+              "package": "blender-export",
+              "path": "skills/blender-export/references/export-verification-playbook.md"
+            },
+            {
+              "package": "blender-export",
+              "path": "skills/blender-export/references/majid-semantic-roundtrip.md"
+            },
+            {
+              "package": "blender-export",
+              "path": "skills/blender-export/references/setcodes-fbx-package.md"
+            }
+          ],
+          "limitations": [
+            "Authored adaptation is conditional on the actual runtime, asset/game contract and source/input ownership.",
+            "No complete production workflow, current-image visual acceptance or target-engine behavior is established by this source mapping."
+          ]
+        },
+        {
+          "package": "blender-development",
+          "description": "Dispatch measured source reconstruction, optimized texture repair, rigging handoff, neutral review and project-selected delivery by input class; crowd cost anecdotes and personal preferences are not guarantees. Document Blender Lab execute/code/strict_json and NUL framing separately from other MCP protocols; discover actual tools, bound payloads/timeouts and require authorized setup. Describe the optional exact Lab transport with bounded frames, timeout, status/result checks and owned job outputs; existing background job execution remains a distinct protocol. Retain exact optional stdio initialize/list/call to Lab socket framing and error behavior as a protocol contract; do not enable servers or install configuration implicitly. Replace unsafe monolithic helpers with bounded measured construction, UV/bake, rest-aware rig correction and export recipes; fix constant metallic, rectangular maps, wrapped bleed, global resets and sampled-overlap overclaims. Separate synthetic host/native smoke from visual and engine acceptance, use an explicit verified host interpreter, assert semantic invariants and retain failure/artifact evidence.",
+          "localResources": [
+            {
+              "package": "blender-development",
+              "path": "skills/blender-development/SKILL.md"
+            },
+            {
+              "package": "blender-development",
+              "path": "skills/blender-development/references/asset-contract.md"
+            },
+            {
+              "package": "blender-development",
+              "path": "skills/blender-development/references/execution-and-ownership.md"
+            },
+            {
+              "package": "blender-development",
+              "path": "skills/blender-development/references/majid-phase-ownership.md"
+            },
+            {
+              "package": "blender-development",
+              "path": "skills/blender-development/references/production-planning.md"
+            },
+            {
+              "package": "blender-development",
+              "path": "skills/blender-development/references/quality-loop.md"
+            },
+            {
+              "package": "blender-development",
+              "path": "skills/blender-development/references/runtime-and-bpy.md"
+            },
+            {
+              "package": "blender-development",
+              "path": "skills/blender-development/references/setcodes-lab-protocol.md"
+            },
+            {
+              "package": "blender-development",
+              "path": "skills/blender-development/references/specialist-index.md"
+            },
+            {
+              "package": "blender-development",
+              "path": "skills/blender-development/references/style-production.md"
+            },
+            {
+              "package": "blender-development",
+              "path": "skills/blender-development/references/world-and-genre-production.md"
+            },
+            {
+              "package": "blender-development",
+              "path": "skills/blender-development/scripts/inspect_runtime.py"
+            },
+            {
+              "package": "blender-development",
+              "path": "skills/blender-development/scripts/run_blender.py"
+            }
+          ],
+          "limitations": [
+            "Authored adaptation is conditional on the actual runtime, asset/game contract and source/input ownership.",
+            "No complete production workflow, current-image visual acceptance or target-engine behavior is established by this source mapping."
+          ]
+        },
+        {
+          "package": "blender-lookdev",
+          "description": "Dispatch measured source reconstruction, optimized texture repair, rigging handoff, neutral review and project-selected delivery by input class; crowd cost anecdotes and personal preferences are not guarantees. Adapt neutral studio diagnosis before recoloring and a project-selected portable FBX texture/ORM-split package; reject author-specific format/path preferences as authority. Resolve explicit HDRI and supported view transform before mutation, create a scale-calibrated owned neutral rig and rollback on failure; portable runtime discovery replaces fixed macOS resource paths.",
+          "localResources": [
+            {
+              "package": "blender-lookdev",
+              "path": "skills/blender-lookdev/SKILL.md"
+            },
+            {
+              "package": "blender-lookdev",
+              "path": "skills/blender-lookdev/references/look-development.md"
+            },
+            {
+              "package": "blender-lookdev",
+              "path": "skills/blender-lookdev/references/majid-capture-debug.md"
+            },
+            {
+              "package": "blender-lookdev",
+              "path": "skills/blender-lookdev/references/production.md"
+            },
+            {
+              "package": "blender-lookdev",
+              "path": "skills/blender-lookdev/references/setcodes-neutral-preview.md"
+            }
+          ],
+          "limitations": [
+            "Authored adaptation is conditional on the actual runtime, asset/game contract and source/input ownership.",
+            "No complete production workflow, current-image visual acceptance or target-engine behavior is established by this source mapping."
+          ]
+        }
+      ],
+      "sourceResources": [
+        {
+          "path": "LICENSE",
+          "blob": "15770f9c8fb91aa409c90aff11d97ce40f797941"
+        },
+        {
+          "path": "skills/blender-game-assets/LICENSE",
+          "blob": "15770f9c8fb91aa409c90aff11d97ce40f797941"
+        },
+        {
+          "path": "skills/blender-game-assets/SKILL.md",
+          "blob": "8bfeca60efa3c7457e8a19fc37e48999ffca6caa"
+        },
+        {
+          "path": "skills/blender-game-assets/agents/openai.yaml",
+          "blob": "dbb1e64d68faba3bb2d26e23c7ee9c90cf8ca059"
+        },
+        {
+          "path": "skills/blender-game-assets/references/characters.md",
+          "blob": "27050161af960c3aa416f151794a90d3c3939258"
+        },
+        {
+          "path": "skills/blender-game-assets/references/connection.md",
+          "blob": "ec30af9cd1434db97d2ac2b5e786f354107c7398"
+        },
+        {
+          "path": "skills/blender-game-assets/references/from-reference.md",
+          "blob": "5ed6b67c8d43e5bb6a671be3044fdc9c3517a049"
+        },
+        {
+          "path": "skills/blender-game-assets/references/hard-surface.md",
+          "blob": "e964eb4162a5cf0da5dd1c53df47616907c0bc85"
+        },
+        {
+          "path": "skills/blender-game-assets/references/mixamo.md",
+          "blob": "89c87aa2f6747f695aa2316831631bc886f8d317"
+        },
+        {
+          "path": "skills/blender-game-assets/references/preview-and-fbx.md",
+          "blob": "f56e88b87c4bf7f4f06bcb5e710daeebb055c3cf"
+        },
+        {
+          "path": "skills/blender-game-assets/references/texture-cleanup.md",
+          "blob": "ab4d2fa8fc50b81f46959e88ee6e3253df901ada"
+        },
+        {
+          "path": "skills/blender-game-assets/references/vehicles.md",
+          "blob": "c04013ddf8f5de8b21cd8fad7cc0fbbe63fe9f1e"
+        },
+        {
+          "path": "skills/blender-game-assets/scripts/bg_verify.py",
+          "blob": "534eeff2f09fd6d5bfa7a4573e5486cac881ae29"
+        },
+        {
+          "path": "skills/blender-game-assets/scripts/blender_exec.py",
+          "blob": "bae3abf1fc280b81e67025650f63cc264380e5d9"
+        },
+        {
+          "path": "skills/blender-game-assets/scripts/blender_mcp_stdio.py",
+          "blob": "880790eae608f7703a306515cd718be4e6d649d3"
+        },
+        {
+          "path": "skills/blender-game-assets/scripts/bpy_lib.py",
+          "blob": "2a3d01f4c381a414c223368944e8577a2a9b801e"
+        },
+        {
+          "path": "skills/blender-game-assets/scripts/maps_post.py",
+          "blob": "8bae8e7e9f355a3c75eeb5f1ae177e309c68d182"
+        },
+        {
+          "path": "skills/blender-game-assets/scripts/replace_glb_albedo.py",
+          "blob": "efa39be855cdfb1ce283c6451ae2a70da57dbd0f"
+        },
+        {
+          "path": "skills/blender-game-assets/scripts/selftest_bg.py",
+          "blob": "d6bfc3e2a6687f1b617f0fc37ba241550e3ddbdf"
+        },
+        {
+          "path": "skills/blender-game-assets/scripts/studio_preview.py",
+          "blob": "0637e1c7592fb622510dfae63dc3d9901c8a2b50"
+        },
+        {
+          "path": "skills/blender-game-assets/scripts/texture_cleanup.py",
+          "blob": "ac43b924c6fb1ff217ec98bf9b9845735370046d"
+        },
+        {
+          "path": "skills/blender-game-assets/scripts/verify_glb.py",
+          "blob": "9419b4c2fb8a03b16088af1703f4b5c68ffa5791"
+        }
+      ],
+      "resourceAdaptations": [
+        {
+          "path": "LICENSE",
+          "blob": "15770f9c8fb91aa409c90aff11d97ce40f797941",
+          "disposition": "context-only",
+          "decision": "Preserve pinned MIT attribution separately from authored production capability; a legal notice is not procedural support.",
+          "localResources": []
+        },
+        {
+          "path": "skills/blender-game-assets/LICENSE",
+          "blob": "15770f9c8fb91aa409c90aff11d97ce40f797941",
+          "disposition": "context-only",
+          "decision": "Preserve pinned MIT attribution separately from authored production capability; a legal notice is not procedural support.",
+          "localResources": []
+        },
+        {
+          "path": "skills/blender-game-assets/SKILL.md",
+          "blob": "8bfeca60efa3c7457e8a19fc37e48999ffca6caa",
+          "disposition": "adapted",
+          "decision": "Dispatch measured source reconstruction, optimized texture repair, rigging handoff, neutral review and project-selected delivery by input class; crowd cost anecdotes and personal preferences are not guarantees.",
+          "localResources": [
+            {
+              "package": "blender-texturing",
+              "path": "skills/blender-texturing/references/setcodes-registered-cleanup.md"
+            },
+            {
+              "package": "blender-game-optimization",
+              "path": "skills/blender-game-optimization/references/setcodes-ai-reduction.md"
+            },
+            {
+              "package": "blender-hard-surface",
+              "path": "skills/blender-hard-surface/references/setcodes-source-rebuild.md"
+            },
+            {
+              "package": "blender-vehicle-modeling",
+              "path": "skills/blender-vehicle-modeling/references/setcodes-shell-reconstruction.md"
+            },
+            {
+              "package": "blender-reference-modeling",
+              "path": "skills/blender-reference-modeling/references/setcodes-projection-atlas.md"
+            },
+            {
+              "package": "blender-character-rigging",
+              "path": "skills/blender-character-rigging/references/setcodes-mixamo-repair.md"
+            },
+            {
+              "package": "blender-export",
+              "path": "skills/blender-export/references/setcodes-fbx-package.md"
+            },
+            {
+              "package": "blender-development",
+              "path": "skills/blender-development/references/setcodes-lab-protocol.md"
+            },
+            {
+              "package": "blender-lookdev",
+              "path": "skills/blender-lookdev/references/setcodes-neutral-preview.md"
+            }
+          ]
+        },
+        {
+          "path": "skills/blender-game-assets/agents/openai.yaml",
+          "blob": "dbb1e64d68faba3bb2d26e23c7ee9c90cf8ca059",
+          "disposition": "context-only",
+          "decision": "Retain optional upstream display/prompt metadata as source context; CraftRoster canonical Agent/catalog routing owns integration and grants no execution authority.",
+          "localResources": []
+        },
+        {
+          "path": "skills/blender-game-assets/references/characters.md",
+          "blob": "27050161af960c3aa416f151794a90d3c3939258",
+          "disposition": "adapted",
+          "decision": "Calibrate A-pose remesh and region-reduction masks to actual anatomy/scale, preserve facial/hair/hand silhouettes and build semantic seams with face/hand/seam bake rechecks.",
+          "localResources": [
+            {
+              "package": "blender-game-optimization",
+              "path": "skills/blender-game-optimization/references/setcodes-ai-reduction.md"
+            },
+            {
+              "package": "blender-character-rigging",
+              "path": "skills/blender-character-rigging/references/setcodes-mixamo-repair.md"
+            }
+          ]
+        },
+        {
+          "path": "skills/blender-game-assets/references/connection.md",
+          "blob": "ec30af9cd1434db97d2ac2b5e786f354107c7398",
+          "disposition": "adapted",
+          "decision": "Document Blender Lab execute/code/strict_json and NUL framing separately from other MCP protocols; discover actual tools, bound payloads/timeouts and require authorized setup.",
+          "localResources": [
+            {
+              "package": "blender-development",
+              "path": "skills/blender-development/references/setcodes-lab-protocol.md"
+            }
+          ]
+        },
+        {
+          "path": "skills/blender-game-assets/references/from-reference.md",
+          "blob": "5ed6b67c8d43e5bb6a671be3044fdc9c3517a049",
+          "disposition": "adapted",
+          "decision": "Adapt pixel/part/view projection UV calibration, bounded background bleed and clean atlas self-bake; resolve conflicting views explicitly and keep external texturing a user-selected handoff.",
+          "localResources": [
+            {
+              "package": "blender-reference-modeling",
+              "path": "skills/blender-reference-modeling/references/setcodes-projection-atlas.md"
+            },
+            {
+              "package": "blender-hard-surface",
+              "path": "skills/blender-hard-surface/references/setcodes-source-rebuild.md"
+            }
+          ]
+        },
+        {
+          "path": "skills/blender-game-assets/references/hard-surface.md",
+          "blob": "e964eb4162a5cf0da5dd1c53df47616907c0bc85",
+          "disposition": "adapted",
+          "decision": "Measure source in a consistent coordinate space, rebuild roof/trim/soffit structure and hidden-face atlas allocation, then selected-to-active bake with bounded underside repair.",
+          "localResources": [
+            {
+              "package": "blender-hard-surface",
+              "path": "skills/blender-hard-surface/references/setcodes-source-rebuild.md"
+            }
+          ]
+        },
+        {
+          "path": "skills/blender-game-assets/references/mixamo.md",
+          "blob": "89c87aa2f6747f695aa2316831631bc886f8d317",
+          "disposition": "adapted",
+          "decision": "Use a user-mediated prepared-copy upload, namespace/rest/clip inventory, calibrated head-local jaw masks and crowd finger reduction followed by regenerated clip checks; preserve source transforms and bind semantics.",
+          "localResources": [
+            {
+              "package": "blender-character-rigging",
+              "path": "skills/blender-character-rigging/references/setcodes-mixamo-repair.md"
+            },
+            {
+              "package": "blender-export",
+              "path": "skills/blender-export/references/setcodes-fbx-package.md"
+            }
+          ]
+        },
+        {
+          "path": "skills/blender-game-assets/references/preview-and-fbx.md",
+          "blob": "f56e88b87c4bf7f4f06bcb5e710daeebb055c3cf",
+          "disposition": "adapted",
+          "decision": "Adapt neutral studio diagnosis before recoloring and a project-selected portable FBX texture/ORM-split package; reject author-specific format/path preferences as authority.",
+          "localResources": [
+            {
+              "package": "blender-lookdev",
+              "path": "skills/blender-lookdev/references/setcodes-neutral-preview.md"
+            },
+            {
+              "package": "blender-export",
+              "path": "skills/blender-export/references/setcodes-fbx-package.md"
+            },
+            {
+              "package": "blender-texturing",
+              "path": "skills/blender-texturing/references/setcodes-registered-cleanup.md"
+            }
+          ]
+        },
+        {
+          "path": "skills/blender-game-assets/references/texture-cleanup.md",
+          "blob": "ab4d2fa8fc50b81f46959e88ee6e3253df901ada",
+          "disposition": "adapted",
+          "decision": "Freeze mesh/UV/rig/alpha and registered atlas borders, separate albedo/normal/ORM diagnosis, version conservative candidate pixels and compare same-camera mip/seam evidence.",
+          "localResources": [
+            {
+              "package": "blender-texturing",
+              "path": "skills/blender-texturing/references/setcodes-registered-cleanup.md"
+            }
+          ]
+        },
+        {
+          "path": "skills/blender-game-assets/references/vehicles.md",
+          "blob": "c04013ddf8f5de8b21cd8fad7cc0fbbe63fe9f1e",
+          "disposition": "adapted",
+          "decision": "Classify thin-shell source meshes, measure wheels and camera-domain rays, construct same-ray-family cross-section cages and protect sharp edges before bounded bake and missing-part repair.",
+          "localResources": [
+            {
+              "package": "blender-vehicle-modeling",
+              "path": "skills/blender-vehicle-modeling/references/setcodes-shell-reconstruction.md"
+            }
+          ]
+        },
+        {
+          "path": "skills/blender-game-assets/scripts/bg_verify.py",
+          "blob": "534eeff2f09fd6d5bfa7a4573e5486cac881ae29",
+          "disposition": "adapted",
+          "decision": "Retain fresh-process FBX/GLB semantic comparison for the full manifest object set including tiny props; missing landmarks or unsupported checks are explicit skips, not passes.",
+          "localResources": [
+            {
+              "package": "blender-export",
+              "path": "skills/blender-export/references/setcodes-fbx-package.md"
+            }
+          ]
+        },
+        {
+          "path": "skills/blender-game-assets/scripts/blender_exec.py",
+          "blob": "bae3abf1fc280b81e67025650f63cc264380e5d9",
+          "disposition": "adapted",
+          "decision": "Describe the optional exact Lab transport with bounded frames, timeout, status/result checks and owned job outputs; existing background job execution remains a distinct protocol.",
+          "localResources": [
+            {
+              "package": "blender-development",
+              "path": "skills/blender-development/references/setcodes-lab-protocol.md"
+            }
+          ]
+        },
+        {
+          "path": "skills/blender-game-assets/scripts/blender_mcp_stdio.py",
+          "blob": "880790eae608f7703a306515cd718be4e6d649d3",
+          "disposition": "adapted",
+          "decision": "Retain exact optional stdio initialize/list/call to Lab socket framing and error behavior as a protocol contract; do not enable servers or install configuration implicitly.",
+          "localResources": [
+            {
+              "package": "blender-development",
+              "path": "skills/blender-development/references/setcodes-lab-protocol.md"
+            }
+          ]
+        },
+        {
+          "path": "skills/blender-game-assets/scripts/bpy_lib.py",
+          "blob": "2a3d01f4c381a414c223368944e8577a2a9b801e",
+          "disposition": "adapted",
+          "decision": "Replace unsafe monolithic helpers with bounded measured construction, UV/bake, rest-aware rig correction and export recipes; fix constant metallic, rectangular maps, wrapped bleed, global resets and sampled-overlap overclaims.",
+          "localResources": [
+            {
+              "package": "blender-game-optimization",
+              "path": "skills/blender-game-optimization/references/setcodes-ai-reduction.md"
+            },
+            {
+              "package": "blender-hard-surface",
+              "path": "skills/blender-hard-surface/references/setcodes-source-rebuild.md"
+            },
+            {
+              "package": "blender-vehicle-modeling",
+              "path": "skills/blender-vehicle-modeling/references/setcodes-shell-reconstruction.md"
+            },
+            {
+              "package": "blender-reference-modeling",
+              "path": "skills/blender-reference-modeling/references/setcodes-projection-atlas.md"
+            },
+            {
+              "package": "blender-character-rigging",
+              "path": "skills/blender-character-rigging/references/setcodes-mixamo-repair.md"
+            },
+            {
+              "package": "blender-export",
+              "path": "skills/blender-export/references/setcodes-fbx-package.md"
+            },
+            {
+              "package": "blender-development",
+              "path": "skills/blender-development/references/setcodes-lab-protocol.md"
+            }
+          ]
+        },
+        {
+          "path": "skills/blender-game-assets/scripts/maps_post.py",
+          "blob": "8bae8e7e9f355a3c75eeb5f1ae177e309c68d182",
+          "disposition": "adapted",
+          "decision": "Adapt equal-dimension/channel map pack/split and owned-island fill/normal flatten with preserved scalar masters, finite masks and explicit proxy limitations; never delete source maps by default.",
+          "localResources": [
+            {
+              "package": "blender-texturing",
+              "path": "skills/blender-texturing/references/setcodes-registered-cleanup.md"
+            },
+            {
+              "package": "blender-reference-modeling",
+              "path": "skills/blender-reference-modeling/references/setcodes-projection-atlas.md"
+            }
+          ]
+        },
+        {
+          "path": "skills/blender-game-assets/scripts/replace_glb_albedo.py",
+          "blob": "efa39be855cdfb1ce283c6451ae2a70da57dbd0f",
+          "disposition": "adapted",
+          "decision": "Validate bounded GLB chunks/views/accessors/material roles and unsupported extensions, append a new owned material image/texture while preserving original BIN bytes and shared users; require same-atlas dimensions/registration separately and reject unsupported resources explicitly.",
+          "localResources": [
+            {
+              "package": "blender-texturing",
+              "path": "skills/blender-texturing/references/setcodes-registered-cleanup.md"
+            },
+            {
+              "package": "blender-texturing",
+              "path": "skills/blender-texturing/scripts/replace_glb_basecolor.py"
+            }
+          ]
+        },
+        {
+          "path": "skills/blender-game-assets/scripts/selftest_bg.py",
+          "blob": "d6bfc3e2a6687f1b617f0fc37ba241550e3ddbdf",
+          "disposition": "adapted",
+          "decision": "Separate synthetic host/native smoke from visual and engine acceptance, use an explicit verified host interpreter, assert semantic invariants and retain failure/artifact evidence.",
+          "localResources": [
+            {
+              "package": "blender-development",
+              "path": "skills/blender-development/references/setcodes-lab-protocol.md"
+            }
+          ]
+        },
+        {
+          "path": "skills/blender-game-assets/scripts/studio_preview.py",
+          "blob": "0637e1c7592fb622510dfae63dc3d9901c8a2b50",
+          "disposition": "adapted",
+          "decision": "Resolve explicit HDRI and supported view transform before mutation, create a scale-calibrated owned neutral rig and rollback on failure; portable runtime discovery replaces fixed macOS resource paths.",
+          "localResources": [
+            {
+              "package": "blender-lookdev",
+              "path": "skills/blender-lookdev/references/setcodes-neutral-preview.md"
+            }
+          ]
+        },
+        {
+          "path": "skills/blender-game-assets/scripts/texture_cleanup.py",
+          "blob": "ac43b924c6fb1ff217ec98bf9b9845735370046d",
+          "disposition": "adapted",
+          "decision": "Use conservative color-aware candidate filtering with finite UV validation, per-island protected borders/alpha, explicit invariant exceptions and collision-safe versioned outputs/reports.",
+          "localResources": [
+            {
+              "package": "blender-texturing",
+              "path": "skills/blender-texturing/references/setcodes-registered-cleanup.md"
+            }
+          ]
+        },
+        {
+          "path": "skills/blender-game-assets/scripts/verify_glb.py",
+          "blob": "9419b4c2fb8a03b16088af1703f4b5c68ffa5791",
+          "disposition": "adapted",
+          "decision": "Use bounded container parsing and optional-name/primitive-mode-aware manifest comparisons; mesh/material/skin/action summaries alone are not semantic acceptance.",
+          "localResources": [
+            {
+              "package": "blender-export",
+              "path": "skills/blender-export/references/setcodes-fbx-package.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "setcodes:skills/game-designer/SKILL.md",
+      "repository": "setcodes",
+      "path": "skills/game-designer/SKILL.md",
+      "blob": "bd0a6d47a995d655501db76d570f9a53bfaeab32",
+      "mappedPackages": [
+        "game-design"
+      ],
+      "capabilities": [
+        {
+          "package": "game-design",
+          "description": "Adapt intent-first game design, player decisions, core loops and iteration into a standalone engine-neutral workflow with measurable hypotheses and explicit implementation handoffs. Use participant consent, bounded prototype questions, observable behavior and severity/iteration records; distinguish playtest observations from statistical generalization. Model interacting mechanics, economies/progression, state and feedback with explicit constraints, variables and failure cases before tuned implementation. Keep learner intent and stage explicit, explain observable effects and actionable experiments, and preserve learner authorship instead of silently replacing the design.",
+          "localResources": [
+            {
+              "package": "game-design",
+              "path": "skills/game-design/SKILL.md"
+            },
+            {
+              "package": "game-design",
+              "path": "skills/game-design/references/documents.md"
+            },
+            {
+              "package": "game-design",
+              "path": "skills/game-design/references/levels-encounters.md"
+            },
+            {
+              "package": "game-design",
+              "path": "skills/game-design/references/playtesting.md"
+            },
+            {
+              "package": "game-design",
+              "path": "skills/game-design/references/progression-economy.md"
+            },
+            {
+              "package": "game-design",
+              "path": "skills/game-design/references/systems.md"
+            },
+            {
+              "package": "game-design",
+              "path": "skills/game-design/references/teaching-feedback.md"
+            }
+          ],
+          "limitations": [
+            "Authored adaptation is conditional on the actual runtime, asset/game contract and source/input ownership.",
+            "No complete production workflow, current-image visual acceptance or target-engine behavior is established by this source mapping."
+          ]
+        }
+      ],
+      "sourceResources": [
+        {
+          "path": "LICENSE",
+          "blob": "15770f9c8fb91aa409c90aff11d97ce40f797941"
+        },
+        {
+          "path": "skills/game-designer/LICENSE",
+          "blob": "15770f9c8fb91aa409c90aff11d97ce40f797941"
+        },
+        {
+          "path": "skills/game-designer/SKILL.md",
+          "blob": "bd0a6d47a995d655501db76d570f9a53bfaeab32"
+        },
+        {
+          "path": "skills/game-designer/agents/openai.yaml",
+          "blob": "8dab1205eff14b00e0c4a5b6324e214e24c5e729"
+        },
+        {
+          "path": "skills/game-designer/references/playtesting.md",
+          "blob": "1fadc39a2422f72c6f64781a5f4630c02dd69ddb"
+        },
+        {
+          "path": "skills/game-designer/references/system-design.md",
+          "blob": "c045177098f49d72712d22e5e66ace711edf54a0"
+        },
+        {
+          "path": "skills/game-designer/references/teaching-feedback.md",
+          "blob": "13f9866baa7fb22f1a8de5e35d4ec61066917fec"
+        }
+      ],
+      "resourceAdaptations": [
+        {
+          "path": "LICENSE",
+          "blob": "15770f9c8fb91aa409c90aff11d97ce40f797941",
+          "disposition": "context-only",
+          "decision": "Preserve pinned MIT attribution separately from authored production capability; a legal notice is not procedural support.",
+          "localResources": []
+        },
+        {
+          "path": "skills/game-designer/LICENSE",
+          "blob": "15770f9c8fb91aa409c90aff11d97ce40f797941",
+          "disposition": "context-only",
+          "decision": "Preserve pinned MIT attribution separately from authored production capability; a legal notice is not procedural support.",
+          "localResources": []
+        },
+        {
+          "path": "skills/game-designer/SKILL.md",
+          "blob": "bd0a6d47a995d655501db76d570f9a53bfaeab32",
+          "disposition": "adapted",
+          "decision": "Adapt intent-first game design, player decisions, core loops and iteration into a standalone engine-neutral workflow with measurable hypotheses and explicit implementation handoffs.",
+          "localResources": [
+            {
+              "package": "game-design",
+              "path": "skills/game-design/SKILL.md"
+            },
+            {
+              "package": "game-design",
+              "path": "skills/game-design/references/documents.md"
+            }
+          ]
+        },
+        {
+          "path": "skills/game-designer/agents/openai.yaml",
+          "blob": "8dab1205eff14b00e0c4a5b6324e214e24c5e729",
+          "disposition": "context-only",
+          "decision": "Retain optional upstream display/prompt metadata as source context; CraftRoster canonical Agent/catalog routing owns integration and grants no execution authority.",
+          "localResources": []
+        },
+        {
+          "path": "skills/game-designer/references/playtesting.md",
+          "blob": "1fadc39a2422f72c6f64781a5f4630c02dd69ddb",
+          "disposition": "adapted",
+          "decision": "Use participant consent, bounded prototype questions, observable behavior and severity/iteration records; distinguish playtest observations from statistical generalization.",
+          "localResources": [
+            {
+              "package": "game-design",
+              "path": "skills/game-design/references/playtesting.md"
+            }
+          ]
+        },
+        {
+          "path": "skills/game-designer/references/system-design.md",
+          "blob": "c045177098f49d72712d22e5e66ace711edf54a0",
+          "disposition": "adapted",
+          "decision": "Model interacting mechanics, economies/progression, state and feedback with explicit constraints, variables and failure cases before tuned implementation.",
+          "localResources": [
+            {
+              "package": "game-design",
+              "path": "skills/game-design/references/systems.md"
+            },
+            {
+              "package": "game-design",
+              "path": "skills/game-design/references/progression-economy.md"
+            },
+            {
+              "package": "game-design",
+              "path": "skills/game-design/references/levels-encounters.md"
+            }
+          ]
+        },
+        {
+          "path": "skills/game-designer/references/teaching-feedback.md",
+          "blob": "13f9866baa7fb22f1a8de5e35d4ec61066917fec",
+          "disposition": "adapted",
+          "decision": "Keep learner intent and stage explicit, explain observable effects and actionable experiments, and preserve learner authorship instead of silently replacing the design.",
+          "localResources": [
+            {
+              "package": "game-design",
+              "path": "skills/game-design/references/teaching-feedback.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "setcodes:skills/godot-gamedev/SKILL.md",
+      "repository": "setcodes",
+      "path": "skills/godot-gamedev/SKILL.md",
+      "blob": "0263a40380d02cb0176e04261dc27381de3753eb",
+      "mappedPackages": [
+        "godot-development"
+      ],
+      "capabilities": [
+        {
+          "package": "godot-development",
+          "description": "Adapt Godot project discovery, scene ownership, signals/state/data boundaries and incremental engine-specific implementation; classify actual Godot version and runtime capabilities before edits. Record parse/import/headless/runtime checks independently, choose a real player journey and inspect current artifacts; editor connection, scene existence and a zero process code do not prove gameplay.",
+          "localResources": [
+            {
+              "package": "godot-development",
+              "path": "skills/godot-development/SKILL.md"
+            },
+            {
+              "package": "godot-development",
+              "path": "skills/godot-development/references/debugging.md"
+            },
+            {
+              "package": "godot-development",
+              "path": "skills/godot-development/references/gameplay.md"
+            },
+            {
+              "package": "godot-development",
+              "path": "skills/godot-development/references/project-discovery.md"
+            },
+            {
+              "package": "godot-development",
+              "path": "skills/godot-development/references/scenes-data.md"
+            },
+            {
+              "package": "godot-development",
+              "path": "skills/godot-development/references/verification.md"
+            }
+          ],
+          "limitations": [
+            "Authored adaptation is conditional on the actual runtime, asset/game contract and source/input ownership.",
+            "No complete production workflow, current-image visual acceptance or target-engine behavior is established by this source mapping."
+          ]
+        }
+      ],
+      "sourceResources": [
+        {
+          "path": "LICENSE",
+          "blob": "15770f9c8fb91aa409c90aff11d97ce40f797941"
+        },
+        {
+          "path": "skills/godot-gamedev/LICENSE",
+          "blob": "15770f9c8fb91aa409c90aff11d97ce40f797941"
+        },
+        {
+          "path": "skills/godot-gamedev/SKILL.md",
+          "blob": "0263a40380d02cb0176e04261dc27381de3753eb"
+        },
+        {
+          "path": "skills/godot-gamedev/agents/openai.yaml",
+          "blob": "79d8fc2ebd9455e9fa926cb3ebffc8ecd6b49f53"
+        },
+        {
+          "path": "skills/godot-gamedev/references/verification.md",
+          "blob": "c2e0b2aecf24e7867f5e23bfe96af97d2218e04e"
+        }
+      ],
+      "resourceAdaptations": [
+        {
+          "path": "LICENSE",
+          "blob": "15770f9c8fb91aa409c90aff11d97ce40f797941",
+          "disposition": "context-only",
+          "decision": "Preserve pinned MIT attribution separately from authored production capability; a legal notice is not procedural support.",
+          "localResources": []
+        },
+        {
+          "path": "skills/godot-gamedev/LICENSE",
+          "blob": "15770f9c8fb91aa409c90aff11d97ce40f797941",
+          "disposition": "context-only",
+          "decision": "Preserve pinned MIT attribution separately from authored production capability; a legal notice is not procedural support.",
+          "localResources": []
+        },
+        {
+          "path": "skills/godot-gamedev/SKILL.md",
+          "blob": "0263a40380d02cb0176e04261dc27381de3753eb",
+          "disposition": "adapted",
+          "decision": "Adapt Godot project discovery, scene ownership, signals/state/data boundaries and incremental engine-specific implementation; classify actual Godot version and runtime capabilities before edits.",
+          "localResources": [
+            {
+              "package": "godot-development",
+              "path": "skills/godot-development/SKILL.md"
+            },
+            {
+              "package": "godot-development",
+              "path": "skills/godot-development/references/project-discovery.md"
+            },
+            {
+              "package": "godot-development",
+              "path": "skills/godot-development/references/scenes-data.md"
+            },
+            {
+              "package": "godot-development",
+              "path": "skills/godot-development/references/gameplay.md"
+            },
+            {
+              "package": "godot-development",
+              "path": "skills/godot-development/references/debugging.md"
+            }
+          ]
+        },
+        {
+          "path": "skills/godot-gamedev/agents/openai.yaml",
+          "blob": "79d8fc2ebd9455e9fa926cb3ebffc8ecd6b49f53",
+          "disposition": "context-only",
+          "decision": "Retain optional upstream display/prompt metadata as source context; CraftRoster canonical Agent/catalog routing owns integration and grants no execution authority.",
+          "localResources": []
+        },
+        {
+          "path": "skills/godot-gamedev/references/verification.md",
+          "blob": "c2e0b2aecf24e7867f5e23bfe96af97d2218e04e",
+          "disposition": "adapted",
+          "decision": "Record parse/import/headless/runtime checks independently, choose a real player journey and inspect current artifacts; editor connection, scene existence and a zero process code do not prove gameplay.",
+          "localResources": [
+            {
+              "package": "godot-development",
+              "path": "skills/godot-development/references/verification.md"
+            }
+          ]
+        }
+      ]
     }
   ],
   "packages": [
@@ -11014,15 +12708,15 @@
       "localResources": [
         {
           "package": "blender-addon-development",
+          "path": "skills/blender-addon-development/SKILL.md"
+        },
+        {
+          "package": "blender-addon-development",
           "path": "skills/blender-addon-development/references/lifecycle-and-context.md"
         },
         {
           "package": "blender-addon-development",
           "path": "skills/blender-addon-development/references/official-sources.md"
-        },
-        {
-          "package": "blender-addon-development",
-          "path": "skills/blender-addon-development/SKILL.md"
         },
         {
           "package": "blender-addon-development",
@@ -11046,11 +12740,11 @@
       "localResources": [
         {
           "package": "blender-analog-found-footage-horror",
-          "path": "skills/blender-analog-found-footage-horror/references/production.md"
+          "path": "skills/blender-analog-found-footage-horror/SKILL.md"
         },
         {
           "package": "blender-analog-found-footage-horror",
-          "path": "skills/blender-analog-found-footage-horror/SKILL.md"
+          "path": "skills/blender-analog-found-footage-horror/references/production.md"
         },
         {
           "package": "blender-analog-found-footage-horror",
@@ -11073,17 +12767,17 @@
     {
       "name": "blender-animation",
       "sourceEntries": [
-        "arjun:.claude/skills/animation/SKILL.md",
-        "el4:skills/blender-animation/SKILL.md"
+        "el4:skills/blender-animation/SKILL.md",
+        "arjun:.claude/skills/animation/SKILL.md"
       ],
       "localResources": [
         {
           "package": "blender-animation",
-          "path": "skills/blender-animation/references/production.md"
+          "path": "skills/blender-animation/SKILL.md"
         },
         {
           "package": "blender-animation",
-          "path": "skills/blender-animation/SKILL.md"
+          "path": "skills/blender-animation/references/production.md"
         },
         {
           "package": "blender-animation",
@@ -11107,11 +12801,11 @@
       "localResources": [
         {
           "package": "blender-anime-style",
-          "path": "skills/blender-anime-style/references/production.md"
+          "path": "skills/blender-anime-style/SKILL.md"
         },
         {
           "package": "blender-anime-style",
-          "path": "skills/blender-anime-style/SKILL.md"
+          "path": "skills/blender-anime-style/references/production.md"
         },
         {
           "package": "blender-anime-style",
@@ -11139,15 +12833,15 @@
       "localResources": [
         {
           "package": "blender-apocalypse-worlds",
+          "path": "skills/blender-apocalypse-worlds/SKILL.md"
+        },
+        {
+          "package": "blender-apocalypse-worlds",
           "path": "skills/blender-apocalypse-worlds/references/production-playbook.md"
         },
         {
           "package": "blender-apocalypse-worlds",
           "path": "skills/blender-apocalypse-worlds/references/variant-workflows.md"
-        },
-        {
-          "package": "blender-apocalypse-worlds",
-          "path": "skills/blender-apocalypse-worlds/SKILL.md"
         },
         {
           "package": "blender-apocalypse-worlds",
@@ -11175,11 +12869,11 @@
       "localResources": [
         {
           "package": "blender-archviz",
-          "path": "skills/blender-archviz/references/production.md"
+          "path": "skills/blender-archviz/SKILL.md"
         },
         {
           "package": "blender-archviz",
-          "path": "skills/blender-archviz/SKILL.md"
+          "path": "skills/blender-archviz/references/production.md"
         },
         {
           "package": "blender-archviz",
@@ -11198,10 +12892,14 @@
     {
       "name": "blender-asset-validation",
       "sourceEntries": [
-        "arjun:.claude/skills/qa-review/SKILL.md",
-        "el4:skills/blender-asset-qa/SKILL.md"
+        "el4:skills/blender-asset-qa/SKILL.md",
+        "arjun:.claude/skills/qa-review/SKILL.md"
       ],
       "localResources": [
+        {
+          "package": "blender-asset-validation",
+          "path": "skills/blender-asset-validation/SKILL.md"
+        },
         {
           "package": "blender-asset-validation",
           "path": "skills/blender-asset-validation/references/helper-contract.md"
@@ -11216,7 +12914,11 @@
         },
         {
           "package": "blender-asset-validation",
-          "path": "skills/blender-asset-validation/SKILL.md"
+          "path": "skills/blender-asset-validation/scripts/check_delivery.py"
+        },
+        {
+          "package": "blender-asset-validation",
+          "path": "skills/blender-asset-validation/scripts/inspect_asset.py"
         },
         {
           "package": "blender-asset-validation",
@@ -11240,15 +12942,15 @@
       "localResources": [
         {
           "package": "blender-biome-worlds",
+          "path": "skills/blender-biome-worlds/SKILL.md"
+        },
+        {
+          "package": "blender-biome-worlds",
           "path": "skills/blender-biome-worlds/references/production-playbook.md"
         },
         {
           "package": "blender-biome-worlds",
           "path": "skills/blender-biome-worlds/references/variant-workflows.md"
-        },
-        {
-          "package": "blender-biome-worlds",
-          "path": "skills/blender-biome-worlds/SKILL.md"
         },
         {
           "package": "blender-biome-worlds",
@@ -11276,11 +12978,11 @@
       "localResources": [
         {
           "package": "blender-body-horror-style",
-          "path": "skills/blender-body-horror-style/references/production.md"
+          "path": "skills/blender-body-horror-style/SKILL.md"
         },
         {
           "package": "blender-body-horror-style",
-          "path": "skills/blender-body-horror-style/SKILL.md"
+          "path": "skills/blender-body-horror-style/references/production.md"
         },
         {
           "package": "blender-body-horror-style",
@@ -11308,11 +13010,11 @@
       "localResources": [
         {
           "package": "blender-brutalist-mood",
-          "path": "skills/blender-brutalist-mood/references/production.md"
+          "path": "skills/blender-brutalist-mood/SKILL.md"
         },
         {
           "package": "blender-brutalist-mood",
-          "path": "skills/blender-brutalist-mood/SKILL.md"
+          "path": "skills/blender-brutalist-mood/references/production.md"
         },
         {
           "package": "blender-brutalist-mood",
@@ -11340,11 +13042,11 @@
       "localResources": [
         {
           "package": "blender-camera-cinematography",
-          "path": "skills/blender-camera-cinematography/references/production.md"
+          "path": "skills/blender-camera-cinematography/SKILL.md"
         },
         {
           "package": "blender-camera-cinematography",
-          "path": "skills/blender-camera-cinematography/SKILL.md"
+          "path": "skills/blender-camera-cinematography/references/production.md"
         },
         {
           "package": "blender-camera-cinematography",
@@ -11368,15 +13070,15 @@
       "localResources": [
         {
           "package": "blender-cartoon-style",
+          "path": "skills/blender-cartoon-style/SKILL.md"
+        },
+        {
+          "package": "blender-cartoon-style",
           "path": "skills/blender-cartoon-style/references/production.md"
         },
         {
           "package": "blender-cartoon-style",
           "path": "skills/blender-cartoon-style/references/shading-and-motion-branches.md"
-        },
-        {
-          "package": "blender-cartoon-style",
-          "path": "skills/blender-cartoon-style/SKILL.md"
         },
         {
           "package": "blender-cartoon-style",
@@ -11404,6 +13106,10 @@
       "localResources": [
         {
           "package": "blender-character-archetypes",
+          "path": "skills/blender-character-archetypes/SKILL.md"
+        },
+        {
+          "package": "blender-character-archetypes",
           "path": "skills/blender-character-archetypes/references/body-workflows.md"
         },
         {
@@ -11413,10 +13119,6 @@
         {
           "package": "blender-character-archetypes",
           "path": "skills/blender-character-archetypes/references/role-workflows.md"
-        },
-        {
-          "package": "blender-character-archetypes",
-          "path": "skills/blender-character-archetypes/SKILL.md"
         },
         {
           "package": "blender-character-archetypes",
@@ -11439,16 +13141,21 @@
     {
       "name": "blender-character-modeling",
       "sourceEntries": [
-        "arjun:.claude/skills/character-artist/SKILL.md"
+        "arjun:.claude/skills/character-artist/SKILL.md",
+        "majid:skills/blender-image-to-3d/SKILL.md"
       ],
       "localResources": [
         {
           "package": "blender-character-modeling",
-          "path": "skills/blender-character-modeling/references/production.md"
+          "path": "skills/blender-character-modeling/SKILL.md"
         },
         {
           "package": "blender-character-modeling",
-          "path": "skills/blender-character-modeling/SKILL.md"
+          "path": "skills/blender-character-modeling/references/majid-calibrated-construction.md"
+        },
+        {
+          "package": "blender-character-modeling",
+          "path": "skills/blender-character-modeling/references/production.md"
         },
         {
           "package": "blender-character-modeling",
@@ -11467,17 +13174,22 @@
     {
       "name": "blender-character-rigging",
       "sourceEntries": [
+        "el4:skills/blender-character-rigging/SKILL.md",
         "arjun:.claude/skills/rigging/SKILL.md",
-        "el4:skills/blender-character-rigging/SKILL.md"
+        "setcodes:skills/blender-game-assets/SKILL.md"
       ],
       "localResources": [
+        {
+          "package": "blender-character-rigging",
+          "path": "skills/blender-character-rigging/SKILL.md"
+        },
         {
           "package": "blender-character-rigging",
           "path": "skills/blender-character-rigging/references/production.md"
         },
         {
           "package": "blender-character-rigging",
-          "path": "skills/blender-character-rigging/SKILL.md"
+          "path": "skills/blender-character-rigging/references/setcodes-mixamo-repair.md"
         },
         {
           "package": "blender-character-rigging",
@@ -11501,11 +13213,11 @@
       "localResources": [
         {
           "package": "blender-chibi-style",
-          "path": "skills/blender-chibi-style/references/production.md"
+          "path": "skills/blender-chibi-style/SKILL.md"
         },
         {
           "package": "blender-chibi-style",
-          "path": "skills/blender-chibi-style/SKILL.md"
+          "path": "skills/blender-chibi-style/references/production.md"
         },
         {
           "package": "blender-chibi-style",
@@ -11533,11 +13245,11 @@
       "localResources": [
         {
           "package": "blender-cloth-simulation",
-          "path": "skills/blender-cloth-simulation/references/production.md"
+          "path": "skills/blender-cloth-simulation/SKILL.md"
         },
         {
           "package": "blender-cloth-simulation",
-          "path": "skills/blender-cloth-simulation/SKILL.md"
+          "path": "skills/blender-cloth-simulation/references/production.md"
         },
         {
           "package": "blender-cloth-simulation",
@@ -11561,11 +13273,11 @@
       "localResources": [
         {
           "package": "blender-clothing",
-          "path": "skills/blender-clothing/references/production.md"
+          "path": "skills/blender-clothing/SKILL.md"
         },
         {
           "package": "blender-clothing",
-          "path": "skills/blender-clothing/SKILL.md"
+          "path": "skills/blender-clothing/references/production.md"
         },
         {
           "package": "blender-clothing",
@@ -11589,11 +13301,11 @@
       "localResources": [
         {
           "package": "blender-collision-proxies",
-          "path": "skills/blender-collision-proxies/references/production.md"
+          "path": "skills/blender-collision-proxies/SKILL.md"
         },
         {
           "package": "blender-collision-proxies",
-          "path": "skills/blender-collision-proxies/SKILL.md"
+          "path": "skills/blender-collision-proxies/references/production.md"
         },
         {
           "package": "blender-collision-proxies",
@@ -11617,11 +13329,11 @@
       "localResources": [
         {
           "package": "blender-comic-book-style",
-          "path": "skills/blender-comic-book-style/references/production.md"
+          "path": "skills/blender-comic-book-style/SKILL.md"
         },
         {
           "package": "blender-comic-book-style",
-          "path": "skills/blender-comic-book-style/SKILL.md"
+          "path": "skills/blender-comic-book-style/references/production.md"
         },
         {
           "package": "blender-comic-book-style",
@@ -11649,11 +13361,11 @@
       "localResources": [
         {
           "package": "blender-compositing",
-          "path": "skills/blender-compositing/references/production.md"
+          "path": "skills/blender-compositing/SKILL.md"
         },
         {
           "package": "blender-compositing",
-          "path": "skills/blender-compositing/SKILL.md"
+          "path": "skills/blender-compositing/references/production.md"
         },
         {
           "package": "blender-compositing",
@@ -11677,11 +13389,11 @@
       "localResources": [
         {
           "package": "blender-cosmic-eldritch-horror",
-          "path": "skills/blender-cosmic-eldritch-horror/references/production.md"
+          "path": "skills/blender-cosmic-eldritch-horror/SKILL.md"
         },
         {
           "package": "blender-cosmic-eldritch-horror",
-          "path": "skills/blender-cosmic-eldritch-horror/SKILL.md"
+          "path": "skills/blender-cosmic-eldritch-horror/references/production.md"
         },
         {
           "package": "blender-cosmic-eldritch-horror",
@@ -11709,11 +13421,11 @@
       "localResources": [
         {
           "package": "blender-cozy-wholesome-mood",
-          "path": "skills/blender-cozy-wholesome-mood/references/production.md"
+          "path": "skills/blender-cozy-wholesome-mood/SKILL.md"
         },
         {
           "package": "blender-cozy-wholesome-mood",
-          "path": "skills/blender-cozy-wholesome-mood/SKILL.md"
+          "path": "skills/blender-cozy-wholesome-mood/references/production.md"
         },
         {
           "package": "blender-cozy-wholesome-mood",
@@ -11741,11 +13453,11 @@
       "localResources": [
         {
           "package": "blender-creature-modeling",
-          "path": "skills/blender-creature-modeling/references/production.md"
+          "path": "skills/blender-creature-modeling/SKILL.md"
         },
         {
           "package": "blender-creature-modeling",
-          "path": "skills/blender-creature-modeling/SKILL.md"
+          "path": "skills/blender-creature-modeling/references/production.md"
         },
         {
           "package": "blender-creature-modeling",
@@ -11769,11 +13481,11 @@
       "localResources": [
         {
           "package": "blender-dark-gritty-mood",
-          "path": "skills/blender-dark-gritty-mood/references/production.md"
+          "path": "skills/blender-dark-gritty-mood/SKILL.md"
         },
         {
           "package": "blender-dark-gritty-mood",
-          "path": "skills/blender-dark-gritty-mood/SKILL.md"
+          "path": "skills/blender-dark-gritty-mood/references/production.md"
         },
         {
           "package": "blender-dark-gritty-mood",
@@ -11796,10 +13508,16 @@
     {
       "name": "blender-development",
       "sourceEntries": [
+        "el4:skills/blender-core/SKILL.md",
         "arjun:.claude/skills/blender-director/SKILL.md",
-        "el4:skills/blender-core/SKILL.md"
+        "majid:skills/blender-image-to-3d/SKILL.md",
+        "setcodes:skills/blender-game-assets/SKILL.md"
       ],
       "localResources": [
+        {
+          "package": "blender-development",
+          "path": "skills/blender-development/SKILL.md"
+        },
         {
           "package": "blender-development",
           "path": "skills/blender-development/references/asset-contract.md"
@@ -11807,6 +13525,10 @@
         {
           "package": "blender-development",
           "path": "skills/blender-development/references/execution-and-ownership.md"
+        },
+        {
+          "package": "blender-development",
+          "path": "skills/blender-development/references/majid-phase-ownership.md"
         },
         {
           "package": "blender-development",
@@ -11822,6 +13544,10 @@
         },
         {
           "package": "blender-development",
+          "path": "skills/blender-development/references/setcodes-lab-protocol.md"
+        },
+        {
+          "package": "blender-development",
           "path": "skills/blender-development/references/specialist-index.md"
         },
         {
@@ -11834,7 +13560,11 @@
         },
         {
           "package": "blender-development",
-          "path": "skills/blender-development/SKILL.md"
+          "path": "skills/blender-development/scripts/inspect_runtime.py"
+        },
+        {
+          "package": "blender-development",
+          "path": "skills/blender-development/scripts/run_blender.py"
         }
       ]
     },
@@ -11846,11 +13576,11 @@
       "localResources": [
         {
           "package": "blender-dream-surreal-mood",
-          "path": "skills/blender-dream-surreal-mood/references/production.md"
+          "path": "skills/blender-dream-surreal-mood/SKILL.md"
         },
         {
           "package": "blender-dream-surreal-mood",
-          "path": "skills/blender-dream-surreal-mood/SKILL.md"
+          "path": "skills/blender-dream-surreal-mood/references/production.md"
         },
         {
           "package": "blender-dream-surreal-mood",
@@ -11878,11 +13608,11 @@
       "localResources": [
         {
           "package": "blender-dream-weirdcore-style",
-          "path": "skills/blender-dream-weirdcore-style/references/production.md"
+          "path": "skills/blender-dream-weirdcore-style/SKILL.md"
         },
         {
           "package": "blender-dream-weirdcore-style",
-          "path": "skills/blender-dream-weirdcore-style/SKILL.md"
+          "path": "skills/blender-dream-weirdcore-style/references/production.md"
         },
         {
           "package": "blender-dream-weirdcore-style",
@@ -11910,11 +13640,11 @@
       "localResources": [
         {
           "package": "blender-environment-art",
-          "path": "skills/blender-environment-art/references/production.md"
+          "path": "skills/blender-environment-art/SKILL.md"
         },
         {
           "package": "blender-environment-art",
-          "path": "skills/blender-environment-art/SKILL.md"
+          "path": "skills/blender-environment-art/references/production.md"
         },
         {
           "package": "blender-environment-art",
@@ -11938,11 +13668,11 @@
       "localResources": [
         {
           "package": "blender-environment-kits",
-          "path": "skills/blender-environment-kits/references/production.md"
+          "path": "skills/blender-environment-kits/SKILL.md"
         },
         {
           "package": "blender-environment-kits",
-          "path": "skills/blender-environment-kits/SKILL.md"
+          "path": "skills/blender-environment-kits/references/production.md"
         },
         {
           "package": "blender-environment-kits",
@@ -11961,10 +13691,16 @@
     {
       "name": "blender-export",
       "sourceEntries": [
+        "el4:skills/blender-export-pipelines/SKILL.md",
         "arjun:.claude/skills/export-pipeline/SKILL.md",
-        "el4:skills/blender-export-pipelines/SKILL.md"
+        "majid:skills/blender-image-to-3d/SKILL.md",
+        "setcodes:skills/blender-game-assets/SKILL.md"
       ],
       "localResources": [
+        {
+          "package": "blender-export",
+          "path": "skills/blender-export/SKILL.md"
+        },
         {
           "package": "blender-export",
           "path": "skills/blender-export/references/engine-delivery.md"
@@ -11975,7 +13711,11 @@
         },
         {
           "package": "blender-export",
-          "path": "skills/blender-export/SKILL.md"
+          "path": "skills/blender-export/references/majid-semantic-roundtrip.md"
+        },
+        {
+          "package": "blender-export",
+          "path": "skills/blender-export/references/setcodes-fbx-package.md"
         },
         {
           "package": "blender-export",
@@ -11999,11 +13739,11 @@
       "localResources": [
         {
           "package": "blender-facial-shapekeys",
-          "path": "skills/blender-facial-shapekeys/references/production.md"
+          "path": "skills/blender-facial-shapekeys/SKILL.md"
         },
         {
           "package": "blender-facial-shapekeys",
-          "path": "skills/blender-facial-shapekeys/SKILL.md"
+          "path": "skills/blender-facial-shapekeys/references/production.md"
         },
         {
           "package": "blender-facial-shapekeys",
@@ -12027,15 +13767,15 @@
       "localResources": [
         {
           "package": "blender-fantasy-worlds",
+          "path": "skills/blender-fantasy-worlds/SKILL.md"
+        },
+        {
+          "package": "blender-fantasy-worlds",
           "path": "skills/blender-fantasy-worlds/references/production-playbook.md"
         },
         {
           "package": "blender-fantasy-worlds",
           "path": "skills/blender-fantasy-worlds/references/variant-workflows.md"
-        },
-        {
-          "package": "blender-fantasy-worlds",
-          "path": "skills/blender-fantasy-worlds/SKILL.md"
         },
         {
           "package": "blender-fantasy-worlds",
@@ -12063,11 +13803,11 @@
       "localResources": [
         {
           "package": "blender-folk-horror-style",
-          "path": "skills/blender-folk-horror-style/references/production.md"
+          "path": "skills/blender-folk-horror-style/SKILL.md"
         },
         {
           "package": "blender-folk-horror-style",
-          "path": "skills/blender-folk-horror-style/SKILL.md"
+          "path": "skills/blender-folk-horror-style/references/production.md"
         },
         {
           "package": "blender-folk-horror-style",
@@ -12095,11 +13835,11 @@
       "localResources": [
         {
           "package": "blender-frutiger-aero-style",
-          "path": "skills/blender-frutiger-aero-style/references/production.md"
+          "path": "skills/blender-frutiger-aero-style/SKILL.md"
         },
         {
           "package": "blender-frutiger-aero-style",
-          "path": "skills/blender-frutiger-aero-style/SKILL.md"
+          "path": "skills/blender-frutiger-aero-style/references/production.md"
         },
         {
           "package": "blender-frutiger-aero-style",
@@ -12122,10 +13862,15 @@
     {
       "name": "blender-game-optimization",
       "sourceEntries": [
+        "el4:skills/blender-game-optimization/SKILL.md",
         "arjun:.claude/skills/asset-optimization/SKILL.md",
-        "el4:skills/blender-game-optimization/SKILL.md"
+        "setcodes:skills/blender-game-assets/SKILL.md"
       ],
       "localResources": [
+        {
+          "package": "blender-game-optimization",
+          "path": "skills/blender-game-optimization/SKILL.md"
+        },
         {
           "package": "blender-game-optimization",
           "path": "skills/blender-game-optimization/references/cost-and-appearance.md"
@@ -12136,7 +13881,7 @@
         },
         {
           "package": "blender-game-optimization",
-          "path": "skills/blender-game-optimization/SKILL.md"
+          "path": "skills/blender-game-optimization/references/setcodes-ai-reduction.md"
         },
         {
           "package": "blender-game-optimization",
@@ -12160,15 +13905,15 @@
       "localResources": [
         {
           "package": "blender-genre-action-combat",
+          "path": "skills/blender-genre-action-combat/SKILL.md"
+        },
+        {
+          "package": "blender-genre-action-combat",
           "path": "skills/blender-genre-action-combat/references/production-playbook.md"
         },
         {
           "package": "blender-genre-action-combat",
           "path": "skills/blender-genre-action-combat/references/variant-workflows.md"
-        },
-        {
-          "package": "blender-genre-action-combat",
-          "path": "skills/blender-genre-action-combat/SKILL.md"
         },
         {
           "package": "blender-genre-action-combat",
@@ -12196,15 +13941,15 @@
       "localResources": [
         {
           "package": "blender-genre-card-party-idle",
+          "path": "skills/blender-genre-card-party-idle/SKILL.md"
+        },
+        {
+          "package": "blender-genre-card-party-idle",
           "path": "skills/blender-genre-card-party-idle/references/production-playbook.md"
         },
         {
           "package": "blender-genre-card-party-idle",
           "path": "skills/blender-genre-card-party-idle/references/variant-workflows.md"
-        },
-        {
-          "package": "blender-genre-card-party-idle",
-          "path": "skills/blender-genre-card-party-idle/SKILL.md"
         },
         {
           "package": "blender-genre-card-party-idle",
@@ -12232,15 +13977,15 @@
       "localResources": [
         {
           "package": "blender-genre-metroidvania-roguelike",
+          "path": "skills/blender-genre-metroidvania-roguelike/SKILL.md"
+        },
+        {
+          "package": "blender-genre-metroidvania-roguelike",
           "path": "skills/blender-genre-metroidvania-roguelike/references/production-playbook.md"
         },
         {
           "package": "blender-genre-metroidvania-roguelike",
           "path": "skills/blender-genre-metroidvania-roguelike/references/variant-workflows.md"
-        },
-        {
-          "package": "blender-genre-metroidvania-roguelike",
-          "path": "skills/blender-genre-metroidvania-roguelike/SKILL.md"
         },
         {
           "package": "blender-genre-metroidvania-roguelike",
@@ -12268,15 +14013,15 @@
       "localResources": [
         {
           "package": "blender-genre-narrative-vn",
+          "path": "skills/blender-genre-narrative-vn/SKILL.md"
+        },
+        {
+          "package": "blender-genre-narrative-vn",
           "path": "skills/blender-genre-narrative-vn/references/production-playbook.md"
         },
         {
           "package": "blender-genre-narrative-vn",
           "path": "skills/blender-genre-narrative-vn/references/variant-workflows.md"
-        },
-        {
-          "package": "blender-genre-narrative-vn",
-          "path": "skills/blender-genre-narrative-vn/SKILL.md"
         },
         {
           "package": "blender-genre-narrative-vn",
@@ -12304,15 +14049,15 @@
       "localResources": [
         {
           "package": "blender-genre-open-world-sandbox",
+          "path": "skills/blender-genre-open-world-sandbox/SKILL.md"
+        },
+        {
+          "package": "blender-genre-open-world-sandbox",
           "path": "skills/blender-genre-open-world-sandbox/references/production-playbook.md"
         },
         {
           "package": "blender-genre-open-world-sandbox",
           "path": "skills/blender-genre-open-world-sandbox/references/variant-workflows.md"
-        },
-        {
-          "package": "blender-genre-open-world-sandbox",
-          "path": "skills/blender-genre-open-world-sandbox/SKILL.md"
         },
         {
           "package": "blender-genre-open-world-sandbox",
@@ -12340,15 +14085,15 @@
       "localResources": [
         {
           "package": "blender-genre-puzzle-platformer",
+          "path": "skills/blender-genre-puzzle-platformer/SKILL.md"
+        },
+        {
+          "package": "blender-genre-puzzle-platformer",
           "path": "skills/blender-genre-puzzle-platformer/references/production-playbook.md"
         },
         {
           "package": "blender-genre-puzzle-platformer",
           "path": "skills/blender-genre-puzzle-platformer/references/variant-workflows.md"
-        },
-        {
-          "package": "blender-genre-puzzle-platformer",
-          "path": "skills/blender-genre-puzzle-platformer/SKILL.md"
         },
         {
           "package": "blender-genre-puzzle-platformer",
@@ -12376,15 +14121,15 @@
       "localResources": [
         {
           "package": "blender-genre-racing-sports",
+          "path": "skills/blender-genre-racing-sports/SKILL.md"
+        },
+        {
+          "package": "blender-genre-racing-sports",
           "path": "skills/blender-genre-racing-sports/references/production-playbook.md"
         },
         {
           "package": "blender-genre-racing-sports",
           "path": "skills/blender-genre-racing-sports/references/variant-workflows.md"
-        },
-        {
-          "package": "blender-genre-racing-sports",
-          "path": "skills/blender-genre-racing-sports/SKILL.md"
         },
         {
           "package": "blender-genre-racing-sports",
@@ -12412,15 +14157,15 @@
       "localResources": [
         {
           "package": "blender-genre-rpg",
+          "path": "skills/blender-genre-rpg/SKILL.md"
+        },
+        {
+          "package": "blender-genre-rpg",
           "path": "skills/blender-genre-rpg/references/production-playbook.md"
         },
         {
           "package": "blender-genre-rpg",
           "path": "skills/blender-genre-rpg/references/variant-workflows.md"
-        },
-        {
-          "package": "blender-genre-rpg",
-          "path": "skills/blender-genre-rpg/SKILL.md"
         },
         {
           "package": "blender-genre-rpg",
@@ -12448,15 +14193,15 @@
       "localResources": [
         {
           "package": "blender-genre-shooter",
+          "path": "skills/blender-genre-shooter/SKILL.md"
+        },
+        {
+          "package": "blender-genre-shooter",
           "path": "skills/blender-genre-shooter/references/production-playbook.md"
         },
         {
           "package": "blender-genre-shooter",
           "path": "skills/blender-genre-shooter/references/variant-workflows.md"
-        },
-        {
-          "package": "blender-genre-shooter",
-          "path": "skills/blender-genre-shooter/SKILL.md"
         },
         {
           "package": "blender-genre-shooter",
@@ -12484,15 +14229,15 @@
       "localResources": [
         {
           "package": "blender-genre-soulslike",
+          "path": "skills/blender-genre-soulslike/SKILL.md"
+        },
+        {
+          "package": "blender-genre-soulslike",
           "path": "skills/blender-genre-soulslike/references/production-playbook.md"
         },
         {
           "package": "blender-genre-soulslike",
           "path": "skills/blender-genre-soulslike/references/variant-workflows.md"
-        },
-        {
-          "package": "blender-genre-soulslike",
-          "path": "skills/blender-genre-soulslike/SKILL.md"
         },
         {
           "package": "blender-genre-soulslike",
@@ -12520,15 +14265,15 @@
       "localResources": [
         {
           "package": "blender-genre-stealth",
+          "path": "skills/blender-genre-stealth/SKILL.md"
+        },
+        {
+          "package": "blender-genre-stealth",
           "path": "skills/blender-genre-stealth/references/production-playbook.md"
         },
         {
           "package": "blender-genre-stealth",
           "path": "skills/blender-genre-stealth/references/variant-workflows.md"
-        },
-        {
-          "package": "blender-genre-stealth",
-          "path": "skills/blender-genre-stealth/SKILL.md"
         },
         {
           "package": "blender-genre-stealth",
@@ -12556,15 +14301,15 @@
       "localResources": [
         {
           "package": "blender-genre-strategy-sim",
+          "path": "skills/blender-genre-strategy-sim/SKILL.md"
+        },
+        {
+          "package": "blender-genre-strategy-sim",
           "path": "skills/blender-genre-strategy-sim/references/production-playbook.md"
         },
         {
           "package": "blender-genre-strategy-sim",
           "path": "skills/blender-genre-strategy-sim/references/variant-workflows.md"
-        },
-        {
-          "package": "blender-genre-strategy-sim",
-          "path": "skills/blender-genre-strategy-sim/SKILL.md"
         },
         {
           "package": "blender-genre-strategy-sim",
@@ -12592,15 +14337,15 @@
       "localResources": [
         {
           "package": "blender-genre-survival",
+          "path": "skills/blender-genre-survival/SKILL.md"
+        },
+        {
+          "package": "blender-genre-survival",
           "path": "skills/blender-genre-survival/references/production-playbook.md"
         },
         {
           "package": "blender-genre-survival",
           "path": "skills/blender-genre-survival/references/variant-workflows.md"
-        },
-        {
-          "package": "blender-genre-survival",
-          "path": "skills/blender-genre-survival/SKILL.md"
         },
         {
           "package": "blender-genre-survival",
@@ -12623,17 +14368,17 @@
     {
       "name": "blender-geometry-nodes",
       "sourceEntries": [
-        "arjun:.claude/skills/geometry-nodes/SKILL.md",
-        "el4:skills/blender-geometry-nodes/SKILL.md"
+        "el4:skills/blender-geometry-nodes/SKILL.md",
+        "arjun:.claude/skills/geometry-nodes/SKILL.md"
       ],
       "localResources": [
         {
           "package": "blender-geometry-nodes",
-          "path": "skills/blender-geometry-nodes/references/production.md"
+          "path": "skills/blender-geometry-nodes/SKILL.md"
         },
         {
           "package": "blender-geometry-nodes",
-          "path": "skills/blender-geometry-nodes/SKILL.md"
+          "path": "skills/blender-geometry-nodes/references/production.md"
         },
         {
           "package": "blender-geometry-nodes",
@@ -12657,15 +14402,15 @@
       "localResources": [
         {
           "package": "blender-godot-export",
+          "path": "skills/blender-godot-export/SKILL.md"
+        },
+        {
+          "package": "blender-godot-export",
           "path": "skills/blender-godot-export/references/acceptance-fixture.md"
         },
         {
           "package": "blender-godot-export",
           "path": "skills/blender-godot-export/references/godot-pipeline.md"
-        },
-        {
-          "package": "blender-godot-export",
-          "path": "skills/blender-godot-export/SKILL.md"
         },
         {
           "package": "blender-godot-export",
@@ -12688,17 +14433,17 @@
     {
       "name": "blender-hair-grooming",
       "sourceEntries": [
-        "arjun:.claude/skills/hair-groom/SKILL.md",
-        "el4:skills/blender-hair-grooming/SKILL.md"
+        "el4:skills/blender-hair-grooming/SKILL.md",
+        "arjun:.claude/skills/hair-groom/SKILL.md"
       ],
       "localResources": [
         {
           "package": "blender-hair-grooming",
-          "path": "skills/blender-hair-grooming/references/production.md"
+          "path": "skills/blender-hair-grooming/SKILL.md"
         },
         {
           "package": "blender-hair-grooming",
-          "path": "skills/blender-hair-grooming/SKILL.md"
+          "path": "skills/blender-hair-grooming/references/production.md"
         },
         {
           "package": "blender-hair-grooming",
@@ -12722,11 +14467,11 @@
       "localResources": [
         {
           "package": "blender-hand-painted-style",
-          "path": "skills/blender-hand-painted-style/references/production.md"
+          "path": "skills/blender-hand-painted-style/SKILL.md"
         },
         {
           "package": "blender-hand-painted-style",
-          "path": "skills/blender-hand-painted-style/SKILL.md"
+          "path": "skills/blender-hand-painted-style/references/production.md"
         },
         {
           "package": "blender-hand-painted-style",
@@ -12749,17 +14494,22 @@
     {
       "name": "blender-hard-surface",
       "sourceEntries": [
+        "el4:skills/blender-hardsurface-modeling/SKILL.md",
         "arjun:.claude/skills/hard-surface/SKILL.md",
-        "el4:skills/blender-hardsurface-modeling/SKILL.md"
+        "setcodes:skills/blender-game-assets/SKILL.md"
       ],
       "localResources": [
+        {
+          "package": "blender-hard-surface",
+          "path": "skills/blender-hard-surface/SKILL.md"
+        },
         {
           "package": "blender-hard-surface",
           "path": "skills/blender-hard-surface/references/production.md"
         },
         {
           "package": "blender-hard-surface",
-          "path": "skills/blender-hard-surface/SKILL.md"
+          "path": "skills/blender-hard-surface/references/setcodes-source-rebuild.md"
         },
         {
           "package": "blender-hard-surface",
@@ -12783,11 +14533,11 @@
       "localResources": [
         {
           "package": "blender-hd-2d-style",
-          "path": "skills/blender-hd-2d-style/references/production.md"
+          "path": "skills/blender-hd-2d-style/SKILL.md"
         },
         {
           "package": "blender-hd-2d-style",
-          "path": "skills/blender-hd-2d-style/SKILL.md"
+          "path": "skills/blender-hd-2d-style/references/production.md"
         },
         {
           "package": "blender-hd-2d-style",
@@ -12815,15 +14565,15 @@
       "localResources": [
         {
           "package": "blender-historical-worlds",
+          "path": "skills/blender-historical-worlds/SKILL.md"
+        },
+        {
+          "package": "blender-historical-worlds",
           "path": "skills/blender-historical-worlds/references/production-playbook.md"
         },
         {
           "package": "blender-historical-worlds",
           "path": "skills/blender-historical-worlds/references/variant-workflows.md"
-        },
-        {
-          "package": "blender-historical-worlds",
-          "path": "skills/blender-historical-worlds/SKILL.md"
         },
         {
           "package": "blender-historical-worlds",
@@ -12851,11 +14601,11 @@
       "localResources": [
         {
           "package": "blender-horror-style",
-          "path": "skills/blender-horror-style/references/production.md"
+          "path": "skills/blender-horror-style/SKILL.md"
         },
         {
           "package": "blender-horror-style",
-          "path": "skills/blender-horror-style/SKILL.md"
+          "path": "skills/blender-horror-style/references/production.md"
         },
         {
           "package": "blender-horror-style",
@@ -12883,15 +14633,15 @@
       "localResources": [
         {
           "package": "blender-indie-horror-aesthetics",
+          "path": "skills/blender-indie-horror-aesthetics/SKILL.md"
+        },
+        {
+          "package": "blender-indie-horror-aesthetics",
           "path": "skills/blender-indie-horror-aesthetics/references/aesthetic-workflows.md"
         },
         {
           "package": "blender-indie-horror-aesthetics",
           "path": "skills/blender-indie-horror-aesthetics/references/production.md"
-        },
-        {
-          "package": "blender-indie-horror-aesthetics",
-          "path": "skills/blender-indie-horror-aesthetics/SKILL.md"
         },
         {
           "package": "blender-indie-horror-aesthetics",
@@ -12919,15 +14669,15 @@
       "localResources": [
         {
           "package": "blender-isometric-style",
+          "path": "skills/blender-isometric-style/SKILL.md"
+        },
+        {
+          "package": "blender-isometric-style",
           "path": "skills/blender-isometric-style/references/dimetric-calibration.md"
         },
         {
           "package": "blender-isometric-style",
           "path": "skills/blender-isometric-style/references/production.md"
-        },
-        {
-          "package": "blender-isometric-style",
-          "path": "skills/blender-isometric-style/SKILL.md"
         },
         {
           "package": "blender-isometric-style",
@@ -12950,17 +14700,17 @@
     {
       "name": "blender-lighting",
       "sourceEntries": [
-        "arjun:.claude/skills/lighting/SKILL.md",
-        "el4:skills/blender-lighting-lookdev/SKILL.md"
+        "el4:skills/blender-lighting-lookdev/SKILL.md",
+        "arjun:.claude/skills/lighting/SKILL.md"
       ],
       "localResources": [
         {
           "package": "blender-lighting",
-          "path": "skills/blender-lighting/references/production.md"
+          "path": "skills/blender-lighting/SKILL.md"
         },
         {
           "package": "blender-lighting",
-          "path": "skills/blender-lighting/SKILL.md"
+          "path": "skills/blender-lighting/references/production.md"
         },
         {
           "package": "blender-lighting",
@@ -12984,15 +14734,15 @@
       "localResources": [
         {
           "package": "blender-liminal-space-style",
+          "path": "skills/blender-liminal-space-style/SKILL.md"
+        },
+        {
+          "package": "blender-liminal-space-style",
           "path": "skills/blender-liminal-space-style/references/place-workflows.md"
         },
         {
           "package": "blender-liminal-space-style",
           "path": "skills/blender-liminal-space-style/references/production.md"
-        },
-        {
-          "package": "blender-liminal-space-style",
-          "path": "skills/blender-liminal-space-style/SKILL.md"
         },
         {
           "package": "blender-liminal-space-style",
@@ -13020,11 +14770,11 @@
       "localResources": [
         {
           "package": "blender-lod-pipeline",
-          "path": "skills/blender-lod-pipeline/references/production.md"
+          "path": "skills/blender-lod-pipeline/SKILL.md"
         },
         {
           "package": "blender-lod-pipeline",
-          "path": "skills/blender-lod-pipeline/SKILL.md"
+          "path": "skills/blender-lod-pipeline/references/production.md"
         },
         {
           "package": "blender-lod-pipeline",
@@ -13043,13 +14793,23 @@
     {
       "name": "blender-lookdev",
       "sourceEntries": [
+        "el4:skills/blender-lighting-lookdev/SKILL.md",
         "arjun:.claude/skills/lookdev/SKILL.md",
-        "el4:skills/blender-lighting-lookdev/SKILL.md"
+        "majid:skills/blender-image-to-3d/SKILL.md",
+        "setcodes:skills/blender-game-assets/SKILL.md"
       ],
       "localResources": [
         {
           "package": "blender-lookdev",
+          "path": "skills/blender-lookdev/SKILL.md"
+        },
+        {
+          "package": "blender-lookdev",
           "path": "skills/blender-lookdev/references/look-development.md"
+        },
+        {
+          "package": "blender-lookdev",
+          "path": "skills/blender-lookdev/references/majid-capture-debug.md"
         },
         {
           "package": "blender-lookdev",
@@ -13057,7 +14817,7 @@
         },
         {
           "package": "blender-lookdev",
-          "path": "skills/blender-lookdev/SKILL.md"
+          "path": "skills/blender-lookdev/references/setcodes-neutral-preview.md"
         },
         {
           "package": "blender-lookdev",
@@ -13081,11 +14841,11 @@
       "localResources": [
         {
           "package": "blender-lowpoly-style",
-          "path": "skills/blender-lowpoly-style/references/production.md"
+          "path": "skills/blender-lowpoly-style/SKILL.md"
         },
         {
           "package": "blender-lowpoly-style",
-          "path": "skills/blender-lowpoly-style/SKILL.md"
+          "path": "skills/blender-lowpoly-style/references/production.md"
         },
         {
           "package": "blender-lowpoly-style",
@@ -13113,11 +14873,11 @@
       "localResources": [
         {
           "package": "blender-manga-style",
-          "path": "skills/blender-manga-style/references/production.md"
+          "path": "skills/blender-manga-style/SKILL.md"
         },
         {
           "package": "blender-manga-style",
-          "path": "skills/blender-manga-style/SKILL.md"
+          "path": "skills/blender-manga-style/references/production.md"
         },
         {
           "package": "blender-manga-style",
@@ -13145,15 +14905,15 @@
       "localResources": [
         {
           "package": "blender-mascot-puppet-horror",
+          "path": "skills/blender-mascot-puppet-horror/SKILL.md"
+        },
+        {
+          "package": "blender-mascot-puppet-horror",
           "path": "skills/blender-mascot-puppet-horror/references/assembly-workflows.md"
         },
         {
           "package": "blender-mascot-puppet-horror",
           "path": "skills/blender-mascot-puppet-horror/references/production.md"
-        },
-        {
-          "package": "blender-mascot-puppet-horror",
-          "path": "skills/blender-mascot-puppet-horror/SKILL.md"
         },
         {
           "package": "blender-mascot-puppet-horror",
@@ -13179,11 +14939,11 @@
       "localResources": [
         {
           "package": "blender-materials-uv",
-          "path": "skills/blender-materials-uv/references/surface-delivery.md"
+          "path": "skills/blender-materials-uv/SKILL.md"
         },
         {
           "package": "blender-materials-uv",
-          "path": "skills/blender-materials-uv/SKILL.md"
+          "path": "skills/blender-materials-uv/references/surface-delivery.md"
         },
         {
           "package": "blender-materials-uv",
@@ -13209,11 +14969,11 @@
       "localResources": [
         {
           "package": "blender-minimalist-style",
-          "path": "skills/blender-minimalist-style/references/production.md"
+          "path": "skills/blender-minimalist-style/SKILL.md"
         },
         {
           "package": "blender-minimalist-style",
-          "path": "skills/blender-minimalist-style/SKILL.md"
+          "path": "skills/blender-minimalist-style/references/production.md"
         },
         {
           "package": "blender-minimalist-style",
@@ -13236,20 +14996,25 @@
     {
       "name": "blender-modeling",
       "sourceEntries": [
-        "arjun:.claude/skills/blender-modeler/SKILL.md"
+        "arjun:.claude/skills/blender-modeler/SKILL.md",
+        "majid:skills/blender-image-to-3d/SKILL.md"
       ],
       "localResources": [
+        {
+          "package": "blender-modeling",
+          "path": "skills/blender-modeling/SKILL.md"
+        },
         {
           "package": "blender-modeling",
           "path": "skills/blender-modeling/references/construction.md"
         },
         {
           "package": "blender-modeling",
-          "path": "skills/blender-modeling/references/production.md"
+          "path": "skills/blender-modeling/references/majid-measured-categories.md"
         },
         {
           "package": "blender-modeling",
-          "path": "skills/blender-modeling/SKILL.md"
+          "path": "skills/blender-modeling/references/production.md"
         },
         {
           "package": "blender-modeling",
@@ -13273,15 +15038,15 @@
       "localResources": [
         {
           "package": "blender-neon-retrofuturism",
+          "path": "skills/blender-neon-retrofuturism/SKILL.md"
+        },
+        {
+          "package": "blender-neon-retrofuturism",
           "path": "skills/blender-neon-retrofuturism/references/lane-workflows.md"
         },
         {
           "package": "blender-neon-retrofuturism",
           "path": "skills/blender-neon-retrofuturism/references/production.md"
-        },
-        {
-          "package": "blender-neon-retrofuturism",
-          "path": "skills/blender-neon-retrofuturism/SKILL.md"
         },
         {
           "package": "blender-neon-retrofuturism",
@@ -13309,11 +15074,11 @@
       "localResources": [
         {
           "package": "blender-noir-style",
-          "path": "skills/blender-noir-style/references/production.md"
+          "path": "skills/blender-noir-style/SKILL.md"
         },
         {
           "package": "blender-noir-style",
-          "path": "skills/blender-noir-style/SKILL.md"
+          "path": "skills/blender-noir-style/references/production.md"
         },
         {
           "package": "blender-noir-style",
@@ -13341,15 +15106,15 @@
       "localResources": [
         {
           "package": "blender-painterly-style",
+          "path": "skills/blender-painterly-style/SKILL.md"
+        },
+        {
+          "package": "blender-painterly-style",
           "path": "skills/blender-painterly-style/references/medium-workflows.md"
         },
         {
           "package": "blender-painterly-style",
           "path": "skills/blender-painterly-style/references/production.md"
-        },
-        {
-          "package": "blender-painterly-style",
-          "path": "skills/blender-painterly-style/SKILL.md"
         },
         {
           "package": "blender-painterly-style",
@@ -13372,17 +15137,17 @@
     {
       "name": "blender-pbr-materials",
       "sourceEntries": [
-        "arjun:.claude/skills/materials/SKILL.md",
-        "el4:skills/blender-pbr-materials/SKILL.md"
+        "el4:skills/blender-pbr-materials/SKILL.md",
+        "arjun:.claude/skills/materials/SKILL.md"
       ],
       "localResources": [
         {
           "package": "blender-pbr-materials",
-          "path": "skills/blender-pbr-materials/references/production.md"
+          "path": "skills/blender-pbr-materials/SKILL.md"
         },
         {
           "package": "blender-pbr-materials",
-          "path": "skills/blender-pbr-materials/SKILL.md"
+          "path": "skills/blender-pbr-materials/references/production.md"
         },
         {
           "package": "blender-pbr-materials",
@@ -13406,6 +15171,10 @@
       "localResources": [
         {
           "package": "blender-pipeline-automation",
+          "path": "skills/blender-pipeline-automation/SKILL.md"
+        },
+        {
+          "package": "blender-pipeline-automation",
           "path": "skills/blender-pipeline-automation/references/batch-contract.md"
         },
         {
@@ -13414,7 +15183,7 @@
         },
         {
           "package": "blender-pipeline-automation",
-          "path": "skills/blender-pipeline-automation/SKILL.md"
+          "path": "skills/blender-pipeline-automation/scripts/run_jobs.py"
         },
         {
           "package": "blender-pipeline-automation",
@@ -13438,11 +15207,11 @@
       "localResources": [
         {
           "package": "blender-pixel-art-style",
-          "path": "skills/blender-pixel-art-style/references/production.md"
+          "path": "skills/blender-pixel-art-style/SKILL.md"
         },
         {
           "package": "blender-pixel-art-style",
-          "path": "skills/blender-pixel-art-style/SKILL.md"
+          "path": "skills/blender-pixel-art-style/references/production.md"
         },
         {
           "package": "blender-pixel-art-style",
@@ -13470,11 +15239,11 @@
       "localResources": [
         {
           "package": "blender-procedural-modeling",
-          "path": "skills/blender-procedural-modeling/references/production.md"
+          "path": "skills/blender-procedural-modeling/SKILL.md"
         },
         {
           "package": "blender-procedural-modeling",
-          "path": "skills/blender-procedural-modeling/SKILL.md"
+          "path": "skills/blender-procedural-modeling/references/production.md"
         },
         {
           "package": "blender-procedural-modeling",
@@ -13498,11 +15267,11 @@
       "localResources": [
         {
           "package": "blender-prop-modeling",
-          "path": "skills/blender-prop-modeling/references/production.md"
+          "path": "skills/blender-prop-modeling/SKILL.md"
         },
         {
           "package": "blender-prop-modeling",
-          "path": "skills/blender-prop-modeling/SKILL.md"
+          "path": "skills/blender-prop-modeling/references/production.md"
         },
         {
           "package": "blender-prop-modeling",
@@ -13526,11 +15295,11 @@
       "localResources": [
         {
           "package": "blender-psx-horror-style",
-          "path": "skills/blender-psx-horror-style/references/production.md"
+          "path": "skills/blender-psx-horror-style/SKILL.md"
         },
         {
           "package": "blender-psx-horror-style",
-          "path": "skills/blender-psx-horror-style/SKILL.md"
+          "path": "skills/blender-psx-horror-style/references/production.md"
         },
         {
           "package": "blender-psx-horror-style",
@@ -13558,11 +15327,11 @@
       "localResources": [
         {
           "package": "blender-realistic-style",
-          "path": "skills/blender-realistic-style/references/production.md"
+          "path": "skills/blender-realistic-style/SKILL.md"
         },
         {
           "package": "blender-realistic-style",
-          "path": "skills/blender-realistic-style/SKILL.md"
+          "path": "skills/blender-realistic-style/references/production.md"
         },
         {
           "package": "blender-realistic-style",
@@ -13584,11 +15353,26 @@
     },
     {
       "name": "blender-reference-modeling",
-      "sourceEntries": [],
+      "sourceEntries": [
+        "majid:skills/blender-image-to-3d/SKILL.md",
+        "setcodes:skills/blender-game-assets/SKILL.md"
+      ],
       "localResources": [
         {
           "package": "blender-reference-modeling",
+          "path": "skills/blender-reference-modeling/SKILL.md"
+        },
+        {
+          "package": "blender-reference-modeling",
           "path": "skills/blender-reference-modeling/references/calibration.md"
+        },
+        {
+          "package": "blender-reference-modeling",
+          "path": "skills/blender-reference-modeling/references/majid-mask-comparison.md"
+        },
+        {
+          "package": "blender-reference-modeling",
+          "path": "skills/blender-reference-modeling/references/majid-reference-pipeline.md"
         },
         {
           "package": "blender-reference-modeling",
@@ -13596,7 +15380,11 @@
         },
         {
           "package": "blender-reference-modeling",
-          "path": "skills/blender-reference-modeling/SKILL.md"
+          "path": "skills/blender-reference-modeling/references/setcodes-projection-atlas.md"
+        },
+        {
+          "package": "blender-reference-modeling",
+          "path": "skills/blender-reference-modeling/scripts/compare_reference_masks.py"
         },
         {
           "package": "blender-reference-modeling",
@@ -13610,24 +15398,22 @@
           "package": "blender-reference-modeling",
           "path": "skills/blender-development/references/quality-loop.md"
         }
-      ],
-      "retained": true,
-      "retainedReason": "Retained reference-match coordinator owns camera/proportion comparison across geometry, materials and lighting; it is not a duplicate upstream entry."
+      ]
     },
     {
       "name": "blender-rendering",
       "sourceEntries": [
-        "arjun:.claude/skills/rendering/SKILL.md",
-        "el4:skills/blender-rendering/SKILL.md"
+        "el4:skills/blender-rendering/SKILL.md",
+        "arjun:.claude/skills/rendering/SKILL.md"
       ],
       "localResources": [
         {
           "package": "blender-rendering",
-          "path": "skills/blender-rendering/references/production.md"
+          "path": "skills/blender-rendering/SKILL.md"
         },
         {
           "package": "blender-rendering",
-          "path": "skills/blender-rendering/SKILL.md"
+          "path": "skills/blender-rendering/references/production.md"
         },
         {
           "package": "blender-rendering",
@@ -13646,17 +15432,17 @@
     {
       "name": "blender-retopology",
       "sourceEntries": [
-        "arjun:.claude/skills/retopology/SKILL.md",
-        "el4:skills/blender-retopology-uv/SKILL.md"
+        "el4:skills/blender-retopology-uv/SKILL.md",
+        "arjun:.claude/skills/retopology/SKILL.md"
       ],
       "localResources": [
         {
           "package": "blender-retopology",
-          "path": "skills/blender-retopology/references/production.md"
+          "path": "skills/blender-retopology/SKILL.md"
         },
         {
           "package": "blender-retopology",
-          "path": "skills/blender-retopology/SKILL.md"
+          "path": "skills/blender-retopology/references/production.md"
         },
         {
           "package": "blender-retopology",
@@ -13680,11 +15466,11 @@
       "localResources": [
         {
           "package": "blender-retro-16bit-style",
-          "path": "skills/blender-retro-16bit-style/references/production.md"
+          "path": "skills/blender-retro-16bit-style/SKILL.md"
         },
         {
           "package": "blender-retro-16bit-style",
-          "path": "skills/blender-retro-16bit-style/SKILL.md"
+          "path": "skills/blender-retro-16bit-style/references/production.md"
         },
         {
           "package": "blender-retro-16bit-style",
@@ -13712,11 +15498,11 @@
       "localResources": [
         {
           "package": "blender-retro-8bit-style",
-          "path": "skills/blender-retro-8bit-style/references/production.md"
+          "path": "skills/blender-retro-8bit-style/SKILL.md"
         },
         {
           "package": "blender-retro-8bit-style",
-          "path": "skills/blender-retro-8bit-style/SKILL.md"
+          "path": "skills/blender-retro-8bit-style/references/production.md"
         },
         {
           "package": "blender-retro-8bit-style",
@@ -13738,15 +15524,21 @@
     },
     {
       "name": "blender-rigging-animation",
-      "sourceEntries": [],
+      "sourceEntries": [
+        "majid:skills/blender-image-to-3d/SKILL.md"
+      ],
       "localResources": [
         {
           "package": "blender-rigging-animation",
-          "path": "skills/blender-rigging-animation/references/motion-contract.md"
+          "path": "skills/blender-rigging-animation/SKILL.md"
         },
         {
           "package": "blender-rigging-animation",
-          "path": "skills/blender-rigging-animation/SKILL.md"
+          "path": "skills/blender-rigging-animation/references/majid-motion-delivery.md"
+        },
+        {
+          "package": "blender-rigging-animation",
+          "path": "skills/blender-rigging-animation/references/motion-contract.md"
         },
         {
           "package": "blender-rigging-animation",
@@ -13760,24 +15552,22 @@
           "package": "blender-rigging-animation",
           "path": "skills/blender-development/references/quality-loop.md"
         }
-      ],
-      "retained": true,
-      "retainedReason": "Retained rig/motion coordinator selects detailed character-rigging, animation and facial workflows while preserving the combined contract."
+      ]
     },
     {
       "name": "blender-scene-assembly",
       "sourceEntries": [
-        "arjun:.claude/skills/scene-assembly/SKILL.md",
-        "el4:skills/blender-scene-setup/SKILL.md"
+        "el4:skills/blender-scene-setup/SKILL.md",
+        "arjun:.claude/skills/scene-assembly/SKILL.md"
       ],
       "localResources": [
         {
           "package": "blender-scene-assembly",
-          "path": "skills/blender-scene-assembly/references/production.md"
+          "path": "skills/blender-scene-assembly/SKILL.md"
         },
         {
           "package": "blender-scene-assembly",
-          "path": "skills/blender-scene-assembly/SKILL.md"
+          "path": "skills/blender-scene-assembly/references/production.md"
         },
         {
           "package": "blender-scene-assembly",
@@ -13801,15 +15591,15 @@
       "localResources": [
         {
           "package": "blender-sci-fi-punk-worlds",
+          "path": "skills/blender-sci-fi-punk-worlds/SKILL.md"
+        },
+        {
+          "package": "blender-sci-fi-punk-worlds",
           "path": "skills/blender-sci-fi-punk-worlds/references/production-playbook.md"
         },
         {
           "package": "blender-sci-fi-punk-worlds",
           "path": "skills/blender-sci-fi-punk-worlds/references/variant-workflows.md"
-        },
-        {
-          "package": "blender-sci-fi-punk-worlds",
-          "path": "skills/blender-sci-fi-punk-worlds/SKILL.md"
         },
         {
           "package": "blender-sci-fi-punk-worlds",
@@ -13832,17 +15622,17 @@
     {
       "name": "blender-sculpting",
       "sourceEntries": [
-        "arjun:.claude/skills/sculpting/SKILL.md",
-        "el4:skills/blender-sculpting/SKILL.md"
+        "el4:skills/blender-sculpting/SKILL.md",
+        "arjun:.claude/skills/sculpting/SKILL.md"
       ],
       "localResources": [
         {
           "package": "blender-sculpting",
-          "path": "skills/blender-sculpting/references/production.md"
+          "path": "skills/blender-sculpting/SKILL.md"
         },
         {
           "package": "blender-sculpting",
-          "path": "skills/blender-sculpting/SKILL.md"
+          "path": "skills/blender-sculpting/references/production.md"
         },
         {
           "package": "blender-sculpting",
@@ -13866,11 +15656,11 @@
       "localResources": [
         {
           "package": "blender-set-dressing",
-          "path": "skills/blender-set-dressing/references/production.md"
+          "path": "skills/blender-set-dressing/SKILL.md"
         },
         {
           "package": "blender-set-dressing",
-          "path": "skills/blender-set-dressing/SKILL.md"
+          "path": "skills/blender-set-dressing/references/production.md"
         },
         {
           "package": "blender-set-dressing",
@@ -13889,17 +15679,17 @@
     {
       "name": "blender-simulation",
       "sourceEntries": [
-        "arjun:.claude/skills/physics-sim/SKILL.md",
-        "el4:skills/blender-simulation/SKILL.md"
+        "el4:skills/blender-simulation/SKILL.md",
+        "arjun:.claude/skills/physics-sim/SKILL.md"
       ],
       "localResources": [
         {
           "package": "blender-simulation",
-          "path": "skills/blender-simulation/references/production.md"
+          "path": "skills/blender-simulation/SKILL.md"
         },
         {
           "package": "blender-simulation",
-          "path": "skills/blender-simulation/SKILL.md"
+          "path": "skills/blender-simulation/references/production.md"
         },
         {
           "package": "blender-simulation",
@@ -13923,15 +15713,15 @@
       "localResources": [
         {
           "package": "blender-stop-motion-craft-style",
+          "path": "skills/blender-stop-motion-craft-style/SKILL.md"
+        },
+        {
+          "package": "blender-stop-motion-craft-style",
           "path": "skills/blender-stop-motion-craft-style/references/craft-workflows.md"
         },
         {
           "package": "blender-stop-motion-craft-style",
           "path": "skills/blender-stop-motion-craft-style/references/production.md"
-        },
-        {
-          "package": "blender-stop-motion-craft-style",
-          "path": "skills/blender-stop-motion-craft-style/SKILL.md"
         },
         {
           "package": "blender-stop-motion-craft-style",
@@ -13954,10 +15744,14 @@
     {
       "name": "blender-stylized-style",
       "sourceEntries": [
-        "arjun:.claude/skills/stylized-style/SKILL.md",
-        "el4:skills/blender-stylized-npr/SKILL.md"
+        "el4:skills/blender-stylized-npr/SKILL.md",
+        "arjun:.claude/skills/stylized-style/SKILL.md"
       ],
       "localResources": [
+        {
+          "package": "blender-stylized-style",
+          "path": "skills/blender-stylized-style/SKILL.md"
+        },
         {
           "package": "blender-stylized-style",
           "path": "skills/blender-stylized-style/references/npr-implementation.md"
@@ -13965,10 +15759,6 @@
         {
           "package": "blender-stylized-style",
           "path": "skills/blender-stylized-style/references/production.md"
-        },
-        {
-          "package": "blender-stylized-style",
-          "path": "skills/blender-stylized-style/SKILL.md"
         },
         {
           "package": "blender-stylized-style",
@@ -13991,16 +15781,21 @@
     {
       "name": "blender-texture-baking",
       "sourceEntries": [
-        "el4:skills/blender-texture-baking/SKILL.md"
+        "el4:skills/blender-texture-baking/SKILL.md",
+        "majid:skills/blender-image-to-3d/SKILL.md"
       ],
       "localResources": [
         {
           "package": "blender-texture-baking",
-          "path": "skills/blender-texture-baking/references/production.md"
+          "path": "skills/blender-texture-baking/SKILL.md"
         },
         {
           "package": "blender-texture-baking",
-          "path": "skills/blender-texture-baking/SKILL.md"
+          "path": "skills/blender-texture-baking/references/majid-bake-branches.md"
+        },
+        {
+          "package": "blender-texture-baking",
+          "path": "skills/blender-texture-baking/references/production.md"
         },
         {
           "package": "blender-texture-baking",
@@ -14019,17 +15814,26 @@
     {
       "name": "blender-texturing",
       "sourceEntries": [
+        "el4:skills/blender-texturing/SKILL.md",
         "arjun:.claude/skills/texture-workflow/SKILL.md",
-        "el4:skills/blender-texturing/SKILL.md"
+        "setcodes:skills/blender-game-assets/SKILL.md"
       ],
       "localResources": [
+        {
+          "package": "blender-texturing",
+          "path": "skills/blender-texturing/SKILL.md"
+        },
         {
           "package": "blender-texturing",
           "path": "skills/blender-texturing/references/production.md"
         },
         {
           "package": "blender-texturing",
-          "path": "skills/blender-texturing/SKILL.md"
+          "path": "skills/blender-texturing/references/setcodes-registered-cleanup.md"
+        },
+        {
+          "package": "blender-texturing",
+          "path": "skills/blender-texturing/scripts/replace_glb_basecolor.py"
         },
         {
           "package": "blender-texturing",
@@ -14053,11 +15857,11 @@
       "localResources": [
         {
           "package": "blender-time-of-day",
-          "path": "skills/blender-time-of-day/references/production.md"
+          "path": "skills/blender-time-of-day/SKILL.md"
         },
         {
           "package": "blender-time-of-day",
-          "path": "skills/blender-time-of-day/SKILL.md"
+          "path": "skills/blender-time-of-day/references/production.md"
         },
         {
           "package": "blender-time-of-day",
@@ -14081,15 +15885,15 @@
       "localResources": [
         {
           "package": "blender-unity-export",
+          "path": "skills/blender-unity-export/SKILL.md"
+        },
+        {
+          "package": "blender-unity-export",
           "path": "skills/blender-unity-export/references/acceptance-fixture.md"
         },
         {
           "package": "blender-unity-export",
           "path": "skills/blender-unity-export/references/unity-pipeline.md"
-        },
-        {
-          "package": "blender-unity-export",
-          "path": "skills/blender-unity-export/SKILL.md"
         },
         {
           "package": "blender-unity-export",
@@ -14117,15 +15921,15 @@
       "localResources": [
         {
           "package": "blender-unreal-export",
+          "path": "skills/blender-unreal-export/SKILL.md"
+        },
+        {
+          "package": "blender-unreal-export",
           "path": "skills/blender-unreal-export/references/acceptance-fixture.md"
         },
         {
           "package": "blender-unreal-export",
           "path": "skills/blender-unreal-export/references/unreal-pipeline.md"
-        },
-        {
-          "package": "blender-unreal-export",
-          "path": "skills/blender-unreal-export/SKILL.md"
         },
         {
           "package": "blender-unreal-export",
@@ -14148,17 +15952,17 @@
     {
       "name": "blender-uv-unwrapping",
       "sourceEntries": [
-        "arjun:.claude/skills/uv-workflow/SKILL.md",
-        "el4:skills/blender-retopology-uv/SKILL.md"
+        "el4:skills/blender-retopology-uv/SKILL.md",
+        "arjun:.claude/skills/uv-workflow/SKILL.md"
       ],
       "localResources": [
         {
           "package": "blender-uv-unwrapping",
-          "path": "skills/blender-uv-unwrapping/references/production.md"
+          "path": "skills/blender-uv-unwrapping/SKILL.md"
         },
         {
           "package": "blender-uv-unwrapping",
-          "path": "skills/blender-uv-unwrapping/SKILL.md"
+          "path": "skills/blender-uv-unwrapping/references/production.md"
         },
         {
           "package": "blender-uv-unwrapping",
@@ -14182,11 +15986,11 @@
       "localResources": [
         {
           "package": "blender-vector-style",
-          "path": "skills/blender-vector-style/references/production.md"
+          "path": "skills/blender-vector-style/SKILL.md"
         },
         {
           "package": "blender-vector-style",
-          "path": "skills/blender-vector-style/SKILL.md"
+          "path": "skills/blender-vector-style/references/production.md"
         },
         {
           "package": "blender-vector-style",
@@ -14214,11 +16018,11 @@
       "localResources": [
         {
           "package": "blender-vegetation",
-          "path": "skills/blender-vegetation/references/production.md"
+          "path": "skills/blender-vegetation/SKILL.md"
         },
         {
           "package": "blender-vegetation",
-          "path": "skills/blender-vegetation/SKILL.md"
+          "path": "skills/blender-vegetation/references/production.md"
         },
         {
           "package": "blender-vegetation",
@@ -14237,16 +16041,21 @@
     {
       "name": "blender-vehicle-modeling",
       "sourceEntries": [
-        "arjun:.claude/skills/vehicle-artist/SKILL.md"
+        "arjun:.claude/skills/vehicle-artist/SKILL.md",
+        "setcodes:skills/blender-game-assets/SKILL.md"
       ],
       "localResources": [
+        {
+          "package": "blender-vehicle-modeling",
+          "path": "skills/blender-vehicle-modeling/SKILL.md"
+        },
         {
           "package": "blender-vehicle-modeling",
           "path": "skills/blender-vehicle-modeling/references/production.md"
         },
         {
           "package": "blender-vehicle-modeling",
-          "path": "skills/blender-vehicle-modeling/SKILL.md"
+          "path": "skills/blender-vehicle-modeling/references/setcodes-shell-reconstruction.md"
         },
         {
           "package": "blender-vehicle-modeling",
@@ -14270,11 +16079,11 @@
       "localResources": [
         {
           "package": "blender-vfx-fx",
-          "path": "skills/blender-vfx-fx/references/production.md"
+          "path": "skills/blender-vfx-fx/SKILL.md"
         },
         {
           "package": "blender-vfx-fx",
-          "path": "skills/blender-vfx-fx/SKILL.md"
+          "path": "skills/blender-vfx-fx/references/production.md"
         },
         {
           "package": "blender-vfx-fx",
@@ -14298,11 +16107,11 @@
       "localResources": [
         {
           "package": "blender-video-editing",
-          "path": "skills/blender-video-editing/references/production.md"
+          "path": "skills/blender-video-editing/SKILL.md"
         },
         {
           "package": "blender-video-editing",
-          "path": "skills/blender-video-editing/SKILL.md"
+          "path": "skills/blender-video-editing/references/production.md"
         },
         {
           "package": "blender-video-editing",
@@ -14326,15 +16135,15 @@
       "localResources": [
         {
           "package": "blender-visual-console-eras",
+          "path": "skills/blender-visual-console-eras/SKILL.md"
+        },
+        {
+          "package": "blender-visual-console-eras",
           "path": "skills/blender-visual-console-eras/references/production-playbook.md"
         },
         {
           "package": "blender-visual-console-eras",
           "path": "skills/blender-visual-console-eras/references/variant-workflows.md"
-        },
-        {
-          "package": "blender-visual-console-eras",
-          "path": "skills/blender-visual-console-eras/SKILL.md"
         },
         {
           "package": "blender-visual-console-eras",
@@ -14356,15 +16165,17 @@
     },
     {
       "name": "blender-visual-review",
-      "sourceEntries": [],
+      "sourceEntries": [
+        "majid:skills/blender-image-to-3d/SKILL.md"
+      ],
       "localResources": [
         {
           "package": "blender-visual-review",
-          "path": "skills/blender-visual-review/references/visual-rubric.md"
+          "path": "skills/blender-visual-review/SKILL.md"
         },
         {
           "package": "blender-visual-review",
-          "path": "skills/blender-visual-review/SKILL.md"
+          "path": "skills/blender-visual-review/references/visual-rubric.md"
         },
         {
           "package": "blender-visual-review",
@@ -14378,9 +16189,7 @@
           "package": "blender-visual-review",
           "path": "skills/blender-development/references/quality-loop.md"
         }
-      ],
-      "retained": true,
-      "retainedReason": "Retained read-only visual acceptance workflow judges current images independently of technical validity and source authorship."
+      ]
     },
     {
       "name": "blender-voxel-style",
@@ -14390,11 +16199,11 @@
       "localResources": [
         {
           "package": "blender-voxel-style",
-          "path": "skills/blender-voxel-style/references/production.md"
+          "path": "skills/blender-voxel-style/SKILL.md"
         },
         {
           "package": "blender-voxel-style",
-          "path": "skills/blender-voxel-style/SKILL.md"
+          "path": "skills/blender-voxel-style/references/production.md"
         },
         {
           "package": "blender-voxel-style",
@@ -14422,11 +16231,11 @@
       "localResources": [
         {
           "package": "blender-weather-fx",
-          "path": "skills/blender-weather-fx/references/production.md"
+          "path": "skills/blender-weather-fx/SKILL.md"
         },
         {
           "package": "blender-weather-fx",
-          "path": "skills/blender-weather-fx/SKILL.md"
+          "path": "skills/blender-weather-fx/references/production.md"
         },
         {
           "package": "blender-weather-fx",
@@ -14450,11 +16259,11 @@
       "localResources": [
         {
           "package": "blender-workflow-recipes",
-          "path": "skills/blender-workflow-recipes/references/production-recipes.md"
+          "path": "skills/blender-workflow-recipes/SKILL.md"
         },
         {
           "package": "blender-workflow-recipes",
-          "path": "skills/blender-workflow-recipes/SKILL.md"
+          "path": "skills/blender-workflow-recipes/references/production-recipes.md"
         },
         {
           "package": "blender-workflow-recipes",
@@ -14467,6 +16276,74 @@
         {
           "package": "blender-workflow-recipes",
           "path": "skills/blender-development/references/quality-loop.md"
+        }
+      ]
+    },
+    {
+      "name": "game-design",
+      "sourceEntries": [
+        "setcodes:skills/game-designer/SKILL.md"
+      ],
+      "localResources": [
+        {
+          "package": "game-design",
+          "path": "skills/game-design/SKILL.md"
+        },
+        {
+          "package": "game-design",
+          "path": "skills/game-design/references/documents.md"
+        },
+        {
+          "package": "game-design",
+          "path": "skills/game-design/references/levels-encounters.md"
+        },
+        {
+          "package": "game-design",
+          "path": "skills/game-design/references/playtesting.md"
+        },
+        {
+          "package": "game-design",
+          "path": "skills/game-design/references/progression-economy.md"
+        },
+        {
+          "package": "game-design",
+          "path": "skills/game-design/references/systems.md"
+        },
+        {
+          "package": "game-design",
+          "path": "skills/game-design/references/teaching-feedback.md"
+        }
+      ]
+    },
+    {
+      "name": "godot-development",
+      "sourceEntries": [
+        "setcodes:skills/godot-gamedev/SKILL.md"
+      ],
+      "localResources": [
+        {
+          "package": "godot-development",
+          "path": "skills/godot-development/SKILL.md"
+        },
+        {
+          "package": "godot-development",
+          "path": "skills/godot-development/references/debugging.md"
+        },
+        {
+          "package": "godot-development",
+          "path": "skills/godot-development/references/gameplay.md"
+        },
+        {
+          "package": "godot-development",
+          "path": "skills/godot-development/references/project-discovery.md"
+        },
+        {
+          "package": "godot-development",
+          "path": "skills/godot-development/references/scenes-data.md"
+        },
+        {
+          "package": "godot-development",
+          "path": "skills/godot-development/references/verification.md"
         }
       ]
     }
@@ -14549,6 +16426,60 @@
       "path": "README.md",
       "blob": "fcd90068eb2dd4c4576d3af56418f3a5b5cbe6f2",
       "purpose": "Repository-level scope and setup context retained in the pinned inventory; not an installed tool or duplicate Skill entry."
+    },
+    {
+      "repository": "majid",
+      "path": ".gitignore",
+      "blob": "19a531067d1086362ce2a628833efe28804db31c",
+      "purpose": "Repository ignore patterns are reviewed context only; do not mutate the consumer project ignore policy."
+    },
+    {
+      "repository": "majid",
+      "path": "LICENSE",
+      "blob": "0e7cfcfa43d5da2dc6a31768afcd95525fd3000c",
+      "purpose": "Preserve pinned MIT attribution separately from authored production capability; a legal notice is not procedural support."
+    },
+    {
+      "repository": "majid",
+      "path": "README.md",
+      "blob": "c5c9af3f70eebf8d5bd71b1894a8866029da0e38",
+      "purpose": "Pinned repository scope, setup examples and source limitations inform adaptation; source runtime/upload/install claims are not inherited as verified local capability."
+    },
+    {
+      "repository": "setcodes",
+      "path": ".claude-plugin/marketplace.json",
+      "blob": "a5b6e558d4666d9d5378003c44076df0b7799273",
+      "purpose": "Upstream marketplace/plugin distribution metadata is reviewed context only; not imported, activated or used as CraftRoster version/runtime authority."
+    },
+    {
+      "repository": "setcodes",
+      "path": ".claude-plugin/plugin.json",
+      "blob": "edba3400f2f44581d84fefc2c6e32960fb02fe35",
+      "purpose": "Upstream marketplace/plugin distribution metadata is reviewed context only; not imported, activated or used as CraftRoster version/runtime authority."
+    },
+    {
+      "repository": "setcodes",
+      "path": ".gitignore",
+      "blob": "f7fedfba0ba7a8ea7448627482c8021829607221",
+      "purpose": "Repository ignore patterns are reviewed context only; do not mutate the consumer project ignore policy."
+    },
+    {
+      "repository": "setcodes",
+      "path": "LICENSE",
+      "blob": "15770f9c8fb91aa409c90aff11d97ce40f797941",
+      "purpose": "Preserve pinned MIT attribution separately from authored production capability; a legal notice is not procedural support."
+    },
+    {
+      "repository": "setcodes",
+      "path": "README.md",
+      "blob": "06bc24af90119bd18d55debd10ca58f74810ae0b",
+      "purpose": "Pinned repository scope, setup examples and source limitations inform adaptation; source runtime/upload/install claims are not inherited as verified local capability."
+    },
+    {
+      "repository": "setcodes",
+      "path": "scripts/package_skills.py",
+      "blob": "3f24edba74b035a5dcdf2a1a68c068d4df62630f",
+      "purpose": "Upstream standalone ZIP packager is reviewed distribution context; CraftRoster existing ownership-aware installers/package validators remain authoritative, and no parallel packager is installed."
     }
   ]
 }

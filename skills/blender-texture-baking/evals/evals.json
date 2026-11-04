@@ -23,6 +23,18 @@
         "Uses float encoding for data needing range and validates files plus actual images.",
         "Does not label a hypothetical plan, a structural assertion or unrun workflow as successful execution."
       ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Torso HIGH has procedural color and mixed shaders inside a group, a transparent visor intercepts rays, and low LOD10 has different UVs. Bake requested maps and rebuild portable materials.",
+      "expected_output": "Explicit high/low geometry and surface-source mapping, supported signal extraction or unresolved map, transparent exclusion, separate LOD10 bake and preserved alpha/emission roles.",
+      "assertions": [
+        "Does not use first Principled as arbitrary group/mix semantics.",
+        "No missing UV/HIGH or unknown map silent success.",
+        "Restores temporary links/nodes/visibility on failure.",
+        "No blind opaque one-slot collapse."
+      ]
     }
   ]
 }

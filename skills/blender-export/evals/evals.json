@@ -56,6 +56,29 @@
         "Checks container and primitive semantics rather than trusting the summary.",
         "Regenerates a fresh artifact and compares semantic expectations after import."
       ]
+    },
+    {
+      "id": 6,
+      "locale": "en",
+      "prompt": "Deliver rigged FBX plus textures from multi-mesh asset with a tiny 12-triangle attachment.",
+      "expected_output": "Explicit object manifest, correct copy conversion, lossless ORM split, moved-package all-mesh roundtrip and posed clip checks; no mandatory personal FBX preference.",
+      "assertions": [
+        "Explicit object manifest, correct copy conversion, lossless ORM split, moved-package all-mesh roundtrip and posed clip checks; no mandatory personal FBX preference.",
+        "Names the input scope and preserves original source data while making only the requested correction.",
+        "Reports performed checks separately from unavailable visual or engine evidence."
+      ]
+    },
+    {
+      "id": 7,
+      "locale": "en",
+      "prompt": "The imported GLB has the same bone/image counts as the source; one bone was renamed and the wrong action was exported. The source includes hidden LODs and helpers linked into LOW. Approve it from roundtrip exit zero.",
+      "expected_output": "Refuses false semantic acceptance; explicit selection, name/hierarchy/rest/clip mapping and sampled poses, moved dependencies and fresh outputs checked.",
+      "assertions": [
+        "Counts and exit zero cannot prove manifest equality.",
+        "Filters by semantic contract, not only visibility/collection label.",
+        "No-animation export cannot claim all source clips.",
+        "Actual engine remains untested when unavailable."
+      ]
     }
   ]
 }

@@ -39,3 +39,5 @@ Keep source objects and unrelated scene contents intact. Resolve explicit object
 Use blender-hard-surface for detailed cut/bevel construction, blender-lod-pipeline for transition variants, blender-collision-proxies for physics approximations and engine-specific export Skills only for requested target delivery.
 
 [Attribution and license](references/upstream-notice.md).
+
+Read [Thin-shell vehicle reconstruction with camera-specific visibility](references/setcodes-shell-reconstruction.md) when that branch is requested. It specifies inputs, construction or repair steps, failure handling and the evidence required for acceptance.

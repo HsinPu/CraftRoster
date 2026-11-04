@@ -23,6 +23,17 @@
         "Saves actual paint images and inspects baked target interpretation.",
         "Does not label a hypothetical plan, a structural assertion or unrun workflow as successful execution."
       ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Repair isolated optimized atlas stains; source includes touching islands, 2048x1024 RGBA and unrelated normal/ORM.",
+      "expected_output": "Preserve geometry/UV/rig, separate linear color/data, freeze per-island borders/alpha and source hashes; explain unresolved seams, use candidate and real same-camera review.",
+      "assertions": [
+        "Preserve geometry/UV/rig, separate linear color/data, freeze per-island borders/alpha and source hashes; explain unresolved seams, use candidate and real same-camera review.",
+        "Names the input scope and preserves original source data while making only the requested correction.",
+        "Reports performed checks separately from unavailable visual or engine evidence."
+      ]
     }
   ]
 }

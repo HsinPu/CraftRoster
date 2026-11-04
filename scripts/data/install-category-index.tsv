@@ -83,6 +83,7 @@ agent	development	elixir-pro
 agent	development	fastapi-pro
 agent	development	flutter-expert
 agent	development	frontend-developer
+agent	development	godot-developer
 agent	development	golang-pro
 agent	development	haskell-pro
 agent	development	internationalization-engineer
@@ -191,6 +192,7 @@ agent	orchestration	team-implementer
 agent	orchestration	team-lead
 agent	performance	database-optimizer
 agent	performance	performance-engineer
+agent	product-management	game-designer
 agent	product-management	product-manager
 agent	product-management	product-spec-orchestrator
 agent	product-management	technical-product-manager
@@ -466,6 +468,8 @@ skill	frontend-design	vue-development
 skill	frontend-design	vue-router-patterns
 skill	frontend-design	web-page-design-to-code
 skill	frontend-design	website-redesign-to-code
+skill	game-development	game-design
+skill	game-development	godot-development
 skill	media-creative	ai-image-prompt-design
 skill	media-creative	ai-image-prompts-skill
 skill	media-creative	ai-video-generation

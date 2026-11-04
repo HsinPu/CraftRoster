@@ -4,7 +4,7 @@
   "sources": [
     {
       "path": "scripts/data/skill-reference-sources.json",
-      "sha256": "43a2f116500e578710822f4fad5b074ff3060ea36850fad66be5bde974a77deb"
+      "sha256": "3a7feced9f44e55a65dc9d697924ff44c64a72fe75b6d7574c672454f96cee36"
     },
     {
       "path": "docs/threejs-skill-sources.md",

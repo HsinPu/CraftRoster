@@ -183,6 +183,13 @@
       "tree": "9b0d2fc9a2f4063c915e34c17d1136cfb08259e8",
       "license": "MIT",
       "licensePath": "LICENSE"
+    },
+    {
+      "repo": "setcodes/gamedev-skills",
+      "commit": "096c224aa498a789fa99d476583029fcb9f538e1",
+      "tree": "6f9abcb6086bf426c4f8487f8fb91d3614a4ffce",
+      "license": "MIT",
+      "licensePath": "LICENSE"
     }
   ]
 }

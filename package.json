@@ -1,6 +1,6 @@
 {
   "name": "craftroster",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Cross-platform AI agent, skill, and workflow catalog with no-Node installers and a query CLI",
   "license": "Apache-2.0",
   "author": "HsinPu",
@@ -104,7 +104,9 @@
     "test:blender-production": "python tests/blender-production.test.py",
     "validate:blender-coverage": "node scripts/validate-blender-coverage.js",
     "test:blender-coverage": "node tests/blender-coverage.test.js",
-    "test:blender-expansion-helpers": "python tests/blender-expansion-helpers.test.py"
+    "test:blender-expansion-helpers": "python tests/blender-expansion-helpers.test.py",
+    "test:blender-reference-masks": "python tests/blender-reference-masks.test.py",
+    "test:blender-glb-basecolor": "python tests/blender-glb-basecolor.test.py"
   },
   "files": [
     "craftroster-cli.js",
@@ -231,7 +233,9 @@
     "scripts/data/blender-source-coverage.json",
     "scripts/validate-blender-coverage.js",
     "tests/blender-coverage.test.js",
-    "tests/blender-expansion-helpers.test.py"
+    "tests/blender-expansion-helpers.test.py",
+    "tests/blender-reference-masks.test.py",
+    "tests/blender-glb-basecolor.test.py"
   ],
   "engines": {
     "node": ">=22"

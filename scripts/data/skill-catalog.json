@@ -86,6 +86,11 @@
       "id": "blender-creation",
       "name": "Blender & Game Asset Creation",
       "description": "Detailed Blender asset production across geometry, materials, animation, simulation, style, worlds, genre requirements, automation, engine-specific export and independent technical/visual review."
+    },
+    {
+      "id": "game-development",
+      "name": "Game Design & Engine Development",
+      "description": "Engine-independent game design, playtesting and Godot implementation with version-aware native verification."
     }
   ],
   "skills": {
@@ -13287,6 +13292,13 @@
           "kind": "required",
           "usage": "resource"
         }
+      ],
+      "routes": [
+        {
+          "name": "godot-development",
+          "kind": "related",
+          "when": "The scope continues beyond asset delivery into Godot gameplay, scenes, Resources or runtime debugging."
+        }
       ]
     },
     "blender-hair-grooming": {
@@ -14733,6 +14745,55 @@
           "name": "blender-development",
           "kind": "required",
           "usage": "resource"
+        }
+      ]
+    },
+    "game-design": {
+      "category": "game-development",
+      "tags": [
+        "game-design",
+        "game-systems",
+        "gdd",
+        "level-design",
+        "playtesting"
+      ],
+      "routes": [
+        {
+          "name": "godot-development",
+          "kind": "related",
+          "when": "Accepted rules must be implemented or verified in a selected Godot project."
+        },
+        {
+          "name": "blender-development",
+          "kind": "related",
+          "when": "The scope includes producing Blender assets from the approved game requirements."
+        }
+      ]
+    },
+    "godot-development": {
+      "category": "game-development",
+      "tags": [
+        "godot",
+        "gameplay",
+        "gdscript",
+        "scenes",
+        "resources"
+      ],
+      "routes": [
+        {
+          "name": "game-design",
+          "kind": "related",
+          "when": "Requested implementation also requires deciding unspecified game rules or playtest questions."
+        },
+        {
+          "name": "blender-development",
+          "kind": "related",
+          "when": "The requested change includes creating or repairing a Blender source asset."
+        },
+        {
+          "name": "blender-godot-export",
+          "kind": "related",
+          "when": "A Blender asset must be delivered with a Godot-specific import contract."
         }
       ]
     }
@@ -16218,6 +16279,25 @@
         {
           "name": "blender-workflow-recipes",
           "when": "The authorized task requires an end-to-end Blender production recipe coordinating the relevant discipline checkpoints."
+        }
+      ]
+    },
+    {
+      "id": "game-production",
+      "title": "Game Design, Asset Production and Engine Implementation",
+      "decision": "Route by the requested artifact: player rules and evidence, Blender source assets, or behavior inside a selected Godot project. These standalone entries are related without requiring each other.",
+      "skills": [
+        {
+          "name": "game-design",
+          "when": "The request concerns concept, design documents, mechanics, progression, levels, teaching feedback or playtesting."
+        },
+        {
+          "name": "blender-development",
+          "when": "The requested artifact is a Blender asset with visual and technical acceptance."
+        },
+        {
+          "name": "godot-development",
+          "when": "The task implements or diagnoses behavior in a Godot project."
         }
       ]
     }

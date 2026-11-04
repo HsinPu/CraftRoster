@@ -1,0 +1,999 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-04",
+  "scope": "Four-source instruction integration with bounded native trials and host regressions; no whole-suite runtime certification.",
+  "sources": [
+    {
+      "id": "el4",
+      "repo": "EL4CTEO/blender-skills",
+      "commit": "fb92cfb4cc5a238c22113a6a230b09f535bd0656",
+      "tree": "9b0d2fc9a2f4063c915e34c17d1136cfb08259e8"
+    },
+    {
+      "id": "arjun",
+      "repo": "arjun988/blender-skills",
+      "commit": "8f778d2405a214b508d4c7d80742be8e43acdd52",
+      "tree": "fba306faa1425961eabe1af4199001a04d3a8e25"
+    },
+    {
+      "id": "majid",
+      "repo": "majidmanzarpour/blender-game-skills",
+      "commit": "f0ef29385a03de139957e6f700b801cdc00b7e29",
+      "tree": "69b8827f7b2372007e91a361412bffcf13150b30"
+    },
+    {
+      "id": "setcodes",
+      "repo": "setcodes/gamedev-skills",
+      "commit": "096c224aa498a789fa99d476583029fcb9f538e1",
+      "tree": "6f9abcb6086bf426c4f8487f8fb91d3614a4ffce"
+    }
+  ],
+  "coverage": {
+    "repositories": 4,
+    "inventoried_files": 443,
+    "canonical_entries": 126,
+    "local_packages": 110,
+    "blender_packages": 108,
+    "game_engine_packages": 2,
+    "purpose_agents": 4
+  },
+  "godot": {
+    "version": "4.7.2.stable.official.ed1daf0bf",
+    "status": "27 runtime assertions passed; exit 0 and completion marker observed",
+    "tested": [
+      "Reusable .tres Job Resource loads and shared identity between two sessions",
+      "Two actual runtime session inventories/state/points remain independent",
+      "Unknown job and wrong pickup rejected",
+      "Capacity 3 rejects fourth pickup without mutation",
+      "Duplicate pickup rejected",
+      "Wrong destination leaves carried state/inventory/points intact",
+      "Delivery releases slot, marks delivered and grants reward exactly once",
+      "Repeated delivery cannot reward twice",
+      "Freed slot reused and four jobs finish at exactly 40",
+      "Fresh session reset independent of existing sessions",
+      "Input.parse_input_event dispatches to real scene input owner and unhandled gameplay boundary",
+      "Pause action works while paused through PROCESS_MODE_ALWAYS",
+      "Paused interaction blocked",
+      "Resume stale/held press blocked until release followed by fresh press",
+      "Repeated press without release blocked"
+    ],
+    "timing_correction": {
+      "correction": "Wait two process frames after each input batch; no production state rule relaxed.",
+      "diagnostic_log": "D:\\github\\CraftRoster\\.work\\four-source-integration\\forward\\runtime-diagnostic.log",
+      "initial_log": "D:\\github\\CraftRoster\\.work\\four-source-integration\\forward\\runtime-first-failure.log",
+      "cause": "Harness asserted on process_frame before accumulated synthetic input dispatch; diagnostic traces establish ordering.",
+      "initial_failures": 4
+    },
+    "warnings": [
+      "Certificate-store warning; editor import also reported sandbox-denied settings writes. Import is not reported as clean."
+    ],
+    "not_tested": [
+      "Physical device input",
+      "Driving/collision/map traversal",
+      "Rendered or audio feedback",
+      "Human playtests or game feel",
+      "Platform export"
+    ]
+  },
+  "blender": {
+    "version": "5.2.2 LTS d13f752e3b9c",
+    "status": "Exported source fixture, append-only image replacement, fresh native import and semantic assertions passed. Root reran replacement/import after the final helper change.",
+    "source_sha256": "0dd184db86325479b4e704a3b19052cbb89bc81d11978b65db262d69087d81dc",
+    "candidate_sha256": "4219adf52fce49e301e8970190734f9f04ed1ded2f03d0f9481ef1ac49751896",
+    "tested": [
+      "Selected Body decoded image changed",
+      "Shared Other decoded image unchanged",
+      "Geometry coordinates/topology/world matrices preserved",
+      "Metallic/roughness values and image dimensions preserved",
+      "Original BIN prefix byte exact"
+    ],
+    "warnings": [
+      "Extension compatibility-cache write was denied; native import and assertions completed."
+    ],
+    "not_tested": [
+      "Rendered art acceptance",
+      "Target game-engine import for this asset",
+      "Rig/animation/FBX cases",
+      "Other platforms or Blender versions"
+    ]
+  },
+  "helper_review": {
+    "finding": "P2: recursive GLB schema scanning misinterpreted opaque extras metadata.",
+    "correction": "Skip extras subtrees during schema validation; preserve their values and continue rejecting actual invalid URI/extension/texture fields.",
+    "host_regressions": {
+      "glb_basecolor": 9,
+      "reference_masks": 10
+    },
+    "mask_png": "Actual Pillow 12.3.0 decoding and nonbinary rejection exercised locally. CI does not require Pillow.",
+    "environment": "Canonical mask tests required escalation past Windows temporary-directory ACL restrictions; source/eval subprocess tests likewise needed local process permission."
+  },
+  "definition_status": "664 evals / 2503 assertions / 141 routing cases are assessment definitions. The separate forward test is a bounded subagent task, not execution of every eval.",
+  "source_adaptations": {
+    "majid": [
+      {
+        "source_path": ".gitignore",
+        "blob": "19a531067d1086362ce2a628833efe28804db31c",
+        "capabilities": [
+          "Ignore generated assets, reference art, local installs and eval workspaces"
+        ],
+        "local_resources": [],
+        "implementation": "context only; no installable runtime behavior",
+        "corrections": [
+          "Do not copy broad *.blend exclusions to asset projects where editable source must be tracked"
+        ]
+      },
+      {
+        "source_path": "LICENSE",
+        "blob": "0e7cfcfa43d5da2dc6a31768afcd95525fd3000c",
+        "capabilities": [
+          "MIT notice names Majid Manzarpour"
+        ],
+        "local_resources": [
+          "skills/blender-reference-modeling/references/majid-reference-pipeline.md",
+          "skills/blender-reference-modeling/references/majid-mask-comparison.md",
+          "skills/blender-development/references/majid-phase-ownership.md",
+          "skills/blender-modeling/references/majid-measured-categories.md",
+          "skills/blender-character-modeling/references/majid-calibrated-construction.md",
+          "skills/blender-texture-baking/references/majid-bake-branches.md",
+          "skills/blender-rigging-animation/references/majid-motion-delivery.md",
+          "skills/blender-export/references/majid-semantic-roundtrip.md",
+          "skills/blender-lookdev/references/majid-capture-debug.md",
+          "skills/blender-reference-modeling/scripts/compare_reference_masks.py"
+        ],
+        "implementation": "context only; no installable runtime behavior",
+        "corrections": [
+          "Software license does not license arbitrary reference images"
+        ]
+      },
+      {
+        "source_path": "README.md",
+        "blob": "c5c9af3f70eebf8d5bd71b1894a8866029da0e38",
+        "capabilities": [
+          "Eleven-phase pipeline and knight/ranger/buggy/chapel/sword/fox use cases",
+          "Headless/MCP paths, requirements, script/eval layout"
+        ],
+        "local_resources": [
+          "skills/blender-reference-modeling/references/majid-reference-pipeline.md",
+          "skills/blender-development/references/majid-phase-ownership.md",
+          "skills/blender-lookdev/references/majid-capture-debug.md",
+          "skills/blender-export/references/majid-semantic-roundtrip.md"
+        ],
+        "implementation": "context only; no installable runtime behavior",
+        "corrections": [
+          "Do not inherit unverified upstream platform/version/performance claims or installation CLI behavior",
+          "README implies manifest-checked roundtrip but roundtrip.py accepts no manifest argument"
+        ]
+      },
+      {
+        "source_path": "skills/blender-image-to-3d/SKILL.md",
+        "blob": "b5736aa9ed3d7aeafa354a326a77e298603921d4",
+        "capabilities": [
+          "Brief/calibration/blockout/forms/topology-LOD/material/rig/secondary-motion/animation/export/acceptance gates",
+          "Multi-panel pixel boxes, shared crop scale/ground, authority and per-view conflict ceilings",
+          "Measured versus inferred constants, ownership and gameplay-size evidence"
+        ],
+        "local_resources": [
+          "skills/blender-reference-modeling/references/majid-reference-pipeline.md",
+          "skills/blender-reference-modeling/references/majid-mask-comparison.md",
+          "skills/blender-development/references/majid-phase-ownership.md",
+          "skills/blender-modeling/references/majid-measured-categories.md",
+          "skills/blender-character-modeling/references/majid-calibrated-construction.md",
+          "skills/blender-texture-baking/references/majid-bake-branches.md",
+          "skills/blender-rigging-animation/references/majid-motion-delivery.md",
+          "skills/blender-export/references/majid-semantic-roundtrip.md",
+          "skills/blender-lookdev/references/majid-capture-debug.md"
+        ],
+        "implementation": "independent operational procedure; bounded mask diagnostics only where helper mapped",
+        "corrections": [
+          "Use project tolerances instead of universal IoU 0.85/0.90, four influences, facial 1mm or mandatory all-script modeling",
+          "Source phase 9 falsely equates roundtrip exit zero with bone/LOD/clip manifest agreement",
+          "Perspective measurements can be supported by solved camera with uncertainty; source prohibition is overbroad",
+          "Approval behavior must follow existing user authorization"
+        ]
+      },
+      {
+        "source_path": "skills/blender-image-to-3d/references/blender-5-notes.md",
+        "blob": "a513ed84574c425d5d74da749424adcf609cabf4",
+        "capabilities": [
+          "Layered actions, modifier inputs, node localization and renderer-specific outputs",
+          "Bake isolation/transparent exclusion, resumable frames, viewport parity",
+          "Small debug renders and color/light hypothesis testing"
+        ],
+        "local_resources": [
+          "skills/blender-development/references/majid-phase-ownership.md",
+          "skills/blender-texture-baking/references/majid-bake-branches.md",
+          "skills/blender-lookdev/references/majid-capture-debug.md",
+          "skills/blender-rigging-animation/references/majid-motion-delivery.md"
+        ],
+        "implementation": "independent operational procedure; bounded mask diagnostics only where helper mapped",
+        "corrections": [
+          "Detect features instead of treating all Blender 5 releases as identical",
+          "Apple GPU timing is source anecdote",
+          "Median sRGB matching under arbitrary lights cannot establish albedo",
+          "Warm glossy world and Standard/AgX choice are optional art direction, not universal repair"
+        ]
+      },
+      {
+        "source_path": "skills/blender-image-to-3d/references/categories.md",
+        "blob": "8d510f3cee2db4467d8999c1b0a4bd01041b8a07",
+        "capabilities": [
+          "Measured technique table: skin-chain/remesh/loft/spin/extrude/tube/grid/mirror/boolean/array/shrinkwrap/LOD",
+          "Face landmarks/rest projection; analytic surface smoothing; handed palm frames; neck overlap; radial armor fitting; hair-class colliders",
+          "Creature membrane/joints; architecture grid/2x2; vehicle loft/pivots/tracks; weapon grips; environment contact/instances"
+        ],
+        "local_resources": [
+          "skills/blender-modeling/references/majid-measured-categories.md",
+          "skills/blender-character-modeling/references/majid-calibrated-construction.md",
+          "skills/blender-reference-modeling/references/majid-reference-pipeline.md"
+        ],
+        "implementation": "independent operational procedure; bounded mask diagnostics only where helper mapped",
+        "corrections": [
+          "Fixed scale cues, face tolerances and wing ratios are assumptions, not evidence",
+          "Face projection requires de-lighting, rest/UV correspondence and masked blending; otherwise duplicate brows/seams",
+          "Hair mix percentages are examples; retain renderer differences",
+          "No universal quad/no-ngon/hidden-body-cut policy"
+        ]
+      },
+      {
+        "source_path": "skills/blender-image-to-3d/references/delivery-and-acceptance.md",
+        "blob": "916ee6293236668113cb32b53b929c3ba717f296",
+        "capabilities": [
+          "Source/delivery collections, texture spaces/normal packing/mips, budget/LOD planning",
+          "Semantic manifests with inferred parts, skeleton, socket/collider, clip events and dependencies"
+        ],
+        "local_resources": [
+          "skills/blender-reference-modeling/references/majid-reference-pipeline.md",
+          "skills/blender-export/references/majid-semantic-roundtrip.md",
+          "skills/blender-texture-baking/references/majid-bake-branches.md",
+          "skills/blender-lookdev/references/majid-capture-debug.md"
+        ],
+        "implementation": "independent operational procedure; bounded mask diagnostics only where helper mapped",
+        "corrections": [
+          "Texture width/character height is not general texel density; use occupied UV coverage and surface area",
+          "Choose budgets/influences for actual engine",
+          "Counts, image presence and zero exit cannot establish semantic or visual parity"
+        ]
+      },
+      {
+        "source_path": "skills/blender-image-to-3d/references/rigging-animation.md",
+        "blob": "1bd940892e9ef0f7c29761267493d272c8dacac9",
+        "capabilities": [
+          "Humanoid/heavy/quadruped/winged/serpentine/mechanical rig families",
+          "Family-specific extreme poses and semantic sockets with actual attachments",
+          "Role clip libraries, active/cancel events, speed, root/in-place and additive masks",
+          "Separate render/simulation/collision, graded pins, one motion owner, low-FPS/teleport/reset and fallback"
+        ],
+        "local_resources": [
+          "skills/blender-rigging-animation/references/majid-motion-delivery.md"
+        ],
+        "implementation": "independent operational procedure; bounded mask diagnostics only where helper mapped",
+        "corrections": [
+          "One root/DEF names/world zero are conventions, not universal target contracts",
+          "Runtime interruption/cloth reset belongs to actual engine owner",
+          "Extreme stills cannot establish continuous penetration-free motion"
+        ]
+      },
+      {
+        "source_path": "skills/blender-image-to-3d/assets/build_template.py",
+        "blob": "f8b4d485f6bd5cfdd3e185e50a2fa2acbbd9e4e9",
+        "capabilities": [
+          "Phase-owned delete/rebuild/save",
+          "Bmesh primitives/loft/spin/extrude/tube/skin-chain; modifiers, UV, material, rig/bind/socket/LOD helpers"
+        ],
+        "local_resources": [
+          "skills/blender-development/references/majid-phase-ownership.md",
+          "skills/blender-modeling/references/majid-measured-categories.md",
+          "skills/blender-character-modeling/references/majid-calibrated-construction.md"
+        ],
+        "implementation": "independent operational procedure; bounded mask diagnostics only where helper mapped",
+        "corrections": [
+          "clear_owned scans all bpy.data.objects by generic phase tag: scope scene+asset and reject unowned name collisions",
+          "save_master overwrites and disables backups: preserve versioned source and new/atomic outputs",
+          "skin_chain retains BMVert references in order after bm.free: preserve scalar radii/indices first",
+          "apply_all_modifiers clears armature and can destroy morph semantics: reject such inputs",
+          "join_meshes copies evaluated geometry without preserving full materials/rig groups: reject or map explicitly",
+          "Owned object cleanup leaves some material/datablock accumulation"
+        ]
+      },
+      {
+        "source_path": "skills/blender-image-to-3d/scripts/init_master.py",
+        "blob": "7be5063271040b120e29c3a3dbee970090e0b256",
+        "capabilities": [
+          "Metric master collections, ruler/cell/door/capsule, game camera, front/back/left/right/top/extra image displays"
+        ],
+        "local_resources": [
+          "skills/blender-reference-modeling/references/majid-reference-pipeline.md"
+        ],
+        "implementation": "independent operational procedure; bounded mask diagnostics only where helper mapped",
+        "corrections": [
+          "hd=H/(subject_frac-ground_frac) conflicts with help defining subject_frac as occupied subject height; distinguish top coordinate from height fraction",
+          "Reject nonfinite/nonpositive dimensions and invalid fractions rather than hiding with denominator clamp",
+          "factory reset and overwrite with backups disabled is safe only in isolated process to new owned output",
+          "Images are empties, not rendered planes; show-ref only includes REF meshes",
+          "Calibration capsule combines cylinder and full spheres without union; it is not a valid production closed collider"
+        ]
+      },
+      {
+        "source_path": "skills/blender-image-to-3d/scripts/review_render.py",
+        "blob": "c3f9b04581b15cd480b3d442103b34b58959a5df",
+        "capabilities": [
+          "Recursive scoped clay/silhouette/wire/checker/material capture",
+          "Fixed/ref views, action/frame, gameplay resolution, camera orbit, Workbench fallback and metadata"
+        ],
+        "local_resources": [
+          "skills/blender-lookdev/references/majid-capture-debug.md",
+          "skills/blender-reference-modeling/references/majid-reference-pipeline.md"
+        ],
+        "implementation": "independent operational procedure; bounded mask diagnostics only where helper mapped",
+        "corrections": [
+          "Missing collection/only scope falls back to broad scene, possibly HIGH: fail closed",
+          "Action uses first armature and first slot; missing action merely warns: require explicit compatible rig/slot",
+          "Auto-fit recomputes framing: AZ/EL/LENS is incomplete camera registration and hides world placement/scale",
+          "Estimated gameplay subject pixels not measured",
+          "Turntable moves camera, not light; do not call it moving-light proof",
+          "render_info retains original engine after fallback",
+          "No live state restoration; isolated no-save process only"
+        ]
+      },
+      {
+        "source_path": "skills/blender-image-to-3d/scripts/compose_review.py",
+        "blob": "82a046ab39e52253668c10d421897328748e19c3",
+        "capabilities": [
+          "Pillow comparison/overlay/grayscale/gameplay sheet",
+          "Alpha/corner mask, normalized aspect/ten-band widths/IoU"
+        ],
+        "local_resources": [
+          "skills/blender-reference-modeling/references/majid-mask-comparison.md",
+          "skills/blender-reference-modeling/scripts/compare_reference_masks.py"
+        ],
+        "implementation": "independent operational procedure; bounded mask diagnostics only where helper mapped",
+        "corrections": [
+          "Independent height normalization/recentering hides physical scale/placement",
+          "Empty masks print skipped and exit zero without JSON: explicit incomplete/error, reject stale outputs",
+          "no-crop does not disable metric profile normalization",
+          "Corner background heuristic unsuitable for unprepared photos; allow validated explicit masks",
+          "Width envelope misses holes/disconnected parts; actual visual review remains required",
+          "Validate height/gameplay/opacity/dimension limits"
+        ]
+      },
+      {
+        "source_path": "skills/blender-image-to-3d/scripts/world_gate.py",
+        "blob": "6ec38d6fe94fef2d1610b18ae379f7bb9746bb33",
+        "capabilities": [
+          "Orthographic window from m/px, axis column and ground row",
+          "Supersampled registered mask IoU/diff and reference-height width bands"
+        ],
+        "local_resources": [
+          "skills/blender-reference-modeling/references/majid-mask-comparison.md",
+          "skills/blender-reference-modeling/references/majid-reference-pipeline.md",
+          "skills/blender-reference-modeling/scripts/compare_reference_masks.py"
+        ],
+        "implementation": "independent operational procedure; bounded mask diagnostics only where helper mapped",
+        "corrections": [
+          "Exit zero always: caller must evaluate explicit agreed thresholds; metrics do not approve appearance",
+          "Empty reference crashes min/max; one-row reference divides by zero",
+          "Missing collection prints and continues to blank scope",
+          "Validate positive finite m/px, scale, pixel aspect and resource bounds",
+          "Workbench-only has no Linux headless Cycles branch",
+          "Mask threshold differs from compose_review; use one declared mask contract",
+          "No hashes or live state restoration; isolate execution"
+        ]
+      },
+      {
+        "source_path": "skills/blender-image-to-3d/scripts/validate.py",
+        "blob": "912725c8149c225541cc73c9aef6f6d238660454",
+        "capabilities": [
+          "Evaluated tris/LOD budget; base topology doubles/islands/winding/ngons/zero area",
+          "Scale/naming/UV/material inventory, collision closure, deform weight/influence/group checks, bone/socket inventory"
+        ],
+        "local_resources": [
+          "skills/blender-modeling/references/majid-measured-categories.md",
+          "skills/blender-rigging-animation/references/majid-motion-delivery.md",
+          "skills/blender-export/references/majid-semantic-roundtrip.md"
+        ],
+        "implementation": "independent operational procedure; bounded mask diagnostics only where helper mapped",
+        "corrections": [
+          "Missing collections produce empty pass",
+          "require-uv applies to collider meshes too: split semantic scopes",
+          "Only local negative scale checked; zero/nonfinite/hierarchy ignored",
+          "Collider closed heuristic misses empty/isolated-vertex cases and uses base geometry",
+          "Global unused armatures inspected despite scoped meshes",
+          "Pin/mask groups can legitimately lack bones; inspect declared deform groups",
+          "Slot-presence material heuristic misses used unassigned faces; preserve stronger current evaluated-polygon check"
+        ]
+      },
+      {
+        "source_path": "skills/blender-image-to-3d/scripts/bake_maps.py",
+        "blob": "53b5618885a3bc9dd43d621879ee3a515c0fb315",
+        "capabilities": [
+          "LOD0/all-LOD/only branches; HIGH prefix match/exclusion; auto/high/low surface source",
+          "Normal transfer, AO neighbors, basecolor/roughness/metallic; Cycles-output emission extraction",
+          "Non-AO isolation, portable Principled rebuild, LOD material reuse"
+        ],
+        "local_resources": [
+          "skills/blender-texture-baking/references/majid-bake-branches.md"
+        ],
+        "implementation": "independent operational procedure; bounded mask diagnostics only where helper mapped",
+        "corrections": [
+          "Docstring says LOW surface source but actual auto uses HIGH when present",
+          "Prefix match includes unrelated similarly named siblings",
+          "Missing UV/HIGH normals and unknown map can skip while process exits zero",
+          "principled_feeding does not enter group internals despite claim; first mixed Principled is not actual final material signal",
+          "Only hiding is restored in finally; targets/links/normals/selection/source visibility can leak after errors",
+          "AO retains whole scene including accidental HIGH/LOD/helpers",
+          "Rebuild collapses slots and omits alpha/emission/transmission/AO wiring",
+          "LOD[1-9] matches only single-digit suffix; LOD10 is wrongly baked; material reuse assumes same UVs without checking"
+        ]
+      },
+      {
+        "source_path": "skills/blender-image-to-3d/scripts/export_delivery.py",
+        "blob": "c9d67b476ed7d82b5fb232c859a22b530487473d",
+        "capabilities": [
+          "GLB/GLTF/FBX explicit collection selection, modifier/animation toggles, combined/split LOD",
+          "Asset geometry/texture/skeleton/socket/collider/inference manifest and clip event/gameplay contract"
+        ],
+        "local_resources": [
+          "skills/blender-export/references/majid-semantic-roundtrip.md",
+          "skills/blender-rigging-animation/references/majid-motion-delivery.md"
+        ],
+        "implementation": "independent operational procedure; bounded mask diagnostics only where helper mapped",
+        "corrections": [
+          "op_kwargs silently drops requested unsupported options",
+          "Collection exclusions do not exclude multi-linked source objects",
+          "Visibility filters required hidden helpers/LODs; auto-added armature can reintroduce control scope",
+          "Inventories all used actions regardless selected rig/mode, even no-animation",
+          "Duration ignores fps_base; repeated event names collapse in dictionary; no range checks",
+          "No FINISHED/freshness/hash or complete GLTF sidecar verification",
+          "Direct image-node scan misses groups/UDIM/sequences and includes unconnected nodes",
+          "Hardcoded axis/texture declarations are not actual decoded-output evidence"
+        ]
+      },
+      {
+        "source_path": "skills/blender-image-to-3d/scripts/roundtrip.py",
+        "blob": "934f92561b94c529265d983ece5dbe5d33bf7ada",
+        "capabilities": [
+          "Empty-scene GLB/glTF/FBX import; bone-shape exclusion; meshes/skin/morph/bones/empties/clips/images inventory",
+          "Height/ground check, clay frame, error exit"
+        ],
+        "local_resources": [
+          "skills/blender-export/references/majid-semantic-roundtrip.md"
+        ],
+        "implementation": "independent operational procedure; bounded mask diagnostics only where helper mapped",
+        "corrections": [
+          "Exit zero cannot establish claimed manifest equality",
+          "Imported default FPS and ignored fps_base can misstate durations",
+          "All LODs/colliders/helpers enter bounds/height/ground tests",
+          "No finite checks, scene scale conversion or valid positive expected-height check",
+          "Names/counts do not prove bind, root motion, playback, socket transforms or morph deltas",
+          "Workbench-only failure distinct from technical import",
+          "factory reset is destructive live: isolated process only"
+        ]
+      },
+      {
+        "source_path": "skills/blender-image-to-3d/evals/evals.json",
+        "blob": "5cb967e9a37f959df8c40c32485af309f0de04de",
+        "capabilities": [
+          "Four declarative scenarios: Unity knight, Godot buggy, three.js chapel kit, Unreal multi-panel ranger"
+        ],
+        "local_resources": [
+          "skills/blender-reference-modeling/references/majid-reference-pipeline.md",
+          "skills/blender-reference-modeling/references/majid-mask-comparison.md",
+          "skills/blender-modeling/references/majid-measured-categories.md",
+          "skills/blender-rigging-animation/references/majid-motion-delivery.md",
+          "skills/blender-export/references/majid-semantic-roundtrip.md"
+        ],
+        "implementation": "context only; no installable runtime behavior",
+        "corrections": [
+          "Never report four successful eval executions or supplied art from this JSON",
+          "Unreal GLB needs actual chosen importer support; not unconditional delivery"
+        ]
+      }
+    ],
+    "setcodes_blender": [
+      {
+        "source_path": "skills/blender-game-assets/LICENSE",
+        "blob": "15770f9c8fb91aa409c90aff11d97ce40f797941",
+        "capabilities": [
+          "MIT redistribution notice"
+        ],
+        "local_resources": [
+          "skills/blender-texturing/references/setcodes-registered-cleanup.md",
+          "skills/blender-game-optimization/references/setcodes-ai-reduction.md",
+          "skills/blender-hard-surface/references/setcodes-source-rebuild.md",
+          "skills/blender-vehicle-modeling/references/setcodes-shell-reconstruction.md",
+          "skills/blender-reference-modeling/references/setcodes-projection-atlas.md",
+          "skills/blender-character-rigging/references/setcodes-mixamo-repair.md",
+          "skills/blender-export/references/setcodes-fbx-package.md",
+          "skills/blender-development/references/setcodes-lab-protocol.md",
+          "skills/blender-lookdev/references/setcodes-neutral-preview.md"
+        ],
+        "implementation": "context adapted; source UI metadata is not executable capability"
+      },
+      {
+        "source_path": "skills/blender-game-assets/SKILL.md",
+        "blob": "8bfeca60efa3c7457e8a19fc37e48999ffca6caa",
+        "capabilities": [
+          "source inspection and measurement",
+          "Meshy/reference workflow dispatch",
+          "role-dependent crowd cost planning",
+          "game-camera plus grazing close-up loop",
+          "export/reimport delivery"
+        ],
+        "local_resources": [
+          "skills/blender-texturing/references/setcodes-registered-cleanup.md",
+          "skills/blender-game-optimization/references/setcodes-ai-reduction.md",
+          "skills/blender-hard-surface/references/setcodes-source-rebuild.md",
+          "skills/blender-vehicle-modeling/references/setcodes-shell-reconstruction.md",
+          "skills/blender-reference-modeling/references/setcodes-projection-atlas.md",
+          "skills/blender-character-rigging/references/setcodes-mixamo-repair.md",
+          "skills/blender-export/references/setcodes-fbx-package.md",
+          "skills/blender-development/references/setcodes-lab-protocol.md",
+          "skills/blender-lookdev/references/setcodes-neutral-preview.md"
+        ],
+        "implementation": "independent actionable procedure"
+      },
+      {
+        "source_path": "skills/blender-game-assets/agents/openai.yaml",
+        "blob": "dbb1e64d68faba3bb2d26e23c7ee9c90cf8ca059",
+        "capabilities": [
+          "optional Codex display metadata and prompt"
+        ],
+        "local_resources": [
+          "skills/blender-development/references/setcodes-lab-protocol.md"
+        ],
+        "implementation": "context adapted; source UI metadata is not executable capability"
+      },
+      {
+        "source_path": "skills/blender-game-assets/references/characters.md",
+        "blob": "27050161af960c3aa416f151794a90d3c3939258",
+        "capabilities": [
+          "A-pose Meshy voxel remesh",
+          "height-relative hair smoothing",
+          "head/hands then body masked collapse budgets",
+          "semantic cylindrical seams and head atlas priority",
+          "face/hand/seam bake review"
+        ],
+        "local_resources": [
+          "skills/blender-game-optimization/references/setcodes-ai-reduction.md",
+          "skills/blender-character-rigging/references/setcodes-mixamo-repair.md"
+        ],
+        "implementation": "independent actionable procedure"
+      },
+      {
+        "source_path": "skills/blender-game-assets/references/connection.md",
+        "blob": "ec30af9cd1434db97d2ac2b5e786f354107c7398",
+        "capabilities": [
+          "Blender Lab NUL-delimited execute JSON",
+          "dict result/strict_json",
+          "stdio MCP registration",
+          "long main-thread job and background alternative"
+        ],
+        "local_resources": [
+          "skills/blender-development/references/setcodes-lab-protocol.md"
+        ],
+        "implementation": "independent actionable procedure"
+      },
+      {
+        "source_path": "skills/blender-game-assets/references/from-reference.md",
+        "blob": "5ed6b67c8d43e5bb6a671be3044fdc9c3517a049",
+        "capabilities": [
+          "pixel-grid measurements",
+          "per-part/view projection UV calibration",
+          "reference background color bleed",
+          "clean atlas self-bake",
+          "geometry-only Meshy texturing handoff",
+          "coplanar/glued contact cleanup"
+        ],
+        "local_resources": [
+          "skills/blender-reference-modeling/references/setcodes-projection-atlas.md",
+          "skills/blender-hard-surface/references/setcodes-source-rebuild.md"
+        ],
+        "implementation": "independent actionable procedure"
+      },
+      {
+        "source_path": "skills/blender-game-assets/references/hard-surface.md",
+        "blob": "e964eb4162a5cf0da5dd1c53df47616907c0bc85",
+        "capabilities": [
+          "object-space BVH source profiling",
+          "roof/trim/soffit blockout kit",
+          "hidden-face atlas savings",
+          "selected-to-active emission bake",
+          "underside-only map repair"
+        ],
+        "local_resources": [
+          "skills/blender-hard-surface/references/setcodes-source-rebuild.md"
+        ],
+        "implementation": "independent actionable procedure"
+      },
+      {
+        "source_path": "skills/blender-game-assets/references/mixamo.md",
+        "blob": "89c87aa2f6747f695aa2316831631bc886f8d317",
+        "capabilities": [
+          "Mixamo upload contract",
+          "user-mediated website rigging handoff",
+          "namespace/bone inventory",
+          "rest-versus-motion jaw diagnosis",
+          "measured jaw-plane Head weight correction",
+          "crowd finger-to-hand weight merge and clip regeneration",
+          "rigged FBX/GLB verification"
+        ],
+        "local_resources": [
+          "skills/blender-character-rigging/references/setcodes-mixamo-repair.md",
+          "skills/blender-export/references/setcodes-fbx-package.md"
+        ],
+        "implementation": "independent actionable procedure"
+      },
+      {
+        "source_path": "skills/blender-game-assets/references/preview-and-fbx.md",
+        "blob": "f56e88b87c4bf7f4f06bcb5e710daeebb055c3cf",
+        "capabilities": [
+          "neutral reproducible studio",
+          "lighting/display diagnosis before recoloring",
+          "FBX portable texture package",
+          "ORM split map legend",
+          "rigged/static roundtrip distinctions"
+        ],
+        "local_resources": [
+          "skills/blender-lookdev/references/setcodes-neutral-preview.md",
+          "skills/blender-export/references/setcodes-fbx-package.md",
+          "skills/blender-texturing/references/setcodes-registered-cleanup.md"
+        ],
+        "implementation": "independent actionable procedure"
+      },
+      {
+        "source_path": "skills/blender-game-assets/references/texture-cleanup.md",
+        "blob": "ab4d2fa8fc50b81f46959e88ee6e3253df901ada",
+        "capabilities": [
+          "optimized-only texture task scope",
+          "mesh/UV/rig invariants",
+          "separate albedo normal ORM diagnosis",
+          "registered conservative local pixel cleanup",
+          "GLB byte-preserving replacement",
+          "same-camera mip and seam acceptance"
+        ],
+        "local_resources": [
+          "skills/blender-texturing/references/setcodes-registered-cleanup.md"
+        ],
+        "implementation": "independent actionable procedure"
+      },
+      {
+        "source_path": "skills/blender-game-assets/references/vehicles.md",
+        "blob": "c04013ddf8f5de8b21cd8fad7cc0fbbe63fe9f1e",
+        "capabilities": [
+          "thin-shell AI model classification",
+          "wheel measurement",
+          "camera-domain visibility rays",
+          "same-ray-family cross-section cage",
+          "shrinkwrap/smooth/shrinkwrap",
+          "sharp-edge pre-bake split",
+          "missing-part paint into existing atlas"
+        ],
+        "local_resources": [
+          "skills/blender-vehicle-modeling/references/setcodes-shell-reconstruction.md"
+        ],
+        "implementation": "independent actionable procedure"
+      },
+      {
+        "source_path": "skills/blender-game-assets/scripts/bg_verify.py",
+        "blob": "534eeff2f09fd6d5bfa7a4573e5486cac881ae29",
+        "capabilities": [
+          "fresh Blender FBX/GLB import summary",
+          "world height/ground/transforms",
+          "image packing and rig action summary",
+          "optional head frames"
+        ],
+        "local_resources": [
+          "skills/blender-export/references/setcodes-fbx-package.md"
+        ],
+        "implementation": "independent actionable procedure"
+      },
+      {
+        "source_path": "skills/blender-game-assets/scripts/blender_exec.py",
+        "blob": "bae3abf1fc280b81e67025650f63cc264380e5d9",
+        "capabilities": [
+          "concatenated Blender Lab job client",
+          "execute/code/strict_json false framing",
+          "long timeout",
+          "status-based exit"
+        ],
+        "local_resources": [
+          "skills/blender-development/references/setcodes-lab-protocol.md"
+        ],
+        "implementation": "independent actionable procedure"
+      },
+      {
+        "source_path": "skills/blender-game-assets/scripts/blender_mcp_stdio.py",
+        "blob": "880790eae608f7703a306515cd718be4e6d649d3",
+        "capabilities": [
+          "newline stdio MCP initialize/list/call",
+          "read scene info and execute tool routing",
+          "NUL socket proxy",
+          "error translation"
+        ],
+        "local_resources": [
+          "skills/blender-development/references/setcodes-lab-protocol.md"
+        ],
+        "implementation": "independent actionable procedure"
+      },
+      {
+        "source_path": "skills/blender-game-assets/scripts/bpy_lib.py",
+        "blob": "2a3d01f4c381a414c223368944e8577a2a9b801e",
+        "capabilities": [
+          "scoped scene/import/mesh statistics",
+          "BVH and primitive construction helpers",
+          "UV and character reduction",
+          "emission selected-to-active bake and self bake",
+          "reference bleed and luminance normal proxy",
+          "ORM shader wiring and export",
+          "review renders",
+          "Mixamo profile/jaw correction/limit/stress",
+          "coplanar/glued triangle sampling"
+        ],
+        "local_resources": [
+          "skills/blender-game-optimization/references/setcodes-ai-reduction.md",
+          "skills/blender-hard-surface/references/setcodes-source-rebuild.md",
+          "skills/blender-vehicle-modeling/references/setcodes-shell-reconstruction.md",
+          "skills/blender-reference-modeling/references/setcodes-projection-atlas.md",
+          "skills/blender-character-rigging/references/setcodes-mixamo-repair.md",
+          "skills/blender-export/references/setcodes-fbx-package.md",
+          "skills/blender-development/references/setcodes-lab-protocol.md"
+        ],
+        "implementation": "independent actionable procedure"
+      },
+      {
+        "source_path": "skills/blender-game-assets/scripts/maps_post.py",
+        "blob": "8bae8e7e9f355a3c75eeb5f1ae177e309c68d182",
+        "capabilities": [
+          "ORM packing with constants",
+          "UV polygon normal flatten",
+          "sampled median albedo fill",
+          "measuring grid",
+          "comparison contact sheet"
+        ],
+        "local_resources": [
+          "skills/blender-texturing/references/setcodes-registered-cleanup.md",
+          "skills/blender-reference-modeling/references/setcodes-projection-atlas.md"
+        ],
+        "implementation": "independent actionable procedure"
+      },
+      {
+        "source_path": "skills/blender-game-assets/scripts/replace_glb_albedo.py",
+        "blob": "efa39be855cdfb1ce283c6451ae2a70da57dbd0f",
+        "capabilities": [
+          "GLB container parsing",
+          "reject shared albedo/sparse/material-extension cases",
+          "embedded same-size PNG swap",
+          "update aligned buffer offsets",
+          "assert non-albedo bytes preserved"
+        ],
+        "local_resources": [
+          "skills/blender-texturing/references/setcodes-registered-cleanup.md",
+          "skills/blender-texturing/scripts/replace_glb_basecolor.py",
+          "tests/blender-glb-basecolor.test.py"
+        ],
+        "implementation": "independent actionable procedure"
+      },
+      {
+        "source_path": "skills/blender-game-assets/scripts/selftest_bg.py",
+        "blob": "d6bfc3e2a6687f1b617f0fc37ba241550e3ddbdf",
+        "capabilities": [
+          "synthetic house blockout/UV/bake/pack/export smoke",
+          "stretched-sphere remesh/seams",
+          "three-bone rig profile/fix/stress",
+          "review renders"
+        ],
+        "local_resources": [
+          "skills/blender-development/references/setcodes-lab-protocol.md"
+        ],
+        "implementation": "independent actionable procedure"
+      },
+      {
+        "source_path": "skills/blender-game-assets/scripts/studio_preview.py",
+        "blob": "0637e1c7592fb622510dfae63dc3d9901c8a2b50",
+        "capabilities": [
+          "scene-bound neutral HDRI and key/fill/rim rig",
+          "Khronos PBR Neutral",
+          "scale-dependent lighting",
+          "pack HDRI",
+          "rendered-viewport matching"
+        ],
+        "local_resources": [
+          "skills/blender-lookdev/references/setcodes-neutral-preview.md"
+        ],
+        "implementation": "independent actionable procedure"
+      },
+      {
+        "source_path": "skills/blender-game-assets/scripts/texture_cleanup.py",
+        "blob": "ac43b924c6fb1ff217ec98bf9b9845735370046d",
+        "capabilities": [
+          "5x5 color-aware denoise",
+          "bounded luminance sharpen",
+          "UV union mask inset four texels",
+          "freeze alpha/padding",
+          "hash and delta report"
+        ],
+        "local_resources": [
+          "skills/blender-texturing/references/setcodes-registered-cleanup.md"
+        ],
+        "implementation": "independent actionable procedure"
+      },
+      {
+        "source_path": "skills/blender-game-assets/scripts/verify_glb.py",
+        "blob": "9419b4c2fb8a03b16088af1703f4b5c68ffa5791",
+        "capabilities": [
+          "GLB JSON mesh attributes/material slots",
+          "skins/animations/root summaries"
+        ],
+        "local_resources": [
+          "skills/blender-export/references/setcodes-fbx-package.md"
+        ],
+        "implementation": "independent actionable procedure"
+      }
+    ],
+    "game_godot": {
+      "concept, vision, GDD, feature spec, pitch, review and authorized rewrite": "skills/game-design/references/documents.md",
+      "mechanic timing, state, combat, interaction and multiplayer design": "skills/game-design/references/systems.md",
+      "unlock arc, sources/sinks, economy model, recovery and sensitivity": "skills/game-design/references/progression-economy.md",
+      "level routes, encounter roles, onboarding, procedural constraints and asset contract": "skills/game-design/references/levels-encounters.md",
+      "test hypotheses, neutral protocol, observations, inference and retest": "skills/game-design/references/playtesting.md",
+      "course definitions, rubric evidence, optional versus required and learner revision": "skills/game-design/references/teaching-feedback.md",
+      "Godot root/version/language/renderer/tool discovery and bounded implementation": "skills/godot-development/references/project-discovery.md",
+      "scene wiring, signals/lifetime, Resources, data isolation, asset import/UIDs": "skills/godot-development/references/scenes-data.md",
+      "physics, controls/UI/pause, combat, AI, saves and local/network multiplayer": "skills/godot-development/references/gameplay.md",
+      "reproduction, discriminating checks, owning-rule repair and measured profiling": "skills/godot-development/references/debugging.md",
+      "static/import/parse/runtime/editor/input/render/audio/build/target evidence": "skills/godot-development/references/verification.md"
+    }
+  },
+  "source_corrections": [
+    {
+      "source": "skills/blender-game-assets/scripts/bpy_lib.py:502-505",
+      "problem": "constant metallic 1 becomes 0 because emission bake is gated on a linked Metallic input",
+      "adaptation": "Bake constant as well as linked metallic for every intended source material. Local baking production already describes routing constants; preserve that rule."
+    },
+    {
+      "source": "skills/blender-game-assets/scripts/bpy_lib.py:671-673; references/mixamo.md",
+      "problem": "export_mixamo_fbx resets object matrices without applying conversion and does so on the passed original",
+      "adaptation": "Use an owned duplicate; preserve world dimensions/bind/parent semantics; verify known-size and axis markers. Never copy reset-transform advice verbatim."
+    },
+    {
+      "source": "skills/blender-game-assets/scripts/bpy_lib.py:16-23",
+      "problem": "new_model_file discards an unsaved open file when no save path is supplied",
+      "adaptation": "Refuse unsaved dirty/unowned scene replacement or use a separate background process. Existing execution-and-ownership already protects this."
+    },
+    {
+      "source": "skills/blender-game-assets/scripts/bpy_lib.py:581-599",
+      "problem": "normal_from_albedo creates width-by-width image although input can be rectangular",
+      "adaptation": "Support width and height explicitly, test rectangular maps, mark luminance normals as an artistic proxy rather than physical geometry."
+    },
+    {
+      "source": "skills/blender-game-assets/scripts/bpy_lib.py:566-567",
+      "problem": "np.roll color dilation wraps opposite image borders",
+      "adaptation": "Use bounded padded neighborhoods; do not bleed an image edge into the opposite edge unless explicitly tiled."
+    },
+    {
+      "source": "skills/blender-game-assets/scripts/bpy_lib.py:793",
+      "problem": "jaw repair clips against world X=0, ignoring head_center.x",
+      "adaptation": "Use calibrated head-local/midline coordinates; translated/rotated characters require coordinate conversion and measured masks."
+    },
+    {
+      "source": "skills/blender-game-assets/scripts/bpy_lib.py:454-510",
+      "problem": "only hp.active_material and first Principled drive emission, output Surface assumes a link",
+      "adaptation": "Resolve intended connected source output per material, handle absent output links, restore all material/selection/settings in finally; existing local bake text already requires this."
+    },
+    {
+      "source": "skills/blender-game-assets/scripts/bpy_lib.py:_coplanar_groups/coplanar_report/remove_glued",
+      "problem": "seven barycentric samples are heuristic overlap/full-coverage evidence",
+      "adaptation": "Do not claim zero overlaps or exact containment from samples; use robust triangle polygon intersections or label sampled report and inspect revision-bound images."
+    },
+    {
+      "source": "skills/blender-game-assets/scripts/maps_post.py:47-68, 77-95",
+      "problem": "pack deletes source scalar maps by default; fill/flatten edit originals and dilate outline 8 pixels",
+      "adaptation": "Default to new versioned outputs and preserve channels; validate equal dimensions/constants/nonempty sample masks; restrict dilation by owned UV-island masks so adjacent islands are safe."
+    },
+    {
+      "source": "skills/blender-game-assets/scripts/texture_cleanup.py:90-112",
+      "problem": "preservation relies on assert and sibling JSON can overwrite an existing report; UV union does not identify touching-island borders",
+      "adaptation": "Use explicit runtime exceptions, atomic new output+report validation, finite two-coordinate UV validation; preserve per-island borders when touching/overlapping atlases matter; report mild filtering limits."
+    },
+    {
+      "source": "skills/blender-game-assets/scripts/replace_glb_albedo.py:11-106",
+      "problem": "parser lacks bounded index/range validation for all views/accessors and extension references; asserts disappear with -O",
+      "adaptation": "Validate all chunk alignment/order/lengths and reference bounds, supported extensions and buffer ownership; explicit invariant checks and atomic new outputs. Test shared roles, malformed chunk tail, source collision, sparse and preserved bytes."
+    },
+    {
+      "source": "skills/blender-game-assets/scripts/studio_preview.py:24-47",
+      "problem": "lights/world created before missing HDRI fails; default HDRI path is macOS Resources layout",
+      "adaptation": "Resolve/version-check explicit HDRI and view transform before mutation; discover resource path per actual runtime or require explicit path; rollback on error and avoid changing unrelated screens."
+    },
+    {
+      "source": "skills/blender-game-assets/scripts/bg_verify.py:27-45,67-75",
+      "problem": "skips meshes <=20 polygons, inspects largest only, reports rather than enforces, front_y is not orientation proof; missing Head can crash optional render",
+      "adaptation": "Inspect manifest object set including low-poly props; compare evaluated dimensions/axis marker/material paths/rig/poses and declared tolerances; treat absent render landmarks as an explicit unavailable check."
+    },
+    {
+      "source": "skills/blender-game-assets/scripts/verify_glb.py:9-12",
+      "problem": "assumes first chunk JSON and required optional names; no GLB header/chunk/range validation",
+      "adaptation": "Use validated GLB parser, optional names, primitive-mode-aware counts and manifest comparisons; presence summaries remain partial."
+    },
+    {
+      "source": "skills/blender-game-assets/scripts/blender_exec.py; blender_mcp_stdio.py",
+      "problem": "socket receive unbounded; broken delimiter/EOF not validated as a framed response; protocol hardcoded",
+      "adaptation": "Document exact Blender Lab protocol distinct from other MCPs. If implementing client use frame bound, timeout and validated status/result shape; default loopback and no automatic config/install changes."
+    },
+    {
+      "source": "skills/blender-game-assets/scripts/selftest_bg.py:68-69",
+      "problem": "hardcoded python3 assumes external Pillow interpreter; printed SELFTEST OK mostly records counts and no semantic acceptance",
+      "adaptation": "Use explicit verified host interpreter and native fixture with assertions, failure injection and current artifact hashes; synthetic sphere/three-bone test is not production deformation or visual success."
+    },
+    {
+      "source": "skills/blender-game-assets/SKILL.md budgets; references/characters.md; mixamo.md",
+      "problem": "A-pose dimensions/head/hand thresholds, 5mm voxel and 4 influences are source examples; hard-mask/QuadriFlow claims overgeneralized",
+      "adaptation": "Calibrate on actual scale/anatomy/pose/target, preserve source and morph/rig contracts, test reachability of region budgets and stress poses. Treat crowd FPS/microsecond data as author observations only."
+    },
+    {
+      "source": "skills/blender-game-assets/references/preview-and-fbx.md; texture-cleanup.md",
+      "problem": "personal dated preferences and paths are not this user's decisions",
+      "adaptation": "Retain useful FBX/map/studio branches conditionally; choose format, paths, clothing style and pixel backend from current task. Do not copy source personal FBX or deterministic Python preference as authority."
+    },
+    {
+      "source": "skills/blender-game-assets/references/from-reference.md",
+      "problem": "claims organic geometry requires a generator and conflict majority chooses truth",
+      "adaptation": "No generator requirement: manual/sculpt/reference workflows remain valid. Resolve inconsistent views from explicit authority/uncertainty, not majority as physical evidence. Projection does not de-light or recover missing detail."
+    }
+  ],
+  "validation": {
+    "npm_validate": "passed",
+    "package": {
+      "files": 3517,
+      "entrypoints": 82,
+      "manifests": 15,
+      "bytecode_exclusion": "Reproduced embedded Python cache; final test disables bytecode, nested npm exclusion plus .pyc sentinel/forbidden checks passed. Install/update rerun after removing the task-generated cache."
+    },
+    "powershell_install_update": {
+      "5.1": 12,
+      "7": 12
+    },
+    "coverage_regressions": 34,
+    "skill_provenance_regressions": 24,
+    "agent_reference_regressions": 22,
+    "dependency_regressions": 55,
+    "bundle_regressions": 8,
+    "review_registry_regressions": 16,
+    "eval_regressions": 20,
+    "provenance_fixture_checks": 5,
+    "not_run": [
+      "GitHub CI for this unpushed local commit",
+      "Native Linux/macOS installation in this Windows task",
+      "Every eval as a model task"
+    ]
+  },
+  "source_originality": {
+    "skills": 110,
+    "localTextFiles": 566,
+    "pinnedSourceFiles": 434,
+    "comparisons": 7783,
+    "findings": [],
+    "primaryFindings": [],
+    "reviewedExistingMatches": [
+      {
+        "skill": "blender-development",
+        "localPath": "skills/blender-development/scripts/inspect_runtime.py",
+        "upstream": "majidmanzarpour/blender-game-skills@f0ef29385a03de139957e6f700b801cdc00b7e29/skills/blender-image-to-3d/scripts/export_delivery.py",
+        "kind": "line",
+        "matchedText": "units system scene unit settings system scale length scene unit settings scale length",
+        "localEvidence": "'units': {'system': scene.unit_settings.system, 'scale_length': scene.unit_settings.scale_length},",
+        "upstreamEvidence": "\"units\": {\"system\": scene.unit_settings.system, \"scale_length\": scene.unit_settings.scale_length,",
+        "decision": "Unchanged pre-existing API/schema literals for Blender units, not newly adapted prose or code. Retained and reported instead of changing the helper or overlap algorithm."
+      }
+    ],
+    "method": "Unmodified repository buildAuditPlan/firstOverlap, extended to each package mapped primary and secondary resource. Every cached upstream byte sequence rechecked against its pinned Git blob. Required MIT grant matches and one reviewed unchanged API record are retained explicitly; no source matcher or threshold changed.",
+    "retainedLicenseMatches": 139,
+    "newAgents": {
+      "agents": 2,
+      "comparisons": 6,
+      "findings": [],
+      "method": "Repository firstOverlap, all mapped paths, cached source bytes verified against pinned Git blobs."
+    }
+  },
+  "archive_text_encoding": "UTF-8 with LF newlines for portable hash checks; GLB and PNG bytes unchanged."
+}

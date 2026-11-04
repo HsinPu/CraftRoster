@@ -1,0 +1,19 @@
+# Reduce generated/scanned assets through an inspected branch
+
+Inventory every source mesh, material/UV, nonmanifold region, transform, rig and morph before choosing a reduction. Preserve the full master. Determine the actual target population, shadows, gameplay camera and influence budget; upstream crowd FPS is a single-machine observation. A nominal triangle envelope is provisional until target profiling. Four influences and a single material are choices to verify, not universal engine limits.
+
+## Calibrated organic reduction
+
+Use this branch on an unrigged humanoid whose pose and proportions support it. Existing optimized/rigged/morph assets require correspondence-preserving methods or a separately authorized rebind/rebuild. Work on an owned duplicate with scale converted deliberately to metres. Record ground `z0`, height `h`, midline `cx` and actual face/hand bounds. For a measured roughly 1.9 m A-pose, 0.005 m voxel size is a preview candidate; derive smaller/larger values from the thinnest feature that must survive. Test ears, finger gaps, open mouth and eyelids before committing. Remesh can bridge nearby limbs and fused source fingers remain fused.
+
+An initial semantic mask may mark head above `z0+0.868*h` and hands where `abs(x-cx)>0.232*h` and `z<z0+0.579*h`. Overlay it on this character before use: T-pose, crouched, asymmetric and nonhuman subjects invalidate the thresholds. Hair smoothing can ramp above `z0+0.942*h` over `0.016*h`; start a small Smooth preview, inspecting the silhouette before adopting aggressive 25-iteration examples. Do not erase a defining hairstyle to reach a count.
+
+Run separate calibrated reduction passes on head/hands and body. Discover the installed Decimate vertex-group factor/inversion behavior with a disposable regional fixture; group membership and influence are not a universal soft-protection guarantee. Measure evaluated regional triangle counts rather than estimating regional triangles from vertex fraction. Binary-search collapse ratio with a bounded iteration count and retain the closest feasible candidate; report when protected geometry makes the total budget unreachable. Release every evaluated temporary mesh in `finally`. Reject budget success if face planes, fingers or joint support collapse.
+
+Label faces head/torso/upper-lower limbs/hands/feet from inspected anatomical landmarks. Cut cylinders on less visible surfaces: rear head/torso, underside arms, inner legs and heel; open sole/neck/part boundaries as required. Respect existing clothes and disconnected components. Unwrap with the installed supported method; inspect checker distortion and island connectivity. Average density, then provisionally enlarge face islands (for example 1.5–1.7x) before packing with mip-safe gutters. A target island count such as 25 is not acceptance. Avoid hundreds of single-triangle smart-project islands where semantic seams work better.
+
+Bake with matched parts and a scale-correct cage, then compare gray full-body, face, hand, seam and required bend views. Triangulated decimation is a delivery trade-off, not facial retopology. Rebuild loops when expressive deformation requires them. Record actual geometry loss, source preservation and any required rig/clip revalidation. Never describe automatic remesh as restoring source detail.
+
+For rigid generated props use [measured rebuild](../../blender-hard-surface/references/setcodes-source-rebuild.md); for thin-shell vehicles use [cross-section reconstruction](../../blender-vehicle-modeling/references/setcodes-shell-reconstruction.md). A shell is not made safe by blindly running the organic voxel recipe.
+
+Source: independently adapted from pinned `setcodes/gamedev-skills` `096c224aa498a789fa99d476583029fcb9f538e1`, `skills/blender-game-assets/SKILL.md`, `references/characters.md`, `scripts/bpy_lib.py` (MIT; preserve source notice). No source functions are imported or installed.

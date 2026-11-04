@@ -1,0 +1,317 @@
+{
+  "schema_version": 1,
+  "files": [
+    {
+      "path": "blender/candidate.glb",
+      "bytes": 4292,
+      "sha256": "4219adf52fce49e301e8970190734f9f04ed1ded2f03d0f9481ef1ac49751896"
+    },
+    {
+      "path": "blender/candidate.png",
+      "bytes": 258,
+      "sha256": "6bdf749d91dc409d35f5ec0a277fe0aba3f8de02f3dcb18c4870502e3b7f0500"
+    },
+    {
+      "path": "blender/fixture.py",
+      "bytes": 2467,
+      "sha256": "c13179a524ab62a19a05aaa42a9ac9728b298f790a390d8c8ce27f3229150bf2"
+    },
+    {
+      "path": "blender/native-report.json",
+      "bytes": 13941,
+      "sha256": "afa08c60fe1215caf3c3ef84b5bcbac435adc7678c1ce528d856a22bb8ae6cb8"
+    },
+    {
+      "path": "blender/source.glb",
+      "bytes": 3916,
+      "sha256": "0dd184db86325479b4e704a3b19052cbb89bc81d11978b65db262d69087d81dc"
+    },
+    {
+      "path": "evidence.json",
+      "bytes": 54298,
+      "sha256": "49afa819b1b35d1c7884ec18fd97de41691bcff8aa1e122cbfb0e6b1c57f1176"
+    },
+    {
+      "path": "godot/design.md",
+      "bytes": 5949,
+      "sha256": "e3ca64623d17577e542be0e0b7b146794e7b5990bdc90333b1aaeeff89468024"
+    },
+    {
+      "path": "godot/import.log",
+      "bytes": 2025,
+      "sha256": "bafeeb17853ea278c5f0e7422c1a140e6ec1bf71cf9b0f0429a667fb22a42747"
+    },
+    {
+      "path": "godot/project/input_boundary.gd",
+      "bytes": 1090,
+      "sha256": "2fd65ec332c7794c70e1d7215911df526cc0116d4a8db3328004129c66da48f2"
+    },
+    {
+      "path": "godot/project/input_boundary.gd.uid",
+      "bytes": 20,
+      "sha256": "aa1ffcc163f4b4075004900d79a6e8075e4cf81437524b7dbc46893e5f0ab3a5"
+    },
+    {
+      "path": "godot/project/job.gd",
+      "bytes": 158,
+      "sha256": "c1bab44cadabacd41abbde522c84332dee64d5e3695cb56b6feda19238d9b62a"
+    },
+    {
+      "path": "godot/project/job.gd.uid",
+      "bytes": 19,
+      "sha256": "e11ad51a8e54b32158f2a9e343cfb5824ec54013b98e8de7aefc5a7c2643c321"
+    },
+    {
+      "path": "godot/project/job_one.tres",
+      "bytes": 233,
+      "sha256": "821177e5cef3740e0771b60d0f2a04253eaf7d46f6633c11e722a3cb01a2a846"
+    },
+    {
+      "path": "godot/project/main.gd",
+      "bytes": 4912,
+      "sha256": "5e30e93770a45ba69f7d3c87c82eb45806f83f182f7985727bf1417faf3495a9"
+    },
+    {
+      "path": "godot/project/main.gd.uid",
+      "bytes": 20,
+      "sha256": "bfa17df44a5ca2cd6994cd41df1e5602f882e2b83f06103c9181bcad5531cea6"
+    },
+    {
+      "path": "godot/project/main.tscn",
+      "bytes": 153,
+      "sha256": "7dc4656e006ba1f18834da7321d3e73cc54a95b0b5a6b1ada1277315476fae01"
+    },
+    {
+      "path": "godot/project/project.godot",
+      "bytes": 163,
+      "sha256": "3db9a787fe23973d3494e5b702148c79db615a023abf41f82aec661ac80f3f78"
+    },
+    {
+      "path": "godot/project/session.gd",
+      "bytes": 1228,
+      "sha256": "ed5d037e433019841f80ae1e7f52d139962691042f0ff826eb00f8f103de6152"
+    },
+    {
+      "path": "godot/project/session.gd.uid",
+      "bytes": 20,
+      "sha256": "2c830b0675e3c0acd509f1ea071db16a5c2c7ca3d95e3345314842eb3c06554c"
+    },
+    {
+      "path": "godot/runtime-diagnostic.log",
+      "bytes": 2468,
+      "sha256": "44045d08e357b340caf2f702cb1c5e02137a59e197c24427d337ec6eb8afe6d2"
+    },
+    {
+      "path": "godot/runtime-engine.log",
+      "bytes": 1296,
+      "sha256": "11dbe143ab12af2c75b999c95aacd7771c6374902f0fc9c517746b692e300b4e"
+    },
+    {
+      "path": "godot/runtime-first-failure.log",
+      "bytes": 2028,
+      "sha256": "3b72563d155e396d5de695b65bd93f2e3824077d9a38221fa296252c02a4c085"
+    },
+    {
+      "path": "godot/runtime.log",
+      "bytes": 1296,
+      "sha256": "11dbe143ab12af2c75b999c95aacd7771c6374902f0fc9c517746b692e300b4e"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5104,
+      "sha256": "cfc3a1c3046cb5e60c8230699a491c8d27d24e609a2cfe159d5e532dad9de24a"
+    },
+    {
+      "path": "skills/game-design/evals/evals.json",
+      "location": "repository",
+      "bytes": 5420,
+      "sha256": "45ea7727e43a3e6a9138007b5e57edf019e0d8eef0cfb2b4101a5f1f63a72978"
+    },
+    {
+      "path": "skills/game-design/references/documents.md",
+      "location": "repository",
+      "bytes": 5446,
+      "sha256": "8928a2c4f0e537357b0c85a8e3f4183c8c50c4e783c1495873f7a3e0ce71c684"
+    },
+    {
+      "path": "skills/game-design/references/levels-encounters.md",
+      "location": "repository",
+      "bytes": 3982,
+      "sha256": "5beac2f0b02a0e73268e5230cd0e1dfc5d38647b23a641a9877de24bcac4e517"
+    },
+    {
+      "path": "skills/game-design/references/playtesting.md",
+      "location": "repository",
+      "bytes": 3838,
+      "sha256": "cbb06abb6cb68f7b40c2195b18768a7ec50cdfb681a09aff10f2fe3885a7689f"
+    },
+    {
+      "path": "skills/game-design/references/progression-economy.md",
+      "location": "repository",
+      "bytes": 3908,
+      "sha256": "516d56c5339bfde6f0d4f074c6c6efa64ae77bcf248eb3a39d8e824cc366a33d"
+    },
+    {
+      "path": "skills/game-design/references/systems.md",
+      "location": "repository",
+      "bytes": 4333,
+      "sha256": "a4840c0ed8232c9edf79f66ad352a08aee51e6c3d6290939cc78ebcf47715413"
+    },
+    {
+      "path": "skills/game-design/references/teaching-feedback.md",
+      "location": "repository",
+      "bytes": 2175,
+      "sha256": "82fadc580d66d54b00a914a41f81abd25dcc0b0408a2d2fd5d028ee799acd453"
+    },
+    {
+      "path": "skills/game-design/references/upstream-notice.md",
+      "location": "repository",
+      "bytes": 2086,
+      "sha256": "627732b4ea604ad2e9897ffdbe4ec453f3f22cddfbbc88ec0e0237488cd27c8a"
+    },
+    {
+      "path": "skills/game-design/SKILL.md",
+      "location": "repository",
+      "bytes": 3837,
+      "sha256": "4c1f30debda8e8342817b7d086980f9cd0f5dc5b9037cd9b2a05792c37478bef"
+    },
+    {
+      "path": "skills/godot-development/evals/evals.json",
+      "location": "repository",
+      "bytes": 6637,
+      "sha256": "d1aeb342d3235c88acfe16339987b6a8f854e15199762f5ee0edf788eccc021d"
+    },
+    {
+      "path": "skills/godot-development/references/debugging.md",
+      "location": "repository",
+      "bytes": 3733,
+      "sha256": "c013eda8fc1c81b33d69e44fa77c58a98c8282f09dc69cedb6048c049ef0c52d"
+    },
+    {
+      "path": "skills/godot-development/references/gameplay.md",
+      "location": "repository",
+      "bytes": 4800,
+      "sha256": "af81a0d33457c8eb1a92629bb59abace1305095452cbcebb60857d90e490a909"
+    },
+    {
+      "path": "skills/godot-development/references/project-discovery.md",
+      "location": "repository",
+      "bytes": 3501,
+      "sha256": "f023f43af33a9bc0c4f71ed2f7972d3b33079fb493d6e0ab125f702091342653"
+    },
+    {
+      "path": "skills/godot-development/references/scenes-data.md",
+      "location": "repository",
+      "bytes": 4408,
+      "sha256": "e1253c7e3e24fb34c6bbc64d18884418792e7c0242bb8b9cd9223d56b0079bd9"
+    },
+    {
+      "path": "skills/godot-development/references/upstream-notice.md",
+      "location": "repository",
+      "bytes": 2086,
+      "sha256": "ef04e78beb33649310775160f897470b844f31efc85c3a65016105fb365151ad"
+    },
+    {
+      "path": "skills/godot-development/references/verification.md",
+      "location": "repository",
+      "bytes": 5328,
+      "sha256": "1438461c69b1dc4502b5165d3c22b6163d25e8d46040a117476ad92ba20d1299"
+    },
+    {
+      "path": "skills/godot-development/SKILL.md",
+      "location": "repository",
+      "bytes": 3541,
+      "sha256": "63931b6c8aa78d3cc3a713b71da004fa3c010bd63ee4fd0b9a74c270689aa2a8"
+    },
+    {
+      "path": "skills/blender-reference-modeling/evals/evals.json",
+      "location": "repository",
+      "bytes": 4828,
+      "sha256": "291f50c7338e401e3e445f54bfb7ed16ba2bf287ff3c08090585d1ed76f71a88"
+    },
+    {
+      "path": "skills/blender-reference-modeling/references/calibration.md",
+      "location": "repository",
+      "bytes": 1423,
+      "sha256": "ff4e2f213bd15289ab827b0383e34baecba35b01fcf3d60be9cc8ea22c0b8e3f"
+    },
+    {
+      "path": "skills/blender-reference-modeling/references/majid-mask-comparison.md",
+      "location": "repository",
+      "bytes": 5000,
+      "sha256": "4c9b42f84761c9b3b15fe815e6001835794b25db03120b359eadcd4333aa723b"
+    },
+    {
+      "path": "skills/blender-reference-modeling/references/majid-reference-pipeline.md",
+      "location": "repository",
+      "bytes": 6014,
+      "sha256": "8cb4700a4a0716961cd5cca3b6b4a99d2d3b89f73158c51e6822c9457b161b5a"
+    },
+    {
+      "path": "skills/blender-reference-modeling/references/reference-reconstruction.md",
+      "location": "repository",
+      "bytes": 6923,
+      "sha256": "17dfa5b762b8af274a7e3e43620c46fcb41ef110d921c26e07eefe7d10b405c6"
+    },
+    {
+      "path": "skills/blender-reference-modeling/references/setcodes-projection-atlas.md",
+      "location": "repository",
+      "bytes": 4747,
+      "sha256": "ffc0e1d29355139f59d78a822578b91a9994a821941d92cdc0e80c1938de93ce"
+    },
+    {
+      "path": "skills/blender-reference-modeling/references/upstream-notice.md",
+      "location": "repository",
+      "bytes": 6103,
+      "sha256": "ac33b230f8459a139633e06e35c638d1a25cdaf470b2bcb64925b76f59c5fb3c"
+    },
+    {
+      "path": "skills/blender-reference-modeling/scripts/compare_reference_masks.py",
+      "location": "repository",
+      "bytes": 12561,
+      "sha256": "28b7eb53067a6cef908dcd8fdf756c15f3a31aceef5d889734248e771a72d171"
+    },
+    {
+      "path": "skills/blender-reference-modeling/SKILL.md",
+      "location": "repository",
+      "bytes": 3598,
+      "sha256": "094e294fd1bb737f7e8eb0578027a48b83a19a1de707e21e02ac2347a0d053fc"
+    },
+    {
+      "path": "skills/blender-texturing/evals/evals.json",
+      "location": "repository",
+      "bytes": 2210,
+      "sha256": "ce7dfd2bce8009e989e44ffd981a8e4d675caa893604ac6d1bd5af2bedf4ed9d"
+    },
+    {
+      "path": "skills/blender-texturing/references/production.md",
+      "location": "repository",
+      "bytes": 4851,
+      "sha256": "c304179a77abf4a2d114fc2583d2f37e2b911fe58f27047041ab658c7d703baf"
+    },
+    {
+      "path": "skills/blender-texturing/references/setcodes-registered-cleanup.md",
+      "location": "repository",
+      "bytes": 6948,
+      "sha256": "ef4460ef96e0af3fe5355ac93d9f49e3036e4bdb8588c80b22b4c03d7dca9682"
+    },
+    {
+      "path": "skills/blender-texturing/references/upstream-notice.md",
+      "location": "repository",
+      "bytes": 4981,
+      "sha256": "e662626a3a5885ec60457e464f8929cbe5d894aa28cd9501eb4493c758fdd5c7"
+    },
+    {
+      "path": "skills/blender-texturing/scripts/replace_glb_basecolor.py",
+      "location": "repository",
+      "bytes": 11580,
+      "sha256": "0c0035dea7f443cb8045b42c1bff562b55ff7f6c4afe64070f7a896578e5de79"
+    },
+    {
+      "path": "skills/blender-texturing/SKILL.md",
+      "location": "repository",
+      "bytes": 3215,
+      "sha256": "d798fed30a456b5b935441da36c45277d33118038cd013acebf277fdd5ddf7f3"
+    }
+  ]
+}

@@ -53,3 +53,7 @@ Technical validity, visual fit and engine acceptance are separate results. A num
 Deliver the requested source and exports with current images and a concise account of changes and checks. Name which Blender version, host, target and files were actually exercised. Reinspect the final saved revision after polish; old approvals do not carry over automatically.
 
 See [source attribution](references/upstream-notice.md).
+
+Read [Blender Lab protocol discovery, long jobs and bounded native self-checks](references/setcodes-lab-protocol.md) when that branch is requested. It specifies inputs, construction or repair steps, failure handling and the evidence required for acceptance.
+
+For the corresponding production stage, read the detailed [phase ownership](references/majid-phase-ownership.md) procedure. Keep its measurements, failure cases and acceptance evidence tied to the current asset revision.

@@ -22,6 +22,17 @@
         "Scopes copies and checks shared data users.",
         "Rechecks UV/motion/visual regressions and reports unresolved budget."
       ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Reduce an offset A-pose generated character; protected face makes requested budget unreachable.",
+      "expected_output": "Calibrate mask/scale, measure regional triangles, bounded feasible reduction, preserve face/hands/morph contract; report budget conflict rather than false success.",
+      "assertions": [
+        "Calibrate mask/scale, measure regional triangles, bounded feasible reduction, preserve face/hands/morph contract; report budget conflict rather than false success.",
+        "Names the input scope and preserves original source data while making only the requested correction.",
+        "Reports performed checks separately from unavailable visual or engine evidence."
+      ]
     }
   ]
 }

@@ -33,3 +33,5 @@ Use this entry for a combined rig-to-clip delivery. For a focused task, use `ble
 Provide the source rig, changed bones/weights/actions, clip ranges with FPS, motion policy, stress-pose and loop evidence, and actual export/reimport results. A still beauty render cannot prove deformation or animation quality; a parsed clip list cannot prove playback.
 
 See [source attribution](references/upstream-notice.md).
+
+For the corresponding production stage, read the detailed [motion delivery](references/majid-motion-delivery.md) procedure. Keep its measurements, failure cases and acceptance evidence tied to the current asset revision.

@@ -9,9 +9,12 @@ const { validateDependencies, validateRoutes } = require('./lib/skill-dependenci
 
 const SNAPSHOTS = {
   el4: { repo: 'EL4CTEO/blender-skills', commit: 'fb92cfb4cc5a238c22113a6a230b09f535bd0656', tree: '9b0d2fc9a2f4063c915e34c17d1136cfb08259e8', files: 117, entries: 28, manifestSha256: 'b6637662214377aa0f81ae07bcf55cb8445454d60fd95401b40577f8a2df6cb5' },
-  arjun: { repo: 'arjun988/blender-skills', commit: '8f778d2405a214b508d4c7d80742be8e43acdd52', tree: 'fba306faa1425961eabe1af4199001a04d3a8e25', files: 271, entries: 94, manifestSha256: '6f060a2c640dbd5b458aadcd6b3b8b9486b106de8163c085e1136855844a31c3' }
+  arjun: { repo: 'arjun988/blender-skills', commit: '8f778d2405a214b508d4c7d80742be8e43acdd52', tree: 'fba306faa1425961eabe1af4199001a04d3a8e25', files: 271, entries: 94, manifestSha256: '6f060a2c640dbd5b458aadcd6b3b8b9486b106de8163c085e1136855844a31c3' },
+  majid: { repo: 'majidmanzarpour/blender-game-skills', commit: 'f0ef29385a03de139957e6f700b801cdc00b7e29', tree: '69b8827f7b2372007e91a361412bffcf13150b30', files: 18, entries: 1, manifestSha256: '4b698a26e43d3cf70b0731785de551058300b7d7a735c4629b982d46a01bc11d' },
+  setcodes: { repo: 'setcodes/gamedev-skills', commit: '096c224aa498a789fa99d476583029fcb9f538e1', tree: '6f9abcb6086bf426c4f8487f8fb91d3614a4ffce', files: 37, entries: 3, manifestSha256: 'f188c0bb650e99487700b3727872de0896074f00f33c238679dd4a379d32a7fe' }
 };
-const RETAINED = new Set(['blender-materials-uv', 'blender-reference-modeling', 'blender-rigging-animation', 'blender-visual-review']);
+const GAME_PACKAGES = ['game-design', 'godot-development'];
+const RETAINED = new Set(['blender-materials-uv']);
 const NAME = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const BLOB = /^[a-f0-9]{40}$/;
 const fail = message => { throw new Error(`Blender coverage: ${message}`); };
@@ -24,12 +27,13 @@ function safeRelative(value, label) {
   return value;
 }
 function canonicalEntry(alias, file) {
-  return alias === 'el4' ? /^skills\/[^/]+\/SKILL\.md$/.test(file) : /^\.claude\/skills\/[^/]+\/SKILL\.md$/.test(file);
+  return alias === 'arjun' ? /^\.claude\/skills\/[^/]+\/SKILL\.md$/.test(file) : /^skills\/[^/]+\/SKILL\.md$/.test(file);
 }
 function classify(alias, file) {
   if (canonicalEntry(alias, file)) return 'entrypoint';
   if (file === 'LICENSE') return 'license';
   if (file === 'README.md') return 'repository-context';
+  if (file === '.gitignore' || file.startsWith('.claude-plugin/') || file.startsWith('scripts/')) return 'repository-context';
   if (file.startsWith('.claude/skills/references/')) return 'shared-reference';
   if (/\/references\//.test(file)) return 'package-reference';
   if (/\/scripts\//.test(file)) return 'package-script';
@@ -37,7 +41,7 @@ function classify(alias, file) {
 }
 function validateInventory(inventory) {
   requireThat(inventory && inventory.schemaVersion === 1 && Array.isArray(inventory.repositories), 'invalid inventory schema');
-  requireThat(inventory.repositories.length === 2, 'inventory must retain the two pinned snapshots');
+  requireThat(inventory.repositories.length === 4, 'inventory must retain all four pinned snapshots');
   const repositories = new Map();
   const entries = new Map();
   for (const repo of inventory.repositories) {
@@ -63,7 +67,7 @@ function validateInventory(inventory) {
     requireThat(crypto.createHash('sha256').update(manifest).digest('hex') === expected.manifestSha256, `${repo.id}: mismatched frozen file manifest`);
     repositories.set(repo.id, { ...repo, files });
   }
-  requireThat(entries.size === 122, 'canonical entrypoint set must contain 122 entries');
+  requireThat(entries.size === 126, 'canonical entrypoint set must contain 126 entries');
   return { repositories, entries };
 }
 function validateCoverage(options = {}) {
@@ -77,8 +81,10 @@ function validateCoverage(options = {}) {
   requireThat(coverage && coverage.schemaVersion === 1 && Array.isArray(coverage.entries) && Array.isArray(coverage.packages), 'invalid coverage schema');
   requireThat(coverage.evidence && coverage.evidence.workflow === 'not_run' && coverage.evidence.visual === 'not_run' && coverage.evidence.targetEngine === 'not_run', 'authored coverage must keep runtime evidence separate and unexecuted');
   validateDependencies(catalog.skills); validateRoutes(catalog.skills);
-  const packageNames = new Set(Object.entries(catalog.skills).filter(([, v]) => v.category === 'blender-creation').map(([n]) => n));
-  requireThat(packageNames.size === 108, 'catalog must represent the 108-package Blender suite');
+  const blenderPackages = new Set(Object.entries(catalog.skills).filter(([, v]) => v.category === 'blender-creation').map(([n]) => n));
+  requireThat(blenderPackages.size === 108, 'catalog must represent the 108-package Blender suite');
+  for (const name of GAME_PACKAGES) requireThat(catalog.skills[name] && catalog.skills[name].category === 'game-development', `${name}: missing standalone game package`);
+  const packageNames = new Set([...blenderPackages, ...GAME_PACKAGES]);
   const packageRecords = new Map();
   const seenEntries = new Set();
   const sourceUsers = new Map();
@@ -86,7 +92,7 @@ function validateCoverage(options = {}) {
   function localResource(resource, consumer, label) {
     requireThat(resource && resource.package === consumer && packageNames.has(consumer), `${label}: unknown or mismatched local package`);
     const relative = safeRelative(resource.path, label);
-    const match = relative.match(/^skills\/([a-z0-9-]+)\/(SKILL\.md|references\/.+\.md)$/);
+    const match = relative.match(/^skills\/([a-z0-9-]+)\/(SKILL\.md|references\/.+\.md|scripts\/.+\.py)$/);
     requireThat(match && packageNames.has(match[1]), `${label}: resource outside intended Skill instructions`);
     const target = match[1];
     requireThat(!relative.endsWith('/upstream-notice.md'), `${label}: attribution alone is not capability support`);
@@ -109,19 +115,19 @@ function validateCoverage(options = {}) {
     requireThat(new Set(pkg.localResources.map(r => r.path)).size === pkg.localResources.length, `${pkg.name}: duplicate supporting resource`);
     pkg.localResources.forEach(r => localResource(r, pkg.name, pkg.name));
     requireThat(pkg.localResources.some(r => r.path === `skills/${pkg.name}/SKILL.md`), `${pkg.name}: entrypoint support is missing`);
-    const refs = path.join(root, 'skills', pkg.name, 'references');
-    function requireCurrentReferences(directory) {
+    function requireCurrentResources(directory, extension) {
       if (!fs.existsSync(directory)) return;
       for (const item of fs.readdirSync(directory, { withFileTypes: true })) {
         const full = path.join(directory, item.name);
-        if (item.isDirectory()) requireCurrentReferences(full);
-        else if (item.name.endsWith('.md') && item.name !== 'upstream-notice.md') {
+        if (item.isDirectory() && item.name !== '__pycache__') requireCurrentResources(full, extension);
+        else if (item.isFile() && item.name.endsWith(extension) && item.name !== 'upstream-notice.md') {
           const relative = path.relative(root, full).split(path.sep).join('/');
           requireThat(pkg.localResources.some(r => r.path === relative), `${pkg.name}: current instruction resource missing from coverage ${relative}`);
         }
       }
     }
-    requireCurrentReferences(refs);
+    requireCurrentResources(path.join(root, 'skills', pkg.name, 'references'), '.md');
+    requireCurrentResources(path.join(root, 'skills', pkg.name, 'scripts'), '.py');
     if (RETAINED.has(pkg.name)) {
       requireThat(pkg.sourceEntries.length === 0 && pkg.retained === true, `${pkg.name}: retained coordinator must be identified separately`);
       text(pkg.retainedReason, `${pkg.name} retained reason`);
@@ -177,6 +183,27 @@ function validateCoverage(options = {}) {
       sourceUsers.set(`${entry.repository}:${resource.path}`, true);
     }
     for (const file of repo.files.values()) if (file.path.startsWith(prefix)) requireThat(resourcePaths.has(file.path), `${entry.id}: missing source resource ${file.path}`);
+    if (['majid', 'setcodes'].includes(entry.repository)) {
+      requireThat(Array.isArray(entry.resourceAdaptations), `${entry.id}: missing per-resource adaptations`);
+      const adapted = new Set();
+      for (const adaptation of entry.resourceAdaptations) {
+        requireThat(adaptation && resourcePaths.has(adaptation.path) && !adapted.has(adaptation.path), `${entry.id}: unknown or duplicate resource adaptation`);
+        requireThat(repo.files.get(adaptation.path).blob === adaptation.blob, `${entry.id}: mismatched adaptation blob`);
+        text(adaptation.decision, `${entry.id}/${adaptation.path} adaptation decision`);
+        requireThat(['adapted', 'evaluation-context', 'context-only'].includes(adaptation.disposition), `${entry.id}: invalid adaptation disposition`);
+        if (adaptation.disposition === 'context-only') requireThat(/(?:^|\/)LICENSE$|\/agents\/openai\.yaml$/.test(adaptation.path), `${entry.id}: procedural source cannot be disposed as context-only`);
+        if (adaptation.disposition === 'evaluation-context') requireThat(/\/evals\/evals\.json$/.test(adaptation.path), `${entry.id}: non-evaluation source cannot use evaluation context`);
+        requireThat(Array.isArray(adaptation.localResources), `${entry.id}: missing adaptation support list`);
+        if (adaptation.disposition !== 'context-only') requireThat(adaptation.localResources.length, `${entry.id}: adapted resource lacks concrete local support`);
+        for (const resource of adaptation.localResources) {
+          requireThat(entry.mappedPackages.includes(resource.package), `${entry.id}: adaptation uses unmapped package`);
+          localResource(resource, resource.package, entry.id);
+          requireThat(entry.capabilities.some(c => c.package === resource.package && c.localResources.some(r => r.path === resource.path)), `${entry.id}: resource adaptation absent from capability support`);
+        }
+        adapted.add(adaptation.path);
+      }
+      requireThat([...resourcePaths].every(p => adapted.has(p)), `${entry.id}: source resource lacks concrete adaptation decision`);
+    }
   }
   requireThat(seenEntries.size === entries.size, 'unmapped upstream entrypoint');
   for (const pkg of packageRecords.values()) for (const id of pkg.sourceEntries) requireThat(entries.has(id) && seenEntries.has(id) && coverage.entries.find(e => e.id === id).mappedPackages.includes(pkg.name), `${pkg.name}: unknown or asymmetric source entry ${id}`);
@@ -192,13 +219,13 @@ function validateCoverage(options = {}) {
   }
   for (const repo of repositories.values()) for (const file of repo.files.values()) requireThat(sourceUsers.has(`${repo.id}:${file.path}`) || repositoryDisposition.has(`${repo.id}:${file.path}`), `inventory resource lacks coverage or disposition: ${repo.id}:${file.path}`);
   const bundle = bundles.bundles.find(b => b.id === 'game-development');
-  requireThat(bundle && bundle.skills.length === 108 && new Set(bundle.skills).size === 108 && bundle.skills.every(n => packageNames.has(n)), 'game-development bundle is not the direct 108-package suite');
-  requireThat(bundle.agents.length === 2 && bundle.agents.includes('blender-artist') && bundle.agents.includes('blender-asset-reviewer'), 'game-development must preserve the two existing Blender Agents');
+  requireThat(bundle && bundle.skills.length === packageNames.size && new Set(bundle.skills).size === packageNames.size && bundle.skills.every(n => packageNames.has(n)), 'game-development bundle is not the direct 110-package suite');
+  requireThat(bundle.agents.length === 4 && ['blender-artist', 'blender-asset-reviewer', 'game-designer', 'godot-developer'].every(n => bundle.agents.includes(n)), 'game-development must preserve all four game and Blender Agents');
   const foundation = catalog.skills['blender-development'];
   const foundationRoutes = foundation.dependencies || [];
-  requireThat(foundationRoutes.length === 107 && foundationRoutes.every(d => d.kind === 'conditional' && packageNames.has(d.name)), 'foundation routing is incomplete or over-eager');
+  requireThat(foundationRoutes.length === 107 && foundationRoutes.every(d => d.kind === 'conditional' && blenderPackages.has(d.name)), 'foundation routing is incomplete or over-eager');
   requireThat(new Set(foundationRoutes.map(d => d.when)).size === 107, 'foundation routes must retain distinct task triggers');
-  for (const n of packageNames) if (n !== 'blender-development') requireThat((catalog.skills[n].dependencies || []).some(d => d.name === 'blender-development' && d.kind === 'required' && d.usage === 'resource'), `${n}: missing required foundation resource`);
+  for (const n of blenderPackages) if (n !== 'blender-development') requireThat((catalog.skills[n].dependencies || []).some(d => d.name === 'blender-development' && d.kind === 'required' && d.usage === 'resource'), `${n}: missing required foundation resource`);
   requireThat((catalog.skills['blender-export'].dependencies || []).some(d => d.name === 'blender-asset-validation' && d.kind === 'required'), 'common export must preserve validation dependency');
   const closures = {};
   function closure(name) {
@@ -206,18 +233,19 @@ function validateCoverage(options = {}) {
     function visit(n) { if (result.has(n)) return; result.add(n); for (const d of catalog.skills[n].dependencies || []) if (d.kind === 'required') visit(d.name); }
     visit(name); return [...result].sort();
   }
-  for (const n of packageNames) {
+  for (const n of blenderPackages) {
     closures[n] = closure(n);
     requireThat(closures[n].every(x => packageNames.has(x)), `${n}: installation leaks outside Blender suite`);
     if (!['blender-development', 'blender-export', 'blender-unity-export', 'blender-unreal-export', 'blender-godot-export'].includes(n)) requireThat(closures[n].length === 2, `${n}: ordinary specialist must not pull unrelated production packages`);
   }
   requireThat(closures['blender-development'].length === 1, 'foundation must remain standalone');
+  for (const n of GAME_PACKAGES) requireThat(closure(n).length === 1, `${n}: game package must remain standalone`);
   requireThat(closures['blender-export'].length === 3, 'common export closure must contain three packages');
   for (const n of ['blender-unity-export', 'blender-unreal-export', 'blender-godot-export']) {
     requireThat((catalog.skills[n].dependencies || []).some(d => d.name === 'blender-export' && d.kind === 'required' && d.usage === 'resource'), `${n}: missing common export resource`);
     requireThat(closures[n].length === 4, `${n}: engine export closure must contain four packages`);
   }
-  return { repositories: repositories.size, sourceFiles: [...repositories.values()].reduce((n, r) => n + r.files.size, 0), sourceEntries: seenEntries.size, packages: packageRecords.size, retainedCoordinators: RETAINED.size, capabilityDeclarations: coverage.entries.reduce((n, e) => n + e.capabilities.length, 0), evidence: coverage.evidence, semanticQuality: 'not established by this validator' };
+  return { repositories: repositories.size, sourceFiles: [...repositories.values()].reduce((n, r) => n + r.files.size, 0), sourceEntries: seenEntries.size, packages: packageRecords.size, retainedCoordinators: coverage.packages.filter(p => p.retained === true).length, capabilityDeclarations: coverage.entries.reduce((n, e) => n + e.capabilities.length, 0), resourceAdaptations: coverage.entries.reduce((n, e) => n + (e.resourceAdaptations || []).length, 0), evidence: coverage.evidence, semanticQuality: 'not established by this validator' };
 }
 if (require.main === module) {
   try { console.log(JSON.stringify(validateCoverage(), null, 2)); }

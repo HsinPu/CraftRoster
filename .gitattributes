@@ -8,3 +8,7 @@
 *.cmd text eol=crlf
 *.ps1 text eol=crlf
 docs/audits/skill-optimization-2026-09-16/prospective-holdout-v1/** text eol=lf
+docs/audits/four-source-integration-2026-11-04/godot/** text eol=lf
+docs/audits/four-source-integration-2026-11-04/blender/fixture.py text eol=lf
+skills/blender-reference-modeling/scripts/compare_reference_masks.py text eol=lf
+skills/blender-texturing/scripts/replace_glb_basecolor.py text eol=lf

@@ -22,6 +22,17 @@
         "Diagnoses scale/topology before more detail.",
         "Rechecks curved and planar shading with current images."
       ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Rebuild a scanned house with visible soffit and near-parallel trim edges.",
+      "expected_output": "World-correct BVH sampling, below-overhang rays, determinant guard, actual trim depth and robust coplanar check; preserve source.",
+      "assertions": [
+        "World-correct BVH sampling, below-overhang rays, determinant guard, actual trim depth and robust coplanar check; preserve source.",
+        "Names the input scope and preserves original source data while making only the requested correction.",
+        "Reports performed checks separately from unavailable visual or engine evidence."
+      ]
     }
   ]
 }

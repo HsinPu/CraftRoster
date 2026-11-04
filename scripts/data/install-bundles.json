@@ -751,10 +751,12 @@
     {
       "id": "game-development",
       "title": "遊戲開發",
-      "description": "Complete Blender production suite: geometry, materials, rigging, animation, simulation, style/world/genre direction, automation, engine delivery and independent technical/visual acceptance.",
+      "description": "Game design and playtesting, the complete Blender production suite, Godot implementation, and independent asset review.",
       "agents": [
+        "game-designer",
         "blender-artist",
-        "blender-asset-reviewer"
+        "blender-asset-reviewer",
+        "godot-developer"
       ],
       "skills": [
         "blender-development",
@@ -864,7 +866,9 @@
         "blender-visual-review",
         "blender-voxel-style",
         "blender-weather-fx",
-        "blender-workflow-recipes"
+        "blender-workflow-recipes",
+        "game-design",
+        "godot-development"
       ]
     }
   ]

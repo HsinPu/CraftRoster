@@ -15,6 +15,7 @@ const token = `${process.pid}-${Date.now()}`;
 const sentinelPaths = [
   path.join(root, `.env.craftroster-package-${token}`),
   path.join(root, `craftroster-package-${token}.tmp`),
+  path.join(root, 'skills', `craftroster-package-${token}.pyc`),
   path.join(root, 'scripts', 'data', `craftroster-package-secret-${token}.json`)
 ];
 const expectedRuntimeManifests = runtimeManifests();
@@ -257,6 +258,7 @@ try {
       basename === '.npmrc' ||
       basename === '.DS_Store' ||
       basename === 'Thumbs.db' ||
+      segments.includes('__pycache__') || /\.py[co]$/i.test(basename) ||
       /(?:^|\.)(?:tmp|temp|bak|tgz|pem|key)$/i.test(basename) ||
       /~$/.test(basename);
   });

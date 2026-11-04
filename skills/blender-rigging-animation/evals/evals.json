@@ -34,6 +34,18 @@
         "Distinguishes root-travel policy from a zero-displacement in-place clip.",
         "Inspects sequential motion and rechecks exported clip inclusion and timing."
       ]
+    },
+    {
+      "id": 4,
+      "locale": "en",
+      "prompt": "Validate a winged rider character with a two-hand weapon, repeated footstep events, fps=30/fps_base=1.001 and secondary cape reset on teleport. The engine is unavailable.",
+      "expected_output": "Family stress and real-attachment evidence, effective-FPS ordered event contract, requested reset/fallback test handoff with engine cases untested.",
+      "assertions": [
+        "Preserves repeated event names.",
+        "Does not force world-zero root or four influences onto existing target.",
+        "Uses explicit compatible rig/action slot.",
+        "Separates Blender cache/poses from runtime teleport proof."
+      ]
     }
   ]
 }

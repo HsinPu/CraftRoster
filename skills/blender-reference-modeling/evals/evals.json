@@ -44,6 +44,41 @@
         "Measures physical dimensions independently of image normalization.",
         "Corrects camera/large forms first and inspects the other view after revision."
       ]
+    },
+    {
+      "id": 5,
+      "locale": "en",
+      "prompt": "Project inconsistent multi-view sheet onto house with rectangular atlas and an external-texturer geometry-only option.",
+      "expected_output": "Part/view calibration, correct UV origin, nonwrapped bleed, separate projection/atlas, authorial view conflict, proxy normal limits and coplanar contact cleanup.",
+      "assertions": [
+        "Part/view calibration, correct UV origin, nonwrapped bleed, separate projection/atlas, authorial view conflict, proxy normal limits and coplanar contact cleanup.",
+        "Names the input scope and preserves original source data while making only the requested correction.",
+        "Reports performed checks separately from unavailable visual or engine evidence."
+      ]
+    },
+    {
+      "id": 6,
+      "locale": "en",
+      "prompt": "A single ranger sheet contains front/side/back panels with different crops and an inconsistent cape width; a painted three-quarter concept disagrees. Build a 1.70 m asset, keep source art, no extra confirmations.",
+      "expected_output": "Original panel ledger, per-crop pixel boxes/hashes, explicit scale/ground/axis/window, authoritative measurements and inferred sides; calibrated blockout and current image comparison before detail.",
+      "assertions": [
+        "Does not assume equal image height means equal world scale.",
+        "Resolves source conflicts explicitly and preserves deviation.",
+        "Does not treat photo projection as cardinal orthographic world registration.",
+        "Writer captures; reviewer remains read-only."
+      ]
+    },
+    {
+      "id": 7,
+      "locale": "en",
+      "prompt": "Both independent bbox-normalized masks score 1 but the candidate is half height and shifted. Run the packaged helper, with no dependency installs; saved explicit PGM masks and source hashes are available.",
+      "expected_output": "Fresh hash-bound normalized and registered reports with different scope; mismatched calibration rejected rather than silently resampled.",
+      "assertions": [
+        "Uses standard-library PGM/JSON path.",
+        "Reports measured, not beauty pass.",
+        "Registered requires matching cardinal orthographic windows.",
+        "Rejects stale inputs and existing output."
+      ]
     }
   ]
 }

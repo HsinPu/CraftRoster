@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.5.0 — 2026-11-04
+
+Minor release: integrate the complete four-source game workflow, including detailed reference-based Blender production, game design and Godot implementation.
+
+- Add standalone `game-design` and `godot-development` Skills with focused references and eval cases, plus `game-designer` and `godot-developer` Agents. The game purpose now includes 110 Skills and four roles; the 108 Blender packages and their required installation closures remain intact.
+- Expand fixed source coverage to 126 canonical entries and all 443 files across EL4CTEO, arjun988, majidmanzarpour and setcodes. Record procedural adaptations by source path/blob and local resource; classify repository metadata separately from executable capability.
+- Add detailed recipes for multi-view calibration, measured character construction, bake branches, semantic delivery comparison, generated-asset reduction, vehicle shells, projection atlases, Mixamo repair, neutral previews and FBX packaging. Preserve complete source notices and correct unsafe or project-specific upstream assumptions.
+- Add explicit-mask comparison with separate normalized and calibrated registered modes, and append-only GLB base-color replacement preserving shared texture users and original binary data. Add host regressions and CI checks; native trials and evidence limits are recorded separately.
+- Prevent Python helper-test bytecode from entering Git or npm payloads; verify exclusion with a packaging sentinel and reject cached Python files in the package gate.
+- Update catalogs, adapters, installation/update coverage, provenance, packaging and GitHub documentation: 404 Skills, 242 Agents, 18 Skill source categories and 17 installation purposes.
+
 ## 1.4.0 — 2026-11-04
 
 Minor release: expand the Blender suite from 10 coordinators into 108 focused production, style, world and game-genre Skills.

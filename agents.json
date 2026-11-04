@@ -1,9 +1,9 @@
 {
   "version": "3.0.0",
-  "updated": "2026-11-04T07:21:28.426Z",
-  "total": 240,
+  "updated": "2026-11-04T08:46:21.830Z",
+  "total": 242,
   "categories": 31,
-  "uniqueRoles": 240,
+  "uniqueRoles": 242,
   "agents": [
     {
       "id": "accessibility-expert",
@@ -5982,6 +5982,58 @@
       }
     },
     {
+      "id": "game-designer",
+      "name": "game-designer",
+      "role": "game-designer",
+      "description": "Develops or reviews game concepts, player rules, progression, economies, levels and playtest plans. Use for implementable game design documents and evidence-based iteration across engines.",
+      "category": "product-management",
+      "author": "HsinPu",
+      "source": "HsinPu/CraftRoster",
+      "license": "Apache-2.0",
+      "model": "inherit",
+      "permission": "workspace-write",
+      "skills": [
+        "game-design",
+        "godot-development",
+        "blender-development"
+      ],
+      "skillDependencies": [
+        {
+          "name": "game-design",
+          "kind": "recommended",
+          "reason": "Supplies concrete design, document, system and playtest procedures."
+        },
+        {
+          "name": "godot-development",
+          "kind": "conditional",
+          "when": "The requested scope includes implementing or checking a Godot project.",
+          "reason": "Connects accepted game rules to a Godot prototype."
+        },
+        {
+          "name": "blender-development",
+          "kind": "conditional",
+          "when": "The task includes producing or revising Blender assets.",
+          "reason": "Translates approved camera, interaction and readability requirements into an asset brief."
+        }
+      ],
+      "tags": [
+        "game-design",
+        "game-systems",
+        "playtesting"
+      ],
+      "path": "agents/game-designer.md",
+      "references": {
+        "repo": "setcodes/gamedev-skills",
+        "paths": [
+          "skills/game-designer/SKILL.md",
+          "skills/game-designer/references/system-design.md",
+          "skills/game-designer/references/playtesting.md",
+          "skills/game-designer/references/teaching-feedback.md"
+        ],
+        "tree": "6f9abcb6086bf426c4f8487f8fb91d3614a4ffce"
+      }
+    },
+    {
       "id": "gis-analyst",
       "name": "gis-analyst",
       "role": "gis-analyst",
@@ -6036,6 +6088,56 @@
           "gis/gis-analyst.md"
         ],
         "tree": "33b57872e33785b1d225606c513945ca5c52c8c0"
+      }
+    },
+    {
+      "id": "godot-developer",
+      "name": "godot-developer",
+      "role": "godot-developer",
+      "description": "Implements and diagnoses Godot gameplay, scenes, Resources, controls, UI, saves and builds in the project's chosen engine version. Use for scoped native-engine development and honest runtime verification.",
+      "category": "development",
+      "author": "HsinPu",
+      "source": "HsinPu/CraftRoster",
+      "license": "Apache-2.0",
+      "model": "inherit",
+      "permission": "workspace-write",
+      "skills": [
+        "godot-development",
+        "game-design",
+        "blender-godot-export"
+      ],
+      "skillDependencies": [
+        {
+          "name": "godot-development",
+          "kind": "recommended",
+          "reason": "Provides project discovery, state ownership, gameplay implementation and engine verification."
+        },
+        {
+          "name": "game-design",
+          "kind": "conditional",
+          "when": "The task also asks for game design or materially changes an unspecified mechanic.",
+          "reason": "Resolves unsettled player rules and defines prototype acceptance."
+        },
+        {
+          "name": "blender-godot-export",
+          "kind": "conditional",
+          "when": "The authorized change includes preparing a Blender asset for Godot.",
+          "reason": "Provides the asset-side Godot delivery contract and reimport checks."
+        }
+      ],
+      "tags": [
+        "godot",
+        "gameplay",
+        "gdscript"
+      ],
+      "path": "agents/godot-developer.md",
+      "references": {
+        "repo": "setcodes/gamedev-skills",
+        "paths": [
+          "skills/godot-gamedev/SKILL.md",
+          "skills/godot-gamedev/references/verification.md"
+        ],
+        "tree": "6f9abcb6086bf426c4f8487f8fb91d3614a4ffce"
       }
     },
     {

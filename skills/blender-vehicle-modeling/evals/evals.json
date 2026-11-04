@@ -22,6 +22,17 @@
         "Preserves editable source/system boundaries.",
         "Does not equate appearance with flight validation."
       ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Optimize open-shell AI sedan with fused tires and missing rear lamps for top-down and low chase camera.",
+      "expected_output": "Do not voxel remesh; camera-domain visibility, consistent ray-family cage, bounded misses/shrinkwrap and explicit missing-part inference; validate both camera domains.",
+      "assertions": [
+        "Do not voxel remesh; camera-domain visibility, consistent ray-family cage, bounded misses/shrinkwrap and explicit missing-part inference; validate both camera domains.",
+        "Names the input scope and preserves original source data while making only the requested correction.",
+        "Reports performed checks separately from unavailable visual or engine evidence."
+      ]
     }
   ]
 }

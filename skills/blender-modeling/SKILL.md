@@ -39,3 +39,5 @@ Keep source objects and unrelated scene contents intact. Resolve explicit object
 Use other discipline Skills only when the deliverable needs their work; they are not implicit execution permissions.
 
 [Attribution and license](references/upstream-notice.md).
+
+For the corresponding production stage, read the detailed [measured categories](references/majid-measured-categories.md) procedure. Keep its measurements, failure cases and acceptance evidence tied to the current asset revision.

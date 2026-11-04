@@ -33,3 +33,7 @@ Use the relevant specialist only when its operation is needed: `blender-pbr-mate
 Deliver the editable source, concrete settings and dependency paths, actual output inventory, inspected visual evidence, measurements and corrections. Distinguish executed technical checks, actual image/motion review and destination acceptance. Name remaining limitations and the next required evidence without implying an unrun workflow passed.
 
 See [upstream provenance and license notices](references/upstream-notice.md). Evaluation cases are definitions in [evals/evals.json](evals/evals.json), not claims of completed model or Blender runs.
+
+Read [Portable neutral lighting and reproducible material previews](references/setcodes-neutral-preview.md) when that branch is requested. It specifies inputs, construction or repair steps, failure handling and the evidence required for acceptance.
+
+For the corresponding production stage, read the detailed [capture debug](references/majid-capture-debug.md) procedure. Keep its measurements, failure cases and acceptance evidence tied to the current asset revision.

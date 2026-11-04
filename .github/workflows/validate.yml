@@ -84,6 +84,12 @@ jobs:
       - name: Test Blender batch failures without native runtime
         run: python3 tests/blender-expansion-helpers.test.py
 
+      - name: Test calibrated reference masks without image dependencies
+        run: python3 tests/blender-reference-masks.test.py
+
+      - name: Test GLB basecolor replacement and payload preservation
+        run: python3 tests/blender-glb-basecolor.test.py
+
       - name: Validate Skill review registry
         run: npm run validate:skill-review
 

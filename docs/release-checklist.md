@@ -43,6 +43,11 @@ npm run test:skill-review
 npm run test:skill-originality
 npm run test:skill-sources
 npm run test:agent-references
+npm run validate:blender-coverage
+npm run test:blender-coverage
+npm run test:blender-series
+npm run test:blender-reference-masks
+npm run test:blender-glb-basecolor
 npm run test:opencode-config
 npm run test:skill-contracts
 npm run test:package
@@ -55,15 +60,15 @@ npm run test:package
 <!-- CRAFTROSTER_RELEASE_BASELINE_START -->
 | Evidence | Current baseline |
 |---|---:|
-| Skills | 402 |
-| Agents | 240 |
-| Skill categories | 17 |
+| Skills | 404 |
+| Agents | 242 |
+| Skill categories | 18 |
 | Agent coverage categories | 31／31 |
-| Required eval packages | 233 |
-| Output case definitions／assertions | 637／2404 |
+| Required eval packages | 235 |
+| Output case definitions／assertions | 664／2503 |
 | Routing case definitions | 141 |
-| Referenced Skills／repositories／paths | 178／26／475 |
-| Provenance lock mappings | 178 Skills／26 repositories／466 path entries |
+| Referenced Skills／repositories／paths | 180／26／513 |
+| Provenance lock mappings | 180 Skills／26 repositories／518 path entries |
 <!-- CRAFTROSTER_RELEASE_BASELINE_END -->
 
 這個區塊由 `npm run generate:release-baseline` 從 catalog、來源與評估案例定義產生，`npm run validate` 檢查一致性。案例數量不是實際模型任務成功數；routing self-report、實際 Skill activation 與 task outcome 必須另附執行證據。改動 Skills 或 evals 後請重新產生此區塊，不要更新歷史審查報告。

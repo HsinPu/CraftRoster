@@ -33,3 +33,7 @@ For target-engine acceptance, actually import the final files and inspect repres
 Use the validation package's [delivery evidence checker](../blender-asset-validation/references/helper-contract.md) when maintaining machine-readable evidence. It checks file/revision consistency, not visual beauty. After any repair, regenerate changed outputs and their evidence instead of editing a stale report to pass.
 
 Return the source, exports, textures, manifest and actual check outcomes with unverified targets. See [source notice](references/upstream-notice.md).
+
+Read [Scoped FBX packaging, texture channels and semantic roundtrip checks](references/setcodes-fbx-package.md) when that branch is requested. It specifies inputs, construction or repair steps, failure handling and the evidence required for acceptance.
+
+For the corresponding production stage, read the detailed [semantic roundtrip](references/majid-semantic-roundtrip.md) procedure. Keep its measurements, failure cases and acceptance evidence tied to the current asset revision.

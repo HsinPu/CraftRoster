@@ -39,3 +39,5 @@ Keep source objects and unrelated scene contents intact. Resolve explicit object
 Use other discipline Skills only when the deliverable needs their work; they are not implicit execution permissions.
 
 [Attribution and license](references/upstream-notice.md).
+
+Read [Measured hard-surface reconstruction and isolated surface baking](references/setcodes-source-rebuild.md) when that branch is requested. It specifies inputs, construction or repair steps, failure handling and the evidence required for acceptance.

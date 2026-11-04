@@ -25,4 +25,6 @@ Conditional companions: `blender-collision-proxies`, `blender-lod-pipeline`, `bl
 
 Use [the evaluation definitions](evals/evals.json) as realistic test inputs; their presence is not a passed test. Deliver current source and requested products, relevant versions/settings, exact files and actual check outcomes. Never infer visual approval or target behavior from a successful process or file write.
 
+Continue with the optional `godot-development` Skill when the requested work includes gameplay, scenes, Resources or engine debugging. Asset-side export and reimport remain this package's responsibility; a successful import does not establish playable behavior.
+
 See [source attribution and full MIT notice](references/upstream-notice.md).

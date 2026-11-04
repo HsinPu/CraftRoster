@@ -21,10 +21,12 @@ for (let i = 2; i < process.argv.length; i++) {
 }
 assert(['powershell', 'bash'].includes(options.shell));
 assert(!(process.platform === 'win32' && options.shell === 'bash'), 'Use native Linux/macOS for Bash');
-const roles = ['blender-artist', 'blender-asset-reviewer'].sort();
+const roles = ['blender-artist', 'blender-asset-reviewer', 'game-designer', 'godot-developer'].sort();
 const json = p => JSON.parse(fs.readFileSync(path.join(root, p), 'utf8'));
 const catalog = json('scripts/data/skill-catalog.json').skills;
 const names = Object.keys(catalog).filter(name => catalog[name].category === 'blender-creation').sort();
+const gameNames = ['game-design', 'godot-development'];
+const suiteNames = [...names, ...gameNames].sort();
 const bundle = json('scripts/data/install-bundles.json').bundles.find(b => b.id === 'game-development');
 let count = 0;
 function test(label, action) { action(); count++; console.log(`PASS ${label}`); }
@@ -36,12 +38,20 @@ function closure(name, seen = new Set()) {
   for (const edge of required(name)) closure(edge.name, seen);
   return seen;
 }
-test('game purpose directly contains all 108 Blender Skills and two roles', () => {
+test('game purpose contains 108 Blender Skills, two standalone game Skills and four roles', () => {
   assert(bundle);
   assert.equal(names.length, 108);
-  assert.deepEqual([...bundle.skills].sort(), names);
+  assert.deepEqual([...bundle.skills].sort(), suiteNames);
   assert.deepEqual([...bundle.agents].sort(), roles);
   for (const name of names) assert.equal(catalog[name].category, 'blender-creation');
+  for (const name of gameNames) assert.equal(catalog[name].category, 'game-development');
+});
+
+test('game design and Godot remain independently installable', () => {
+  for (const name of gameNames) {
+    assert.deepEqual([...closure(name)], [name]);
+    assert(catalog[name].routes.some(route => route.name === 'blender-development' && route.kind === 'related'));
+  }
 });
 test('foundation is standalone and specialists install shared resources without expanding every branch', () => {
   assert.deepEqual(required('blender-development'), []);
@@ -53,12 +63,12 @@ test('foundation is standalone and specialists install shared resources without 
     assert.deepEqual([...closure(name)].sort(), expected.sort());
   }
 });
-test('bundle Agent support stays within Blender and reviewer retains read-only permissions', () => {
+test('bundle Agent support stays within game production and reviewer retains read-only permissions', () => {
   for (const role of roles) {
     const agent = readAgent(path.join(root, 'agents', `${role}.md`));
-    assert.equal(agent.fields.permission, role === 'blender-artist' ? 'workspace-write' : 'read-only');
+    assert.equal(agent.fields.permission, role === 'blender-asset-reviewer' ? 'read-only' : 'workspace-write');
     for (const edge of agent.skillDependencies.filter(d => ['required', 'recommended'].includes(d.kind)))
-      for (const name of closure(edge.name)) assert(names.includes(name), `Default support pulls unrelated ${name}`);
+      for (const name of closure(edge.name)) assert(suiteNames.includes(name), `Default support pulls unrelated ${name}`);
   }
   const toml = fs.readFileSync(path.join(root, 'adapters/codex/blender-asset-reviewer.toml'), 'utf8');
   assert.match(toml, /sandbox_mode = "read-only"/);
@@ -115,7 +125,7 @@ if (!options.definitions) {
       assert.equal(hash(path.join(destination, name, rel)), hash(path.join(source, rel)), `${name}/${rel}`);
   }
   try {
-    for (const name of ['blender-development', 'blender-modeling', 'blender-export', 'blender-godot-export', 'blender-visual-review'])
+    for (const name of ['blender-development', 'blender-modeling', 'blender-export', 'blender-godot-export', 'blender-visual-review', ...gameNames])
       test(`${options.shell}: isolated ${name} installs exactly its resource closure`, () => {
         const project = path.join(temporary, name); install(project, 'skill', name);
         const dest = path.join(project, '.agents/skills');
@@ -129,8 +139,8 @@ if (!options.definitions) {
       fs.writeFileSync(path.join(project, 'user.txt'), 'keep');
       install(project, 'bundle', 'game-development');
       const dest = path.join(project, '.agents/skills');
-      assert.deepEqual(fs.readdirSync(dest).sort(), names);
-      for (const name of names) matches(name, dest);
+      assert.deepEqual(fs.readdirSync(dest).sort(), suiteNames);
+      for (const name of suiteNames) matches(name, dest);
       const agentDir = path.join(project, '.codex/agents');
       assert.deepEqual(fs.readdirSync(agentDir).filter(n => n.endsWith('.toml')).sort(), roles.map(n => `${n}.toml`));
       for (const role of roles) assert.equal(hash(path.join(agentDir, `${role}.toml`)), hash(path.join(root, 'adapters/codex', `${role}.toml`)));

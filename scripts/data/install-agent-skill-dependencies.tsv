@@ -464,10 +464,16 @@ gallery-researcher	ai-image-prompts-skill	conditional	The user supplies or choos
 gallery-researcher	design-consultation	conditional	The visual-reference brief specifically concerns web interface visual direction.	Supports gallery-researcher with web interface visual direction before implementation.
 gallery-researcher	summary-ops	optional	-	An opt-in extension of gallery-researcher provides faithful condensation of supplied source text with preserved uncertainty and attribution.
 gallery-researcher	web-research-ops	recommended	-	Supports gallery-researcher with current primary sources, dates, contradictions, and attributable evidence.
+game-designer	blender-development	conditional	The task includes producing or revising Blender assets.	Translates approved camera, interaction and readability requirements into an asset brief.
+game-designer	game-design	recommended	-	Supplies concrete design, document, system and playtest procedures.
+game-designer	godot-development	conditional	The requested scope includes implementing or checking a Godot project.	Connects accepted game rules to a Godot prototype.
 gis-analyst	data-organization-system	conditional	The scope designs a reusable taxonomy, metadata, retention, or retrieval system beyond one report.	Supports gis-analyst with a durable taxonomy, metadata, lifecycle, retention, and retrieval system.
 gis-analyst	database-design	conditional	Schema, persistent data integrity, storage ownership, or migration design is in scope.	Supports gis-analyst with logical schemas, integrity constraints, access patterns, and migration design.
 gis-analyst	python-data-engineering	conditional	The analysis or pipeline implements dataset transformations in Python.	Supports gis-analyst with reproducible Python dataframe or dataset transformation with data checks.
 gis-analyst	testing-strategy	recommended	-	Supports gis-analyst with risk-based test levels, fixtures, boundaries, and meaningful coverage.
+godot-developer	blender-godot-export	conditional	The authorized change includes preparing a Blender asset for Godot.	Provides the asset-side Godot delivery contract and reimport checks.
+godot-developer	game-design	conditional	The task also asks for game design or materially changes an unspecified mechanic.	Resolves unsettled player rules and defines prototype acceptance.
+godot-developer	godot-development	recommended	-	Provides project discovery, state ownership, gameplay implementation and engine verification.
 golang-pro	code-change-workflow	recommended	-	Supports golang-pro with pre-edit ownership, call-path, compatibility, and verification inspection.
 golang-pro	observability-engineering	conditional	Service objectives, telemetry, operational diagnostics, or monitoring design are in scope.	Supports golang-pro with service objectives, low-cardinality telemetry, diagnostics, and alert validation.
 golang-pro	security-scanning	conditional	Authorized automated scanner configuration, existing scan evidence, or quality-gate triage is needed.	Supports golang-pro with authorized scanner configuration, baselines, result triage, and security quality gates.

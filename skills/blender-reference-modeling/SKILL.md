@@ -28,3 +28,9 @@ Read the shared [asset contract](../blender-development/references/asset-contrac
 Deliver the reference mapping, exact revision and comparison images, measured deviations, inferred features and remaining evidence gaps. Keep the source references and editable master. A similarity metric supports diagnosis; it does not grant visual approval or establish engine behavior.
 
 See [source attribution](references/upstream-notice.md).
+
+Read [Per-view projection, clean atlas baking and contact repair](references/setcodes-projection-atlas.md) when that branch is requested. It specifies inputs, construction or repair steps, failure handling and the evidence required for acceptance.
+
+For the corresponding production stage, read the detailed [reference pipeline](references/majid-reference-pipeline.md) procedure. Keep its measurements, failure cases and acceptance evidence tied to the current asset revision.
+
+For the corresponding production stage, read the detailed [mask comparison](references/majid-mask-comparison.md) procedure. Keep its measurements, failure cases and acceptance evidence tied to the current asset revision.

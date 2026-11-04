@@ -1,0 +1,89 @@
+{
+  "skill_name": "godot-development",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Review only: after restarting our Godot 4 scene, each hit deals damage twice. The scene file connects hit, and _ready also creates a bound connection. An autoload survives restarts. Give a diagnosis and regression plan; do not edit files or run the project.",
+      "expected_output": "Evidence-based hypotheses tracing emitters, callables, instance lifetime and surviving work, with a scoped scenario.",
+      "assertions": [
+        "Preserves read-only scope and does not execute imports.",
+        "Inspects serialized/runtime connection paths, callable identity and autoload lifetime rather than claiming the cause is confirmed.",
+        "Does not promise that is_connected on one callable prevents every duplicate path.",
+        "Proposes repeated-restart and one-hit/one-effect checks with explicit evidence limits."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Patch these self-contained Godot 4 snippets as text, preserving the shared base_damage definition while isolating each enemy runtime health and inventory. InventoryData.gd: extends Resource; class_name InventoryData; @export var items: Array[String] = []. Stats.gd: extends Resource; class_name Stats; @export var base_damage: int = 5; @export var health: int = 100; @export var inventory: InventoryData. Enemy.gd: extends Node; @export var stats: Stats; func hit(amount: int): stats.health -= amount. Two Enemy instances reference the same Stats .tres, whose inventory is populated, and both need independently mutable items. No engine binary is available; do not install one. Explain your ownership choice and regression scenario.",
+      "expected_output": "A scoped instance-state repair and meaningful two-consumer verification plan, with static-only evidence clearly reported.",
+      "assertions": [
+        "Separates shared immutable definitions from per-enemy mutable state.",
+        "Addresses nested Resource ownership rather than relying on an unexamined shallow copy.",
+        "Preserves shared base damage semantics.",
+        "Does not claim a native runtime pass or install an engine."
+      ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Explain a Godot 4 CharacterBody3D movement bug: we set velocity = direction * speed * delta, then call move_and_slide from _physics_process. Faster frame rates seem slower. Do not modify files.",
+      "expected_output": "A version-aware explanation of rate versus displacement with a discriminating follow-up.",
+      "assertions": [
+        "Explains that desired velocity should be a rate and move_and_slide integrates the physics step.",
+        "Distinguishes acceleration integration from multiplying the complete desired velocity by delta.",
+        "Uses official version-matched API evidence for uncertain details.",
+        "Does not claim feel or runtime verification from source alone."
+      ]
+    },
+    {
+      "id": 4,
+      "locale": "en",
+      "prompt": "Our Godot C# project is pinned to an older engine in CI. Only a different standard GDScript editor is available here. Please review the scene change and tell me whether --check-only passing would prove this build works. No upgrades.",
+      "expected_output": "A bounded inspection separating language/version/tool limitations from available checks.",
+      "assertions": [
+        "Does not open/import/save with a material version mismatch or upgrade the project.",
+        "States config_version is not sufficient engine-version evidence.",
+        "States GDScript check-only does not compile C# or prove scene/runtime behavior.",
+        "Identifies the actual project .NET workflow and missing matching engine evidence."
+      ]
+    },
+    {
+      "id": 5,
+      "locale": "en",
+      "prompt": "Repair this Godot 4 pause-input design as code excerpts and scene-wiring instructions; do not change files. Project actions weapon_fire and pause_toggle are remappable and support keyboard/controller. Player._process polls Input.is_action_just_pressed(\"weapon_fire\") and shoots without checking paused/menu state. PauseMenu (Control, with a Resume Button) consumes no input, clears focus when hidden, and only hides itself when Resume is pressed; no focus is assigned on show. Clicking Resume also fires the weapon and controller focus disappears on reopen. Preserve the theme, use the intended pause rule, and explain relevant verification.",
+      "expected_output": "An integrated input/focus repair in the owning flow with device-specific verification boundaries.",
+      "assertions": [
+        "Uses Input Map and existing event/focus routing instead of hard-coded keys.",
+        "Checks event consumption and repeated pause/resume/focus restoration.",
+        "Preserves existing theme and authorized scope.",
+        "Separates synthetic action tests from actual controller/keyboard interaction and visual review."
+      ]
+    },
+    {
+      "id": 6,
+      "locale": "en",
+      "prompt": "Assess these logs: headless import exit 0; a smoke scene ran --quit-after 120 with no assertions; release export command exit 0 but output path is empty. Can I say runtime, visual and target-platform QA all passed? No further execution is available.",
+      "expected_output": "A clear evidence-level report rejecting unsupported conclusions and specifying missing checks.",
+      "assertions": [
+        "Reports import as import evidence and the smoke as bounded execution without behavioral assertions.",
+        "States quit-after is iterations, not 120 seconds.",
+        "Treats missing export artifact as incomplete/failed delivery despite exit 0.",
+        "Does not claim render, audio, physical input or target-runtime QA."
+      ]
+    },
+    {
+      "id": 7,
+      "locale": "en",
+      "prompt": "Design an implementation and test plan for online reward claims: two network peers may press claim simultaneously, the server should grant exactly one reward. We only have a single-instance local test now. Do not add plugins or publish anything.",
+      "expected_output": "An authority-aware plan preserving existing transport, atomic reward ownership semantics and honest peer-test limits.",
+      "assertions": [
+        "Distinguishes network authority from local controller assignment.",
+        "Defines server-side eligibility/ownership and duplicate-claim handling.",
+        "Requires relevant multi-peer behavior evidence before claiming synchronization correctness.",
+        "Does not install MCP/plugins or publish a build."
+      ]
+    }
+  ]
+}

@@ -23,6 +23,17 @@
         "Preserves source rig and does not infer engine compatibility from generic bone names.",
         "Does not label a hypothetical plan, a structural assertion or unrun workflow as successful execution."
       ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Repair Mixamo chin on translated/rotated character and optionally strip crowd fingers.",
+      "expected_output": "Head-local jaw mask, preserve mask groups/actions, actual namespace, hand weight merge before bone deletion and all affected clips/attachments rechecked; no website upload without authority.",
+      "assertions": [
+        "Head-local jaw mask, preserve mask groups/actions, actual namespace, hand weight merge before bone deletion and all affected clips/attachments rechecked; no website upload without authority.",
+        "Names the input scope and preserves original source data while making only the requested correction.",
+        "Reports performed checks separately from unavailable visual or engine evidence."
+      ]
     }
   ]
 }
