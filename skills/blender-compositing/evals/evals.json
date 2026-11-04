@@ -1,0 +1,28 @@
+{
+  "skill_name": "blender-compositing",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create a reversible grade and emission glow from multilayer EXRs, retaining a scene-linear archive.",
+      "expected_output": "An editable, scoped result with discipline-specific settings, actual evidence and stated unverified gates.",
+      "assertions": [
+        "Handles premultiplication and avoids adding emission twice.",
+        "Uses Blender 5 compositor group output and inspected socket APIs.",
+        "Verifies files, color transforms and visual comparison rather than graph presence."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "A composite has dark alpha fringes and doubled glow after mixing emission into Combined. Correct it.",
+      "expected_output": "A diagnosis tied to the supplied failure, preserved sources, a concrete correction and repeated affected acceptance checks.",
+      "assertions": [
+        "Handles premultiplication and avoids adding emission twice.",
+        "Uses Blender 5 compositor group output and inspected socket APIs.",
+        "Verifies files, color transforms and visual comparison rather than graph presence.",
+        "Does not label a hypothetical plan, a structural assertion or unrun workflow as successful execution."
+      ]
+    }
+  ]
+}

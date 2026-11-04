@@ -370,104 +370,1084 @@
       "runtime_status": "not_run"
     },
     {
+      "name": "blender-addon-development",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "2042c511bcd05caa6e5b33ec1b6492edaca943c8526a6a0579b9d9a0e342401d"
+    },
+    {
+      "name": "blender-analog-found-footage-horror",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "7a8c6916c0a1fa8d57184401d61d0e963480428fa104ae14805fad6b79ae49d9"
+    },
+    {
+      "name": "blender-animation",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "clip/FPS/root contracts; blocking and locomotion/combat/mechanical timing; Blender5 action slots/channelbags and NLA isolation",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "d7f75d7b3565ba8498d57ecdae0e1e534cde70cc8c5373c3dfacacb950166eb4"
+    },
+    {
+      "name": "blender-anime-style",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "c3f64a0442d11c8735d680bd62f72057e11debab21e69181a46de08ba30d0bf3"
+    },
+    {
+      "name": "blender-apocalypse-worlds",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Post-apocalyptic wasteland; Zombie city and human response; Alien invasion and unfamiliar damage",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "84aa497ddf79c5150f529cda98aa1d3cf57c77da2e10aa37b32cdd0dc4b30d6a"
+    },
+    {
+      "name": "blender-archviz",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "ee6af3c1ff6c44e0be10f19f3b3396d1aff106acd1166f4d45e063b5396ca798"
+    },
+    {
       "name": "blender-asset-validation",
       "category": "blender-creation",
       "decision": "keep",
       "review_depth": "semantic-review",
-      "reason": "Reviewed Blender scope, resource dependencies, asset ownership and separate technical/visual acceptance against pinned references.",
-      "next_action": "Exercise isolated creation and review cases; keep current source, renders and target-engine evidence bound to the delivered revision.",
-      "entry_sha256": "1a0b5b8d4316f9f4605dfe23508b05d18fbb015134cd37faf465dd7b645b6e68",
-      "runtime_status": "not_run"
+      "reason": "Evaluated geometry, explicit contract checks and file evidence through documented helper schema; Topology, UV, materials, skinning and motion defect diagnosis with sampling limitations; Revision-bound reports and independent visual/engine acceptance boundaries",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "9aa3fb3a2beb3925a3c6cac80104beec15f61159c5e6367e6db7c4df709306eb"
+    },
+    {
+      "name": "blender-biome-worlds",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Underwater reef, open seabed and submerged structures; Desert dunes, rocky desert and oasis transitions; Arctic snowfield, glacier and exposed ice",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "09dfa1831a22aa1e9dbc8724a67e9f13a764a12948ec1f7abd5d42a6186de77d"
+    },
+    {
+      "name": "blender-body-horror-style",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "df5ff21e1a747f775a84882e324a205649e3aa7d155d9ec0a7837f19c8197354"
+    },
+    {
+      "name": "blender-brutalist-mood",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "6179eaa9e4d8fd887f12d479b12daf212849586f392837036efc101b3b26d10e"
+    },
+    {
+      "name": "blender-camera-cinematography",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "sensor/aspect/perspective matching; camera aim/parent hierarchy; framing through evaluated motion",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "e7c84a198bdde7517701e453c6b290d64158b69df5049a320fe92891eaf9e437"
+    },
+    {
+      "name": "blender-cartoon-style",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "af14576cfdb402335a9da1b304cae4f06ce107601238efb3888c7706f09641ee"
+    },
+    {
+      "name": "blender-character-archetypes",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Elf and elongated silhouettes; Dwarf and compact heavy silhouettes; Orc and goblin alternatives",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "cd3fc8f083899c2da129aa7c4b4b1df0326f6906a2841fae11fbb0a434b962f8"
+    },
+    {
+      "name": "blender-character-modeling",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "20090c16e623fc5cefa86394f4c1e041ee43f80a877586b8728d5b0ecdac8295"
+    },
+    {
+      "name": "blender-character-rigging",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "metarig anatomy/roll/bone collections; deform/control/mechanism ownership; IK/FK and pole singularity",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "32627813ba4049f9ea6bdb200dbb31fe4c6fd83ea3ceba5f85eff0140cd47e97"
+    },
+    {
+      "name": "blender-chibi-style",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "6a2ea2126d12782b5c69897ccd73a955ae29c65c97c4de992cecb1cd7b97f5e9"
+    },
+    {
+      "name": "blender-cloth-simulation",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "representation selection; mesh/pins/modifier order; classic cloth parameters",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "fda66cba81ce7b49f6d2b5981fc29c820bcfd0410f8dcd4e90746c69951c71ae"
+    },
+    {
+      "name": "blender-clothing",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "fitted extraction and loose pattern choice; ease/thickness/UV construction; weight transfer and layers",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "034fa9a3827f2948cd25a7d9b55f549ec9cb12b4aadaf413e0b44d6a6e86a076"
+    },
+    {
+      "name": "blender-collision-proxies",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "47390abe4b814de392f80360ad96baa1f5bf263081ad5d11ee2e2843b615d2a0"
+    },
+    {
+      "name": "blender-comic-book-style",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "1752724fa73119770c7c0a14db6c5bdb61522da30664485216679ec389e35a70"
+    },
+    {
+      "name": "blender-compositing",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "scene-linear/alpha contract; Blender5 compositing group output; version-inspected glare sockets",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "4dd5cbca8b6691ab856148020a47a0a82432560b38b95f0143c831df85a7c2fc"
+    },
+    {
+      "name": "blender-cosmic-eldritch-horror",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "4c5c3fa374818c50352f65e9a347ccbeac9a2e2882fb69aef327090ec2692438"
+    },
+    {
+      "name": "blender-cozy-wholesome-mood",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "442463cf7dbde21f77b6b7e3d8c82b16c6fbdbfed5ddc77ceac2e8c562366ed7"
+    },
+    {
+      "name": "blender-creature-modeling",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "6b35509b2379133707a2a3f41c8c86ec1ac6fac5ccd1c7caf4384bcc312ed15c"
+    },
+    {
+      "name": "blender-dark-gritty-mood",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "5ec2dbbd88daa310b56b005be1965bb689662ec9f36f910d703089b4ddc9aade"
     },
     {
       "name": "blender-development",
       "category": "blender-creation",
       "decision": "keep",
       "review_depth": "semantic-review",
-      "reason": "Reviewed Blender scope, resource dependencies, asset ownership and separate technical/visual acceptance against pinned references.",
-      "next_action": "Exercise isolated creation and review cases; keep current source, renders and target-engine evidence bound to the delivered revision.",
-      "entry_sha256": "9d19da706c94723865d89741eaa574fad4b5a593b67e2feeaa006a549d4f470a",
-      "runtime_status": "not_run"
+      "reason": "Production planning with task-specific routing and shared asset/revision contracts; Runtime/API discovery, scoped bpy context, shared datablocks and background execution; Style/world handoffs with separate technical, visual and engine evidence",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "25107554e78eee1040a31366ba86b82690a6aaf7344e868b02a8d82580ef17f5"
+    },
+    {
+      "name": "blender-dream-surreal-mood",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "1158f69603d6ea84ec2ad1cfcc5b4acb3fff025f73f4bc64df9811546c10a962"
+    },
+    {
+      "name": "blender-dream-weirdcore-style",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "d4592a175d88b24773197d56ea48be843c041ed50f4dad373c3be69a018df802"
+    },
+    {
+      "name": "blender-environment-art",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "bb88d82618d7e17170a89dd3bd5d924edd470fd2bd00efb4b7261741f7c224ac"
+    },
+    {
+      "name": "blender-environment-kits",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "62a4c9cf7c2a6323bf1c50331f27a4ba95313272f7b881df0fdef07fe9c4b857"
     },
     {
       "name": "blender-export",
       "category": "blender-creation",
       "decision": "keep",
       "review_depth": "semantic-review",
-      "reason": "Reviewed Blender scope, resource dependencies, asset ownership and separate technical/visual acceptance against pinned references.",
-      "next_action": "Exercise isolated creation and review cases; keep current source, renders and target-engine evidence bound to the delivered revision.",
-      "entry_sha256": "8f8ac5aadf0c463ebfee95a3b0e78d287b86238d61f0149fece4073fef74b3a8",
-      "runtime_status": "not_run"
+      "reason": "Controlled object/texture/clip manifests and exporter operator validation; Fresh-process semantic roundtrip across dimensions, pivot, materials, skeleton and motion; Target-specific handoff, compression compatibility and reproducible delivery evidence",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "1e2358fab0bdeec3f4fa838273e7c48ddd0fe6eb09e2fbcaded2a93aedf06131"
+    },
+    {
+      "name": "blender-facial-shapekeys",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "schema/bones/morph selection; Basis/index preservation; semantic sculpt",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "2ec50497c23ec77707e9574aaef5941861cff85332f3f92c3e996d85e2c1d232"
+    },
+    {
+      "name": "blender-fantasy-worlds",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Medieval-inspired low magic; High fantasy and magical infrastructure; Dark fantasy, corruption and ruined grandeur",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "65f51b2222b5c5db978a2858584cccdd80444d99e0c28c70fd43d45c605174e2"
+    },
+    {
+      "name": "blender-folk-horror-style",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "c86ce2fd82c473c7a91c190eff82f937b8bf09c91c4d491897ae056333324133"
+    },
+    {
+      "name": "blender-frutiger-aero-style",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "9a87fbbfeb13ff854888de2ed2235d1c1bc838b93ddac5febf7df44fdaed16e7"
     },
     {
       "name": "blender-game-optimization",
       "category": "blender-creation",
       "decision": "keep",
       "review_depth": "semantic-review",
-      "reason": "Reviewed Blender scope, resource dependencies, asset ownership and separate technical/visual acceptance against pinned references.",
-      "next_action": "Exercise isolated creation and review cases; keep current source, renders and target-engine evidence bound to the delivered revision.",
-      "entry_sha256": "d6fbca732bed43749457c36172e46b2e5c8df9bd2a387fe7ccc80d8feb99e499",
-      "runtime_status": "not_run"
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "5dd0a63d99b9d6e57ba217641f3b00d2d6c0187667298566c336c0786f4f0411"
+    },
+    {
+      "name": "blender-genre-action-combat",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Lateral fighting game; Beat 'em up and depth-lane brawler; Hack-and-slash and free-camera melee",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "ec361358cd6be696bdc6d8d9e4fd4b68e13eab0b6dd9bda73d4c5ac0848a579a"
+    },
+    {
+      "name": "blender-genre-card-party-idle",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Card game and deck-builder table; Simultaneous party stage; Idle and incremental scene",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "9199cd24bc539c83d9e934fbb3f850274724cbcdc08535119d68a5149208d0a3"
+    },
+    {
+      "name": "blender-genre-metroidvania-roguelike",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Metroidvania persistent world and ability gates; Roguelike recombinable rooms; Roguelite persistent upgrades and run modifiers",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "39051010f18a7ee14fe4f610ec7f2728da948aefc273e46d79e07b6218ab9890"
+    },
+    {
+      "name": "blender-genre-narrative-vn",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Visual novel background plates; Interactive movie and branching shot set; Walking simulator and eye-height storytelling",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "d370038e0fff0ca3f507f13eaa6b449f519f99ce7386a1edcca9387d0bcb4766"
+    },
+    {
+      "name": "blender-genre-open-world-sandbox",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Exploration landmark hierarchy; Terrain chunks and biome borders; Sandbox construction kit",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "b29afcae74893b83a3520e9a7870fa29ff2016ef70d1f3bee503390c1f44629c"
+    },
+    {
+      "name": "blender-genre-puzzle-platformer",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Puzzle causality and reset; Side-view platformer; Three-dimensional platformer",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "84203760836818f430d8331fa2e86dbf97f7f760e77d446cef0b36ec28c0c445"
+    },
+    {
+      "name": "blender-genre-racing-sports",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Racing approach, bend and exit; Field sports; Court sports",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "b836a82ac54720861fbe0b6604dc549169e6dade58792a215c87dcd01f45d1fb"
+    },
+    {
+      "name": "blender-genre-rpg",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Shared region, equipment and rarity contract; JRPG theatrical regions and arrivals; CRPG high-camera interaction density",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "b2d123ccfb34fc7e03c87228666342ab398b9834cf9da2d561aada3bfffddc21"
+    },
+    {
+      "name": "blender-genre-shooter",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "First-person shooter (FPS); Third-person and cover shooter (TPS); Arena and bounded multiplayer space",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "e35197cccfe0d1adf91e8ecb33d722e8480bd8524914b825ad184cd94a6995df"
+    },
+    {
+      "name": "blender-genre-soulslike",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Monumental inhabited ruins; Vertical loops and remembered shortcuts; Rest landmark and safe-space contrast",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "e61a2ea0549d239dfb010eb1a0ae2fe837dd6ab8eaa3a8020f5a0334f93ffc9c"
+    },
+    {
+      "name": "blender-genre-stealth",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Shadow-lane infiltration; Social infiltration and access states; Vertical entry, vents and ledges",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "fe8a391a5d741fae253243d755c789699597608f6165922d00b7d904fe403713"
+    },
+    {
+      "name": "blender-genre-strategy-sim",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Real-time strategy (RTS); Turn-based strategy (square and hex); Tower defense",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "8a6391149e8721c848942fa06d2fb41aa4f132b8d43e6a2d84e90a37e2e04421"
+    },
+    {
+      "name": "blender-genre-survival",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Wilderness gathering; Crafting bench and camp shelter; Urban salvage and container language",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "383f325a0287f53faed27d3d80ef70579096da378800c5c4fc9bdb008bd4b0a4"
+    },
+    {
+      "name": "blender-geometry-nodes",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "6c0233311f7cc8976e92367cd52cef61dce7adac7dfd83291ffeb5f16348f9af"
+    },
+    {
+      "name": "blender-godot-export",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "dea22fd1af06f9b2e9932780768b1caee539da8aa9a9298fb2371b40d7f6f5b6"
+    },
+    {
+      "name": "blender-hair-grooming",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "surface/UV/rest contracts; guide flow and children density; bundled assets/interface discovery",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "5c9a91fa76f164e9e8b04d9c1371d8f96440928ad9aea9732473215d17a6df4d"
+    },
+    {
+      "name": "blender-hand-painted-style",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "078aab8ec365cc5477b28588650a74ef9cdd3646e5f759001b1126b98b7991b2"
+    },
+    {
+      "name": "blender-hard-surface",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "221a92cda6994c4ac840ed04220c6a0de138b4632226448fed788801158ca871"
+    },
+    {
+      "name": "blender-hd-2d-style",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "d345cbe94616b14c23273a476a4fa77cdbf275c5a8a353bf1997e961a69ae455"
+    },
+    {
+      "name": "blender-historical-worlds",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Western frontier and settled town; Pirate and maritime port; Japanese warrior-era setting and infiltration fiction",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "42934519df774df5b06a65b1aa0a8836c4fbf6ea98e4412e376b7b80bcc40273"
+    },
+    {
+      "name": "blender-horror-style",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "c171e9f35536133d42fe4cb3d06e56e6127a158e909afe8e1a48ef4931cd5577"
+    },
+    {
+      "name": "blender-indie-horror-aesthetics",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "7449ccff204de02b8b47dd1d5db175cc686218c31def2f8b5c0655a631ad23cc"
+    },
+    {
+      "name": "blender-isometric-style",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "f8a33f38484b5c0627a0260a2a3bd9394923c6ce03fab54050bb5589accd9712"
+    },
+    {
+      "name": "blender-lighting",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "studio key/fill/rim and power/distance; reflected softbox shape; HDRI world wiring/rotation",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "5d4fb5d3f302d74a75c49cf55dedc41a0d2176a936d799aa681f0a5a00aa7e3a"
+    },
+    {
+      "name": "blender-liminal-space-style",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "d4ad749d9c3f046995d2aaa625c7e6eb4c4fcd144d42aaa69c4a35f86331ff70"
+    },
+    {
+      "name": "blender-lod-pipeline",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "716d8b5489f3b021764f8f3c6225e315ad01012de4301cec72a70f975c3e2d66"
     },
     {
       "name": "blender-lookdev",
       "category": "blender-creation",
       "decision": "keep",
       "review_depth": "semantic-review",
-      "reason": "Reviewed Blender scope, resource dependencies, asset ownership and separate technical/visual acceptance against pinned references.",
-      "next_action": "Exercise isolated creation and review cases; keep current source, renders and target-engine evidence bound to the delivered revision.",
-      "entry_sha256": "448f85159763a223ca3a3f8601e84dbe5db9a1c62131dea17d09a6ed8fd613a8",
-      "runtime_status": "not_run"
+      "reason": "approved style/reference contract; neutral/beauty/gameplay views; camera/light/source ownership",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "590e0d52d4013702e2fc18f3cace9491dfe2ef065ce5b3b1f684040cc4fc3473"
+    },
+    {
+      "name": "blender-lowpoly-style",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "c9f8b762dd4ffd908d25c266e14ce570683ba674b4408cd00ca3331058bec110"
+    },
+    {
+      "name": "blender-manga-style",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "741ead489b3da8ae620a4f32b57f69463dc349b18f1565dcb89353062595fd1d"
+    },
+    {
+      "name": "blender-mascot-puppet-horror",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "35bf7fa12eda7a529e9e7fcbb6b824a0c63b3da73373ffdf2ca67b587c0a256a"
     },
     {
       "name": "blender-materials-uv",
       "category": "blender-creation",
       "decision": "keep",
       "review_depth": "semantic-review",
-      "reason": "Reviewed Blender scope, resource dependencies, asset ownership and separate technical/visual acceptance against pinned references.",
-      "next_action": "Exercise isolated creation and review cases; keep current source, renders and target-engine evidence bound to the delivered revision.",
-      "entry_sha256": "e4b7256ff44b13c935f6ff935bd2016df579c6b20b955054cc1fd3684d425d19",
-      "runtime_status": "not_run"
+      "reason": "Combined UV-to-material-to-bake workflow with focused specialist handoffs; Texel density, seams, image targets, projection cages and saved-map verification; Surface/lighting/export error isolation and evidence-preserving repair",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "f770caa10922f451fdf4ae1781fda39d9e51a8a5a3de7be5185e8b6baea3bf2b"
+    },
+    {
+      "name": "blender-minimalist-style",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "8f78abdee92ff9b90be5975c5bbbc223f4dfa0e4c1191a91e2974d6ffc25cb43"
     },
     {
       "name": "blender-modeling",
       "category": "blender-creation",
       "decision": "keep",
       "review_depth": "semantic-review",
-      "reason": "Reviewed Blender scope, resource dependencies, asset ownership and separate technical/visual acceptance against pinned references.",
-      "next_action": "Exercise isolated creation and review cases; keep current source, renders and target-engine evidence bound to the delivered revision.",
-      "entry_sha256": "e3564e6fae00add8328e297014233d4c9f235ef891b69bbb1061744251586f98",
-      "runtime_status": "not_run"
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "fdd51c98938af770ff0b0199da9fd2b5d450984fc688cba316ce805ccca84266"
+    },
+    {
+      "name": "blender-neon-retrofuturism",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "0ae095b20d58861b1da5b34a64913e2b0fb8b4fd148fb99381a15d5067f1ea7f"
+    },
+    {
+      "name": "blender-noir-style",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "32c0a8d997081a48f39f51cdc14ae04481814681868fe0a0dcec9fe4b1025f14"
+    },
+    {
+      "name": "blender-painterly-style",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "1e4d7a34a545b8276533866d2a1937744e04ebc36d071c4debea519502cb1220"
+    },
+    {
+      "name": "blender-pbr-materials",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "semantic maps and shared data; modern Principled socket wiring; linear/sRGB interpretation",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "a76409caea2f32803c85ae57c4602c5d7dbb8ae8495ff24dfc8c73ff04f4d93c"
+    },
+    {
+      "name": "blender-pipeline-automation",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "929869d7e86aeea44c1e349f0c9a4d3427bdedec8a2a655e3db7d7ed65d64434"
+    },
+    {
+      "name": "blender-pixel-art-style",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "2b3acc82da780cc184ede59e183fafb1efc2755a2d4891725a3a9b6e3fd583ea"
+    },
+    {
+      "name": "blender-procedural-modeling",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "5c6007488a3ee4aad3ae1d8ef39366b8372dd9fabce838bc2e7c5f3c739d3b8b"
+    },
+    {
+      "name": "blender-prop-modeling",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "894783181abbfeb0ce520811beda80c09b4660bbd85f340a367bde6a019bf719"
+    },
+    {
+      "name": "blender-psx-horror-style",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "10cb68bff2c1b766fd491619201089305b3dc87fb27df64b64951534d3167fac"
+    },
+    {
+      "name": "blender-realistic-style",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "7668a44fc49fcceb90ab10aca5c6b7549d95dcf93af740e030c876ed68a5c363"
     },
     {
       "name": "blender-reference-modeling",
       "category": "blender-creation",
       "decision": "keep",
       "review_depth": "semantic-review",
-      "reason": "Reviewed Blender scope, resource dependencies, asset ownership and separate technical/visual acceptance against pinned references.",
-      "next_action": "Exercise isolated creation and review cases; keep current source, renders and target-engine evidence bound to the delivered revision.",
-      "entry_sha256": "9d2dbf140d4d5fe6bd6f1187b8cdd2bf40a6e0a86560e9cc0d8dca6897cc9b72",
-      "runtime_status": "not_run"
+      "reason": "Reference authority, landmark selection and camera/scale calibration; Staged reconstruction, uncertainty tracking and controlled image comparison; Mismatch diagnosis without hiding scale or depth errors through registration",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "588902cf2bc676a18ea1d59533ae632a974a46b98619e3eb1d5dedbb493276eb"
+    },
+    {
+      "name": "blender-rendering",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "engine/device discovery; sample crop/adaptive/denoise; light-path and memory tuning",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "0eca0c590d69978fdf675f0f7af6bf9bb3e43a02665604d696cb6869659bb0bf"
+    },
+    {
+      "name": "blender-retopology",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "6732a251c55b0fa27838cbb4a3b187a0a8dd9f1f46fbc8a2844df2a84faaaf14"
+    },
+    {
+      "name": "blender-retro-16bit-style",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "289987dcd5bf5ba779ce40a9b4501392c3cd165756d96c98abdfa71c326275ef"
+    },
+    {
+      "name": "blender-retro-8bit-style",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "2cb9d1dd2378aa0d0e8419e31075cf786a6644f9d26e4f9b9631c9ade0aaf7cf"
     },
     {
       "name": "blender-rigging-animation",
       "category": "blender-creation",
       "decision": "keep",
       "review_depth": "semantic-review",
-      "reason": "Reviewed Blender scope, resource dependencies, asset ownership and separate technical/visual acceptance against pinned references.",
-      "next_action": "Exercise isolated creation and review cases; keep current source, renders and target-engine evidence bound to the delivered revision.",
-      "entry_sha256": "ede2f67c8b24623252e63b749440b9333b7e0cf69019d62fff60acf17e4f304d",
-      "runtime_status": "not_run"
+      "reason": "Bounded skeleton-to-clip workflow with rest/bind/weight contracts; Stress poses, contact/timing, root travel and position/orientation/velocity loop checks; Action-slot-aware delivery and preservation of editable control rig",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "cb0e3e76bfedbf70cb98c84ffd9b22c15238a8ce196f2a2f481a5ab9f1a3f052"
+    },
+    {
+      "name": "blender-scene-assembly",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "f37bddf8f641aecb103d385d3dceebd32e8107c9db83bd2212501ec988ca6323"
+    },
+    {
+      "name": "blender-sci-fi-punk-worlds",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Hard science fiction; Space opera; Cyberpunk",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "36c3b172931544a99087a7dd0eff9e058f86767d8fe8795e35c4e911a0e1ad4d"
+    },
+    {
+      "name": "blender-sculpting",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "8fc654704a458cbfc2051cf85a84fa208af9051433a6963f132a65aad4115a89"
+    },
+    {
+      "name": "blender-set-dressing",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "5a48cb1a0774c97479dff77bf2fdcef6d0ad45085e04b449b1b4eec4328b3ff9"
+    },
+    {
+      "name": "blender-simulation",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "solver/representation selection; mass from valid volume; rigid bodies/collision/constraints",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "17fa48b66ea9c5961e083b9fe44358f7a994f26c34297040f705bb03cd6e1f88"
+    },
+    {
+      "name": "blender-stop-motion-craft-style",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "03cb19635548e110c767850d3798f875ca9b93c74797fcbd3a2616b8a613fbff"
+    },
+    {
+      "name": "blender-stylized-style",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "c8dea445eecf162a946a6fa8f58c6f86dbb397d7c192086e51af1528a1b1dd42"
+    },
+    {
+      "name": "blender-texture-baking",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "UV/overlap/triangulation preparation; selected-to-active and every-material targets; cage correspondence and ray isolation",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "201b73fbe7b517f00aaa19fe036f1e815aefdb6981c5e072b6a451c710672e5d"
+    },
+    {
+      "name": "blender-texturing",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "surface causes/layer order; reversible groups/shared ownership; curvature/AO and scale-aware coordinates",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "4d75c927647d74cc42f00f8e28c6080b1eccde55bd8775cfd627f0c811e987c1"
+    },
+    {
+      "name": "blender-time-of-day",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "direction-to-sun and sky model; day/twilight/night/practical balance; calibration versus artistic lookup",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "2cd4db4a710575d6101fae672b8d8b1625c63ba89f3334c23f1151dabffe22d1"
+    },
+    {
+      "name": "blender-unity-export",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "9569e2c26f523b4c9f669bee16016f6e3e5571478fdfe120376074d129693033"
+    },
+    {
+      "name": "blender-unreal-export",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "80afd4262fa32853097e4a6f1b4eee81705d3273aa34b102dc74aeb0ab7c672f"
+    },
+    {
+      "name": "blender-uv-unwrapping",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "ba705f80ac4049b48b94d81c40d66773750a45987952af81efdefbd40f6267ec"
+    },
+    {
+      "name": "blender-vector-style",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "32bc9fc99f76a6ff75a75c8491520ece81d6c40a3967c447a9767ce1d483dab8"
+    },
+    {
+      "name": "blender-vegetation",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "c0f1e4d3f7cd91afafddf715b42b2f01ef5599bf59447feeee3c9359d0b0deb0"
+    },
+    {
+      "name": "blender-vehicle-modeling",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "8f402eeaf439d1c8e917d14b2316efb194481817faeef5165e3a30b1be6fb0f5"
+    },
+    {
+      "name": "blender-vfx-fx",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "effect timing and representation; Mantaflow smoke/fire cache; bounded spark/dust instances",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "2618b7008c5b19d30d5a7fd382e19d8fe5c571f9689c57b60885a67ee45ec65f"
+    },
+    {
+      "name": "blender-video-editing",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "media/rate/sequence inventory; modern VSE strips/exclusive end; crossfade/video-audio placement",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "025dd175e5588a82cbe70bbe25e6089f3d0939cd6012e0ae280304a9c035effe"
+    },
+    {
+      "name": "blender-visual-console-eras",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "PS1-inspired early polygonal work; PS2-inspired transitional 3D; PS3-inspired material and lighting study",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "b984bbea2409dd7a557522f8c3d229f0a6488ad857b84699b5d4bcc321b4b9e4"
     },
     {
       "name": "blender-visual-review",
       "category": "blender-creation",
       "decision": "keep",
       "review_depth": "semantic-review",
-      "reason": "Reviewed Blender scope, resource dependencies, asset ownership and separate technical/visual acceptance against pinned references.",
-      "next_action": "Exercise isolated creation and review cases; keep current source, renders and target-engine evidence bound to the delivered revision.",
-      "entry_sha256": "75727c142b23165ceaab1a189a836c21685ed88ea11c9ecbadf41f370e409aed",
-      "runtime_status": "not_run"
+      "reason": "Read-only direct image critique with matching evidence conditions; Form, surface, lighting, motion and delivery-specific visual review; Prioritized findings with smallest repairs, owners and revision recheck conditions",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "75727c142b23165ceaab1a189a836c21685ed88ea11c9ecbadf41f370e409aed"
+    },
+    {
+      "name": "blender-voxel-style",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "4fda13aace04368b1276aa3f667140ec018be16bda6fe282b28eac6f937ccd41"
+    },
+    {
+      "name": "blender-weather-fx",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "layer ownership; aspect-aware camera volume; deterministic analytic lifetime loops",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "f35bafec37075de4613f25e62f09f8865b0bd0582430296cd6e2f9bd4a24a374"
+    },
+    {
+      "name": "blender-workflow-recipes",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed the pinned source entry and supporting resources, authored concrete production/repair procedures and scoped handoffs; detailed source coverage is recorded separately.",
+      "next_action": "Use the focused evaluation definitions and real asset evidence for the selected task; full runtime and engine coverage is not established by this registry.",
+      "runtime_status": "not_run",
+      "entry_sha256": "203b2ad1b7d8c5c58687334fb118d326f2e4b06cd44742db0deef96449beefd7"
     },
     {
       "name": "brand-voice",

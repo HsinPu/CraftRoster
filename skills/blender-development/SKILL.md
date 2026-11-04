@@ -18,11 +18,15 @@ Deliver an editable asset that fits the user's art direction and game constraint
 
 Read repository guidance, existing art/design documents, the requested references and actual scene before editing. Identify the asset's purpose, target engine and platform, camera distance, size, style, movement, output formats and ownership. Follow [the asset contract](references/asset-contract.md) to retain that information without asking again for already settled choices. A stylized or low-poly brief is not permission to replace it with realism. Treat missing views and dimensions as inferences.
 
+For a complete asset or scene, use [production planning](references/production-planning.md) to select the uncertain slice, discipline handoffs and revision gates. Find the focused package in [the specialist index](references/specialist-index.md); the broad entries below coordinate related tasks, while the index includes separate technical, style, world and genre workflows.
+
 Distinguish creation/refinement from review-only requests. A clear request to build or improve authorizes bounded edits and the correction loop; an inspection request authorizes findings. Read-only collaborators return findings in the response, including when a workflow normally persists reports.
 
 ## Execute and route
 
 Use [execution and ownership](references/execution-and-ownership.md) before operating Blender. Discover the actual installed version and tools. A background process is available through [run_blender.py](scripts/run_blender.py); an already connected MCP can operate a live scene when that scene and operation are in scope. Skill installation supplies neither Blender nor an MCP connection.
+
+Use [runtime and bpy guidance](references/runtime-and-bpy.md) for context-sensitive operations, API migration, shared data, evaluated meshes and file/resource handling. The read-only [runtime inspector](scripts/inspect_runtime.py) records the current environment; API presence is not a successful render, exporter or engine test.
 
 | Task | Conditional specialist |
 |---|---|
@@ -41,6 +45,8 @@ Check that a selected specialist is installed before saying it was used. If abse
 ## Build, examine, refine
 
 Use [the quality loop](references/quality-loop.md) for assets whose appearance matters. Establish large forms and visual hierarchy before detail. Inspect diagnostic images as well as the intended game view, fix the largest supported defect, and capture new evidence after changes. For full creation-and-review work, use an independent visual reviewer when available; otherwise label the review as a self-review.
+
+When applying a selected look, combine its specific playbook with [style production](references/style-production.md). For a world or game-genre asset set, combine the selected playbook with [world and genre production](references/world-and-genre-production.md). These shared procedures organize evidence and handoffs without replacing the specialized construction details.
 
 Technical validity, visual fit and engine acceptance are separate results. A numerical pass does not approve art. A flattering beauty render does not establish correct scale, clean topology or game readability. Do not promise an objective "most beautiful" result; work toward the agreed reference, style and measurable delivery requirements, stating remaining subjective choices.
 

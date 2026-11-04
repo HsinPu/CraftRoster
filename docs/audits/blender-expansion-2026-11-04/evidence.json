@@ -1,0 +1,446 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-04",
+  "version": "1.4.0",
+  "host": "Windows",
+  "runtime": "5.2.2 LTS",
+  "skills_exercised": [
+    "blender-development",
+    "blender-geometry-nodes",
+    "blender-texture-baking",
+    "blender-uv-unwrapping",
+    "blender-stylized-style",
+    "blender-export",
+    "blender-asset-validation"
+  ],
+  "revision": {
+    "source_sha256": "7797a4b6917dcc535c7d2560aa9e6378381976a643baf9cdcabc711f2726b80f",
+    "glb_sha256": "52d838740873c769d224cde64ae22da5ce73f01b2f452a1709e11c439eb7d3de",
+    "contract_sha256": "adb314e8142980b3fbd21f1f448fd86c5c351281f7a99511f68ef58cf3b5d044"
+  },
+  "files": [
+    {
+      "path": "cel_key_left.png",
+      "sha256": "438817da96333acde76ee65a0aea554a467e025d4a7f92cfc25e46e883c11154",
+      "bytes": 801494
+    },
+    {
+      "path": "cel_key_right.png",
+      "sha256": "4b888b18aa4dd60d3aeee8c3353e1012fb0bce0481717e96b2d150e3a1d4dc61",
+      "bytes": 804126
+    },
+    {
+      "path": "neutral_diagnostic.png",
+      "sha256": "7479fbddff415e4f84e5f341b0d12f6634adab146a48540cb2611796a6aba565",
+      "bytes": 844335
+    },
+    {
+      "path": "source_pbr_matched.png",
+      "sha256": "3e0dbaa645fcfcd6c7ebc433b15bedcf536d6b40ded04a7fdf04a5c5eac085f0",
+      "bytes": 938473
+    },
+    {
+      "path": "reimport_pbr_matched.png",
+      "sha256": "ab9b7e73a2622b1d73c81cb374f3195af010fa8c2606453b475afe7fbdaca7d4",
+      "bytes": 938133
+    },
+    {
+      "path": "crate_bake_unlit_crop.png",
+      "sha256": "c40e3911fe4c8bc6ff82a1c25efe1151b10efe223657221691d20bd6a081dba6",
+      "bytes": 647590
+    },
+    {
+      "path": "crate_checker_unlit_colorgrid.png",
+      "sha256": "c02b28349f075df4f78546d440fec0b8046b44c4da650c3c5facdb14c4371e7f",
+      "bytes": 759714
+    },
+    {
+      "path": "crate_checker_unlit_plain.png",
+      "sha256": "a935afeed48d921be27cf478f07f8a5ea6c7cb93c38c2ba51c8f9123db29e65b",
+      "bytes": 723085
+    },
+    {
+      "path": "doorway_crate.blend",
+      "sha256": "7797a4b6917dcc535c7d2560aa9e6378381976a643baf9cdcabc711f2726b80f",
+      "bytes": 143465
+    },
+    {
+      "path": "doorway_crate.glb",
+      "sha256": "52d838740873c769d224cde64ae22da5ce73f01b2f452a1709e11c439eb7d3de",
+      "bytes": 107836
+    },
+    {
+      "path": "crate_basecolor_256.png",
+      "sha256": "f282247aec42f30de257d59332eb6b3eb141c69fbe57b6c464bd24e8a8aa9d68",
+      "bytes": 16591
+    },
+    {
+      "path": "contract.json",
+      "sha256": "adb314e8142980b3fbd21f1f448fd86c5c351281f7a99511f68ef58cf3b5d044",
+      "bytes": 263
+    },
+    {
+      "path": "technical-final.json",
+      "sha256": "f5a26848741e2c7429f4172a1a0f17d8470658eec448ca465c36084d7a36dc9b",
+      "bytes": 3945
+    },
+    {
+      "path": "roundtrip-final.json",
+      "sha256": "defffa3a87b7a85d5f9ad093843153b38d6b2f7c10825ded313d59ef248f3de8",
+      "bytes": 5893
+    },
+    {
+      "path": "uv-padding-density.json",
+      "sha256": "b735296f9ed035c69fd0ad382c6fd032be6ef7b5db57db0df8573f6985d40ee9",
+      "bytes": 1011
+    },
+    {
+      "path": "matched-pbr-pixel-check.json",
+      "sha256": "074fbf38f97f5785579c741085fac931e7806590f901138d5bfc9a0f6819f548",
+      "bytes": 265
+    }
+  ],
+  "checks": {
+    "different_seed_changes_geometry": true,
+    "repeat_seed_dimensions_match": true,
+    "crate_uv_finite_in_tile": true,
+    "bake_color_range": [
+      0.0,
+      1.0
+    ],
+    "roundtrip_expected_objects_present": true,
+    "roundtrip_bounds_match": true,
+    "reimport_texture_present": true,
+    "all_asset_evaluated_coordinates_finite": true,
+    "all_asset_degenerate_triangles_zero": true,
+    "all_used_material_faces_assigned": true,
+    "final_object_names_match": true,
+    "final_dimensions_match": true,
+    "final_256_texture_present": true,
+    "final_source_and_reimport_no_degenerate_triangles": true,
+    "final_uv_source_and_evaluated_positive_overlap_pairs": [],
+    "matched_pbr_max_channel_difference_255": [
+      1,
+      1,
+      1
+    ]
+  },
+  "packaged_helper": {
+    "path": "skills/blender-asset-validation/scripts/inspect_asset.py",
+    "sha256": "83ddfabeb807a8587a85eded1bc34d5dedc0b815352cf99c1b253a48d5cb600a",
+    "final_report": "technical-final.json",
+    "status": "pass on review-corrected final source",
+    "scope": [
+      "Door_Narrow",
+      "Door_Wide",
+      "UtilityCrate",
+      "Crate reinforced strap",
+      "Crate reinforced strap.001",
+      "Crate front inset",
+      "Crate latch",
+      "Crate vent",
+      "Crate vent.001"
+    ],
+    "require_materials": true,
+    "require_manifold": true,
+    "max_triangles": 3000
+  },
+  "procedural_parameter_trials": [
+    {
+      "width": 1,
+      "height": 2,
+      "seed": 0,
+      "result": {
+        "bounds_min": [
+          -3.1100001335144043,
+          -0.492499977350235,
+          0.0
+        ],
+        "bounds_max": [
+          -1.190000057220459,
+          0.30000001192092896,
+          2.380000114440918
+        ],
+        "used_missing_material_faces": 0,
+        "degenerate_triangles": 0,
+        "triangles": 528,
+        "vertices": 288,
+        "coordinate_hash": "a06d1078b5ae427983adbe6494fd406bc95c4f1faf75f037bd7cb1577fc615d8",
+        "dimensions": [
+          1.9200000762939453,
+          0.7924999892711639,
+          2.380000114440918
+        ]
+      }
+    },
+    {
+      "width": 3,
+      "height": 3,
+      "seed": 1000,
+      "result": {
+        "bounds_min": [
+          -4.110000133514404,
+          -0.492499977350235,
+          0.0
+        ],
+        "bounds_max": [
+          -0.19000005722045898,
+          0.30000001192092896,
+          3.380000114440918
+        ],
+        "used_missing_material_faces": 0,
+        "degenerate_triangles": 0,
+        "triangles": 528,
+        "vertices": 288,
+        "coordinate_hash": "0ce9719ea5de18096d491e59c0d58efa45d8a1f04b64a9c0d49dc39775123567",
+        "dimensions": [
+          3.9200000762939453,
+          0.7924999892711639,
+          3.380000114440918
+        ]
+      }
+    },
+    {
+      "width": 1.2,
+      "height": 2.3,
+      "seed": 17,
+      "result": {
+        "bounds_min": [
+          -3.2100000381469727,
+          -0.492499977350235,
+          0.0
+        ],
+        "bounds_max": [
+          -1.090000033378601,
+          0.30000001192092896,
+          2.680000066757202
+        ],
+        "used_missing_material_faces": 0,
+        "degenerate_triangles": 0,
+        "triangles": 528,
+        "vertices": 288,
+        "coordinate_hash": "aee2fc8a91e7f27aa66f17e15663ea6cc17190f2b39a416ac2b2c1153407a252",
+        "dimensions": [
+          2.1200000047683716,
+          0.7924999892711639,
+          2.680000066757202
+        ]
+      }
+    },
+    {
+      "width": 1.2,
+      "height": 2.3,
+      "seed": 17,
+      "result": {
+        "bounds_min": [
+          -3.2100000381469727,
+          -0.492499977350235,
+          0.0
+        ],
+        "bounds_max": [
+          -1.090000033378601,
+          0.30000001192092896,
+          2.680000066757202
+        ],
+        "used_missing_material_faces": 0,
+        "degenerate_triangles": 0,
+        "triangles": 528,
+        "vertices": 288,
+        "coordinate_hash": "aee2fc8a91e7f27aa66f17e15663ea6cc17190f2b39a416ac2b2c1153407a252",
+        "dimensions": [
+          2.1200000047683716,
+          0.7924999892711639,
+          2.680000066757202
+        ]
+      }
+    },
+    {
+      "width": 1.2,
+      "height": 2.3,
+      "seed": 18,
+      "result": {
+        "bounds_min": [
+          -3.2100000381469727,
+          -0.492499977350235,
+          0.0
+        ],
+        "bounds_max": [
+          -1.090000033378601,
+          0.30000001192092896,
+          2.680000066757202
+        ],
+        "used_missing_material_faces": 0,
+        "degenerate_triangles": 0,
+        "triangles": 528,
+        "vertices": 288,
+        "coordinate_hash": "f505a78ce0bb04c4bd15b9e058dc585b77652d70a5220ca584867b12724b4362",
+        "dimensions": [
+          2.1200000047683716,
+          0.7924999892711639,
+          2.680000066757202
+        ]
+      }
+    },
+    {
+      "width": 0,
+      "height": 2.3,
+      "seed": 17,
+      "result": {
+        "bounds_min": [
+          -2.6100001335144043,
+          -0.492499977350235,
+          0.0
+        ],
+        "bounds_max": [
+          -1.690000057220459,
+          0.30000001192092896,
+          2.680000066757202
+        ],
+        "used_missing_material_faces": 0,
+        "degenerate_triangles": 24,
+        "triangles": 528,
+        "vertices": 288,
+        "coordinate_hash": "5a79bdad070dd9f17ecbd45594b15c7bf7ed7f8681e3f093ed0682937551120a",
+        "dimensions": [
+          0.9200000762939453,
+          0.7924999892711639,
+          2.680000066757202
+        ]
+      }
+    }
+  ],
+  "final_uv_checks": {
+    "source_uv_island_count": 6,
+    "source_min_interisland_edge_gap_px": 4.418205261230469,
+    "bake_dilation_px": 2,
+    "full_resolution_padding_interpretation": "minimum measured gutter must exceed two dilations for noncompeting padding; mip acceptance separate",
+    "evaluated_bevel_uv_triangle_count": 44,
+    "evaluated_bevel_zero_uv_triangles": 0,
+    "evaluated_bevel_uv_loops_outside_01": 0,
+    "evaluated_density_min_px_per_m": 76.85261803286816,
+    "evaluated_density_max_px_per_m": 101.14393224242731,
+    "UV_change": "none: preserved valid layout after actual unlit checker and bake inspection; bake dilation reduced to 2px for measured 4.418px gutter",
+    "checker_type": "Blender COLOR_GRID includes high contrast black/white calibration/lettering at patch edges; plain two-color UV checker supplied to disambiguate.",
+    "source_sha256": "7797a4b6917dcc535c7d2560aa9e6378381976a643baf9cdcabc711f2726b80f",
+    "source_positive_uv_overlap_pairs": [],
+    "evaluated_positive_uv_overlap_pairs": []
+  },
+  "matched_pbr_comparison": {
+    "settings": {
+      "camera_location": [
+        7,
+        -12,
+        7.6
+      ],
+      "look_at": [
+        -0.2,
+        -0.05,
+        1.2
+      ],
+      "ortho_scale": 8.1,
+      "resolution": [
+        1100,
+        820
+      ],
+      "renderer": "BLENDER_EEVEE",
+      "view_transform": "Standard",
+      "look": "None",
+      "exposure": 0,
+      "gamma": 1,
+      "world_color": [
+        0.04,
+        0.04,
+        0.04
+      ],
+      "sun_rotation": [
+        0.48,
+        -0.6,
+        -0.6
+      ],
+      "sun_energy": 2.3,
+      "sun_angle": 0.00918043,
+      "floor_z": -0.025,
+      "floor_color": [
+        0.12,
+        0.17,
+        0.21
+      ]
+    },
+    "pixel_difference": {
+      "image_size": [
+        1100,
+        820
+      ],
+      "rgb_mean_absolute_difference": [
+        3.325942350332594e-06,
+        4.434589800443459e-06,
+        4.434589800443459e-06
+      ],
+      "max_channel_difference": [
+        1,
+        1,
+        1
+      ],
+      "exact_pixel_match": false
+    },
+    "visual_observation": "Actual source-PBR and reimport-PBR matched images inspected; silhouettes, placements, palette and crate texture visually agree. Mean RGB absolute differences under 0.000005/255, max per-channel difference 1/255. This is Blender-to-Blender material parity only."
+  },
+  "failures_and_corrections": [
+    {
+      "stage": "GN modifier setup",
+      "observed": "TypeError: bpy_struct[key] = val: id properties not supported for this type",
+      "correction": "Probed runtime RNA; use getattr(mod.properties.inputs, socket.identifier).value on Blender 5.2.2.",
+      "resolved": true
+    },
+    {
+      "stage": "renderer setup",
+      "observed": "BLENDER_EEVEE_NEXT enum absent; supported BLENDER_EEVEE, BLENDER_WORKBENCH, CYCLES",
+      "correction": "Use actual BLENDER_EEVEE enum.",
+      "resolved": true
+    },
+    {
+      "stage": "first image review",
+      "observed": "Proxy largely occluded; manually authored accessories did not follow width changes.",
+      "correction": "Move proxy forward and construct all frame accessories inside Geometry Nodes.",
+      "resolved": true
+    },
+    {
+      "stage": "image and evaluated mesh review",
+      "observed": "Random Value field used directly as cube Size caused both panel cubes to collapse to points; bounds checks missed this.",
+      "correction": "Sample seeded field on a one-point geometry using Sample Index to obtain single-valued primitive input; inspect current panels and geometry.",
+      "resolved": true
+    },
+    {
+      "stage": "degenerate triangle check",
+      "observed": "Global bevel width 0.045m collapsed 32 indicator triangles per doorway.",
+      "correction": "Reduce reversible doorway bevel to 0.009m, below half 0.025m minimum thickness; current doorway degenerate triangle count 0.",
+      "resolved": true
+    },
+    {
+      "stage": "packaged require_materials check",
+      "observed": "technical-prior-unused-slot.json failed on unused None slot left by GN Mesh Cube and Set Material. No used face was unassigned.",
+      "correction": "Root repaired helper to inspect evaluated polygon material assignments rather than rejecting all unused None slots. Reran final source with require_materials=true; technical-final.json passes and prior failure evidence retained.",
+      "resolved": true
+    },
+    {
+      "stage": "source save",
+      "observed": "Blender attempted denied thumbnail writes outside workspace; optional brush relative-path warnings.",
+      "correction": "Delivery source and requested render paths were successfully written and read; no permission escalation or outside artifact dependency.",
+      "resolved": "nonblocking environment warning"
+    },
+    {
+      "finding": "Broadened all-asset check caught 8 degenerate triangles in front inset bevel; original core-only helper did not inspect this accessory.",
+      "correction": "Reduced only Crate front inset reversible bevel from 0.025m to0.008m, keeping dimensions and materials. Refreshed source, export, matched images, all9-object helper and roundtrip checks."
+    }
+  ],
+  "visual_review": "visual-review.json",
+  "limits": [
+    "A representative multi-Skill trial, not execution coverage of all 108 Skills or all subtype branches.",
+    "Native Blender 5.2.2 on this Windows host only; no other host/version/export-format support is inferred.",
+    "GLB uses conventional PBR materials; the Blender authoring cel graph is not an exported engine shader.",
+    "No game engine, collisions, LOD transitions, gameplay or target performance were tested.",
+    "Only documented doorway width/height ranges are supported; setting width zero programmatically produces degenerate geometry and is recorded as an unsupported boundary.",
+    "The color self-bake and full-resolution gutter were checked; tangent-normal baking, lightmaps and mip/filter acceptance remain untested.",
+    "Archive copies retain exact trial bytes and hashes. The source scene can retain authoring paths; runtime environment and linked libraries must be inspected before reuse."
+  ]
+}

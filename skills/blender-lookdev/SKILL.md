@@ -1,6 +1,6 @@
 ---
 name: blender-lookdev
-description: "Develop and refine the look of Blender assets through art direction, cohesive materials, lighting and camera presentation. Use for Blender appearance and render polish; visual review without authorized edits belongs to blender-visual-review."
+description: "Develop and correct Blender appearance through controlled material, light, camera and reference comparison loops. Use for authorized appearance edits; read-only image critique belongs to blender-visual-review."
 license: Apache-2.0
 metadata:
   author: "HsinPu"
@@ -10,21 +10,26 @@ metadata:
   reference-revision: "fb92cfb4cc5a238c22113a6a230b09f535bd0656"
 ---
 
-# Blender Look Development
+# Blender Lookdev
 
-Make the asset read clearly and express the agreed art direction under both diagnostic and intended presentation conditions.
+Converge on approved art direction with neutral, beauty and intended-view evidence.
 
-Read the shared [asset contract](../blender-development/references/asset-contract.md), [execution and ownership](../blender-development/references/execution-and-ownership.md) and [quality loop](../blender-development/references/quality-loop.md). Read [look development](references/look-development.md) for camera, light and material decisions.
+Read the shared [asset contract](../blender-development/references/asset-contract.md), [execution and ownership](../blender-development/references/execution-and-ownership.md), and [quality loop](../blender-development/references/quality-loop.md). The required blender-development companion supplies these resources; it does not grant execution permissions.
 
-## Refine the visible result
+## Select and execute the work
 
-1. Identify the approved references, palette, shape language, material roles, intended emotion, target engine and viewing distance. Existing project style takes priority over a generic attractive preset.
-2. Inspect current renders before editing. Establish a neutral diagnostic setup and a separate presentation setup. Record camera, resolution, projection, exposure, view transform, engine, samples and relevant frame.
-3. Fix readability in order of impact: silhouette and composition, large value/color groups, material response, then small accents. Return geometry or UV defects to their owners rather than hiding them with lighting.
-4. Adjust coherent light size/direction, reflections, roughness, color relationships, separation and focal hierarchy. Preserve intentional stylization. Do not apply arbitrary filmic contrast, excessive bloom or shallow depth of field to every asset.
-5. Make presentation rigs in owned collections or isolated copies. Keep the asset's authored transforms, animation, world and cameras intact unless their modification is part of the request. Preview each edit with a small render before expensive output.
-6. Compare matched before/after views and an intended gameplay view; inspect an alternate light direction to expose fragile shading. Review the current revision using available visual-review support, fix consequential findings and recheck affected technical gates.
+1. Establish the requested deliverable, source revision, owned objects/data, target renderer or receiving engine, scale, timing and available tools. Inspect the current file before changing it. Keep recoverable editable sources and isolate destructive or export conversions.
+2. Read [the production and repair guide](references/production.md) before selecting operators, data structures or settings. It supplies the discipline-specific recipe, parameter choices, failure causes and acceptance evidence; do not replace it with a preset or capability summary.
+3. Use the available supported Blender execution path. Inspect actual tool schemas and installed API behavior. Work on bounded previews before expensive bakes or renders; retain source graphs, rigs, media and caches needed to reproduce the result.
+4. Fix ranked visible gaps and preserve matched before/after settings. A read-only reviewer returns findings; an authorized writer applies repairs, renders and persists reports.
+5. Correct consequential findings, repeat affected measurements and compare the resulting revision visually. Missing rendering, image inspection or destination access must remain explicitly unverified. Structural checks and file presence alone do not establish appearance or runtime success.
 
-Deliver the editable setup, renders and settings, actual corrections and remaining limitations. A beauty shot alone cannot validate textures, geometry or target-engine lighting. When rendering or image inspection is unavailable, report appearance as unverified.
+The existing [compact look-development decisions](references/look-development.md) remain useful for material, light and camera comparisons.
 
-See [source attribution](references/upstream-notice.md).
+## Handoffs and output
+
+Use the relevant specialist only when its operation is needed: `blender-pbr-materials`, `blender-lighting`, `blender-camera-cinematography`, `blender-texturing`, `blender-rendering`, `blender-visual-review`. These are conditional handoffs, not blanket package requirements.
+
+Deliver the editable source, concrete settings and dependency paths, actual output inventory, inspected visual evidence, measurements and corrections. Distinguish executed technical checks, actual image/motion review and destination acceptance. Name remaining limitations and the next required evidence without implying an unrun workflow passed.
+
+See [upstream provenance and license notices](references/upstream-notice.md). Evaluation cases are definitions in [evals/evals.json](evals/evals.json), not claims of completed model or Blender runs.

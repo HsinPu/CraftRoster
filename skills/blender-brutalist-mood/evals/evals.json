@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-brutalist-mood",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Build a clean monumental concrete library courtyard with daylight and a pedestrian scale cue.",
+      "expected_output": "A functional architectural mood study.",
+      "assertions": [
+        "Builds legible supports and access.",
+        "Keeps the clean daylight brief.",
+        "Checks scale and material images."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "The memorial looks tiny and rocky; its doorway is 6 m instead of the supplied 2.2 m.",
+      "expected_output": "A scale-first correction.",
+      "assertions": [
+        "Corrects the entry against supplied dimensions.",
+        "Reduces rock-like bump.",
+        "Rechecks camera height and raking light."
+      ]
+    }
+  ]
+}

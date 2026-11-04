@@ -1,0 +1,51 @@
+{
+  "skill_name": "blender-genre-shooter",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create low/high cover and a local shooter study with standing/crouched FPS and left/right TPS diagnostics from supplied offsets. Use an isolated project, preserve supplied references and produce scoped assets with honest evidence. If Blender or image inspection is unavailable, provide the specification and mark affected checks unexecuted.",
+      "expected_output": "An editable subject-specific kit or explicitly unexecuted production specification, requested dimensions/states, named diagnostics, actual findings and separate technical/visual/engine evidence status.",
+      "assertions": [
+        "Standing/crouched sections, FPS near-wall image, both TPS shoulders, roofless sightline map and marker approaches. Label rays geometric-only; hit response needs engine tests.",
+        "Supplied camera, scale and fiction remain authoritative; concrete pieces and state variants are identified.",
+        "Image acceptance cites actually inspected current-revision images and observations, not file existence.",
+        "No game behavior, AI, balance, physics or engine performance is inferred from renders or static proxies."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Repair decorative sight holes conflicting with a solid proxy and an extraction marker resembling street lamps. Inspect before editing; preserve original source and work only in authorized asset collections. Repeat affected diagnostics after repair.",
+      "expected_output": "A bounded diagnosis and targeted repair retaining approved source/style, with matched subject-specific before/after evidence or an explicit blocked/unverified result.",
+      "assertions": [
+        "Camera intersects column: revise obstruction/clearance. Cover raised base changes height: correct full world bounds. Decorative hole conflicts with solid proxy: reconcile intent. Extraction resembles lamps: change mounting silhouette and negative space.",
+        "Asset repairs are separated from game-rule and engine-system changes.",
+        "The original is preserved; affected checks and actual image review are repeated after editing.",
+        "A static numerical or geometry pass is not claimed as gameplay, historical authenticity or scientific proof."
+      ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Build a battle-royale landmark and extraction destination kit with closed, depleted and active states; beacons resemble streetlights. Use an isolated authorized source; if execution or image inspection is unavailable, return the concrete specification and mark those checks unexecuted.",
+      "expected_output": "Subtype-specific construction/state and repair artifacts, or an explicit unexecuted specification, with actual diagnostic evidence distinguished from visual and engine acceptance.",
+      "assertions": [
+        "Checks aerial/distant and ground approach scales independently.",
+        "Extraction has a distinct physical frame and state cues beyond emission.",
+        "Loot/arrival data and visuals do not become circle/extraction/AI success claims."
+      ]
+    },
+    {
+      "id": 4,
+      "locale": "en",
+      "prompt": "Repair FPS close-wall details and a TPS cover junction that works only on one shoulder camera. Use an isolated authorized source; if execution or image inspection is unavailable, return the concrete specification and mark those checks unexecuted.",
+      "expected_output": "Subtype-specific construction/state and repair artifacts, or an explicit unexecuted specification, with actual diagnostic evidence distinguished from visual and engine acceptance.",
+      "assertions": [
+        "Separates actual player-eye and viewmodel FOV assumptions.",
+        "Checks full actor, both shoulder offsets and supplied sweep/stance envelopes.",
+        "Reconciles decorative openings with proxy intent without changing ballistics or actor dimensions."
+      ]
+    }
+  ]
+}

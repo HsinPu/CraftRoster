@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-workflow-recipes",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create a hero prop from an approved high-poly source for a stated real-time camera. Choose the production branch, preserve source, plan a bake, and deliver low asset/maps plus honest verification. Do not invent a platform budget.",
+      "expected_output": "Chooses high-to-low branch with coordinate, cage, UV, normal and image gates before export; identifies target checks actually performed.",
+      "assertions": [
+        "High and low source remain separate and coordinate aligned.",
+        "Bake output is visually inspected for seams/projection rather than accepted by existence.",
+        "Only needed disciplines and supplied budgets are activated."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "A generated character has disconnected intended accessories, stretched shoulder topology and a clothing cage with deleted vertices. Provide bounded recovery through animated delivery; no target editor is available.",
+      "expected_output": "Preserves source/accessories, repairs deformation planning and obtains a valid category template rather than inventing cage topology; clearly leaves engine acceptance unperformed.",
+      "assertions": [
+        "Disconnected intended parts are not indiscriminately deleted.",
+        "Stress-pose review is required beyond normalized weights.",
+        "Template/cage uncertainty is surfaced and absence of target import is explicit."
+      ]
+    }
+  ]
+}

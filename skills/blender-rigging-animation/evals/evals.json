@@ -23,6 +23,17 @@
         "Does not treat an old image or successful export as visual evidence for the current revision.",
         "Names the missing current-revision evidence and feasible checks without inventing execution."
       ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "A walk loop has identical endpoint orientations and angular-speed magnitudes but hitches on repeat. Preserve its intentional forward root displacement.",
+      "expected_output": "Concrete scoped workflow and evidence-backed findings for the stated production failure, with unexecuted checks explicit.",
+      "assertions": [
+        "Checks translation and signed velocity/contact at wrap.",
+        "Distinguishes root-travel policy from a zero-displacement in-place clip.",
+        "Inspects sequential motion and rechecks exported clip inclusion and timing."
+      ]
     }
   ]
 }

@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-dark-gritty-mood",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Make an abandoned station machine alcove grim and worn while its maintenance hatch stays readable.",
+      "expected_output": "A causal weathering and low-key pass.",
+      "assertions": [
+        "Separates coating, substrate and dirt.",
+        "Protects hatch visibility.",
+        "Adds no gore shortcut."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Every edge has identical rust and the machine is black. Repair without more detail.",
+      "expected_output": "A mask/light correction.",
+      "assertions": [
+        "Breaks uniform rust by cause.",
+        "Uses motivated fill or value separation.",
+        "Compares ungraded/graded images."
+      ]
+    }
+  ]
+}

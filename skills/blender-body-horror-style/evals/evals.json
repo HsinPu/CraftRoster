@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-body-horror-style",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create a non-gory Blender forearm whose skin becomes porcelain, with one subtly misplaced joint.",
+      "expected_output": "A bounded anatomical material study.",
+      "assertions": [
+        "Preserves recognizable landmarks and one transformation rule.",
+        "Uses porcelain/skin without inventing exposed tissue.",
+        "Requires clay and material evidence."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "The sealed prosthetic study became a wet creature with random mouths. Correct it.",
+      "expected_output": "Restore the approved intensity and fusion.",
+      "assertions": [
+        "Removes unrequested mouths/gore.",
+        "Rebuilds continuous anatomy.",
+        "Reviews neutral and intended light."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "skill_name": "blender-clothing",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Build a swappable fitted jacket with matching body morphs and a reversible covered-body mask.",
+      "expected_output": "An editable, scoped result with discipline-specific settings, actual evidence and stated unverified gates.",
+      "assertions": [
+        "Removes temporary double deformation while preserving original body state.",
+        "Repairs weights/morphs/ease and tests evaluated critical poses.",
+        "Treats normal-ray clearance as partial and uses actual visual review."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "A jacket doubles motion after Surface Deform morph capture and clips during crouch. Repair without deleting the complete body.",
+      "expected_output": "A diagnosis tied to the supplied failure, preserved sources, a concrete correction and repeated affected acceptance checks.",
+      "assertions": [
+        "Removes temporary double deformation while preserving original body state.",
+        "Repairs weights/morphs/ease and tests evaluated critical poses.",
+        "Treats normal-ray clearance as partial and uses actual visual review.",
+        "Does not label a hypothetical plan, a structural assertion or unrun workflow as successful execution."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2355 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Frozen provenance inventory for explicit Blender source adaptation, not an installed upstream runtime.",
+  "verification": "Source file bytes were compared with Git blob identities from the pinned repository trees during the 2026-11-04 source review. Offline validation checks this declaration and coverage relationships; it does not repeat remote retrieval.",
+  "repositories": [
+    {
+      "id": "el4",
+      "repo": "EL4CTEO/blender-skills",
+      "commit": "fb92cfb4cc5a238c22113a6a230b09f535bd0656",
+      "tree": "9b0d2fc9a2f4063c915e34c17d1136cfb08259e8",
+      "license": "MIT",
+      "scope": "Pinned canonical Skill packages and shared instruction resources; Cursor mirror intentionally excluded.",
+      "files": [
+        {
+          "path": "LICENSE",
+          "blob": "3f709c423026e30972b83813fc8a58a71495abf0",
+          "size": 1064,
+          "kind": "license"
+        },
+        {
+          "path": "README.md",
+          "blob": "79bfe73d9993700244bfc8beeb0598e6bd8f918b",
+          "size": 4224,
+          "kind": "repository-context"
+        },
+        {
+          "path": "skills/blender-addon-development/SKILL.md",
+          "blob": "d57413f187d14d91865c1e8f9a8c2b2fe5787556",
+          "size": 5056,
+          "kind": "entrypoint"
+        },
+        {
+          "path": "skills/blender-addon-development/assets/addon_template/__init__.py",
+          "blob": "454b023d6db8f6508d9f6ca93cdd3797f92fd4b8",
+          "size": 661,
+          "kind": "package-resource"
+        },
+        {
+          "path": "skills/blender-addon-development/assets/addon_template/blender_manifest.toml",
+          "blob": "2e13d9776ddf5b8135e7a364fb0309f95d033020",
+          "size": 832,
+          "kind": "package-resource"
+        },
+        {
+          "path": "skills/blender-addon-development/assets/addon_template/operators.py",
+          "blob": "6df9fdcf0ecee737f40dc5b0ba04094ae0438d98",
+          "size": 1347,
+          "kind": "package-resource"
+        },
+        {
+          "path": "skills/blender-addon-development/assets/addon_template/ui.py",
+          "blob": "4e86f0d47eabc8486aaa06088c05159d62d734ad",
+          "size": 877,
+          "kind": "package-resource"
+        },
+        {
+          "path": "skills/blender-animation/SKILL.md",
+          "blob": "63204ede89ae162be754765884fc7caef8d20a3c",
+          "size": 7095,
+          "kind": "entrypoint"
+        },
+        {
+          "path": "skills/blender-animation/scripts/_bpyx.py",
+          "blob": "9048f6909cdd95254e93a7d478785149beaa4b9a",
+          "size": 4503,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-animation/scripts/bake_action.py",
+          "blob": "92e0c969e9dc4aaa937620734398cf410fb5fe89",
+          "size": 6923,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-animation/scripts/loop_check.py",
+          "blob": "0e2ea7e311ce8b6481333fb44fc24b93d8bad285",
+          "size": 5076,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-animation/scripts/retarget.py",
+          "blob": "a7199cbf19e07ea10645c85123bedc1312edfb70",
+          "size": 9616,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-asset-qa/SKILL.md",
+          "blob": "992ea8ed5b14a9de27841ee9f6bde5f890aafc15",
+          "size": 5185,
+          "kind": "entrypoint"
+        },
+        {
+          "path": "skills/blender-asset-qa/scripts/_bpyx.py",
+          "blob": "9048f6909cdd95254e93a7d478785149beaa4b9a",
+          "size": 4503,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-asset-qa/scripts/qa_check.py",
+          "blob": "e6d7a5bd8752e0bedc79bfc676d5641cda0a7ade",
+          "size": 19502,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-asset-qa/scripts/review_shots.py",
+          "blob": "b3575308560375375e4e86d4e6f9c26de2a4a08f",
+          "size": 6292,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-character-rigging/SKILL.md",
+          "blob": "a3d3277dd77c03c623a0b727ad84a8f6bdf3644a",
+          "size": 6653,
+          "kind": "entrypoint"
+        },
+        {
+          "path": "skills/blender-character-rigging/scripts/_bpyx.py",
+          "blob": "9048f6909cdd95254e93a7d478785149beaa4b9a",
+          "size": 4503,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-character-rigging/scripts/bind_mesh.py",
+          "blob": "fc5cb8569efa5d5f8eaa20f7bf5057db331fb498",
+          "size": 4516,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-character-rigging/scripts/rig_check.py",
+          "blob": "0f63aa5142cac5b4b5c8c0da655a9d341215c36c",
+          "size": 9246,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-character-rigging/scripts/rigify_build.py",
+          "blob": "c447509a3fc60148dbb7c1be9737bc4a3ed1cd24",
+          "size": 7387,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-character-rigging/scripts/stress_poses.py",
+          "blob": "df67d2904d4a80bf95f1f903fc10d58ba7207a2f",
+          "size": 5318,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-clothing/SKILL.md",
+          "blob": "6f1f3a8bb8e37a44928c7b90fb26367f2171a3de",
+          "size": 5182,
+          "kind": "entrypoint"
+        },
+        {
+          "path": "skills/blender-clothing/scripts/_bpyx.py",
+          "blob": "9048f6909cdd95254e93a7d478785149beaa4b9a",
+          "size": 4503,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-clothing/scripts/garment.py",
+          "blob": "b18d8462248f4809afc93868b2d1e15943c9a242",
+          "size": 12050,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-core/SKILL.md",
+          "blob": "9aeacc3a7bfa0ef34d1feda22f92fccecfd8e202",
+          "size": 7635,
+          "kind": "entrypoint"
+        },
+        {
+          "path": "skills/blender-core/references/api-changes-5x.md",
+          "blob": "1df3a97d13bd63c1508416b799ed29294105e658",
+          "size": 6666,
+          "kind": "package-reference"
+        },
+        {
+          "path": "skills/blender-core/references/bpy-patterns.md",
+          "blob": "9d5489d7af74513297a419ec82b86c48267d48eb",
+          "size": 7793,
+          "kind": "package-reference"
+        },
+        {
+          "path": "skills/blender-core/scripts/_bpyx.py",
+          "blob": "9048f6909cdd95254e93a7d478785149beaa4b9a",
+          "size": 4503,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-core/scripts/env_report.py",
+          "blob": "36a95d3b9083ed3458af0b67b95f1906764aa322",
+          "size": 2015,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-core/scripts/run_in_blender.py",
+          "blob": "6c4036ff1be01f009cd7eb062292baf09b0b0c09",
+          "size": 3292,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-environment-kits/SKILL.md",
+          "blob": "1e04149c7dc50cccc2622dfa739b730b346d86de",
+          "size": 5184,
+          "kind": "entrypoint"
+        },
+        {
+          "path": "skills/blender-environment-kits/scripts/_bpyx.py",
+          "blob": "9048f6909cdd95254e93a7d478785149beaa4b9a",
+          "size": 4503,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-environment-kits/scripts/kit_check.py",
+          "blob": "f03da57426dc55856afb775236533fde030ca008",
+          "size": 6179,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-environment-kits/scripts/scatter.py",
+          "blob": "645bcef69ce6c8ec36bf93e65157421f84d0524f",
+          "size": 12215,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-environment-kits/scripts/terrain.py",
+          "blob": "d0e5e21d05710df8e88329e40454da5dd5393997",
+          "size": 11311,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-export-pipelines/SKILL.md",
+          "blob": "be7b38070db47d51a7f56183d13af24d5c9b1311",
+          "size": 5094,
+          "kind": "entrypoint"
+        },
+        {
+          "path": "skills/blender-export-pipelines/references/godot-web.md",
+          "blob": "0368e44a83daca2cf41ab57df64d8691493e6621",
+          "size": 2828,
+          "kind": "package-reference"
+        },
+        {
+          "path": "skills/blender-export-pipelines/references/roblox.md",
+          "blob": "d07843ba03047e829d9345496c6407ebb920c8a0",
+          "size": 3995,
+          "kind": "package-reference"
+        },
+        {
+          "path": "skills/blender-export-pipelines/references/unity.md",
+          "blob": "80b5a87f478042bc8032808b86d05a31d3746357",
+          "size": 2354,
+          "kind": "package-reference"
+        },
+        {
+          "path": "skills/blender-export-pipelines/references/unreal.md",
+          "blob": "02a19edaa21821c6b4e92b4408bdbab113da27b0",
+          "size": 3200,
+          "kind": "package-reference"
+        },
+        {
+          "path": "skills/blender-export-pipelines/scripts/_bpyx.py",
+          "blob": "9048f6909cdd95254e93a7d478785149beaa4b9a",
+          "size": 4503,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-export-pipelines/scripts/export_asset.py",
+          "blob": "01fcb5bb49b4db040a5743833dc769b750f0dbc8",
+          "size": 8743,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-facial-shapekeys/SKILL.md",
+          "blob": "82676d8cc0982a0f862d1ab163045462a724bf1a",
+          "size": 4875,
+          "kind": "entrypoint"
+        },
+        {
+          "path": "skills/blender-facial-shapekeys/scripts/_bpyx.py",
+          "blob": "9048f6909cdd95254e93a7d478785149beaa4b9a",
+          "size": 4503,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-facial-shapekeys/scripts/shapekeys.py",
+          "blob": "39974192e93b17b939edb943a2ab18f6c35e1990",
+          "size": 6208,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-game-optimization/SKILL.md",
+          "blob": "9197fe3d74bf9b02e04fe418796d1bd2e8bdfbbe",
+          "size": 5978,
+          "kind": "entrypoint"
+        },
+        {
+          "path": "skills/blender-game-optimization/scripts/_bpyx.py",
+          "blob": "9048f6909cdd95254e93a7d478785149beaa4b9a",
+          "size": 4503,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-game-optimization/scripts/make_lods.py",
+          "blob": "24b9662ad2d6d4a3deaff7182f96ae4f58cd90c5",
+          "size": 3956,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-game-optimization/scripts/mesh_stats.py",
+          "blob": "d53b1730119a172e19b13974d8b54e8d6d19e7d4",
+          "size": 3920,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-geometry-nodes/SKILL.md",
+          "blob": "16717c1a1ce0187721cc5c0706f475bc17757149",
+          "size": 6020,
+          "kind": "entrypoint"
+        },
+        {
+          "path": "skills/blender-geometry-nodes/references/recipes.md",
+          "blob": "ca9097995d83fcfe6dd454c308f7aa7f7c532c22",
+          "size": 3938,
+          "kind": "package-reference"
+        },
+        {
+          "path": "skills/blender-geometry-nodes/scripts/_bpyx.py",
+          "blob": "9048f6909cdd95254e93a7d478785149beaa4b9a",
+          "size": 4503,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-geometry-nodes/scripts/gn_builder.py",
+          "blob": "5ade425e198a6829eea40eb915d7dab18b2fd7f2",
+          "size": 9377,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-hair-grooming/SKILL.md",
+          "blob": "06811c6d03db4e8f8aa04c0747965333172bc991",
+          "size": 5486,
+          "kind": "entrypoint"
+        },
+        {
+          "path": "skills/blender-hair-grooming/scripts/_bpyx.py",
+          "blob": "9048f6909cdd95254e93a7d478785149beaa4b9a",
+          "size": 4503,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-hair-grooming/scripts/groom.py",
+          "blob": "855c1d4270d097ea76577ee46c8edc429aa8581f",
+          "size": 16673,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-hardsurface-modeling/SKILL.md",
+          "blob": "127ff83a2e0680ac7f1d044fe5b9015fe53afabc",
+          "size": 5641,
+          "kind": "entrypoint"
+        },
+        {
+          "path": "skills/blender-hardsurface-modeling/scripts/_bpyx.py",
+          "blob": "9048f6909cdd95254e93a7d478785149beaa4b9a",
+          "size": 4503,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-hardsurface-modeling/scripts/apply_stack.py",
+          "blob": "878c6c4c960fa7b9ca69e861e8e2b114817ff270",
+          "size": 4877,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-lighting-lookdev/SKILL.md",
+          "blob": "4087b16171df764c3a70b3a101a79b9a9905230e",
+          "size": 5341,
+          "kind": "entrypoint"
+        },
+        {
+          "path": "skills/blender-lighting-lookdev/scripts/_bpyx.py",
+          "blob": "9048f6909cdd95254e93a7d478785149beaa4b9a",
+          "size": 4503,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-lighting-lookdev/scripts/turntable.py",
+          "blob": "8cb4f12ce6f752b8927a7f2255d812fc1fd021cf",
+          "size": 7687,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-pbr-materials/SKILL.md",
+          "blob": "7d701d198a3e343f05d797e4b0a98eb7a576acdf",
+          "size": 5929,
+          "kind": "entrypoint"
+        },
+        {
+          "path": "skills/blender-pbr-materials/references/pbr-values.md",
+          "blob": "e2d750f4b099824590ed7b0c53c7ab315ac29f32",
+          "size": 2645,
+          "kind": "package-reference"
+        },
+        {
+          "path": "skills/blender-pbr-materials/scripts/_bpyx.py",
+          "blob": "9048f6909cdd95254e93a7d478785149beaa4b9a",
+          "size": 4503,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-pbr-materials/scripts/build_pbr_material.py",
+          "blob": "a190a67c1de0422e06f83727ceec8fa5223ff6d4",
+          "size": 11905,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-pipeline-automation/SKILL.md",
+          "blob": "32b5ea7b7d6ac33f0ee5d8c9c1b8cf38915520c3",
+          "size": 4899,
+          "kind": "entrypoint"
+        },
+        {
+          "path": "skills/blender-pipeline-automation/scripts/_bpyx.py",
+          "blob": "9048f6909cdd95254e93a7d478785149beaa4b9a",
+          "size": 4503,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-pipeline-automation/scripts/batch_process.py",
+          "blob": "a72ee25b333e7dfce40b6f6a7ff553a042c8e2a6",
+          "size": 6833,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-rendering/SKILL.md",
+          "blob": "f593ccd8869e8b5296de01d5598228605e19fa1d",
+          "size": 5599,
+          "kind": "entrypoint"
+        },
+        {
+          "path": "skills/blender-rendering/scripts/_bpyx.py",
+          "blob": "9048f6909cdd95254e93a7d478785149beaa4b9a",
+          "size": 4503,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-rendering/scripts/render_batch.py",
+          "blob": "1254ed0a4e6df2c8cc951c12dff0840853788afb",
+          "size": 6960,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-retopology-uv/SKILL.md",
+          "blob": "c858c55695f518fc372003903b5feca378954a28",
+          "size": 5127,
+          "kind": "entrypoint"
+        },
+        {
+          "path": "skills/blender-retopology-uv/scripts/_bpyx.py",
+          "blob": "9048f6909cdd95254e93a7d478785149beaa4b9a",
+          "size": 4503,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-retopology-uv/scripts/auto_retopo.py",
+          "blob": "6d12fd2c7f1dedd89148817bce3fa963a49a6d5f",
+          "size": 4110,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-retopology-uv/scripts/texel_density.py",
+          "blob": "bf9056e104133b51d0294764d68611a8fe239d46",
+          "size": 4693,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-retopology-uv/scripts/uv_pack.py",
+          "blob": "b48e6c2944bfe9d669c43f1188fcdd42c5e13715",
+          "size": 4816,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-scene-setup/SKILL.md",
+          "blob": "72d1b0f34c7c39c93f10d5f0fd123dd5b5cc6261",
+          "size": 5340,
+          "kind": "entrypoint"
+        },
+        {
+          "path": "skills/blender-scene-setup/scripts/_bpyx.py",
+          "blob": "9048f6909cdd95254e93a7d478785149beaa4b9a",
+          "size": 4503,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-scene-setup/scripts/scene_audit.py",
+          "blob": "b4c3d9000fa0eb4ea2b24277c5dc4f8b56bbf6a5",
+          "size": 5041,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-sculpting/SKILL.md",
+          "blob": "fcbdfad236b588e9b6dddd453f2a8a645a193e93",
+          "size": 5122,
+          "kind": "entrypoint"
+        },
+        {
+          "path": "skills/blender-sculpting/references/forms-and-bake-sources.md",
+          "blob": "f312855a259a2cf75d31974c9567238a9754a869",
+          "size": 4455,
+          "kind": "package-reference"
+        },
+        {
+          "path": "skills/blender-sculpting/scripts/_bpyx.py",
+          "blob": "9048f6909cdd95254e93a7d478785149beaa4b9a",
+          "size": 4503,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-sculpting/scripts/sculpt_ops.py",
+          "blob": "0640d628f7ccd1f1497ab45e252013484c28767a",
+          "size": 4160,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-simulation/SKILL.md",
+          "blob": "082662e07b854b4c0227278dcd6d4b893fc9438f",
+          "size": 5883,
+          "kind": "entrypoint"
+        },
+        {
+          "path": "skills/blender-simulation/scripts/_bpyx.py",
+          "blob": "9048f6909cdd95254e93a7d478785149beaa4b9a",
+          "size": 4503,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-simulation/scripts/sim_setup.py",
+          "blob": "3b0abc85d63739689178d15ee1d1b00f7d7dea46",
+          "size": 10097,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-stylized-npr/SKILL.md",
+          "blob": "4364d3340190df213b86e0c466fa8270eb042d32",
+          "size": 5843,
+          "kind": "entrypoint"
+        },
+        {
+          "path": "skills/blender-stylized-npr/scripts/_bpyx.py",
+          "blob": "9048f6909cdd95254e93a7d478785149beaa4b9a",
+          "size": 4503,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-stylized-npr/scripts/toon_setup.py",
+          "blob": "f6f2c35fae1a2ca18fe9c254e267f82aae3d0f42",
+          "size": 17108,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-texture-baking/SKILL.md",
+          "blob": "f144e4a803f820ab4ed729b83835062a39413519",
+          "size": 5713,
+          "kind": "entrypoint"
+        },
+        {
+          "path": "skills/blender-texture-baking/scripts/_bpyx.py",
+          "blob": "9048f6909cdd95254e93a7d478785149beaa4b9a",
+          "size": 4503,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-texture-baking/scripts/bake_maps.py",
+          "blob": "b96d63d35c07eb979990c872ec0530819a4fa1b6",
+          "size": 11253,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-texturing/SKILL.md",
+          "blob": "54d544a6a3f13ffc0ea78cb2b1879840c019c03b",
+          "size": 5527,
+          "kind": "entrypoint"
+        },
+        {
+          "path": "skills/blender-texturing/references/trims-tiling-painting.md",
+          "blob": "814cbf98e9c6d3482bc43be1583888ed954f4953",
+          "size": 3780,
+          "kind": "package-reference"
+        },
+        {
+          "path": "skills/blender-texturing/scripts/_bpyx.py",
+          "blob": "9048f6909cdd95254e93a7d478785149beaa4b9a",
+          "size": 4503,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-texturing/scripts/decal.py",
+          "blob": "7dbe999e9a9e9e20d2dba995a7a8f4f149146cbf",
+          "size": 6447,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-texturing/scripts/smart_material.py",
+          "blob": "e09da6bf35aa9691768981c479b9ddbec1096c9c",
+          "size": 16244,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-time-of-day/SKILL.md",
+          "blob": "47f91bf25b7ab169926be57be06963a4f7d42471",
+          "size": 6715,
+          "kind": "entrypoint"
+        },
+        {
+          "path": "skills/blender-time-of-day/references/fog-volumetrics.md",
+          "blob": "8a015fb7177372046b4cc629cc57e98208f6c116",
+          "size": 3124,
+          "kind": "package-reference"
+        },
+        {
+          "path": "skills/blender-time-of-day/references/light-values.md",
+          "blob": "03ec373ce3062e426690aa057910f04940efff60",
+          "size": 2884,
+          "kind": "package-reference"
+        },
+        {
+          "path": "skills/blender-time-of-day/references/night-and-moods.md",
+          "blob": "436a8a26dd7f3de71e8df41788123865632d7242",
+          "size": 4075,
+          "kind": "package-reference"
+        },
+        {
+          "path": "skills/blender-time-of-day/scripts/_bpyx.py",
+          "blob": "9048f6909cdd95254e93a7d478785149beaa4b9a",
+          "size": 4503,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-time-of-day/scripts/scene_mood.py",
+          "blob": "35b61896ca20d85df8a9c629f6b42fc371f03dc1",
+          "size": 22978,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-video-editing/SKILL.md",
+          "blob": "a54f4b877cff64d43aba292faf2e3011d2a1143c",
+          "size": 4995,
+          "kind": "entrypoint"
+        },
+        {
+          "path": "skills/blender-video-editing/scripts/_bpyx.py",
+          "blob": "9048f6909cdd95254e93a7d478785149beaa4b9a",
+          "size": 4503,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-video-editing/scripts/track_camera.py",
+          "blob": "0197593894ce97b5b55f324c8130b6ef3cfa11af",
+          "size": 5293,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-video-editing/scripts/vse_edit.py",
+          "blob": "3f1cad5237e5391fa86455f66a72cabf4f9fc20e",
+          "size": 7777,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-weather-fx/SKILL.md",
+          "blob": "4b2d88bb09868f9781acb46acd308de724ef048c",
+          "size": 6649,
+          "kind": "entrypoint"
+        },
+        {
+          "path": "skills/blender-weather-fx/references/realtime-engines.md",
+          "blob": "69a6aafc1bd816dea1f432d9a8fe26639170a60e",
+          "size": 2659,
+          "kind": "package-reference"
+        },
+        {
+          "path": "skills/blender-weather-fx/references/weather-values.md",
+          "blob": "70238e0116918c0bd2196b80ac104f0d2cd9db9f",
+          "size": 3142,
+          "kind": "package-reference"
+        },
+        {
+          "path": "skills/blender-weather-fx/scripts/_bpyx.py",
+          "blob": "9048f6909cdd95254e93a7d478785149beaa4b9a",
+          "size": 4503,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-weather-fx/scripts/lightning.py",
+          "blob": "f163f939d11519947afb943b0fa2d3a172f44b0a",
+          "size": 7844,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-weather-fx/scripts/precipitation.py",
+          "blob": "008ead6111ac8f066860302e6a4ca44c33c75b1b",
+          "size": 19038,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-weather-fx/scripts/surface_weather.py",
+          "blob": "9309eb0c5583366ad26eac78787dc450b338d289",
+          "size": 17896,
+          "kind": "package-script"
+        },
+        {
+          "path": "skills/blender-workflow-recipes/SKILL.md",
+          "blob": "1d8ece0d91595110d36cec42343639949907d964",
+          "size": 8226,
+          "kind": "entrypoint"
+        }
+      ]
+    },
+    {
+      "id": "arjun",
+      "repo": "arjun988/blender-skills",
+      "commit": "8f778d2405a214b508d4c7d80742be8e43acdd52",
+      "tree": "fba306faa1425961eabe1af4199001a04d3a8e25",
+      "license": "MIT",
+      "scope": "Pinned canonical Skill packages and shared instruction resources; Cursor mirror intentionally excluded.",
+      "files": [
+        {
+          "path": ".claude/skills/analog-found-footage-horror/SKILL.md",
+          "blob": "88d8c98d1132482953ed20ce4d0fcc8841a52fc1",
+          "size": 813,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/analog-found-footage-horror/references/found-footage-camera.md",
+          "blob": "d9838e55ce64c8101848bfc20d5999377e33743e",
+          "size": 101,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/analog-found-footage-horror/references/vhs-comp.md",
+          "blob": "9bdaf9d0057a675c6eb3a2bdbebe50355277003b",
+          "size": 107,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/animation/SKILL.md",
+          "blob": "84e7e15f948388ed94c9a6935a46459b6f0e490d",
+          "size": 3528,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/animation/references/combat-animation.md",
+          "blob": "3e61af08393c2ca8152a4fdcc3af798445cccbeb",
+          "size": 1113,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/animation/references/walk-cycle.md",
+          "blob": "9aa58a9f5ebf15027de73df2d39dbe9095866d3a",
+          "size": 553,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/anime-style/SKILL.md",
+          "blob": "44c15974aac4c00b032e87837ab809261fe6eed5",
+          "size": 2144,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/anime-style/references/anime-proportion.md",
+          "blob": "7c7109eea44612a04291fbc481b21061c808e9ca",
+          "size": 255,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/anime-style/references/cel-shader-setup.md",
+          "blob": "4c8827662b7b4f47083135a5332cf7f066889f64",
+          "size": 225,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/apocalypse-worlds/SKILL.md",
+          "blob": "8d333212071278b2f66480fb96a49a3769c6222f",
+          "size": 769,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/apocalypse-worlds/references/dystopia-utopia.md",
+          "blob": "620202df93b780a0bfc7d9a7ae87827c4f96f14f",
+          "size": 122,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/apocalypse-worlds/references/wasteland.md",
+          "blob": "79456af460e8e97b8c7565802b12095e39ff7d41",
+          "size": 88,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/archviz/SKILL.md",
+          "blob": "b80e10aa88de54c6276a5b6a146279d0bdf73a1b",
+          "size": 2000,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/archviz/references/archviz-camera.md",
+          "blob": "172a3421cf747cebb31b3cd0cc43eb7559622f2f",
+          "size": 127,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/archviz/references/archviz-lighting.md",
+          "blob": "2f8e8a43be558cc12a6403f6c6cceb7adda3b249",
+          "size": 138,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/asset-optimization/SKILL.md",
+          "blob": "c089f1ab319db87773be67f0980cd831d0be668a",
+          "size": 3750,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/asset-optimization/references/lod-strategies.md",
+          "blob": "38ebd2cf27370ee9908217b71092b95ec0b84fe5",
+          "size": 514,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/biome-worlds/SKILL.md",
+          "blob": "f19dac628600ae88099ef857de811dab8608012a",
+          "size": 579,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/biome-worlds/references/biome-cheatsheet.md",
+          "blob": "c69455dedc064394119995275b75494fe9b045d2",
+          "size": 308,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/blender-director/SKILL.md",
+          "blob": "07edef3ccaf9a8cc64ae94dc13acd413d5338df8",
+          "size": 19704,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/blender-director/references/skill-routing.md",
+          "blob": "30f6e6137e65126d775f691fa76637cafc2f9d68",
+          "size": 4234,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/blender-modeler/SKILL.md",
+          "blob": "546a53e11976db57b5c18aef2a28a66b6d1e9465",
+          "size": 5158,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/blender-modeler/references/modifier-stack.md",
+          "blob": "d704776f9a793a6e2c922b26c8f2d42739baba20",
+          "size": 1412,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/blender-modeler/references/scene-organization.md",
+          "blob": "5e8f5221318a9f466fff418c3bf643864268a0a1",
+          "size": 980,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/body-horror-style/SKILL.md",
+          "blob": "7a59f8ee5528f8eeda228361f679bf2bc69d3083",
+          "size": 779,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/body-horror-style/references/mutation-cues.md",
+          "blob": "46601dec43306dbf7a64e6a8919ade2afc61506c",
+          "size": 112,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/brutalist-mood/SKILL.md",
+          "blob": "0bb3936631bafc788b5eb88c3c82312a279dc24f",
+          "size": 569,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/brutalist-mood/references/brutalist-forms.md",
+          "blob": "4dfaae14227c342ef6bb6da218639445f75c2ef0",
+          "size": 107,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/camera-cinematography/SKILL.md",
+          "blob": "9e191a9c378388ef2029fecd9ed19d74cfd83a46",
+          "size": 2673,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/camera-cinematography/references/camera-move-library.md",
+          "blob": "d4ffb1a3e9fce81df0ae93ca0a1a970bab81c039",
+          "size": 355,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/camera-cinematography/references/dof-guide.md",
+          "blob": "08cf55de9454ae0607cd4a279f711a4dea9be565",
+          "size": 177,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/camera-cinematography/references/lens-and-composition.md",
+          "blob": "1b07132f72f88edc6db86222b8d759e22810aab2",
+          "size": 326,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/cartoon-style/SKILL.md",
+          "blob": "4f6b8d7f1687a192d11f0f0ae83f85a78d6c9d2d",
+          "size": 1056,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/cartoon-style/references/cartoon-shape-language.md",
+          "blob": "637f0c143f0bd0648256f0631585dfcf625c782e",
+          "size": 167,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/character-archetypes/SKILL.md",
+          "blob": "f1afb41170e58f4d2eb3d86be56b748b8707cc95",
+          "size": 860,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/character-archetypes/references/fantasy-ancestries.md",
+          "blob": "545be485a1e8d6f8285aa2ae08fa18420de2af2c",
+          "size": 163,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/character-archetypes/references/horror-bodies.md",
+          "blob": "f7100ea7bcb8dde230b1a1612721ce06c601e661",
+          "size": 194,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/character-archetypes/references/role-kits.md",
+          "blob": "13a5f7749f018aeb7de08047591f68e16ad3c596",
+          "size": 171,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/character-archetypes/references/scifi-bodies.md",
+          "blob": "7d086b6432840c3dcd99a37a5a4ddde1fb25bd7f",
+          "size": 136,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/character-artist/SKILL.md",
+          "blob": "e454d9d64f97d31b654dd73918b101d1eb4bf554",
+          "size": 4151,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/character-artist/references/body-proportions.md",
+          "blob": "c06a24ff9440839489ef69ab814e688189099ea6",
+          "size": 484,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/character-artist/references/facial-topology.md",
+          "blob": "73922a3eb645e24aab1988f02d1a4697f4942cf6",
+          "size": 1115,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/chibi-style/SKILL.md",
+          "blob": "df1fe0fc67c4ad138e2244ae8317a3cf378729d9",
+          "size": 601,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/chibi-style/references/chibi-proportions.md",
+          "blob": "d19117f012762099ce0ae0d43ffd6750616fbcd0",
+          "size": 102,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/cloth-sim/SKILL.md",
+          "blob": "bcffda52d68f7241a55d74fd3a0549f7db65350b",
+          "size": 2499,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/cloth-sim/references/bake-targets.md",
+          "blob": "5cd230d0ba8ffbf24c5bf7420282449c2e7b29b0",
+          "size": 239,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/cloth-sim/references/cloth-settings-presets.md",
+          "blob": "81414c180e340eeadb8ae5f2c2e8879d054bfa13",
+          "size": 436,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/cloth-sim/references/pin-and-collide.md",
+          "blob": "739712b7f2ed8a29e2884e439172b00f08c1fc75",
+          "size": 375,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/collision-proxy/SKILL.md",
+          "blob": "9610448adce1814dd173ac7c4aa47993d42afe35",
+          "size": 2301,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/collision-proxy/references/collider-recipes.md",
+          "blob": "db26ee6201269973fb1a30d2788d2735d487a238",
+          "size": 299,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/collision-proxy/references/engine-naming.md",
+          "blob": "33aa381f8edff5f8844584aef2b234ea7c9e89db",
+          "size": 201,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/comic-book-style/SKILL.md",
+          "blob": "67fe909d38ea0d2b8324e963393715a1a77d7e4d",
+          "size": 883,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/comic-book-style/references/ink-tone.md",
+          "blob": "fc51c8a418a289b50a37e1ae4c80b9bd54120136",
+          "size": 152,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/compositing/SKILL.md",
+          "blob": "262cd69c2282314e7eed86ccdcc99774d684691a",
+          "size": 2308,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/compositing/references/delivery-outputs.md",
+          "blob": "4b0dc5c53101409af282ebf235adb5b8aebccf9b",
+          "size": 142,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/compositing/references/grade-presets.md",
+          "blob": "8d843a181e99b780c9dcfe2847f7f239f98eb1ad",
+          "size": 382,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/compositing/references/pass-stack.md",
+          "blob": "e5f6a1dbec8953910510ea2d06175a1a2670b38b",
+          "size": 181,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/cosmic-eldritch-horror/SKILL.md",
+          "blob": "73e6c56010f5fb09f944e4701f17cfc99aacc799",
+          "size": 828,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/cosmic-eldritch-horror/references/eldritch-forms.md",
+          "blob": "7fab54501d0684806397cd61b186edd7d44a21ac",
+          "size": 177,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/cozy-wholesome-mood/SKILL.md",
+          "blob": "2b2918efb491d9f438e6aa5fae57864270c035be",
+          "size": 652,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/cozy-wholesome-mood/references/cozy-palette.md",
+          "blob": "815047bfb6b51a37141c3d089aeea33daa952e75",
+          "size": 104,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/creature-artist/SKILL.md",
+          "blob": "184c0aeed97b68136d2595cce880fc1cce10dfbd",
+          "size": 4135,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/creature-artist/references/flying-creatures.md",
+          "blob": "e9143c8df594d669d71111041073e7eb937dd280",
+          "size": 1154,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/creature-artist/references/quadruped-anatomy.md",
+          "blob": "f5f51d1bccdfd1e91bea05a33b636c0413164769",
+          "size": 1171,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/dark-gritty-mood/SKILL.md",
+          "blob": "f1264351d273b0c90d6fe4a84f94c8ec030164f2",
+          "size": 567,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/dark-gritty-mood/references/gritty-materials.md",
+          "blob": "d1725971f5226800bbe503acdb5c3acb2f52aa27",
+          "size": 125,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/dream-surreal-mood/SKILL.md",
+          "blob": "d6d6919abe7a9ca1078d30500caafea360f2827e",
+          "size": 519,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/dream-surreal-mood/references/surreal-devices.md",
+          "blob": "661c2356cddf0128d7d83b6a9c9cd0e46a1f4aff",
+          "size": 125,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/dream-weirdcore-style/SKILL.md",
+          "blob": "c8d6f4b386ad6272246a6b403692ab65135af6ac",
+          "size": 789,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/dream-weirdcore-style/references/dreamcore-cues.md",
+          "blob": "0281d99225ae53dcb7f51837bcf7443bb74b549b",
+          "size": 113,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/environment-artist/SKILL.md",
+          "blob": "531dd056396114e341f5af03d6bc2d1b2faeb232",
+          "size": 5041,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/environment-artist/references/composition.md",
+          "blob": "5b047999bd24fecdd88319fc4bb25c7a7877aca4",
+          "size": 1241,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/environment-artist/references/modular-kits.md",
+          "blob": "11acc99b2b13cca83d93c0e36e1aaf77d0e691e3",
+          "size": 890,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/export-pipeline/SKILL.md",
+          "blob": "841c6f437c661a327ddfe8b3eca2b0853f43c993",
+          "size": 4185,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/export-pipeline/references/engine-import.md",
+          "blob": "34a3d12b3ebe772a4a5d1e5fb7e6d48f46b01bf0",
+          "size": 753,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/fantasy-worlds/SKILL.md",
+          "blob": "fd338ac0c01bbaa901c2e8c70ae85156c625e7c0",
+          "size": 812,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/fantasy-worlds/references/dark-fantasy.md",
+          "blob": "19abffbf9c6cb0490bb6b62adb635ae4f27f19e6",
+          "size": 90,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/fantasy-worlds/references/high-fantasy.md",
+          "blob": "da9bab65b490a3316fdfb6e1856ba959a1d11b76",
+          "size": 102,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/fantasy-worlds/references/medieval.md",
+          "blob": "03515b2cefceb39ca6daa6fa56c3d72df3d60f55",
+          "size": 91,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/fantasy-worlds/references/urban-fantasy.md",
+          "blob": "04bf3cdabbc7c3eef85ddbe0f658a69c2748a879",
+          "size": 92,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/folk-horror-style/SKILL.md",
+          "blob": "07d2f2fc0798c9bde0f87124737ca84cc423e04e",
+          "size": 741,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/folk-horror-style/references/folk-motifs.md",
+          "blob": "1943e778db11badbd39e9e175caea74a405417ea",
+          "size": 103,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/frutiger-aero-style/SKILL.md",
+          "blob": "d51e46850edc987d0e79fdbbd4074682e43c2e26",
+          "size": 570,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/frutiger-aero-style/references/aero-cues.md",
+          "blob": "664d3ddedb8c424eceb159098e337ec50d05e894",
+          "size": 119,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/genre-action-combat/SKILL.md",
+          "blob": "b8b8db7979335c8b0c1258721df1e8a90fa28c2d",
+          "size": 586,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/genre-action-combat/references/combat-readability.md",
+          "blob": "03039d26035d19a5ae8dffc1d13323889a058e87",
+          "size": 155,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/genre-card-party-idle/SKILL.md",
+          "blob": "0a702a7bcb5266ea47088e19f492fb816a9eafa6",
+          "size": 626,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/genre-card-party-idle/references/table-stage.md",
+          "blob": "e766c6d8ea5e27c2ca27fe26b88b19d0c6740d06",
+          "size": 121,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/genre-metroidvania-roguelike/SKILL.md",
+          "blob": "0cf930e3840e202a496e116268e50236020475c9",
+          "size": 586,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/genre-metroidvania-roguelike/references/module-kits.md",
+          "blob": "6bf43d37949089087c4de734a31af57d8149fc15",
+          "size": 130,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/genre-narrative-vn/SKILL.md",
+          "blob": "aa7f5f1a05446400dfcd8ad9a3c73fcb5cf1f4e1",
+          "size": 588,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/genre-narrative-vn/references/vn-backgrounds.md",
+          "blob": "891396850bd68883822fa9aa1d17d45b35f42e2f",
+          "size": 111,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/genre-open-world-sandbox/SKILL.md",
+          "blob": "9a1e345ecb22a2c7d19438fb60ed8fc277c38802",
+          "size": 595,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/genre-open-world-sandbox/references/open-world-landmarks.md",
+          "blob": "0f630eb3c292edf26954ef32960d36c540288dd4",
+          "size": 117,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/genre-puzzle-platformer/SKILL.md",
+          "blob": "3db575b910bf52cdb6821d2d2acdd0337205b417",
+          "size": 562,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/genre-puzzle-platformer/references/platform-readability.md",
+          "blob": "bb78c58d0ccf2fa12717f86fb454c56b7f438437",
+          "size": 143,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/genre-racing-sports/SKILL.md",
+          "blob": "4181ff22cd4cb7b69cf97880fdc2b33fb4b99452",
+          "size": 548,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/genre-racing-sports/references/speed-readability.md",
+          "blob": "82da92f554084228835bbdcaa8d76cb25082affe",
+          "size": 111,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/genre-rpg/SKILL.md",
+          "blob": "f2c71b233930ff33167df9f0f1f6c5f7a20f3470",
+          "size": 545,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/genre-rpg/references/rpg-subtypes.md",
+          "blob": "8d2768de992308399e682341de8051b04967a3e6",
+          "size": 196,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/genre-shooter/SKILL.md",
+          "blob": "d06d15dd39eebaa17f3184bace4b197457354f8a",
+          "size": 592,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/genre-shooter/references/br-extraction.md",
+          "blob": "22366e0f40c70bd7a224652f6b2b87648485c669",
+          "size": 130,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/genre-shooter/references/fps-tps.md",
+          "blob": "01f3110eb8f133790259f6d33bc4ed4fc32ba958",
+          "size": 117,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/genre-soulslike/SKILL.md",
+          "blob": "090994931cb46177c1bfdefca538f98e091f15b6",
+          "size": 609,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/genre-soulslike/references/souls-spaces.md",
+          "blob": "9c8833d7038257ebb6ab705a8c65e285374c8dca",
+          "size": 123,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/genre-stealth/SKILL.md",
+          "blob": "49ee18065eb1d9544d6d0dff034cba4ed5a6c070",
+          "size": 522,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/genre-stealth/references/stealth-layout.md",
+          "blob": "c46ceaf08922d66080cab237bfe5234c6c8080b7",
+          "size": 124,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/genre-strategy-sim/SKILL.md",
+          "blob": "f5e3d13bfa7cf525e1c23ae88d2db51a294db74e",
+          "size": 640,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/genre-strategy-sim/references/sim-props.md",
+          "blob": "d1451fad963a87201101412d760900298df2223b",
+          "size": 114,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/genre-strategy-sim/references/strategy-cameras.md",
+          "blob": "ec572572e2333fb7d0414096ea66b73139ec8afb",
+          "size": 106,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/genre-survival/SKILL.md",
+          "blob": "a1383275a4a2cef0df90dfc93a0c2bf92c0ee493",
+          "size": 579,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/genre-survival/references/survival-reads.md",
+          "blob": "7c8daeb23e0d28a8a2a05a819752e9a0227f5bd4",
+          "size": 134,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/geometry-nodes/SKILL.md",
+          "blob": "09c61e866f46e5d30b0a74449a383df18cb77773",
+          "size": 3905,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/geometry-nodes/references/building-generators.md",
+          "blob": "97c7cac485e597eebf1d5a01f409516144b67ac5",
+          "size": 1090,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/geometry-nodes/references/scatter-systems.md",
+          "blob": "0395b3929f7e0aa46e37d2531c8002aa552ba638",
+          "size": 596,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/godot-export/SKILL.md",
+          "blob": "d30659ac8f1b18fac167e515d99bb7ad08e48e65",
+          "size": 1892,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/godot-export/references/godot-checklist.md",
+          "blob": "dfe4a217a11aabbcfc4e9fe14a91d4ae39157efb",
+          "size": 160,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/hair-groom/SKILL.md",
+          "blob": "bc641c1a8512e98a15d73358236e300f032a1b9c",
+          "size": 2666,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/hair-groom/references/cinematic-vs-game.md",
+          "blob": "7ae241dd733576f85b3d70f85db60a8ae124d426",
+          "size": 336,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/hair-groom/references/groom-flow-regions.md",
+          "blob": "c93807cc9a9aea36846e39e4e2155763b7f886ac",
+          "size": 233,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/hair-groom/references/hair-card-atlas.md",
+          "blob": "8eef6477a23f58086e9bf3eae491a563edbccd63",
+          "size": 368,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/hand-painted-style/SKILL.md",
+          "blob": "de2acb7a9cd76bec400acc05afebaa5f12cb12cc",
+          "size": 712,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/hand-painted-style/references/paint-workflow.md",
+          "blob": "3bdba69e83c0d5b87f958cc4646904883a4d76ae",
+          "size": 133,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/hard-surface/SKILL.md",
+          "blob": "6d237136475db4eb9c32aaae21677148bff5f493",
+          "size": 5599,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/hard-surface/references/boolean-workflow.md",
+          "blob": "b84ac16f3cb9dee0c8923a99b29930ee3d6bec8b",
+          "size": 1039,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/hard-surface/references/greeble-patterns.md",
+          "blob": "10b6eaf65a9bad1e1162361ee4bfd9baacfe3ad4",
+          "size": 808,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/hd-2d-style/SKILL.md",
+          "blob": "f8f03c2122c657473fd48666fc5cfc46fa9ec189",
+          "size": 705,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/hd-2d-style/references/hd2d-stack.md",
+          "blob": "ecba113bb491a48ec842abbfe54846a666e8efca",
+          "size": 97,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/historical-worlds/SKILL.md",
+          "blob": "01fde34157cab01425842778de618412e0562220",
+          "size": 795,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/historical-worlds/references/military-eras.md",
+          "blob": "ef58e967f873e2f18645848b6965f1989096899c",
+          "size": 138,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/historical-worlds/references/period-materials.md",
+          "blob": "ffa634ef6bed1f87c593c5f425aa1fb3f5871081",
+          "size": 183,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/horror-style/SKILL.md",
+          "blob": "463667fa0f1b466cc36d893eb6438798d8104ec3",
+          "size": 5056,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/horror-style/references/analog-props.md",
+          "blob": "50c7a6789f90ddf8d2e03be8abae7d9b705e10c0",
+          "size": 1359,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/horror-style/references/horror-layouts.md",
+          "blob": "a28ec59ce73a532a8d1d0f4319b68062fbfa1b1f",
+          "size": 612,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/indie-horror-aesthetics/SKILL.md",
+          "blob": "a5c04bab1f8628b36451c77977bde3540f4f110f",
+          "size": 845,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/indie-horror-aesthetics/references/corporate-horror.md",
+          "blob": "b6f881cf6c8d05f157db17b45d618534b1911c16",
+          "size": 107,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/indie-horror-aesthetics/references/fear-to-fathom.md",
+          "blob": "f87035d528e8b7ac70d2e1e82a0d57576b30d3d5",
+          "size": 109,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/indie-horror-aesthetics/references/location-horror.md",
+          "blob": "291d2a68643da617fffcb0cf849cd77a795167c2",
+          "size": 193,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/indie-horror-aesthetics/references/puppet-combo.md",
+          "blob": "f03c20e53cb5dad827f675a88c51d2f8903b5aec",
+          "size": 102,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/indie-horror-aesthetics/references/silent-hill.md",
+          "blob": "caab3555ed027cdc60761719eef2ca64a473e303",
+          "size": 109,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/isometric-style/SKILL.md",
+          "blob": "04ea50066ca17e95a9bd25d9afcb34e647dcf02b",
+          "size": 2024,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/isometric-style/references/iso-camera.md",
+          "blob": "51bce0903f29db28b3438b6a9d61edad54d00c2f",
+          "size": 167,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/isometric-style/references/tile-footprints.md",
+          "blob": "f4adb37ca67c15ddf502faddc6789cd5d5946f8f",
+          "size": 201,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/lighting/SKILL.md",
+          "blob": "b3eb0e5d6a8ea286a1f326cece8d2b1f086d7f1d",
+          "size": 3716,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/lighting/references/cinematic-light-rigs.md",
+          "blob": "ede2eea0a60f7ece070da098f6f21f6d71b8f700",
+          "size": 968,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/lighting/references/horror-lighting-setups.md",
+          "blob": "d382c32e529c2ea2c9adbb6deeaf4311de6f883d",
+          "size": 1180,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/liminal-space-style/SKILL.md",
+          "blob": "d448b1fc492b30018e654fd744bd11ee002c91b1",
+          "size": 893,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/liminal-space-style/references/backrooms.md",
+          "blob": "a66724aa205c60b4e5670db30b139d0a1930ded5",
+          "size": 97,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/liminal-space-style/references/empty-public.md",
+          "blob": "2f2f2443140cf0f533313389f65797126d352c73",
+          "size": 121,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/lod-pipeline/SKILL.md",
+          "blob": "4af4509c514159d5a9b55a5f4862ceb4c7ad0ce7",
+          "size": 2363,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/lod-pipeline/references/lod-budgets.md",
+          "blob": "fe41fc11d1b98fa92679a8b5c2ebd7e965c2feff",
+          "size": 304,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/lod-pipeline/references/lod-validation.md",
+          "blob": "a0f9a6160768b7dc0e86cec59d00a682e1baa8d6",
+          "size": 164,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/lookdev/SKILL.md",
+          "blob": "be691381f088b34f0eef0d8e9246790ff6312cbb",
+          "size": 2015,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/lookdev/references/lookdev-checklist.md",
+          "blob": "0e4c84f05109a63ee2bd15f0c3972ecc89fb4aa4",
+          "size": 195,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/lookdev/references/lookdev-rig.md",
+          "blob": "af62173dcc7ee8002c9699aa3c2dcef19a18d974",
+          "size": 132,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/lowpoly-style/SKILL.md",
+          "blob": "f99c8d4764f58c87cb5f8c44c595ccb6320786f3",
+          "size": 3839,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/lowpoly-style/references/ps1-aesthetic.md",
+          "blob": "33fff55af007006b9fe31a830532898c96aa6b48",
+          "size": 1197,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/manga-style/SKILL.md",
+          "blob": "893f47b2fa8cfb83503241482bbea0f7333ceaf7",
+          "size": 852,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/manga-style/references/manga-value-design.md",
+          "blob": "497891706cc20f1b6edb6a50a75d58fc51d7e8c8",
+          "size": 132,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/mascot-puppet-horror/SKILL.md",
+          "blob": "7d5966e9856bbab021c33ad3f51000b06cae4f21",
+          "size": 844,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/mascot-puppet-horror/references/mascot-cues.md",
+          "blob": "fdf31dacde3f4d6c2ab65aecddb7455bd5ee55ee",
+          "size": 104,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/materials/SKILL.md",
+          "blob": "35a16914b33f25e409b87894cbfda85c0d2f33aa",
+          "size": 3867,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/materials/references/procedural-patterns.md",
+          "blob": "4b836734dffb3441d915b31915ee931ccae177fd",
+          "size": 1042,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/materials/references/surface-recipes.md",
+          "blob": "d26d9c2bd4747cbbe0d109439829515705d69fab",
+          "size": 608,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/minimalist-style/SKILL.md",
+          "blob": "59bf14f872bb1e5a4350ac5fc004405173c54cfa",
+          "size": 647,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/minimalist-style/references/reduction-rules.md",
+          "blob": "fb39623418fffdfcbe04d96db8c64a5dadcae46f",
+          "size": 89,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/neon-retrofuturism/SKILL.md",
+          "blob": "a418681949df3b01dbcfe0037867b169b02cd628",
+          "size": 563,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/neon-retrofuturism/references/synthwave.md",
+          "blob": "40c8bcd5129b18161316794c1088f16e02778843",
+          "size": 96,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/neon-retrofuturism/references/vaporwave.md",
+          "blob": "cc210ea56c5416569474e6986082b8c26fde6406",
+          "size": 86,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/noir-style/SKILL.md",
+          "blob": "10f255af24970620966f3675c35d315f8f582525",
+          "size": 706,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/noir-style/references/noir-lighting.md",
+          "blob": "f5410b4f0dc99c23d006b1fa6c4218a8a35f13e9",
+          "size": 102,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/painterly-style/SKILL.md",
+          "blob": "ecb94cd7ecb017c82e9a336c9a8661e2a4f41151",
+          "size": 820,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/painterly-style/references/oil-painting.md",
+          "blob": "7e89639c64103459be4661c28891cf8b2603a7a4",
+          "size": 109,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/painterly-style/references/watercolor.md",
+          "blob": "32e12221772064e2d2b5176377c8834106a09e5d",
+          "size": 104,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/physics-sim/SKILL.md",
+          "blob": "675b1ffe8b6bace1bafa1a9c6b517e6a7e3e00ba",
+          "size": 2496,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/physics-sim/references/destruction-pipeline.md",
+          "blob": "27bfc46a95b99d68d73f27d4e9732d4aed650ee5",
+          "size": 219,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/physics-sim/references/rigid-body-presets.md",
+          "blob": "3749ad88e1482d0424f42536bab7961fe2ed6c83",
+          "size": 317,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/physics-sim/references/sim-bake-checklist.md",
+          "blob": "4f3544c64475dfffe2bcf0e8837ea217bf5662a9",
+          "size": 162,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/pixel-art-style/SKILL.md",
+          "blob": "40b592ec3d9e4514ae401b2110c0eeee1ce71a32",
+          "size": 834,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/pixel-art-style/references/texel-rules.md",
+          "blob": "bcf230ad0e86d06cf25138ca9d615bc0be4e363b",
+          "size": 153,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/procedural-modeling/SKILL.md",
+          "blob": "77d65367c04f1219cc0e086fee4eab40b8dc2a18",
+          "size": 3594,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/prop-artist/SKILL.md",
+          "blob": "07faf85e6f2ba94168350428da7daf55d3b94b59",
+          "size": 2911,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/prop-artist/references/everyday-prop-checklist.md",
+          "blob": "48cf68f806d4703005b811c62901df82f37e3180",
+          "size": 331,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/prop-artist/references/kitbash-library.md",
+          "blob": "7d28a1800b251e2b951431ae6adae8ebf11b75ef",
+          "size": 422,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/prop-artist/references/prop-tiers.md",
+          "blob": "5ed9249d224f8d6cc560510d6f9930144c4db89f",
+          "size": 743,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/psx-horror-style/SKILL.md",
+          "blob": "f2da651ae0a04ee247c78ac7ed2ae345728ba48a",
+          "size": 2383,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/psx-horror-style/references/psx-horror-budgets.md",
+          "blob": "588bcb2f6beb9e25b548ca6de98c7b5b09fc9cc5",
+          "size": 239,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/psx-horror-style/references/psx-horror-palette.md",
+          "blob": "49ebbbd3d7cacae0248531ee933d2853615e452b",
+          "size": 147,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/qa-review/SKILL.md",
+          "blob": "73fb6dfcbe04969886a435e48352119aafa2ffb6",
+          "size": 2335,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/qa-review/references/qa-verdict-template.md",
+          "blob": "17e1d58855b816d315c4821f21fd1c5da1e9b992",
+          "size": 239,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/qa-review/references/screenshot-angles.md",
+          "blob": "7b8f77cf2ab2a2710fa69c175a62fd6c58183aac",
+          "size": 141,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/realistic-style/SKILL.md",
+          "blob": "ebe12c1ce52b0021c3c33e5dfd2f8513bc08f856",
+          "size": 4132,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/realistic-style/references/pbr-values.md",
+          "blob": "6add62d0b11f5272702874c09f05c9f2f1b58c28",
+          "size": 1487,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/realistic-style/references/scan-cleanup.md",
+          "blob": "9fa7acf6e440ced05233b6ddf9759a9ecc64b950",
+          "size": 1421,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/references/asset-pipeline.md",
+          "blob": "668fcd978c30984067edc27b4cb6809f7f754cbe",
+          "size": 5195,
+          "kind": "shared-reference"
+        },
+        {
+          "path": ".claude/skills/references/mcp-integration.md",
+          "blob": "e42f1adb7d55abaa62fdb3bf0f8fbae12367819a",
+          "size": 3455,
+          "kind": "shared-reference"
+        },
+        {
+          "path": ".claude/skills/references/mcp-tools.md",
+          "blob": "adae152520d95a688662de47713dcee14eca0087",
+          "size": 3420,
+          "kind": "shared-reference"
+        },
+        {
+          "path": ".claude/skills/references/naming-conventions.md",
+          "blob": "616d487a35b5277e2b742c988ba9a386f19c759c",
+          "size": 2064,
+          "kind": "shared-reference"
+        },
+        {
+          "path": ".claude/skills/references/polycount-budgets.md",
+          "blob": "36aa11886e350c76ec4c89e281d21981e51945b8",
+          "size": 2457,
+          "kind": "shared-reference"
+        },
+        {
+          "path": ".claude/skills/references/reference-analysis-template.md",
+          "blob": "241e5322a6e8683ddc91888638edb60ff8fe2ae8",
+          "size": 2857,
+          "kind": "shared-reference"
+        },
+        {
+          "path": ".claude/skills/references/reference-image-match.md",
+          "blob": "d45727cf54d697444bc24007bc4dc20e54e7f3e2",
+          "size": 8976,
+          "kind": "shared-reference"
+        },
+        {
+          "path": ".claude/skills/references/validation-checklist.md",
+          "blob": "fdaf3d789abe87f1fa2e77eb0b4bbb524dd09e24",
+          "size": 3391,
+          "kind": "shared-reference"
+        },
+        {
+          "path": ".claude/skills/references/visual-match-checklist.md",
+          "blob": "4b57c0e5182a609f640f52f41e2dfdbfd83d717d",
+          "size": 3505,
+          "kind": "shared-reference"
+        },
+        {
+          "path": ".claude/skills/rendering/SKILL.md",
+          "blob": "0a81567390369da87f53affe4603f913839a4c25",
+          "size": 4725,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/rendering/references/npr-rendering.md",
+          "blob": "3184baf732300850ee9e41f68b2d00906bdc59c5",
+          "size": 897,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/rendering/references/render-passes.md",
+          "blob": "30780cfa0617a83114a75272a5237ae0d4f12e63",
+          "size": 1002,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/retopology/SKILL.md",
+          "blob": "2e17ee2058c7e07af3e8e8b97db610ed6d866413",
+          "size": 3885,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/retopology/references/facial-retopo.md",
+          "blob": "dca42b7d4b40aac041336331b6b289e462a2d745",
+          "size": 1076,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/retopology/references/game-cinematic-topo.md",
+          "blob": "9a4c66d2ced242a4bc6c376573ff65a6586638a1",
+          "size": 1063,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/retro-16bit-style/SKILL.md",
+          "blob": "c2c13ba7411cb07b828f8e0aca6ba27110715297",
+          "size": 518,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/retro-16bit-style/references/sixteen-bit-notes.md",
+          "blob": "97a35bc2428034adb997f19827bb091687e39788",
+          "size": 120,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/retro-8bit-style/SKILL.md",
+          "blob": "4b2972ee5f1be17d2f402b8c641224037c0c4c8e",
+          "size": 596,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/retro-8bit-style/references/eight-bit-constraints.md",
+          "blob": "ab5d9945d23fe0810345abde10ddf68634a69f1d",
+          "size": 125,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/rigging/SKILL.md",
+          "blob": "3f305e71cbd293bb4058d9236d0fd6915c256a2c",
+          "size": 3811,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/rigging/references/humanoid-rig.md",
+          "blob": "94b29455a669b90f9aed4f8a0b2c4439eedc5297",
+          "size": 1044,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/rigging/references/mechanical-rig.md",
+          "blob": "efc0a488f9be9fc45109b5bbf196df6a4ddfab2d",
+          "size": 1100,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/scene-assembly/SKILL.md",
+          "blob": "08970b2c212bbfef09958d2f04a22d9f7afa95a1",
+          "size": 2293,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/scene-assembly/references/collection-template.md",
+          "blob": "ddf2058e06c89d252fc5f5b5acd2b03b63e8c6fd",
+          "size": 201,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/scene-assembly/references/linking-overrides.md",
+          "blob": "17aec097619876a814abf49e8f116fac5e24acf1",
+          "size": 272,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/sci-fi-punk-worlds/SKILL.md",
+          "blob": "47fe8fe4737e7fca9c6420f0f61ce3cc01c15eff",
+          "size": 804,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/sci-fi-punk-worlds/references/cyberpunk.md",
+          "blob": "515e52a1938a02e409e0e815be818dec80ca581e",
+          "size": 104,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/sci-fi-punk-worlds/references/diesel-atom.md",
+          "blob": "a74bdf12c97b56fe891488224f0ecab49c925429",
+          "size": 127,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/sci-fi-punk-worlds/references/hard-space.md",
+          "blob": "9da85b132673772c9b907fc97d95a8f587993d7e",
+          "size": 107,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/sci-fi-punk-worlds/references/solar-bio-clock.md",
+          "blob": "660da4df6745a6661c9add378124fb403fe67419",
+          "size": 169,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/sci-fi-punk-worlds/references/steampunk.md",
+          "blob": "106fb1263dcd6214c6d9d692ac6fd78f06255217",
+          "size": 90,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/sculpting/SKILL.md",
+          "blob": "276fae7fad8873149e42d62b3fd6b1637c609f70",
+          "size": 4250,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/sculpting/references/brush-guide.md",
+          "blob": "91763920199dbf2947a159e7a1e027c5432b9840",
+          "size": 1127,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/set-dressing/SKILL.md",
+          "blob": "1347c458340ee334f64c285a0dd4970668be6689",
+          "size": 2043,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/set-dressing/references/density-map.md",
+          "blob": "4b864132c415c14dcf305c34683afe72bd999a4d",
+          "size": 98,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/set-dressing/references/story-clusters.md",
+          "blob": "ac21f1bb987c21f3a14be06a9ae89c3dd89480b7",
+          "size": 193,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/stop-motion-craft-style/SKILL.md",
+          "blob": "7b1c0e368420190ac7ee5de75cf48b67c63612cd",
+          "size": 836,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/stop-motion-craft-style/references/claymation.md",
+          "blob": "2c8b5f5cbe9e027985b5d797f5d67ac12916d4ab",
+          "size": 109,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/stop-motion-craft-style/references/paper-craft.md",
+          "blob": "9fa9b54a98af4ebbcff00795d608bf8b8823b720",
+          "size": 104,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/stylized-style/SKILL.md",
+          "blob": "4145b04454d36965cdb5755cc5e546f2872f0a5b",
+          "size": 4404,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/stylized-style/references/npr-shaders.md",
+          "blob": "d44bd4ef7a3c73ff01b0836d75758cd7f69b2ddb",
+          "size": 1121,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/stylized-style/references/palette-examples.md",
+          "blob": "73c7fa18d346fb83afab8d13b7a5b519814107f0",
+          "size": 1036,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/texture-workflow/SKILL.md",
+          "blob": "402b960562dbc60f76ae29fc4885b4ed8b254a69",
+          "size": 4026,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/texture-workflow/references/bake-troubleshooting.md",
+          "blob": "c333a88e5c45c4c6778e3ff4d2f534d432746e2e",
+          "size": 1136,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/texture-workflow/references/orm-packing.md",
+          "blob": "94611f9d63f6036666c63887c9bbb4806452d214",
+          "size": 891,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/unity-export/SKILL.md",
+          "blob": "c37947227a8724f8aff73c2ce5541f94cd001aac",
+          "size": 2407,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/unity-export/references/unity-checklist.md",
+          "blob": "58c511673c22f593e6b60cb4042d3f412fc0af91",
+          "size": 242,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/unity-export/references/unity-materials.md",
+          "blob": "404ace5c073897cd7bc26dbb3105e4442046e2c9",
+          "size": 181,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/unreal-export/SKILL.md",
+          "blob": "4931f26cc940505aecc5ede82b14fe61903716c3",
+          "size": 2452,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/unreal-export/references/ucx-naming.md",
+          "blob": "0af24f97e272b49077ace6af86b2398de880728e",
+          "size": 115,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/unreal-export/references/unreal-checklist.md",
+          "blob": "4417f34d3fc23f792d8722a756d9245fa08101e0",
+          "size": 249,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/uv-workflow/SKILL.md",
+          "blob": "b79fc96469fdab06eab6bb3c32afdf54a2011b81",
+          "size": 4240,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/uv-workflow/references/texel-density.md",
+          "blob": "9fc8c93e19898ad4e923dc398efb3746b46dc524",
+          "size": 542,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/uv-workflow/references/trim-sheets.md",
+          "blob": "0e62cd045e767151be9f38b4f3d7c3177b56ad08",
+          "size": 951,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/vector-style/SKILL.md",
+          "blob": "84f063ea0c914ef24904dafb49c99eeceda02698",
+          "size": 500,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/vector-style/references/vector-rules.md",
+          "blob": "db8887f05fdc568d0edf30e355e8a0884efae751",
+          "size": 97,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/vegetation-artist/SKILL.md",
+          "blob": "0dbdc2bf60fc38c577568e86af8ab48024afef9f",
+          "size": 1992,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/vegetation-artist/references/leaf-atlas.md",
+          "blob": "6e962e6f8e5494062f92c6f46e408a66919b53ec",
+          "size": 111,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/vegetation-artist/references/tree-lod.md",
+          "blob": "122ee7672d74a27940ddecc434a6aeef88d3cf5e",
+          "size": 129,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/vegetation-artist/references/wind-vertex-colors.md",
+          "blob": "a20062480e193ad9d337dc404617b52cae7db292",
+          "size": 118,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/vehicle-artist/SKILL.md",
+          "blob": "30b5eee31d207ab5f2fe70ae9d80da5f8030aeca",
+          "size": 2999,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/vehicle-artist/references/proportion-blockout.md",
+          "blob": "9b9aa2a9ed2c89fdbd95c324ab2f911ffb33c37a",
+          "size": 528,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/vehicle-artist/references/vehicle-lod-targets.md",
+          "blob": "74d08ccdc68f4afb5f88485ecad4eefb23e58a42",
+          "size": 291,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/vehicle-artist/references/vehicle-object-split.md",
+          "blob": "0d0afcdb6d8f7ec5c6fc4454b08fbd5328c6aff7",
+          "size": 369,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/vfx-fx/SKILL.md",
+          "blob": "54c483cb2b484f0ec92309d8a0477ad978d77909",
+          "size": 2487,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/vfx-fx/references/fx-timing-brief.md",
+          "blob": "fd618ccee7c1b52575d4ad4e04685dc01a2eb2eb",
+          "size": 227,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/vfx-fx/references/game-fx-export.md",
+          "blob": "0bfe1a52e489f8f5c54036cf0b4d6f302158bed6",
+          "size": 282,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/vfx-fx/references/volume-domain-rules.md",
+          "blob": "c7dea5735706cd2a000d09aea50e23bd85d9a95a",
+          "size": 248,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/visual-console-eras/SKILL.md",
+          "blob": "ba7a9eff0471784f22e6b0c4ac622ff2e5c4decb",
+          "size": 627,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/visual-console-eras/references/crt-vhs-film.md",
+          "blob": "dec116d10d1408a4e935f43a608deeabaae02f05",
+          "size": 183,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/visual-console-eras/references/ps1-ps2.md",
+          "blob": "3b1313ef39f3dbc4a04908b98075310d9c0d7539",
+          "size": 145,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/visual-console-eras/references/ps3-ps5.md",
+          "blob": "77cc86ab31a9cee27383b6ac7e2a2216e9e35f76",
+          "size": 172,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/voxel-style/SKILL.md",
+          "blob": "1977829684c3783b7a01819dc7bb98cb23792268",
+          "size": 1974,
+          "kind": "entrypoint"
+        },
+        {
+          "path": ".claude/skills/voxel-style/references/voxel-characters.md",
+          "blob": "aed4413b615b6701a8ef1679c20968006abd10a8",
+          "size": 137,
+          "kind": "package-reference"
+        },
+        {
+          "path": ".claude/skills/voxel-style/references/voxel-grid.md",
+          "blob": "f89fad5a50ec266b8c3e45fe86f0534c9a96a90a",
+          "size": 154,
+          "kind": "package-reference"
+        },
+        {
+          "path": "LICENSE",
+          "blob": "576f7bc8a82e02a0d09a6f955612050cf15873a8",
+          "size": 1084,
+          "kind": "license"
+        },
+        {
+          "path": "README.md",
+          "blob": "fcd90068eb2dd4c4576d3af56418f3a5b5cbe6f2",
+          "size": 9770,
+          "kind": "repository-context"
+        }
+      ]
+    }
+  ]
+}

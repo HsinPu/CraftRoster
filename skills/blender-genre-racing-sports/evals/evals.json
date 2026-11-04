@@ -1,0 +1,51 @@
+{
+  "skill_name": "blender-genre-racing-sports",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Build a three-segment bend with continuous cross-sections, clear runoff and a pre-turn landmark from driver cameras. Use an isolated project, preserve supplied references and produce scoped assets with honest evidence. If Blender or image inspection is unavailable, provide the specification and mark affected checks unexecuted.",
+      "expected_output": "An editable subject-specific kit or explicitly unexecuted production specification, requested dimensions/states, named diagnostics, actual findings and separate technical/visual/engine evidence status.",
+      "assertions": [
+        "Centerline/cross-section overlays, curb close-up, three approach frames and far-detail sheet. Review sharp frames before optional blur; blur does not prove readability at a stated real speed.",
+        "Supplied camera, scale and fiction remain authoritative; concrete pieces and state variants are identified.",
+        "Image acceptance cites actually inspected current-revision images and observations, not file existence.",
+        "No game behavior, AI, balance, physics or engine performance is inferred from renders or static proxies."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Repair mismatched banking and sponsor-obscured direction marker; provide matched approach images without claiming handling tests. Inspect before editing; preserve original source and work only in authorized asset collections. Repeat affected diagnostics after repair.",
+      "expected_output": "A bounded diagnosis and targeted repair retaining approved source/style, with matched subject-specific before/after evidence or an explicit blocked/unverified result.",
+      "assertions": [
+        "Curb reads as road: change profile/value groups. Barrier crosses runoff: repair placement/connection. Team identity conflicts with marks: separate shape and placement conventions. Banking seam: match complete cross-sections.",
+        "Asset repairs are separated from game-rule and engine-system changes.",
+        "The original is preserved; affected checks and actual image review are repeated after editing.",
+        "A static numerical or geometry pass is not claimed as gameplay, historical authenticity or scientific proof."
+      ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Repair a racing banking seam and unreadable apex curb, then build a court scoring structure using supplied dimensions. Use an isolated authorized source; if execution or image inspection is unavailable, return the concrete specification and mark those checks unexecuted.",
+      "expected_output": "Subtype-specific construction/state and repair artifacts, or an explicit unexecuted specification, with actual diagnostic evidence distinguished from visual and engine acceptance.",
+      "assertions": [
+        "Matches road full cross-section and tangent, not centerline alone.",
+        "Court checks actual equipment supports, line/reflection clarity and athlete/broadcast views.",
+        "Preserves rule dimensions and reports handling/ball behavior as untested."
+      ]
+    },
+    {
+      "id": 4,
+      "locale": "en",
+      "prompt": "Create field and stadium-corner variants where distant markings survive and seating bays join without gaps. Use an isolated authorized source; if execution or image inspection is unavailable, return the concrete specification and mark those checks unexecuted.",
+      "expected_output": "Subtype-specific construction/state and repair artifacts, or an explicit unexecuted specification, with actual diagnostic evidence distinguished from visual and engine acceptance.",
+      "assertions": [
+        "Keeps source/ruleset dimensions and separates sponsors from critical marks.",
+        "Builds seating aisle/rail/support and corner connectors before repetition.",
+        "Provides near/far and sharp camera evidence without inferring crowd performance or venue certification."
+      ]
+    }
+  ]
+}

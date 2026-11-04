@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-chibi-style",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Build a 2.5-head-tall chibi explorer preserving its reference hat, coat and small eyes.",
+      "expected_output": "A proportion-led full-body design.",
+      "assertions": [
+        "Measures head units.",
+        "Preserves small eyes and identity.",
+        "Checks shoulder clearance and small silhouette."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "The head intersects shoulders and its realistic shrunken torso looks uncanny. Repair it.",
+      "expected_output": "Redesign compact masses and clearance.",
+      "assertions": [
+        "Adjusts torso/pelvis and limbs.",
+        "Tests head/arm pose.",
+        "Does not enlarge eyes as a universal fix."
+      ]
+    }
+  ]
+}

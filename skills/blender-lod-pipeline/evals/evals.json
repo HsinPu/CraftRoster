@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-lod-pipeline",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Build a cabinet LOD chain from an approved 8k source for screen-size transitions; keep UVs and pivot.",
+      "expected_output": "Revision-scoped work or read-only findings with concrete technical and visual acceptance evidence; missing execution is identified.",
+      "assertions": [
+        "Does not mutate LOD0.",
+        "Chooses reductions by features and transition size.",
+        "Returns current per-level comparisons and actual counts."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Review LODs where counts halve perfectly but the handle vanishes, origin shifts and shader colors change. Do not regenerate.",
+      "expected_output": "Revision-scoped work or read-only findings with concrete technical and visual acceptance evidence; missing execution is identified.",
+      "assertions": [
+        "Prioritizes silhouette/pivot/attribute defects over ratios.",
+        "Keeps review read-only.",
+        "Requires actual imported transition evidence."
+      ]
+    }
+  ]
+}

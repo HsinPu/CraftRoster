@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-godot-export",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Prepare an animated Blender prop for Godot 4.6 as GLB with two named clips, a measured 1 m feature, offset pivot and documented collision method. Preserve source and verify in a disposable Godot scene when available.",
+      "expected_output": "A controlled GLB and calibration/import evidence covering transforms, materials, clips and collision; unavailable target clearly reported.",
+      "assertions": [
+        "Known dimension, forward marker and pivot are checked after import.",
+        "Clip names/durations and representative motion are observed rather than inferred from counts.",
+        "Godot collision hint policy is explicit; UCX naming is not assumed to work."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "A Godot import has a 100x scale error, missing roughness and a convex doorway collision blocking the opening. No Godot editor is available for your correction pass.",
+      "expected_output": "Traces source/export/import settings, prepares bounded fixes and leaves target acceptance unperformed rather than reporting engine success.",
+      "assertions": [
+        "Scale correction is traced through units/export/import instead of hidden ancestor scaling.",
+        "Material packing and proxy passage intent are addressed.",
+        "Blender reimport or output presence is not called a Godot pass."
+      ]
+    }
+  ]
+}

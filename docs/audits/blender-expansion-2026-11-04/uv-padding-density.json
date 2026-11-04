@@ -1,0 +1,16 @@
+{
+  "source_uv_island_count": 6,
+  "source_min_interisland_edge_gap_px": 4.418205261230469,
+  "bake_dilation_px": 2,
+  "full_resolution_padding_interpretation": "minimum measured gutter must exceed two dilations for noncompeting padding; mip acceptance separate",
+  "evaluated_bevel_uv_triangle_count": 44,
+  "evaluated_bevel_zero_uv_triangles": 0,
+  "evaluated_bevel_uv_loops_outside_01": 0,
+  "evaluated_density_min_px_per_m": 76.85261803286816,
+  "evaluated_density_max_px_per_m": 101.14393224242731,
+  "UV_change": "none: preserved valid layout after actual unlit checker and bake inspection; bake dilation reduced to 2px for measured 4.418px gutter",
+  "checker_type": "Blender COLOR_GRID includes high contrast black/white calibration/lettering at patch edges; plain two-color UV checker supplied to disambiguate.",
+  "source_sha256": "7797a4b6917dcc535c7d2560aa9e6378381976a643baf9cdcabc711f2726b80f",
+  "source_positive_uv_overlap_pairs": [],
+  "evaluated_positive_uv_overlap_pairs": []
+}

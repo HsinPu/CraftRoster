@@ -1,0 +1,51 @@
+{
+  "skill_name": "blender-genre-stealth",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Build a service court with lit crossing, sheltered perimeter and actor-sized vent; provide guard-eye and crouched views. Use an isolated project, preserve supplied references and produce scoped assets with honest evidence. If Blender or image inspection is unavailable, provide the specification and mark affected checks unexecuted.",
+      "expected_output": "An editable subject-specific kit or explicitly unexecuted production specification, requested dimensions/states, named diagnostics, actual findings and separate technical/visual/engine evidence status.",
+      "assertions": [
+        "Roofless route/cone diagram, crouched/standing views, opacity section and surface sheet. Raise exposure on sheltered zones to examine geometry/source logic; these remain static checks.",
+        "Supplied camera, scale and fiction remain authoritative; concrete pieces and state variants are identified.",
+        "Image acceptance cites actually inspected current-revision images and observations, not file existence.",
+        "No game behavior, AI, balance, physics or engine performance is inferred from renders or static proxies."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Repair an opaque-looking hedge with sparse intended proxy and undersized vent without asserting AI detection works. Inspect before editing; preserve original source and work only in authorized asset collections. Repeat affected diagnostics after repair.",
+      "expected_output": "A bounded diagnosis and targeted repair retaining approved source/style, with matched subject-specific before/after evidence or an explicit blocked/unverified result.",
+      "assertions": [
+        "Black grading hides edges: restore local separation. Hedge implies solid concealment but proxy is open: reconcile intent. Vent too small: enlarge or label decorative, never silently shrink supplied actor. Loud-looking surface: report art cue separately from audio behavior.",
+        "Asset repairs are separated from game-rule and engine-system changes.",
+        "The original is preserved; affected checks and actual image review are repeated after editing.",
+        "A static numerical or geometry pass is not claimed as gameplay, historical authenticity or scientific proof."
+      ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Build a social-infiltration checkpoint and a vertical vent route rather than a generic dark courtyard. Use an isolated authorized source; if execution or image inspection is unavailable, return the concrete specification and mark those checks unexecuted.",
+      "expected_output": "Subtype-specific construction/state and repair artifacts, or an explicit unexecuted specification, with actual diagnostic evidence distinguished from visual and engine acceptance.",
+      "assertions": [
+        "Uses supplied access states, public/staff circulation and threshold hardware.",
+        "Models real vent interior/bend/exit and actual actor/camera clearance.",
+        "Keeps authorization, crawling and social AI as untested systems."
+      ]
+    },
+    {
+      "id": 4,
+      "locale": "en",
+      "prompt": "A grate looks noisy but is classified silent; a distraction prop and every decorative bottle share the same signifier. Repair only approved art. Use an isolated authorized source; if execution or image inspection is unavailable, return the concrete specification and mark those checks unexecuted.",
+      "expected_output": "Subtype-specific construction/state and repair artifacts, or an explicit unexecuted specification, with actual diagnostic evidence distinguished from visual and engine acceptance.",
+      "assertions": [
+        "Reports and reconciles supplied sound-class visual cue without rewriting sound behavior.",
+        "Separates interactive states and reachable anchors from ordinary dressing.",
+        "Delivers material/state/eye-view evidence without claiming sound propagation or detection tests."
+      ]
+    }
+  ]
+}

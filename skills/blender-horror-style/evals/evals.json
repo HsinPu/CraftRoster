@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-horror-style",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Build a tense modern apartment corridor with a misplaced chair suggesting presence; no fog or gore.",
+      "expected_output": "A sightline-based tension study.",
+      "assertions": [
+        "Preserves apartment/ordinary-chair premise.",
+        "Honors no-fog/no-gore.",
+        "Checks route/clue visibility."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "The corridor is black and full of unrelated scary props; the chair vanished.",
+      "expected_output": "Restore a readable fear mechanism.",
+      "assertions": [
+        "Removes competing props.",
+        "Uses selective fill/value separation.",
+        "Reviews brighter diagnostic and intended images."
+      ]
+    }
+  ]
+}

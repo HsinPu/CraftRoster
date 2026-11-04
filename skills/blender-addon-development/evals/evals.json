@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-addon-development",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create an extension that offsets only selected editable local meshes by a user distance, with a panel, one undo step and clean disable/re-enable. Work in a disposable project; do not install globally or publish.",
+      "expected_output": "Produces owned package resources, explicit operator scope and data assertions for selected/unselected meshes; actual lifecycle tests distinguished from unexecuted UI checks.",
+      "assertions": [
+        "Editable/source selection remains scoped and unrelated objects unchanged.",
+        "Enable/disable/re-enable produces one menu/property/handler set.",
+        "Undo/redo assertions examine transforms rather than operator status alone."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "An existing extension registers two classes and a menu, then fails while adding a property. It also leaves a modal timer after Escape. Diagnose and repair lifecycle behavior without deleting user data.",
+      "expected_output": "Acquisition-aware rollback and every terminal modal path release only owned resources; a forced-failure fixture demonstrates cleanup or is explicitly unexecuted.",
+      "assertions": [
+        "Partially acquired resources unwind in reverse dependency order.",
+        "Cancellation removes timer/draw resources and states what partial data is retained/restored.",
+        "No foreign registration, preferences or file is deleted to make the test pass."
+      ]
+    }
+  ]
+}

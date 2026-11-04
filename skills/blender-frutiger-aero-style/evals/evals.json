@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-frutiger-aero-style",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create a bright Frutiger Aero still life with a white device, grass and a clear aqua orb.",
+      "expected_output": "A nature-tech optimistic composition.",
+      "assertions": [
+        "Uses dielectric plastic/glass.",
+        "Controls reflected highlights and transparency.",
+        "Requires diagnostic evidence."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "The aqua orb is black, whites clip and the scene became a dark neon grid. Repair it.",
+      "expected_output": "Restore the requested material and mood.",
+      "assertions": [
+        "Checks thickness/normals/refraction.",
+        "Recovers whites with reflection/exposure control.",
+        "Removes unrequested synthwave cues."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-noir-style",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create a monochrome noir office shot with blind shadows and a readable dark-coated silhouette.",
+      "expected_output": "A motivated shadow composition.",
+      "assertions": [
+        "Uses actual gobo/slat logic.",
+        "Preserves silhouette separation.",
+        "Checks ungraded/final and grayscale."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "The coat merges into black and wet asphalt looks metallic. Repair the noir look.",
+      "expected_output": "Selective visibility and material correction.",
+      "assertions": [
+        "Separates subject/background without flattening all shadows.",
+        "Uses dielectric puddle/dry masks.",
+        "Checks reflection and shadow crops."
+      ]
+    }
+  ]
+}

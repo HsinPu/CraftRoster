@@ -75,6 +75,15 @@ jobs:
       - name: Test Blender helper contracts without native runtime
         run: python3 tests/blender-helpers.test.py
 
+      - name: Validate complete Blender source coverage
+        run: npm run validate:blender-coverage
+
+      - name: Test Blender coverage guards
+        run: npm run test:blender-coverage
+
+      - name: Test Blender batch failures without native runtime
+        run: python3 tests/blender-expansion-helpers.test.py
+
       - name: Validate Skill review registry
         run: npm run validate:skill-review
 

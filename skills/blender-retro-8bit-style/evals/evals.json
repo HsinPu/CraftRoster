@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-retro-8bit-style",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Make an 8-bit-inspired 16 by 24 pixel explorer with four authored colors and a 6x nearest preview.",
+      "expected_output": "A specified severe-palette exercise.",
+      "assertions": [
+        "Preserves base-grid silhouette.",
+        "Checks actual palette and enlargement.",
+        "Does not generalize four colors to all hardware."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "The four-color sprite contains dozens of edge colors and its hat disappears on dark backgrounds. Repair it.",
+      "expected_output": "Repair sampling and silhouette contrast.",
+      "assertions": [
+        "Checks antialiasing/resize causes.",
+        "Redesigns hat clusters or outline contrast.",
+        "Tests both backgrounds at base size."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "skill_name": "blender-genre-survival",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Build a coastal camp with four resource families, empty/full storage, repaired shelter and readable day/night bench. Use an isolated project, preserve supplied references and produce scoped assets with honest evidence. If Blender or image inspection is unavailable, provide the specification and mark affected checks unexecuted.",
+      "expected_output": "An editable subject-specific kit or explicitly unexecuted production specification, requested dimensions/states, named diagnostics, actual findings and separate technical/visual/engine evidence status.",
+      "assertions": [
+        "Resource-state sheet, bench reach elevation, shelter inside/outside and day/night collection images. Neutral silhouettes expose clutter confusion. Route overlays describe intent rather than verified AI safety.",
+        "Supplied camera, scale and fiction remain authoritative; concrete pieces and state variants are identified.",
+        "Image acceptance cites actually inspected current-revision images and observations, not file existence.",
+        "No game behavior, AI, balance, physics or engine performance is inferred from renders or static proxies."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Repair identical debris/pickups and a bench with unreachable surface without changing resource or crafting logic. Inspect before editing; preserve original source and work only in authorized asset collections. Repeat affected diagnostics after repair.",
+      "expected_output": "A bounded diagnosis and targeted repair retaining approved source/style, with matched subject-specific before/after evidence or an explicit blocked/unverified result.",
+      "assertions": [
+        "Glow-only pickup: revise packaging/shape. Every storage shell looks lootable: separate inaccessible forms. Dark bench unreadable: add motivated task light. Unreachable worktop: repair dimensions without rewriting crafting rules.",
+        "Asset repairs are separated from game-rule and engine-system changes.",
+        "The original is preserved; affected checks and actual image review are repeated after editing.",
+        "A static numerical or geometry pass is not claimed as gameplay, historical authenticity or scientific proof."
+      ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Create wilderness source/collectible/depleted states and a camp bench with reachable input/tool/output areas. Use an isolated authorized source; if execution or image inspection is unavailable, return the concrete specification and mark those checks unexecuted.",
+      "expected_output": "Subtype-specific construction/state and repair artifacts, or an explicit unexecuted specification, with actual diagnostic evidence distinguished from visual and engine acceptance.",
+      "assertions": [
+        "Distributes resources by supplied habitat and preserves identity without glow.",
+        "Bench/shelter uses actual reach, door and storage envelopes.",
+        "Delivers state/contact/day-night views without claiming crafting or regrowth behavior."
+      ]
+    },
+    {
+      "id": 4,
+      "locale": "en",
+      "prompt": "Build urban salvage and survival-horror return-route variants; all cabinets look searchable and the safe marker resembles a hazard. Use an isolated authorized source; if execution or image inspection is unavailable, return the concrete specification and mark those checks unexecuted.",
+      "expected_output": "Subtype-specific construction/state and repair artifacts, or an explicit unexecuted specification, with actual diagnostic evidence distinguished from visual and engine acceptance.",
+      "assertions": [
+        "Separates inaccessible decoration from searchable/depleted state grammar.",
+        "Keeps scarcity mood while preserving critical source-form and remembered-route readability.",
+        "Reports true safety, enemy behavior and economy as untested."
+      ]
+    }
+  ]
+}

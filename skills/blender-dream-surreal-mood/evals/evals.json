@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-dream-surreal-mood",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Build a hopeful surreal room with a floating table, sideways-falling cloth and one ordinary scale cue.",
+      "expected_output": "An emotionally specific impossible-rule study.",
+      "assertions": [
+        "Uses a consistent gravity contradiction.",
+        "Keeps the hopeful brief.",
+        "Requires clean/final evidence."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "The room looks like random floating assets and its scale paradox disappears in a wide lens.",
+      "expected_output": "Restore a legible contradiction.",
+      "assertions": [
+        "Removes unrelated motifs.",
+        "Tests a less distorting lens and scale anchor.",
+        "Discloses camera-dependent construction."
+      ]
+    }
+  ]
+}

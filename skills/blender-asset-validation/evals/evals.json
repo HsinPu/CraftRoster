@@ -33,6 +33,17 @@
         "Uses existing reports where valid and names missing evidence.",
         "Keeps technical, visual and target-engine acceptance separate."
       ]
+    },
+    {
+      "id": 4,
+      "locale": "en",
+      "prompt": "A Geometry Nodes asset has an unused empty material slot, but every evaluated polygon uses a valid material. Then a second revision assigns one face to the empty slot. Check both under require_materials.",
+      "expected_output": "Concrete scoped workflow and evidence-backed findings for the stated production failure, with unexecuted checks explicit.",
+      "assertions": [
+        "Accepts the unused slot without deleting user data.",
+        "Rejects the actual unassigned evaluated face and records its count.",
+        "Does not call material assignment proof visual quality or shader portability."
+      ]
     }
   ]
 }

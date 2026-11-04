@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-unreal-export",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Deliver a Blender static doorway and animated skeletal prop to Unreal using the project FBX path. Include two convex doorway pieces, an associated static socket and two separate clips, preserving source and documenting scale.",
+      "expected_output": "Controlled static/skeletal packages, known-dimension calibration, exact helper association and separate clip/import evidence or explicit unavailable checks.",
+      "assertions": [
+        "A 1 m calibration feature is measured as expected centimeter dimensions without double conversion.",
+        "Closed convex UCX pieces match the render mesh and preserve the opening.",
+        "Sockets and clips are observed in the target, not accepted from names alone."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "A combined FBX contains three static meshes with collision/socket helpers, a concave UCX mesh and all Blender Actions. The importer yields one collision and one animation. Diagnose without claiming Unreal execution if unavailable.",
+      "expected_output": "Recognizes path-specific multi-mesh and animation limits, repairs per-asset association/convex pieces/clip packaging and repeats relevant target checks only if available.",
+      "assertions": [
+        "The plan does not assume all helpers/actions survive a combined file.",
+        "Concave UCX is repaired into contract-appropriate convex pieces.",
+        "Technical export success is distinct from actual Unreal acceptance."
+      ]
+    }
+  ]
+}

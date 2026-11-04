@@ -45,6 +45,17 @@
         "Repeats affected checks and preserves unresolved findings.",
         "Keeps asset delivery readiness separate from optional or required engine verification."
       ]
+    },
+    {
+      "id": 5,
+      "locale": "en",
+      "prompt": "An export script exited zero but the old GLB is unchanged. Its triangle summary divides every primitive accessor count by three. Audit and repair this delivery.",
+      "expected_output": "Concrete scoped workflow and evidence-backed findings for the stated production failure, with unexecuted checks explicit.",
+      "assertions": [
+        "Rejects preexisting output and inspects actual exporter status.",
+        "Checks container and primitive semantics rather than trusting the summary.",
+        "Regenerates a fresh artifact and compares semantic expectations after import."
+      ]
     }
   ]
 }

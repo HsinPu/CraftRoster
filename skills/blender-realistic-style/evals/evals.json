@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-realistic-style",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Build a realistic painted steel desk lamp from dimensioned photos for a close Blender render.",
+      "expected_output": "A measured reference-based asset.",
+      "assertions": [
+        "Separates paint dielectric and metal substrate.",
+        "Checks broad/grazing light.",
+        "Does not impose game LOD work on a render-only request."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "The scan albedo includes sunlight shadows; rebaking it under flat light was claimed to de-light it. Correct the process.",
+      "expected_output": "Identify retained baked illumination.",
+      "assertions": [
+        "Explains rebake does not remove existing pixel shadows.",
+        "Proposes appropriate de-lighting/capture correction.",
+        "Retains the original scan and checks neutral images."
+      ]
+    }
+  ]
+}

@@ -33,6 +33,17 @@
         "Stays read-only even when a fix is requested inside the review.",
         "Gives a precise new clip/frame/contact recheck requirement."
       ]
+    },
+    {
+      "id": 4,
+      "locale": "en",
+      "prompt": "Review these current low-resolution game-camera images and two mismatched beauty views. One is cropped tightly and uses more bloom. Return findings only.",
+      "expected_output": "Concrete scoped workflow and evidence-backed findings for the stated production failure, with unexecuted checks explicit.",
+      "assertions": [
+        "Opens actual images and separates matched from incompatible comparison conditions.",
+        "Prioritizes visible silhouette/hierarchy problems with exact locations and recheck views.",
+        "Does not render, edit files or invent unseen engine/topology conclusions."
+      ]
     }
   ]
 }

@@ -1,0 +1,51 @@
+{
+  "skill_name": "blender-character-archetypes",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create three field-medic blockouts for an original broad-bodied fantasy population, with neutral and kneeling clearance studies. Use an isolated project, preserve supplied references and produce scoped assets with honest evidence. If Blender or image inspection is unavailable, provide the specification and mark affected checks unexecuted.",
+      "expected_output": "An editable subject-specific kit or explicitly unexecuted production specification, requested dimensions/states, named diagnostics, actual findings and separate technical/visual/engine evidence status.",
+      "assertions": [
+        "Black silhouettes, orthographic ratios, joint-clearance close-ups and grayscale lineup. Add wing-open/closed, mech-access or transparency diagnostics only for that family.",
+        "Supplied camera, scale and fiction remain authoritative; concrete pieces and state variants are identified.",
+        "Image acceptance cites actually inspected current-revision images and observations, not file existence.",
+        "No game behavior, AI, balance, physics or engine performance is inferred from renders or static proxies."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Repair an android whose armor bridges the elbow and whose role disappears with emission disabled; do not claim rig deformation was tested. Inspect before editing; preserve original source and work only in authorized asset collections. Repeat affected diagnostics after repair.",
+      "expected_output": "A bounded diagnosis and targeted repair retaining approved source/style, with matched subject-specific before/after evidence or an explicit blocked/unverified result.",
+      "assertions": [
+        "Color-only roles: alter mass and tool silhouette. Ground-intersecting weapon: adjust attachment/tool length rather than whole-body scale. Armor bridging elbow: split plates and inspect bent proxy. Unsupported cultural caricature: return to the individual brief.",
+        "Asset repairs are separated from game-rule and engine-system changes.",
+        "The original is preserved; affected checks and actual image review are repeated after editing.",
+        "A static numerical or geometry pass is not claimed as gameplay, historical authenticity or scientific proof."
+      ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Design a small winged field researcher and a 12 m service mecha with a human pilot. Current wings vanish and mech armor blocks the pilot hatch. Use an isolated authorized source; if execution or image inspection is unavailable, return the concrete specification and mark those checks unexecuted.",
+      "expected_output": "Subtype-specific construction/state and repair artifacts, or an explicit unexecuted specification, with actual diagnostic evidence distinguished from visual and engine acceptance.",
+      "assertions": [
+        "Sets absolute fairy, mech and pilot scales independently.",
+        "Tests wings folded/open and alpha-on/off; tests mech cockpit/service and limb envelopes.",
+        "Repairs silhouette/attachment/clearance without asserting flight or machine feasibility."
+      ]
+    },
+    {
+      "id": 4,
+      "locale": "en",
+      "prompt": "Make ghost detective and compact wizard variants whose roles read without glow; fix alpha overlap and a book that clips the face. Use an isolated authorized source; if execution or image inspection is unavailable, return the concrete specification and mark those checks unexecuted.",
+      "expected_output": "Subtype-specific construction/state and repair artifacts, or an explicit unexecuted specification, with actual diagnostic evidence distinguished from visual and engine acceptance.",
+      "assertions": [
+        "Builds readable opaque ghost source before spectral layering.",
+        "Roles use reachable task props and working poses rather than hat/hue alone.",
+        "Tests contrasting backgrounds, book states and compact-body reach while preserving individual identity."
+      ]
+    }
+  ]
+}

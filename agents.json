@@ -1,6 +1,6 @@
 {
   "version": "3.0.0",
-  "updated": "2026-11-04T06:10:00.819Z",
+  "updated": "2026-11-04T07:21:28.426Z",
   "total": 240,
   "categories": 31,
   "uniqueRoles": 240,
@@ -1195,7 +1195,48 @@
         "blender-development",
         "blender-lookdev",
         "blender-asset-validation",
-        "blender-visual-review"
+        "blender-visual-review",
+        "blender-modeling",
+        "blender-reference-modeling",
+        "blender-hard-surface",
+        "blender-character-modeling",
+        "blender-creature-modeling",
+        "blender-prop-modeling",
+        "blender-vehicle-modeling",
+        "blender-environment-art",
+        "blender-environment-kits",
+        "blender-scene-assembly",
+        "blender-set-dressing",
+        "blender-vegetation",
+        "blender-sculpting",
+        "blender-retopology",
+        "blender-uv-unwrapping",
+        "blender-geometry-nodes",
+        "blender-procedural-modeling",
+        "blender-pbr-materials",
+        "blender-texturing",
+        "blender-texture-baking",
+        "blender-lighting",
+        "blender-camera-cinematography",
+        "blender-rendering",
+        "blender-compositing",
+        "blender-character-rigging",
+        "blender-animation",
+        "blender-facial-shapekeys",
+        "blender-hair-grooming",
+        "blender-clothing",
+        "blender-cloth-simulation",
+        "blender-simulation",
+        "blender-game-optimization",
+        "blender-lod-pipeline",
+        "blender-collision-proxies",
+        "blender-export",
+        "blender-unity-export",
+        "blender-unreal-export",
+        "blender-godot-export",
+        "blender-pipeline-automation",
+        "blender-addon-development",
+        "blender-workflow-recipes"
       ],
       "skillDependencies": [
         {
@@ -1217,6 +1258,252 @@
           "name": "blender-visual-review",
           "kind": "recommended",
           "reason": "Provides independent, evidence-based visual critique and recheck criteria."
+        },
+        {
+          "name": "blender-modeling",
+          "kind": "conditional",
+          "when": "The authorized task requires general mesh blockout, precision editing, modifier construction or topology cleanup.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-reference-modeling",
+          "kind": "conditional",
+          "when": "The authorized task requires a reference-dominant reconstruction requiring camera, silhouette and proportion comparison.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-hard-surface",
+          "kind": "conditional",
+          "when": "The authorized task requires mechanical bodywork, boolean cuts, bevels or controlled hard-surface highlights.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-character-modeling",
+          "kind": "conditional",
+          "when": "The authorized task requires a human or humanoid mesh with proportion, clothing and expression-aware topology.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-creature-modeling",
+          "kind": "conditional",
+          "when": "The authorized task requires a nonhuman creature with anatomy-informed masses, locomotion and joint clearance.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-prop-modeling",
+          "kind": "conditional",
+          "when": "The authorized task requires a grounded furniture, tool, container or household prop with functional pivots.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-vehicle-modeling",
+          "kind": "conditional",
+          "when": "The authorized task requires vehicle proportions, bodywork and separately moving or shaded systems.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-environment-art",
+          "kind": "conditional",
+          "when": "The authorized task requires a composed environment whose architecture, terrain and route support the intended vista.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-environment-kits",
+          "kind": "conditional",
+          "when": "The authorized task requires a snapping modular kit, terrain heightfield or slope/height-masked biome scatter.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-scene-assembly",
+          "kind": "conditional",
+          "when": "The authorized task requires scene units, collections, linked libraries, overrides or large-set layout.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-set-dressing",
+          "kind": "conditional",
+          "when": "The authorized task requires narrative prop clusters, deliberate density and route-preserving placement.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-vegetation",
+          "kind": "conditional",
+          "when": "The authorized task requires plant branching, leaf atlases, wind data or canopy-preserving foliage LODs.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-sculpting",
+          "kind": "conditional",
+          "when": "The authorized task requires dense organic form development, safe remeshing or multires bake-source preparation.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-retopology",
+          "kind": "conditional",
+          "when": "The authorized task requires delivery topology rebuilt from a dense sculpt, scan or generated source.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-uv-unwrapping",
+          "kind": "conditional",
+          "when": "The authorized task requires seams, UV density, pixel padding, trims, UDIM or requested lightmap channels.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-geometry-nodes",
+          "kind": "conditional",
+          "when": "The authorized task requires a field/domain-correct Geometry Nodes graph, instancing system or bounded procedural zone.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-procedural-modeling",
+          "kind": "conditional",
+          "when": "The authorized task requires a bounded, seeded family of parametric rocks, buildings, roads, pipes or panels.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-pbr-materials",
+          "kind": "conditional",
+          "when": "The authorized task requires a physically based shader with correct texture channels, color spaces and material response.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-texturing",
+          "kind": "conditional",
+          "when": "The authorized task requires texture creation or assembly with surface scale, UV correspondence and channel validation.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-texture-baking",
+          "kind": "conditional",
+          "when": "The authorized task requires high-to-low or multires texture baking with cages, ray isolation and map checks.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-lighting",
+          "kind": "conditional",
+          "when": "The authorized task requires light placement, exposure balance, shadows or renderer-aware illumination.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-camera-cinematography",
+          "kind": "conditional",
+          "when": "The authorized task requires camera framing, lens choice, depth of field, camera motion or shot continuity.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-rendering",
+          "kind": "conditional",
+          "when": "The authorized task requires renderer configuration, render passes, sampling, output images or sequence verification.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-compositing",
+          "kind": "conditional",
+          "when": "The authorized task requires render-pass compositing, masking, color adjustment or a reusable compositor graph.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-character-rigging",
+          "kind": "conditional",
+          "when": "The authorized task requires a deforming character rig, weights, controls, constraints or tested rig handoff.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-animation",
+          "kind": "conditional",
+          "when": "The authorized task requires keyframed motion, action management, clip baking, retargeting or loop correction.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-facial-shapekeys",
+          "kind": "conditional",
+          "when": "The authorized task requires facial shape keys, corrective expressions or tested blendshape delivery.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-hair-grooming",
+          "kind": "conditional",
+          "when": "The authorized task requires strand grooming, hair cards, clumps or target-aware hair conversion.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-clothing",
+          "kind": "conditional",
+          "when": "The authorized task requires garment construction, thickness, fit, folds or clothing deformation preparation.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-cloth-simulation",
+          "kind": "conditional",
+          "when": "The authorized task requires a bounded cloth simulation with collision, cache and motion acceptance.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-simulation",
+          "kind": "conditional",
+          "when": "The authorized task requires a bounded Blender physical simulation with explicit cache and execution limits.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-game-optimization",
+          "kind": "conditional",
+          "when": "The authorized task requires measured reductions in asset geometry, materials, textures or skeletal cost.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-lod-pipeline",
+          "kind": "conditional",
+          "when": "The authorized task requires a measured LOD chain with preserved interfaces and screen-size transition inspection.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-collision-proxies",
+          "kind": "conditional",
+          "when": "The authorized task requires engine-specific collider primitives or convex proxy meshes with intended contact clearance.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-export",
+          "kind": "conditional",
+          "when": "The authorized task requires a common Blender export contract, selection, source preservation and reimport gate.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-unity-export",
+          "kind": "conditional",
+          "when": "The authorized task requires a Unity-targeted Blender delivery with verified units, materials, rig and import behavior.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-unreal-export",
+          "kind": "conditional",
+          "when": "The authorized task requires an Unreal-targeted Blender delivery with verified naming, transforms and import behavior.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-godot-export",
+          "kind": "conditional",
+          "when": "The authorized task requires a Godot-targeted Blender delivery with verified scale, resources and import behavior.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-pipeline-automation",
+          "kind": "conditional",
+          "when": "The authorized task requires repeatable Blender batch processing, validation, render jobs or delivery automation.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-addon-development",
+          "kind": "conditional",
+          "when": "The authorized task requires a Blender add-on, operator, panel, property registration or version-compatible extension.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
+        },
+        {
+          "name": "blender-workflow-recipes",
+          "kind": "conditional",
+          "when": "The authorized task requires an end-to-end Blender production recipe coordinating the relevant discipline checkpoints.",
+          "reason": "Supplies focused production mechanics and correction checkpoints for the requested discipline."
         }
       ],
       "tags": [
@@ -1246,7 +1533,39 @@
       "permission": "read-only",
       "skills": [
         "blender-asset-validation",
-        "blender-visual-review"
+        "blender-visual-review",
+        "blender-modeling",
+        "blender-reference-modeling",
+        "blender-hard-surface",
+        "blender-character-modeling",
+        "blender-creature-modeling",
+        "blender-vehicle-modeling",
+        "blender-environment-art",
+        "blender-environment-kits",
+        "blender-scene-assembly",
+        "blender-sculpting",
+        "blender-retopology",
+        "blender-uv-unwrapping",
+        "blender-pbr-materials",
+        "blender-texturing",
+        "blender-texture-baking",
+        "blender-lighting",
+        "blender-camera-cinematography",
+        "blender-rendering",
+        "blender-compositing",
+        "blender-character-rigging",
+        "blender-animation",
+        "blender-facial-shapekeys",
+        "blender-hair-grooming",
+        "blender-clothing",
+        "blender-simulation",
+        "blender-game-optimization",
+        "blender-lod-pipeline",
+        "blender-collision-proxies",
+        "blender-export",
+        "blender-unity-export",
+        "blender-unreal-export",
+        "blender-godot-export"
       ],
       "skillDependencies": [
         {
@@ -1258,6 +1577,198 @@
           "name": "blender-visual-review",
           "kind": "recommended",
           "reason": "Provides art-direction-aware visual diagnosis and correction priorities."
+        },
+        {
+          "name": "blender-modeling",
+          "kind": "conditional",
+          "when": "The requested review examines general mesh blockout, precision editing, modifier construction or topology cleanup.",
+          "reason": "Supplies discipline-specific criteria for supplied evidence; review remains read-only."
+        },
+        {
+          "name": "blender-reference-modeling",
+          "kind": "conditional",
+          "when": "The requested review examines a reference-dominant reconstruction requiring camera, silhouette and proportion comparison.",
+          "reason": "Supplies discipline-specific criteria for supplied evidence; review remains read-only."
+        },
+        {
+          "name": "blender-hard-surface",
+          "kind": "conditional",
+          "when": "The requested review examines mechanical bodywork, boolean cuts, bevels or controlled hard-surface highlights.",
+          "reason": "Supplies discipline-specific criteria for supplied evidence; review remains read-only."
+        },
+        {
+          "name": "blender-character-modeling",
+          "kind": "conditional",
+          "when": "The requested review examines a human or humanoid mesh with proportion, clothing and expression-aware topology.",
+          "reason": "Supplies discipline-specific criteria for supplied evidence; review remains read-only."
+        },
+        {
+          "name": "blender-creature-modeling",
+          "kind": "conditional",
+          "when": "The requested review examines a nonhuman creature with anatomy-informed masses, locomotion and joint clearance.",
+          "reason": "Supplies discipline-specific criteria for supplied evidence; review remains read-only."
+        },
+        {
+          "name": "blender-vehicle-modeling",
+          "kind": "conditional",
+          "when": "The requested review examines vehicle proportions, bodywork and separately moving or shaded systems.",
+          "reason": "Supplies discipline-specific criteria for supplied evidence; review remains read-only."
+        },
+        {
+          "name": "blender-environment-art",
+          "kind": "conditional",
+          "when": "The requested review examines a composed environment whose architecture, terrain and route support the intended vista.",
+          "reason": "Supplies discipline-specific criteria for supplied evidence; review remains read-only."
+        },
+        {
+          "name": "blender-environment-kits",
+          "kind": "conditional",
+          "when": "The requested review examines a snapping modular kit, terrain heightfield or slope/height-masked biome scatter.",
+          "reason": "Supplies discipline-specific criteria for supplied evidence; review remains read-only."
+        },
+        {
+          "name": "blender-scene-assembly",
+          "kind": "conditional",
+          "when": "The requested review examines scene units, collections, linked libraries, overrides or large-set layout.",
+          "reason": "Supplies discipline-specific criteria for supplied evidence; review remains read-only."
+        },
+        {
+          "name": "blender-sculpting",
+          "kind": "conditional",
+          "when": "The requested review examines dense organic form development, safe remeshing or multires bake-source preparation.",
+          "reason": "Supplies discipline-specific criteria for supplied evidence; review remains read-only."
+        },
+        {
+          "name": "blender-retopology",
+          "kind": "conditional",
+          "when": "The requested review examines delivery topology rebuilt from a dense sculpt, scan or generated source.",
+          "reason": "Supplies discipline-specific criteria for supplied evidence; review remains read-only."
+        },
+        {
+          "name": "blender-uv-unwrapping",
+          "kind": "conditional",
+          "when": "The requested review examines seams, UV density, pixel padding, trims, UDIM or requested lightmap channels.",
+          "reason": "Supplies discipline-specific criteria for supplied evidence; review remains read-only."
+        },
+        {
+          "name": "blender-pbr-materials",
+          "kind": "conditional",
+          "when": "The requested review examines a physically based shader with correct texture channels, color spaces and material response.",
+          "reason": "Supplies discipline-specific criteria for supplied evidence; review remains read-only."
+        },
+        {
+          "name": "blender-texturing",
+          "kind": "conditional",
+          "when": "The requested review examines texture creation or assembly with surface scale, UV correspondence and channel validation.",
+          "reason": "Supplies discipline-specific criteria for supplied evidence; review remains read-only."
+        },
+        {
+          "name": "blender-texture-baking",
+          "kind": "conditional",
+          "when": "The requested review examines high-to-low or multires texture baking with cages, ray isolation and map checks.",
+          "reason": "Supplies discipline-specific criteria for supplied evidence; review remains read-only."
+        },
+        {
+          "name": "blender-lighting",
+          "kind": "conditional",
+          "when": "The requested review examines light placement, exposure balance, shadows or renderer-aware illumination.",
+          "reason": "Supplies discipline-specific criteria for supplied evidence; review remains read-only."
+        },
+        {
+          "name": "blender-camera-cinematography",
+          "kind": "conditional",
+          "when": "The requested review examines camera framing, lens choice, depth of field, camera motion or shot continuity.",
+          "reason": "Supplies discipline-specific criteria for supplied evidence; review remains read-only."
+        },
+        {
+          "name": "blender-rendering",
+          "kind": "conditional",
+          "when": "The requested review examines renderer configuration, render passes, sampling, output images or sequence verification.",
+          "reason": "Supplies discipline-specific criteria for supplied evidence; review remains read-only."
+        },
+        {
+          "name": "blender-compositing",
+          "kind": "conditional",
+          "when": "The requested review examines render-pass compositing, masking, color adjustment or a reusable compositor graph.",
+          "reason": "Supplies discipline-specific criteria for supplied evidence; review remains read-only."
+        },
+        {
+          "name": "blender-character-rigging",
+          "kind": "conditional",
+          "when": "The requested review examines a deforming character rig, weights, controls, constraints or tested rig handoff.",
+          "reason": "Supplies discipline-specific criteria for supplied evidence; review remains read-only."
+        },
+        {
+          "name": "blender-animation",
+          "kind": "conditional",
+          "when": "The requested review examines keyframed motion, action management, clip baking, retargeting or loop correction.",
+          "reason": "Supplies discipline-specific criteria for supplied evidence; review remains read-only."
+        },
+        {
+          "name": "blender-facial-shapekeys",
+          "kind": "conditional",
+          "when": "The requested review examines facial shape keys, corrective expressions or tested blendshape delivery.",
+          "reason": "Supplies discipline-specific criteria for supplied evidence; review remains read-only."
+        },
+        {
+          "name": "blender-hair-grooming",
+          "kind": "conditional",
+          "when": "The requested review examines strand grooming, hair cards, clumps or target-aware hair conversion.",
+          "reason": "Supplies discipline-specific criteria for supplied evidence; review remains read-only."
+        },
+        {
+          "name": "blender-clothing",
+          "kind": "conditional",
+          "when": "The requested review examines garment construction, thickness, fit, folds or clothing deformation preparation.",
+          "reason": "Supplies discipline-specific criteria for supplied evidence; review remains read-only."
+        },
+        {
+          "name": "blender-simulation",
+          "kind": "conditional",
+          "when": "The requested review examines a bounded Blender physical simulation with explicit cache and execution limits.",
+          "reason": "Supplies discipline-specific criteria for supplied evidence; review remains read-only."
+        },
+        {
+          "name": "blender-game-optimization",
+          "kind": "conditional",
+          "when": "The requested review examines measured reductions in asset geometry, materials, textures or skeletal cost.",
+          "reason": "Supplies discipline-specific criteria for supplied evidence; review remains read-only."
+        },
+        {
+          "name": "blender-lod-pipeline",
+          "kind": "conditional",
+          "when": "The requested review examines a measured LOD chain with preserved interfaces and screen-size transition inspection.",
+          "reason": "Supplies discipline-specific criteria for supplied evidence; review remains read-only."
+        },
+        {
+          "name": "blender-collision-proxies",
+          "kind": "conditional",
+          "when": "The requested review examines engine-specific collider primitives or convex proxy meshes with intended contact clearance.",
+          "reason": "Supplies discipline-specific criteria for supplied evidence; review remains read-only."
+        },
+        {
+          "name": "blender-export",
+          "kind": "conditional",
+          "when": "The requested review examines a common Blender export contract, selection, source preservation and reimport gate.",
+          "reason": "Supplies discipline-specific criteria for supplied evidence; review remains read-only."
+        },
+        {
+          "name": "blender-unity-export",
+          "kind": "conditional",
+          "when": "The requested review examines a Unity-targeted Blender delivery with verified units, materials, rig and import behavior.",
+          "reason": "Supplies discipline-specific criteria for supplied evidence; review remains read-only."
+        },
+        {
+          "name": "blender-unreal-export",
+          "kind": "conditional",
+          "when": "The requested review examines an Unreal-targeted Blender delivery with verified naming, transforms and import behavior.",
+          "reason": "Supplies discipline-specific criteria for supplied evidence; review remains read-only."
+        },
+        {
+          "name": "blender-godot-export",
+          "kind": "conditional",
+          "when": "The requested review examines a Godot-targeted Blender delivery with verified scale, resources and import behavior.",
+          "reason": "Supplies discipline-specific criteria for supplied evidence; review remains read-only."
         }
       ],
       "tags": [

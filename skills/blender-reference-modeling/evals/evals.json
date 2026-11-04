@@ -33,6 +33,17 @@
         "Does not claim to view a fresh render or approve the changed mesh.",
         "Continues feasible measurements without installing global dependencies."
       ]
+    },
+    {
+      "id": 4,
+      "locale": "en",
+      "prompt": "The front drawing and perspective three-quarter photo disagree about the depth of a housing. A normalized silhouette score is excellent but the asset is twice its required size.",
+      "expected_output": "Concrete scoped workflow and evidence-backed findings for the stated production failure, with unexecuted checks explicit.",
+      "assertions": [
+        "Preserves uncertainty and chooses a documented reference authority.",
+        "Measures physical dimensions independently of image normalization.",
+        "Corrects camera/large forms first and inspects the other view after revision."
+      ]
     }
   ]
 }

@@ -1,0 +1,51 @@
+{
+  "skill_name": "blender-visual-console-eras",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create an early-3D room prop with baseline, low-resolution texture variant and optional CRT composite retaining independent asset/display controls. Use an isolated project, preserve supplied references and produce scoped assets with honest evidence. If Blender or image inspection is unavailable, provide the specification and mark affected checks unexecuted.",
+      "expected_output": "An editable subject-specific kit or explicitly unexecuted production specification, requested dimensions/states, named diagnostics, actual findings and separate technical/visual/engine evidence status.",
+      "assertions": [
+        "Clean/treated pair, UV/filtering close-up, grayscale silhouettes and palette/edge chart. Inspect several frames for grain/scanline/tracking/motion behavior; a still cannot validate temporal stability.",
+        "Supplied camera, scale and fiction remain authoritative; concrete pieces and state variants are identified.",
+        "Image acceptance cites actually inspected current-revision images and observations, not file existence.",
+        "No game behavior, AI, balance, physics or engine performance is inferred from renders or static proxies."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Recover a render with VHS/scanlines baked into textures and deliberate wobble holes into editable baseline and reversible treatments without claiming exact emulation. Inspect before editing; preserve original source and work only in authorized asset collections. Repeat affected diagnostics after repair.",
+      "expected_output": "A bounded diagnosis and targeted repair retaining approved source/style, with matched subject-specific before/after evidence or an explicit blocked/unverified result.",
+      "assertions": [
+        "Scanlines erase details: reduce treatment or strengthen source forms. VHS blur mistaken for source texture: restore separate clean baseline. Wobble creates holes: use reversible presentation approximations without corrupting delivery mesh.",
+        "Asset repairs are separated from game-rule and engine-system changes.",
+        "The original is preserved; affected checks and actual image review are repeated after editing.",
+        "A static numerical or geometry pass is not claimed as gameplay, historical authenticity or scientific proof."
+      ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Create separate PS2, PS3, PS4 and PS5-inspired versions from specific reference cues; the proposed plan is simply more triangles and bloom each generation. Use an isolated authorized source; if execution or image inspection is unavailable, return the concrete specification and mark those checks unexecuted.",
+      "expected_output": "Subtype-specific construction/state and repair artifacts, or an explicit unexecuted specification, with actual diagnostic evidence distinguished from visual and engine acceptance.",
+      "assertions": [
+        "Chooses reference-based articulation/material/light cues rather than universal generation presets.",
+        "Separates baked/specular-era interpretation from portable PBR source and actual screen-size geometry needs.",
+        "Provides matched clean/treated comparisons without hardware or console-performance claims."
+      ]
+    },
+    {
+      "id": 4,
+      "locale": "en",
+      "prompt": "Make DOS palette/dither, CRT, VHS and film-grain treatments independently reversible; animation has crawling dither, frozen grain and cropped safe areas. Use an isolated authorized source; if execution or image inspection is unavailable, return the concrete specification and mark those checks unexecuted.",
+      "expected_output": "Subtype-specific construction/state and repair artifacts, or an explicit unexecuted specification, with actual diagnostic evidence distinguished from visual and engine acceptance.",
+      "assertions": [
+        "Keeps palette quantization, display sampling and recording/grain stages separate from textures.",
+        "Tests actual output-size ramps/edges and temporal sequence with deterministic parameters.",
+        "Repairs crawling/frozen/crop artifacts and retains clean sequence without claiming hardware accuracy."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-pixel-art-style",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create a Blender-assisted 32-pixel-tall potion sprite with a limited palette and 4x nearest preview.",
+      "expected_output": "An explicit base-grid workflow.",
+      "assertions": [
+        "Protects silhouette and deliberate clusters.",
+        "Uses integer enlargement and nearest intent.",
+        "Checks contrasting backgrounds."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "The texture is crisp but the sprite output is blurred and moving thin edges shimmer. Diagnose it.",
+      "expected_output": "Separate texture and output sampling faults.",
+      "assertions": [
+        "Checks resize and render sampling independently.",
+        "Repairs subpixel feature coverage.",
+        "Requires a viewed motion test."
+      ]
+    }
+  ]
+}

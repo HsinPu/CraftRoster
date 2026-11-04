@@ -1,0 +1,28 @@
+{
+  "skill_name": "blender-pbr-materials",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Build a painted steel PBR material from basecolor, DirectX normal and ORM for a glTF target.",
+      "expected_output": "An editable, scoped result with discipline-specific settings, actual evidence and stated unverified gates.",
+      "assertions": [
+        "Uses Non-Color data, declared normal-Y conversion and correct packing by shader.",
+        "Preserves shared material/image users and resolves duplicate maps explicitly.",
+        "Does not equate DITHERED with glTF MASK or infer portability from graph wiring alone."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "A reused mask image is sRGB, dents are inverted and Unity smoothness was packed as ORM. Correct source and target interpretation.",
+      "expected_output": "A diagnosis tied to the supplied failure, preserved sources, a concrete correction and repeated affected acceptance checks.",
+      "assertions": [
+        "Uses Non-Color data, declared normal-Y conversion and correct packing by shader.",
+        "Preserves shared material/image users and resolves duplicate maps explicitly.",
+        "Does not equate DITHERED with glTF MASK or infer portability from graph wiring alone.",
+        "Does not label a hypothetical plan, a structural assertion or unrun workflow as successful execution."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-set-dressing",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Dress a locked workshop to imply a hurried exit using existing prop instances; keep the door route clear.",
+      "expected_output": "Revision-scoped work or read-only findings with concrete technical and visual acceptance evidence; missing execution is identified.",
+      "assertions": [
+        "Builds causal clusters and negative space.",
+        "Checks contact and route views.",
+        "Preserves architecture and prop masters."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Review an interior full of uniform random clutter; hero interaction is obscured and a stool floats. Do not render or edit.",
+      "expected_output": "Revision-scoped work or read-only findings with concrete technical and visual acceptance evidence; missing execution is identified.",
+      "assertions": [
+        "Prioritizes readability, contact and traversal.",
+        "Proposes selective removal/relocation.",
+        "Keeps read-only boundaries and does not invent images."
+      ]
+    }
+  ]
+}

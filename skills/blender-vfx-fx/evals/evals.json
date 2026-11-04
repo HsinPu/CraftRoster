@@ -1,0 +1,28 @@
+{
+  "skill_name": "blender-vfx-fx",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Build a timed dust impact and a transparent flipbook with documented spawn size and lifetime.",
+      "expected_output": "An editable, scoped result with discipline-specific settings, actual evidence and stated unverified gates.",
+      "assertions": [
+        "Approves low-cost motion before high-resolution simulation.",
+        "Keeps camera bounds stable and checks alpha/padding on varied backgrounds.",
+        "Does not claim raw Blender simulations or GN nodes are engine-runtime effects."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "A smoke plume clips the domain and flipbook frames pulse in scale with dark alpha halos. Correct source and packing.",
+      "expected_output": "A diagnosis tied to the supplied failure, preserved sources, a concrete correction and repeated affected acceptance checks.",
+      "assertions": [
+        "Approves low-cost motion before high-resolution simulation.",
+        "Keeps camera bounds stable and checks alpha/padding on varied backgrounds.",
+        "Does not claim raw Blender simulations or GN nodes are engine-runtime effects.",
+        "Does not label a hypothetical plan, a structural assertion or unrun workflow as successful execution."
+      ]
+    }
+  ]
+}

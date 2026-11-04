@@ -1,0 +1,51 @@
+{
+  "skill_name": "blender-genre-rpg",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Build a CRPG hub with three service entrances and grayscale-readable gear tiers at the intended high camera. Use an isolated project, preserve supplied references and produce scoped assets with honest evidence. If Blender or image inspection is unavailable, provide the specification and mark affected checks unexecuted.",
+      "expected_output": "An editable subject-specific kit or explicitly unexecuted production specification, requested dimensions/states, named diagnostics, actual findings and separate technical/visual/engine evidence status.",
+      "assertions": [
+        "Hub approach/plan, service-symbol sheet, gear attachment details and worst-case loot cluster with effects off. Neutral lighting separates region/rarity identity from presentation.",
+        "Supplied camera, scale and fiction remain authoritative; concrete pieces and state variants are identified.",
+        "Image acceptance cites actually inspected current-revision images and observations, not file existence.",
+        "No game behavior, AI, balance, physics or engine performance is inferred from renders or static proxies."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Repair ARPG loot merging with background gems and upgraded wrist armor intersections without changing item mechanics. Inspect before editing; preserve original source and work only in authorized asset collections. Repeat affected diagnostics after repair.",
+      "expected_output": "A bounded diagnosis and targeted repair retaining approved source/style, with matched subject-specific before/after evidence or an explicit blocked/unverified result.",
+      "assertions": [
+        "Every shop equal: establish entrance hierarchy. Rare loot resembles decoration: revise container form and placement. Upgraded gear clips wrists: repair proportions/attachments without changing actor scale or mechanics.",
+        "Asset repairs are separated from game-rule and engine-system changes.",
+        "The original is preserved; affected checks and actual image review are repeated after editing.",
+        "A static numerical or geometry pass is not claimed as gameplay, historical authenticity or scientific proof."
+      ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Build CRPG cutaway workstation props and an MMORPG mounted service hub; the roof hides interactions and mounts block service doors. Use an isolated authorized source; if execution or image inspection is unavailable, return the concrete specification and mark those checks unexecuted.",
+      "expected_output": "Subtype-specific construction/state and repair artifacts, or an explicit unexecuted specification, with actual diagnostic evidence distinguished from visual and engine acceptance.",
+      "assertions": [
+        "CRPG uses actual high-camera top-facing signifiers and approved cutaway state.",
+        "MMO uses largest mount/group extents and far/local landmark hierarchy.",
+        "Repairs architecture/staging and reports pathfinding/network/crowd performance as untested."
+      ]
+    },
+    {
+      "id": 4,
+      "locale": "en",
+      "prompt": "Create JRPG arrival staging and an ARPG worst-case loot cluster using the same region kit. Use an isolated authorized source; if execution or image inspection is unavailable, return the concrete specification and mark those checks unexecuted.",
+      "expected_output": "Subtype-specific construction/state and repair artifacts, or an explicit unexecuted specification, with actual diagnostic evidence distinguished from visual and engine acceptance.",
+      "assertions": [
+        "Separates theatrical arrival hierarchy from quiet ARPG action floor.",
+        "Keeps quality/rarity/class/faction and gear anchors independent.",
+        "Tests effects-off overlap and return/arrival views rather than claiming drop balance."
+      ]
+    }
+  ]
+}

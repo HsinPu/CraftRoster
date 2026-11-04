@@ -1,0 +1,28 @@
+{
+  "skill_name": "blender-simulation",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create a triggered crate collapse with simplified collisions and a baked transform export duplicate.",
+      "expected_output": "An editable, scoped result with discipline-specific settings, actual evidence and stated unverified gates.",
+      "assertions": [
+        "Does not use invalid closed-volume assumptions for open meshes.",
+        "Corrects scale/collision/substeps and persists caches rather than frame stepping alone.",
+        "Preserves physics source and verifies sampled baked duplicate motion."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "A non-manifold hollow prop gets the wrong mass, tunnels through a floor and changes after reopening. Repair and verify.",
+      "expected_output": "A diagnosis tied to the supplied failure, preserved sources, a concrete correction and repeated affected acceptance checks.",
+      "assertions": [
+        "Does not use invalid closed-volume assumptions for open meshes.",
+        "Corrects scale/collision/substeps and persists caches rather than frame stepping alone.",
+        "Preserves physics source and verifies sampled baked duplicate motion.",
+        "Does not label a hypothetical plan, a structural assertion or unrun workflow as successful execution."
+      ]
+    }
+  ]
+}

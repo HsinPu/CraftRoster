@@ -1,0 +1,28 @@
+{
+  "skill_name": "blender-texture-baking",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Bake a triangulated game prop normal, AO and material signals from retained high-poly sources with a documented cage.",
+      "expected_output": "An editable, scoped result with discipline-specific settings, actual evidence and stated unverified gates.",
+      "assertions": [
+        "Preserves source/cage and restores active nodes or temporary material overrides.",
+        "Distinguishes projection, tangent and padding artifacts from sampling noise.",
+        "Uses float encoding for data needing range and validates files plus actual images."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Neighboring bolts ghost into the bake, seams appear in-engine and position data was clamped to PNG. Repair projection and encoding.",
+      "expected_output": "A diagnosis tied to the supplied failure, preserved sources, a concrete correction and repeated affected acceptance checks.",
+      "assertions": [
+        "Preserves source/cage and restores active nodes or temporary material overrides.",
+        "Distinguishes projection, tangent and padding artifacts from sampling noise.",
+        "Uses float encoding for data needing range and validates files plus actual images.",
+        "Does not label a hypothetical plan, a structural assertion or unrun workflow as successful execution."
+      ]
+    }
+  ]
+}

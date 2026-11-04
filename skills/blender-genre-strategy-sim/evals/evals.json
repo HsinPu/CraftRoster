@@ -1,0 +1,63 @@
+{
+  "skill_name": "blender-genre-strategy-sim",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create three city-simulation buildings on supplied 4 m tiles with path-facing entrances and far-zoom function independent of faction hue. Use an isolated project, preserve supplied references and produce scoped assets with honest evidence. If Blender or image inspection is unavailable, provide the specification and mark affected checks unexecuted.",
+      "expected_output": "An editable subject-specific kit or explicitly unexecuted production specification, requested dimensions/states, named diagnostics, actual findings and separate technical/visual/engine evidence status.",
+      "assertions": [
+        "Footprint/overhang plan, far grayscale sheet, neutral/faction variants and connector seams. Measure tile fit and extended geometry envelopes.",
+        "Supplied camera, scale and fiction remain authoritative; concrete pieces and state variants are identified.",
+        "Image acceptance cites actually inspected current-revision images and observations, not file existence.",
+        "No game behavior, AI, balance, physics or engine performance is inferred from renders or static proxies."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Repair undeclared windmill overhang and factories distinguishable only by tiny signs without claiming pathfinding/production tests. Inspect before editing; preserve original source and work only in authorized asset collections. Repeat affected diagnostics after repair.",
+      "expected_output": "A bounded diagnosis and targeted repair retaining approved source/style, with matched subject-specific before/after evidence or an explicit blocked/unverified result.",
+      "assertions": [
+        "Tiny signs carry function: change roofs/functional masses. Canopy hides plots: group or lift foliage. Mill blade exceeds tile: declare overhang or revise geometry, without claiming navigation handles it.",
+        "Asset repairs are separated from game-rule and engine-system changes.",
+        "The original is preserved; affected checks and actual image review are repeated after editing.",
+        "A static numerical or geometry pass is not claimed as gameplay, historical authenticity or scientific proof."
+      ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Create hex turn-based terrain and tower-defense upgrade states; a rotated height tile cracks and tower barrels hide adjacent pads. Use an isolated authorized source; if execution or image inspection is unavailable, return the concrete specification and mark those checks unexecuted.",
+      "expected_output": "Subtype-specific construction/state and repair artifacts, or an explicit unexecuted specification, with actual diagnostic evidence distinguished from visual and engine acceptance.",
+      "assertions": [
+        "Uses exact hex orientation/neighbor/elevation contract and tests allowed rotations.",
+        "TD retains base socket/footprint through upgrades and records appendage overhang.",
+        "Checks zoom/overlap and separates art tests from movement/targeting."
+      ]
+    },
+    {
+      "id": 4,
+      "locale": "en",
+      "prompt": "Build MOBA lane/objective and RTS faction/function variants distinguishable at far zoom without hue. Use an isolated authorized source; if execution or image inspection is unavailable, return the concrete specification and mark those checks unexecuted.",
+      "expected_output": "Subtype-specific construction/state and repair artifacts, or an explicit unexecuted specification, with actual diagnostic evidence distinguished from visual and engine acceptance.",
+      "assertions": [
+        "Keeps faction area independent from building/unit function silhouette.",
+        "MOBA distinguishes active/destroyed structures and concealment art from visibility proxy.",
+        "Provides far grayscale and approach states without claiming balance or fog-of-war behavior."
+      ]
+    },
+    {
+      "id": 5,
+      "locale": "en",
+      "prompt": "Build a colony workstation, life-sim seat/storage set and farming plot growth kit. A cabinet blocks the worker and mature leaves hide plot readiness. Use an isolated authorized source; if execution or image inspection is unavailable, return the concrete specification and mark those checks unexecuted.",
+      "expected_output": "Subtype-specific construction/state and repair artifacts, or an explicit unexecuted specification, with actual diagnostic evidence distinguished from visual and engine acceptance.",
+      "assertions": [
+        "Colony models approach/input/worker/output and supplied roof cutaway.",
+        "Life set tests seated/reach/open envelopes and stable interaction markers.",
+        "Farm states keep roots/pivots, declared foliage overhang and non-color readiness cues.",
+        "Repairs local art instead of inventing scheduling, navigation, growth or economic rules."
+      ]
+    }
+  ]
+}

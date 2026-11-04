@@ -1,0 +1,49 @@
+{
+  "skill_name": "blender-liminal-space-style",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Build an empty operational pool corridor with repeated tiled bays and no monsters.",
+      "expected_output": "A pool-specific transitional space.",
+      "assertions": [
+        "Uses coping, drainage and wet cues.",
+        "Keeps active lighting/empty circulation.",
+        "Checks seams and continuation."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "The empty mall became yellow carpeted Backrooms with debris and broken lights.",
+      "expected_output": "Restore mall vocabulary and state.",
+      "assertions": [
+        "Uses retail/atrium construction.",
+        "Removes unrequested ruin cues.",
+        "Checks visitor camera and scale."
+      ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Build an empty mall concourse using retail thresholds, storefront repeats and an atrium/circulation anchor. Preserve the supplied clean after-hours state.",
+      "expected_output": "Mall-specific modules and visitor/layout/seam evidence.",
+      "assertions": [
+        "Retail and circulation vocabulary establish function.",
+        "Floor reflections preserve boundaries and scale.",
+        "No unrequested rubble, yellow-room substitution or monster is introduced."
+      ]
+    },
+    {
+      "id": 4,
+      "locale": "en",
+      "prompt": "Poolrooms were made from a thin blue plane with no coping or basin depth, and the water renders black. Repair construction and diagnose transparency without adding emission as a universal fix.",
+      "expected_output": "Basin/waterline/tile construction and water-off/on material diagnostics.",
+      "assertions": [
+        "Models basin depth and coping separately from water.",
+        "Checks normals, thickness, overlap and actual renderer support.",
+        "Does not claim fluid dynamics or swimming behavior."
+      ]
+    }
+  ]
+}

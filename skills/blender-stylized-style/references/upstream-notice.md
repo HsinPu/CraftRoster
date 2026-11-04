@@ -1,0 +1,6 @@
+# Source review and adaptation
+
+- [EL4CTEO/blender-skills](https://github.com/EL4CTEO/blender-skills/tree/fb92cfb4cc5a238c22113a6a230b09f535bd0656/skills/blender-stylized-npr/SKILL.md), revision `fb92cfb4cc5a238c22113a6a230b09f535bd0656`, entry `skills/blender-stylized-npr/SKILL.md` (blob `4364d3340190df213b86e0c466fa8270eb042d32`). Preserve [the full MIT notice](../licenses/el4-MIT.txt).
+- [arjun988/blender-skills](https://github.com/arjun988/blender-skills/tree/8f778d2405a214b508d4c7d80742be8e43acdd52/.claude/skills/stylized-style/SKILL.md), revision `8f778d2405a214b508d4c7d80742be8e43acdd52`, entry `.claude/skills/stylized-style/SKILL.md` (blob `4145b04454d36965cdb5755cc5e546f2872f0a5b`). Preserve [the full MIT notice](../licenses/arjun-MIT.txt).
+
+The mapped entry and its package resources were read. CraftRoster rewrites the visual recipes, expands terse cues into production decisions and retains no upstream executable script. Source examples are historical guidance, not evidence that this package was executed or that a game engine supports its Blender nodes. Independently authored instructions use the repository Apache-2.0 license; upstream MIT notices retain their original terms.

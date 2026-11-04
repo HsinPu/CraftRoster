@@ -1,0 +1,51 @@
+{
+  "skill_name": "blender-genre-puzzle-platformer",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create three side-view platforms and switch gate using supplied jump dimensions; show landing surfaces, links and motion extremes. Use an isolated project, preserve supplied references and produce scoped assets with honest evidence. If Blender or image inspection is unavailable, provide the specification and mark affected checks unexecuted.",
+      "expected_output": "An editable subject-specific kit or explicitly unexecuted production specification, requested dimensions/states, named diagnostics, actual findings and separate technical/visual/engine evidence status.",
+      "assertions": [
+        "Dimensioned side elevation, untextured landing silhouettes, state contact sheet, motion extremes and grayscale hazard/connection preview. Inspect backs and undersides for misleading usable surfaces.",
+        "Supplied camera, scale and fiction remain authoritative; concrete pieces and state variants are identified.",
+        "Image acceptance cites actually inspected current-revision images and observations, not file existence.",
+        "No game behavior, AI, balance, physics or engine performance is inferred from renders or static proxies."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Repair a misleading ledge overhang outside its proxy footprint and red/green-only switch states without claiming the puzzle is solved. Inspect before editing; preserve original source and work only in authorized asset collections. Repeat affected diagnostics after repair.",
+      "expected_output": "A bounded diagnosis and targeted repair retaining approved source/style, with matched subject-specific before/after evidence or an explicit blocked/unverified result.",
+      "assertions": [
+        "Decorative lip looks landable: reshape or annotate intended footprint. Hue-only switch link: add keyed geometry or visible connection. Dressing intersects swept volume: relocate it instead of silently changing movement.",
+        "Asset repairs are separated from game-rule and engine-system changes.",
+        "The original is preserved; affected checks and actual image review are repeated after editing.",
+        "A static numerical or geometry pass is not claimed as gameplay, historical authenticity or scientific proof."
+      ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Create a puzzle switch, receiver and resettable moving bridge; its solved state falsely changes which lip looks safe. Use an isolated authorized source; if execution or image inspection is unavailable, return the concrete specification and mark those checks unexecuted.",
+      "expected_output": "Subtype-specific construction/state and repair artifacts, or an explicit unexecuted specification, with actual diagnostic evidence distinguished from visual and engine acceptance.",
+      "assertions": [
+        "Pairs every puzzle state with actual landing/contact geometry and stable anchors.",
+        "Repairs shape/value/connection grammar without changing supplied solution rules.",
+        "Provides state and swept-volume diagnostics while leaving solvability unverified."
+      ]
+    },
+    {
+      "id": 4,
+      "locale": "en",
+      "prompt": "Build a 3D platformer gap that is misleading in perspective and a deliberate forced-perspective variant. Use an isolated authorized source; if execution or image inspection is unavailable, return the concrete specification and mark those checks unexecuted.",
+      "expected_output": "Subtype-specific construction/state and repair artifacts, or an explicit unexecuted specification, with actual diagnostic evidence distinguished from visual and engine acceptance.",
+      "assertions": [
+        "Uses actual camera/offset and jump-envelope rather than plan spacing alone.",
+        "Separates accidental ambiguity from the explicitly approved illusion camera.",
+        "Retains diagnostic revealing views and does not claim a controller jump test occurred."
+      ]
+    }
+  ]
+}

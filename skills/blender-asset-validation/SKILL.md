@@ -18,6 +18,8 @@ Read [the asset contract](../blender-development/references/asset-contract.md), 
 
 Use [the helper contract](references/helper-contract.md) for the packaged inspector's supported checks, invocation, report schema and limitations. Do not infer checks the helper does not implement.
 
+Apply the [technical review playbook](references/technical-review-playbook.md) to the actual geometry, UV, material, binding, animation and export risks. It specifies additional methods, failure interpretation and repair/retest contracts; keep unsupported or unexecuted checks separate from the packaged inspector's result.
+
 ## Technical acceptance
 
 1. Identify explicit asset objects/collections, source and export revisions, units, target, budgets, material/texture requirements, skeleton/clips and intended exceptions. Never validate every object in an unrelated open scene by default.

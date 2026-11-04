@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-comic-book-style",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Make a colored graphic-novel panel with strong spot blacks and subtle midtone halftone.",
+      "expected_output": "A panel-specific ink/tone workflow.",
+      "assertions": [
+        "Separates line/color/tone.",
+        "Tests halftone at final pixels.",
+        "Requires diagnostic and combined images."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "At final size the halftone moires and generated lines obscure the face. Repair it.",
+      "expected_output": "Correct output-scale tone and ink.",
+      "assertions": [
+        "Adjusts pitch/angle/masks.",
+        "Reweights or filters facial lines.",
+        "Reviews actual-size crops."
+      ]
+    }
+  ]
+}

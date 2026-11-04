@@ -1,0 +1,51 @@
+{
+  "skill_name": "blender-genre-metroidvania-roguelike",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Build three side-view room modules forming two seam-correct arrangements, including a locked/open ability gate and arrival-camera evidence. Use an isolated project, preserve supplied references and produce scoped assets with honest evidence. If Blender or image inspection is unavailable, provide the specification and mark affected checks unexecuted.",
+      "expected_output": "An editable subject-specific kit or explicitly unexecuted production specification, requested dimensions/states, named diagnostics, actual findings and separate technical/visual/engine evidence status.",
+      "assertions": [
+        "Socket cross-sections, both arrangements from arrival cameras, vertical gate elevation and untextured room contact sheet. Measure gaps/floor offsets and compare secret cues against ordinary damage.",
+        "Supplied camera, scale and fiction remain authoritative; concrete pieces and state variants are identified.",
+        "Image acceptance cites actually inspected current-revision images and observations, not file existence.",
+        "No game behavior, AI, balance, physics or engine performance is inferred from renders or static proxies."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Repair mirrored socket normals in a rotated room and secret-wall cracks indistinguishable from common damage; do not claim map solvability. Inspect before editing; preserve original source and work only in authorized asset collections. Repeat affected diagnostics after repair.",
+      "expected_output": "A bounded diagnosis and targeted repair retaining approved source/style, with matched subject-specific before/after evidence or an explicit blocked/unverified result.",
+      "assertions": [
+        "Opening faces solid wall: fix socket normal or compatibility label. Every crack implies secret: reserve a consistent construction cue. Elite marker resembles ambient light: give a physical frame and stable silhouette.",
+        "Asset repairs are separated from game-rule and engine-system changes.",
+        "The original is preserved; affected checks and actual image review are repeated after editing.",
+        "A static numerical or geometry pass is not claimed as gameplay, historical authenticity or scientific proof."
+      ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Create a persistent vertical return loop and a future ability gate visible from the first arrival. Use an isolated authorized source; if execution or image inspection is unavailable, return the concrete specification and mark those checks unexecuted.",
+      "expected_output": "Subtype-specific construction/state and repair artifacts, or an explicit unexecuted specification, with actual diagnostic evidence distinguished from visual and engine acceptance.",
+      "assertions": [
+        "Uses actual movement/gate rules and remembered landmark from both levels.",
+        "Gate states retain opening bounds and secret cues differ from ordinary cracks.",
+        "Supplies vertical/socket/return views without claiming progression implemented."
+      ]
+    },
+    {
+      "id": 4,
+      "locale": "en",
+      "prompt": "Rotate roguelike rooms into two arrangements and add a roguelite upgrade that persists between runs; one socket opens into a wall. Use an isolated authorized source; if execution or image inspection is unavailable, return the concrete specification and mark those checks unexecuted.",
+      "expected_output": "Subtype-specific construction/state and repair artifacts, or an explicit unexecuted specification, with actual diagnostic evidence distinguished from visual and engine acceptance.",
+      "assertions": [
+        "Defines socket origin/normal/elevation/rotation compatibility and fixes mismatch.",
+        "Separates persistent hub upgrade from reset run modifiers with stable anchors.",
+        "Checks arrival/state combinations and avoids claiming all procedural seeds valid."
+      ]
+    }
+  ]
+}

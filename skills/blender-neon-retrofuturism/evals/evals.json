@@ -1,0 +1,49 @@
+{
+  "skill_name": "blender-neon-retrofuturism",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Make an outrun Blender road study with a magenta grid, chrome prop and readable neon cores.",
+      "expected_output": "A lane-specific retrofuture composition.",
+      "assertions": [
+        "Uses world-spaced geometry and reflection structure.",
+        "Compares glow-off/final.",
+        "Checks grid and neon at delivery pixels."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Everything is white bloom and the chrome prop is black. Repair without changing the approved palette.",
+      "expected_output": "Restore emission and reflective hierarchy.",
+      "assertions": [
+        "Reduces halo/exposure rather than replacing colors.",
+        "Adds controlled reflected surroundings.",
+        "Checks line shimmer if animated."
+      ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Create a vaporwave pastel architectural collage with one supplied consumer-era screen and clear depth layers. Do not substitute a dark synthwave road or invent foreign text.",
+      "expected_output": "Selected collage geometry/material/lighting and clean/treated comparisons.",
+      "assertions": [
+        "The juxtaposition is constructed, not only recolored.",
+        "Screen insert and recording treatment remain separate.",
+        "Supplied text/branding is preserved and uncertainty is not fabricated."
+      ]
+    },
+    {
+      "id": 4,
+      "locale": "en",
+      "prompt": "An outrun grid shimmers in motion and chrome disappears when bloom is bypassed. Repair projected line coverage and reflection structure, preserving palette.",
+      "expected_output": "Targeted grid/reflection fixes with glow-off diagnostics and honest motion evidence.",
+      "assertions": [
+        "Checks projected spacing and final-size line coverage.",
+        "Adds/repairs reflection environment instead of brightening metal albedo alone.",
+        "Motion acceptance requires viewed motion, not a still."
+      ]
+    }
+  ]
+}

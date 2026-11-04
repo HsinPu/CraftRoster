@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-retro-16bit-style",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create a 64-pixel 16-bit-inspired merchant sprite with rich hue-shifted cloth ramps and selective dither.",
+      "expected_output": "A controlled richer-palette sprite workflow.",
+      "assertions": [
+        "Defines base size and ramps.",
+        "Uses selective rather than uniform dither.",
+        "Checks 1x and integer enlargement."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "The result has airbrushed gradients and random dither on every face. Repair it without reducing it to four colors.",
+      "expected_output": "Restore deliberate ramps and clusters.",
+      "assertions": [
+        "Groups gradients into chosen colors.",
+        "Masks dither to useful transitions.",
+        "Preserves richer 16-bit-inspired form."
+      ]
+    }
+  ]
+}

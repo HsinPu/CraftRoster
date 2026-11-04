@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-psx-horror-style",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create a PSX-inspired motel entrance with 128-pixel prop textures and one uncertain doorway clue; no VHS overlay.",
+      "expected_output": "A scoped evocative retro-horror scene.",
+      "assertions": [
+        "Keeps budget and clue readable.",
+        "Does not force VHS/fog.",
+        "Distinguishes Blender look from hardware emulation."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "The artist says snapping vertices to 1 cm proves authentic PSX jitter and affine mapping. Review and correct that claim.",
+      "expected_output": "Correct unsupported fidelity claims.",
+      "assertions": [
+        "Distinguishes model-space snapping and screen-space jitter.",
+        "Requires moving checker evidence for affine/jitter.",
+        "Does not claim target success from geometry alone."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "skill_name": "blender-weather-fx",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create a looping rainy street with roof collision, wet puddles and one timed lightning event.",
+      "expected_output": "An editable, scoped result with discipline-specific settings, actual evidence and stated unverified gates.",
+      "assertions": [
+        "Uses consistent trajectory/raycast space and distinguishes analytic loops from cached simulation.",
+        "Preserves shared material/world animation and verifies baseline restoration.",
+        "Inspects final-resolution motion and exports engine masks rather than claiming runtime weather portability."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Rain leaks under roofs, vertex masks differ from shader noise and lightning leaves a shared world permanently bright. Repair.",
+      "expected_output": "A diagnosis tied to the supplied failure, preserved sources, a concrete correction and repeated affected acceptance checks.",
+      "assertions": [
+        "Uses consistent trajectory/raycast space and distinguishes analytic loops from cached simulation.",
+        "Preserves shared material/world animation and verifies baseline restoration.",
+        "Inspects final-resolution motion and exports engine masks rather than claiming runtime weather portability.",
+        "Does not label a hypothetical plan, a structural assertion or unrun workflow as successful execution."
+      ]
+    }
+  ]
+}

@@ -17,6 +17,9 @@ Preserve identity in motion and deliver a rig/clip contract that the target can 
 Read the shared [asset contract](../blender-development/references/asset-contract.md) and [execution and ownership](../blender-development/references/execution-and-ownership.md). Inspect bind pose, transforms, bone roles, current actions and the consuming engine before altering a rig.
 
 ## Motion workflow
+
+Use this entry for a combined rig-to-clip delivery. For a focused task, use `blender-character-rigging` for skeleton/control/weight work, `blender-animation` for timing and clips, and `blender-facial-shapekeys` for expression targets when installed. Cloth, hair and other simulations have separate workflows; they are not automatically needed for a character rig. The [motion contract](references/motion-contract.md) remains sufficient to organize and verify a bounded simple mechanical or deforming asset directly.
+
 1. Record required motions, skeleton compatibility, attachment points, root-motion policy and clip timing. Preserve existing bone names, bind matrices and animation consumers unless the requested change includes their migration.
 2. Choose rigid parenting/constraints for mechanical parts, deformation bones or shape keys where needed. Keep animator controls separate from the deform skeleton when the target requires it.
 3. Bind and inspect weights using [deformation and clip checks](references/motion-contract.md). Automatic weights are a starting result to inspect; clean specific failure regions instead of globally smoothing identity away.

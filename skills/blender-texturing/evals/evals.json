@@ -1,0 +1,28 @@
+{
+  "skill_name": "blender-texturing",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Weather a painted crate and place a curved hazard decal, then deliver editable layers and baked maps.",
+      "expected_output": "An editable, scoped result with discipline-specific settings, actual evidence and stated unverified gates.",
+      "assertions": [
+        "Uses appropriate curvature masks and preserves reversible original graph state.",
+        "Checks triangle-interior/grazing decal behavior rather than vertex offsets alone.",
+        "Saves actual paint images and inspects baked target interpretation."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Vertex wear smears across low-poly faces, a decal flickers on a convex crease and painted pixels vanish after reload. Repair.",
+      "expected_output": "A diagnosis tied to the supplied failure, preserved sources, a concrete correction and repeated affected acceptance checks.",
+      "assertions": [
+        "Uses appropriate curvature masks and preserves reversible original graph state.",
+        "Checks triangle-interior/grazing decal behavior rather than vertex offsets alone.",
+        "Saves actual paint images and inspects baked target interpretation.",
+        "Does not label a hypothetical plan, a structural assertion or unrun workflow as successful execution."
+      ]
+    }
+  ]
+}

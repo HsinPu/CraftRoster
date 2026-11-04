@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-vector-style",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create a vector-clean Blender raster icon of a watering can with flat fills and one graphic shadow at 64 pixels.",
+      "expected_output": "A correctly labeled raster graphic.",
+      "assertions": [
+        "Uses intentional contour and layer order.",
+        "Checks handle gap at 64 pixels.",
+        "Avoids noisy PBR/gradients."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "The client requested editable SVG but received a glossy PNG renamed .svg. Correct the delivery plan.",
+      "expected_output": "Separate appearance and file semantics.",
+      "assertions": [
+        "Does not claim raster as vector.",
+        "Routes real path authoring/export and verification.",
+        "Preserves requested flat contours."
+      ]
+    }
+  ]
+}

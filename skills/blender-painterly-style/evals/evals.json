@@ -1,0 +1,49 @@
+{
+  "skill_name": "blender-painterly-style",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Make a watercolor Blender garden image with luminous paper lights and soft peripheral edges.",
+      "expected_output": "A watercolor-specific image treatment.",
+      "assertions": [
+        "Preserves paper brightness.",
+        "Uses selective pigment edges rather than universal oil bump.",
+        "Checks overlay-off and final crops."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "The watercolor looks like dirty plastic with uniform noisy bump and a global blur. Repair it.",
+      "expected_output": "Restore medium and edge hierarchy.",
+      "assertions": [
+        "Removes unsuitable uniform specular/bump.",
+        "Recovers paper lights.",
+        "Keeps focal edges while softening selected regions."
+      ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Create an oil-painted Blender jug study with directional opaque strokes, a transparent-looking shadow glaze and selective impasto. Preserve the source and distinguish fixed illustration from relightable delivery.",
+      "expected_output": "Oil-specific source layers and matched value/stroke/raking-light evidence or clearly labeled unexecuted plan.",
+      "assertions": [
+        "Stroke directions describe jug volume rather than isotropic noise.",
+        "Impasto and painted color remain independently editable.",
+        "Fixed painted highlights versus relighting are stated and tested only if executed."
+      ]
+    },
+    {
+      "id": 4,
+      "locale": "en",
+      "prompt": "A gouache illustration was built using transparent watercolor washes on every surface, and dry-brush texture breaks the whole face into holes. Repair the selected opaque medium without replacing the composition.",
+      "expected_output": "Restored opaque coverage and selectively masked edge breakup with actual-size comparison.",
+      "assertions": [
+        "Restores broad opaque fills.",
+        "Restricts dry marks to chosen edges instead of every interior.",
+        "Keeps approved composition and reports actual image review separately."
+      ]
+    }
+  ]
+}

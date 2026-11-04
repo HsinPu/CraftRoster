@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-vegetation",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create a 6m tree family sharing a leaf atlas with canopy LODs and wind weights for a declared shader.",
+      "expected_output": "Revision-scoped work or read-only findings with concrete technical and visual acceptance evidence; missing execution is identified.",
+      "assertions": [
+        "Models branch/crown hierarchy before cards.",
+        "Documents wind domain/channels and source pivots.",
+        "Checks canopy coverage, alpha edges and target limitations."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Refine a forest whose low LOD goes bald and whose wind bends the trunk base; triangles already meet budget.",
+      "expected_output": "Revision-scoped work or read-only findings with concrete technical and visual acceptance evidence; missing execution is identified.",
+      "assertions": [
+        "Prioritizes crown coverage and weight/shader mapping.",
+        "Checks alpha overdraw and transitions beyond triangle count.",
+        "Preserves reusable masters and reports actual wind evidence."
+      ]
+    }
+  ]
+}

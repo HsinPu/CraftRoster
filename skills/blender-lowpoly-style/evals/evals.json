@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-lowpoly-style",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Build a clean modern low-poly desk fan under 600 evaluated triangles, smooth where useful and without retro noise.",
+      "expected_output": "A camera-based economical prop.",
+      "assertions": [
+        "Counts evaluated triangles.",
+        "Preserves modern shading intent.",
+        "Checks silhouette and wireframe."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "The low-poly fan became a decimated blob while tiny invisible bevels consume the budget. Repair it.",
+      "expected_output": "Redistribute geometry to identity.",
+      "assertions": [
+        "Rebuilds silhouette features.",
+        "Removes ineffective bevel cost.",
+        "Rechecks evaluated count and final view."
+      ]
+    }
+  ]
+}

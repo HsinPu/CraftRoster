@@ -1,0 +1,28 @@
+{
+  "skill_name": "blender-time-of-day",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create golden hour and night variants of an existing street with preserved practical lights and visibility-based fog.",
+      "expected_output": "An editable, scoped result with discipline-specific settings, actual evidence and stated unverified gates.",
+      "assertions": [
+        "Preserves user world/compositor and aligns direct sun with sky.",
+        "Treats visibility extinction and lookup powers as calibrated approximations.",
+        "Renders final-camera atmospheric readability and separates engine proof."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Dense fog turns black, two sun shadows disagree and an existing compositor gets overwritten by a mood preset. Repair scoped setup.",
+      "expected_output": "A diagnosis tied to the supplied failure, preserved sources, a concrete correction and repeated affected acceptance checks.",
+      "assertions": [
+        "Preserves user world/compositor and aligns direct sun with sky.",
+        "Treats visibility extinction and lookup powers as calibrated approximations.",
+        "Renders final-camera atmospheric readability and separates engine proof.",
+        "Does not label a hypothetical plan, a structural assertion or unrun workflow as successful execution."
+      ]
+    }
+  ]
+}

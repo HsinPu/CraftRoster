@@ -1,0 +1,28 @@
+{
+  "skill_name": "blender-rendering",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Render a two-camera animation to EXR sequences and a review MP4 with an explicit color pipeline.",
+      "expected_output": "An editable, scoped result with discipline-specific settings, actual evidence and stated unverified gates.",
+      "assertions": [
+        "Verifies decoded outputs and expected frame continuity instead of operator return.",
+        "Records actual device and effective resolution plus color/alpha/pass metadata.",
+        "Compares representative rendered detail and temporal behavior."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "A batch says success but MP4 is absent, frames are missing and a denoiser erases hair. Diagnose and rerender affected outputs.",
+      "expected_output": "A diagnosis tied to the supplied failure, preserved sources, a concrete correction and repeated affected acceptance checks.",
+      "assertions": [
+        "Verifies decoded outputs and expected frame continuity instead of operator return.",
+        "Records actual device and effective resolution plus color/alpha/pass metadata.",
+        "Compares representative rendered detail and temporal behavior.",
+        "Does not label a hypothetical plan, a structural assertion or unrun workflow as successful execution."
+      ]
+    }
+  ]
+}

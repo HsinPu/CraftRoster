@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-geometry-nodes",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Build a seeded rock scatter with height/slope masks, editable density and a bounded preview population.",
+      "expected_output": "Revision-scoped work or read-only findings with concrete technical and visual acceptance evidence; missing execution is identified.",
+      "assertions": [
+        "Checks installed enabled sockets and input API.",
+        "Keeps instances and documents attribute domains.",
+        "Tests boundary settings and inspects actual output."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Repair a node system that clears a shared named group, has constant random scale and loses UVMap after realizing. Do not overwrite sibling users.",
+      "expected_output": "Revision-scoped work or read-only findings with concrete technical and visual acceptance evidence; missing execution is identified.",
+      "assertions": [
+        "Versions/copies the group before changes.",
+        "Diagnoses field context and corner attributes.",
+        "Does not assume one Blender version's API or claim unexecuted export."
+      ]
+    }
+  ]
+}

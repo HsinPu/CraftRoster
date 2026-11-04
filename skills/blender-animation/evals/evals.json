@@ -1,0 +1,28 @@
+{
+  "skill_name": "blender-animation",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Deliver a 30 FPS root-motion walk and baked export skeleton while preserving the editable animator rig.",
+      "expected_output": "An editable, scoped result with discipline-specific settings, actual evidence and stated unverified gates.",
+      "assertions": [
+        "Measures positional and signed velocity continuity rather than endpoint rotation only.",
+        "Preserves the control rig and verifies sampled evaluated bake transforms.",
+        "Documents root travel, endpoint policy, clip ranges and target playback limits."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Endpoint rotations match but a planted foot jumps and motion reverses at the loop seam. Diagnose and repair.",
+      "expected_output": "A diagnosis tied to the supplied failure, preserved sources, a concrete correction and repeated affected acceptance checks.",
+      "assertions": [
+        "Measures positional and signed velocity continuity rather than endpoint rotation only.",
+        "Preserves the control rig and verifies sampled evaluated bake transforms.",
+        "Documents root travel, endpoint policy, clip ranges and target playback limits.",
+        "Does not label a hypothetical plan, a structural assertion or unrun workflow as successful execution."
+      ]
+    }
+  ]
+}

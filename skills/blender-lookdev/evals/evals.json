@@ -33,6 +33,29 @@
         "Names the target-engine lighting/material checks still required.",
         "Does not claim engine parity from successful image output."
       ]
+    },
+    {
+      "id": 4,
+      "locale": "en",
+      "prompt": "Improve a pastel orthographic diorama whose hero prop blends into the ground while preserving its cozy style.",
+      "expected_output": "An editable, scoped result with discipline-specific settings, actual evidence and stated unverified gates.",
+      "assertions": [
+        "Preserves established style and orthographic gameplay framing.",
+        "Exposes seam under diagnostic lighting and routes actual geometry or UV repair.",
+        "Separates technical, actual visual and target-engine acceptance."
+      ]
+    },
+    {
+      "id": 5,
+      "locale": "en",
+      "prompt": "A beauty highlight conceals a normal seam and the owner asks whether Cycles proves Godot parity. Diagnose and state evidence limits.",
+      "expected_output": "A diagnosis tied to the supplied failure, preserved sources, a concrete correction and repeated affected acceptance checks.",
+      "assertions": [
+        "Preserves established style and orthographic gameplay framing.",
+        "Exposes seam under diagnostic lighting and routes actual geometry or UV repair.",
+        "Separates technical, actual visual and target-engine acceptance.",
+        "Does not label a hypothetical plan, a structural assertion or unrun workflow as successful execution."
+      ]
     }
   ]
 }

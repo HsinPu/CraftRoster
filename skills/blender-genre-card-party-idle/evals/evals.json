@@ -1,0 +1,51 @@
+{
+  "skill_name": "blender-genre-card-party-idle",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create a deck table with lower-third controls reserved, readable draw/discard piles and an outline-preserving rare-card variant. Use an isolated project, preserve supplied references and produce scoped assets with honest evidence. If Blender or image inspection is unavailable, provide the specification and mark affected checks unexecuted.",
+      "expected_output": "An editable subject-specific kit or explicitly unexecuted production specification, requested dimensions/states, named diagnostics, actual findings and separate technical/visual/engine evidence status.",
+      "assertions": [
+        "Flat zone mask, oblique/face-on cards, maximum token overlap and reduced-size preview. Disable bloom for accent checks. Inspect seam-adjacent frames for any loop.",
+        "Supplied camera, scale and fiction remain authoritative; concrete pieces and state variants are identified.",
+        "Image acceptance cites actually inspected current-revision images and observations, not file existence.",
+        "No game behavior, AI, balance, physics or engine performance is inferred from renders or static proxies."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Repair an idle stage whose machinery covers approved controls and whose loop jumps; do not add gameplay or claim performance. Inspect before editing; preserve original source and work only in authorized asset collections. Repeat affected diagnostics after repair.",
+      "expected_output": "A bounded diagnosis and targeted repair retaining approved source/style, with matched subject-specific before/after evidence or an explicit blocked/unverified result.",
+      "assertions": [
+        "Ornament covers controls: move stage objects rather than shrinking approved masks. Rare-card glow destroys outline: isolate and reduce glow. Loop jump: repair animated transforms/material keys and inspect neighboring frames. Ambiguous educational assembly: key part relationships.",
+        "Asset repairs are separated from game-rule and engine-system changes.",
+        "The original is preserved; affected checks and actual image review are repeated after editing.",
+        "A static numerical or geometry pass is not claimed as gameplay, historical authenticity or scientific proof."
+      ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Build a rhythm stage from supplied event timestamps and hit-plane; background pulses currently merge events and cross lanes. Use an isolated authorized source; if execution or image inspection is unavailable, return the concrete specification and mark those checks unexecuted.",
+      "expected_output": "Subtype-specific construction/state and repair artifacts, or an explicit unexecuted specification, with actual diagnostic evidence distinguished from visual and engine acceptance.",
+      "assertions": [
+        "Preserves actual FPS/timebase and supplied timing rather than inventing scoring windows.",
+        "Separates lane/event layer from subordinate beat props and bounds glow persistence.",
+        "Provides near-hit temporal samples and actual playback evidence only if executed."
+      ]
+    },
+    {
+      "id": 4,
+      "locale": "en",
+      "prompt": "Build an educational exploded assembly and a four-player party stage with maximum simultaneous occupancy. Use an isolated authorized source; if execution or image inspection is unavailable, return the concrete specification and mark those checks unexecuted.",
+      "expected_output": "Subtype-specific construction/state and repair artifacts, or an explicit unexecuted specification, with actual diagnostic evidence distinguished from visual and engine acceptance.",
+      "assertions": [
+        "Educational parts keep stable pivots, source-backed relationships and explicit simplifications.",
+        "Party station identity survives grayscale and approved crops without covering other zones.",
+        "Reports learning/scoring/input as untested and delivers subtype-specific state/overlay views."
+      ]
+    }
+  ]
+}

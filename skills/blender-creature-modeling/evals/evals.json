@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-creature-modeling",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create a winged quadruped with folding membrane wings and an attack crouch; preserve separate plated armor.",
+      "expected_output": "Revision-scoped work or read-only findings with concrete technical and visual acceptance evidence; missing execution is identified.",
+      "assertions": [
+        "Plans true joints and folded-wing clearance.",
+        "Separates rigid and organic behavior.",
+        "Inspects gameplay silhouette and critical poses before scales."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Refine a creature whose hocks were rigged as knees and wing membranes collapse when folded; the sculpt is the only source.",
+      "expected_output": "Revision-scoped work or read-only findings with concrete technical and visual acceptance evidence; missing execution is identified.",
+      "assertions": [
+        "Preserves dense source.",
+        "Corrects joint interpretation and membrane flow before detail.",
+        "Reports actual versus outstanding deformation tests."
+      ]
+    }
+  ]
+}

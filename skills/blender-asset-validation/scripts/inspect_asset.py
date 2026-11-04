@@ -20,7 +20,7 @@ def inspect(contract):
     unknown = set(contract) - {'schema_version', 'objects', 'max_triangles', 'require_uv', 'require_manifold', 'require_materials'}
     if unknown:
         raise ValueError('Unsupported requested checks: ' + ', '.join(sorted(unknown)))
-    if contract.get('schema_version') != 1 or not isinstance(names, list) or not names or any(not isinstance(n, str) or not n for n in names) or len(set(names)) != len(names):
+    if type(contract.get('schema_version')) is not int or contract['schema_version'] != 1 or not isinstance(names, list) or not names or any(not isinstance(n, str) or not n for n in names) or len(set(names)) != len(names):
         raise ValueError('Contract needs schema_version 1 and unique explicit objects')
     limit = contract.get('max_triangles')
     if limit is not None and (isinstance(limit, bool) or not isinstance(limit, int) or limit < 1):
@@ -67,9 +67,13 @@ def inspect(contract):
             if contract.get('require_manifold') and bad_edges:
                 issues.append({'object': name, 'code': 'non_manifold', 'edges': bad_edges})
             missing = []
-            if contract.get('require_materials') and (not mesh.materials or any(mat is None for mat in mesh.materials)):
-                issues.append({'object': name, 'code': 'missing_material'})
-            for mat in mesh.materials:
+            used_indices = {face.material_index for face in mesh.polygons}
+            unassigned = sum(index < 0 or index >= len(mesh.materials) or mesh.materials[index] is None
+                             for index in (face.material_index for face in mesh.polygons))
+            if contract.get('require_materials') and unassigned:
+                issues.append({'object': name, 'code': 'missing_material', 'faces': unassigned})
+            for index in sorted(used_indices):
+                mat = mesh.materials[index] if 0 <= index < len(mesh.materials) else None
                 if mat and mat.node_tree:
                     for node in mat.node_tree.nodes:
                         image = getattr(node, 'image', None)
@@ -77,7 +81,7 @@ def inspect(contract):
                             missing.append(image.name)
             if missing:
                 issues.append({'object': name, 'code': 'missing_textures', 'images': sorted(set(missing))})
-            metrics.append({'object': name, 'triangles': len(mesh.loop_triangles), 'materials': len(mesh.materials), 'uv_layers': uv, 'dimensions_m': dimensions, 'non_manifold_edges': bad_edges})
+            metrics.append({'object': name, 'triangles': len(mesh.loop_triangles), 'materials': len(mesh.materials), 'used_material_slots': sorted(used_indices), 'unassigned_material_faces': unassigned, 'uv_layers': uv, 'dimensions_m': dimensions, 'non_manifold_edges': bad_edges})
         finally:
             evaluated.to_mesh_clear()
     total = sum(m['triangles'] for m in metrics)

@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-stylized-style",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create a stylized guard with restrained realistic proportions, three color regions and optional outlines; preserve the approved palette.",
+      "expected_output": "An explicit project-specific NPR system.",
+      "assertions": [
+        "Does not force chibi/hand-painted rules.",
+        "Chooses renderer-compatible lighting.",
+        "Requires silhouette and multiple-light images."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "A toon pass changed all shared materials and scene color management; removing it lost original links and engine export was called identical. Repair the workflow.",
+      "expected_output": "Restore recoverability and evidence boundaries.",
+      "assertions": [
+        "Snapshots original links, shared users and scene settings.",
+        "Scopes modifications and rollback.",
+        "Separates Blender shading from target shader verification."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "skill_name": "blender-lighting",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Light a reflective one-meter product with controlled softbox gradients and a neutral review view.",
+      "expected_output": "An editable, scoped result with discipline-specific settings, actual evidence and stated unverified gates.",
+      "assertions": [
+        "Shapes reflection environment before only increasing power.",
+        "Preserves world/material users and checks direct-sun duplication.",
+        "Reports actual renderer evidence without promising engine parity."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "A metal product reads black, an interior has duplicate sun shadows and small emitters create fireflies. Repair causes.",
+      "expected_output": "A diagnosis tied to the supplied failure, preserved sources, a concrete correction and repeated affected acceptance checks.",
+      "assertions": [
+        "Shapes reflection environment before only increasing power.",
+        "Preserves world/material users and checks direct-sun duplication.",
+        "Reports actual renderer evidence without promising engine parity.",
+        "Does not label a hypothetical plan, a structural assertion or unrun workflow as successful execution."
+      ]
+    }
+  ]
+}

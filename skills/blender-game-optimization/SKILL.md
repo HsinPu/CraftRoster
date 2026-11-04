@@ -1,6 +1,6 @@
 ---
 name: blender-game-optimization
-description: "Reduce Blender game-asset geometry, texture, material and skeletal costs while preserving required appearance and motion. Use for measured asset budgets, LODs, collision proxies and scan or generated-mesh cleanup; engine FPS claims require engine profiling."
+description: "Measure and reduce Blender real-time asset geometry, material, texture and skeletal costs while checking silhouette, UV, shading and motion regressions against explicit target budgets."
 license: Apache-2.0
 metadata:
   author: "HsinPu"
@@ -12,21 +12,30 @@ metadata:
 
 # Blender Game Optimization
 
-Spend the asset budget where it improves the player's view, with an inspectable quality trade-off.
+Optimize the cost that limits the intended scene and preserve the appearance and behavior the user needs.
 
-Read the shared [asset contract](../blender-development/references/asset-contract.md) and [execution and ownership](../blender-development/references/execution-and-ownership.md). Keep the imported or high-detail original intact; operate on a delivery copy.
+Read the [asset contract](../blender-development/references/asset-contract.md), [execution boundaries](../blender-development/references/execution-and-ownership.md) and [quality loop](../blender-development/references/quality-loop.md). Use the [production reference](references/production.md) for method selection, the worked recipe and correction criteria.
 
-## Budget and correction loop
-1. Identify asset role, intended camera distance, screen size, simultaneous instance count, target hardware and current measured costs. Use the project's limits; if missing, state provisional budgets and their rationale rather than importing another project's numbers.
-2. Capture baseline counts and matched views, including close-ups where the requested presentation needs them. Record evaluated triangles, material slots, textures, bones/influences and modifiers; distinguish proxies from engine draw calls or frame cost.
-3. Select reductions with [cost and appearance decisions](references/cost-and-appearance.md): remove unnecessary work, simplify geometry, reuse materials, bake surface detail, create LODs or simplify collision as the target requires.
-4. Compare the changed delivery copy at gameplay size and sensitive close-ups. Protect silhouette, deformation regions, recognizable features, UV correspondence and shading. Re-bake affected maps instead of masking projection defects with darker lighting.
-5. Validate LOD transitions, collision coverage and all affected clips. Change one major cost class at a time so a quality regression has an attributable cause.
-6. Re-run the shared [quality loop](../blender-development/references/quality-loop.md). Retain the better revision when further reduction breaks the agreed appearance; report the unresolved budget or propose an evidence-based trade-off.
+## Working modes
 
-Use `blender-materials-uv` or `blender-rigging-animation` when installed and the correction requires their work. External generation or auto-rig services are optional input paths, not prerequisites.
+- Create: establish the dimensions, intended views, asset behavior and output contract before constructing the first form.
+- Review: inspect the supplied revision and return prioritized findings with object names, evidence and a proposed correction. A review request permits no scene edits, renders, saves or report-file writes unless those are separately authorized.
+- Refine: capture the baseline, modify an owned working copy, correct the largest observed defect, and repeat the affected measurements and actual image inspection.
 
-## Deliver
-Return before/after costs, the source and delivery assets, LOD/collision decisions, current comparison evidence and accepted trade-offs. Declare target-engine performance unmeasured until profiled in a representative scene. Neither a small file nor a low triangle count establishes visual quality.
+## Task sequence
 
-See [source attribution](references/upstream-notice.md).
+1. Record hardware/engine target, visible population, camera range and explicit per-asset/scene budgets; label provisional limits.
+2. Measure evaluated triangles, exported vertex splits, material slots, textures/mips, bone/influence counts and current images.
+3. Reduce hidden work, excessive flat/cylinder detail and redundant materials before aggressive shape reduction.
+4. Make LOD and collider variants on owned copies; preserve UV layers, shading, weights and recognizable silhouettes.
+5. Compare matched views and critical poses, remeasure actual output, then profile the representative target scene when available.
+
+## Evidence and handoff
+
+Return source and optimized copies, before/after cost table with measurement method, LOD/collision/material decisions, current visual comparisons and remaining budget risks. Distinguish draw-call/memory estimates from engine measurements and target FPS.
+
+Keep source objects and unrelated scene contents intact. Resolve explicit object names rather than falling back to every visible mesh; inspect shared datablock users before mutation. Discover the actual Blender connection and tool schema, or use an authorized background copy. This package installs no MCP server, third-party add-on or upstream executable. Record Blender version and unsupported operations; never present authored instructions or evaluation cases as executed Blender work.
+
+Use other discipline Skills only when the deliverable needs their work; they are not implicit execution permissions.
+
+[Attribution and license](references/upstream-notice.md).

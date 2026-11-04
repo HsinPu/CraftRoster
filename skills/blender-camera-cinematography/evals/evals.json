@@ -1,0 +1,28 @@
+{
+  "skill_name": "blender-camera-cinematography",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Build a constant-speed portrait product orbit at 1080x1920 with a readable logo.",
+      "expected_output": "An editable, scoped result with discipline-specific settings, actual evidence and stated unverified gates.",
+      "assertions": [
+        "Fits actual sensor/aspect and checks critical evaluated points over motion.",
+        "Corrects tracking/up-axis and constant-speed interpolation deliberately.",
+        "Keeps sharp diagnostic and focus treatment separate and preserves source animation."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "An overhead target camera flips and crops after a portrait aspect change. Repair it without touching the product animation.",
+      "expected_output": "A diagnosis tied to the supplied failure, preserved sources, a concrete correction and repeated affected acceptance checks.",
+      "assertions": [
+        "Fits actual sensor/aspect and checks critical evaluated points over motion.",
+        "Corrects tracking/up-axis and constant-speed interpolation deliberately.",
+        "Keeps sharp diagnostic and focus treatment separate and preserves source animation.",
+        "Does not label a hypothetical plan, a structural assertion or unrun workflow as successful execution."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "skill_name": "blender-character-rigging",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Rig a kitbashed character for a four-influence target with editable controls and a separate export skeleton.",
+      "expected_output": "An editable, scoped result with discipline-specific settings, actual evidence and stated unverified gates.",
+      "assertions": [
+        "Separates deform weights from masks and pin groups.",
+        "Uses stress-pose images and corrects actual joint deformation.",
+        "Preserves source rig and does not infer engine compatibility from generic bone names."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Heat weights succeeded but the shoulder collapses and a cloth pin group corrupts weight normalization. Correct and retest.",
+      "expected_output": "A diagnosis tied to the supplied failure, preserved sources, a concrete correction and repeated affected acceptance checks.",
+      "assertions": [
+        "Separates deform weights from masks and pin groups.",
+        "Uses stress-pose images and corrects actual joint deformation.",
+        "Preserves source rig and does not infer engine compatibility from generic bone names.",
+        "Does not label a hypothetical plan, a structural assertion or unrun workflow as successful execution."
+      ]
+    }
+  ]
+}

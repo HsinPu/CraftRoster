@@ -82,25 +82,431 @@ aws-operations	terraform-infrastructure	conditional	The task includes Terraform/
 baoyu-image-gen	ai-image-prompt-design	optional	-
 baoyu-image-gen	ai-image-prompts-skill	optional	-
 baoyu-image-gen	image-utils	conditional	deterministic post-processing
+blender-addon-development	blender-development	required	-
+blender-analog-found-footage-horror	blender-camera-cinematography	conditional	The authorized task requires camera framing, lens choice, depth of field, camera motion or shot continuity.
+blender-analog-found-footage-horror	blender-compositing	conditional	The authorized task requires render-pass compositing, masking, color adjustment or a reusable compositor graph.
+blender-analog-found-footage-horror	blender-development	required	-
+blender-animation	blender-development	required	-
+blender-anime-style	blender-character-modeling	conditional	The authorized task requires a human or humanoid mesh with proportion, clothing and expression-aware topology.
+blender-anime-style	blender-development	required	-
+blender-anime-style	blender-export	conditional	The authorized task requires a common Blender export contract, selection, source preservation and reimport gate.
+blender-anime-style	blender-pbr-materials	conditional	The authorized task requires a physically based shader with correct texture channels, color spaces and material response.
+blender-apocalypse-worlds	blender-asset-validation	conditional	The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract.
+blender-apocalypse-worlds	blender-development	required	-
+blender-apocalypse-worlds	blender-environment-art	conditional	The authorized task requires a composed environment whose architecture, terrain and route support the intended vista.
+blender-apocalypse-worlds	blender-export	conditional	The authorized task requires a common Blender export contract, selection, source preservation and reimport gate.
+blender-apocalypse-worlds	blender-pbr-materials	conditional	The authorized task requires a physically based shader with correct texture channels, color spaces and material response.
+blender-apocalypse-worlds	blender-set-dressing	conditional	The authorized task requires narrative prop clusters, deliberate density and route-preserving placement.
+blender-archviz	blender-camera-cinematography	conditional	The authorized task requires camera framing, lens choice, depth of field, camera motion or shot continuity.
+blender-archviz	blender-compositing	conditional	The authorized task requires render-pass compositing, masking, color adjustment or a reusable compositor graph.
+blender-archviz	blender-development	required	-
+blender-archviz	blender-lighting	conditional	The authorized task requires light placement, exposure balance, shadows or renderer-aware illumination.
+blender-archviz	blender-rendering	conditional	The authorized task requires renderer configuration, render passes, sampling, output images or sequence verification.
 blender-asset-validation	blender-development	required	-
-blender-development	blender-asset-validation	conditional	The authorized Blender task needs asset validation.
-blender-development	blender-export	conditional	The authorized Blender task needs export.
-blender-development	blender-game-optimization	conditional	The authorized Blender task needs game optimization.
-blender-development	blender-lookdev	conditional	The authorized Blender task needs lookdev.
-blender-development	blender-materials-uv	conditional	The authorized Blender task needs materials uv.
-blender-development	blender-modeling	conditional	The authorized Blender task needs modeling.
-blender-development	blender-reference-modeling	conditional	The authorized Blender task needs reference modeling.
-blender-development	blender-rigging-animation	conditional	The authorized Blender task needs rigging animation.
-blender-development	blender-visual-review	conditional	The authorized Blender task needs visual review.
+blender-biome-worlds	blender-asset-validation	conditional	The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract.
+blender-biome-worlds	blender-development	required	-
+blender-biome-worlds	blender-environment-art	conditional	The authorized task requires a composed environment whose architecture, terrain and route support the intended vista.
+blender-biome-worlds	blender-export	conditional	The authorized task requires a common Blender export contract, selection, source preservation and reimport gate.
+blender-biome-worlds	blender-lighting	conditional	The authorized task requires light placement, exposure balance, shadows or renderer-aware illumination.
+blender-biome-worlds	blender-vegetation	conditional	The authorized task requires plant branching, leaf atlases, wind data or canopy-preserving foliage LODs.
+blender-body-horror-style	blender-creature-modeling	conditional	The authorized task requires a nonhuman creature with anatomy-informed masses, locomotion and joint clearance.
+blender-body-horror-style	blender-development	required	-
+blender-body-horror-style	blender-sculpting	conditional	The authorized task requires dense organic form development, safe remeshing or multires bake-source preparation.
+blender-brutalist-mood	blender-archviz	conditional	The authorized task requires measured architectural interior or exterior presentation.
+blender-brutalist-mood	blender-development	required	-
+blender-brutalist-mood	blender-pbr-materials	conditional	The authorized task requires a physically based shader with correct texture channels, color spaces and material response.
+blender-camera-cinematography	blender-development	required	-
+blender-cartoon-style	blender-animation	conditional	The authorized task requires keyframed motion, action management, clip baking, retargeting or loop correction.
+blender-cartoon-style	blender-character-modeling	conditional	The authorized task requires a human or humanoid mesh with proportion, clothing and expression-aware topology.
+blender-cartoon-style	blender-development	required	-
+blender-cartoon-style	blender-prop-modeling	conditional	The authorized task requires a grounded furniture, tool, container or household prop with functional pivots.
+blender-character-archetypes	blender-asset-validation	conditional	The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract.
+blender-character-archetypes	blender-character-modeling	conditional	The authorized task requires a human or humanoid mesh with proportion, clothing and expression-aware topology.
+blender-character-archetypes	blender-character-rigging	conditional	The authorized task requires a deforming character rig, weights, controls, constraints or tested rig handoff.
+blender-character-archetypes	blender-creature-modeling	conditional	The authorized task requires a nonhuman creature with anatomy-informed masses, locomotion and joint clearance.
+blender-character-archetypes	blender-development	required	-
+blender-character-archetypes	blender-export	conditional	The authorized task requires a common Blender export contract, selection, source preservation and reimport gate.
+blender-character-modeling	blender-development	required	-
+blender-character-modeling	blender-retopology	conditional	The authorized task requires delivery topology rebuilt from a dense sculpt, scan or generated source.
+blender-character-modeling	blender-rigging-animation	conditional	The authorized task requires combined rig and motion planning before selecting detailed animation specialists.
+blender-character-modeling	blender-sculpting	conditional	The authorized task requires dense organic form development, safe remeshing or multires bake-source preparation.
+blender-character-modeling	blender-uv-unwrapping	conditional	The authorized task requires seams, UV density, pixel padding, trims, UDIM or requested lightmap channels.
+blender-character-rigging	blender-development	required	-
+blender-chibi-style	blender-character-modeling	conditional	The authorized task requires a human or humanoid mesh with proportion, clothing and expression-aware topology.
+blender-chibi-style	blender-character-rigging	conditional	The authorized task requires a deforming character rig, weights, controls, constraints or tested rig handoff.
+blender-chibi-style	blender-development	required	-
+blender-cloth-simulation	blender-development	required	-
+blender-clothing	blender-development	required	-
+blender-collision-proxies	blender-development	required	-
+blender-comic-book-style	blender-camera-cinematography	conditional	The authorized task requires camera framing, lens choice, depth of field, camera motion or shot continuity.
+blender-comic-book-style	blender-compositing	conditional	The authorized task requires render-pass compositing, masking, color adjustment or a reusable compositor graph.
+blender-comic-book-style	blender-development	required	-
+blender-compositing	blender-development	required	-
+blender-cosmic-eldritch-horror	blender-camera-cinematography	conditional	The authorized task requires camera framing, lens choice, depth of field, camera motion or shot continuity.
+blender-cosmic-eldritch-horror	blender-development	required	-
+blender-cosmic-eldritch-horror	blender-environment-art	conditional	The authorized task requires a composed environment whose architecture, terrain and route support the intended vista.
+blender-cozy-wholesome-mood	blender-development	required	-
+blender-cozy-wholesome-mood	blender-lighting	conditional	The authorized task requires light placement, exposure balance, shadows or renderer-aware illumination.
+blender-cozy-wholesome-mood	blender-set-dressing	conditional	The authorized task requires narrative prop clusters, deliberate density and route-preserving placement.
+blender-creature-modeling	blender-character-modeling	conditional	The authorized task requires a human or humanoid mesh with proportion, clothing and expression-aware topology.
+blender-creature-modeling	blender-development	required	-
+blender-creature-modeling	blender-retopology	conditional	The authorized task requires delivery topology rebuilt from a dense sculpt, scan or generated source.
+blender-creature-modeling	blender-rigging-animation	conditional	The authorized task requires combined rig and motion planning before selecting detailed animation specialists.
+blender-creature-modeling	blender-sculpting	conditional	The authorized task requires dense organic form development, safe remeshing or multires bake-source preparation.
+blender-dark-gritty-mood	blender-development	required	-
+blender-dark-gritty-mood	blender-lighting	conditional	The authorized task requires light placement, exposure balance, shadows or renderer-aware illumination.
+blender-dark-gritty-mood	blender-pbr-materials	conditional	The authorized task requires a physically based shader with correct texture channels, color spaces and material response.
+blender-development	blender-addon-development	conditional	The authorized task requires a Blender add-on, operator, panel, property registration or version-compatible extension.
+blender-development	blender-analog-found-footage-horror	conditional	The authorized task requires an analog or found-footage horror treatment with capture artifacts and legible shot information.
+blender-development	blender-animation	conditional	The authorized task requires keyframed motion, action management, clip baking, retargeting or loop correction.
+blender-development	blender-anime-style	conditional	The authorized task requires anime proportions, facial shape language and anime-specific cel rendering.
+blender-development	blender-apocalypse-worlds	conditional	The authorized task requires a post-apocalyptic, dystopian or utopian world with coherent damage and settlement logic.
+blender-development	blender-archviz	conditional	The authorized task requires measured architectural interior or exterior presentation.
+blender-development	blender-asset-validation	conditional	The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract.
+blender-development	blender-biome-worlds	conditional	The authorized task requires a biome-specific environment with coherent terrain, vegetation, water and climate cues.
+blender-development	blender-body-horror-style	conditional	The authorized task requires an approved body-horror design with controlled organic transformation and surface hierarchy.
+blender-development	blender-brutalist-mood	conditional	The authorized task requires a brutalist mood based on mass, concrete, scale and controlled spatial light.
+blender-development	blender-camera-cinematography	conditional	The authorized task requires camera framing, lens choice, depth of field, camera motion or shot continuity.
+blender-development	blender-cartoon-style	conditional	The authorized task requires cartoon exaggeration, simplified forms and expressive surface treatment.
+blender-development	blender-character-archetypes	conditional	The authorized task requires a readable character archetype with coherent silhouette, costume and role cues.
+blender-development	blender-character-modeling	conditional	The authorized task requires a human or humanoid mesh with proportion, clothing and expression-aware topology.
+blender-development	blender-character-rigging	conditional	The authorized task requires a deforming character rig, weights, controls, constraints or tested rig handoff.
+blender-development	blender-chibi-style	conditional	The authorized task requires chibi head-to-body ratios, simplified anatomy and readable miniature expressions.
+blender-development	blender-cloth-simulation	conditional	The authorized task requires a bounded cloth simulation with collision, cache and motion acceptance.
+blender-development	blender-clothing	conditional	The authorized task requires garment construction, thickness, fit, folds or clothing deformation preparation.
+blender-development	blender-collision-proxies	conditional	The authorized task requires engine-specific collider primitives or convex proxy meshes with intended contact clearance.
+blender-development	blender-comic-book-style	conditional	The authorized task requires comic-book graphic shapes, halftones, outlines and panel-aware presentation.
+blender-development	blender-compositing	conditional	The authorized task requires render-pass compositing, masking, color adjustment or a reusable compositor graph.
+blender-development	blender-cosmic-eldritch-horror	conditional	The authorized task requires a cosmic or eldritch horror direction using scale, unknowability and controlled visual abstraction.
+blender-development	blender-cozy-wholesome-mood	conditional	The authorized task requires a cozy or wholesome mood with inviting proportions, materials and light.
+blender-development	blender-creature-modeling	conditional	The authorized task requires a nonhuman creature with anatomy-informed masses, locomotion and joint clearance.
+blender-development	blender-dark-gritty-mood	conditional	The authorized task requires a dark or gritty mood with readable values, causal wear and restrained contrast.
+blender-development	blender-dream-surreal-mood	conditional	The authorized task requires a dreamlike or surreal mood with deliberate spatial, material or lighting departures.
+blender-development	blender-dream-weirdcore-style	conditional	The authorized task requires a dreamcore or weirdcore visual treatment with intentional digital unease.
+blender-development	blender-environment-art	conditional	The authorized task requires a composed environment whose architecture, terrain and route support the intended vista.
+blender-development	blender-environment-kits	conditional	The authorized task requires a snapping modular kit, terrain heightfield or slope/height-masked biome scatter.
+blender-development	blender-export	conditional	The authorized task requires a common Blender export contract, selection, source preservation and reimport gate.
+blender-development	blender-facial-shapekeys	conditional	The authorized task requires facial shape keys, corrective expressions or tested blendshape delivery.
+blender-development	blender-fantasy-worlds	conditional	The authorized task requires a fantasy world with consistent architectural, material and magical culture.
+blender-development	blender-folk-horror-style	conditional	The authorized task requires a folk-horror treatment grounded in place, ritual and environmental unease.
+blender-development	blender-frutiger-aero-style	conditional	The authorized task requires a Frutiger Aero treatment with translucent, glossy and nature-technology motifs.
+blender-development	blender-game-optimization	conditional	The authorized task requires measured reductions in asset geometry, materials, textures or skeletal cost.
+blender-development	blender-genre-action-combat	conditional	The authorized task requires action-combat assets whose silhouettes, contact regions and effects support readable encounters.
+blender-development	blender-genre-card-party-idle	conditional	The authorized task requires card, party or idle-game assets with clear symbols, modular content and state readability.
+blender-development	blender-genre-metroidvania-roguelike	conditional	The authorized task requires Metroidvania or roguelike spaces with reusable rooms, route gates and run variation.
+blender-development	blender-genre-narrative-vn	conditional	The authorized task requires narrative or visual-novel sets and character assets for dialogue framing and expression states.
+blender-development	blender-genre-open-world-sandbox	conditional	The authorized task requires open-world or sandbox assets organized for scale, reuse and scene streaming contracts.
+blender-development	blender-genre-puzzle-platformer	conditional	The authorized task requires puzzle or platformer assets with clear affordances, jump/readability and state distinctions.
+blender-development	blender-genre-racing-sports	conditional	The authorized task requires racing or sports assets with track/course readability and motion-aware scale.
+blender-development	blender-genre-rpg	conditional	The authorized task requires RPG characters, equipment or environments with coherent role and progression cues.
+blender-development	blender-genre-shooter	conditional	The authorized task requires shooter assets with first/third-person readability, sightlines and functional weapon interfaces.
+blender-development	blender-genre-soulslike	conditional	The authorized task requires Soulslike assets with encounter-readable silhouettes, spatial rhythm and world continuity.
+blender-development	blender-genre-stealth	conditional	The authorized task requires stealth spaces and props with readable concealment, sightlines and traversal affordances.
+blender-development	blender-genre-strategy-sim	conditional	The authorized task requires strategy or simulation assets readable at management-camera scale with systematic reuse.
+blender-development	blender-genre-survival	conditional	The authorized task requires survival assets with readable resources, crafting stages and environmental pressures.
+blender-development	blender-geometry-nodes	conditional	The authorized task requires a field/domain-correct Geometry Nodes graph, instancing system or bounded procedural zone.
+blender-development	blender-godot-export	conditional	The authorized task requires a Godot-targeted Blender delivery with verified scale, resources and import behavior.
+blender-development	blender-hair-grooming	conditional	The authorized task requires strand grooming, hair cards, clumps or target-aware hair conversion.
+blender-development	blender-hand-painted-style	conditional	The authorized task requires hand-painted texture direction, brushwork and geometry-to-texture hierarchy.
+blender-development	blender-hard-surface	conditional	The authorized task requires mechanical bodywork, boolean cuts, bevels or controlled hard-surface highlights.
+blender-development	blender-hd-2d-style	conditional	The authorized task requires an HD-2D treatment combining pixel-like character presentation with dimensional scenes.
+blender-development	blender-historical-worlds	conditional	The authorized task requires a historically grounded world with researched architectural and material choices.
+blender-development	blender-horror-style	conditional	The authorized task requires a general horror art direction with purposeful visibility, silhouettes and environmental tension.
+blender-development	blender-indie-horror-aesthetics	conditional	The authorized task requires an indie-horror visual direction with constrained production vocabulary and deliberate roughness.
+blender-development	blender-isometric-style	conditional	The authorized task requires isometric projection, composition and scale-readable object presentation.
+blender-development	blender-lighting	conditional	The authorized task requires light placement, exposure balance, shadows or renderer-aware illumination.
+blender-development	blender-liminal-space-style	conditional	The authorized task requires a liminal-space treatment using scale, repetition, emptiness and architectural ambiguity.
+blender-development	blender-lod-pipeline	conditional	The authorized task requires a measured LOD chain with preserved interfaces and screen-size transition inspection.
+blender-development	blender-lookdev	conditional	The authorized task requires an integrated material, camera and lighting study against the approved visual direction.
+blender-development	blender-lowpoly-style	conditional	The authorized task requires a deliberate low-poly visual direction with readable faceting and controlled texture complexity.
+blender-development	blender-manga-style	conditional	The authorized task requires manga-inspired monochrome values, ink lines, screen tones and graphic shape hierarchy.
+blender-development	blender-mascot-puppet-horror	conditional	The authorized task requires a mascot or puppet horror design with coherent construction and controlled uncanny cues.
+blender-development	blender-materials-uv	conditional	The authorized task requires combined material and UV planning before selecting a specialized surface workflow.
+blender-development	blender-minimalist-style	conditional	The authorized task requires a minimalist treatment whose reduced shapes, palette and spacing preserve required meaning.
+blender-development	blender-modeling	conditional	The authorized task requires general mesh blockout, precision editing, modifier construction or topology cleanup.
+blender-development	blender-neon-retrofuturism	conditional	The authorized task requires a neon retrofuturist direction with deliberate emission, period motifs and readable dark values.
+blender-development	blender-noir-style	conditional	The authorized task requires a noir treatment with purposeful shadow design, light sources and restrained color.
+blender-development	blender-painterly-style	conditional	The authorized task requires a painterly treatment with art-directed brush texture, edges and color relationships.
+blender-development	blender-pbr-materials	conditional	The authorized task requires a physically based shader with correct texture channels, color spaces and material response.
+blender-development	blender-pipeline-automation	conditional	The authorized task requires repeatable Blender batch processing, validation, render jobs or delivery automation.
+blender-development	blender-pixel-art-style	conditional	The authorized task requires a pixel-art treatment with consistent pixel density, palette and sampling.
+blender-development	blender-procedural-modeling	conditional	The authorized task requires a bounded, seeded family of parametric rocks, buildings, roads, pipes or panels.
+blender-development	blender-prop-modeling	conditional	The authorized task requires a grounded furniture, tool, container or household prop with functional pivots.
+blender-development	blender-psx-horror-style	conditional	The authorized task requires a PSX-inspired horror treatment with intentional geometry, texture and temporal artifacts.
+blender-development	blender-realistic-style	conditional	The authorized task requires a realistic art direction with reference-grounded proportions and material/light relationships.
+blender-development	blender-reference-modeling	conditional	The authorized task requires a reference-dominant reconstruction requiring camera, silhouette and proportion comparison.
+blender-development	blender-rendering	conditional	The authorized task requires renderer configuration, render passes, sampling, output images or sequence verification.
+blender-development	blender-retopology	conditional	The authorized task requires delivery topology rebuilt from a dense sculpt, scan or generated source.
+blender-development	blender-retro-16bit-style	conditional	The authorized task requires a 16-bit-inspired presentation with era-coherent palette, shapes and screen detail.
+blender-development	blender-retro-8bit-style	conditional	The authorized task requires an 8-bit-inspired presentation with tightly controlled palette, pixels and visual vocabulary.
+blender-development	blender-rigging-animation	conditional	The authorized task requires combined rig and motion planning before selecting detailed animation specialists.
+blender-development	blender-scene-assembly	conditional	The authorized task requires scene units, collections, linked libraries, overrides or large-set layout.
+blender-development	blender-sci-fi-punk-worlds	conditional	The authorized task requires a science-fiction or punk world whose technology, social cues and construction agree.
+blender-development	blender-sculpting	conditional	The authorized task requires dense organic form development, safe remeshing or multires bake-source preparation.
+blender-development	blender-set-dressing	conditional	The authorized task requires narrative prop clusters, deliberate density and route-preserving placement.
+blender-development	blender-simulation	conditional	The authorized task requires a bounded Blender physical simulation with explicit cache and execution limits.
+blender-development	blender-stop-motion-craft-style	conditional	The authorized task requires a stop-motion or craft treatment with material construction and stepped-motion choices.
+blender-development	blender-stylized-style	conditional	The authorized task requires a coherent stylized art direction spanning shape, palette and nonphotoreal rendering.
+blender-development	blender-texture-baking	conditional	The authorized task requires high-to-low or multires texture baking with cages, ray isolation and map checks.
+blender-development	blender-texturing	conditional	The authorized task requires texture creation or assembly with surface scale, UV correspondence and channel validation.
+blender-development	blender-time-of-day	conditional	The authorized task requires time-of-day or weather-adjacent lighting states with matched transitions and exposure.
+blender-development	blender-unity-export	conditional	The authorized task requires a Unity-targeted Blender delivery with verified units, materials, rig and import behavior.
+blender-development	blender-unreal-export	conditional	The authorized task requires an Unreal-targeted Blender delivery with verified naming, transforms and import behavior.
+blender-development	blender-uv-unwrapping	conditional	The authorized task requires seams, UV density, pixel padding, trims, UDIM or requested lightmap channels.
+blender-development	blender-vector-style	conditional	The authorized task requires a vector-like treatment with flat regions, clean contours and deliberate graphic abstraction.
+blender-development	blender-vegetation	conditional	The authorized task requires plant branching, leaf atlases, wind data or canopy-preserving foliage LODs.
+blender-development	blender-vehicle-modeling	conditional	The authorized task requires vehicle proportions, bodywork and separately moving or shaded systems.
+blender-development	blender-vfx-fx	conditional	The authorized task requires a bounded visual effect, procedural effect element or composited FX deliverable.
+blender-development	blender-video-editing	conditional	The authorized task requires Blender video-sequence assembly, timing, transitions or verified media output.
+blender-development	blender-visual-console-eras	conditional	The authorized task requires a console-era visual target with coherent geometry, texture and display constraints.
+blender-development	blender-visual-review	conditional	The authorized task requires read-only judgments of current-revision images and actionable visual correction priorities.
+blender-development	blender-voxel-style	conditional	The authorized task requires a voxel visual direction with deliberate grid resolution, stepped silhouettes and palette.
+blender-development	blender-weather-fx	conditional	The authorized task requires a weather-effect setup with bounded particles/volumes, scene visibility and cache costs.
+blender-development	blender-workflow-recipes	conditional	The authorized task requires an end-to-end Blender production recipe coordinating the relevant discipline checkpoints.
+blender-dream-surreal-mood	blender-camera-cinematography	conditional	The authorized task requires camera framing, lens choice, depth of field, camera motion or shot continuity.
+blender-dream-surreal-mood	blender-development	required	-
+blender-dream-surreal-mood	blender-simulation	conditional	The authorized task requires a bounded Blender physical simulation with explicit cache and execution limits.
+blender-dream-weirdcore-style	blender-compositing	conditional	The authorized task requires render-pass compositing, masking, color adjustment or a reusable compositor graph.
+blender-dream-weirdcore-style	blender-development	required	-
+blender-dream-weirdcore-style	blender-set-dressing	conditional	The authorized task requires narrative prop clusters, deliberate density and route-preserving placement.
+blender-environment-art	blender-development	required	-
+blender-environment-art	blender-environment-kits	conditional	The authorized task requires a snapping modular kit, terrain heightfield or slope/height-masked biome scatter.
+blender-environment-art	blender-game-optimization	conditional	The authorized task requires measured reductions in asset geometry, materials, textures or skeletal cost.
+blender-environment-art	blender-set-dressing	conditional	The authorized task requires narrative prop clusters, deliberate density and route-preserving placement.
+blender-environment-art	blender-vegetation	conditional	The authorized task requires plant branching, leaf atlases, wind data or canopy-preserving foliage LODs.
+blender-environment-kits	blender-development	required	-
 blender-export	blender-asset-validation	required	-
 blender-export	blender-development	required	-
+blender-facial-shapekeys	blender-development	required	-
+blender-fantasy-worlds	blender-asset-validation	conditional	The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract.
+blender-fantasy-worlds	blender-development	required	-
+blender-fantasy-worlds	blender-environment-art	conditional	The authorized task requires a composed environment whose architecture, terrain and route support the intended vista.
+blender-fantasy-worlds	blender-export	conditional	The authorized task requires a common Blender export contract, selection, source preservation and reimport gate.
+blender-fantasy-worlds	blender-prop-modeling	conditional	The authorized task requires a grounded furniture, tool, container or household prop with functional pivots.
+blender-fantasy-worlds	blender-vfx-fx	conditional	The authorized task requires a bounded visual effect, procedural effect element or composited FX deliverable.
+blender-folk-horror-style	blender-development	required	-
+blender-folk-horror-style	blender-prop-modeling	conditional	The authorized task requires a grounded furniture, tool, container or household prop with functional pivots.
+blender-folk-horror-style	blender-vegetation	conditional	The authorized task requires plant branching, leaf atlases, wind data or canopy-preserving foliage LODs.
+blender-frutiger-aero-style	blender-development	required	-
+blender-frutiger-aero-style	blender-lighting	conditional	The authorized task requires light placement, exposure balance, shadows or renderer-aware illumination.
+blender-frutiger-aero-style	blender-pbr-materials	conditional	The authorized task requires a physically based shader with correct texture channels, color spaces and material response.
 blender-game-optimization	blender-development	required	-
+blender-genre-action-combat	blender-asset-validation	conditional	The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract.
+blender-genre-action-combat	blender-camera-cinematography	conditional	The authorized task requires camera framing, lens choice, depth of field, camera motion or shot continuity.
+blender-genre-action-combat	blender-collision-proxies	conditional	The authorized task requires engine-specific collider primitives or convex proxy meshes with intended contact clearance.
+blender-genre-action-combat	blender-development	required	-
+blender-genre-action-combat	blender-environment-art	conditional	The authorized task requires a composed environment whose architecture, terrain and route support the intended vista.
+blender-genre-action-combat	blender-export	conditional	The authorized task requires a common Blender export contract, selection, source preservation and reimport gate.
+blender-genre-card-party-idle	blender-animation	conditional	The authorized task requires keyframed motion, action management, clip baking, retargeting or loop correction.
+blender-genre-card-party-idle	blender-asset-validation	conditional	The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract.
+blender-genre-card-party-idle	blender-camera-cinematography	conditional	The authorized task requires camera framing, lens choice, depth of field, camera motion or shot continuity.
+blender-genre-card-party-idle	blender-development	required	-
+blender-genre-card-party-idle	blender-export	conditional	The authorized task requires a common Blender export contract, selection, source preservation and reimport gate.
+blender-genre-card-party-idle	blender-prop-modeling	conditional	The authorized task requires a grounded furniture, tool, container or household prop with functional pivots.
+blender-genre-metroidvania-roguelike	blender-asset-validation	conditional	The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract.
+blender-genre-metroidvania-roguelike	blender-biome-worlds	conditional	The authorized task requires a biome-specific environment with coherent terrain, vegetation, water and climate cues.
+blender-genre-metroidvania-roguelike	blender-development	required	-
+blender-genre-metroidvania-roguelike	blender-environment-art	conditional	The authorized task requires a composed environment whose architecture, terrain and route support the intended vista.
+blender-genre-metroidvania-roguelike	blender-export	conditional	The authorized task requires a common Blender export contract, selection, source preservation and reimport gate.
+blender-genre-metroidvania-roguelike	blender-scene-assembly	conditional	The authorized task requires scene units, collections, linked libraries, overrides or large-set layout.
+blender-genre-narrative-vn	blender-asset-validation	conditional	The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract.
+blender-genre-narrative-vn	blender-camera-cinematography	conditional	The authorized task requires camera framing, lens choice, depth of field, camera motion or shot continuity.
+blender-genre-narrative-vn	blender-compositing	conditional	The authorized task requires render-pass compositing, masking, color adjustment or a reusable compositor graph.
+blender-genre-narrative-vn	blender-development	required	-
+blender-genre-narrative-vn	blender-export	conditional	The authorized task requires a common Blender export contract, selection, source preservation and reimport gate.
+blender-genre-narrative-vn	blender-lighting	conditional	The authorized task requires light placement, exposure balance, shadows or renderer-aware illumination.
+blender-genre-open-world-sandbox	blender-asset-validation	conditional	The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract.
+blender-genre-open-world-sandbox	blender-biome-worlds	conditional	The authorized task requires a biome-specific environment with coherent terrain, vegetation, water and climate cues.
+blender-genre-open-world-sandbox	blender-development	required	-
+blender-genre-open-world-sandbox	blender-environment-art	conditional	The authorized task requires a composed environment whose architecture, terrain and route support the intended vista.
+blender-genre-open-world-sandbox	blender-export	conditional	The authorized task requires a common Blender export contract, selection, source preservation and reimport gate.
+blender-genre-open-world-sandbox	blender-lod-pipeline	conditional	The authorized task requires a measured LOD chain with preserved interfaces and screen-size transition inspection.
+blender-genre-puzzle-platformer	blender-asset-validation	conditional	The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract.
+blender-genre-puzzle-platformer	blender-collision-proxies	conditional	The authorized task requires engine-specific collider primitives or convex proxy meshes with intended contact clearance.
+blender-genre-puzzle-platformer	blender-development	required	-
+blender-genre-puzzle-platformer	blender-environment-art	conditional	The authorized task requires a composed environment whose architecture, terrain and route support the intended vista.
+blender-genre-puzzle-platformer	blender-export	conditional	The authorized task requires a common Blender export contract, selection, source preservation and reimport gate.
+blender-genre-puzzle-platformer	blender-prop-modeling	conditional	The authorized task requires a grounded furniture, tool, container or household prop with functional pivots.
+blender-genre-racing-sports	blender-asset-validation	conditional	The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract.
+blender-genre-racing-sports	blender-camera-cinematography	conditional	The authorized task requires camera framing, lens choice, depth of field, camera motion or shot continuity.
+blender-genre-racing-sports	blender-development	required	-
+blender-genre-racing-sports	blender-environment-art	conditional	The authorized task requires a composed environment whose architecture, terrain and route support the intended vista.
+blender-genre-racing-sports	blender-export	conditional	The authorized task requires a common Blender export contract, selection, source preservation and reimport gate.
+blender-genre-racing-sports	blender-vehicle-modeling	conditional	The authorized task requires vehicle proportions, bodywork and separately moving or shaded systems.
+blender-genre-rpg	blender-asset-validation	conditional	The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract.
+blender-genre-rpg	blender-character-archetypes	conditional	The authorized task requires a readable character archetype with coherent silhouette, costume and role cues.
+blender-genre-rpg	blender-development	required	-
+blender-genre-rpg	blender-environment-art	conditional	The authorized task requires a composed environment whose architecture, terrain and route support the intended vista.
+blender-genre-rpg	blender-export	conditional	The authorized task requires a common Blender export contract, selection, source preservation and reimport gate.
+blender-genre-rpg	blender-prop-modeling	conditional	The authorized task requires a grounded furniture, tool, container or household prop with functional pivots.
+blender-genre-shooter	blender-asset-validation	conditional	The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract.
+blender-genre-shooter	blender-camera-cinematography	conditional	The authorized task requires camera framing, lens choice, depth of field, camera motion or shot continuity.
+blender-genre-shooter	blender-collision-proxies	conditional	The authorized task requires engine-specific collider primitives or convex proxy meshes with intended contact clearance.
+blender-genre-shooter	blender-development	required	-
+blender-genre-shooter	blender-environment-art	conditional	The authorized task requires a composed environment whose architecture, terrain and route support the intended vista.
+blender-genre-shooter	blender-export	conditional	The authorized task requires a common Blender export contract, selection, source preservation and reimport gate.
+blender-genre-soulslike	blender-asset-validation	conditional	The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract.
+blender-genre-soulslike	blender-dark-gritty-mood	conditional	The authorized task requires a dark or gritty mood with readable values, causal wear and restrained contrast.
+blender-genre-soulslike	blender-development	required	-
+blender-genre-soulslike	blender-environment-art	conditional	The authorized task requires a composed environment whose architecture, terrain and route support the intended vista.
+blender-genre-soulslike	blender-export	conditional	The authorized task requires a common Blender export contract, selection, source preservation and reimport gate.
+blender-genre-soulslike	blender-lighting	conditional	The authorized task requires light placement, exposure balance, shadows or renderer-aware illumination.
+blender-genre-stealth	blender-asset-validation	conditional	The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract.
+blender-genre-stealth	blender-collision-proxies	conditional	The authorized task requires engine-specific collider primitives or convex proxy meshes with intended contact clearance.
+blender-genre-stealth	blender-development	required	-
+blender-genre-stealth	blender-environment-art	conditional	The authorized task requires a composed environment whose architecture, terrain and route support the intended vista.
+blender-genre-stealth	blender-export	conditional	The authorized task requires a common Blender export contract, selection, source preservation and reimport gate.
+blender-genre-stealth	blender-lighting	conditional	The authorized task requires light placement, exposure balance, shadows or renderer-aware illumination.
+blender-genre-strategy-sim	blender-asset-validation	conditional	The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract.
+blender-genre-strategy-sim	blender-development	required	-
+blender-genre-strategy-sim	blender-environment-art	conditional	The authorized task requires a composed environment whose architecture, terrain and route support the intended vista.
+blender-genre-strategy-sim	blender-export	conditional	The authorized task requires a common Blender export contract, selection, source preservation and reimport gate.
+blender-genre-strategy-sim	blender-isometric-style	conditional	The authorized task requires isometric projection, composition and scale-readable object presentation.
+blender-genre-strategy-sim	blender-prop-modeling	conditional	The authorized task requires a grounded furniture, tool, container or household prop with functional pivots.
+blender-genre-survival	blender-asset-validation	conditional	The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract.
+blender-genre-survival	blender-biome-worlds	conditional	The authorized task requires a biome-specific environment with coherent terrain, vegetation, water and climate cues.
+blender-genre-survival	blender-development	required	-
+blender-genre-survival	blender-export	conditional	The authorized task requires a common Blender export contract, selection, source preservation and reimport gate.
+blender-genre-survival	blender-prop-modeling	conditional	The authorized task requires a grounded furniture, tool, container or household prop with functional pivots.
+blender-genre-survival	blender-set-dressing	conditional	The authorized task requires narrative prop clusters, deliberate density and route-preserving placement.
+blender-geometry-nodes	blender-development	required	-
+blender-godot-export	blender-development	required	-
+blender-godot-export	blender-export	required	-
+blender-hair-grooming	blender-development	required	-
+blender-hand-painted-style	blender-development	required	-
+blender-hand-painted-style	blender-texturing	conditional	The authorized task requires texture creation or assembly with surface scale, UV correspondence and channel validation.
+blender-hand-painted-style	blender-uv-unwrapping	conditional	The authorized task requires seams, UV density, pixel padding, trims, UDIM or requested lightmap channels.
+blender-hard-surface	blender-development	required	-
+blender-hd-2d-style	blender-camera-cinematography	conditional	The authorized task requires camera framing, lens choice, depth of field, camera motion or shot continuity.
+blender-hd-2d-style	blender-compositing	conditional	The authorized task requires render-pass compositing, masking, color adjustment or a reusable compositor graph.
+blender-hd-2d-style	blender-development	required	-
+blender-historical-worlds	blender-asset-validation	conditional	The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract.
+blender-historical-worlds	blender-development	required	-
+blender-historical-worlds	blender-environment-art	conditional	The authorized task requires a composed environment whose architecture, terrain and route support the intended vista.
+blender-historical-worlds	blender-export	conditional	The authorized task requires a common Blender export contract, selection, source preservation and reimport gate.
+blender-historical-worlds	blender-prop-modeling	conditional	The authorized task requires a grounded furniture, tool, container or household prop with functional pivots.
+blender-historical-worlds	blender-reference-modeling	conditional	The authorized task requires a reference-dominant reconstruction requiring camera, silhouette and proportion comparison.
+blender-horror-style	blender-camera-cinematography	conditional	The authorized task requires camera framing, lens choice, depth of field, camera motion or shot continuity.
+blender-horror-style	blender-development	required	-
+blender-horror-style	blender-lighting	conditional	The authorized task requires light placement, exposure balance, shadows or renderer-aware illumination.
+blender-indie-horror-aesthetics	blender-development	required	-
+blender-indie-horror-aesthetics	blender-liminal-space-style	conditional	The authorized task requires a liminal-space treatment using scale, repetition, emptiness and architectural ambiguity.
+blender-indie-horror-aesthetics	blender-pbr-materials	conditional	The authorized task requires a physically based shader with correct texture channels, color spaces and material response.
+blender-indie-horror-aesthetics	blender-psx-horror-style	conditional	The authorized task requires a PSX-inspired horror treatment with intentional geometry, texture and temporal artifacts.
+blender-isometric-style	blender-camera-cinematography	conditional	The authorized task requires camera framing, lens choice, depth of field, camera motion or shot continuity.
+blender-isometric-style	blender-development	required	-
+blender-isometric-style	blender-environment-kits	conditional	The authorized task requires a snapping modular kit, terrain heightfield or slope/height-masked biome scatter.
+blender-lighting	blender-development	required	-
+blender-liminal-space-style	blender-development	required	-
+blender-liminal-space-style	blender-environment-kits	conditional	The authorized task requires a snapping modular kit, terrain heightfield or slope/height-masked biome scatter.
+blender-liminal-space-style	blender-lighting	conditional	The authorized task requires light placement, exposure balance, shadows or renderer-aware illumination.
+blender-lod-pipeline	blender-development	required	-
 blender-lookdev	blender-development	required	-
+blender-lowpoly-style	blender-development	required	-
+blender-lowpoly-style	blender-game-optimization	conditional	The authorized task requires measured reductions in asset geometry, materials, textures or skeletal cost.
+blender-lowpoly-style	blender-psx-horror-style	conditional	The authorized task requires a PSX-inspired horror treatment with intentional geometry, texture and temporal artifacts.
+blender-manga-style	blender-character-modeling	conditional	The authorized task requires a human or humanoid mesh with proportion, clothing and expression-aware topology.
+blender-manga-style	blender-compositing	conditional	The authorized task requires render-pass compositing, masking, color adjustment or a reusable compositor graph.
+blender-manga-style	blender-development	required	-
+blender-mascot-puppet-horror	blender-animation	conditional	The authorized task requires keyframed motion, action management, clip baking, retargeting or loop correction.
+blender-mascot-puppet-horror	blender-character-modeling	conditional	The authorized task requires a human or humanoid mesh with proportion, clothing and expression-aware topology.
+blender-mascot-puppet-horror	blender-development	required	-
+blender-mascot-puppet-horror	blender-pbr-materials	conditional	The authorized task requires a physically based shader with correct texture channels, color spaces and material response.
 blender-materials-uv	blender-development	required	-
+blender-minimalist-style	blender-development	required	-
+blender-minimalist-style	blender-lookdev	conditional	The authorized task requires an integrated material, camera and lighting study against the approved visual direction.
+blender-minimalist-style	blender-prop-modeling	conditional	The authorized task requires a grounded furniture, tool, container or household prop with functional pivots.
 blender-modeling	blender-development	required	-
+blender-neon-retrofuturism	blender-compositing	conditional	The authorized task requires render-pass compositing, masking, color adjustment or a reusable compositor graph.
+blender-neon-retrofuturism	blender-development	required	-
+blender-neon-retrofuturism	blender-lighting	conditional	The authorized task requires light placement, exposure balance, shadows or renderer-aware illumination.
+blender-noir-style	blender-compositing	conditional	The authorized task requires render-pass compositing, masking, color adjustment or a reusable compositor graph.
+blender-noir-style	blender-development	required	-
+blender-noir-style	blender-lighting	conditional	The authorized task requires light placement, exposure balance, shadows or renderer-aware illumination.
+blender-painterly-style	blender-compositing	conditional	The authorized task requires render-pass compositing, masking, color adjustment or a reusable compositor graph.
+blender-painterly-style	blender-development	required	-
+blender-painterly-style	blender-texturing	conditional	The authorized task requires texture creation or assembly with surface scale, UV correspondence and channel validation.
+blender-pbr-materials	blender-development	required	-
+blender-pipeline-automation	blender-development	required	-
+blender-pixel-art-style	blender-development	required	-
+blender-pixel-art-style	blender-rendering	conditional	The authorized task requires renderer configuration, render passes, sampling, output images or sequence verification.
+blender-pixel-art-style	blender-texturing	conditional	The authorized task requires texture creation or assembly with surface scale, UV correspondence and channel validation.
+blender-procedural-modeling	blender-development	required	-
+blender-procedural-modeling	blender-environment-kits	conditional	The authorized task requires a snapping modular kit, terrain heightfield or slope/height-masked biome scatter.
+blender-procedural-modeling	blender-game-optimization	conditional	The authorized task requires measured reductions in asset geometry, materials, textures or skeletal cost.
+blender-procedural-modeling	blender-geometry-nodes	conditional	The authorized task requires a field/domain-correct Geometry Nodes graph, instancing system or bounded procedural zone.
+blender-prop-modeling	blender-development	required	-
+blender-psx-horror-style	blender-compositing	conditional	The authorized task requires render-pass compositing, masking, color adjustment or a reusable compositor graph.
+blender-psx-horror-style	blender-development	required	-
+blender-psx-horror-style	blender-export	conditional	The authorized task requires a common Blender export contract, selection, source preservation and reimport gate.
+blender-psx-horror-style	blender-lowpoly-style	conditional	The authorized task requires a deliberate low-poly visual direction with readable faceting and controlled texture complexity.
+blender-realistic-style	blender-development	required	-
+blender-realistic-style	blender-game-optimization	conditional	The authorized task requires measured reductions in asset geometry, materials, textures or skeletal cost.
+blender-realistic-style	blender-reference-modeling	conditional	The authorized task requires a reference-dominant reconstruction requiring camera, silhouette and proportion comparison.
+blender-realistic-style	blender-texture-baking	conditional	The authorized task requires high-to-low or multires texture baking with cages, ray isolation and map checks.
 blender-reference-modeling	blender-development	required	-
+blender-rendering	blender-development	required	-
+blender-retopology	blender-development	required	-
+blender-retro-16bit-style	blender-development	required	-
+blender-retro-16bit-style	blender-pixel-art-style	conditional	The authorized task requires a pixel-art treatment with consistent pixel density, palette and sampling.
+blender-retro-16bit-style	blender-texturing	conditional	The authorized task requires texture creation or assembly with surface scale, UV correspondence and channel validation.
+blender-retro-8bit-style	blender-compositing	conditional	The authorized task requires render-pass compositing, masking, color adjustment or a reusable compositor graph.
+blender-retro-8bit-style	blender-development	required	-
+blender-retro-8bit-style	blender-pixel-art-style	conditional	The authorized task requires a pixel-art treatment with consistent pixel density, palette and sampling.
 blender-rigging-animation	blender-development	required	-
+blender-scene-assembly	blender-development	required	-
+blender-sci-fi-punk-worlds	blender-asset-validation	conditional	The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract.
+blender-sci-fi-punk-worlds	blender-development	required	-
+blender-sci-fi-punk-worlds	blender-environment-art	conditional	The authorized task requires a composed environment whose architecture, terrain and route support the intended vista.
+blender-sci-fi-punk-worlds	blender-export	conditional	The authorized task requires a common Blender export contract, selection, source preservation and reimport gate.
+blender-sci-fi-punk-worlds	blender-hard-surface	conditional	The authorized task requires mechanical bodywork, boolean cuts, bevels or controlled hard-surface highlights.
+blender-sci-fi-punk-worlds	blender-pbr-materials	conditional	The authorized task requires a physically based shader with correct texture channels, color spaces and material response.
+blender-sculpting	blender-character-modeling	conditional	The authorized task requires a human or humanoid mesh with proportion, clothing and expression-aware topology.
+blender-sculpting	blender-creature-modeling	conditional	The authorized task requires a nonhuman creature with anatomy-informed masses, locomotion and joint clearance.
+blender-sculpting	blender-development	required	-
+blender-sculpting	blender-retopology	conditional	The authorized task requires delivery topology rebuilt from a dense sculpt, scan or generated source.
+blender-sculpting	blender-texture-baking	conditional	The authorized task requires high-to-low or multires texture baking with cages, ray isolation and map checks.
+blender-set-dressing	blender-development	required	-
+blender-simulation	blender-development	required	-
+blender-stop-motion-craft-style	blender-animation	conditional	The authorized task requires keyframed motion, action management, clip baking, retargeting or loop correction.
+blender-stop-motion-craft-style	blender-character-modeling	conditional	The authorized task requires a human or humanoid mesh with proportion, clothing and expression-aware topology.
+blender-stop-motion-craft-style	blender-development	required	-
+blender-stop-motion-craft-style	blender-pbr-materials	conditional	The authorized task requires a physically based shader with correct texture channels, color spaces and material response.
+blender-stylized-style	blender-anime-style	conditional	The authorized task requires anime proportions, facial shape language and anime-specific cel rendering.
+blender-stylized-style	blender-development	required	-
+blender-stylized-style	blender-export	conditional	The authorized task requires a common Blender export contract, selection, source preservation and reimport gate.
+blender-stylized-style	blender-hand-painted-style	conditional	The authorized task requires hand-painted texture direction, brushwork and geometry-to-texture hierarchy.
+blender-stylized-style	blender-pbr-materials	conditional	The authorized task requires a physically based shader with correct texture channels, color spaces and material response.
+blender-texture-baking	blender-development	required	-
+blender-texturing	blender-development	required	-
+blender-time-of-day	blender-development	required	-
+blender-unity-export	blender-development	required	-
+blender-unity-export	blender-export	required	-
+blender-unreal-export	blender-development	required	-
+blender-unreal-export	blender-export	required	-
+blender-uv-unwrapping	blender-development	required	-
+blender-vector-style	blender-compositing	conditional	The authorized task requires render-pass compositing, masking, color adjustment or a reusable compositor graph.
+blender-vector-style	blender-development	required	-
+blender-vector-style	blender-rendering	conditional	The authorized task requires renderer configuration, render passes, sampling, output images or sequence verification.
+blender-vegetation	blender-development	required	-
+blender-vehicle-modeling	blender-collision-proxies	conditional	The authorized task requires engine-specific collider primitives or convex proxy meshes with intended contact clearance.
+blender-vehicle-modeling	blender-development	required	-
+blender-vehicle-modeling	blender-hard-surface	conditional	The authorized task requires mechanical bodywork, boolean cuts, bevels or controlled hard-surface highlights.
+blender-vehicle-modeling	blender-lod-pipeline	conditional	The authorized task requires a measured LOD chain with preserved interfaces and screen-size transition inspection.
+blender-vfx-fx	blender-development	required	-
+blender-video-editing	blender-development	required	-
+blender-visual-console-eras	blender-asset-validation	conditional	The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract.
+blender-visual-console-eras	blender-compositing	conditional	The authorized task requires render-pass compositing, masking, color adjustment or a reusable compositor graph.
+blender-visual-console-eras	blender-development	required	-
+blender-visual-console-eras	blender-export	conditional	The authorized task requires a common Blender export contract, selection, source preservation and reimport gate.
+blender-visual-console-eras	blender-lowpoly-style	conditional	The authorized task requires a deliberate low-poly visual direction with readable faceting and controlled texture complexity.
+blender-visual-console-eras	blender-texturing	conditional	The authorized task requires texture creation or assembly with surface scale, UV correspondence and channel validation.
 blender-visual-review	blender-development	required	-
+blender-voxel-style	blender-development	required	-
+blender-voxel-style	blender-game-optimization	conditional	The authorized task requires measured reductions in asset geometry, materials, textures or skeletal cost.
+blender-voxel-style	blender-geometry-nodes	conditional	The authorized task requires a field/domain-correct Geometry Nodes graph, instancing system or bounded procedural zone.
+blender-weather-fx	blender-development	required	-
+blender-workflow-recipes	blender-development	required	-
 brand-voice	article-writing	conditional	Use `article-writing` to apply the approved profile to sourced long-form content.
 brand-voice	content-repurposing	conditional	Use `content-repurposing` to preserve the profile across channel-specific derivatives.
 brand-voice	market-research	conditional	audience, positioning, or competitor context is not yet supported by evidence.

@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-minimalist-style",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Reduce a branded blue kettle to a minimalist Blender product image while retaining its recognizable handle and spout.",
+      "expected_output": "A brief-preserving reduction.",
+      "assertions": [
+        "Keeps identity and branding.",
+        "Tests silhouette and negative space.",
+        "Uses meaningful material contrast."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "The minimalist kettle lost its spout and now reads as a generic sphere on an empty canvas. Repair it.",
+      "expected_output": "Restore identity and balance.",
+      "assertions": [
+        "Reintroduces the distinguishing feature.",
+        "Adjusts surrounding space.",
+        "Does not add random decoration."
+      ]
+    }
+  ]
+}

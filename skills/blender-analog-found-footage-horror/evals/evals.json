@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-analog-found-footage-horror",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create a lobby security-camera shot in Blender suggesting someone moved offscreen; no visible monster.",
+      "expected_output": "A fixed surveillance shot with an offscreen clue.",
+      "assertions": [
+        "Motivates the camera and lighting.",
+        "Keeps clean/processed evidence.",
+        "Adds neither gore nor constant shake."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "The VHS pass hides the doorway clue and the locked camera sways every frame. Repair only the treatment.",
+      "expected_output": "Restore the device premise and clue.",
+      "assertions": [
+        "Removes unmotivated sway.",
+        "Localizes or reduces tape damage.",
+        "Requires a viewed clip before approving motion."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-scene-assembly",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Assemble a courtyard from linked modular walls and an appended damaged fountain variant; deliver a reusable scene with dependencies.",
+      "expected_output": "Revision-scoped work or read-only findings with concrete technical and visual acceptance evidence; missing execution is identified.",
+      "assertions": [
+        "Chooses link/append by ownership.",
+        "Preserves navigation and export/helper sets.",
+        "Reopens/checks delivered dependencies and current views."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Audit only one asset in a shared .blend. A helper proposes global orphan purge, relative-path rewriting and a pre-fix issues report.",
+      "expected_output": "Revision-scoped work or read-only findings with concrete technical and visual acceptance evidence; missing execution is identified.",
+      "assertions": [
+        "Does not broaden mutation to whole file.",
+        "Distinguishes pre-fix report from re-audit.",
+        "Preserves other artists' reserved data and returns read-only findings."
+      ]
+    }
+  ]
+}

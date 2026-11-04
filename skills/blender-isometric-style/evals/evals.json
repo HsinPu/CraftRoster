@@ -1,0 +1,38 @@
+{
+  "skill_name": "blender-isometric-style",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create a true-isometric orthographic Blender cottage kit with 2 m cells and center pivots.",
+      "expected_output": "A projection- and footprint-controlled kit.",
+      "assertions": [
+        "Uses equal-axis view direction and verifies it.",
+        "Keeps 2 m grid and shared pivots.",
+        "Checks adjacent tiles."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "A 2:1 dimetric kit was rebuilt with perspective and each tile has a different crop. Repair it.",
+      "expected_output": "Restore the existing projection contract.",
+      "assertions": [
+        "Does not confuse true iso and dimetric.",
+        "Locks orthographic camera/crop/scale.",
+        "Checks assembled tile images."
+      ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Calibrate a square-grid 2:1 dimetric tile camera at 45-degree azimuth with square output pixels. Preserve a separate existing true-isometric camera and provide an adjacent-tile comparison.",
+      "expected_output": "A declared dimetric camera with measured 2:1 projected ground diamond, shared scale and distinct true-iso contract.",
+      "assertions": [
+        "Uses 30-degree ground elevation for the stated diagonal orthographic conditions.",
+        "Checks rendered/projected diamond ratio rather than Euler fields alone.",
+        "Does not distort meshes to hide camera mismatch or claim depth sorting."
+      ]
+    }
+  ]
+}

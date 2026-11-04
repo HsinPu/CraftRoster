@@ -1,0 +1,51 @@
+{
+  "skill_name": "blender-genre-soulslike",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Build an original two-level ruin with visible return connection, quiet rest marker and mist threshold retaining grayscale actor read. Use an isolated project, preserve supplied references and produce scoped assets with honest evidence. If Blender or image inspection is unavailable, provide the specification and mark affected checks unexecuted.",
+      "expected_output": "An editable subject-specific kit or explicitly unexecuted production specification, requested dimensions/states, named diagnostics, actual findings and separate technical/visual/engine evidence status.",
+      "assertions": [
+        "Vertical section, upper/lower landmark view, fog-off/on threshold and grayscale actor sheet. Include stair-corner and elevator-opening clearance views.",
+        "Supplied camera, scale and fiction remain authoritative; concrete pieces and state variants are identified.",
+        "Image acceptance cites actually inspected current-revision images and observations, not file existence.",
+        "No game behavior, AI, balance, physics or engine performance is inferred from renders or static proxies."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Repair misleading elevator landing and fog-obscured marker/frame without claiming the space is playable. Inspect before editing; preserve original source and work only in authorized asset collections. Repeat affected diagnostics after repair.",
+      "expected_output": "A bounded diagnosis and targeted repair retaining approved source/style, with matched subject-specific before/after evidence or an explicit blocked/unverified result.",
+      "assertions": [
+        "Oversized usable doors: separate ceremonial framing from human inserts. Grey stone swallows actor: revise broad values/light before outlines. Mist hides frame: adjust coverage. False lift landing: reconcile elevation and visible access.",
+        "Asset repairs are separated from game-rule and engine-system changes.",
+        "The original is preserved; affected checks and actual image review are repeated after editing.",
+        "A static numerical or geometry pass is not claimed as gameplay, historical authenticity or scientific proof."
+      ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Build lower/upper remembered views of a vertical shortcut with a ceremonial door and human insert; the elevator shell misses its landing. Use an isolated authorized source; if execution or image inspection is unavailable, return the concrete specification and mark those checks unexecuted.",
+      "expected_output": "Subtype-specific construction/state and repair artifacts, or an explicit unexecuted specification, with actual diagnostic evidence distinguished from visual and engine acceptance.",
+      "assertions": [
+        "Measures landing elevation/opening and keeps human access distinct from monumental scale.",
+        "Preserves remembered landmark in paired entry/return images.",
+        "Repairs shell geometry without claiming an operating lift or unlocked shortcut."
+      ]
+    },
+    {
+      "id": 4,
+      "locale": "en",
+      "prompt": "Create an original non-fire rest landmark and mist threshold where the largest actor remains legible at camera edges. Use an isolated authorized source; if execution or image inspection is unavailable, return the concrete specification and mark those checks unexecuted.",
+      "expected_output": "Subtype-specific construction/state and repair artifacts, or an explicit unexecuted specification, with actual diagnostic evidence distinguished from visual and engine acceptance.",
+      "assertions": [
+        "Uses supplied rest vocabulary and stable interaction anchor.",
+        "Retains threshold frame through dense mist and compares brighter/fog-off views.",
+        "Does not infer saving, healing, enemy exclusion or combat fairness from imagery."
+      ]
+    }
+  ]
+}

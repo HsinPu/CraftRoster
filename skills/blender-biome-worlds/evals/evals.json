@@ -1,0 +1,51 @@
+{
+  "skill_name": "blender-biome-worlds",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Build a jungle-to-cave entrance where the 1.8 m proxy and cave mouth remain identifiable in clear and misted review views. Use an isolated project, preserve supplied references and produce scoped assets with honest evidence. If Blender or image inspection is unavailable, provide the specification and mark affected checks unexecuted.",
+      "expected_output": "An editable subject-specific kit or explicitly unexecuted production specification, requested dimensions/states, named diagnostics, actual findings and separate technical/visual/engine evidence status.",
+      "assertions": [
+        "Ecological-zone plan, terrain section, fog-off eye view and far silhouette. Inspect roots, water seams, snow accumulation and island undersides in actual images.",
+        "Supplied camera, scale and fiction remain authoritative; concrete pieces and state variants are identified.",
+        "Image acceptance cites actually inspected current-revision images and observations, not file existence.",
+        "No game behavior, AI, balance, physics or engine performance is inferred from renders or static proxies."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Correct an arctic set with ceiling snow, floating roots and landmark-obscuring fog; show matched diagnostics without claiming ecological simulation. Inspect before editing; preserve original source and work only in authorized asset collections. Repeat affected diagnostics after repair.",
+      "expected_output": "A bounded diagnosis and targeted repair retaining approved source/style, with matched subject-specific before/after evidence or an explicit blocked/unverified result.",
+      "assertions": [
+        "Bright leaf noise: group canopy values and reduce microcontrast. Hidden underwater subject: revise scattering distance/composition. Snow on sheltered undersides: fix accumulation masks. Floating roots: repair terrain contact before increasing density.",
+        "Asset repairs are separated from game-rule and engine-system changes.",
+        "The original is preserved; affected checks and actual image review are repeated after editing.",
+        "A static numerical or geometry pass is not claimed as gameplay, historical authenticity or scientific proof."
+      ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Build a 24 m underwater reef with 30 m proposed visibility, a sediment channel and submerged structure. Fix coral floating above the seabed and a hero lost in cyan haze. Use an isolated authorized source; if execution or image inspection is unavailable, return the concrete specification and mark those checks unexecuted.",
+      "expected_output": "Subtype-specific construction/state and repair artifacts, or an explicit unexecuted specification, with actual diagnostic evidence distinguished from visual and engine acceptance.",
+      "assertions": [
+        "Separates surface depth, camera depth and optical path and labels visibility approximation.",
+        "Roots growth to appropriate substrates and uses geometry/flow hierarchy before particulate.",
+        "Reviews atmosphere-off and near-to-far markers plus final camera; does not claim physical caustics."
+      ]
+    },
+    {
+      "id": 4,
+      "locale": "en",
+      "prompt": "Create floating islands visible from below with an anchored bridge, then a wind-shaped desert transition; do not hide undersides or seams in mist. Use an isolated authorized source; if execution or image inspection is unavailable, return the concrete specification and mark those checks unexecuted.",
+      "expected_output": "Subtype-specific construction/state and repair artifacts, or an explicit unexecuted specification, with actual diagnostic evidence distinguished from visual and engine acceptance.",
+      "assertions": [
+        "Builds actual underside mass, roots/anchors and separated elevation silhouettes.",
+        "Desert has windward/crest/lee and sheltered drift logic rather than a tint change.",
+        "Delivers low-angle/section and neutral contact diagnostics with fictional support assumptions stated."
+      ]
+    }
+  ]
+}

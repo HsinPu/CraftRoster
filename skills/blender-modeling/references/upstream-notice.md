@@ -1,6 +1,6 @@
-# Sources and adaptation
+# Source review and adaptation
 
-Reviewed source: [arjun988/blender-skills](https://github.com/arjun988/blender-skills/tree/8f778d2405a214b508d4c7d80742be8e43acdd52), commit `8f778d2405a214b508d4c7d80742be8e43acdd52`, MIT. CraftRoster independently structures the workflow, task boundaries and evidence contracts. No upstream executable code or prompt text is bundled. Source examples supply production comparison evidence rather than universal budgets, mandatory MCP configuration or personal export preferences.
+Production information reviewed from [arjun988/blender-skills](https://github.com/arjun988/blender-skills/tree/8f778d2405a214b508d4c7d80742be8e43acdd52) at commit 8f778d2405a214b508d4c7d80742be8e43acdd52: `.claude/skills/blender-modeler/SKILL.md`. These independently written procedures correct limitations and define scoped acceptance. Source scripts were inspected as evidence; they are not bundled executables.
 
 MIT License
 

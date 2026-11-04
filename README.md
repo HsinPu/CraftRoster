@@ -2,13 +2,13 @@
 
 [![Validate](https://github.com/HsinPu/CraftRoster/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/HsinPu/CraftRoster/actions/workflows/validate.yml)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
-![Skills](https://img.shields.io/badge/Skills-304-7c3aed)
+![Skills](https://img.shields.io/badge/Skills-402-7c3aed)
 ![Agents](https://img.shields.io/badge/Agents-240-2563eb)
 ![Node.js](https://img.shields.io/badge/Node.js-%3E%3D22-339933?logo=nodedotjs&logoColor=white)
 
 **可跨工具安裝、查詢與驗證的 AI Agent／Skill catalog。**
 
-CraftRoster 收錄 240 個專業 Agents 與 304 個可重用 Skills，可安裝到 Codex、Claude Code、Cursor、VS Code／GitHub Copilot 與 OpenCode。專案同時提供免 Node.js 安裝器、五平台 Agent adapters、ownership-aware 更新機制，以及離線 catalog CLI。
+CraftRoster 收錄 240 個專業 Agents 與 402 個可重用 Skills，可安裝到 Codex、Claude Code、Cursor、VS Code／GitHub Copilot 與 OpenCode。專案同時提供免 Node.js 安裝器、五平台 Agent adapters、ownership-aware 更新機制，以及離線 catalog CLI。
 
 CraftRoster 是 catalog 與 distribution layer，**不是**另一套 Agent runtime 或 orchestration framework；它讓現有 coding agent 直接取得可攜、可追溯、可驗證的角色與工作流程。
 
@@ -18,7 +18,7 @@ CraftRoster 是 catalog 與 distribution layer，**不是**另一套 Agent runti
 
 | 類型 | 數量 | 用途 | Source of truth |
 |---|---:|---|---|
-| Skills | **304 Skills**／17 類 | 可重用的工作流程、規範、工具指引與領域知識 | [`skills/<name>/SKILL.md`](skills/) |
+| Skills | **402 Skills**／17 類 | 可重用的工作流程、規範、工具指引與領域知識 | [`skills/<name>/SKILL.md`](skills/) |
 | Agents | 240／31 類 | 可委派的專業角色，包含權限、限制與輸出契約 | [`agents/<role>.md`](agents/) |
 | 安裝用途分類 | 17 類 | 每類一起安裝相關 Skills 與子代理 | [`install-bundles.json`](scripts/data/install-bundles.json) |
 | Codex adapters | 240 | Codex custom Agent TOML | [`adapters/codex/`](adapters/codex/) |
@@ -41,7 +41,7 @@ CraftRoster 是 catalog 與 distribution layer，**不是**另一套 Agent runti
 
 ## 快速開始
 
-目前版本為 **1.3.0**；發行變更見 [CHANGELOG](CHANGELOG.md)，正式版本以 [package.json](package.json) 為準。
+目前版本為 **1.4.0**；發行變更見 [CHANGELOG](CHANGELOG.md)，正式版本以 [package.json](package.json) 為準。
 
 ### 互動式安裝
 
@@ -98,7 +98,7 @@ curl -fsSL https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/set
 | 3D與互動圖形 (`threejs-graphics`) | 62 | 4 |
 | Agent、Skill與自動化工具 (`agent-automation`) | 26 | 15 |
 | 跨平台介面檢查與改善 (`interface-quality`) | 1 | 3 |
-| 遊戲開發 (`game-development`) | 10 | 2 |
+| 遊戲開發 (`game-development`) | 108 | 2 |
 <!-- INSTALL_BUNDLES_END -->
 
 查看成員：`node craftroster-cli.js bundles` 或 `node craftroster-cli.js bundles image-graphics`。配套關係由 canonical Agent 的 `skill-dependencies` 定義，分為必需、建議、條件與可選；分類本身直接包含的元件固定加入，條件／可選關聯只在明確選取時追加。審核與邊界修正見 [Agent／Skill 配套審核](docs/audits/agent-skill-bundles-2026-10-09/README.md)。
@@ -206,7 +206,7 @@ Linux／macOS：
 curl -fsSL https://raw.githubusercontent.com/HsinPu/CraftRoster/main/scripts/install.sh | bash -s -- --target codex --type bundle --bundle all --enable-auto-delegation
 ```
 
-這會安裝全部 304 個 Skills、240 個 Agents，並為 Codex 啟用全域主動委派。安裝完成後請開啟新的 Codex 工作階段，讓 runtime 重新載入內容。
+這會安裝全部 402 個 Skills、240 個 Agents，並為 Codex 啟用全域主動委派。安裝完成後請開啟新的 Codex 工作階段，讓 runtime 重新載入內容。
 
 > [!NOTE]
 > Codex 的初始 Skill metadata 清單最多使用 context window 的 2%，context 大小未知時上限為 8,000 字元；大量全域 Skills 可能先被縮短描述，再有部分項目被省略。檔案仍會保留在安裝目錄，但若需要保證載入，請明確使用 `$skill-name`。例如 Three.js 網頁工作可輸入 `$threejs-development 請用 Three.js 建立單檔 HTML`。CraftRoster 的 frontend、CSS 與 JavaScript 入口會在任務確實涉及 3D 場景或整合邊界時路由至 Three.js；repo 其他位置有 `three` 本身不足以觸發。部分安裝下請先確認條件依賴可用。詳見 [OpenAI Build skills](https://learn.chatgpt.com/docs/build-skills.md)。
@@ -454,7 +454,7 @@ Catalog 來源是 [`skills.json`](skills.json) 與 [`agents.json`](agents.json)�
 
 ## Skills
 
-304 個 Skills 分成 17 類。完整 package 位於 [`skills/`](skills/)，generated metadata 與 routing groups 位於 [`skills.json`](skills.json)。
+402 個 Skills 分成 17 類。完整 package 位於 [`skills/`](skills/)，generated metadata 與 routing groups 位於 [`skills.json`](skills.json)。
 
 [Skill 安裝配套與修訂清單](docs/audits/skill-installability-2026-10-09/README.md)保留原有 286 個 Skills 的配套與修訂證據；後續新增項目見 [SVG Skills 指南](docs/svg-skills.md)、[跨平台介面品質指南](docs/interface-quality.md)與[Blender 遊戲資產指南](docs/blender-skills.md)。下表 Count 是目前分類本身的數量；實際安裝還會加入跨分類必要配套。
 
@@ -464,7 +464,7 @@ Catalog 來源是 [`skills.json`](skills.json) 與 [`agents.json`](agents.json)�
 | `software-engineering` | 21 | 程式設計、架構、語言、重構與版本控制 |
 | `frontend-design` | 42 | Web frontend、跨平台介面品質、design system、互動、SVG 與 design-to-code |
 | `threejs-graphics` | 62 | Three.js 架構、渲染、模擬、程序化圖形、效能、驗證與部署 |
-| `blender-creation` | 10 | Blender 建模、參考圖、材質、動畫、視覺審查、最佳化與匯出 |
+| `blender-creation` | 108 | Blender 製作專項、風格、世界／遊戲類型、動畫、審查與引擎匯出 |
 | `backend-data` | 26 | 後端、API、資料庫、資料工程與 migration |
 | `ai-llm` | 5 | LLM 應用、OpenAI API、prompt engineering、RAG、eval 與 AI delivery |
 | `mobile-desktop` | 7 | iOS、跨平台、桌面應用與 app store release |
@@ -620,13 +620,14 @@ npm run eval:skill-routing -- --skill solution-discovery --max-cases 3 --output 
 - Agent references 固定 commit、tree、paths 與 license evidence；Skill references 另外固定逐檔 blob 與 review-controlled lock。
 - `npm run audit:agent-originality` 會針對 240 個 canonical Agent prompt 與 pinned upstream references 檢查長行及逐字片段重疊。
 - Skill originality audit 會逐一比對有 reference 的 canonical packages 與固定 upstream files。
-- Eval gate 目前具名保護 135／304 個 Skill packages、375 個 output evals、1560 個 assertions 與 141 個 routing cases；這些是案例定義，不宣稱所有 Skills 都有 eval 或已執行模型任務。
+- Eval gate 目前具名保護 233／402 個 Skill packages、637 個 output evals、2404 個 assertions 與 141 個 routing cases；這些是案例定義，不宣稱所有 Skills 都有 eval 或已執行模型任務。
 - Workflow contract gate 目前涵蓋 7 組跨 Skill contracts；Agent responsibility coverage 由 [31 類 matrix](docs/agent-coverage-matrix.md) 驗證。
 
 詳細來源與改寫紀錄：
 
 - [Three.js Skill sources](docs/threejs-skill-sources.md)
 - [Blender 遊戲資產製作、視覺審查與安裝指南](docs/blender-skills.md)
+- [Blender 122 項來源對照與覆蓋清單](docs/blender-source-coverage.md)
 - [Blender 固定上游來源與整合研究](docs/blender-game-development-research.md)
 - [SVG Skills 與上游來源](docs/svg-skills.md)
 - [跨平台介面品質與固定上游來源](docs/interface-quality.md)
@@ -635,7 +636,7 @@ npm run eval:skill-routing -- --skill solution-discovery --max-cases 3 --output 
 - [Agent reference manifest](scripts/data/agent-reference-sources.json)
 - [Skill reference manifest](scripts/data/skill-reference-sources.json)
 
-Repository 與全部 240 個 Agents 採 Apache-2.0。Skills 以個別 package metadata 宣告為準；目前 303 個為 Apache-2.0，[`karpathy-guidelines`](skills/karpathy-guidelines/) 保留 MIT。SVG 與 Blender 改寫內容另保留各上游 MIT 通知，安裝時會隨 Skill 一起帶入。
+Repository 與全部 240 個 Agents 採 Apache-2.0。Skills 以個別 package metadata 宣告為準；目前 401 個為 Apache-2.0，[`karpathy-guidelines`](skills/karpathy-guidelines/) 保留 MIT。SVG 與 Blender 改寫內容另保留各上游 MIT 通知，安裝時會隨 Skill 一起帶入。
 
 ## 疑難排解
 

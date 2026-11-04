@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-character-modeling",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create a five-head stylized messenger with separate tunic, satchel and mesh hair, for blink/smile and raised-arm animation.",
+      "expected_output": "Revision-scoped work or read-only findings with concrete technical and visual acceptance evidence; missing execution is identified.",
+      "assertions": [
+        "Locks proportions before face detail.",
+        "Plans mouth/eyelid/shoulder flow and outfit clearance.",
+        "Preserves full body and reports actual pose evidence."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Refine this character: the smile pinches and shoulders collapse; body under a removable jacket has been deleted. Keep identity.",
+      "expected_output": "Revision-scoped work or read-only findings with concrete technical and visual acceptance evidence; missing execution is identified.",
+      "assertions": [
+        "Restores/preserves body coverage for swaps.",
+        "Diagnoses topology versus weighting using poses.",
+        "Does not solve silhouette defects with micro-detail."
+      ]
+    }
+  ]
+}

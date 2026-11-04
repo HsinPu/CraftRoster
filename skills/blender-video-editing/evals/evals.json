@@ -1,0 +1,28 @@
+{
+  "skill_name": "blender-video-editing",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Assemble two numbered render sequences with a 12-frame dissolve, title and audio fade into a verified review video.",
+      "expected_output": "An editable, scoped result with discipline-specific settings, actual evidence and stated unverified gates.",
+      "assertions": [
+        "Validates numeric continuity and explicit source/output rates and audio timing.",
+        "Uses correct owned edit scene, strip end semantics and decoded output evidence.",
+        "Distinguishes live UI tracking context, solve validity and actual overlay acceptance."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "A missing sequence frame, mixed-rate audio drift and a background-only tracking request must be handled without pretending success.",
+      "expected_output": "A diagnosis tied to the supplied failure, preserved sources, a concrete correction and repeated affected acceptance checks.",
+      "assertions": [
+        "Validates numeric continuity and explicit source/output rates and audio timing.",
+        "Uses correct owned edit scene, strip end semantics and decoded output evidence.",
+        "Distinguishes live UI tracking context, solve validity and actual overlay acceptance.",
+        "Does not label a hypothetical plan, a structural assertion or unrun workflow as successful execution."
+      ]
+    }
+  ]
+}

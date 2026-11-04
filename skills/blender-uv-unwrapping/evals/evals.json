@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-uv-unwrapping",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "UV a 2m modular wall set on a 2048 atlas at 512px/m with 8px candidate padding and a separate requested lightmap channel.",
+      "expected_output": "Revision-scoped work or read-only findings with concrete technical and visual acceptance evidence; missing execution is identified.",
+      "assertions": [
+        "Uses correct physical/UV density formula.",
+        "Avoids rescaling away absolute density and checks padding.",
+        "Keeps channel semantics and current checker evidence."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Repair a UV report claiming perfect efficiency: islands overlap, a closed cylinder unwrap collapsed and packing rescaled the requested density.",
+      "expected_output": "Revision-scoped work or read-only findings with concrete technical and visual acceptance evidence; missing execution is identified.",
+      "assertions": [
+        "Separates intentional from accidental overlaps.",
+        "Adds meaningful cylinder seams and measures post-pack density.",
+        "Does not treat occupancy or UV-layer existence as visual proof."
+      ]
+    }
+  ]
+}

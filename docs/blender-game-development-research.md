@@ -1,6 +1,6 @@
 # 遊戲開發分組與 Blender Skills 來源研究
 
-研究日期：2026-11-04。整合狀態：**已納入 1.3.0，提供 10 個 Skills、2 個 Agents 與遊戲開發分類**。使用方式見 [Blender 指南](blender-skills.md)；下文保留來源研究與採用理由。
+研究日期：2026-11-04。整合狀態：**1.3.0 的 10 個入口已在 1.4.0 擴充為 108 個 Skills，搭配 2 個 Agents 與遊戲開發分類**。使用方式見 [Blender 指南](blender-skills.md)；全部 122 個來源條目與資源的採用、合併及修正見 [完整覆蓋清單](blender-source-coverage.md)。下文保留初期研究與採用理由，初版 10 個入口不是目前全部內容。
 
 使用者希望有獨立的遊戲開發分組，第一批先加入 Blender 能力。初步研究直接核對上游 GitHub 的固定 commit、Skill 本文、部分腳本、目錄與 LICENSE；當時 CraftRoster 為 1.2.3，仍有 16 個用途分類、294 個 Skills、238 個 Agents。後續實作沒有安裝上游套件，改以本機 Blender 5.2.2 驗證自行撰寫的工具與資產流程，結果另記於 [實測紀錄](audits/blender-2026-11-04/README.md)。
 

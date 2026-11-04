@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-retopology",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Retopologize a dense animated creature for 20k triangles with jaw opening, crouch and stride poses; preserve sculpt.",
+      "expected_output": "Revision-scoped work or read-only findings with concrete technical and visual acceptance evidence; missing execution is identified.",
+      "assertions": [
+        "Uses deformation-aware manual flow where needed.",
+        "Checks projection and thin features.",
+        "Returns actual counts and pose/silhouette evidence."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Review a Quadriflow face that is all quads but eyelids fail closure and mouth corners pinch. Do not edit.",
+      "expected_output": "Revision-scoped work or read-only findings with concrete technical and visual acceptance evidence; missing execution is identified.",
+      "assertions": [
+        "Rejects quad ratio as deformation proof.",
+        "Identifies eyelid/lip flow and pose rechecks.",
+        "Keeps source and report review read-only."
+      ]
+    }
+  ]
+}

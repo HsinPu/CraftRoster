@@ -1,0 +1,49 @@
+{
+  "skill_name": "blender-mascot-puppet-horror",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Build a cheerful felt mascot unsettling only through fixed gaze and stiff posture; no wounds.",
+      "expected_output": "A retained mascot with bounded wrongness.",
+      "assertions": [
+        "Builds seams and eye materials.",
+        "Uses pose/gaze rather than gore.",
+        "Requires material/gaze comparisons."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "The mascot became a fleshy monster and its felt resembles gravel. Correct it.",
+      "expected_output": "Restore costume identity and material scale.",
+      "assertions": [
+        "Recovers friendly silhouette.",
+        "Removes unrequested mutation.",
+        "Checks lower fiber bump in a fresh close-up."
+      ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Build an original felt hand puppet with a believable jaw/hand access region and neutral versus held-gaze comparison. No injury or generic monster mutation is requested.",
+      "expected_output": "Construction-aware puppet with separate eye/jaw controls and matched neutral/final evidence.",
+      "assertions": [
+        "Hand/jaw assembly is coherent and cavity/backfaces checked.",
+        "Friendly original masses and palette are retained.",
+        "Timing is not claimed from a static gaze study."
+      ]
+    },
+    {
+      "id": 4,
+      "locale": "en",
+      "prompt": "A wearable foam mascot has wooden knee hinges and no plausible costume entry, while its plastic eyes clip the lids during the approved head turn. Repair the chosen assembly without replacing identity.",
+      "expected_output": "Correct costume construction, eye clearance and actual pose/motion diagnostic results.",
+      "assertions": [
+        "Wearer/entry needs are separated from carved mechanical joints.",
+        "Eye/lid intersections are inspected in relevant poses.",
+        "A still shell is not claimed as certified performer fit."
+      ]
+    }
+  ]
+}

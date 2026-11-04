@@ -1,0 +1,236 @@
+{
+  "source_sha256": "7797a4b6917dcc535c7d2560aa9e6378381976a643baf9cdcabc711f2726b80f",
+  "glb_sha256": "52d838740873c769d224cde64ae22da5ce73f01b2f452a1709e11c439eb7d3de",
+  "source_assets": {
+    "Door_Narrow": {
+      "triangles": 528,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "dimensions": [
+        2.1200000047683716,
+        0.7924999892711639,
+        2.680000066757202
+      ],
+      "used_missing_material_faces": 0,
+      "uv_layers": 0
+    },
+    "Door_Wide": {
+      "triangles": 528,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "dimensions": [
+        3.120000123977661,
+        0.7924999892711639,
+        2.680000066757202
+      ],
+      "used_missing_material_faces": 0,
+      "uv_layers": 0
+    },
+    "UtilityCrate": {
+      "triangles": 44,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "dimensions": [
+        0.8599999845027924,
+        0.6800000667572021,
+        0.8999999761581421
+      ],
+      "used_missing_material_faces": 0,
+      "uv_layers": 1
+    },
+    "Crate reinforced strap": {
+      "triangles": 44,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "dimensions": [
+        0.09999999962747097,
+        0.7200000286102295,
+        0.9399999678134918
+      ],
+      "used_missing_material_faces": 0,
+      "uv_layers": 1
+    },
+    "Crate reinforced strap.001": {
+      "triangles": 44,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "dimensions": [
+        0.10000002384185791,
+        0.7200000286102295,
+        0.9399999678134918
+      ],
+      "used_missing_material_faces": 0,
+      "uv_layers": 1
+    },
+    "Crate front inset": {
+      "triangles": 44,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "dimensions": [
+        0.40000002086162567,
+        0.03500008583068848,
+        0.26999998092651367
+      ],
+      "used_missing_material_faces": 0,
+      "uv_layers": 1
+    },
+    "Crate latch": {
+      "triangles": 44,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "dimensions": [
+        0.13999998569488525,
+        0.039999961853027344,
+        0.15999996662139893
+      ],
+      "used_missing_material_faces": 0,
+      "uv_layers": 1
+    },
+    "Crate vent": {
+      "triangles": 44,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "dimensions": [
+        0.14000000059604645,
+        0.019999980926513672,
+        0.027000010013580322
+      ],
+      "used_missing_material_faces": 0,
+      "uv_layers": 1
+    },
+    "Crate vent.001": {
+      "triangles": 44,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "dimensions": [
+        0.14000000059604645,
+        0.019999980926513672,
+        0.02699999511241913
+      ],
+      "used_missing_material_faces": 0,
+      "uv_layers": 1
+    }
+  },
+  "reimport_assets": {
+    "EXPORT_Crate front inset": {
+      "triangles": 44,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "dimensions": [
+        0.40000002086162567,
+        0.03500008583068848,
+        0.26999998092651367
+      ],
+      "used_missing_material_faces": 0,
+      "uv_layers": 1
+    },
+    "EXPORT_Crate latch": {
+      "triangles": 44,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "dimensions": [
+        0.13999998569488525,
+        0.039999961853027344,
+        0.15999996662139893
+      ],
+      "used_missing_material_faces": 0,
+      "uv_layers": 1
+    },
+    "EXPORT_Crate reinforced strap": {
+      "triangles": 44,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "dimensions": [
+        0.09999999962747097,
+        0.7200000286102295,
+        0.9399999678134918
+      ],
+      "used_missing_material_faces": 0,
+      "uv_layers": 1
+    },
+    "EXPORT_Crate reinforced strap.001": {
+      "triangles": 44,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "dimensions": [
+        0.10000002384185791,
+        0.7200000286102295,
+        0.9399999678134918
+      ],
+      "used_missing_material_faces": 0,
+      "uv_layers": 1
+    },
+    "EXPORT_Crate vent": {
+      "triangles": 44,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "dimensions": [
+        0.14000000059604645,
+        0.019999980926513672,
+        0.027000010013580322
+      ],
+      "used_missing_material_faces": 0,
+      "uv_layers": 1
+    },
+    "EXPORT_Crate vent.001": {
+      "triangles": 44,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "dimensions": [
+        0.14000000059604645,
+        0.019999980926513672,
+        0.02699999511241913
+      ],
+      "used_missing_material_faces": 0,
+      "uv_layers": 1
+    },
+    "EXPORT_Door_Narrow": {
+      "triangles": 528,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "dimensions": [
+        2.1200000047683716,
+        0.7924999892711639,
+        2.680000066757202
+      ],
+      "used_missing_material_faces": 0,
+      "uv_layers": 0
+    },
+    "EXPORT_Door_Wide": {
+      "triangles": 528,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "dimensions": [
+        3.120000123977661,
+        0.7924999892711639,
+        2.680000066757202
+      ],
+      "used_missing_material_faces": 0,
+      "uv_layers": 0
+    },
+    "EXPORT_UtilityCrate": {
+      "triangles": 44,
+      "finite": true,
+      "degenerate_triangles": 0,
+      "dimensions": [
+        0.8599999845027924,
+        0.6800000667572021,
+        0.8999999761581421
+      ],
+      "used_missing_material_faces": 0,
+      "uv_layers": 1
+    }
+  },
+  "object_names_match": true,
+  "dimensions_match": true,
+  "images": [
+    {
+      "name": "crate_basecolor_256",
+      "dimensions": [
+        256,
+        256
+      ]
+    }
+  ],
+  "texture_256_present": true
+}

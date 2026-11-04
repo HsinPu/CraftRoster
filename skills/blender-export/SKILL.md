@@ -18,7 +18,7 @@ Read the common [asset contract](../blender-development/references/asset-contrac
 
 ## Prepare a controlled export
 
-Use [format and verification guidance](references/engine-delivery.md) for the selected target. Keep destructive preparation on an export copy. Explicitly control scene, collection, selection and child/armature inclusion; a globally selected object from another scene must not leak into the package. Inspect runtime exporter properties instead of silently dropping unsupported options.
+Use [format and verification guidance](references/engine-delivery.md) for the selected target and the [export verification playbook](references/export-verification-playbook.md) for preparation, operator checks, semantic comparisons and failure recovery. Keep destructive preparation on an export copy. Explicitly control scene, collection, selection and child/armature inclusion; a globally selected object from another scene must not leak into the package. Inspect runtime exporter properties instead of silently dropping unsupported options.
 
 Invoke `blender-asset-validation` against the intended objects and current contract before export. This is a required companion; if it or the runtime is absent, name the missing verification and keep that gate incomplete. An optimization workflow is conditional on an actual budget or geometry problem, and visual review is conditional on appearance approval being in scope. Preserve accepted art direction and deformability when solving a technical warning.
 

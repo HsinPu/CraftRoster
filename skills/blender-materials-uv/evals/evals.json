@@ -23,6 +23,17 @@
         "Does not treat an old image or successful export as visual evidence for the current revision.",
         "Names the missing current-revision evidence and feasible checks without inventing execution."
       ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Bake a painted modular prop with intentionally mirrored color UVs and unique normal details. The first map has dark projection leaks and bright seams when downsampled.",
+      "expected_output": "Concrete scoped workflow and evidence-backed findings for the stated production failure, with unexecuted checks explicit.",
+      "assertions": [
+        "Separates unique bake correspondence from intentional color overlap.",
+        "Checks selection, active image, cage and tangent assumptions before repainting.",
+        "Saves/reloads maps and verifies seam padding at delivery mip size."
+      ]
     }
   ]
 }

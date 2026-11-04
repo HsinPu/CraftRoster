@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.4.0 — 2026-11-04
+
+Minor release: expand the Blender suite from 10 coordinators into 108 focused production, style, world and game-genre Skills.
+
+- Add 98 independently installable packages and deepen the original entries. Preserve separate workflows for modeling specialties, surfaces, motion, procedural systems, presentation, 36 styles/moods, 20 world/genre families, automation and engine delivery. Variant references supply construction, diagnosis, repair and acceptance procedures.
+- Map all 122 canonical entries from the pinned EL4CTEO and arjun988 sources into the suite, including their supporting resources and corrections. Preserve all 388 source path/blob records, MIT notices and the earlier secondary-source provenance. New coverage gates detect missing mappings, resource drift and invalid installation dependencies; they do not certify art quality or runtime support.
+- Expand `game-development` to all 108 Skills with the existing maker and read-only reviewer. Keep conditional handoffs separate from required installation: foundation 1 package, ordinary specialist 2, common export 3, engine-specific export 4.
+- Add read-only runtime discovery and bounded batch execution with unique output directories, failure aggregation, source hashes and expected-artifact checks. Reject empty/ambiguous plans, path collisions, missing outputs and failed/timed-out jobs.
+- Fix technical material checks to inspect evaluated polygon assignments instead of rejecting unused empty slots. Add native regression coverage for unused versus genuinely missing materials and strict schema versions.
+- Add source-coverage regressions, focused evaluation definitions, full bundle installation/update checks and isolated native procedural/baking/render/GLB trials. Keep source/roundtrip, visual review and unavailable target-engine evidence distinct.
+- Update GitHub documentation, package inventory, provenance and release metadata: 402 Skills, 240 Agents, 17 purposes and 17 Skill categories.
+
 ## 1.3.0 — 2026-11-04
 
 Minor release: add a Blender game-asset workflow with creation, independent review and revision-bound delivery evidence.

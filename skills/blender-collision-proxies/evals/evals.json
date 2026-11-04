@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-collision-proxies",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Build collider proxies for an Unreal chair whose underside must remain crawlable; retain the render mesh.",
+      "expected_output": "Revision-scoped work or read-only findings with concrete technical and visual acceptance evidence; missing execution is identified.",
+      "assertions": [
+        "Uses separate convex regions rather than one closing hull.",
+        "Maps names to the render object exactly.",
+        "Requires actual capsule/traversal checks in target."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Review a Unity dynamic crate report: COL_Crate exists in Blender and exporter passed, but no MeshCollider configuration is recorded. Do not edit.",
+      "expected_output": "Revision-scoped work or read-only findings with concrete technical and visual acceptance evidence; missing execution is identified.",
+      "assertions": [
+        "Does not infer collider creation from prefix.",
+        "Identifies dynamic convex/settings and contact evidence gaps.",
+        "Keeps review read-only."
+      ]
+    }
+  ]
+}

@@ -27,7 +27,7 @@ Windows 使用 PowerShell 5.1 或 PowerShell 7；Linux／macOS 使用 Bash 3.2 �
 1. **環境**：`1` Codex、`2` Claude Code、`3` Cursor、`4` GitHub Copilot、`5` OpenCode。Enter 預設 Codex；`6` Project (all platforms) 可選跨平台專案安裝。
 2. **範圍**：`1` User global 或 `2` Current project，Enter 預設全域。跨平台 Project 選項直接使用專案範圍。
 3. **專案目錄**：選專案後立即確認路徑；Enter 使用啟動命令時的目前目錄。安裝器不會自行改成 Git 根目錄。
-4. **安裝方式**：`1` 全部、`2` 指定用途分類，Enter 預設全部。全部包含完整來源目錄的 **240 個 Agents 與 304 個 Skills**，並跳過分類選單。
+4. **安裝方式**：`1` 全部、`2` 指定用途分類，Enter 預設全部。全部包含完整來源目錄的 **240 個 Agents 與 402 個 Skills**，並跳過分類選單。
 5. **用途分類**：指定模式提供同一張分類選單，可用逗號或空白多選，例如 `1,2`。重複選項會合併；空白或 `0` 無效，全部安裝在上一層選擇。
 6. **主動委派選配**：全域 Codex／OpenCode 可另外啟用主動委派；預設不啟用。專案安裝不修改全域委派設定。
 7. **完整預覽與預檢**：一次列出 Agent、Skill、加入原因、實際目的地及數量。共享 Skills 去重，所有目的地先預檢。
@@ -73,7 +73,7 @@ Windows 使用 PowerShell 5.1 或 PowerShell 7；Linux／macOS 使用 Bash 3.2 �
 
 跨平台介面分類提供共用 `ui-improvement`、實作 Agent 與唯讀審查角色；不會自動加入全部 UI 框架。相關平台配套與獨立安裝見[介面品質指南](interface-quality.md)。
 
-遊戲開發分類提供 10 個 Blender Skills 與製作／唯讀審查兩個 Agents，涵蓋模型、材質、動畫、看圖修正與匯出；不會自動安裝 Blender 或遊戲引擎。見 [Blender 指南](blender-skills.md)。
+遊戲開發分類提供 108 個 Blender Skills 與製作／唯讀審查兩個 Agents，涵蓋模型、材質、動畫、看圖修正與匯出；不會自動安裝 Blender 或遊戲引擎。見 [Blender 指南](blender-skills.md)。
 
 分類來源是 [install-bundles.json](../scripts/data/install-bundles.json)。驗證要求所有 Skills 與 Agents 至少屬於一個用途，包含目前沒有 Agent 關聯的 Skills。17 個 Skill 分類、31 個 Agent 分類仍提供進階命令使用。
 

@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-hand-painted-style",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Paint a stylized stone lantern texture in Blender for a fixed illustrative camera with visible broad brushwork.",
+      "expected_output": "An explicit fixed-light painting contract.",
+      "assertions": [
+        "Uses value/color blocks before accents.",
+        "Protects UV continuity and silhouette.",
+        "Requires albedo and lit evidence."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Painted bright edges conflict with a moving key and seams appear at distance. Repair the relightable asset.",
+      "expected_output": "Resolve lighting contract and texture continuity.",
+      "assertions": [
+        "Reduces directional baked paint for relighting.",
+        "Checks padding/mip behavior and seams.",
+        "Tests another light direction."
+      ]
+    }
+  ]
+}

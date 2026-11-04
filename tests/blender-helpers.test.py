@@ -119,6 +119,33 @@ class DeliveryTests(unittest.TestCase):
 
 @unittest.skipUnless(os.environ.get('BLENDER_BIN'), 'Set BLENDER_BIN for actual native Blender checks')
 class NativeTests(unittest.TestCase):
+    def test_material_checks_follow_evaluated_faces_not_unused_slots(self):
+        with tempfile.TemporaryDirectory() as directory:
+            base = Path(directory)
+            build = base / 'material-cases.py'
+            build.write_text("import bpy\nfrom pathlib import Path\nbase=Path(" + repr(str(base)) + ")\nbpy.ops.mesh.primitive_cube_add()\nob=bpy.context.object\nob.name='Asset'\nob.data.materials.append(None)\nob.data.materials.append(bpy.data.materials.new('Used'))\nfor face in ob.data.polygons: face.material_index=1\nbpy.ops.wm.save_as_mainfile(filepath=str(base/'unused.blend'))\nob.data.polygons[0].material_index=0\nbpy.ops.wm.save_as_mainfile(filepath=str(base/'used.blend'))\nob.data.materials.clear()\nbpy.ops.wm.save_as_mainfile(filepath=str(base/'absent.blend'))\n", encoding='utf-8')
+            runner = ROOT / 'skills/blender-development/scripts/run_blender.py'
+            def run(script, *args):
+                return subprocess.run([sys.executable, str(runner), '--script', str(script), '--timeout', '90', *args], capture_output=True, text=True, timeout=100)
+            built = run(build)
+            self.assertEqual(built.returncode, 0, built.stdout + built.stderr)
+            contract = base / 'contract.json'
+            contract.write_text(json.dumps({'schema_version': 1, 'objects': ['Asset'], 'require_materials': True}))
+            for case, faces in [('unused', 0), ('used', 1), ('absent', 6)]:
+                with self.subTest(case=case):
+                    blend, output = base / (case + '.blend'), base / (case + '.json')
+                    original = hashlib.sha256(blend.read_bytes()).hexdigest()
+                    result = run(HELPERS / 'inspect_asset.py', '--blend', str(blend), '--', '--contract', str(contract), '--output', str(output))
+                    self.assertEqual(result.returncode == 0, faces == 0, result.stdout + result.stderr)
+                    report = json.loads(output.read_text())
+                    self.assertEqual(report['metrics'][0]['unassigned_material_faces'], faces)
+                    self.assertEqual(report['status'], 'fail' if faces else 'pass')
+                    self.assertEqual(original, hashlib.sha256(blend.read_bytes()).hexdigest())
+            contract.write_text(json.dumps({'schema_version': True, 'objects': ['Asset']}))
+            result = run(HELPERS / 'inspect_asset.py', '--blend', str(base / 'unused.blend'), '--', '--contract', str(contract), '--output', str(base / 'boolean.json'))
+            self.assertNotEqual(result.returncode, 0)
+            self.assertFalse((base / 'boolean.json').exists())
+
     def test_nonfinite_geometry_and_transform_are_rejected(self):
         runner = ROOT / 'skills/blender-development/scripts/run_blender.py'
         with tempfile.TemporaryDirectory() as directory:

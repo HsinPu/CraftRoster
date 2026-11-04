@@ -85,7 +85,7 @@
     {
       "id": "blender-creation",
       "name": "Blender & Game Asset Creation",
-      "description": "Blender asset production, reference matching, look development, rigging, optimization, export and independent technical/visual review."
+      "description": "Detailed Blender asset production across geometry, materials, animation, simulation, style, worlds, genre requirements, automation, engine-specific export and independent technical/visual review."
     }
   ],
   "skills": {
@@ -10963,53 +10963,544 @@
       "tags": [
         "blender",
         "game-assets",
-        "development"
+        "development",
+        "production-workflow"
       ],
       "dependencies": [
         {
           "name": "blender-modeling",
           "kind": "conditional",
-          "when": "The authorized Blender task needs modeling."
+          "when": "The authorized task requires general mesh blockout, precision editing, modifier construction or topology cleanup."
         },
         {
           "name": "blender-reference-modeling",
           "kind": "conditional",
-          "when": "The authorized Blender task needs reference modeling."
+          "when": "The authorized task requires a reference-dominant reconstruction requiring camera, silhouette and proportion comparison."
         },
         {
           "name": "blender-materials-uv",
           "kind": "conditional",
-          "when": "The authorized Blender task needs materials uv."
+          "when": "The authorized task requires combined material and UV planning before selecting a specialized surface workflow."
         },
         {
           "name": "blender-rigging-animation",
           "kind": "conditional",
-          "when": "The authorized Blender task needs rigging animation."
+          "when": "The authorized task requires combined rig and motion planning before selecting detailed animation specialists."
         },
         {
           "name": "blender-lookdev",
           "kind": "conditional",
-          "when": "The authorized Blender task needs lookdev."
+          "when": "The authorized task requires an integrated material, camera and lighting study against the approved visual direction."
         },
         {
           "name": "blender-game-optimization",
           "kind": "conditional",
-          "when": "The authorized Blender task needs game optimization."
+          "when": "The authorized task requires measured reductions in asset geometry, materials, textures or skeletal cost."
         },
         {
           "name": "blender-export",
           "kind": "conditional",
-          "when": "The authorized Blender task needs export."
+          "when": "The authorized task requires a common Blender export contract, selection, source preservation and reimport gate."
         },
         {
           "name": "blender-asset-validation",
           "kind": "conditional",
-          "when": "The authorized Blender task needs asset validation."
+          "when": "The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract."
         },
         {
           "name": "blender-visual-review",
           "kind": "conditional",
-          "when": "The authorized Blender task needs visual review."
+          "when": "The authorized task requires read-only judgments of current-revision images and actionable visual correction priorities."
+        },
+        {
+          "name": "blender-addon-development",
+          "kind": "conditional",
+          "when": "The authorized task requires a Blender add-on, operator, panel, property registration or version-compatible extension."
+        },
+        {
+          "name": "blender-analog-found-footage-horror",
+          "kind": "conditional",
+          "when": "The authorized task requires an analog or found-footage horror treatment with capture artifacts and legible shot information."
+        },
+        {
+          "name": "blender-animation",
+          "kind": "conditional",
+          "when": "The authorized task requires keyframed motion, action management, clip baking, retargeting or loop correction."
+        },
+        {
+          "name": "blender-anime-style",
+          "kind": "conditional",
+          "when": "The authorized task requires anime proportions, facial shape language and anime-specific cel rendering."
+        },
+        {
+          "name": "blender-apocalypse-worlds",
+          "kind": "conditional",
+          "when": "The authorized task requires a post-apocalyptic, dystopian or utopian world with coherent damage and settlement logic."
+        },
+        {
+          "name": "blender-archviz",
+          "kind": "conditional",
+          "when": "The authorized task requires measured architectural interior or exterior presentation."
+        },
+        {
+          "name": "blender-biome-worlds",
+          "kind": "conditional",
+          "when": "The authorized task requires a biome-specific environment with coherent terrain, vegetation, water and climate cues."
+        },
+        {
+          "name": "blender-body-horror-style",
+          "kind": "conditional",
+          "when": "The authorized task requires an approved body-horror design with controlled organic transformation and surface hierarchy."
+        },
+        {
+          "name": "blender-brutalist-mood",
+          "kind": "conditional",
+          "when": "The authorized task requires a brutalist mood based on mass, concrete, scale and controlled spatial light."
+        },
+        {
+          "name": "blender-camera-cinematography",
+          "kind": "conditional",
+          "when": "The authorized task requires camera framing, lens choice, depth of field, camera motion or shot continuity."
+        },
+        {
+          "name": "blender-cartoon-style",
+          "kind": "conditional",
+          "when": "The authorized task requires cartoon exaggeration, simplified forms and expressive surface treatment."
+        },
+        {
+          "name": "blender-character-archetypes",
+          "kind": "conditional",
+          "when": "The authorized task requires a readable character archetype with coherent silhouette, costume and role cues."
+        },
+        {
+          "name": "blender-character-modeling",
+          "kind": "conditional",
+          "when": "The authorized task requires a human or humanoid mesh with proportion, clothing and expression-aware topology."
+        },
+        {
+          "name": "blender-character-rigging",
+          "kind": "conditional",
+          "when": "The authorized task requires a deforming character rig, weights, controls, constraints or tested rig handoff."
+        },
+        {
+          "name": "blender-chibi-style",
+          "kind": "conditional",
+          "when": "The authorized task requires chibi head-to-body ratios, simplified anatomy and readable miniature expressions."
+        },
+        {
+          "name": "blender-cloth-simulation",
+          "kind": "conditional",
+          "when": "The authorized task requires a bounded cloth simulation with collision, cache and motion acceptance."
+        },
+        {
+          "name": "blender-clothing",
+          "kind": "conditional",
+          "when": "The authorized task requires garment construction, thickness, fit, folds or clothing deformation preparation."
+        },
+        {
+          "name": "blender-collision-proxies",
+          "kind": "conditional",
+          "when": "The authorized task requires engine-specific collider primitives or convex proxy meshes with intended contact clearance."
+        },
+        {
+          "name": "blender-comic-book-style",
+          "kind": "conditional",
+          "when": "The authorized task requires comic-book graphic shapes, halftones, outlines and panel-aware presentation."
+        },
+        {
+          "name": "blender-compositing",
+          "kind": "conditional",
+          "when": "The authorized task requires render-pass compositing, masking, color adjustment or a reusable compositor graph."
+        },
+        {
+          "name": "blender-cosmic-eldritch-horror",
+          "kind": "conditional",
+          "when": "The authorized task requires a cosmic or eldritch horror direction using scale, unknowability and controlled visual abstraction."
+        },
+        {
+          "name": "blender-cozy-wholesome-mood",
+          "kind": "conditional",
+          "when": "The authorized task requires a cozy or wholesome mood with inviting proportions, materials and light."
+        },
+        {
+          "name": "blender-creature-modeling",
+          "kind": "conditional",
+          "when": "The authorized task requires a nonhuman creature with anatomy-informed masses, locomotion and joint clearance."
+        },
+        {
+          "name": "blender-dark-gritty-mood",
+          "kind": "conditional",
+          "when": "The authorized task requires a dark or gritty mood with readable values, causal wear and restrained contrast."
+        },
+        {
+          "name": "blender-dream-surreal-mood",
+          "kind": "conditional",
+          "when": "The authorized task requires a dreamlike or surreal mood with deliberate spatial, material or lighting departures."
+        },
+        {
+          "name": "blender-dream-weirdcore-style",
+          "kind": "conditional",
+          "when": "The authorized task requires a dreamcore or weirdcore visual treatment with intentional digital unease."
+        },
+        {
+          "name": "blender-environment-art",
+          "kind": "conditional",
+          "when": "The authorized task requires a composed environment whose architecture, terrain and route support the intended vista."
+        },
+        {
+          "name": "blender-environment-kits",
+          "kind": "conditional",
+          "when": "The authorized task requires a snapping modular kit, terrain heightfield or slope/height-masked biome scatter."
+        },
+        {
+          "name": "blender-facial-shapekeys",
+          "kind": "conditional",
+          "when": "The authorized task requires facial shape keys, corrective expressions or tested blendshape delivery."
+        },
+        {
+          "name": "blender-fantasy-worlds",
+          "kind": "conditional",
+          "when": "The authorized task requires a fantasy world with consistent architectural, material and magical culture."
+        },
+        {
+          "name": "blender-folk-horror-style",
+          "kind": "conditional",
+          "when": "The authorized task requires a folk-horror treatment grounded in place, ritual and environmental unease."
+        },
+        {
+          "name": "blender-frutiger-aero-style",
+          "kind": "conditional",
+          "when": "The authorized task requires a Frutiger Aero treatment with translucent, glossy and nature-technology motifs."
+        },
+        {
+          "name": "blender-genre-action-combat",
+          "kind": "conditional",
+          "when": "The authorized task requires action-combat assets whose silhouettes, contact regions and effects support readable encounters."
+        },
+        {
+          "name": "blender-genre-card-party-idle",
+          "kind": "conditional",
+          "when": "The authorized task requires card, party or idle-game assets with clear symbols, modular content and state readability."
+        },
+        {
+          "name": "blender-genre-metroidvania-roguelike",
+          "kind": "conditional",
+          "when": "The authorized task requires Metroidvania or roguelike spaces with reusable rooms, route gates and run variation."
+        },
+        {
+          "name": "blender-genre-narrative-vn",
+          "kind": "conditional",
+          "when": "The authorized task requires narrative or visual-novel sets and character assets for dialogue framing and expression states."
+        },
+        {
+          "name": "blender-genre-open-world-sandbox",
+          "kind": "conditional",
+          "when": "The authorized task requires open-world or sandbox assets organized for scale, reuse and scene streaming contracts."
+        },
+        {
+          "name": "blender-genre-puzzle-platformer",
+          "kind": "conditional",
+          "when": "The authorized task requires puzzle or platformer assets with clear affordances, jump/readability and state distinctions."
+        },
+        {
+          "name": "blender-genre-racing-sports",
+          "kind": "conditional",
+          "when": "The authorized task requires racing or sports assets with track/course readability and motion-aware scale."
+        },
+        {
+          "name": "blender-genre-rpg",
+          "kind": "conditional",
+          "when": "The authorized task requires RPG characters, equipment or environments with coherent role and progression cues."
+        },
+        {
+          "name": "blender-genre-shooter",
+          "kind": "conditional",
+          "when": "The authorized task requires shooter assets with first/third-person readability, sightlines and functional weapon interfaces."
+        },
+        {
+          "name": "blender-genre-soulslike",
+          "kind": "conditional",
+          "when": "The authorized task requires Soulslike assets with encounter-readable silhouettes, spatial rhythm and world continuity."
+        },
+        {
+          "name": "blender-genre-stealth",
+          "kind": "conditional",
+          "when": "The authorized task requires stealth spaces and props with readable concealment, sightlines and traversal affordances."
+        },
+        {
+          "name": "blender-genre-strategy-sim",
+          "kind": "conditional",
+          "when": "The authorized task requires strategy or simulation assets readable at management-camera scale with systematic reuse."
+        },
+        {
+          "name": "blender-genre-survival",
+          "kind": "conditional",
+          "when": "The authorized task requires survival assets with readable resources, crafting stages and environmental pressures."
+        },
+        {
+          "name": "blender-geometry-nodes",
+          "kind": "conditional",
+          "when": "The authorized task requires a field/domain-correct Geometry Nodes graph, instancing system or bounded procedural zone."
+        },
+        {
+          "name": "blender-godot-export",
+          "kind": "conditional",
+          "when": "The authorized task requires a Godot-targeted Blender delivery with verified scale, resources and import behavior."
+        },
+        {
+          "name": "blender-hair-grooming",
+          "kind": "conditional",
+          "when": "The authorized task requires strand grooming, hair cards, clumps or target-aware hair conversion."
+        },
+        {
+          "name": "blender-hand-painted-style",
+          "kind": "conditional",
+          "when": "The authorized task requires hand-painted texture direction, brushwork and geometry-to-texture hierarchy."
+        },
+        {
+          "name": "blender-hard-surface",
+          "kind": "conditional",
+          "when": "The authorized task requires mechanical bodywork, boolean cuts, bevels or controlled hard-surface highlights."
+        },
+        {
+          "name": "blender-hd-2d-style",
+          "kind": "conditional",
+          "when": "The authorized task requires an HD-2D treatment combining pixel-like character presentation with dimensional scenes."
+        },
+        {
+          "name": "blender-historical-worlds",
+          "kind": "conditional",
+          "when": "The authorized task requires a historically grounded world with researched architectural and material choices."
+        },
+        {
+          "name": "blender-horror-style",
+          "kind": "conditional",
+          "when": "The authorized task requires a general horror art direction with purposeful visibility, silhouettes and environmental tension."
+        },
+        {
+          "name": "blender-indie-horror-aesthetics",
+          "kind": "conditional",
+          "when": "The authorized task requires an indie-horror visual direction with constrained production vocabulary and deliberate roughness."
+        },
+        {
+          "name": "blender-isometric-style",
+          "kind": "conditional",
+          "when": "The authorized task requires isometric projection, composition and scale-readable object presentation."
+        },
+        {
+          "name": "blender-lighting",
+          "kind": "conditional",
+          "when": "The authorized task requires light placement, exposure balance, shadows or renderer-aware illumination."
+        },
+        {
+          "name": "blender-liminal-space-style",
+          "kind": "conditional",
+          "when": "The authorized task requires a liminal-space treatment using scale, repetition, emptiness and architectural ambiguity."
+        },
+        {
+          "name": "blender-lod-pipeline",
+          "kind": "conditional",
+          "when": "The authorized task requires a measured LOD chain with preserved interfaces and screen-size transition inspection."
+        },
+        {
+          "name": "blender-lowpoly-style",
+          "kind": "conditional",
+          "when": "The authorized task requires a deliberate low-poly visual direction with readable faceting and controlled texture complexity."
+        },
+        {
+          "name": "blender-manga-style",
+          "kind": "conditional",
+          "when": "The authorized task requires manga-inspired monochrome values, ink lines, screen tones and graphic shape hierarchy."
+        },
+        {
+          "name": "blender-mascot-puppet-horror",
+          "kind": "conditional",
+          "when": "The authorized task requires a mascot or puppet horror design with coherent construction and controlled uncanny cues."
+        },
+        {
+          "name": "blender-minimalist-style",
+          "kind": "conditional",
+          "when": "The authorized task requires a minimalist treatment whose reduced shapes, palette and spacing preserve required meaning."
+        },
+        {
+          "name": "blender-neon-retrofuturism",
+          "kind": "conditional",
+          "when": "The authorized task requires a neon retrofuturist direction with deliberate emission, period motifs and readable dark values."
+        },
+        {
+          "name": "blender-noir-style",
+          "kind": "conditional",
+          "when": "The authorized task requires a noir treatment with purposeful shadow design, light sources and restrained color."
+        },
+        {
+          "name": "blender-painterly-style",
+          "kind": "conditional",
+          "when": "The authorized task requires a painterly treatment with art-directed brush texture, edges and color relationships."
+        },
+        {
+          "name": "blender-pbr-materials",
+          "kind": "conditional",
+          "when": "The authorized task requires a physically based shader with correct texture channels, color spaces and material response."
+        },
+        {
+          "name": "blender-pipeline-automation",
+          "kind": "conditional",
+          "when": "The authorized task requires repeatable Blender batch processing, validation, render jobs or delivery automation."
+        },
+        {
+          "name": "blender-pixel-art-style",
+          "kind": "conditional",
+          "when": "The authorized task requires a pixel-art treatment with consistent pixel density, palette and sampling."
+        },
+        {
+          "name": "blender-procedural-modeling",
+          "kind": "conditional",
+          "when": "The authorized task requires a bounded, seeded family of parametric rocks, buildings, roads, pipes or panels."
+        },
+        {
+          "name": "blender-prop-modeling",
+          "kind": "conditional",
+          "when": "The authorized task requires a grounded furniture, tool, container or household prop with functional pivots."
+        },
+        {
+          "name": "blender-psx-horror-style",
+          "kind": "conditional",
+          "when": "The authorized task requires a PSX-inspired horror treatment with intentional geometry, texture and temporal artifacts."
+        },
+        {
+          "name": "blender-realistic-style",
+          "kind": "conditional",
+          "when": "The authorized task requires a realistic art direction with reference-grounded proportions and material/light relationships."
+        },
+        {
+          "name": "blender-rendering",
+          "kind": "conditional",
+          "when": "The authorized task requires renderer configuration, render passes, sampling, output images or sequence verification."
+        },
+        {
+          "name": "blender-retopology",
+          "kind": "conditional",
+          "when": "The authorized task requires delivery topology rebuilt from a dense sculpt, scan or generated source."
+        },
+        {
+          "name": "blender-retro-16bit-style",
+          "kind": "conditional",
+          "when": "The authorized task requires a 16-bit-inspired presentation with era-coherent palette, shapes and screen detail."
+        },
+        {
+          "name": "blender-retro-8bit-style",
+          "kind": "conditional",
+          "when": "The authorized task requires an 8-bit-inspired presentation with tightly controlled palette, pixels and visual vocabulary."
+        },
+        {
+          "name": "blender-scene-assembly",
+          "kind": "conditional",
+          "when": "The authorized task requires scene units, collections, linked libraries, overrides or large-set layout."
+        },
+        {
+          "name": "blender-sci-fi-punk-worlds",
+          "kind": "conditional",
+          "when": "The authorized task requires a science-fiction or punk world whose technology, social cues and construction agree."
+        },
+        {
+          "name": "blender-sculpting",
+          "kind": "conditional",
+          "when": "The authorized task requires dense organic form development, safe remeshing or multires bake-source preparation."
+        },
+        {
+          "name": "blender-set-dressing",
+          "kind": "conditional",
+          "when": "The authorized task requires narrative prop clusters, deliberate density and route-preserving placement."
+        },
+        {
+          "name": "blender-simulation",
+          "kind": "conditional",
+          "when": "The authorized task requires a bounded Blender physical simulation with explicit cache and execution limits."
+        },
+        {
+          "name": "blender-stop-motion-craft-style",
+          "kind": "conditional",
+          "when": "The authorized task requires a stop-motion or craft treatment with material construction and stepped-motion choices."
+        },
+        {
+          "name": "blender-stylized-style",
+          "kind": "conditional",
+          "when": "The authorized task requires a coherent stylized art direction spanning shape, palette and nonphotoreal rendering."
+        },
+        {
+          "name": "blender-texture-baking",
+          "kind": "conditional",
+          "when": "The authorized task requires high-to-low or multires texture baking with cages, ray isolation and map checks."
+        },
+        {
+          "name": "blender-texturing",
+          "kind": "conditional",
+          "when": "The authorized task requires texture creation or assembly with surface scale, UV correspondence and channel validation."
+        },
+        {
+          "name": "blender-time-of-day",
+          "kind": "conditional",
+          "when": "The authorized task requires time-of-day or weather-adjacent lighting states with matched transitions and exposure."
+        },
+        {
+          "name": "blender-unity-export",
+          "kind": "conditional",
+          "when": "The authorized task requires a Unity-targeted Blender delivery with verified units, materials, rig and import behavior."
+        },
+        {
+          "name": "blender-unreal-export",
+          "kind": "conditional",
+          "when": "The authorized task requires an Unreal-targeted Blender delivery with verified naming, transforms and import behavior."
+        },
+        {
+          "name": "blender-uv-unwrapping",
+          "kind": "conditional",
+          "when": "The authorized task requires seams, UV density, pixel padding, trims, UDIM or requested lightmap channels."
+        },
+        {
+          "name": "blender-vector-style",
+          "kind": "conditional",
+          "when": "The authorized task requires a vector-like treatment with flat regions, clean contours and deliberate graphic abstraction."
+        },
+        {
+          "name": "blender-vegetation",
+          "kind": "conditional",
+          "when": "The authorized task requires plant branching, leaf atlases, wind data or canopy-preserving foliage LODs."
+        },
+        {
+          "name": "blender-vehicle-modeling",
+          "kind": "conditional",
+          "when": "The authorized task requires vehicle proportions, bodywork and separately moving or shaded systems."
+        },
+        {
+          "name": "blender-vfx-fx",
+          "kind": "conditional",
+          "when": "The authorized task requires a bounded visual effect, procedural effect element or composited FX deliverable."
+        },
+        {
+          "name": "blender-video-editing",
+          "kind": "conditional",
+          "when": "The authorized task requires Blender video-sequence assembly, timing, transitions or verified media output."
+        },
+        {
+          "name": "blender-visual-console-eras",
+          "kind": "conditional",
+          "when": "The authorized task requires a console-era visual target with coherent geometry, texture and display constraints."
+        },
+        {
+          "name": "blender-voxel-style",
+          "kind": "conditional",
+          "when": "The authorized task requires a voxel visual direction with deliberate grid resolution, stepped silhouettes and palette."
+        },
+        {
+          "name": "blender-weather-fx",
+          "kind": "conditional",
+          "when": "The authorized task requires a weather-effect setup with bounded particles/volumes, scene visibility and cache costs."
+        },
+        {
+          "name": "blender-workflow-recipes",
+          "kind": "conditional",
+          "when": "The authorized task requires an end-to-end Blender production recipe coordinating the relevant discipline checkpoints."
         }
       ]
     },
@@ -11018,7 +11509,8 @@
       "tags": [
         "blender",
         "game-assets",
-        "modeling"
+        "modeling",
+        "geometry"
       ],
       "dependencies": [
         {
@@ -11033,7 +11525,10 @@
       "tags": [
         "blender",
         "game-assets",
-        "reference-modeling"
+        "reference-modeling",
+        "production-workflow",
+        "reference",
+        "modeling"
       ],
       "dependencies": [
         {
@@ -11048,13 +11543,28 @@
       "tags": [
         "blender",
         "game-assets",
-        "materials-uv"
+        "materials-uv",
+        "production-workflow",
+        "materials",
+        "uv"
       ],
       "dependencies": [
         {
           "name": "blender-development",
           "kind": "required",
           "usage": "resource"
+        }
+      ],
+      "routes": [
+        {
+          "name": "blender-lookdev",
+          "kind": "related",
+          "when": "The authorized task requires an integrated material, camera and lighting study against the approved visual direction."
+        },
+        {
+          "name": "blender-export",
+          "kind": "related",
+          "when": "The authorized task requires a common Blender export contract, selection, source preservation and reimport gate."
         }
       ]
     },
@@ -11063,13 +11573,28 @@
       "tags": [
         "blender",
         "game-assets",
-        "rigging-animation"
+        "rigging-animation",
+        "production-workflow",
+        "rigging",
+        "animation"
       ],
       "dependencies": [
         {
           "name": "blender-development",
           "kind": "required",
           "usage": "resource"
+        }
+      ],
+      "routes": [
+        {
+          "name": "blender-modeling",
+          "kind": "related",
+          "when": "The authorized task requires general mesh blockout, precision editing, modifier construction or topology cleanup."
+        },
+        {
+          "name": "blender-export",
+          "kind": "related",
+          "when": "The authorized task requires a common Blender export contract, selection, source preservation and reimport gate."
         }
       ]
     },
@@ -11078,13 +11603,46 @@
       "tags": [
         "blender",
         "game-assets",
-        "lookdev"
+        "lookdev",
+        "surfaces-motion"
       ],
       "dependencies": [
         {
           "name": "blender-development",
           "kind": "required",
           "usage": "resource"
+        }
+      ],
+      "routes": [
+        {
+          "name": "blender-pbr-materials",
+          "kind": "related",
+          "when": "The authorized task requires a physically based shader with correct texture channels, color spaces and material response."
+        },
+        {
+          "name": "blender-lighting",
+          "kind": "related",
+          "when": "The authorized task requires light placement, exposure balance, shadows or renderer-aware illumination."
+        },
+        {
+          "name": "blender-camera-cinematography",
+          "kind": "related",
+          "when": "The authorized task requires camera framing, lens choice, depth of field, camera motion or shot continuity."
+        },
+        {
+          "name": "blender-texturing",
+          "kind": "related",
+          "when": "The authorized task requires texture creation or assembly with surface scale, UV correspondence and channel validation."
+        },
+        {
+          "name": "blender-rendering",
+          "kind": "related",
+          "when": "The authorized task requires renderer configuration, render passes, sampling, output images or sequence verification."
+        },
+        {
+          "name": "blender-visual-review",
+          "kind": "related",
+          "when": "The authorized task requires read-only judgments of current-revision images and actionable visual correction priorities."
         }
       ]
     },
@@ -11093,7 +11651,10 @@
       "tags": [
         "blender",
         "game-assets",
-        "game-optimization"
+        "game-optimization",
+        "geometry",
+        "game",
+        "optimization"
       ],
       "dependencies": [
         {
@@ -11108,7 +11669,8 @@
       "tags": [
         "blender",
         "game-assets",
-        "export"
+        "export",
+        "production-workflow"
       ],
       "dependencies": [
         {
@@ -11127,7 +11689,10 @@
       "tags": [
         "blender",
         "game-assets",
-        "asset-validation"
+        "asset-validation",
+        "production-workflow",
+        "asset",
+        "validation"
       ],
       "dependencies": [
         {
@@ -11142,7 +11707,3026 @@
       "tags": [
         "blender",
         "game-assets",
-        "visual-review"
+        "visual-review",
+        "production-workflow",
+        "visual",
+        "review"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ]
+    },
+    "blender-addon-development": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "production-workflow",
+        "addon",
+        "development"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ]
+    },
+    "blender-analog-found-footage-horror": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "art-direction",
+        "analog",
+        "found",
+        "footage",
+        "horror"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-camera-cinematography",
+          "kind": "conditional",
+          "when": "The authorized task requires camera framing, lens choice, depth of field, camera motion or shot continuity."
+        },
+        {
+          "name": "blender-compositing",
+          "kind": "conditional",
+          "when": "The authorized task requires render-pass compositing, masking, color adjustment or a reusable compositor graph."
+        }
+      ]
+    },
+    "blender-animation": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "surfaces-motion",
+        "animation"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ],
+      "routes": [
+        {
+          "name": "blender-character-rigging",
+          "kind": "related",
+          "when": "The authorized task requires a deforming character rig, weights, controls, constraints or tested rig handoff."
+        },
+        {
+          "name": "blender-export",
+          "kind": "related",
+          "when": "The authorized task requires a common Blender export contract, selection, source preservation and reimport gate."
+        }
+      ]
+    },
+    "blender-anime-style": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "art-direction",
+        "anime",
+        "style"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-character-modeling",
+          "kind": "conditional",
+          "when": "The authorized task requires a human or humanoid mesh with proportion, clothing and expression-aware topology."
+        },
+        {
+          "name": "blender-export",
+          "kind": "conditional",
+          "when": "The authorized task requires a common Blender export contract, selection, source preservation and reimport gate."
+        },
+        {
+          "name": "blender-pbr-materials",
+          "kind": "conditional",
+          "when": "The authorized task requires a physically based shader with correct texture channels, color spaces and material response."
+        }
+      ]
+    },
+    "blender-apocalypse-worlds": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "world-design",
+        "apocalypse",
+        "worlds"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-environment-art",
+          "kind": "conditional",
+          "when": "The authorized task requires a composed environment whose architecture, terrain and route support the intended vista."
+        },
+        {
+          "name": "blender-set-dressing",
+          "kind": "conditional",
+          "when": "The authorized task requires narrative prop clusters, deliberate density and route-preserving placement."
+        },
+        {
+          "name": "blender-pbr-materials",
+          "kind": "conditional",
+          "when": "The authorized task requires a physically based shader with correct texture channels, color spaces and material response."
+        },
+        {
+          "name": "blender-export",
+          "kind": "conditional",
+          "when": "The authorized task requires a common Blender export contract, selection, source preservation and reimport gate."
+        },
+        {
+          "name": "blender-asset-validation",
+          "kind": "conditional",
+          "when": "The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract."
+        }
+      ]
+    },
+    "blender-archviz": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "geometry",
+        "archviz"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-camera-cinematography",
+          "kind": "conditional",
+          "when": "The authorized task requires camera framing, lens choice, depth of field, camera motion or shot continuity."
+        },
+        {
+          "name": "blender-lighting",
+          "kind": "conditional",
+          "when": "The authorized task requires light placement, exposure balance, shadows or renderer-aware illumination."
+        },
+        {
+          "name": "blender-rendering",
+          "kind": "conditional",
+          "when": "The authorized task requires renderer configuration, render passes, sampling, output images or sequence verification."
+        },
+        {
+          "name": "blender-compositing",
+          "kind": "conditional",
+          "when": "The authorized task requires render-pass compositing, masking, color adjustment or a reusable compositor graph."
+        }
+      ]
+    },
+    "blender-biome-worlds": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "world-design",
+        "biome",
+        "worlds"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-environment-art",
+          "kind": "conditional",
+          "when": "The authorized task requires a composed environment whose architecture, terrain and route support the intended vista."
+        },
+        {
+          "name": "blender-vegetation",
+          "kind": "conditional",
+          "when": "The authorized task requires plant branching, leaf atlases, wind data or canopy-preserving foliage LODs."
+        },
+        {
+          "name": "blender-lighting",
+          "kind": "conditional",
+          "when": "The authorized task requires light placement, exposure balance, shadows or renderer-aware illumination."
+        },
+        {
+          "name": "blender-export",
+          "kind": "conditional",
+          "when": "The authorized task requires a common Blender export contract, selection, source preservation and reimport gate."
+        },
+        {
+          "name": "blender-asset-validation",
+          "kind": "conditional",
+          "when": "The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract."
+        }
+      ]
+    },
+    "blender-body-horror-style": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "art-direction",
+        "body",
+        "horror",
+        "style"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-creature-modeling",
+          "kind": "conditional",
+          "when": "The authorized task requires a nonhuman creature with anatomy-informed masses, locomotion and joint clearance."
+        },
+        {
+          "name": "blender-sculpting",
+          "kind": "conditional",
+          "when": "The authorized task requires dense organic form development, safe remeshing or multires bake-source preparation."
+        }
+      ]
+    },
+    "blender-brutalist-mood": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "art-direction",
+        "brutalist",
+        "mood"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-archviz",
+          "kind": "conditional",
+          "when": "The authorized task requires measured architectural interior or exterior presentation."
+        },
+        {
+          "name": "blender-pbr-materials",
+          "kind": "conditional",
+          "when": "The authorized task requires a physically based shader with correct texture channels, color spaces and material response."
+        }
+      ]
+    },
+    "blender-camera-cinematography": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "surfaces-motion",
+        "camera",
+        "cinematography"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ],
+      "routes": [
+        {
+          "name": "blender-animation",
+          "kind": "related",
+          "when": "The authorized task requires keyframed motion, action management, clip baking, retargeting or loop correction."
+        },
+        {
+          "name": "blender-rendering",
+          "kind": "related",
+          "when": "The authorized task requires renderer configuration, render passes, sampling, output images or sequence verification."
+        }
+      ]
+    },
+    "blender-cartoon-style": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "art-direction",
+        "cartoon",
+        "style"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-animation",
+          "kind": "conditional",
+          "when": "The authorized task requires keyframed motion, action management, clip baking, retargeting or loop correction."
+        },
+        {
+          "name": "blender-character-modeling",
+          "kind": "conditional",
+          "when": "The authorized task requires a human or humanoid mesh with proportion, clothing and expression-aware topology."
+        },
+        {
+          "name": "blender-prop-modeling",
+          "kind": "conditional",
+          "when": "The authorized task requires a grounded furniture, tool, container or household prop with functional pivots."
+        }
+      ]
+    },
+    "blender-character-archetypes": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "world-design",
+        "character",
+        "archetypes"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-character-modeling",
+          "kind": "conditional",
+          "when": "The authorized task requires a human or humanoid mesh with proportion, clothing and expression-aware topology."
+        },
+        {
+          "name": "blender-creature-modeling",
+          "kind": "conditional",
+          "when": "The authorized task requires a nonhuman creature with anatomy-informed masses, locomotion and joint clearance."
+        },
+        {
+          "name": "blender-character-rigging",
+          "kind": "conditional",
+          "when": "The authorized task requires a deforming character rig, weights, controls, constraints or tested rig handoff."
+        },
+        {
+          "name": "blender-export",
+          "kind": "conditional",
+          "when": "The authorized task requires a common Blender export contract, selection, source preservation and reimport gate."
+        },
+        {
+          "name": "blender-asset-validation",
+          "kind": "conditional",
+          "when": "The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract."
+        }
+      ]
+    },
+    "blender-character-modeling": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "geometry",
+        "character",
+        "modeling"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-sculpting",
+          "kind": "conditional",
+          "when": "The authorized task requires dense organic form development, safe remeshing or multires bake-source preparation."
+        },
+        {
+          "name": "blender-retopology",
+          "kind": "conditional",
+          "when": "The authorized task requires delivery topology rebuilt from a dense sculpt, scan or generated source."
+        },
+        {
+          "name": "blender-uv-unwrapping",
+          "kind": "conditional",
+          "when": "The authorized task requires seams, UV density, pixel padding, trims, UDIM or requested lightmap channels."
+        },
+        {
+          "name": "blender-rigging-animation",
+          "kind": "conditional",
+          "when": "The authorized task requires combined rig and motion planning before selecting detailed animation specialists."
+        }
+      ]
+    },
+    "blender-character-rigging": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "surfaces-motion",
+        "character",
+        "rigging"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ],
+      "routes": [
+        {
+          "name": "blender-animation",
+          "kind": "related",
+          "when": "The authorized task requires keyframed motion, action management, clip baking, retargeting or loop correction."
+        },
+        {
+          "name": "blender-facial-shapekeys",
+          "kind": "related",
+          "when": "The authorized task requires facial shape keys, corrective expressions or tested blendshape delivery."
+        },
+        {
+          "name": "blender-clothing",
+          "kind": "related",
+          "when": "The authorized task requires garment construction, thickness, fit, folds or clothing deformation preparation."
+        }
+      ]
+    },
+    "blender-chibi-style": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "art-direction",
+        "chibi",
+        "style"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-character-modeling",
+          "kind": "conditional",
+          "when": "The authorized task requires a human or humanoid mesh with proportion, clothing and expression-aware topology."
+        },
+        {
+          "name": "blender-character-rigging",
+          "kind": "conditional",
+          "when": "The authorized task requires a deforming character rig, weights, controls, constraints or tested rig handoff."
+        }
+      ]
+    },
+    "blender-cloth-simulation": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "surfaces-motion",
+        "cloth",
+        "simulation"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ],
+      "routes": [
+        {
+          "name": "blender-clothing",
+          "kind": "related",
+          "when": "The authorized task requires garment construction, thickness, fit, folds or clothing deformation preparation."
+        },
+        {
+          "name": "blender-simulation",
+          "kind": "related",
+          "when": "The authorized task requires a bounded Blender physical simulation with explicit cache and execution limits."
+        }
+      ]
+    },
+    "blender-clothing": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "surfaces-motion",
+        "clothing"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ],
+      "routes": [
+        {
+          "name": "blender-character-rigging",
+          "kind": "related",
+          "when": "The authorized task requires a deforming character rig, weights, controls, constraints or tested rig handoff."
+        },
+        {
+          "name": "blender-cloth-simulation",
+          "kind": "related",
+          "when": "The authorized task requires a bounded cloth simulation with collision, cache and motion acceptance."
+        },
+        {
+          "name": "blender-texture-baking",
+          "kind": "related",
+          "when": "The authorized task requires high-to-low or multires texture baking with cages, ray isolation and map checks."
+        }
+      ]
+    },
+    "blender-collision-proxies": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "geometry",
+        "collision",
+        "proxies"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ]
+    },
+    "blender-comic-book-style": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "art-direction",
+        "comic",
+        "book",
+        "style"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-camera-cinematography",
+          "kind": "conditional",
+          "when": "The authorized task requires camera framing, lens choice, depth of field, camera motion or shot continuity."
+        },
+        {
+          "name": "blender-compositing",
+          "kind": "conditional",
+          "when": "The authorized task requires render-pass compositing, masking, color adjustment or a reusable compositor graph."
+        }
+      ]
+    },
+    "blender-compositing": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "surfaces-motion",
+        "compositing"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ],
+      "routes": [
+        {
+          "name": "blender-rendering",
+          "kind": "related",
+          "when": "The authorized task requires renderer configuration, render passes, sampling, output images or sequence verification."
+        },
+        {
+          "name": "blender-lookdev",
+          "kind": "related",
+          "when": "The authorized task requires an integrated material, camera and lighting study against the approved visual direction."
+        }
+      ]
+    },
+    "blender-cosmic-eldritch-horror": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "art-direction",
+        "cosmic",
+        "eldritch",
+        "horror"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-camera-cinematography",
+          "kind": "conditional",
+          "when": "The authorized task requires camera framing, lens choice, depth of field, camera motion or shot continuity."
+        },
+        {
+          "name": "blender-environment-art",
+          "kind": "conditional",
+          "when": "The authorized task requires a composed environment whose architecture, terrain and route support the intended vista."
+        }
+      ]
+    },
+    "blender-cozy-wholesome-mood": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "art-direction",
+        "cozy",
+        "wholesome",
+        "mood"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-lighting",
+          "kind": "conditional",
+          "when": "The authorized task requires light placement, exposure balance, shadows or renderer-aware illumination."
+        },
+        {
+          "name": "blender-set-dressing",
+          "kind": "conditional",
+          "when": "The authorized task requires narrative prop clusters, deliberate density and route-preserving placement."
+        }
+      ]
+    },
+    "blender-creature-modeling": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "geometry",
+        "creature",
+        "modeling"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-sculpting",
+          "kind": "conditional",
+          "when": "The authorized task requires dense organic form development, safe remeshing or multires bake-source preparation."
+        },
+        {
+          "name": "blender-retopology",
+          "kind": "conditional",
+          "when": "The authorized task requires delivery topology rebuilt from a dense sculpt, scan or generated source."
+        },
+        {
+          "name": "blender-rigging-animation",
+          "kind": "conditional",
+          "when": "The authorized task requires combined rig and motion planning before selecting detailed animation specialists."
+        },
+        {
+          "name": "blender-character-modeling",
+          "kind": "conditional",
+          "when": "The authorized task requires a human or humanoid mesh with proportion, clothing and expression-aware topology."
+        }
+      ]
+    },
+    "blender-dark-gritty-mood": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "art-direction",
+        "dark",
+        "gritty",
+        "mood"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-lighting",
+          "kind": "conditional",
+          "when": "The authorized task requires light placement, exposure balance, shadows or renderer-aware illumination."
+        },
+        {
+          "name": "blender-pbr-materials",
+          "kind": "conditional",
+          "when": "The authorized task requires a physically based shader with correct texture channels, color spaces and material response."
+        }
+      ]
+    },
+    "blender-dream-surreal-mood": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "art-direction",
+        "dream",
+        "surreal",
+        "mood"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-camera-cinematography",
+          "kind": "conditional",
+          "when": "The authorized task requires camera framing, lens choice, depth of field, camera motion or shot continuity."
+        },
+        {
+          "name": "blender-simulation",
+          "kind": "conditional",
+          "when": "The authorized task requires a bounded Blender physical simulation with explicit cache and execution limits."
+        }
+      ]
+    },
+    "blender-dream-weirdcore-style": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "art-direction",
+        "dream",
+        "weirdcore",
+        "style"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-compositing",
+          "kind": "conditional",
+          "when": "The authorized task requires render-pass compositing, masking, color adjustment or a reusable compositor graph."
+        },
+        {
+          "name": "blender-set-dressing",
+          "kind": "conditional",
+          "when": "The authorized task requires narrative prop clusters, deliberate density and route-preserving placement."
+        }
+      ]
+    },
+    "blender-environment-art": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "geometry",
+        "environment",
+        "art"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-environment-kits",
+          "kind": "conditional",
+          "when": "The authorized task requires a snapping modular kit, terrain heightfield or slope/height-masked biome scatter."
+        },
+        {
+          "name": "blender-set-dressing",
+          "kind": "conditional",
+          "when": "The authorized task requires narrative prop clusters, deliberate density and route-preserving placement."
+        },
+        {
+          "name": "blender-vegetation",
+          "kind": "conditional",
+          "when": "The authorized task requires plant branching, leaf atlases, wind data or canopy-preserving foliage LODs."
+        },
+        {
+          "name": "blender-game-optimization",
+          "kind": "conditional",
+          "when": "The authorized task requires measured reductions in asset geometry, materials, textures or skeletal cost."
+        }
+      ]
+    },
+    "blender-environment-kits": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "geometry",
+        "environment",
+        "kits"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ]
+    },
+    "blender-facial-shapekeys": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "surfaces-motion",
+        "facial",
+        "shapekeys"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ],
+      "routes": [
+        {
+          "name": "blender-character-rigging",
+          "kind": "related",
+          "when": "The authorized task requires a deforming character rig, weights, controls, constraints or tested rig handoff."
+        },
+        {
+          "name": "blender-animation",
+          "kind": "related",
+          "when": "The authorized task requires keyframed motion, action management, clip baking, retargeting or loop correction."
+        }
+      ]
+    },
+    "blender-fantasy-worlds": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "world-design",
+        "fantasy",
+        "worlds"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-environment-art",
+          "kind": "conditional",
+          "when": "The authorized task requires a composed environment whose architecture, terrain and route support the intended vista."
+        },
+        {
+          "name": "blender-prop-modeling",
+          "kind": "conditional",
+          "when": "The authorized task requires a grounded furniture, tool, container or household prop with functional pivots."
+        },
+        {
+          "name": "blender-vfx-fx",
+          "kind": "conditional",
+          "when": "The authorized task requires a bounded visual effect, procedural effect element or composited FX deliverable."
+        },
+        {
+          "name": "blender-export",
+          "kind": "conditional",
+          "when": "The authorized task requires a common Blender export contract, selection, source preservation and reimport gate."
+        },
+        {
+          "name": "blender-asset-validation",
+          "kind": "conditional",
+          "when": "The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract."
+        }
+      ]
+    },
+    "blender-folk-horror-style": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "art-direction",
+        "folk",
+        "horror",
+        "style"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-prop-modeling",
+          "kind": "conditional",
+          "when": "The authorized task requires a grounded furniture, tool, container or household prop with functional pivots."
+        },
+        {
+          "name": "blender-vegetation",
+          "kind": "conditional",
+          "when": "The authorized task requires plant branching, leaf atlases, wind data or canopy-preserving foliage LODs."
+        }
+      ]
+    },
+    "blender-frutiger-aero-style": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "art-direction",
+        "frutiger",
+        "aero",
+        "style"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-lighting",
+          "kind": "conditional",
+          "when": "The authorized task requires light placement, exposure balance, shadows or renderer-aware illumination."
+        },
+        {
+          "name": "blender-pbr-materials",
+          "kind": "conditional",
+          "when": "The authorized task requires a physically based shader with correct texture channels, color spaces and material response."
+        }
+      ]
+    },
+    "blender-genre-action-combat": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "world-design",
+        "genre",
+        "action",
+        "combat"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-environment-art",
+          "kind": "conditional",
+          "when": "The authorized task requires a composed environment whose architecture, terrain and route support the intended vista."
+        },
+        {
+          "name": "blender-camera-cinematography",
+          "kind": "conditional",
+          "when": "The authorized task requires camera framing, lens choice, depth of field, camera motion or shot continuity."
+        },
+        {
+          "name": "blender-collision-proxies",
+          "kind": "conditional",
+          "when": "The authorized task requires engine-specific collider primitives or convex proxy meshes with intended contact clearance."
+        },
+        {
+          "name": "blender-export",
+          "kind": "conditional",
+          "when": "The authorized task requires a common Blender export contract, selection, source preservation and reimport gate."
+        },
+        {
+          "name": "blender-asset-validation",
+          "kind": "conditional",
+          "when": "The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract."
+        }
+      ]
+    },
+    "blender-genre-card-party-idle": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "world-design",
+        "genre",
+        "card",
+        "party",
+        "idle"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-prop-modeling",
+          "kind": "conditional",
+          "when": "The authorized task requires a grounded furniture, tool, container or household prop with functional pivots."
+        },
+        {
+          "name": "blender-camera-cinematography",
+          "kind": "conditional",
+          "when": "The authorized task requires camera framing, lens choice, depth of field, camera motion or shot continuity."
+        },
+        {
+          "name": "blender-animation",
+          "kind": "conditional",
+          "when": "The authorized task requires keyframed motion, action management, clip baking, retargeting or loop correction."
+        },
+        {
+          "name": "blender-export",
+          "kind": "conditional",
+          "when": "The authorized task requires a common Blender export contract, selection, source preservation and reimport gate."
+        },
+        {
+          "name": "blender-asset-validation",
+          "kind": "conditional",
+          "when": "The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract."
+        }
+      ]
+    },
+    "blender-genre-metroidvania-roguelike": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "world-design",
+        "genre",
+        "metroidvania",
+        "roguelike"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-environment-art",
+          "kind": "conditional",
+          "when": "The authorized task requires a composed environment whose architecture, terrain and route support the intended vista."
+        },
+        {
+          "name": "blender-scene-assembly",
+          "kind": "conditional",
+          "when": "The authorized task requires scene units, collections, linked libraries, overrides or large-set layout."
+        },
+        {
+          "name": "blender-biome-worlds",
+          "kind": "conditional",
+          "when": "The authorized task requires a biome-specific environment with coherent terrain, vegetation, water and climate cues."
+        },
+        {
+          "name": "blender-export",
+          "kind": "conditional",
+          "when": "The authorized task requires a common Blender export contract, selection, source preservation and reimport gate."
+        },
+        {
+          "name": "blender-asset-validation",
+          "kind": "conditional",
+          "when": "The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract."
+        }
+      ]
+    },
+    "blender-genre-narrative-vn": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "world-design",
+        "genre",
+        "narrative",
+        "vn"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-camera-cinematography",
+          "kind": "conditional",
+          "when": "The authorized task requires camera framing, lens choice, depth of field, camera motion or shot continuity."
+        },
+        {
+          "name": "blender-lighting",
+          "kind": "conditional",
+          "when": "The authorized task requires light placement, exposure balance, shadows or renderer-aware illumination."
+        },
+        {
+          "name": "blender-compositing",
+          "kind": "conditional",
+          "when": "The authorized task requires render-pass compositing, masking, color adjustment or a reusable compositor graph."
+        },
+        {
+          "name": "blender-export",
+          "kind": "conditional",
+          "when": "The authorized task requires a common Blender export contract, selection, source preservation and reimport gate."
+        },
+        {
+          "name": "blender-asset-validation",
+          "kind": "conditional",
+          "when": "The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract."
+        }
+      ]
+    },
+    "blender-genre-open-world-sandbox": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "world-design",
+        "genre",
+        "open",
+        "world",
+        "sandbox"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-environment-art",
+          "kind": "conditional",
+          "when": "The authorized task requires a composed environment whose architecture, terrain and route support the intended vista."
+        },
+        {
+          "name": "blender-biome-worlds",
+          "kind": "conditional",
+          "when": "The authorized task requires a biome-specific environment with coherent terrain, vegetation, water and climate cues."
+        },
+        {
+          "name": "blender-lod-pipeline",
+          "kind": "conditional",
+          "when": "The authorized task requires a measured LOD chain with preserved interfaces and screen-size transition inspection."
+        },
+        {
+          "name": "blender-export",
+          "kind": "conditional",
+          "when": "The authorized task requires a common Blender export contract, selection, source preservation and reimport gate."
+        },
+        {
+          "name": "blender-asset-validation",
+          "kind": "conditional",
+          "when": "The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract."
+        }
+      ]
+    },
+    "blender-genre-puzzle-platformer": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "world-design",
+        "genre",
+        "puzzle",
+        "platformer"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-environment-art",
+          "kind": "conditional",
+          "when": "The authorized task requires a composed environment whose architecture, terrain and route support the intended vista."
+        },
+        {
+          "name": "blender-prop-modeling",
+          "kind": "conditional",
+          "when": "The authorized task requires a grounded furniture, tool, container or household prop with functional pivots."
+        },
+        {
+          "name": "blender-collision-proxies",
+          "kind": "conditional",
+          "when": "The authorized task requires engine-specific collider primitives or convex proxy meshes with intended contact clearance."
+        },
+        {
+          "name": "blender-export",
+          "kind": "conditional",
+          "when": "The authorized task requires a common Blender export contract, selection, source preservation and reimport gate."
+        },
+        {
+          "name": "blender-asset-validation",
+          "kind": "conditional",
+          "when": "The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract."
+        }
+      ]
+    },
+    "blender-genre-racing-sports": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "world-design",
+        "genre",
+        "racing",
+        "sports"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-environment-art",
+          "kind": "conditional",
+          "when": "The authorized task requires a composed environment whose architecture, terrain and route support the intended vista."
+        },
+        {
+          "name": "blender-vehicle-modeling",
+          "kind": "conditional",
+          "when": "The authorized task requires vehicle proportions, bodywork and separately moving or shaded systems."
+        },
+        {
+          "name": "blender-camera-cinematography",
+          "kind": "conditional",
+          "when": "The authorized task requires camera framing, lens choice, depth of field, camera motion or shot continuity."
+        },
+        {
+          "name": "blender-export",
+          "kind": "conditional",
+          "when": "The authorized task requires a common Blender export contract, selection, source preservation and reimport gate."
+        },
+        {
+          "name": "blender-asset-validation",
+          "kind": "conditional",
+          "when": "The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract."
+        }
+      ]
+    },
+    "blender-genre-rpg": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "world-design",
+        "genre",
+        "rpg"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-environment-art",
+          "kind": "conditional",
+          "when": "The authorized task requires a composed environment whose architecture, terrain and route support the intended vista."
+        },
+        {
+          "name": "blender-character-archetypes",
+          "kind": "conditional",
+          "when": "The authorized task requires a readable character archetype with coherent silhouette, costume and role cues."
+        },
+        {
+          "name": "blender-prop-modeling",
+          "kind": "conditional",
+          "when": "The authorized task requires a grounded furniture, tool, container or household prop with functional pivots."
+        },
+        {
+          "name": "blender-export",
+          "kind": "conditional",
+          "when": "The authorized task requires a common Blender export contract, selection, source preservation and reimport gate."
+        },
+        {
+          "name": "blender-asset-validation",
+          "kind": "conditional",
+          "when": "The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract."
+        }
+      ]
+    },
+    "blender-genre-shooter": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "world-design",
+        "genre",
+        "shooter"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-environment-art",
+          "kind": "conditional",
+          "when": "The authorized task requires a composed environment whose architecture, terrain and route support the intended vista."
+        },
+        {
+          "name": "blender-collision-proxies",
+          "kind": "conditional",
+          "when": "The authorized task requires engine-specific collider primitives or convex proxy meshes with intended contact clearance."
+        },
+        {
+          "name": "blender-camera-cinematography",
+          "kind": "conditional",
+          "when": "The authorized task requires camera framing, lens choice, depth of field, camera motion or shot continuity."
+        },
+        {
+          "name": "blender-export",
+          "kind": "conditional",
+          "when": "The authorized task requires a common Blender export contract, selection, source preservation and reimport gate."
+        },
+        {
+          "name": "blender-asset-validation",
+          "kind": "conditional",
+          "when": "The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract."
+        }
+      ]
+    },
+    "blender-genre-soulslike": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "world-design",
+        "genre",
+        "soulslike"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-environment-art",
+          "kind": "conditional",
+          "when": "The authorized task requires a composed environment whose architecture, terrain and route support the intended vista."
+        },
+        {
+          "name": "blender-lighting",
+          "kind": "conditional",
+          "when": "The authorized task requires light placement, exposure balance, shadows or renderer-aware illumination."
+        },
+        {
+          "name": "blender-dark-gritty-mood",
+          "kind": "conditional",
+          "when": "The authorized task requires a dark or gritty mood with readable values, causal wear and restrained contrast."
+        },
+        {
+          "name": "blender-export",
+          "kind": "conditional",
+          "when": "The authorized task requires a common Blender export contract, selection, source preservation and reimport gate."
+        },
+        {
+          "name": "blender-asset-validation",
+          "kind": "conditional",
+          "when": "The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract."
+        }
+      ]
+    },
+    "blender-genre-stealth": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "world-design",
+        "genre",
+        "stealth"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-environment-art",
+          "kind": "conditional",
+          "when": "The authorized task requires a composed environment whose architecture, terrain and route support the intended vista."
+        },
+        {
+          "name": "blender-lighting",
+          "kind": "conditional",
+          "when": "The authorized task requires light placement, exposure balance, shadows or renderer-aware illumination."
+        },
+        {
+          "name": "blender-collision-proxies",
+          "kind": "conditional",
+          "when": "The authorized task requires engine-specific collider primitives or convex proxy meshes with intended contact clearance."
+        },
+        {
+          "name": "blender-export",
+          "kind": "conditional",
+          "when": "The authorized task requires a common Blender export contract, selection, source preservation and reimport gate."
+        },
+        {
+          "name": "blender-asset-validation",
+          "kind": "conditional",
+          "when": "The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract."
+        }
+      ]
+    },
+    "blender-genre-strategy-sim": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "world-design",
+        "genre",
+        "strategy",
+        "sim"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-environment-art",
+          "kind": "conditional",
+          "when": "The authorized task requires a composed environment whose architecture, terrain and route support the intended vista."
+        },
+        {
+          "name": "blender-isometric-style",
+          "kind": "conditional",
+          "when": "The authorized task requires isometric projection, composition and scale-readable object presentation."
+        },
+        {
+          "name": "blender-prop-modeling",
+          "kind": "conditional",
+          "when": "The authorized task requires a grounded furniture, tool, container or household prop with functional pivots."
+        },
+        {
+          "name": "blender-export",
+          "kind": "conditional",
+          "when": "The authorized task requires a common Blender export contract, selection, source preservation and reimport gate."
+        },
+        {
+          "name": "blender-asset-validation",
+          "kind": "conditional",
+          "when": "The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract."
+        }
+      ]
+    },
+    "blender-genre-survival": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "world-design",
+        "genre",
+        "survival"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-prop-modeling",
+          "kind": "conditional",
+          "when": "The authorized task requires a grounded furniture, tool, container or household prop with functional pivots."
+        },
+        {
+          "name": "blender-set-dressing",
+          "kind": "conditional",
+          "when": "The authorized task requires narrative prop clusters, deliberate density and route-preserving placement."
+        },
+        {
+          "name": "blender-biome-worlds",
+          "kind": "conditional",
+          "when": "The authorized task requires a biome-specific environment with coherent terrain, vegetation, water and climate cues."
+        },
+        {
+          "name": "blender-export",
+          "kind": "conditional",
+          "when": "The authorized task requires a common Blender export contract, selection, source preservation and reimport gate."
+        },
+        {
+          "name": "blender-asset-validation",
+          "kind": "conditional",
+          "when": "The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract."
+        }
+      ]
+    },
+    "blender-geometry-nodes": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "geometry",
+        "nodes"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ]
+    },
+    "blender-godot-export": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "production-workflow",
+        "godot",
+        "export"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-export",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ]
+    },
+    "blender-hair-grooming": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "surfaces-motion",
+        "hair",
+        "grooming"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ],
+      "routes": [
+        {
+          "name": "blender-cloth-simulation",
+          "kind": "related",
+          "when": "The authorized task requires a bounded cloth simulation with collision, cache and motion acceptance."
+        },
+        {
+          "name": "blender-pbr-materials",
+          "kind": "related",
+          "when": "The authorized task requires a physically based shader with correct texture channels, color spaces and material response."
+        },
+        {
+          "name": "blender-animation",
+          "kind": "related",
+          "when": "The authorized task requires keyframed motion, action management, clip baking, retargeting or loop correction."
+        }
+      ]
+    },
+    "blender-hand-painted-style": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "art-direction",
+        "hand",
+        "painted",
+        "style"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-texturing",
+          "kind": "conditional",
+          "when": "The authorized task requires texture creation or assembly with surface scale, UV correspondence and channel validation."
+        },
+        {
+          "name": "blender-uv-unwrapping",
+          "kind": "conditional",
+          "when": "The authorized task requires seams, UV density, pixel padding, trims, UDIM or requested lightmap channels."
+        }
+      ]
+    },
+    "blender-hard-surface": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "geometry",
+        "hard",
+        "surface"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ]
+    },
+    "blender-hd-2d-style": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "art-direction",
+        "hd",
+        "2d",
+        "style"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-camera-cinematography",
+          "kind": "conditional",
+          "when": "The authorized task requires camera framing, lens choice, depth of field, camera motion or shot continuity."
+        },
+        {
+          "name": "blender-compositing",
+          "kind": "conditional",
+          "when": "The authorized task requires render-pass compositing, masking, color adjustment or a reusable compositor graph."
+        }
+      ]
+    },
+    "blender-historical-worlds": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "world-design",
+        "historical",
+        "worlds"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-environment-art",
+          "kind": "conditional",
+          "when": "The authorized task requires a composed environment whose architecture, terrain and route support the intended vista."
+        },
+        {
+          "name": "blender-prop-modeling",
+          "kind": "conditional",
+          "when": "The authorized task requires a grounded furniture, tool, container or household prop with functional pivots."
+        },
+        {
+          "name": "blender-reference-modeling",
+          "kind": "conditional",
+          "when": "The authorized task requires a reference-dominant reconstruction requiring camera, silhouette and proportion comparison."
+        },
+        {
+          "name": "blender-export",
+          "kind": "conditional",
+          "when": "The authorized task requires a common Blender export contract, selection, source preservation and reimport gate."
+        },
+        {
+          "name": "blender-asset-validation",
+          "kind": "conditional",
+          "when": "The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract."
+        }
+      ]
+    },
+    "blender-horror-style": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "art-direction",
+        "horror",
+        "style"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-camera-cinematography",
+          "kind": "conditional",
+          "when": "The authorized task requires camera framing, lens choice, depth of field, camera motion or shot continuity."
+        },
+        {
+          "name": "blender-lighting",
+          "kind": "conditional",
+          "when": "The authorized task requires light placement, exposure balance, shadows or renderer-aware illumination."
+        }
+      ]
+    },
+    "blender-indie-horror-aesthetics": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "art-direction",
+        "indie",
+        "horror",
+        "aesthetics"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-liminal-space-style",
+          "kind": "conditional",
+          "when": "The authorized task requires a liminal-space treatment using scale, repetition, emptiness and architectural ambiguity."
+        },
+        {
+          "name": "blender-pbr-materials",
+          "kind": "conditional",
+          "when": "The authorized task requires a physically based shader with correct texture channels, color spaces and material response."
+        },
+        {
+          "name": "blender-psx-horror-style",
+          "kind": "conditional",
+          "when": "The authorized task requires a PSX-inspired horror treatment with intentional geometry, texture and temporal artifacts."
+        }
+      ]
+    },
+    "blender-isometric-style": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "art-direction",
+        "isometric",
+        "style"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-camera-cinematography",
+          "kind": "conditional",
+          "when": "The authorized task requires camera framing, lens choice, depth of field, camera motion or shot continuity."
+        },
+        {
+          "name": "blender-environment-kits",
+          "kind": "conditional",
+          "when": "The authorized task requires a snapping modular kit, terrain heightfield or slope/height-masked biome scatter."
+        }
+      ]
+    },
+    "blender-lighting": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "surfaces-motion",
+        "lighting"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ],
+      "routes": [
+        {
+          "name": "blender-time-of-day",
+          "kind": "related",
+          "when": "The authorized task requires time-of-day or weather-adjacent lighting states with matched transitions and exposure."
+        },
+        {
+          "name": "blender-lookdev",
+          "kind": "related",
+          "when": "The authorized task requires an integrated material, camera and lighting study against the approved visual direction."
+        },
+        {
+          "name": "blender-rendering",
+          "kind": "related",
+          "when": "The authorized task requires renderer configuration, render passes, sampling, output images or sequence verification."
+        }
+      ]
+    },
+    "blender-liminal-space-style": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "art-direction",
+        "liminal",
+        "space",
+        "style"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-environment-kits",
+          "kind": "conditional",
+          "when": "The authorized task requires a snapping modular kit, terrain heightfield or slope/height-masked biome scatter."
+        },
+        {
+          "name": "blender-lighting",
+          "kind": "conditional",
+          "when": "The authorized task requires light placement, exposure balance, shadows or renderer-aware illumination."
+        }
+      ]
+    },
+    "blender-lod-pipeline": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "geometry",
+        "lod",
+        "pipeline"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ]
+    },
+    "blender-lowpoly-style": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "art-direction",
+        "lowpoly",
+        "style"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-game-optimization",
+          "kind": "conditional",
+          "when": "The authorized task requires measured reductions in asset geometry, materials, textures or skeletal cost."
+        },
+        {
+          "name": "blender-psx-horror-style",
+          "kind": "conditional",
+          "when": "The authorized task requires a PSX-inspired horror treatment with intentional geometry, texture and temporal artifacts."
+        }
+      ]
+    },
+    "blender-manga-style": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "art-direction",
+        "manga",
+        "style"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-character-modeling",
+          "kind": "conditional",
+          "when": "The authorized task requires a human or humanoid mesh with proportion, clothing and expression-aware topology."
+        },
+        {
+          "name": "blender-compositing",
+          "kind": "conditional",
+          "when": "The authorized task requires render-pass compositing, masking, color adjustment or a reusable compositor graph."
+        }
+      ]
+    },
+    "blender-mascot-puppet-horror": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "art-direction",
+        "mascot",
+        "puppet",
+        "horror"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-animation",
+          "kind": "conditional",
+          "when": "The authorized task requires keyframed motion, action management, clip baking, retargeting or loop correction."
+        },
+        {
+          "name": "blender-character-modeling",
+          "kind": "conditional",
+          "when": "The authorized task requires a human or humanoid mesh with proportion, clothing and expression-aware topology."
+        },
+        {
+          "name": "blender-pbr-materials",
+          "kind": "conditional",
+          "when": "The authorized task requires a physically based shader with correct texture channels, color spaces and material response."
+        }
+      ]
+    },
+    "blender-minimalist-style": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "art-direction",
+        "minimalist",
+        "style"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-lookdev",
+          "kind": "conditional",
+          "when": "The authorized task requires an integrated material, camera and lighting study against the approved visual direction."
+        },
+        {
+          "name": "blender-prop-modeling",
+          "kind": "conditional",
+          "when": "The authorized task requires a grounded furniture, tool, container or household prop with functional pivots."
+        }
+      ]
+    },
+    "blender-neon-retrofuturism": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "art-direction",
+        "neon",
+        "retrofuturism"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-compositing",
+          "kind": "conditional",
+          "when": "The authorized task requires render-pass compositing, masking, color adjustment or a reusable compositor graph."
+        },
+        {
+          "name": "blender-lighting",
+          "kind": "conditional",
+          "when": "The authorized task requires light placement, exposure balance, shadows or renderer-aware illumination."
+        }
+      ]
+    },
+    "blender-noir-style": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "art-direction",
+        "noir",
+        "style"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-compositing",
+          "kind": "conditional",
+          "when": "The authorized task requires render-pass compositing, masking, color adjustment or a reusable compositor graph."
+        },
+        {
+          "name": "blender-lighting",
+          "kind": "conditional",
+          "when": "The authorized task requires light placement, exposure balance, shadows or renderer-aware illumination."
+        }
+      ]
+    },
+    "blender-painterly-style": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "art-direction",
+        "painterly",
+        "style"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-compositing",
+          "kind": "conditional",
+          "when": "The authorized task requires render-pass compositing, masking, color adjustment or a reusable compositor graph."
+        },
+        {
+          "name": "blender-texturing",
+          "kind": "conditional",
+          "when": "The authorized task requires texture creation or assembly with surface scale, UV correspondence and channel validation."
+        }
+      ]
+    },
+    "blender-pbr-materials": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "surfaces-motion",
+        "pbr",
+        "materials"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ],
+      "routes": [
+        {
+          "name": "blender-texturing",
+          "kind": "related",
+          "when": "The authorized task requires texture creation or assembly with surface scale, UV correspondence and channel validation."
+        },
+        {
+          "name": "blender-texture-baking",
+          "kind": "related",
+          "when": "The authorized task requires high-to-low or multires texture baking with cages, ray isolation and map checks."
+        },
+        {
+          "name": "blender-lookdev",
+          "kind": "related",
+          "when": "The authorized task requires an integrated material, camera and lighting study against the approved visual direction."
+        }
+      ]
+    },
+    "blender-pipeline-automation": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "production-workflow",
+        "pipeline",
+        "automation"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ]
+    },
+    "blender-pixel-art-style": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "art-direction",
+        "pixel",
+        "art",
+        "style"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-rendering",
+          "kind": "conditional",
+          "when": "The authorized task requires renderer configuration, render passes, sampling, output images or sequence verification."
+        },
+        {
+          "name": "blender-texturing",
+          "kind": "conditional",
+          "when": "The authorized task requires texture creation or assembly with surface scale, UV correspondence and channel validation."
+        }
+      ]
+    },
+    "blender-procedural-modeling": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "geometry",
+        "procedural",
+        "modeling"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-geometry-nodes",
+          "kind": "conditional",
+          "when": "The authorized task requires a field/domain-correct Geometry Nodes graph, instancing system or bounded procedural zone."
+        },
+        {
+          "name": "blender-environment-kits",
+          "kind": "conditional",
+          "when": "The authorized task requires a snapping modular kit, terrain heightfield or slope/height-masked biome scatter."
+        },
+        {
+          "name": "blender-game-optimization",
+          "kind": "conditional",
+          "when": "The authorized task requires measured reductions in asset geometry, materials, textures or skeletal cost."
+        }
+      ]
+    },
+    "blender-prop-modeling": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "geometry",
+        "prop",
+        "modeling"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ]
+    },
+    "blender-psx-horror-style": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "art-direction",
+        "psx",
+        "horror",
+        "style"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-compositing",
+          "kind": "conditional",
+          "when": "The authorized task requires render-pass compositing, masking, color adjustment or a reusable compositor graph."
+        },
+        {
+          "name": "blender-export",
+          "kind": "conditional",
+          "when": "The authorized task requires a common Blender export contract, selection, source preservation and reimport gate."
+        },
+        {
+          "name": "blender-lowpoly-style",
+          "kind": "conditional",
+          "when": "The authorized task requires a deliberate low-poly visual direction with readable faceting and controlled texture complexity."
+        }
+      ]
+    },
+    "blender-realistic-style": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "art-direction",
+        "realistic",
+        "style"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-game-optimization",
+          "kind": "conditional",
+          "when": "The authorized task requires measured reductions in asset geometry, materials, textures or skeletal cost."
+        },
+        {
+          "name": "blender-reference-modeling",
+          "kind": "conditional",
+          "when": "The authorized task requires a reference-dominant reconstruction requiring camera, silhouette and proportion comparison."
+        },
+        {
+          "name": "blender-texture-baking",
+          "kind": "conditional",
+          "when": "The authorized task requires high-to-low or multires texture baking with cages, ray isolation and map checks."
+        }
+      ]
+    },
+    "blender-rendering": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "surfaces-motion",
+        "rendering"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ],
+      "routes": [
+        {
+          "name": "blender-lighting",
+          "kind": "related",
+          "when": "The authorized task requires light placement, exposure balance, shadows or renderer-aware illumination."
+        },
+        {
+          "name": "blender-compositing",
+          "kind": "related",
+          "when": "The authorized task requires render-pass compositing, masking, color adjustment or a reusable compositor graph."
+        },
+        {
+          "name": "blender-video-editing",
+          "kind": "related",
+          "when": "The authorized task requires Blender video-sequence assembly, timing, transitions or verified media output."
+        }
+      ]
+    },
+    "blender-retopology": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "geometry",
+        "retopology"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ]
+    },
+    "blender-retro-16bit-style": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "art-direction",
+        "retro",
+        "16bit",
+        "style"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-pixel-art-style",
+          "kind": "conditional",
+          "when": "The authorized task requires a pixel-art treatment with consistent pixel density, palette and sampling."
+        },
+        {
+          "name": "blender-texturing",
+          "kind": "conditional",
+          "when": "The authorized task requires texture creation or assembly with surface scale, UV correspondence and channel validation."
+        }
+      ]
+    },
+    "blender-retro-8bit-style": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "art-direction",
+        "retro",
+        "8bit",
+        "style"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-compositing",
+          "kind": "conditional",
+          "when": "The authorized task requires render-pass compositing, masking, color adjustment or a reusable compositor graph."
+        },
+        {
+          "name": "blender-pixel-art-style",
+          "kind": "conditional",
+          "when": "The authorized task requires a pixel-art treatment with consistent pixel density, palette and sampling."
+        }
+      ]
+    },
+    "blender-scene-assembly": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "geometry",
+        "scene",
+        "assembly"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ]
+    },
+    "blender-sci-fi-punk-worlds": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "world-design",
+        "sci",
+        "fi",
+        "punk",
+        "worlds"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-hard-surface",
+          "kind": "conditional",
+          "when": "The authorized task requires mechanical bodywork, boolean cuts, bevels or controlled hard-surface highlights."
+        },
+        {
+          "name": "blender-environment-art",
+          "kind": "conditional",
+          "when": "The authorized task requires a composed environment whose architecture, terrain and route support the intended vista."
+        },
+        {
+          "name": "blender-pbr-materials",
+          "kind": "conditional",
+          "when": "The authorized task requires a physically based shader with correct texture channels, color spaces and material response."
+        },
+        {
+          "name": "blender-export",
+          "kind": "conditional",
+          "when": "The authorized task requires a common Blender export contract, selection, source preservation and reimport gate."
+        },
+        {
+          "name": "blender-asset-validation",
+          "kind": "conditional",
+          "when": "The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract."
+        }
+      ]
+    },
+    "blender-sculpting": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "geometry",
+        "sculpting"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-retopology",
+          "kind": "conditional",
+          "when": "The authorized task requires delivery topology rebuilt from a dense sculpt, scan or generated source."
+        },
+        {
+          "name": "blender-texture-baking",
+          "kind": "conditional",
+          "when": "The authorized task requires high-to-low or multires texture baking with cages, ray isolation and map checks."
+        },
+        {
+          "name": "blender-character-modeling",
+          "kind": "conditional",
+          "when": "The authorized task requires a human or humanoid mesh with proportion, clothing and expression-aware topology."
+        },
+        {
+          "name": "blender-creature-modeling",
+          "kind": "conditional",
+          "when": "The authorized task requires a nonhuman creature with anatomy-informed masses, locomotion and joint clearance."
+        }
+      ]
+    },
+    "blender-set-dressing": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "geometry",
+        "set",
+        "dressing"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ]
+    },
+    "blender-simulation": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "surfaces-motion",
+        "simulation"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ],
+      "routes": [
+        {
+          "name": "blender-cloth-simulation",
+          "kind": "related",
+          "when": "The authorized task requires a bounded cloth simulation with collision, cache and motion acceptance."
+        },
+        {
+          "name": "blender-vfx-fx",
+          "kind": "related",
+          "when": "The authorized task requires a bounded visual effect, procedural effect element or composited FX deliverable."
+        },
+        {
+          "name": "blender-animation",
+          "kind": "related",
+          "when": "The authorized task requires keyframed motion, action management, clip baking, retargeting or loop correction."
+        }
+      ]
+    },
+    "blender-stop-motion-craft-style": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "art-direction",
+        "stop",
+        "motion",
+        "craft",
+        "style"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-animation",
+          "kind": "conditional",
+          "when": "The authorized task requires keyframed motion, action management, clip baking, retargeting or loop correction."
+        },
+        {
+          "name": "blender-character-modeling",
+          "kind": "conditional",
+          "when": "The authorized task requires a human or humanoid mesh with proportion, clothing and expression-aware topology."
+        },
+        {
+          "name": "blender-pbr-materials",
+          "kind": "conditional",
+          "when": "The authorized task requires a physically based shader with correct texture channels, color spaces and material response."
+        }
+      ]
+    },
+    "blender-stylized-style": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "art-direction",
+        "stylized",
+        "style"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-anime-style",
+          "kind": "conditional",
+          "when": "The authorized task requires anime proportions, facial shape language and anime-specific cel rendering."
+        },
+        {
+          "name": "blender-export",
+          "kind": "conditional",
+          "when": "The authorized task requires a common Blender export contract, selection, source preservation and reimport gate."
+        },
+        {
+          "name": "blender-hand-painted-style",
+          "kind": "conditional",
+          "when": "The authorized task requires hand-painted texture direction, brushwork and geometry-to-texture hierarchy."
+        },
+        {
+          "name": "blender-pbr-materials",
+          "kind": "conditional",
+          "when": "The authorized task requires a physically based shader with correct texture channels, color spaces and material response."
+        }
+      ]
+    },
+    "blender-texture-baking": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "surfaces-motion",
+        "texture",
+        "baking"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ],
+      "routes": [
+        {
+          "name": "blender-uv-unwrapping",
+          "kind": "related",
+          "when": "The authorized task requires seams, UV density, pixel padding, trims, UDIM or requested lightmap channels."
+        },
+        {
+          "name": "blender-pbr-materials",
+          "kind": "related",
+          "when": "The authorized task requires a physically based shader with correct texture channels, color spaces and material response."
+        }
+      ]
+    },
+    "blender-texturing": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "surfaces-motion",
+        "texturing"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ],
+      "routes": [
+        {
+          "name": "blender-pbr-materials",
+          "kind": "related",
+          "when": "The authorized task requires a physically based shader with correct texture channels, color spaces and material response."
+        },
+        {
+          "name": "blender-texture-baking",
+          "kind": "related",
+          "when": "The authorized task requires high-to-low or multires texture baking with cages, ray isolation and map checks."
+        },
+        {
+          "name": "blender-uv-unwrapping",
+          "kind": "related",
+          "when": "The authorized task requires seams, UV density, pixel padding, trims, UDIM or requested lightmap channels."
+        }
+      ]
+    },
+    "blender-time-of-day": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "surfaces-motion",
+        "time",
+        "of",
+        "day"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ],
+      "routes": [
+        {
+          "name": "blender-lighting",
+          "kind": "related",
+          "when": "The authorized task requires light placement, exposure balance, shadows or renderer-aware illumination."
+        },
+        {
+          "name": "blender-weather-fx",
+          "kind": "related",
+          "when": "The authorized task requires a weather-effect setup with bounded particles/volumes, scene visibility and cache costs."
+        },
+        {
+          "name": "blender-compositing",
+          "kind": "related",
+          "when": "The authorized task requires render-pass compositing, masking, color adjustment or a reusable compositor graph."
+        }
+      ]
+    },
+    "blender-unity-export": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "production-workflow",
+        "unity",
+        "export"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-export",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ]
+    },
+    "blender-unreal-export": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "production-workflow",
+        "unreal",
+        "export"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-export",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ]
+    },
+    "blender-uv-unwrapping": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "geometry",
+        "uv",
+        "unwrapping"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ]
+    },
+    "blender-vector-style": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "art-direction",
+        "vector",
+        "style"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-compositing",
+          "kind": "conditional",
+          "when": "The authorized task requires render-pass compositing, masking, color adjustment or a reusable compositor graph."
+        },
+        {
+          "name": "blender-rendering",
+          "kind": "conditional",
+          "when": "The authorized task requires renderer configuration, render passes, sampling, output images or sequence verification."
+        }
+      ]
+    },
+    "blender-vegetation": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "geometry",
+        "vegetation"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ]
+    },
+    "blender-vehicle-modeling": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "geometry",
+        "vehicle",
+        "modeling"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-hard-surface",
+          "kind": "conditional",
+          "when": "The authorized task requires mechanical bodywork, boolean cuts, bevels or controlled hard-surface highlights."
+        },
+        {
+          "name": "blender-lod-pipeline",
+          "kind": "conditional",
+          "when": "The authorized task requires a measured LOD chain with preserved interfaces and screen-size transition inspection."
+        },
+        {
+          "name": "blender-collision-proxies",
+          "kind": "conditional",
+          "when": "The authorized task requires engine-specific collider primitives or convex proxy meshes with intended contact clearance."
+        }
+      ]
+    },
+    "blender-vfx-fx": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "surfaces-motion",
+        "vfx",
+        "fx"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ],
+      "routes": [
+        {
+          "name": "blender-simulation",
+          "kind": "related",
+          "when": "The authorized task requires a bounded Blender physical simulation with explicit cache and execution limits."
+        },
+        {
+          "name": "blender-rendering",
+          "kind": "related",
+          "when": "The authorized task requires renderer configuration, render passes, sampling, output images or sequence verification."
+        },
+        {
+          "name": "blender-compositing",
+          "kind": "related",
+          "when": "The authorized task requires render-pass compositing, masking, color adjustment or a reusable compositor graph."
+        }
+      ]
+    },
+    "blender-video-editing": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "surfaces-motion",
+        "video",
+        "editing"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ],
+      "routes": [
+        {
+          "name": "blender-rendering",
+          "kind": "related",
+          "when": "The authorized task requires renderer configuration, render passes, sampling, output images or sequence verification."
+        },
+        {
+          "name": "blender-compositing",
+          "kind": "related",
+          "when": "The authorized task requires render-pass compositing, masking, color adjustment or a reusable compositor graph."
+        },
+        {
+          "name": "blender-camera-cinematography",
+          "kind": "related",
+          "when": "The authorized task requires camera framing, lens choice, depth of field, camera motion or shot continuity."
+        }
+      ]
+    },
+    "blender-visual-console-eras": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "world-design",
+        "visual",
+        "console",
+        "eras"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-lowpoly-style",
+          "kind": "conditional",
+          "when": "The authorized task requires a deliberate low-poly visual direction with readable faceting and controlled texture complexity."
+        },
+        {
+          "name": "blender-compositing",
+          "kind": "conditional",
+          "when": "The authorized task requires render-pass compositing, masking, color adjustment or a reusable compositor graph."
+        },
+        {
+          "name": "blender-texturing",
+          "kind": "conditional",
+          "when": "The authorized task requires texture creation or assembly with surface scale, UV correspondence and channel validation."
+        },
+        {
+          "name": "blender-export",
+          "kind": "conditional",
+          "when": "The authorized task requires a common Blender export contract, selection, source preservation and reimport gate."
+        },
+        {
+          "name": "blender-asset-validation",
+          "kind": "conditional",
+          "when": "The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract."
+        }
+      ]
+    },
+    "blender-voxel-style": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "art-direction",
+        "voxel",
+        "style"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-game-optimization",
+          "kind": "conditional",
+          "when": "The authorized task requires measured reductions in asset geometry, materials, textures or skeletal cost."
+        },
+        {
+          "name": "blender-geometry-nodes",
+          "kind": "conditional",
+          "when": "The authorized task requires a field/domain-correct Geometry Nodes graph, instancing system or bounded procedural zone."
+        }
+      ]
+    },
+    "blender-weather-fx": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "surfaces-motion",
+        "weather",
+        "fx"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ],
+      "routes": [
+        {
+          "name": "blender-time-of-day",
+          "kind": "related",
+          "when": "The authorized task requires time-of-day or weather-adjacent lighting states with matched transitions and exposure."
+        },
+        {
+          "name": "blender-texturing",
+          "kind": "related",
+          "when": "The authorized task requires texture creation or assembly with surface scale, UV correspondence and channel validation."
+        },
+        {
+          "name": "blender-vfx-fx",
+          "kind": "related",
+          "when": "The authorized task requires a bounded visual effect, procedural effect element or composited FX deliverable."
+        }
+      ]
+    },
+    "blender-workflow-recipes": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "production-workflow",
+        "workflow",
+        "recipes"
       ],
       "dependencies": [
         {
@@ -12195,6 +15779,445 @@
         {
           "name": "react-native-expo",
           "when": "The affected iOS/Android product uses React Native or Expo."
+        }
+      ]
+    },
+    {
+      "id": "blender-production",
+      "title": "Blender Production Disciplines and Evidence",
+      "decision": "Use blender-development for an asset contract and coordination, then select only the requested geometry, surface, motion, art-direction, world/genre or delivery discipline. Creation and refinement require a writer; review remains read-only. Technical checks, actual image judgments and target-engine acceptance are separate.",
+      "skills": [
+        {
+          "name": "blender-development",
+          "when": "A Blender asset task needs a scoped brief, ownership boundaries, evidence loop or coordination across disciplines."
+        },
+        {
+          "name": "blender-modeling",
+          "when": "The authorized task requires general mesh blockout, precision editing, modifier construction or topology cleanup."
+        },
+        {
+          "name": "blender-reference-modeling",
+          "when": "The authorized task requires a reference-dominant reconstruction requiring camera, silhouette and proportion comparison."
+        },
+        {
+          "name": "blender-materials-uv",
+          "when": "The authorized task requires combined material and UV planning before selecting a specialized surface workflow."
+        },
+        {
+          "name": "blender-rigging-animation",
+          "when": "The authorized task requires combined rig and motion planning before selecting detailed animation specialists."
+        },
+        {
+          "name": "blender-lookdev",
+          "when": "The authorized task requires an integrated material, camera and lighting study against the approved visual direction."
+        },
+        {
+          "name": "blender-game-optimization",
+          "when": "The authorized task requires measured reductions in asset geometry, materials, textures or skeletal cost."
+        },
+        {
+          "name": "blender-export",
+          "when": "The authorized task requires a common Blender export contract, selection, source preservation and reimport gate."
+        },
+        {
+          "name": "blender-asset-validation",
+          "when": "The authorized task requires technical mesh, transform, dependency or delivery validation against the asset contract."
+        },
+        {
+          "name": "blender-visual-review",
+          "when": "The authorized task requires read-only judgments of current-revision images and actionable visual correction priorities."
+        },
+        {
+          "name": "blender-addon-development",
+          "when": "The authorized task requires a Blender add-on, operator, panel, property registration or version-compatible extension."
+        },
+        {
+          "name": "blender-analog-found-footage-horror",
+          "when": "The authorized task requires an analog or found-footage horror treatment with capture artifacts and legible shot information."
+        },
+        {
+          "name": "blender-animation",
+          "when": "The authorized task requires keyframed motion, action management, clip baking, retargeting or loop correction."
+        },
+        {
+          "name": "blender-anime-style",
+          "when": "The authorized task requires anime proportions, facial shape language and anime-specific cel rendering."
+        },
+        {
+          "name": "blender-apocalypse-worlds",
+          "when": "The authorized task requires a post-apocalyptic, dystopian or utopian world with coherent damage and settlement logic."
+        },
+        {
+          "name": "blender-archviz",
+          "when": "The authorized task requires measured architectural interior or exterior presentation."
+        },
+        {
+          "name": "blender-biome-worlds",
+          "when": "The authorized task requires a biome-specific environment with coherent terrain, vegetation, water and climate cues."
+        },
+        {
+          "name": "blender-body-horror-style",
+          "when": "The authorized task requires an approved body-horror design with controlled organic transformation and surface hierarchy."
+        },
+        {
+          "name": "blender-brutalist-mood",
+          "when": "The authorized task requires a brutalist mood based on mass, concrete, scale and controlled spatial light."
+        },
+        {
+          "name": "blender-camera-cinematography",
+          "when": "The authorized task requires camera framing, lens choice, depth of field, camera motion or shot continuity."
+        },
+        {
+          "name": "blender-cartoon-style",
+          "when": "The authorized task requires cartoon exaggeration, simplified forms and expressive surface treatment."
+        },
+        {
+          "name": "blender-character-archetypes",
+          "when": "The authorized task requires a readable character archetype with coherent silhouette, costume and role cues."
+        },
+        {
+          "name": "blender-character-modeling",
+          "when": "The authorized task requires a human or humanoid mesh with proportion, clothing and expression-aware topology."
+        },
+        {
+          "name": "blender-character-rigging",
+          "when": "The authorized task requires a deforming character rig, weights, controls, constraints or tested rig handoff."
+        },
+        {
+          "name": "blender-chibi-style",
+          "when": "The authorized task requires chibi head-to-body ratios, simplified anatomy and readable miniature expressions."
+        },
+        {
+          "name": "blender-cloth-simulation",
+          "when": "The authorized task requires a bounded cloth simulation with collision, cache and motion acceptance."
+        },
+        {
+          "name": "blender-clothing",
+          "when": "The authorized task requires garment construction, thickness, fit, folds or clothing deformation preparation."
+        },
+        {
+          "name": "blender-collision-proxies",
+          "when": "The authorized task requires engine-specific collider primitives or convex proxy meshes with intended contact clearance."
+        },
+        {
+          "name": "blender-comic-book-style",
+          "when": "The authorized task requires comic-book graphic shapes, halftones, outlines and panel-aware presentation."
+        },
+        {
+          "name": "blender-compositing",
+          "when": "The authorized task requires render-pass compositing, masking, color adjustment or a reusable compositor graph."
+        },
+        {
+          "name": "blender-cosmic-eldritch-horror",
+          "when": "The authorized task requires a cosmic or eldritch horror direction using scale, unknowability and controlled visual abstraction."
+        },
+        {
+          "name": "blender-cozy-wholesome-mood",
+          "when": "The authorized task requires a cozy or wholesome mood with inviting proportions, materials and light."
+        },
+        {
+          "name": "blender-creature-modeling",
+          "when": "The authorized task requires a nonhuman creature with anatomy-informed masses, locomotion and joint clearance."
+        },
+        {
+          "name": "blender-dark-gritty-mood",
+          "when": "The authorized task requires a dark or gritty mood with readable values, causal wear and restrained contrast."
+        },
+        {
+          "name": "blender-dream-surreal-mood",
+          "when": "The authorized task requires a dreamlike or surreal mood with deliberate spatial, material or lighting departures."
+        },
+        {
+          "name": "blender-dream-weirdcore-style",
+          "when": "The authorized task requires a dreamcore or weirdcore visual treatment with intentional digital unease."
+        },
+        {
+          "name": "blender-environment-art",
+          "when": "The authorized task requires a composed environment whose architecture, terrain and route support the intended vista."
+        },
+        {
+          "name": "blender-environment-kits",
+          "when": "The authorized task requires a snapping modular kit, terrain heightfield or slope/height-masked biome scatter."
+        },
+        {
+          "name": "blender-facial-shapekeys",
+          "when": "The authorized task requires facial shape keys, corrective expressions or tested blendshape delivery."
+        },
+        {
+          "name": "blender-fantasy-worlds",
+          "when": "The authorized task requires a fantasy world with consistent architectural, material and magical culture."
+        },
+        {
+          "name": "blender-folk-horror-style",
+          "when": "The authorized task requires a folk-horror treatment grounded in place, ritual and environmental unease."
+        },
+        {
+          "name": "blender-frutiger-aero-style",
+          "when": "The authorized task requires a Frutiger Aero treatment with translucent, glossy and nature-technology motifs."
+        },
+        {
+          "name": "blender-genre-action-combat",
+          "when": "The authorized task requires action-combat assets whose silhouettes, contact regions and effects support readable encounters."
+        },
+        {
+          "name": "blender-genre-card-party-idle",
+          "when": "The authorized task requires card, party or idle-game assets with clear symbols, modular content and state readability."
+        },
+        {
+          "name": "blender-genre-metroidvania-roguelike",
+          "when": "The authorized task requires Metroidvania or roguelike spaces with reusable rooms, route gates and run variation."
+        },
+        {
+          "name": "blender-genre-narrative-vn",
+          "when": "The authorized task requires narrative or visual-novel sets and character assets for dialogue framing and expression states."
+        },
+        {
+          "name": "blender-genre-open-world-sandbox",
+          "when": "The authorized task requires open-world or sandbox assets organized for scale, reuse and scene streaming contracts."
+        },
+        {
+          "name": "blender-genre-puzzle-platformer",
+          "when": "The authorized task requires puzzle or platformer assets with clear affordances, jump/readability and state distinctions."
+        },
+        {
+          "name": "blender-genre-racing-sports",
+          "when": "The authorized task requires racing or sports assets with track/course readability and motion-aware scale."
+        },
+        {
+          "name": "blender-genre-rpg",
+          "when": "The authorized task requires RPG characters, equipment or environments with coherent role and progression cues."
+        },
+        {
+          "name": "blender-genre-shooter",
+          "when": "The authorized task requires shooter assets with first/third-person readability, sightlines and functional weapon interfaces."
+        },
+        {
+          "name": "blender-genre-soulslike",
+          "when": "The authorized task requires Soulslike assets with encounter-readable silhouettes, spatial rhythm and world continuity."
+        },
+        {
+          "name": "blender-genre-stealth",
+          "when": "The authorized task requires stealth spaces and props with readable concealment, sightlines and traversal affordances."
+        },
+        {
+          "name": "blender-genre-strategy-sim",
+          "when": "The authorized task requires strategy or simulation assets readable at management-camera scale with systematic reuse."
+        },
+        {
+          "name": "blender-genre-survival",
+          "when": "The authorized task requires survival assets with readable resources, crafting stages and environmental pressures."
+        },
+        {
+          "name": "blender-geometry-nodes",
+          "when": "The authorized task requires a field/domain-correct Geometry Nodes graph, instancing system or bounded procedural zone."
+        },
+        {
+          "name": "blender-godot-export",
+          "when": "The authorized task requires a Godot-targeted Blender delivery with verified scale, resources and import behavior."
+        },
+        {
+          "name": "blender-hair-grooming",
+          "when": "The authorized task requires strand grooming, hair cards, clumps or target-aware hair conversion."
+        },
+        {
+          "name": "blender-hand-painted-style",
+          "when": "The authorized task requires hand-painted texture direction, brushwork and geometry-to-texture hierarchy."
+        },
+        {
+          "name": "blender-hard-surface",
+          "when": "The authorized task requires mechanical bodywork, boolean cuts, bevels or controlled hard-surface highlights."
+        },
+        {
+          "name": "blender-hd-2d-style",
+          "when": "The authorized task requires an HD-2D treatment combining pixel-like character presentation with dimensional scenes."
+        },
+        {
+          "name": "blender-historical-worlds",
+          "when": "The authorized task requires a historically grounded world with researched architectural and material choices."
+        },
+        {
+          "name": "blender-horror-style",
+          "when": "The authorized task requires a general horror art direction with purposeful visibility, silhouettes and environmental tension."
+        },
+        {
+          "name": "blender-indie-horror-aesthetics",
+          "when": "The authorized task requires an indie-horror visual direction with constrained production vocabulary and deliberate roughness."
+        },
+        {
+          "name": "blender-isometric-style",
+          "when": "The authorized task requires isometric projection, composition and scale-readable object presentation."
+        },
+        {
+          "name": "blender-lighting",
+          "when": "The authorized task requires light placement, exposure balance, shadows or renderer-aware illumination."
+        },
+        {
+          "name": "blender-liminal-space-style",
+          "when": "The authorized task requires a liminal-space treatment using scale, repetition, emptiness and architectural ambiguity."
+        },
+        {
+          "name": "blender-lod-pipeline",
+          "when": "The authorized task requires a measured LOD chain with preserved interfaces and screen-size transition inspection."
+        },
+        {
+          "name": "blender-lowpoly-style",
+          "when": "The authorized task requires a deliberate low-poly visual direction with readable faceting and controlled texture complexity."
+        },
+        {
+          "name": "blender-manga-style",
+          "when": "The authorized task requires manga-inspired monochrome values, ink lines, screen tones and graphic shape hierarchy."
+        },
+        {
+          "name": "blender-mascot-puppet-horror",
+          "when": "The authorized task requires a mascot or puppet horror design with coherent construction and controlled uncanny cues."
+        },
+        {
+          "name": "blender-minimalist-style",
+          "when": "The authorized task requires a minimalist treatment whose reduced shapes, palette and spacing preserve required meaning."
+        },
+        {
+          "name": "blender-neon-retrofuturism",
+          "when": "The authorized task requires a neon retrofuturist direction with deliberate emission, period motifs and readable dark values."
+        },
+        {
+          "name": "blender-noir-style",
+          "when": "The authorized task requires a noir treatment with purposeful shadow design, light sources and restrained color."
+        },
+        {
+          "name": "blender-painterly-style",
+          "when": "The authorized task requires a painterly treatment with art-directed brush texture, edges and color relationships."
+        },
+        {
+          "name": "blender-pbr-materials",
+          "when": "The authorized task requires a physically based shader with correct texture channels, color spaces and material response."
+        },
+        {
+          "name": "blender-pipeline-automation",
+          "when": "The authorized task requires repeatable Blender batch processing, validation, render jobs or delivery automation."
+        },
+        {
+          "name": "blender-pixel-art-style",
+          "when": "The authorized task requires a pixel-art treatment with consistent pixel density, palette and sampling."
+        },
+        {
+          "name": "blender-procedural-modeling",
+          "when": "The authorized task requires a bounded, seeded family of parametric rocks, buildings, roads, pipes or panels."
+        },
+        {
+          "name": "blender-prop-modeling",
+          "when": "The authorized task requires a grounded furniture, tool, container or household prop with functional pivots."
+        },
+        {
+          "name": "blender-psx-horror-style",
+          "when": "The authorized task requires a PSX-inspired horror treatment with intentional geometry, texture and temporal artifacts."
+        },
+        {
+          "name": "blender-realistic-style",
+          "when": "The authorized task requires a realistic art direction with reference-grounded proportions and material/light relationships."
+        },
+        {
+          "name": "blender-rendering",
+          "when": "The authorized task requires renderer configuration, render passes, sampling, output images or sequence verification."
+        },
+        {
+          "name": "blender-retopology",
+          "when": "The authorized task requires delivery topology rebuilt from a dense sculpt, scan or generated source."
+        },
+        {
+          "name": "blender-retro-16bit-style",
+          "when": "The authorized task requires a 16-bit-inspired presentation with era-coherent palette, shapes and screen detail."
+        },
+        {
+          "name": "blender-retro-8bit-style",
+          "when": "The authorized task requires an 8-bit-inspired presentation with tightly controlled palette, pixels and visual vocabulary."
+        },
+        {
+          "name": "blender-scene-assembly",
+          "when": "The authorized task requires scene units, collections, linked libraries, overrides or large-set layout."
+        },
+        {
+          "name": "blender-sci-fi-punk-worlds",
+          "when": "The authorized task requires a science-fiction or punk world whose technology, social cues and construction agree."
+        },
+        {
+          "name": "blender-sculpting",
+          "when": "The authorized task requires dense organic form development, safe remeshing or multires bake-source preparation."
+        },
+        {
+          "name": "blender-set-dressing",
+          "when": "The authorized task requires narrative prop clusters, deliberate density and route-preserving placement."
+        },
+        {
+          "name": "blender-simulation",
+          "when": "The authorized task requires a bounded Blender physical simulation with explicit cache and execution limits."
+        },
+        {
+          "name": "blender-stop-motion-craft-style",
+          "when": "The authorized task requires a stop-motion or craft treatment with material construction and stepped-motion choices."
+        },
+        {
+          "name": "blender-stylized-style",
+          "when": "The authorized task requires a coherent stylized art direction spanning shape, palette and nonphotoreal rendering."
+        },
+        {
+          "name": "blender-texture-baking",
+          "when": "The authorized task requires high-to-low or multires texture baking with cages, ray isolation and map checks."
+        },
+        {
+          "name": "blender-texturing",
+          "when": "The authorized task requires texture creation or assembly with surface scale, UV correspondence and channel validation."
+        },
+        {
+          "name": "blender-time-of-day",
+          "when": "The authorized task requires time-of-day or weather-adjacent lighting states with matched transitions and exposure."
+        },
+        {
+          "name": "blender-unity-export",
+          "when": "The authorized task requires a Unity-targeted Blender delivery with verified units, materials, rig and import behavior."
+        },
+        {
+          "name": "blender-unreal-export",
+          "when": "The authorized task requires an Unreal-targeted Blender delivery with verified naming, transforms and import behavior."
+        },
+        {
+          "name": "blender-uv-unwrapping",
+          "when": "The authorized task requires seams, UV density, pixel padding, trims, UDIM or requested lightmap channels."
+        },
+        {
+          "name": "blender-vector-style",
+          "when": "The authorized task requires a vector-like treatment with flat regions, clean contours and deliberate graphic abstraction."
+        },
+        {
+          "name": "blender-vegetation",
+          "when": "The authorized task requires plant branching, leaf atlases, wind data or canopy-preserving foliage LODs."
+        },
+        {
+          "name": "blender-vehicle-modeling",
+          "when": "The authorized task requires vehicle proportions, bodywork and separately moving or shaded systems."
+        },
+        {
+          "name": "blender-vfx-fx",
+          "when": "The authorized task requires a bounded visual effect, procedural effect element or composited FX deliverable."
+        },
+        {
+          "name": "blender-video-editing",
+          "when": "The authorized task requires Blender video-sequence assembly, timing, transitions or verified media output."
+        },
+        {
+          "name": "blender-visual-console-eras",
+          "when": "The authorized task requires a console-era visual target with coherent geometry, texture and display constraints."
+        },
+        {
+          "name": "blender-voxel-style",
+          "when": "The authorized task requires a voxel visual direction with deliberate grid resolution, stepped silhouettes and palette."
+        },
+        {
+          "name": "blender-weather-fx",
+          "when": "The authorized task requires a weather-effect setup with bounded particles/volumes, scene visibility and cache costs."
+        },
+        {
+          "name": "blender-workflow-recipes",
+          "when": "The authorized task requires an end-to-end Blender production recipe coordinating the relevant discipline checkpoints."
         }
       ]
     }

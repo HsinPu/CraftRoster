@@ -1,0 +1,49 @@
+{
+  "skill_name": "blender-stop-motion-craft-style",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create a friendly folded-paper bird on a miniature Blender set, with tabs and no animation.",
+      "expected_output": "A paper-specific craft construction.",
+      "assertions": [
+        "Uses folds/thickness/tabs.",
+        "Avoids clay fingerprints and unnecessary rigging.",
+        "Checks assembly and final images."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "The clay animation uses random object jitter and glossy repeating fingerprints. Repair its stop-motion feel.",
+      "expected_output": "Restore material scale and intentional performance.",
+      "assertions": [
+        "Reduces gloss/repeated handling noise.",
+        "Tests held poses and contacts.",
+        "Views playback before accepting timing."
+      ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Build a folded-card bird with a visible net/assembly explanation, front/back stock and tabs. Show the reverse side and miniature final view; do not turn it into a clay sculpt.",
+      "expected_output": "Editable panel/fold/tab construction and assembly/material diagnostics.",
+      "assertions": [
+        "Paper panels, cut edges and tabs explain volume.",
+        "The reverse is inspected for interpenetration.",
+        "Grain is subordinate to folds and not concrete-like."
+      ]
+    },
+    {
+      "id": 4,
+      "locale": "en",
+      "prompt": "A felt puppet has gravel-sized bump and long fur hiding every seam; its stepped walk slips on held contact frames. Diagnose and repair without introducing a wooden mechanism or random jitter.",
+      "expected_output": "Felt-scale material and stuffing/seam repairs plus contact-aware stepped timing checks.",
+      "assertions": [
+        "Fiber scale and seams are examined at final size.",
+        "Held contact frames are corrected in poses, not hidden with blur.",
+        "Actual playback is required for motion acceptance and otherwise remains unverified."
+      ]
+    }
+  ]
+}

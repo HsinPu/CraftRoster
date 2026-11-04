@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-voxel-style",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Build a voxel fox on a 0.1 m grid with stepped ears and a compact palette, preserving editable source.",
+      "expected_output": "An occupancy-led voxel model.",
+      "assertions": [
+        "Uses consistent grid/origin.",
+        "Checks orthographic silhouettes.",
+        "Preserves source before realization."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "The voxel kit has fractional cube offsets and hidden interior faces; merging vertices did not fix it. Repair it.",
+      "expected_output": "Restore grid and occupancy-aware surfaces.",
+      "assertions": [
+        "Corrects offsets against cell origin.",
+        "Eliminates internal faces by an appropriate method.",
+        "Checks evaluated count and chunk seams."
+      ]
+    }
+  ]
+}

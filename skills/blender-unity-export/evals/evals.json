@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-unity-export",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Prepare a Blender humanoid with two clips and a prop with two LODs for an existing Unity 6000.0 URP project using its established FBX path. Preserve source and use a disposable import fixture.",
+      "expected_output": "Controlled exports plus actual or explicitly unexecuted calibration, URP mapping, Avatar/motion, collider and LOD evidence.",
+      "assertions": [
+        "Unity version/render pipeline/importer are named before selecting settings.",
+        "Humanoid mapping and imported deformation are checked separately.",
+        "LOD renderers/thresholds and collider components are inspected, not inferred from names."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "A user asks to deliver GLB to Unity but no glTF importer is installed. Existing FBX also shows wrong roughness and missing attachment transform after optimization. Diagnose without installing packages or changing pipeline.",
+      "expected_output": "Identifies importer gap and bounded alternative, channel/shader mapping and exposed transform requirement; does not fabricate GLB import success.",
+      "assertions": [
+        "GLB support is conditional on actual installed importer.",
+        "Material channel mapping follows selected Unity shader.",
+        "Attachment transform and missing target tests are explicitly tracked."
+      ]
+    }
+  ]
+}

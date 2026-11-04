@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-dream-weirdcore-style",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Make a wistful dreamcore playground with an oversized slide and no threat imagery.",
+      "expected_output": "A nostalgic displacement composition.",
+      "assertions": [
+        "Uses ordinary scale anchors.",
+        "Preserves wistful intensity.",
+        "Checks clean/processed images."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "The image added eyes and threatening text while bloom hid the playground.",
+      "expected_output": "Recover the requested nostalgia.",
+      "assertions": [
+        "Removes unrequested threats and text.",
+        "Restores the recognizable anchor.",
+        "Reduces bloom from image comparisons."
+      ]
+    }
+  ]
+}

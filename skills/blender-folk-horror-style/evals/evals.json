@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-folk-horror-style",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create a daylight field shrine with a fictional knot symbol and no gore.",
+      "expected_output": "A grounded authored ritual scene.",
+      "assertions": [
+        "Preserves pastoral context.",
+        "Uses handmade joins and one motif.",
+        "Keeps daylight/no-gore boundaries."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "The shrine is a Halloween pile of unrelated sacred symbols.",
+      "expected_output": "Unify the fictional motif.",
+      "assertions": [
+        "Removes unverified borrowed symbols.",
+        "Clarifies spatial alignment.",
+        "Checks context and assembly images."
+      ]
+    }
+  ]
+}

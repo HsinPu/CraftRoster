@@ -1,0 +1,49 @@
+{
+  "skill_name": "blender-cartoon-style",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create a grumpy soft-shaded cartoon teapot with a squat body and expressive spout; no outlines.",
+      "expected_output": "A shape-led cartoon study.",
+      "assertions": [
+        "Tests mass balance and silhouette.",
+        "Preserves soft shading/no outlines.",
+        "Does not substitute anime eyes."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "The cartoon prop is realistic except for saturated colors and tiny spikes. Fix its appeal.",
+      "expected_output": "Correct primary shape language.",
+      "assertions": [
+        "Pushes approved mass relationships.",
+        "Removes competing small forms.",
+        "Checks silhouette at final size."
+      ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Create a rubber-hose cartoon arm study with neutral, extended and curved poses, preserving attachment continuity and an approved glove silhouette.",
+      "expected_output": "Editable centerline/deformation approach and front/side/three-quarter clearance evidence.",
+      "assertions": [
+        "Flexible construction is redesigned rather than merely removing realistic elbows.",
+        "Limb radius/socket continuity is checked at bend extremes.",
+        "A static pose study is not called a working animation rig."
+      ]
+    },
+    {
+      "id": 4,
+      "locale": "en",
+      "prompt": "A soft cartoon teapot became a graphic two-band shader in a renderer that does not support the chosen nodes. Restore approved soft volume while preserving the source and compare lighting alternatives.",
+      "expected_output": "Scope-preserving soft-shading repair with actual renderer capability check.",
+      "assertions": [
+        "Retains approved mass and soft-shading intent.",
+        "Does not claim EEVEE/Cycles shader equivalence.",
+        "Checks alternate angle and final-size silhouette before declaring success."
+      ]
+    }
+  ]
+}

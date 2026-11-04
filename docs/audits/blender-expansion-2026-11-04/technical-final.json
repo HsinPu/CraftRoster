@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "kind": "blender-technical-inspection",
+  "blender_version": "5.2.2 LTS",
+  "source_sha256": "7797a4b6917dcc535c7d2560aa9e6378381976a643baf9cdcabc711f2726b80f",
+  "status": "pass",
+  "metrics": [
+    {
+      "object": "Door_Narrow",
+      "triangles": 528,
+      "materials": 5,
+      "used_material_slots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "unassigned_material_faces": 0,
+      "uv_layers": 0,
+      "dimensions_m": [
+        2.1200000047683716,
+        0.7924999892711639,
+        2.680000066757202
+      ],
+      "non_manifold_edges": 0
+    },
+    {
+      "object": "Door_Wide",
+      "triangles": 528,
+      "materials": 5,
+      "used_material_slots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "unassigned_material_faces": 0,
+      "uv_layers": 0,
+      "dimensions_m": [
+        3.120000123977661,
+        0.7924999892711639,
+        2.680000066757202
+      ],
+      "non_manifold_edges": 0
+    },
+    {
+      "object": "UtilityCrate",
+      "triangles": 44,
+      "materials": 1,
+      "used_material_slots": [
+        0
+      ],
+      "unassigned_material_faces": 0,
+      "uv_layers": 1,
+      "dimensions_m": [
+        0.8599999845027924,
+        0.6800000667572021,
+        0.8999999761581421
+      ],
+      "non_manifold_edges": 0
+    },
+    {
+      "object": "Crate reinforced strap",
+      "triangles": 44,
+      "materials": 1,
+      "used_material_slots": [
+        0
+      ],
+      "unassigned_material_faces": 0,
+      "uv_layers": 1,
+      "dimensions_m": [
+        0.09999999962747097,
+        0.7200000286102295,
+        0.9399999678134918
+      ],
+      "non_manifold_edges": 0
+    },
+    {
+      "object": "Crate reinforced strap.001",
+      "triangles": 44,
+      "materials": 1,
+      "used_material_slots": [
+        0
+      ],
+      "unassigned_material_faces": 0,
+      "uv_layers": 1,
+      "dimensions_m": [
+        0.10000002384185791,
+        0.7200000286102295,
+        0.9399999678134918
+      ],
+      "non_manifold_edges": 0
+    },
+    {
+      "object": "Crate front inset",
+      "triangles": 44,
+      "materials": 1,
+      "used_material_slots": [
+        0
+      ],
+      "unassigned_material_faces": 0,
+      "uv_layers": 1,
+      "dimensions_m": [
+        0.40000002086162567,
+        0.03500008583068848,
+        0.26999998092651367
+      ],
+      "non_manifold_edges": 0
+    },
+    {
+      "object": "Crate latch",
+      "triangles": 44,
+      "materials": 1,
+      "used_material_slots": [
+        0
+      ],
+      "unassigned_material_faces": 0,
+      "uv_layers": 1,
+      "dimensions_m": [
+        0.13999998569488525,
+        0.039999961853027344,
+        0.15999996662139893
+      ],
+      "non_manifold_edges": 0
+    },
+    {
+      "object": "Crate vent",
+      "triangles": 44,
+      "materials": 1,
+      "used_material_slots": [
+        0
+      ],
+      "unassigned_material_faces": 0,
+      "uv_layers": 1,
+      "dimensions_m": [
+        0.14000000059604645,
+        0.019999980926513672,
+        0.027000010013580322
+      ],
+      "non_manifold_edges": 0
+    },
+    {
+      "object": "Crate vent.001",
+      "triangles": 44,
+      "materials": 1,
+      "used_material_slots": [
+        0
+      ],
+      "unassigned_material_faces": 0,
+      "uv_layers": 1,
+      "dimensions_m": [
+        0.14000000059604645,
+        0.019999980926513672,
+        0.02699999511241913
+      ],
+      "non_manifold_edges": 0
+    }
+  ],
+  "findings": [],
+  "visual_status": "not_reviewed",
+  "engine_status": "not_tested",
+  "not_checked": [
+    "visual_quality",
+    "engine_import",
+    "animation_playback",
+    "skin_weights",
+    "uv_overlap",
+    "texture_intent"
+  ],
+  "contract_sha256": "adb314e8142980b3fbd21f1f448fd86c5c351281f7a99511f68ef58cf3b5d044"
+}

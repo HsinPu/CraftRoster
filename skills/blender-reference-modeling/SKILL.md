@@ -14,7 +14,7 @@ metadata:
 
 Translate evidence in the reference into a coherent 3D asset. Preserve the chosen style and record what the images cannot establish.
 
-Read the shared [asset contract](../blender-development/references/asset-contract.md), [execution and ownership](../blender-development/references/execution-and-ownership.md) and [quality loop](../blender-development/references/quality-loop.md). Use [calibration and comparison](references/calibration.md) before interpreting similarity scores.
+Read the shared [asset contract](../blender-development/references/asset-contract.md), [execution and ownership](../blender-development/references/execution-and-ownership.md) and [quality loop](../blender-development/references/quality-loop.md). Follow [reference reconstruction](references/reference-reconstruction.md) for landmark selection, camera fitting, staged construction and mismatch diagnosis; use [calibration and comparison](references/calibration.md) before interpreting similarity scores.
 
 ## Work from measured evidence
 

@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-pipeline-automation",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Plan and run two trusted report jobs over separate blend files into a new run root. Each project script accepts --output-dir and writes report.json. Use one worker; preserve inputs and report exactly what the helper proves.",
+      "expected_output": "A strict manifest and isolated per-job outputs/logs with aggregate results, hashes and unchanged sources; native checks honestly distinguished from host/process evidence.",
+      "assertions": [
+        "Manifest paths resolve relative to its directory and outputs belong to distinct job directories.",
+        "Only documented run_jobs flags and script CLI contract are used.",
+        "A process pass is not described as visual or target-engine success."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "A batch manifest declares ../escape.json, stdout.log, and two case-alias output names. Another valid job exits nonzero after writing a partial file. Diagnose in a disposable workspace without deleting prior runs.",
+      "expected_output": "Preflight rejects invalid paths before dispatch; the valid failure fixture retains logs and reports process failure despite artifact presence.",
+      "assertions": [
+        "Output traversal, reserved log and portable path collisions are rejected.",
+        "A new output root is used for a corrected rerun.",
+        "Failure is surfaced instead of inferred success from a nonempty file."
+      ]
+    }
+  ]
+}

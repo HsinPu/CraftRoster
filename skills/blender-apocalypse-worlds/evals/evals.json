@@ -1,0 +1,51 @@
+{
+  "skill_name": "blender-apocalypse-worlds",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create a 12 m post-flood street kit with old water damage, a recently occupied shelter and an unobstructed 2 m review corridor. Use an isolated project, preserve supplied references and produce scoped assets with honest evidence. If Blender or image inspection is unavailable, provide the specification and mark affected checks unexecuted.",
+      "expected_output": "An editable subject-specific kit or explicitly unexecuted production specification, requested dimensions/states, named diagnostics, actual findings and separate technical/visual/engine evidence status.",
+      "assertions": [
+        "Damage-layer exploded view, roofless plan, street-eye corridor and clean/weathered material sheet. Hide rubble and fog: remaining architecture must still explain event and passage.",
+        "Supplied camera, scale and fiction remain authoritative; concrete pieces and state variants are identified.",
+        "Image acceptance cites actually inspected current-revision images and observations, not file existence.",
+        "No game behavior, AI, balance, physics or engine performance is inferred from renders or static proxies."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Repair a supplied ruined facade with floating slabs, uniform rust and entrance-blocking rubble; preserve district identity and do not assert structural safety. Inspect before editing; preserve original source and work only in authorized asset collections. Repeat affected diagnostics after repair.",
+      "expected_output": "A bounded diagnosis and targeted repair retaining approved source/style, with matched subject-specific before/after evidence or an explicit blocked/unverified result.",
+      "assertions": [
+        "Uniform rust: remove it from protected interiors and distinguish glass, concrete and metal. Blocked corridor: move rubble and repeat eye view. Floating slab: repair support or document explicit supernatural fiction. Conflicting regrowth and occupation: resolve the timeline.",
+        "Asset repairs are separated from game-rule and engine-system changes.",
+        "The original is preserved; affected checks and actual image review are repeated after editing.",
+        "A static numerical or geometry pass is not claimed as gameplay, historical authenticity or scientific proof."
+      ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Create early and late post-human versions of the same office court. Large roots currently grow unsupported through glass and lush plants ignore the dry supplied climate. Use an isolated authorized source; if execution or image inspection is unavailable, return the concrete specification and mark those checks unexecuted.",
+      "expected_output": "Subtype-specific construction/state and repair artifacts, or an explicit unexecuted specification, with actual diagnostic evidence distinguished from visual and engine acceptance.",
+      "assertions": [
+        "Preserves intact architecture and builds supported substrate/water-related growth states.",
+        "Corrects exposure/species/distribution to the stated climate instead of simply increasing scatter.",
+        "Provides succession masks and matched clear diagnostic views without claiming ecology simulation."
+      ]
+    },
+    {
+      "id": 4,
+      "locale": "en",
+      "prompt": "Build a sincerely utopian transit courtyard with a service-open state, then an optional uncanny empty variant; do not assume oppression. Use an isolated authorized source; if execution or image inspection is unavailable, return the concrete specification and mark those checks unexecuted.",
+      "expected_output": "Subtype-specific construction/state and repair artifacts, or an explicit unexecuted specification, with actual diagnostic evidence distinguished from visual and engine acceptance.",
+      "assertions": [
+        "Models maintenance, access and daily-use scale before uncanny treatment.",
+        "Keeps the requested civic intent and confines anomalies to the optional state.",
+        "Retains surface form under white highlights and supplies occupied/service/empty comparisons."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "source_sha256": "7797a4b6917dcc535c7d2560aa9e6378381976a643baf9cdcabc711f2726b80f",
+  "export_sha256": "52d838740873c769d224cde64ae22da5ce73f01b2f452a1709e11c439eb7d3de",
+  "reviewer": "Independent read-only agent; actual image inspection, no scene or report writes",
+  "status": "accepted_for_reviewed_still_scope",
+  "images": [
+    {
+      "path": "cel_key_left.png",
+      "sha256": "438817da96333acde76ee65a0aea554a467e025d4a7f92cfc25e46e883c11154"
+    },
+    {
+      "path": "cel_key_right.png",
+      "sha256": "4b888b18aa4dd60d3aeee8c3353e1012fb0bce0481717e96b2d150e3a1d4dc61"
+    },
+    {
+      "path": "neutral_diagnostic.png",
+      "sha256": "7479fbddff415e4f84e5f341b0d12f6634adab146a48540cb2611796a6aba565"
+    },
+    {
+      "path": "source_pbr_matched.png",
+      "sha256": "3e0dbaa645fcfcd6c7ebc433b15bedcf536d6b40ded04a7fdf04a5c5eac085f0"
+    },
+    {
+      "path": "reimport_pbr_matched.png",
+      "sha256": "ab9b7e73a2622b1d73c81cb374f3195af010fa8c2606453b475afe7fbdaca7d4"
+    },
+    {
+      "path": "crate_bake_unlit_crop.png",
+      "sha256": "c40e3911fe4c8bc6ff82a1c25efe1151b10efe223657221691d20bd6a081dba6"
+    },
+    {
+      "path": "crate_checker_unlit_colorgrid.png",
+      "sha256": "c02b28349f075df4f78546d440fec0b8046b44c4da650c3c5facdb14c4371e7f"
+    },
+    {
+      "path": "crate_checker_unlit_plain.png",
+      "sha256": "a935afeed48d921be27cf478f07f8a5ea6c7cb93c38c2ba51c8f9123db29e65b"
+    }
+  ],
+  "prior_findings": [
+    {
+      "finding": "Scale proxy blends with the floor and is partly occluded in cel views.",
+      "final": "closed",
+      "evidence": [
+        "cel_key_left.png",
+        "cel_key_right.png"
+      ],
+      "observation": "Complete contrasting head-to-feet silhouette now remains clear of crate and doorway."
+    },
+    {
+      "finding": "Unmatched source and import views do not establish PBR appearance parity.",
+      "final": "closed_for_Blender_PBR_roundtrip",
+      "evidence": [
+        "source_pbr_matched.png",
+        "reimport_pbr_matched.png"
+      ],
+      "observation": "Matched framing, silhouettes, material roles and crate pattern show no consequential visible difference."
+    },
+    {
+      "finding": "Black/white checker strip on a narrow bevel needs a diagnostic.",
+      "final": "closed",
+      "evidence": [
+        "crate_checker_unlit_colorgrid.png",
+        "crate_checker_unlit_plain.png",
+        "crate_bake_unlit_crop.png"
+      ],
+      "observation": "Color-grid calibration lettering explains the strip; plain checker and bake show no corresponding foreign-color leak."
+    }
+  ],
+  "assessment": "Narrow and wide openings read clearly. Teal/navy/gold material roles and restrained mechanical forms remain coherent across doors and crate under both light directions.",
+  "limits": [
+    "Still views and Blender PBR reimport only.",
+    "Unseen surfaces, temporal stability, procedural parameter behavior and source editability are not proven by image review.",
+    "No target-engine appearance, collision, gameplay or performance acceptance."
+  ]
+}

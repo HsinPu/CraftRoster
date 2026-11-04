@@ -1,0 +1,28 @@
+{
+  "skill_name": "blender-hair-grooming",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create a side-part groom and a separate game hair-card LOD with root-tip atlas data.",
+      "expected_output": "An editable, scoped result with discipline-specific settings, actual evidence and stated unverified gates.",
+      "assertions": [
+        "Preserves scalp UV/rest correspondence and tests deformation.",
+        "Distinguishes density per area, viewport counts and final render counts.",
+        "Validates alpha/atlas and receiver support separately from strand render appearance."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Hair roots detach during head turns and cards develop dark mip halos. Diagnose attachment and alpha treatment.",
+      "expected_output": "A diagnosis tied to the supplied failure, preserved sources, a concrete correction and repeated affected acceptance checks.",
+      "assertions": [
+        "Preserves scalp UV/rest correspondence and tests deformation.",
+        "Distinguishes density per area, viewport counts and final render counts.",
+        "Validates alpha/atlas and receiver support separately from strand render appearance.",
+        "Does not label a hypothetical plan, a structural assertion or unrun workflow as successful execution."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-prop-modeling",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create a grounded wooden chair as a reusable midground prop with a 0.45m seat and floor pivot.",
+      "expected_output": "Revision-scoped work or read-only findings with concrete technical and visual acceptance evidence; missing execution is identified.",
+      "assertions": [
+        "Checks human scale and negative space.",
+        "Uses construction-specific detail and shared materials.",
+        "Returns current images and editable reusable source."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Refine a household kettle that became covered in sci-fi greebles and has a pivot far from its handle; it is a handheld interactable.",
+      "expected_output": "Revision-scoped work or read-only findings with concrete technical and visual acceptance evidence; missing execution is identified.",
+      "assertions": [
+        "Restores reference/use-driven form.",
+        "Places documented grip/attachment pivot.",
+        "Checks silhouette and hand contact without claiming untested interaction."
+      ]
+    }
+  ]
+}

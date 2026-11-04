@@ -4,24 +4,23 @@
     {
       "id": 1,
       "locale": "en",
-      "prompt": "Make this imported enemy suitable for a crowd scene while keeping its recognizable face, shoulder silhouette and attack poses. The only FPS evidence is from a different author's Mac, and the target engine is not available here.",
-      "expected_output": "Scoped asset corrections with current evidence, preserved project contracts and explicit unexecuted acceptance checks.",
+      "prompt": "Reduce a 24k cabinet to an 8k gameplay budget while preserving hinges, door gaps and source modifiers.",
+      "expected_output": "Revision-scoped work or read-only findings with concrete technical and visual acceptance evidence; missing execution is identified.",
       "assertions": [
-        "Sets a provisional scene-aware budget without treating the other machine's FPS as a promise.",
-        "Preserves the original and compares geometry, shading and stress poses after reduction.",
-        "Checks affected UVs, baked maps, weights and LOD behavior rather than approving on triangle count alone.",
-        "Reports asset cost changes and leaves actual target-engine FPS unmeasured."
+        "Measures evaluated output and before/after views.",
+        "Reduces hidden and unnecessary detail before decimation.",
+        "Reports estimates separately from target profiling."
       ]
     },
     {
       "id": 2,
       "locale": "en",
-      "prompt": "Review the blender game optimization decisions in this supplied report only. Do not edit the .blend, install tools or generate new artifacts. It contains a successful export and an old beauty image but no images of the latest revision.",
-      "expected_output": "Read-only findings identifying the evidence gap and the concrete next verification needed.",
+      "prompt": "Batch optimize a shared scene containing artists' existing LOD names and linked meshes. A suggested helper deletes matching names and cleans source geometry.",
+      "expected_output": "Revision-scoped work or read-only findings with concrete technical and visual acceptance evidence; missing execution is identified.",
       "assertions": [
-        "Keeps source files unchanged and returns findings in the response.",
-        "Does not treat an old image or successful export as visual evidence for the current revision.",
-        "Names the missing current-revision evidence and feasible checks without inventing execution."
+        "Avoids destructive name replacement and source cleanup.",
+        "Scopes copies and checks shared data users.",
+        "Rechecks UV/motion/visual regressions and reports unresolved budget."
       ]
     }
   ]

@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-sculpting",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Develop an organic creature torso sculpt for a game bake, preserving the clean base and separating high detail from delivery topology.",
+      "expected_output": "Revision-scoped work or read-only findings with concrete technical and visual acceptance evidence; missing execution is identified.",
+      "assertions": [
+        "Chooses remesh then stable-base multires appropriately.",
+        "Checks large forms before micro-detail.",
+        "Prepares isolated high/low/cage evidence and actual images."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Prepare a sculpt in background Blender; a proposed script enters Sculpt Mode mesh_filter and remeshes an existing UV/weighted multires source.",
+      "expected_output": "Revision-scoped work or read-only findings with concrete technical and visual acceptance evidence; missing execution is identified.",
+      "assertions": [
+        "Avoids fragile headless Sculpt Mode.",
+        "Preserves UV/weights/multires source and reports losses.",
+        "Uses scoped object-level alternatives and identifies unexecuted brush detail."
+      ]
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "repositoryCount": 26,
-  "referencedSkillCount": 80,
-  "referencePathCount": 150,
-  "evidenceSha256": "36a7e36eb4e4463c38b0e4cca93d2af9b2a0a2cf17000d339bf69c30413682f6"
+  "referencedSkillCount": 178,
+  "referencePathCount": 466,
+  "evidenceSha256": "48c97f4bbd6c91a1437ea0ecca637c9a062519e6e25a59e4ec647209443a34fd"
 }

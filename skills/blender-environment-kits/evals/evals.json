@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-environment-kits",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create a 4m modular room kit and 100m terrain with seeded rock scatter plus 16-bit height data.",
+      "expected_output": "Revision-scoped work or read-only findings with concrete technical and visual acceptance evidence; missing execution is identified.",
+      "assertions": [
+        "Calculates resolution costs and tests connectors.",
+        "Includes z minimum/range and row orientation.",
+        "Records actual sample coverage and final placement images."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Repair terrain scatter on a rotated nonuniformly scaled target: trees float and a report claims every instance checked although only 500 were sampled.",
+      "expected_output": "Revision-scoped work or read-only findings with concrete technical and visual acceptance evidence; missing execution is identified.",
+      "assertions": [
+        "Corrects normal/height spaces and reports audit coverage.",
+        "Preserves shared source collections.",
+        "Rechecks surface contact and does not repeat unsupported exhaustive claim."
+      ]
+    }
+  ]
+}

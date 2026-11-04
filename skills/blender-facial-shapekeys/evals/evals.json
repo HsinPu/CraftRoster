@@ -1,0 +1,28 @@
+{
+  "skill_name": "blender-facial-shapekeys",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create asymmetric blink and a jaw-smile corrective for a hybrid dialog face.",
+      "expected_output": "An editable, scoped result with discipline-specific settings, actual evidence and stated unverified gates.",
+      "assertions": [
+        "Preserves Basis vertex order and existing target keys or drivers.",
+        "Builds residual correctives rather than adding captured base deformation twice.",
+        "Reviews semantic shapes and combinations instead of passing nonzero delta counts alone."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "A mirrored blink crosses adjacent lips and the combination corrective doubles jaw opening. Repair the delta workflow.",
+      "expected_output": "A diagnosis tied to the supplied failure, preserved sources, a concrete correction and repeated affected acceptance checks.",
+      "assertions": [
+        "Preserves Basis vertex order and existing target keys or drivers.",
+        "Builds residual correctives rather than adding captured base deformation twice.",
+        "Reviews semantic shapes and combinations instead of passing nonzero delta counts alone.",
+        "Does not label a hypothetical plan, a structural assertion or unrun workflow as successful execution."
+      ]
+    }
+  ]
+}

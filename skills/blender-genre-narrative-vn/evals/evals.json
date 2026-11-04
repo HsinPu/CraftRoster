@@ -1,0 +1,51 @@
+{
+  "skill_name": "blender-genre-narrative-vn",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create morning/evening room plates for two VN actors with a reserved dialogue band and unchanged camera/furniture transforms. Use an isolated project, preserve supplied references and produce scoped assets with honest evidence. If Blender or image inspection is unavailable, provide the specification and mark affected checks unexecuted.",
+      "expected_output": "An editable subject-specific kit or explicitly unexecuted production specification, requested dimensions/states, named diagnostics, actual findings and separate technical/visual/engine evidence status.",
+      "assertions": [
+        "Matched day/night images, reverse-angle continuity, actor/dialogue overlays and focus-off views. Check reflections for missing subjects or production geometry. Static plate approval does not prove walkable collision.",
+        "Supplied camera, scale and fiction remain authoritative; concrete pieces and state variants are identified.",
+        "Image acceptance cites actually inspected current-revision images and observations, not file existence.",
+        "No game behavior, AI, balance, physics or engine performance is inferred from renders or static proxies."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Repair an evening plate that relocates its clue and places a shelf through the speaker silhouette, preserving approved masks. Inspect before editing; preserve original source and work only in authorized asset collections. Repeat affected diagnostics after repair.",
+      "expected_output": "A bounded diagnosis and targeted repair retaining approved source/style, with matched subject-specific before/after evidence or an explicit blocked/unverified result.",
+      "assertions": [
+        "Shelf crosses head: revise owned framing within approved camera scope. Evening moves clue: restore common layout and isolate intentional state. Blur hides story object: repair focus/hierarchy instead of declaring it readable.",
+        "Asset repairs are separated from game-rule and engine-system changes.",
+        "The original is preserved; affected checks and actual image review are repeated after editing.",
+        "A static numerical or geometry pass is not claimed as gameplay, historical authenticity or scientific proof."
+      ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Build branching shot/reverse-shot cameras with a clue changing only in one branch; a reflection exposes a missing actor. Use an isolated authorized source; if execution or image inspection is unavailable, return the concrete specification and mark those checks unexecuted.",
+      "expected_output": "Subtype-specific construction/state and repair artifacts, or an explicit unexecuted specification, with actual diagnostic evidence distinguished from visual and engine acceptance.",
+      "assertions": [
+        "Uses shot/branch state ledger, eyelines and prop continuity.",
+        "Repairs reflection/set continuity rather than hiding every issue with crop or blur.",
+        "Delivers branch contact sheet and separates edit logic from asset evidence."
+      ]
+    },
+    {
+      "id": 4,
+      "locale": "en",
+      "prompt": "Convert an existing VN plate room into a walking-scene study while preserving dialogue masks and morning/evening variants. Use an isolated authorized source; if execution or image inspection is unavailable, return the concrete specification and mark those checks unexecuted.",
+      "expected_output": "Subtype-specific construction/state and repair artifacts, or an explicit unexecuted specification, with actual diagnostic evidence distinguished from visual and engine acceptance.",
+      "assertions": [
+        "Completes backs/interiors and actual eye-height arrival/inspection/return views.",
+        "Preserves common layout through time variants and clean actor-overlay plates.",
+        "Reports collision/controller tests separately from visual plate and static proxy checks."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-procedural-modeling",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create ten seeded background rocks with bounded size/roughness and static export variants, keeping the generator.",
+      "expected_output": "Revision-scoped work or read-only findings with concrete technical and visual acceptance evidence; missing execution is identified.",
+      "assertions": [
+        "Defines invariants and interacting ranges.",
+        "Tests extremes and saved seeds.",
+        "Measures and visually inspects variants before bake."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Refine a procedural building where high floor counts explode cost and narrow widths remove entrances.",
+      "expected_output": "Revision-scoped work or read-only findings with concrete technical and visual acceptance evidence; missing execution is identified.",
+      "assertions": [
+        "Adds structural range relationships and cost bounds.",
+        "Preserves entrance/connector invariants.",
+        "Rechecks failing combinations rather than one beauty seed."
+      ]
+    }
+  ]
+}

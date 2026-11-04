@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-cozy-wholesome-mood",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Polish a cool blue rainy reading nook to feel welcoming without changing its palette.",
+      "expected_output": "Comfort through layout and focal light.",
+      "assertions": [
+        "Preserves blue palette.",
+        "Makes the seat/activity readable.",
+        "Checks layout and grayscale evidence."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "The cozy kitchen turned orange and props block its chair and door. Repair it.",
+      "expected_output": "Restore usable comfort.",
+      "assertions": [
+        "Clears seat and circulation.",
+        "Restores approved palette.",
+        "Avoids equating coziness with orange grading."
+      ]
+    }
+  ]
+}

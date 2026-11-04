@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-hard-surface",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create a reusable industrial console with live vent cutters, hinged panel, rubber gasket and efficient repeated bolts.",
+      "expected_output": "Revision-scoped work or read-only findings with concrete technical and visual acceptance evidence; missing execution is identified.",
+      "assertions": [
+        "Chooses pipeline and physical bevel tiers.",
+        "Preserves editable cutter source and repeated geometry.",
+        "Checks grazing highlights and evaluated cost."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Refine a curved boolean housing with pinched highlights and oversized bevels; source helper wants to replace all HS_ modifiers.",
+      "expected_output": "Revision-scoped work or read-only findings with concrete technical and visual acceptance evidence; missing execution is identified.",
+      "assertions": [
+        "Checks ownership and preserves unrelated stack work.",
+        "Diagnoses scale/topology before more detail.",
+        "Rechecks curved and planar shading with current images."
+      ]
+    }
+  ]
+}

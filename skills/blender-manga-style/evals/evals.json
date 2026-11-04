@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-manga-style",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create a monochrome manga action panel with paper-white face and restrained screentone.",
+      "expected_output": "A value-first monochrome workflow.",
+      "assertions": [
+        "Protects expression.",
+        "Separates line/fill/effects.",
+        "Tests output-scale tone."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Black hair, coat and background merge; tone and speed lines hide the face. Repair it.",
+      "expected_output": "Restore value grouping and expression.",
+      "assertions": [
+        "Uses deliberate paper gaps.",
+        "Masks tone from focal features.",
+        "Checks completed and value-only images."
+      ]
+    }
+  ]
+}

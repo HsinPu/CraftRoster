@@ -21,12 +21,10 @@ for (let i = 2; i < process.argv.length; i++) {
 }
 assert(['powershell', 'bash'].includes(options.shell));
 assert(!(process.platform === 'win32' && options.shell === 'bash'), 'Use native Linux/macOS for Bash');
-const names = ['blender-development', 'blender-modeling', 'blender-reference-modeling',
-  'blender-materials-uv', 'blender-rigging-animation', 'blender-lookdev',
-  'blender-game-optimization', 'blender-export', 'blender-asset-validation', 'blender-visual-review'].sort();
 const roles = ['blender-artist', 'blender-asset-reviewer'].sort();
 const json = p => JSON.parse(fs.readFileSync(path.join(root, p), 'utf8'));
 const catalog = json('scripts/data/skill-catalog.json').skills;
+const names = Object.keys(catalog).filter(name => catalog[name].category === 'blender-creation').sort();
 const bundle = json('scripts/data/install-bundles.json').bundles.find(b => b.id === 'game-development');
 let count = 0;
 function test(label, action) { action(); count++; console.log(`PASS ${label}`); }
@@ -38,8 +36,9 @@ function closure(name, seen = new Set()) {
   for (const edge of required(name)) closure(edge.name, seen);
   return seen;
 }
-test('game purpose directly contains exactly ten Blender Skills and two roles', () => {
+test('game purpose directly contains all 108 Blender Skills and two roles', () => {
   assert(bundle);
+  assert.equal(names.length, 108);
   assert.deepEqual([...bundle.skills].sort(), names);
   assert.deepEqual([...bundle.agents].sort(), roles);
   for (const name of names) assert.equal(catalog[name].category, 'blender-creation');
@@ -49,7 +48,8 @@ test('foundation is standalone and specialists install shared resources without 
   for (const name of names.filter(n => n !== 'blender-development')) {
     assert(required(name).some(d => d.name === 'blender-development' && d.usage === 'resource'));
     const expected = [name, 'blender-development'];
-    if (name === 'blender-export') expected.push('blender-asset-validation');
+    if (name === 'blender-export' || ['blender-godot-export', 'blender-unity-export', 'blender-unreal-export'].includes(name)) expected.push('blender-asset-validation');
+    if (['blender-godot-export', 'blender-unity-export', 'blender-unreal-export'].includes(name)) expected.push('blender-export');
     assert.deepEqual([...closure(name)].sort(), expected.sort());
   }
 });
@@ -115,7 +115,7 @@ if (!options.definitions) {
       assert.equal(hash(path.join(destination, name, rel)), hash(path.join(source, rel)), `${name}/${rel}`);
   }
   try {
-    for (const name of ['blender-development', 'blender-modeling', 'blender-export', 'blender-visual-review'])
+    for (const name of ['blender-development', 'blender-modeling', 'blender-export', 'blender-godot-export', 'blender-visual-review'])
       test(`${options.shell}: isolated ${name} installs exactly its resource closure`, () => {
         const project = path.join(temporary, name); install(project, 'skill', name);
         const dest = path.join(project, '.agents/skills');

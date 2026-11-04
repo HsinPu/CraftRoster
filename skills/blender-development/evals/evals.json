@@ -45,6 +45,17 @@
         "Rechecks the affected geometry, appearance and export rather than relabeling the old report.",
         "Avoids claiming subjective beauty or unexecuted engine compatibility as a guaranteed pass."
       ]
+    },
+    {
+      "id": 5,
+      "locale": "en",
+      "prompt": "Plan a small solo-game slice: an adjustable doorway, baked crate texture and graphic cel look. Choose focused workflows and leave the unavailable engine test explicit.",
+      "expected_output": "Concrete scoped workflow and evidence-backed findings for the stated production failure, with unexecuted checks explicit.",
+      "assertions": [
+        "Selects only needed geometry, surface, style and delivery specialists.",
+        "Uses actual saved outputs and current diagnostic images before claiming completion.",
+        "Separates source/roundtrip checks from unavailable engine acceptance."
+      ]
     }
   ]
 }

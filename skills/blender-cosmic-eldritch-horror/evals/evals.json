@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-cosmic-eldritch-horror",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create a tiny-surveyor observatory shot with a vast unknown ring and no monster.",
+      "expected_output": "A scale-led partial reveal.",
+      "assertions": [
+        "Keeps ordinary/intermediate scale witnesses.",
+        "Avoids replacing the ring with a creature.",
+        "Requires fog-off and silhouette evidence."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "The huge ring looks like a pebble and the impossible doorway only works from one camera.",
+      "expected_output": "Repair scale and disclose shot dependence.",
+      "assertions": [
+        "Rescales texture detail.",
+        "Adds intermediate cues.",
+        "Does not claim traversable impossible geometry."
+      ]
+    }
+  ]
+}

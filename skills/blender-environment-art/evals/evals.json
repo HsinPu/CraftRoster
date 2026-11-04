@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-environment-art",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Build a modular playable courtyard with a clear objective and preserved 4m grid; keep a navigation path free of foliage.",
+      "expected_output": "Revision-scoped work or read-only findings with concrete technical and visual acceptance evidence; missing execution is identified.",
+      "assertions": [
+        "Proves a minimum kit and junctions.",
+        "Uses masks and camera-path evidence.",
+        "Reports instance/material costs separately from engine FPS."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Review an environment with attractive aerial render but blocked eye-height objective and unique meshes for every wall. Do not change source.",
+      "expected_output": "Revision-scoped work or read-only findings with concrete technical and visual acceptance evidence; missing execution is identified.",
+      "assertions": [
+        "Identifies missing path views and reuse opportunities.",
+        "Keeps review read-only.",
+        "Does not accept beauty render as navigation proof."
+      ]
+    }
+  ]
+}

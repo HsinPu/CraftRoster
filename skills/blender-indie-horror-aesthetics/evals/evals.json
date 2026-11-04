@@ -1,0 +1,49 @@
+{
+  "skill_name": "blender-indie-horror-aesthetics",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create a quiet corporate conference-room horror shot with working fluorescents and no retro tape effects.",
+      "expected_output": "A coherent location/reference interpretation.",
+      "assertions": [
+        "Uses corporate grid and a selected mismatch.",
+        "Preserves working light/clean recording.",
+        "Adds no slasher injury or universal PSX noise."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "The domestic observational study mixes PSX jitter, hospital rust and an occult shrine. Reconcile it.",
+      "expected_output": "Return to the approved lane.",
+      "assertions": [
+        "Identifies incompatible cues.",
+        "Restores ordinary domestic construction/light.",
+        "Reviews clean/treated images separately."
+      ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Create an after-hours corporate office with a consistent ceiling/cubicle/carpet system and one deliberate meeting-room mismatch. Keep the lights functional and use original signage.",
+      "expected_output": "Office-specific editable bay and diagnostic grid/room/close views retaining maintained construction.",
+      "assertions": [
+        "Office module grid and circulation are built before uncanny signs.",
+        "Materials distinguish partitions, laminate and frames.",
+        "The result is not converted to yellow Backrooms or generic ruins."
+      ]
+    },
+    {
+      "id": 4,
+      "locale": "en",
+      "prompt": "A hospital approach became an urban-rubble scene, while a cabin/forest alternate uses the same concrete kit and hides its path with leaves. Propose and execute bounded location-specific repairs where tools allow.",
+      "expected_output": "Separate clinical-threshold/service and timber/terrain/forest construction fixes, with unexecuted checks labeled.",
+      "assertions": [
+        "Restores selected location construction instead of a hue-only variation.",
+        "Keeps route and landmark diagnostics in atmosphere-off views.",
+        "Does not infer medical device function or game navigation from art."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-vehicle-modeling",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create a compact delivery van from dimensions with rotating/steering wheels, separate glass and mid-distance LOD planning.",
+      "expected_output": "Revision-scoped work or read-only findings with concrete technical and visual acceptance evidence; missing execution is identified.",
+      "assertions": [
+        "Locks wheelbase/stance before panel detail.",
+        "Uses correct wheel pivots and system splits.",
+        "Checks body highlights, clearance and actual costs."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Refine an aircraft model with detailed rivets but incorrect wingspan and collapsing wing-root highlights. Keep source modifiers.",
+      "expected_output": "Revision-scoped work or read-only findings with concrete technical and visual acceptance evidence; missing execution is identified.",
+      "assertions": [
+        "Repairs primary ratios and curvature first.",
+        "Preserves editable source/system boundaries.",
+        "Does not equate appearance with flight validation."
+      ]
+    }
+  ]
+}

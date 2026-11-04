@@ -1,0 +1,28 @@
+{
+  "skill_name": "blender-cloth-simulation",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Simulate a one-meter cape with 40 frames of settle and deliver a reusable cinematic cache.",
+      "expected_output": "An editable, scoped result with discipline-specific settings, actual evidence and stated unverified gates.",
+      "assertions": [
+        "Distinguishes sequential memory evaluation from durable bake.",
+        "Sets simulation and shot ranges, pinning, collider clearance and modifier order.",
+        "Reopens cache in a fresh process and reports engine representation limits."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "The cape works in viewport but changes when a worker opens frame 80 first. Diagnose and correct cache persistence.",
+      "expected_output": "A diagnosis tied to the supplied failure, preserved sources, a concrete correction and repeated affected acceptance checks.",
+      "assertions": [
+        "Distinguishes sequential memory evaluation from durable bake.",
+        "Sets simulation and shot ranges, pinning, collider clearance and modifier order.",
+        "Reopens cache in a fresh process and reports engine representation limits.",
+        "Does not label a hypothetical plan, a structural assertion or unrun workflow as successful execution."
+      ]
+    }
+  ]
+}

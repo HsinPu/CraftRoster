@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-anime-style",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Create a restrained adult anime bust with two-tone cel shadows and fine contours in EEVEE.",
+      "expected_output": "A reference-led renderer-correct setup.",
+      "assertions": [
+        "Preserves adult proportions.",
+        "Remaps EEVEE lighting rather than Fresnel to shadow bands.",
+        "Requires face and light-angle images."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "The Cycles material uses Shader to RGB and calls a Fresnel ramp sun shadows. Repair the plan.",
+      "expected_output": "Correct the renderer and lighting model.",
+      "assertions": [
+        "Marks Shader to RGB EEVEE-specific.",
+        "Distinguishes view rim from light bands.",
+        "Offers Cycles Toon BSDF or explicit dot product with cast-shadow limits."
+      ]
+    }
+  ]
+}

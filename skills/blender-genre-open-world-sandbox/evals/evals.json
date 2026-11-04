@@ -1,0 +1,51 @@
+{
+  "skill_name": "blender-genre-open-world-sandbox",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Build a two-biome four-chunk study with one landmark visible from three approaches and continuous terrain edges. Use an isolated project, preserve supplied references and produce scoped assets with honest evidence. If Blender or image inspection is unavailable, provide the specification and mark affected checks unexecuted.",
+      "expected_output": "An editable subject-specific kit or explicitly unexecuted production specification, requested dimensions/states, named diagnostics, actual findings and separate technical/visual/engine evidence status.",
+      "assertions": [
+        "Three approach renders, boundary sections, grayscale distance tiers, origin/bounds overlay and scatter-off terrain. Compare LOD silhouette at matched screen size when requested; counts do not imply frame rate.",
+        "Supplied camera, scale and fiction remain authoritative; concrete pieces and state variants are identified.",
+        "Image acceptance cites actually inspected current-revision images and observations, not file existence.",
+        "No game behavior, AI, balance, physics or engine performance is inferred from renders or static proxies."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Repair chunk seams, repeated POI towers and canopy-hidden destination without claiming streaming or pathfinding validation. Inspect before editing; preserve original source and work only in authorized asset collections. Repeat affected diagnostics after repair.",
+      "expected_output": "A bounded diagnosis and targeted repair retaining approved source/style, with matched subject-specific before/after evidence or an explicit blocked/unverified result.",
+      "assertions": [
+        "Hidden landmark: revise canopy or approach silhouette. Cracked terrain: reconcile shared edge coordinates and normals. Identical POIs: differentiate roof/terrain forms rather than saturating more beacons.",
+        "Asset repairs are separated from game-rule and engine-system changes.",
+        "The original is preserved; affected checks and actual image review are repeated after editing.",
+        "A static numerical or geometry pass is not claimed as gameplay, historical authenticity or scientific proof."
+      ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Build rotated sandbox roof/corner/open-wall modules with a removable shelter state; removal exposes missing backs. Use an isolated authorized source; if execution or image inspection is unavailable, return the concrete specification and mark those checks unexecuted.",
+      "expected_output": "Subtype-specific construction/state and repair artifacts, or an explicit unexecuted specification, with actual diagnostic evidence distinguished from visual and engine acceptance.",
+      "assertions": [
+        "Defines attachment faces, pivot, outward normal, legal rotation and occupied/overhang bounds.",
+        "Repairs boundary/back-side construction and tests interior/exterior assembly.",
+        "Does not claim placement/save/structural support logic exists."
+      ]
+    },
+    {
+      "id": 4,
+      "locale": "en",
+      "prompt": "A four-chunk exploration slice has matching edge positions but shading seams, and the landmark disappears at mounted camera height. Use an isolated authorized source; if execution or image inspection is unavailable, return the concrete specification and mark those checks unexecuted.",
+      "expected_output": "Subtype-specific construction/state and repair artifacts, or an explicit unexecuted specification, with actual diagnostic evidence distinguished from visual and engine acceptance.",
+      "assertions": [
+        "Checks boundary normals/material scale as well as coordinates.",
+        "Uses supplied mounted/vehicle envelope and camera, preserving pedestrian scale.",
+        "Delivers boundary and route-distance comparisons without claiming streaming or handling tests."
+      ]
+    }
+  ]
+}

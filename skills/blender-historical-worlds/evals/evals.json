@@ -1,0 +1,62 @@
+{
+  "skill_name": "blender-historical-worlds",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Build a late-nineteenth-century regional warehouse bay from supplied dated evidence, separating observed and inferred joinery. Use an isolated project, preserve supplied references and produce scoped assets with honest evidence. If Blender or image inspection is unavailable, provide the specification and mark affected checks unexecuted.",
+      "expected_output": "An editable subject-specific kit or explicitly unexecuted production specification, requested dimensions/states, named diagnostics, actual findings and separate technical/visual/engine evidence status.",
+      "assertions": [
+        "Construction cutaway, scale/material sheet and dated ledger beside matching renders. Inspect human-eye silhouettes. Technical validity and plausibility cannot prove authenticity when evidence is absent.",
+        "Supplied camera, scale and fiction remain authoritative; concrete pieces and state variants are identified.",
+        "Image acceptance cites actually inspected current-revision images and observations, not file existence.",
+        "No game behavior, AI, balance, physics or engine performance is inferred from renders or static proxies."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Correct an early helmet with modern optics and unsupported motifs; preserve sourced features and list uncertainties without claiming definitive reconstruction. Inspect before editing; preserve original source and work only in authorized asset collections. Repeat affected diagnostics after repair.",
+      "expected_output": "A bounded diagnosis and targeted repair retaining approved source/style, with matched subject-specific before/after evidence or an explicit blocked/unverified result.",
+      "assertions": [
+        "Mixed centuries: replace unsupported parts or explicitly label fiction. Modern optics/fasteners in early kit: verify or remove. Unsourced cultural motif: retain neutral form until research supports it; do not quietly widen the date range.",
+        "Asset repairs are separated from game-rule and engine-system changes.",
+        "The original is preserved; affected checks and actual image review are repeated after editing.",
+        "A static numerical or geometry pass is not claimed as gameplay, historical authenticity or scientific proof."
+      ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Build separate Egyptian, Greek and Roman bay studies from supplied dated sources; current kit mixes their details and assumes museum-white finishes. Use an isolated authorized source; if execution or image inspection is unavailable, return the concrete specification and mark those checks unexecuted.",
+      "expected_output": "Subtype-specific construction/state and repair artifacts, or an explicit unexecuted specification, with actual diagnostic evidence distinguished from visual and engine acceptance.",
+      "assertions": [
+        "Maintains distinct date/place/function ledgers and source-backed construction/finish assumptions.",
+        "Uses cutaways and neutral junction reviews, preserving inferred alternatives separately.",
+        "Does not infer authenticity from geometry plausibility or blanket ancient motifs."
+      ]
+    },
+    {
+      "id": 4,
+      "locale": "en",
+      "prompt": "Repair WWI, WWII and Cold War loadout/service variants with mixed later optics/connectors and unclear unit dates. Use an isolated authorized source; if execution or image inspection is unavailable, return the concrete specification and mark those checks unexecuted.",
+      "expected_output": "Subtype-specific construction/state and repair artifacts, or an explicit unexecuted specification, with actual diagnostic evidence distinguished from visual and engine acceptance.",
+      "assertions": [
+        "Requires bounded year/theater/unit/role and verifies each component/marking independently.",
+        "Keeps unmarked or explicitly fictional retrofit alternatives rather than silently widening dates.",
+        "Delivers attachment/occupied/service views without functional or tactical claims."
+      ]
+    },
+    {
+      "id": 5,
+      "locale": "en",
+      "prompt": "Build maritime dock and frontier frontage variants, plus an industrial interior from a localized source ledger. Use an isolated authorized source; if execution or image inspection is unavailable, return the concrete specification and mark those checks unexecuted.",
+      "expected_output": "Subtype-specific construction/state and repair artifacts, or an explicit unexecuted specification, with actual diagnostic evidence distinguished from visual and engine acceptance.",
+      "assertions": [
+        "Maritime branch checks waterline, rope endpoints and cargo path.",
+        "Frontier/industrial branches construct roof/back/service sides and actual human/tool scale.",
+        "Separates sources and assumptions rather than using a universal grime or gold palette."
+      ]
+    }
+  ]
+}

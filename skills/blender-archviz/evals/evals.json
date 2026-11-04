@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-archviz",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Build a presentation interior from a 6x4x2.7 m plan; keep its CAD reference and deliver a camera plate plus editable source.",
+      "expected_output": "Revision-scoped work or read-only findings with concrete technical and visual acceptance evidence; missing execution is identified.",
+      "assertions": [
+        "Checks two dimensions and units before construction.",
+        "Uses camera/lens decisions without misrepresenting room size.",
+        "Separates glass/frames and returns current image evidence."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Review these exterior renders only: verticals converge, window glass is black and the source contains other architects' linked work. Propose fixes without editing.",
+      "expected_output": "Revision-scoped work or read-only findings with concrete technical and visual acceptance evidence; missing execution is identified.",
+      "assertions": [
+        "Returns read-only camera and reflection diagnosis.",
+        "Preserves linked sources.",
+        "Does not claim a new render or measured construction accuracy."
+      ]
+    }
+  ]
+}

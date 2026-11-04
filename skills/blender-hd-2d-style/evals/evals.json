@@ -1,0 +1,27 @@
+{
+  "skill_name": "blender-hd-2d-style",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Build an HD-2D town vignette with a 48-pixel actor appearing at 2x size and a soft 3D background.",
+      "expected_output": "A measured hybrid stage.",
+      "assertions": [
+        "Anchors feet and actor world size.",
+        "Checks integer pixel scale/alpha.",
+        "Compares blur-off and final."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "The actor blurs, floats and draws through a foreground wall while the camera moves. Repair it.",
+      "expected_output": "Repair contact, focus and occlusion.",
+      "assertions": [
+        "Tests depth order and billboard behavior.",
+        "Protects sprite pixels.",
+        "Views a movement test rather than relying on stills."
+      ]
+    }
+  ]
+}

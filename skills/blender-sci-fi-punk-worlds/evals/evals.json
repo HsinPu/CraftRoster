@@ -1,0 +1,51 @@
+{
+  "skill_name": "blender-sci-fi-punk-worlds",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Build a solarpunk service lane with solar source, storage and irrigation terminal understandable with emission disabled. Use an isolated project, preserve supplied references and produce scoped assets with honest evidence. If Blender or image inspection is unavailable, provide the specification and mark affected checks unexecuted.",
+      "expected_output": "An editable subject-specific kit or explicitly unexecuted production specification, requested dimensions/states, named diagnostics, actual findings and separate technical/visual/engine evidence status.",
+      "assertions": [
+        "Exploded maintenance view, source-chain diagram, access section and emission pairs. Inspect panel backs/cable endpoints. Label static props versus proposed mechanisms.",
+        "Supplied camera, scale and fiction remain authoritative; concrete pieces and state variants are identified.",
+        "Image acceptance cites actually inspected current-revision images and observations, not file existence.",
+        "No game behavior, AI, balance, physics or engine performance is inferred from renders or static proxies."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Repair intersecting clockpunk gear envelopes and unrelated neon/brass motifs without claiming a working machine. Inspect before editing; preserve original source and work only in authorized asset collections. Repeat affected diagnostics after repair.",
+      "expected_output": "A bounded diagnosis and targeted repair retaining approved source/style, with matched subject-specific before/after evidence or an explicit blocked/unverified result.",
+      "assertions": [
+        "Neon-only identity: rebuild main masses/interface. Intersecting gears: revise clearance or label relief decorative. Plants block panels: preserve service route. Unrelated motifs: unify selected subsystem logic without forbidding intentional hybrids.",
+        "Asset repairs are separated from game-rule and engine-system changes.",
+        "The original is preserved; affected checks and actual image review are repeated after editing.",
+        "A static numerical or geometry pass is not claimed as gameplay, historical authenticity or scientific proof."
+      ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Create biopunk containment, atompunk appliance and dieselpunk powertrain variants; they currently differ only by color and random bolts. Use an isolated authorized source; if execution or image inspection is unavailable, return the concrete specification and mark those checks unexecuted.",
+      "expected_output": "Subtype-specific construction/state and repair artifacts, or an explicit unexecuted specification, with actual diagnostic evidence distinguished from visual and engine acceptance.",
+      "assertions": [
+        "Each branch supplies different functional masses, interfaces and service-open states.",
+        "Biopunk uses actual membrane/vessel thickness and contained interfaces; atom/diesel have distinct enclosure/powertrain logic.",
+        "Compares neutral materials without claiming biological, pressure or machine feasibility."
+      ]
+    },
+    {
+      "id": 4,
+      "locale": "en",
+      "prompt": "Build hard-sci-fi zero-g service bay and clockpunk mechanism; handholds are absent and gear teeth intersect during the proposed rotation. Use an isolated authorized source; if execution or image inspection is unavailable, return the concrete specification and mark those checks unexecuted.",
+      "expected_output": "Subtype-specific construction/state and repair artifacts, or an explicit unexecuted specification, with actual diagnostic evidence distinguished from visual and engine acceptance.",
+      "assertions": [
+        "Uses declared gravity/pressure/crew scale and withdrawal/service envelopes.",
+        "Clock branch records tooth counts/ratios/planes/pivots and repairs phase or size.",
+        "Distinguishes static decorative relief from coordinated animation and engineering validity."
+      ]
+    }
+  ]
+}

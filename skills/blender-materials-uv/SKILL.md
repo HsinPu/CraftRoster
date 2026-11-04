@@ -17,6 +17,9 @@ Make surfaces read correctly under the intended lighting and survive the chosen 
 Read the shared [asset contract](../blender-development/references/asset-contract.md) and [execution and ownership](../blender-development/references/execution-and-ownership.md). Inspect the current material graph, image paths, UV channels, color management and target shader before edits.
 
 ## Surface workflow
+
+For an end-to-end surface job, coordinate the stages below. For a focused repair, select the relevant package when installed: `blender-uv-unwrapping` owns seams, density and UV channels; `blender-pbr-materials` owns physical material response and node graphs; `blender-texturing` owns painted/image texture production; `blender-texture-baking` owns source-to-target projection and saved maps. These are conditional handoffs, not required installations for this entry's complete small-asset workflow.
+
 1. Separate a material defect from a lighting, exposure or view-transform problem. Capture a neutral reference and the intended presentation. Preserve approved palette and stylization.
 2. Set UV strategy by surface role and output: unique bakes, intentional mirroring, tiling/trim sheets, lightmaps or supported UDIMs. Use [UV and bake decisions](references/surface-delivery.md); do not assume all overlaps are defects.
 3. Construct or repair materials using node types and sockets available in the actual Blender version. Reuse shared materials deliberately; make a local copy before changes intended for one object only.
