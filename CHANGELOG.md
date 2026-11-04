@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.5.2 — 2026-11-04
+
+Patch release: give expanded cross-platform installation checks sufficient CI runtime.
+
+- Raise macOS and PowerShell 7 installation job limits to 30 minutes after the expanded suite took about 16.5 and 14.5 minutes respectively; the macOS job was cancelled by its 15-minute limit despite successful test steps.
+- Reserve 90 minutes for native PowerShell 5.1, whose earlier catalog already needed about 49 minutes, to accommodate the additional game packages and runner variation. Retain every test, assertion and bounded job timeout.
+
 ## 1.5.1 — 2026-11-04
 
 Patch release: fix the CLI regression check for the expanded installation catalog.

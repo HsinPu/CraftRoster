@@ -342,11 +342,13 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          # Native 5.1 exceeded 15 minutes while cases were still progressing.
+          # Native 5.1 took about 49 minutes before the 110-Skill game suite.
+          # Keep headroom for full-catalog installs and runner variance.
           - powershell: powershell.exe
-            timeout_minutes: 60
+            timeout_minutes: 90
+          # The expanded suite took 14.5 minutes on the 15-minute budget.
           - powershell: pwsh.exe
-            timeout_minutes: 15
+            timeout_minutes: 30
 
     steps:
       - name: Checkout
@@ -431,7 +433,8 @@ jobs:
   installer-bash-macos:
     name: Installer smoke (Bash, macOS quick)
     runs-on: macos-latest
-    timeout-minutes: 15
+    # The expanded checks plus remote global install took 16.5 minutes.
+    timeout-minutes: 30
 
     steps:
       - name: Checkout
