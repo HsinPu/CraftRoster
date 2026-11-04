@@ -1,0 +1,28 @@
+{
+  "skill_name": "blender-modeling",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "The existing stylized gate kit has gaps at corners and its doorway silhouette is lost from the game camera. Repair the Blender source, keeping the established grid, painted look and hinge pivot. The preview scene includes unrelated artist work.",
+      "expected_output": "Scoped asset corrections with current evidence, preserved project contracts and explicit unexecuted acceptance checks.",
+      "assertions": [
+        "Identifies and preserves unrelated objects and the established art direction.",
+        "Tests assembled corner and doorway dimensions rather than adding decorative geometry first.",
+        "Produces matched-camera before/after evidence or explicitly leaves visual checks unexecuted.",
+        "Keeps an editable source and explains modifier, pivot and geometry changes."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Review the blender modeling decisions in this supplied report only. Do not edit the .blend, install tools or generate new artifacts. It contains a successful export and an old beauty image but no images of the latest revision.",
+      "expected_output": "Read-only findings identifying the evidence gap and the concrete next verification needed.",
+      "assertions": [
+        "Keeps source files unchanged and returns findings in the response.",
+        "Does not treat an old image or successful export as visual evidence for the current revision.",
+        "Names the missing current-revision evidence and feasible checks without inventing execution."
+      ]
+    }
+  ]
+}

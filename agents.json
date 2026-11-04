@@ -1,9 +1,9 @@
 {
   "version": "3.0.0",
-  "updated": "2026-10-29T10:28:57.606Z",
-  "total": 238,
+  "updated": "2026-11-04T06:10:00.819Z",
+  "total": 240,
   "categories": 31,
-  "uniqueRoles": 238,
+  "uniqueRoles": 240,
   "agents": [
     {
       "id": "accessibility-expert",
@@ -1178,6 +1178,100 @@
           "plugins/shell-scripting/agents/bash-pro.md"
         ],
         "tree": "deadb68423a57db5a1ab2afd50102be27df1744c"
+      }
+    },
+    {
+      "id": "blender-artist",
+      "name": "blender-artist",
+      "role": "blender-artist",
+      "description": "Creates and refines Blender game assets against an explicit art brief, budgets and target-engine contract, producing reproducible source, exports and current visual evidence. Use for authorized Blender modeling, materials, rigging, look development and asset corrections.",
+      "category": "creative",
+      "author": "HsinPu",
+      "source": "HsinPu/CraftRoster",
+      "license": "Apache-2.0",
+      "model": "inherit",
+      "permission": "workspace-write",
+      "skills": [
+        "blender-development",
+        "blender-lookdev",
+        "blender-asset-validation",
+        "blender-visual-review"
+      ],
+      "skillDependencies": [
+        {
+          "name": "blender-development",
+          "kind": "recommended",
+          "reason": "Owns the asset brief, scene ownership, execution and revision loop."
+        },
+        {
+          "name": "blender-lookdev",
+          "kind": "recommended",
+          "reason": "Connects art direction to material, lighting and camera decisions."
+        },
+        {
+          "name": "blender-asset-validation",
+          "kind": "recommended",
+          "reason": "Checks technical delivery evidence before handoff."
+        },
+        {
+          "name": "blender-visual-review",
+          "kind": "recommended",
+          "reason": "Provides independent, evidence-based visual critique and recheck criteria."
+        }
+      ],
+      "tags": [
+        "blender",
+        "game-assets",
+        "technical-art"
+      ],
+      "path": "agents/blender-artist.md",
+      "references": {
+        "repo": "EL4CTEO/blender-skills",
+        "paths": [
+          "skills/blender-core/SKILL.md"
+        ],
+        "tree": "9b0d2fc9a2f4063c915e34c17d1136cfb08259e8"
+      }
+    },
+    {
+      "id": "blender-asset-reviewer",
+      "name": "blender-asset-reviewer",
+      "role": "blender-asset-reviewer",
+      "description": "Reviews Blender assets using supplied source summaries, current diagnostic renders, art references and export evidence. Use for independent technical and visual acceptance findings; returns prioritized corrections without changing scenes, images, files or reports.",
+      "category": "quality-assurance",
+      "author": "HsinPu",
+      "source": "HsinPu/CraftRoster",
+      "license": "Apache-2.0",
+      "model": "inherit",
+      "permission": "read-only",
+      "skills": [
+        "blender-asset-validation",
+        "blender-visual-review"
+      ],
+      "skillDependencies": [
+        {
+          "name": "blender-asset-validation",
+          "kind": "recommended",
+          "reason": "Provides technical inspection scope and delivery evidence boundaries."
+        },
+        {
+          "name": "blender-visual-review",
+          "kind": "recommended",
+          "reason": "Provides art-direction-aware visual diagnosis and correction priorities."
+        }
+      ],
+      "tags": [
+        "blender",
+        "visual-review",
+        "asset-quality"
+      ],
+      "path": "agents/blender-asset-reviewer.md",
+      "references": {
+        "repo": "EL4CTEO/blender-skills",
+        "paths": [
+          "skills/blender-asset-qa/SKILL.md"
+        ],
+        "tree": "9b0d2fc9a2f4063c915e34c17d1136cfb08259e8"
       }
     },
     {

@@ -1,0 +1,3 @@
+# Source attribution
+
+Primary research: [majidmanzarpour/blender-game-skills](https://github.com/majidmanzarpour/blender-game-skills/tree/f0ef29385a03de139957e6f700b801cdc00b7e29), fixed revision `f0ef29385a03de139957e6f700b801cdc00b7e29`, under MIT. Its workflow ideas informed this independently written CraftRoster package; upstream scripts, prompts, provider settings and runtime claims are not imported. The preserved [MIT notice](../licenses/upstream-MIT.txt) covers the researched source. CraftRoster instructions are Apache-2.0. Additional inspected sources and adaptation boundaries are recorded in the repository's Blender research documentation.

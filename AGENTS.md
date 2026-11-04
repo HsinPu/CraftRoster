@@ -42,6 +42,7 @@
 
 - Run `npm run validate` after changing Agents, Skills, adapters, catalogs, installers, or README catalog metadata.
 - Run relevant focused checks for changed executable behavior. A case definition or a structural pass does not establish actual runtime or visual success.
+- Blender assets have separate technical, visual and target-engine evidence. Review actual revision-bound images, preserve source files, and repeat affected checks after corrections. Keep image review read-only; an authorized writer renders, repairs and persists reports. Native Blender fixtures are optional and distinct from host-only CI checks.
 - Keep remote provenance pinned when upstream repositories move. Agent API redirects may follow only HTTPS on `api.github.com`, with bounded hops; redirects do not waive commit, tree, path or license verification.
 - When adding a referenced license type, exercise the remote license-content matcher as well as local metadata validation, including a negative content and pinned-blob regression.
 - OpenCode configuration accepts JSONC and coexisting JSON/JSONC files; preserve effective instruction inheritance and all input snapshots. Ownership metadata remains strict JSON and must not inherit configuration parsing relaxations.

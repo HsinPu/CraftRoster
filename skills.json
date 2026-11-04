@@ -1,7 +1,7 @@
 {
   "version": "2.0.0",
-  "updated": "2026-10-29T00:00:00Z",
-  "total": 294,
+  "updated": "2026-11-04T00:00:00Z",
+  "total": 304,
   "categories": [
     {
       "id": "workflow-planning",
@@ -82,6 +82,11 @@
       "id": "documents-productivity",
       "name": "Documents & Productivity",
       "description": "File organization, office documents, spreadsheets, presentations, PDFs, diagrams, and workspace operations."
+    },
+    {
+      "id": "blender-creation",
+      "name": "Blender & Game Asset Creation",
+      "description": "Blender asset production, reference matching, look development, rigging, optimization, export and independent technical/visual review."
     }
   ],
   "skills": [
@@ -1136,6 +1141,300 @@
           "when": "deterministic post-processing"
         }
       ]
+    },
+    {
+      "name": "blender-asset-validation",
+      "description": "Validate Blender asset structure, budgets, materials, rigs and exported/reimported delivery evidence. Use for technical asset acceptance and regression checks; visual beauty and target-engine operation require their own evidence.",
+      "category": "blender-creation",
+      "author": "HsinPu",
+      "source": "HsinPu/CraftRoster",
+      "license": "Apache-2.0",
+      "tags": [
+        "blender",
+        "game-assets",
+        "asset-validation"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ],
+      "reference": {
+        "source": "EL4CTEO/blender-skills",
+        "license": "MIT",
+        "revision": "fb92cfb4cc5a238c22113a6a230b09f535bd0656"
+      }
+    },
+    {
+      "name": "blender-development",
+      "description": "Create, repair, or coordinate Blender game assets with a reference-led brief, scoped scene edits, render review, and verified export. Use for Blender asset production spanning modeling, materials, animation or delivery; game logic, unrelated image generation and engine-only programming remain with their own workflows.",
+      "category": "blender-creation",
+      "author": "HsinPu",
+      "source": "HsinPu/CraftRoster",
+      "license": "Apache-2.0",
+      "tags": [
+        "blender",
+        "game-assets",
+        "development"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-asset-validation",
+          "kind": "conditional",
+          "when": "The authorized Blender task needs asset validation."
+        },
+        {
+          "name": "blender-export",
+          "kind": "conditional",
+          "when": "The authorized Blender task needs export."
+        },
+        {
+          "name": "blender-game-optimization",
+          "kind": "conditional",
+          "when": "The authorized Blender task needs game optimization."
+        },
+        {
+          "name": "blender-lookdev",
+          "kind": "conditional",
+          "when": "The authorized Blender task needs lookdev."
+        },
+        {
+          "name": "blender-materials-uv",
+          "kind": "conditional",
+          "when": "The authorized Blender task needs materials uv."
+        },
+        {
+          "name": "blender-modeling",
+          "kind": "conditional",
+          "when": "The authorized Blender task needs modeling."
+        },
+        {
+          "name": "blender-reference-modeling",
+          "kind": "conditional",
+          "when": "The authorized Blender task needs reference modeling."
+        },
+        {
+          "name": "blender-rigging-animation",
+          "kind": "conditional",
+          "when": "The authorized Blender task needs rigging animation."
+        },
+        {
+          "name": "blender-visual-review",
+          "kind": "conditional",
+          "when": "The authorized Blender task needs visual review."
+        }
+      ],
+      "reference": {
+        "source": "EL4CTEO/blender-skills",
+        "license": "MIT",
+        "revision": "fb92cfb4cc5a238c22113a6a230b09f535bd0656"
+      }
+    },
+    {
+      "name": "blender-export",
+      "description": "Prepare and verify Blender asset exports for a declared game-engine pipeline, including geometry, materials, skeletons, clips, scale and delivery evidence. Use when Blender assets leave the authoring scene; unrelated engine programming and beauty-only renders do not activate this Skill.",
+      "category": "blender-creation",
+      "author": "HsinPu",
+      "source": "HsinPu/CraftRoster",
+      "license": "Apache-2.0",
+      "tags": [
+        "blender",
+        "game-assets",
+        "export"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-asset-validation",
+          "kind": "required"
+        },
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ],
+      "reference": {
+        "source": "EL4CTEO/blender-skills",
+        "license": "MIT",
+        "revision": "fb92cfb4cc5a238c22113a6a230b09f535bd0656"
+      }
+    },
+    {
+      "name": "blender-game-optimization",
+      "description": "Reduce Blender game-asset geometry, texture, material and skeletal costs while preserving required appearance and motion. Use for measured asset budgets, LODs, collision proxies and scan or generated-mesh cleanup; engine FPS claims require engine profiling.",
+      "category": "blender-creation",
+      "author": "HsinPu",
+      "source": "HsinPu/CraftRoster",
+      "license": "Apache-2.0",
+      "tags": [
+        "blender",
+        "game-assets",
+        "game-optimization"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ],
+      "reference": {
+        "source": "setcodes/gamedev-skills",
+        "license": "MIT",
+        "revision": "096c224aa498a789fa99d476583029fcb9f538e1"
+      }
+    },
+    {
+      "name": "blender-lookdev",
+      "description": "Develop and refine the look of Blender assets through art direction, cohesive materials, lighting and camera presentation. Use for Blender appearance and render polish; visual review without authorized edits belongs to blender-visual-review.",
+      "category": "blender-creation",
+      "author": "HsinPu",
+      "source": "HsinPu/CraftRoster",
+      "license": "Apache-2.0",
+      "tags": [
+        "blender",
+        "game-assets",
+        "lookdev"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ],
+      "reference": {
+        "source": "EL4CTEO/blender-skills",
+        "license": "MIT",
+        "revision": "fb92cfb4cc5a238c22113a6a230b09f535bd0656"
+      }
+    },
+    {
+      "name": "blender-materials-uv",
+      "description": "Author or repair Blender UVs, PBR or stylized materials, textures and baked maps for a defined asset and target. Use for seams, texel density, shading, color-space or baking problems rather than changing the whole scene's art direction.",
+      "category": "blender-creation",
+      "author": "HsinPu",
+      "source": "HsinPu/CraftRoster",
+      "license": "Apache-2.0",
+      "tags": [
+        "blender",
+        "game-assets",
+        "materials-uv"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ],
+      "reference": {
+        "source": "arjun988/blender-skills",
+        "license": "MIT",
+        "revision": "8f778d2405a214b508d4c7d80742be8e43acdd52"
+      }
+    },
+    {
+      "name": "blender-modeling",
+      "description": "Build or refine Blender mesh assets, modular environments, props and character forms with controlled topology and silhouette. Use for geometry authoring or retopology; material-only, rig-only and review-only tasks retain their own workflows.",
+      "category": "blender-creation",
+      "author": "HsinPu",
+      "source": "HsinPu/CraftRoster",
+      "license": "Apache-2.0",
+      "tags": [
+        "blender",
+        "game-assets",
+        "modeling"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ],
+      "reference": {
+        "source": "arjun988/blender-skills",
+        "license": "MIT",
+        "revision": "8f778d2405a214b508d4c7d80742be8e43acdd52"
+      }
+    },
+    {
+      "name": "blender-reference-modeling",
+      "description": "Reference-guided Blender modeling with calibrated proportions, camera matching, inferred-side tracking and rendered comparison. Use when a supplied image, photo or turnaround must guide a Blender asset; unrelated image editing does not apply.",
+      "category": "blender-creation",
+      "author": "HsinPu",
+      "source": "HsinPu/CraftRoster",
+      "license": "Apache-2.0",
+      "tags": [
+        "blender",
+        "game-assets",
+        "reference-modeling"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ],
+      "reference": {
+        "source": "majidmanzarpour/blender-game-skills",
+        "license": "MIT",
+        "revision": "f0ef29385a03de139957e6f700b801cdc00b7e29"
+      }
+    },
+    {
+      "name": "blender-rigging-animation",
+      "description": "Build or repair Blender rigs, weights, constraints and animation clips for the intended deformation and target engine. Use for character or mechanical motion, retargeting, looping or root-motion defects; static mesh and render-only work do not require a rig.",
+      "category": "blender-creation",
+      "author": "HsinPu",
+      "source": "HsinPu/CraftRoster",
+      "license": "Apache-2.0",
+      "tags": [
+        "blender",
+        "game-assets",
+        "rigging-animation"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ],
+      "reference": {
+        "source": "arjun988/blender-skills",
+        "license": "MIT",
+        "revision": "8f778d2405a214b508d4c7d80742be8e43acdd52"
+      }
+    },
+    {
+      "name": "blender-visual-review",
+      "description": "Read-only visual critique of Blender asset renders, comparison sheets and animation evidence against an art brief. Use for appearance acceptance, prioritized polish findings and revision rechecks; this Skill does not edit scenes or create reports.",
+      "category": "blender-creation",
+      "author": "HsinPu",
+      "source": "HsinPu/CraftRoster",
+      "license": "Apache-2.0",
+      "tags": [
+        "blender",
+        "game-assets",
+        "visual-review"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ],
+      "reference": {
+        "source": "majidmanzarpour/blender-game-skills",
+        "license": "MIT",
+        "revision": "f0ef29385a03de139957e6f700b801cdc00b7e29"
+      }
     },
     {
       "name": "brand-voice",

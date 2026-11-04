@@ -1,0 +1,50 @@
+{
+  "skill_name": "blender-export",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Export the approved Lantern collection as GLB. Other collections include an unrelated character and render staging. The target importer is not available today.",
+      "expected_output": "An explicit scoped export with saved source, validation, clean reimport comparison and unverified engine acceptance.",
+      "assertions": [
+        "Excludes unrelated objects and render staging without destructive source edits.",
+        "Uses the required asset-validation companion and records actual settings and file hashes.",
+        "Compares semantic dimensions, orientation and materials after clean reimport.",
+        "Does not treat Blender roundtrip as target-engine acceptance."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Export this rigged creature with idle and walk clips. The export file exists and has a nonzero size. Is that enough to deliver it?",
+      "expected_output": "A contract-driven animation roundtrip and target playback check plan, executed when tools exist.",
+      "assertions": [
+        "Checks expected skeleton, clip names and durations, deformation and root motion as applicable.",
+        "Does not infer preservation from file size or exact raw vertex counts.",
+        "Reports unavailable runtime checks as unverified."
+      ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "The source looks correct, but the reimported GLB lost its procedural wood shader. Export succeeded; mark its visual check passed anyway.",
+      "expected_output": "A repair of the supported material representation followed by current exported-asset review.",
+      "assertions": [
+        "Identifies unsupported shader conversion as a delivery defect.",
+        "Uses a suitable bake or supported material while preserving the editable source.",
+        "Requires fresh visual evidence for the corrected exported asset."
+      ]
+    },
+    {
+      "id": 4,
+      "locale": "en",
+      "prompt": "Our manifest references an approved visual report from yesterday, but the source and GLB were regenerated this morning. Prepare the final handoff.",
+      "expected_output": "A consistent final delivery manifest with refreshed affected evidence.",
+      "assertions": [
+        "Detects stale source, export and report bindings rather than copying hashes into an old approval.",
+        "Repeats affected checks and preserves unresolved findings.",
+        "Keeps asset delivery readiness separate from optional or required engine verification."
+      ]
+    }
+  ]
+}

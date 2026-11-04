@@ -1,0 +1,38 @@
+{
+  "skill_name": "blender-reference-modeling",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "A concept sheet has a front orthographic image, a perspective back sketch and no real-world dimensions. Build its stylized prop in Blender for a 96-pixel game view; do not ask about hidden surface details.",
+      "expected_output": "A reference ledger, declared scale assumption and calibrated blockout comparison before detail.",
+      "assertions": [
+        "Separates orthographic dimensions from perspective and inferred geometry.",
+        "Preserves stylization and reports unknown backs rather than inventing reference evidence.",
+        "Checks readability at 96 pixels and does not treat silhouette-normalized similarity as world-scale proof."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "The silhouette score is 0.97 after both masks were cropped to bounding boxes, but the exported model is half the specified two-metre height. Mark it approved.",
+      "expected_output": "Rejects world-scale acceptance and identifies the corrective measurement.",
+      "assertions": [
+        "Does not accept the normalized score as proof of physical scale.",
+        "Checks actual exported/reimported dimensions against two metres.",
+        "Keeps visual and technical criteria separate."
+      ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Use last week's render to approve today's edited mesh; the renderer is currently unavailable.",
+      "expected_output": "A partial result with current visual comparison explicitly unverified.",
+      "assertions": [
+        "Binds evidence to asset revision.",
+        "Does not claim to view a fresh render or approve the changed mesh.",
+        "Continues feasible measurements without installing global dependencies."
+      ]
+    }
+  ]
+}

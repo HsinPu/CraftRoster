@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "review_date": "2026-10-29",
+  "review_date": "2026-11-04",
   "baseline_commit": "7acca1fb8865903dc67ee4c76c147d0881cb9e1b",
   "entry_hash_normalization": "utf8-lf",
-  "scope": "Entry and dependency review across 294 Skills. Existing decisions retain prior evidence; ui-improvement is reviewed in docs/interface-quality.md. Case definitions and structural/install tests do not certify native runtime behavior.",
+  "scope": "Entry and dependency review across current Skills. Blender creation and independent technical/visual evidence boundaries are documented in docs/blender-game-development-research.md. This registry does not certify runtime success.",
   "category_representatives": [
     {
       "category": "workflow-planning",
@@ -98,6 +98,12 @@
     {
       "category": "documents-productivity",
       "skill": "spreadsheet-ops",
+      "case_id": 1,
+      "status": "definition_only"
+    },
+    {
+      "category": "blender-creation",
+      "skill": "blender-development",
       "case_id": 1,
       "status": "definition_only"
     }
@@ -361,6 +367,106 @@
       "reason": "Installability repair: 1 original findings resolved; core, conditional, resource, and alternative ownership checked against current evidence. See the 2026-10-09 remediation record.",
       "next_action": "Use the verified required closure for selective/category installation. Live task behavior remains unrun; any later model trial needs its own current-source evidence.",
       "entry_sha256": "ae871807e3c385b0284243b341b642f85285a84f22a2f8f76ace723bc04511c6",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "blender-asset-validation",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed Blender scope, resource dependencies, asset ownership and separate technical/visual acceptance against pinned references.",
+      "next_action": "Exercise isolated creation and review cases; keep current source, renders and target-engine evidence bound to the delivered revision.",
+      "entry_sha256": "1a0b5b8d4316f9f4605dfe23508b05d18fbb015134cd37faf465dd7b645b6e68",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "blender-development",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed Blender scope, resource dependencies, asset ownership and separate technical/visual acceptance against pinned references.",
+      "next_action": "Exercise isolated creation and review cases; keep current source, renders and target-engine evidence bound to the delivered revision.",
+      "entry_sha256": "9d19da706c94723865d89741eaa574fad4b5a593b67e2feeaa006a549d4f470a",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "blender-export",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed Blender scope, resource dependencies, asset ownership and separate technical/visual acceptance against pinned references.",
+      "next_action": "Exercise isolated creation and review cases; keep current source, renders and target-engine evidence bound to the delivered revision.",
+      "entry_sha256": "8f8ac5aadf0c463ebfee95a3b0e78d287b86238d61f0149fece4073fef74b3a8",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "blender-game-optimization",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed Blender scope, resource dependencies, asset ownership and separate technical/visual acceptance against pinned references.",
+      "next_action": "Exercise isolated creation and review cases; keep current source, renders and target-engine evidence bound to the delivered revision.",
+      "entry_sha256": "d6fbca732bed43749457c36172e46b2e5c8df9bd2a387fe7ccc80d8feb99e499",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "blender-lookdev",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed Blender scope, resource dependencies, asset ownership and separate technical/visual acceptance against pinned references.",
+      "next_action": "Exercise isolated creation and review cases; keep current source, renders and target-engine evidence bound to the delivered revision.",
+      "entry_sha256": "448f85159763a223ca3a3f8601e84dbe5db9a1c62131dea17d09a6ed8fd613a8",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "blender-materials-uv",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed Blender scope, resource dependencies, asset ownership and separate technical/visual acceptance against pinned references.",
+      "next_action": "Exercise isolated creation and review cases; keep current source, renders and target-engine evidence bound to the delivered revision.",
+      "entry_sha256": "e4b7256ff44b13c935f6ff935bd2016df579c6b20b955054cc1fd3684d425d19",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "blender-modeling",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed Blender scope, resource dependencies, asset ownership and separate technical/visual acceptance against pinned references.",
+      "next_action": "Exercise isolated creation and review cases; keep current source, renders and target-engine evidence bound to the delivered revision.",
+      "entry_sha256": "e3564e6fae00add8328e297014233d4c9f235ef891b69bbb1061744251586f98",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "blender-reference-modeling",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed Blender scope, resource dependencies, asset ownership and separate technical/visual acceptance against pinned references.",
+      "next_action": "Exercise isolated creation and review cases; keep current source, renders and target-engine evidence bound to the delivered revision.",
+      "entry_sha256": "9d2dbf140d4d5fe6bd6f1187b8cdd2bf40a6e0a86560e9cc0d8dca6897cc9b72",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "blender-rigging-animation",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed Blender scope, resource dependencies, asset ownership and separate technical/visual acceptance against pinned references.",
+      "next_action": "Exercise isolated creation and review cases; keep current source, renders and target-engine evidence bound to the delivered revision.",
+      "entry_sha256": "ede2f67c8b24623252e63b749440b9333b7e0cf69019d62fff60acf17e4f304d",
+      "runtime_status": "not_run"
+    },
+    {
+      "name": "blender-visual-review",
+      "category": "blender-creation",
+      "decision": "keep",
+      "review_depth": "semantic-review",
+      "reason": "Reviewed Blender scope, resource dependencies, asset ownership and separate technical/visual acceptance against pinned references.",
+      "next_action": "Exercise isolated creation and review cases; keep current source, renders and target-engine evidence bound to the delivered revision.",
+      "entry_sha256": "75727c142b23165ceaab1a189a836c21685ed88ea11c9ecbadf41f370e409aed",
       "runtime_status": "not_run"
     },
     {

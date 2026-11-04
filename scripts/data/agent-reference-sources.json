@@ -176,6 +176,13 @@
       "tree": "43e7d9e1e4e59f4354c0e55e6ffd4d4f6925c03c",
       "license": "Apache-2.0",
       "licensePath": "LICENSE"
+    },
+    {
+      "repo": "EL4CTEO/blender-skills",
+      "commit": "fb92cfb4cc5a238c22113a6a230b09f535bd0656",
+      "tree": "9b0d2fc9a2f4063c915e34c17d1136cfb08259e8",
+      "license": "MIT",
+      "licensePath": "LICENSE"
     }
   ]
 }

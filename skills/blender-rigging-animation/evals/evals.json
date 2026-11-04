@@ -1,0 +1,28 @@
+{
+  "skill_name": "blender-rigging-animation",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Fix elbow collapse and a visible walk-cycle seam in this existing Blender character. Keep the shipped bone names and attachment socket, use in-place motion, and preserve the artist's exaggerated proportions.",
+      "expected_output": "Scoped asset corrections with current evidence, preserved project contracts and explicit unexecuted acceptance checks.",
+      "assertions": [
+        "Preserves skeleton names, sockets and approved proportions while repairing relevant weights or topology.",
+        "Tests elbow stress poses and a full repeating walk rather than judging one still.",
+        "Records FPS, clip range and in-place policy and verifies root displacement.",
+        "Separates Blender playback, export/reimport and actual engine-state verification."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Review the blender rigging and animation decisions in this supplied report only. Do not edit the .blend, install tools or generate new artifacts. It contains a successful export and an old beauty image but no images of the latest revision.",
+      "expected_output": "Read-only findings identifying the evidence gap and the concrete next verification needed.",
+      "assertions": [
+        "Keeps source files unchanged and returns findings in the response.",
+        "Does not treat an old image or successful export as visual evidence for the current revision.",
+        "Names the missing current-revision evidence and feasible checks without inventing execution."
+      ]
+    }
+  ]
+}

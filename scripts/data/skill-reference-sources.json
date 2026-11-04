@@ -461,6 +461,126 @@
           }
         ]
       }
+    },
+    {
+      "repo": "EL4CTEO/blender-skills",
+      "commit": "fb92cfb4cc5a238c22113a6a230b09f535bd0656",
+      "tree": "9b0d2fc9a2f4063c915e34c17d1136cfb08259e8",
+      "license": "MIT",
+      "licenseEvidence": {
+        "kind": "license-file",
+        "path": "LICENSE",
+        "blob": "3f709c423026e30972b83813fc8a58a71495abf0"
+      },
+      "skills": {
+        "blender-development": [
+          {
+            "path": "skills/blender-core/SKILL.md",
+            "blob": "9aeacc3a7bfa0ef34d1feda22f92fccecfd8e202"
+          }
+        ],
+        "blender-lookdev": [
+          {
+            "path": "skills/blender-lighting-lookdev/SKILL.md",
+            "blob": "4087b16171df764c3a70b3a101a79b9a9905230e"
+          }
+        ],
+        "blender-export": [
+          {
+            "path": "skills/blender-export-pipelines/SKILL.md",
+            "blob": "be7b38070db47d51a7f56183d13af24d5c9b1311"
+          }
+        ],
+        "blender-asset-validation": [
+          {
+            "path": "skills/blender-asset-qa/SKILL.md",
+            "blob": "992ea8ed5b14a9de27841ee9f6bde5f890aafc15"
+          }
+        ]
+      }
+    },
+    {
+      "repo": "arjun988/blender-skills",
+      "commit": "8f778d2405a214b508d4c7d80742be8e43acdd52",
+      "tree": "fba306faa1425961eabe1af4199001a04d3a8e25",
+      "license": "MIT",
+      "licenseEvidence": {
+        "kind": "license-file",
+        "path": "LICENSE",
+        "blob": "576f7bc8a82e02a0d09a6f955612050cf15873a8"
+      },
+      "skills": {
+        "blender-modeling": [
+          {
+            "path": ".claude/skills/blender-modeler/SKILL.md",
+            "blob": "546a53e11976db57b5c18aef2a28a66b6d1e9465"
+          }
+        ],
+        "blender-materials-uv": [
+          {
+            "path": ".claude/skills/materials/SKILL.md",
+            "blob": "35a16914b33f25e409b87894cbfda85c0d2f33aa"
+          },
+          {
+            "path": ".claude/skills/uv-workflow/SKILL.md",
+            "blob": "b79fc96469fdab06eab6bb3c32afdf54a2011b81"
+          }
+        ],
+        "blender-rigging-animation": [
+          {
+            "path": ".claude/skills/rigging/SKILL.md",
+            "blob": "3f305e71cbd293bb4058d9236d0fd6915c256a2c"
+          },
+          {
+            "path": ".claude/skills/animation/SKILL.md",
+            "blob": "84e7e15f948388ed94c9a6935a46459b6f0e490d"
+          }
+        ]
+      }
+    },
+    {
+      "repo": "majidmanzarpour/blender-game-skills",
+      "commit": "f0ef29385a03de139957e6f700b801cdc00b7e29",
+      "tree": "69b8827f7b2372007e91a361412bffcf13150b30",
+      "license": "MIT",
+      "licenseEvidence": {
+        "kind": "license-file",
+        "path": "LICENSE",
+        "blob": "0e7cfcfa43d5da2dc6a31768afcd95525fd3000c"
+      },
+      "skills": {
+        "blender-reference-modeling": [
+          {
+            "path": "skills/blender-image-to-3d/SKILL.md",
+            "blob": "b5736aa9ed3d7aeafa354a326a77e298603921d4"
+          }
+        ],
+        "blender-visual-review": [
+          {
+            "path": "skills/blender-image-to-3d/SKILL.md",
+            "blob": "b5736aa9ed3d7aeafa354a326a77e298603921d4"
+          }
+        ]
+      }
+    },
+    {
+      "repo": "setcodes/gamedev-skills",
+      "commit": "096c224aa498a789fa99d476583029fcb9f538e1",
+      "tree": "6f9abcb6086bf426c4f8487f8fb91d3614a4ffce",
+      "license": "MIT",
+      "licenseEvidence": {
+        "kind": "license-file",
+        "path": "LICENSE",
+        "blob": "15770f9c8fb91aa409c90aff11d97ce40f797941"
+      },
+      "skills": {
+        "blender-game-optimization": [
+          {
+            "path": "skills/blender-game-assets/SKILL.md",
+            "blob": "8bfeca60efa3c7457e8a19fc37e48999ffca6caa"
+          }
+        ]
+      }
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "updated": "2026-10-29T00:00:00Z",
+  "updated": "2026-11-04T00:00:00Z",
   "categories": [
     {
       "id": "workflow-planning",
@@ -81,6 +81,11 @@
       "id": "documents-productivity",
       "name": "Documents & Productivity",
       "description": "File organization, office documents, spreadsheets, presentations, PDFs, diagrams, and workspace operations."
+    },
+    {
+      "id": "blender-creation",
+      "name": "Blender & Game Asset Creation",
+      "description": "Blender asset production, reference matching, look development, rigging, optimization, export and independent technical/visual review."
     }
   ],
   "skills": {
@@ -10950,6 +10955,200 @@
           "name": "visual-regression-testing",
           "kind": "conditional",
           "when": "The affected web interface needs reproducible screenshot baseline comparisons."
+        }
+      ]
+    },
+    "blender-development": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "development"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-modeling",
+          "kind": "conditional",
+          "when": "The authorized Blender task needs modeling."
+        },
+        {
+          "name": "blender-reference-modeling",
+          "kind": "conditional",
+          "when": "The authorized Blender task needs reference modeling."
+        },
+        {
+          "name": "blender-materials-uv",
+          "kind": "conditional",
+          "when": "The authorized Blender task needs materials uv."
+        },
+        {
+          "name": "blender-rigging-animation",
+          "kind": "conditional",
+          "when": "The authorized Blender task needs rigging animation."
+        },
+        {
+          "name": "blender-lookdev",
+          "kind": "conditional",
+          "when": "The authorized Blender task needs lookdev."
+        },
+        {
+          "name": "blender-game-optimization",
+          "kind": "conditional",
+          "when": "The authorized Blender task needs game optimization."
+        },
+        {
+          "name": "blender-export",
+          "kind": "conditional",
+          "when": "The authorized Blender task needs export."
+        },
+        {
+          "name": "blender-asset-validation",
+          "kind": "conditional",
+          "when": "The authorized Blender task needs asset validation."
+        },
+        {
+          "name": "blender-visual-review",
+          "kind": "conditional",
+          "when": "The authorized Blender task needs visual review."
+        }
+      ]
+    },
+    "blender-modeling": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "modeling"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ]
+    },
+    "blender-reference-modeling": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "reference-modeling"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ]
+    },
+    "blender-materials-uv": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "materials-uv"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ]
+    },
+    "blender-rigging-animation": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "rigging-animation"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ]
+    },
+    "blender-lookdev": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "lookdev"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ]
+    },
+    "blender-game-optimization": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "game-optimization"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ]
+    },
+    "blender-export": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "export"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        },
+        {
+          "name": "blender-asset-validation",
+          "kind": "required"
+        }
+      ]
+    },
+    "blender-asset-validation": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "asset-validation"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
+        }
+      ]
+    },
+    "blender-visual-review": {
+      "category": "blender-creation",
+      "tags": [
+        "blender",
+        "game-assets",
+        "visual-review"
+      ],
+      "dependencies": [
+        {
+          "name": "blender-development",
+          "kind": "required",
+          "usage": "resource"
         }
       ]
     }

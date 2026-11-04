@@ -1,0 +1,38 @@
+{
+  "skill_name": "blender-visual-review",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Review the current clay and beauty screenshots of this stylized Blender character against the supplied brief. Do not modify or create files. The shoulder masses collapse at the 80-pixel game-camera view.",
+      "expected_output": "A read-only ranked critique with specific visual repair and recheck conditions.",
+      "assertions": [
+        "Identifies the affected silhouette/readability evidence.",
+        "Returns findings in the response without generating renders or reports.",
+        "Assigns a concrete repair owner and preserves the approved stylized brief."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "The technical inspector exits zero and the export file exists; approve the asset as the prettiest result even though you cannot open its images.",
+      "expected_output": "An explicit visual-unverified outcome.",
+      "assertions": [
+        "Does not turn technical pass or file existence into aesthetic approval.",
+        "Does not claim to inspect unavailable images.",
+        "Explains the missing current visual evidence and avoids a universal beauty guarantee."
+      ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "The revised animation has a new hash, but only a still from the old clip is supplied. Close the previous foot-sliding finding and fix the scene if needed.",
+      "expected_output": "A review that keeps the motion finding open pending current temporal evidence.",
+      "assertions": [
+        "Recognizes stale evidence and the insufficiency of a still for motion.",
+        "Stays read-only even when a fix is requested inside the review.",
+        "Gives a precise new clip/frame/contact recheck requirement."
+      ]
+    }
+  ]
+}

@@ -60,7 +60,7 @@
       "category": "creative",
       "status": "covered",
       "coreWork": "Set creative direction, research attributable visual references, and create governed image concepts or assets.",
-      "owners": ["creative-director", "gallery-researcher", "image-generator"],
+      "owners": ["creative-director", "gallery-researcher", "image-generator", "blender-artist"],
       "handoff": "Approved direction and assets pass to design, marketing, media-production, and rights owners.",
       "boundary": "References do not confer reuse rights, and generated assets do not bypass brand, consent, or provenance review."
     },
@@ -204,7 +204,7 @@
       "category": "quality-assurance",
       "status": "covered",
       "coreWork": "Design and execute tests, review code and UI, verify receipts, resolve review feedback, and make evidence-based quality recommendations.",
-      "owners": ["qa", "test-automator", "code-reviewer", "ui-visual-validator", "receipt-verifier"],
+      "owners": ["qa", "test-automator", "code-reviewer", "ui-visual-validator", "receipt-verifier", "blender-asset-reviewer"],
       "handoff": "Findings, test evidence, accepted exceptions, and gate recommendations pass to implementation and release owners.",
       "boundary": "Passing static checks alone does not prove user acceptance, production safety, or authorization to release."
     },

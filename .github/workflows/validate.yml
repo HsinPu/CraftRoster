@@ -69,6 +69,12 @@ jobs:
       - name: Test interface quality catalog integration
         run: npm run test:interface-quality -- --definitions
 
+      - name: Test Blender catalog integration
+        run: npm run test:blender-series -- --definitions
+
+      - name: Test Blender helper contracts without native runtime
+        run: python3 tests/blender-helpers.test.py
+
       - name: Validate Skill review registry
         run: npm run validate:skill-review
 
@@ -358,6 +364,9 @@ jobs:
       - name: Test interface quality packages and bundled updates
         run: npm run test:interface-quality -- --powershell '${{ matrix.powershell }}'
 
+      - name: Test Blender packages and bundled updates
+        run: npm run test:blender-series -- --powershell '${{ matrix.powershell }}'
+
       - name: Test Windows Codex executor with fake processes
         if: matrix.powershell == 'powershell.exe'
         run: npm run test:skill-codex-executor
@@ -401,6 +410,9 @@ jobs:
       - name: Test interface quality packages and bundled updates
         run: npm run test:interface-quality -- --shell bash
 
+      - name: Test Blender packages and bundled updates
+        run: npm run test:blender-series -- --shell bash
+
   installer-bash-macos:
     name: Installer smoke (Bash, macOS quick)
     runs-on: macos-latest
@@ -426,6 +438,9 @@ jobs:
 
       - name: Test interface quality packages and bundled updates
         run: npm run test:interface-quality -- --shell bash
+
+      - name: Test Blender packages and bundled updates
+        run: npm run test:blender-series -- --shell bash
 
       - name: Verify smoke failure propagation
         run: |

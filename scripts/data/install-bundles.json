@@ -747,6 +747,27 @@
       "skills": [
         "ui-improvement"
       ]
+    },
+    {
+      "id": "game-development",
+      "title": "遊戲開發",
+      "description": "Blender game asset creation, art direction, technical checks, visual review and revision; engine workflows remain target-specific.",
+      "agents": [
+        "blender-artist",
+        "blender-asset-reviewer"
+      ],
+      "skills": [
+        "blender-development",
+        "blender-modeling",
+        "blender-reference-modeling",
+        "blender-materials-uv",
+        "blender-rigging-animation",
+        "blender-lookdev",
+        "blender-game-optimization",
+        "blender-export",
+        "blender-asset-validation",
+        "blender-visual-review"
+      ]
     }
   ]
 }

@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.3.0 — 2026-11-04
+
+Minor release: add a Blender game-asset workflow with creation, independent review and revision-bound delivery evidence.
+
+- Add 10 `blender-` Skills spanning the shared production entry, modeling, reference modeling, materials/UVs, rigging/animation, lookdev, optimization, export, technical validation and read-only visual review.
+- Add the independent `game-development` purpose with all 10 Skills and the `blender-artist` / `blender-asset-reviewer` roles; generate five platform adapters. Standalone installation includes required shared resources without pulling every specialist or game engine.
+- Add a background runner, scoped evaluated-geometry inspector and delivery evidence checker. Keep technical, visual and target-engine conclusions separate; reject missing, stale or invalid evidence.
+- Pin four MIT source repositories and preserve notices in installed packages. Add 28 output case definitions, isolated installation/update checks, helper regressions and optional native Blender production fixtures.
+- Exercise actual Blender 5.2.2 GLB workflows, animation/deformation roundtrip, proportion correction and rendered-prop review. Native Blender execution is optional and is not claimed by CI's host-only helper checks.
+- Update usage documentation, provenance lock and release baseline: 304 Skills, 240 Agents, 17 purposes and 17 Skill categories.
+
 ## 1.2.3 — 2026-10-30
 
 Patch release: repair Apache-2.0 source verification and Windows CI configuration-test paths.

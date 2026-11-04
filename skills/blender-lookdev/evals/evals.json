@@ -1,0 +1,38 @@
+{
+  "skill_name": "blender-lookdev",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Polish this approved flat-shaded pastel diorama in Blender. The owner wants the same cozy look; its gameplay camera is orthographic. The supplied render shows the hero prop blending into the ground.",
+      "expected_output": "A scoped lookdev correction preserving the art direction and orthographic use.",
+      "assertions": [
+        "Prioritizes visible silhouette/value separation.",
+        "Does not replace the art style with photorealism or cinematic depth of field.",
+        "Produces matched before/after and gameplay-size evidence when execution is available."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Make a metal prop look premium. The current beauty render hides a normal-map seam under a blown highlight, and the mesh belongs to an unrelated open project.",
+      "expected_output": "A proposed isolated diagnostic/presentation workflow with clear ownership.",
+      "assertions": [
+        "Does not modify unrelated objects or silently clear the user's world.",
+        "Exposes the seam under diagnostic light rather than hiding it.",
+        "Hands geometry or UV defects to their owner and records render settings."
+      ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "The asset looks great in an offline Cycles render. Can we declare its Godot lighting and materials finished without opening Godot?",
+      "expected_output": "An appearance assessment restricted to the available renderer.",
+      "assertions": [
+        "Separates offline beauty from actual engine acceptance.",
+        "Names the target-engine lighting/material checks still required.",
+        "Does not claim engine parity from successful image output."
+      ]
+    }
+  ]
+}

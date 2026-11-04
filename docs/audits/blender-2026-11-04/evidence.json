@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-04",
+  "runtime": "Blender 5.2.2 LTS / Windows x64",
+  "scope": "Real isolated authored prop and fresh-process GLB reimport; no engine runtime",
+  "source": {
+    "path": "woodland-beacon-r3.blend",
+    "sha256": "4a8914993684d82ea5eeec9b9f5367b107a81a4f55598cfacdd6adc78607fc81"
+  },
+  "contract": {
+    "path": "contract.json",
+    "sha256": "0f31b46ab120abee1ebb0c3ac8c520697b44b3c39a71b5b8722cf45e394ddbf7"
+  },
+  "exports": [
+    {
+      "path": "woodland-beacon-final.glb",
+      "sha256": "a92e2c58b0fb840aeeb207b7f081d85f9f0d706e7d9b656624b8394a261ecc2a"
+    }
+  ],
+  "technical": {
+    "status": "pass",
+    "meshes": 49,
+    "evaluated_triangles": 7372,
+    "material_roles": 5,
+    "manifold": true
+  },
+  "roundtrip": {
+    "status": "pass",
+    "semantic_checks": [
+      "mesh count",
+      "material roles",
+      "world bounds/orientation"
+    ],
+    "bounds_tolerance_m": 1e-05
+  },
+  "visual": {
+    "status": "pass",
+    "review": "visual-review.json",
+    "independent": true,
+    "user_approval": false
+  },
+  "engine": "not_tested",
+  "images": [
+    {
+      "path": "beauty-r1.png",
+      "sha256": "878c7c6ef08e2e2de74f1ba0d3e41f6cc8f7016f404ac205e7fba6ff77df3c93"
+    },
+    {
+      "path": "beauty-r3.png",
+      "sha256": "b440fecd4ec71d1902529025d8972f1f091c064922c334a5b80dc362333d09e7"
+    },
+    {
+      "path": "game-r3.png",
+      "sha256": "77d1e9dc59890a6fbfacbf0b5934901aa3502fbae886413d50943d5328a95dc5"
+    },
+    {
+      "path": "back-r3.png",
+      "sha256": "d71fd3b374975647ce3b9ff8155cd948e21d263f816e6fc326b76cb0f4da35d9"
+    },
+    {
+      "path": "clay-r3.png",
+      "sha256": "b91c199b401646f70ef1076c762c2bc91a35ab3ecc765edd061a3847a0f853ab"
+    },
+    {
+      "path": "decoded-beauty-final.png",
+      "sha256": "82725335990bbe8ca95bc9017f0cad9933cd08743876147c1868adabb9bef85a"
+    },
+    {
+      "path": "decoded-game-final.png",
+      "sha256": "09685685ede82e2adc180f279c29746e3e115dc59760ca14f8cddf901ef27f72"
+    }
+  ],
+  "limits": [
+    "Source/export and verbose execution logs remain in the local ignored .work/blender-forward-trial/run-20261104-a folder. Archived images and this report are review evidence, not a complete replay package.",
+    "49 separate meshes are editable assembly, not a draw-call optimization result.",
+    "No collision, FBX or target-engine lighting/runtime verification."
+  ]
+}

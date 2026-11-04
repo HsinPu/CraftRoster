@@ -46,6 +46,7 @@ agent	cloud-infrastructure	terraform-specialist
 agent	cloud-infrastructure	windows-infrastructure-admin
 agent	commerce	ecommerce-operations-manager
 agent	commerce	payment-integration
+agent	creative	blender-artist
 agent	creative	creative-director
 agent	creative	gallery-researcher
 agent	creative	image-generator
@@ -195,6 +196,7 @@ agent	product-management	product-spec-orchestrator
 agent	product-management	technical-product-manager
 agent	project-management	project-manager
 agent	project-management	release-manager
+agent	quality-assurance	blender-asset-reviewer
 agent	quality-assurance	browser-runtime-debugger
 agent	quality-assurance	code-review-preshipment
 agent	quality-assurance	code-reviewer
@@ -285,6 +287,16 @@ skill	backend-data	stripe-payments
 skill	backend-data	supabase-development
 skill	backend-data	temporal-workflow-engineering
 skill	backend-data	wordpress-development
+skill	blender-creation	blender-asset-validation
+skill	blender-creation	blender-development
+skill	blender-creation	blender-export
+skill	blender-creation	blender-game-optimization
+skill	blender-creation	blender-lookdev
+skill	blender-creation	blender-materials-uv
+skill	blender-creation	blender-modeling
+skill	blender-creation	blender-reference-modeling
+skill	blender-creation	blender-rigging-animation
+skill	blender-creation	blender-visual-review
 skill	browser-automation	agent-reach-ops
 skill	browser-automation	browser-automation
 skill	browser-automation	playwright-automation

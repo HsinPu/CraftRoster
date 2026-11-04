@@ -82,6 +82,25 @@ aws-operations	terraform-infrastructure	conditional	The task includes Terraform/
 baoyu-image-gen	ai-image-prompt-design	optional	-
 baoyu-image-gen	ai-image-prompts-skill	optional	-
 baoyu-image-gen	image-utils	conditional	deterministic post-processing
+blender-asset-validation	blender-development	required	-
+blender-development	blender-asset-validation	conditional	The authorized Blender task needs asset validation.
+blender-development	blender-export	conditional	The authorized Blender task needs export.
+blender-development	blender-game-optimization	conditional	The authorized Blender task needs game optimization.
+blender-development	blender-lookdev	conditional	The authorized Blender task needs lookdev.
+blender-development	blender-materials-uv	conditional	The authorized Blender task needs materials uv.
+blender-development	blender-modeling	conditional	The authorized Blender task needs modeling.
+blender-development	blender-reference-modeling	conditional	The authorized Blender task needs reference modeling.
+blender-development	blender-rigging-animation	conditional	The authorized Blender task needs rigging animation.
+blender-development	blender-visual-review	conditional	The authorized Blender task needs visual review.
+blender-export	blender-asset-validation	required	-
+blender-export	blender-development	required	-
+blender-game-optimization	blender-development	required	-
+blender-lookdev	blender-development	required	-
+blender-materials-uv	blender-development	required	-
+blender-modeling	blender-development	required	-
+blender-reference-modeling	blender-development	required	-
+blender-rigging-animation	blender-development	required	-
+blender-visual-review	blender-development	required	-
 brand-voice	article-writing	conditional	Use `article-writing` to apply the approved profile to sourced long-form content.
 brand-voice	content-repurposing	conditional	Use `content-repurposing` to preserve the profile across channel-specific derivatives.
 brand-voice	market-research	conditional	audience, positioning, or competitor context is not yet supported by evidence.

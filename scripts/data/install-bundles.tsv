@@ -602,3 +602,15 @@ interface-quality	跨平台介面檢查與改善	Inspect and improve existing we
 interface-quality	跨平台介面檢查與改善	Inspect and improve existing web, Windows, macOS, iOS and Android interfaces using platform-specific source repair and verification rules. Framework companions are conditional.	agent	ui-ux-designer
 interface-quality	跨平台介面檢查與改善	Inspect and improve existing web, Windows, macOS, iOS and Android interfaces using platform-specific source repair and verification rules. Framework companions are conditional.	agent	ui-visual-validator
 interface-quality	跨平台介面檢查與改善	Inspect and improve existing web, Windows, macOS, iOS and Android interfaces using platform-specific source repair and verification rules. Framework companions are conditional.	skill	ui-improvement
+game-development	遊戲開發	Blender game asset creation, art direction, technical checks, visual review and revision; engine workflows remain target-specific.	agent	blender-artist
+game-development	遊戲開發	Blender game asset creation, art direction, technical checks, visual review and revision; engine workflows remain target-specific.	agent	blender-asset-reviewer
+game-development	遊戲開發	Blender game asset creation, art direction, technical checks, visual review and revision; engine workflows remain target-specific.	skill	blender-asset-validation
+game-development	遊戲開發	Blender game asset creation, art direction, technical checks, visual review and revision; engine workflows remain target-specific.	skill	blender-development
+game-development	遊戲開發	Blender game asset creation, art direction, technical checks, visual review and revision; engine workflows remain target-specific.	skill	blender-export
+game-development	遊戲開發	Blender game asset creation, art direction, technical checks, visual review and revision; engine workflows remain target-specific.	skill	blender-game-optimization
+game-development	遊戲開發	Blender game asset creation, art direction, technical checks, visual review and revision; engine workflows remain target-specific.	skill	blender-lookdev
+game-development	遊戲開發	Blender game asset creation, art direction, technical checks, visual review and revision; engine workflows remain target-specific.	skill	blender-materials-uv
+game-development	遊戲開發	Blender game asset creation, art direction, technical checks, visual review and revision; engine workflows remain target-specific.	skill	blender-modeling
+game-development	遊戲開發	Blender game asset creation, art direction, technical checks, visual review and revision; engine workflows remain target-specific.	skill	blender-reference-modeling
+game-development	遊戲開發	Blender game asset creation, art direction, technical checks, visual review and revision; engine workflows remain target-specific.	skill	blender-rigging-animation
+game-development	遊戲開發	Blender game asset creation, art direction, technical checks, visual review and revision; engine workflows remain target-specific.	skill	blender-visual-review

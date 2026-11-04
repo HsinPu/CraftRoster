@@ -1,0 +1,28 @@
+{
+  "skill_name": "blender-materials-uv",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "The approved hand-painted character looks too dark after export. Its normal and roughness maps are tagged sRGB, the face has intentional mirrored UVs, and the artist requests a material-only correction.",
+      "expected_output": "Scoped asset corrections with current evidence, preserved project contracts and explicit unexecuted acceptance checks.",
+      "assertions": [
+        "Separates target color-management and data-texture interpretation from changing the approved palette.",
+        "Preserves mesh, mirrored UV intent and rig while checking tangent or bake exceptions.",
+        "Checks saved texture files and affected export or states that target-engine validation remains unavailable.",
+        "Supplies consistent-camera neutral and intended-light evidence without calling a file write visual approval."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Review the blender materials and uv decisions in this supplied report only. Do not edit the .blend, install tools or generate new artifacts. It contains a successful export and an old beauty image but no images of the latest revision.",
+      "expected_output": "Read-only findings identifying the evidence gap and the concrete next verification needed.",
+      "assertions": [
+        "Keeps source files unchanged and returns findings in the response.",
+        "Does not treat an old image or successful export as visual evidence for the current revision.",
+        "Names the missing current-revision evidence and feasible checks without inventing execution."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+# Source attribution
+
+Primary research: [EL4CTEO/blender-skills](https://github.com/EL4CTEO/blender-skills/tree/fb92cfb4cc5a238c22113a6a230b09f535bd0656), fixed revision `fb92cfb4cc5a238c22113a6a230b09f535bd0656`, under MIT. Its workflow ideas informed this independently written CraftRoster package; upstream scripts, prompts, provider settings and runtime claims are not imported. The preserved [MIT notice](../licenses/upstream-MIT.txt) covers the researched source. CraftRoster instructions are Apache-2.0. Additional inspected sources and adaptation boundaries are recorded in the repository's Blender research documentation.

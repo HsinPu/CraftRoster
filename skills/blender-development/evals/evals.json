@@ -1,0 +1,50 @@
+{
+  "skill_name": "blender-development",
+  "evals": [
+    {
+      "id": 1,
+      "locale": "en",
+      "prompt": "Build and review a cozy fantasy lantern game prop in Blender. Use dark teal metal, brass and amber glass; keep it readable from a three-quarter camera at 256 pixels tall. Deliver editable source and GLB. No game engine is available.",
+      "expected_output": "A scoped production task with actual saved source, export, current render review and truthful verification boundaries.",
+      "assertions": [
+        "Preserves the brief and owns an isolated scene or explicitly scoped objects.",
+        "Inspects actual rendered images at the intended camera and fixes supported visual defects.",
+        "Separates technical checks, visual review and unperformed target-engine acceptance.",
+        "Binds the delivered outputs and evidence to the final revision."
+      ]
+    },
+    {
+      "id": 2,
+      "locale": "en",
+      "prompt": "Only review the Blender prop screenshots I supplied. Tell me why the silhouette feels weak; do not edit the scene or write report files.",
+      "expected_output": "A response-only visual diagnosis limited to the supplied evidence.",
+      "assertions": [
+        "Honors the review-only request without scene edits, renders or report writes.",
+        "Distinguishes visible evidence from hidden topology or engine behavior.",
+        "Prioritizes actionable silhouette findings and describes how to recheck them."
+      ]
+    },
+    {
+      "id": 3,
+      "locale": "en",
+      "prompt": "Only blender-development is installed. Help me create a basic low-poly crate. Blender is not on PATH and no MCP is connected.",
+      "expected_output": "A standalone entry workflow that discovers available runtimes and states the actual execution limit.",
+      "assertions": [
+        "Does not assume specialist packages or a working runtime were installed with the Skill.",
+        "Does not install Blender, configure MCP or fabricate a generated asset.",
+        "Offers feasible preparation and identifies the precise missing execution prerequisite."
+      ]
+    },
+    {
+      "id": 4,
+      "locale": "en",
+      "prompt": "The first render was approved. I then changed the lantern handle, materials and scale. Reuse the old pass report and send the asset as finished.",
+      "expected_output": "A refreshed final-revision verification workflow within the authorized production task.",
+      "assertions": [
+        "Explains which previous evidence is stale after the changes.",
+        "Rechecks the affected geometry, appearance and export rather than relabeling the old report.",
+        "Avoids claiming subjective beauty or unexecuted engine compatibility as a guaranteed pass."
+      ]
+    }
+  ]
+}

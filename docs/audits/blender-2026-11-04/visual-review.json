@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "status": "pass",
+  "reviewer": "Independent read-only Blender visual reviewer; fresh context, direct image inspection",
+  "source_sha256": "4a8914993684d82ea5eeec9b9f5367b107a81a4f55598cfacdd6adc78607fc81",
+  "contract_sha256": "0f31b46ab120abee1ebb0c3ac8c520697b44b3c39a71b5b8722cf45e394ddbf7",
+  "images": [
+    {
+      "path": "beauty-r3.png",
+      "sha256": "b440fecd4ec71d1902529025d8972f1f091c064922c334a5b80dc362333d09e7"
+    },
+    {
+      "path": "game-r3.png",
+      "sha256": "77d1e9dc59890a6fbfacbf0b5934901aa3502fbae886413d50943d5328a95dc5"
+    },
+    {
+      "path": "back-r3.png",
+      "sha256": "d71fd3b374975647ce3b9ff8155cd948e21d263f816e6fc326b76cb0f4da35d9"
+    },
+    {
+      "path": "clay-r3.png",
+      "sha256": "b91c199b401646f70ef1076c762c2bc91a35ab3ecc765edd061a3847a0f853ab"
+    },
+    {
+      "path": "decoded-beauty-final.png",
+      "sha256": "82725335990bbe8ca95bc9017f0cad9933cd08743876147c1868adabb9bef85a"
+    },
+    {
+      "path": "decoded-game-final.png",
+      "sha256": "09685685ede82e2adc180f279c29746e3e115dc59760ca14f8cddf901ef27f72"
+    }
+  ],
+  "findings": [
+    {
+      "severity": "minor",
+      "location": "amber chamber in source/decoded beauty and game views",
+      "observation": "The broad peach-orange pane reads as stylized frosted luminous glass; internal core is understated.",
+      "classification": "optional art-direction preference, not an acceptance defect",
+      "requested_change": "Optional slightly stronger contained amber core and edge-to-center transition.",
+      "recheck": "Matched source and decoded game views, preserve brass and teal readability without blown highlights."
+    }
+  ],
+  "observations": [
+    "Coherent ring, hexagonal roof, upright chamber and substantial base; clear game-size negative space.",
+    "Dark teal, brass and amber remain distinct with the chamber as focal point.",
+    "Back and clay views show consistent construction without an obvious broken junction or distracting intersection.",
+    "Final GLB decoded views retain source silhouette, palette and material relationships."
+  ],
+  "engine_status": "not_tested",
+  "limitations": [
+    "Subjective acceptance against the supplied brief, not user creative approval or a general quality benchmark.",
+    "No target engine or GPU performance verification."
+  ]
+}

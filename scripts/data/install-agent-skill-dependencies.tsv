@@ -85,6 +85,12 @@ backend-security-coder	security-code-review	recommended	-	Supports backend-secur
 backend-security-coder	security-scanning	conditional	Authorized automated scanner configuration, existing scan evidence, or quality-gate triage is needed.	Supports backend-security-coder with authorized scanner configuration, baselines, result triage, and security quality gates.
 bash-pro	security-scanning	conditional	Authorized automated scanner configuration, existing scan evidence, or quality-gate triage is needed.	Supports bash-pro with authorized scanner configuration, baselines, result triage, and security quality gates.
 bash-pro	terminal-ops	recommended	-	Supports bash-pro with exact commands, repository state, scoped execution, and reproducible verification.
+blender-artist	blender-asset-validation	recommended	-	Checks technical delivery evidence before handoff.
+blender-artist	blender-development	recommended	-	Owns the asset brief, scene ownership, execution and revision loop.
+blender-artist	blender-lookdev	recommended	-	Connects art direction to material, lighting and camera decisions.
+blender-artist	blender-visual-review	recommended	-	Provides independent, evidence-based visual critique and recheck criteria.
+blender-asset-reviewer	blender-asset-validation	recommended	-	Provides technical inspection scope and delivery evidence boundaries.
+blender-asset-reviewer	blender-visual-review	recommended	-	Provides art-direction-aware visual diagnosis and correction priorities.
 blockchain-developer	api-contract-design	conditional	The work defines or changes consumer-visible API, event, or webhook contracts.	Supports blockchain-developer with versioned requests, responses, errors, pagination, and compatibility contracts.
 blockchain-developer	deployment-operations	conditional	An environment promotion, artifact rollout, or recovery plan is part of the authorized mode.	Supports blockchain-developer with mode-aware artifact, rollout, health, abort, and recovery evidence.
 blockchain-developer	security-code-review	recommended	-	Supports blockchain-developer with exploit-path, trust-boundary, vulnerability-confidence, and remediation evidence.

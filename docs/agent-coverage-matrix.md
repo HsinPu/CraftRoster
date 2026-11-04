@@ -21,7 +21,7 @@
 | `business-operations` | 營運需求 → 流程／變革／採購規劃 → accountable-owner handoff | `operations-manager`, `change-management-consultant`, `procurement-specialist`, `learning-development-specialist` |
 | `cloud-infrastructure` | 基礎設施設計 → IaC／平台 → 安全與成本檢查 → 維運 handoff | `cloud-architect`, `terraform-specialist`, `kubernetes-architect`, `network-engineer` |
 | `commerce` | 商店與訂單流程 → checkout／payment integration → 營運與財務 handoff | `ecommerce-operations-manager`, `payment-integration` |
-| `creative` | 創意方向 → 可追溯參考 → 受治理資產概念／生成 → rights handoff | `creative-director`, `gallery-researcher`, `image-generator` |
+| `creative` | 創意方向 → 可追溯參考 → 受治理資產概念／生成 → rights handoff | `creative-director`, `gallery-researcher`, `image-generator`, `blender-artist` |
 | `customer-operations` | 案件 triage → 回覆／採用風險 → support 或 success follow-up | `customer-support`, `customer-success-manager` |
 | `data` | 建模 → ingest／transform → governance／administration → trusted-data handoff | `data-engineer`, `analytics-engineer`, `data-governance-engineer`, `database-admin` |
 | `developer-experience` | onboarding → tooling／platform workflow → feedback → maintainer handoff | `codebase-onboarding-engineer`, `developer-tooling-engineer`, `platform-engineer`, `dx-optimizer` |
@@ -39,7 +39,7 @@
 | `performance` | benchmark → bottleneck analysis → optimization → regression evidence | `performance-engineer`, `database-optimizer` |
 | `product-management` | discovery → outcome／requirements → priority／spec → delivery handoff | `product-manager`, `product-spec-orchestrator`, `technical-product-manager` |
 | `project-management` | delivery plan → dependency／risk tracking → release coordination → closeout | `project-manager`, `release-manager` |
-| `quality-assurance` | test／review design → execution → finding resolution → gate recommendation | `qa`, `test-automator`, `code-reviewer`, `ui-visual-validator`, `receipt-verifier` |
+| `quality-assurance` | test／review design → execution → finding resolution → gate recommendation | `qa`, `test-automator`, `code-reviewer`, `ui-visual-validator`, `receipt-verifier`, `blender-asset-reviewer` |
 | `research` | authoritative search → provenance／comparison → uncertainty → specialist handoff | `market-researcher`, `search-specialist` |
 | `sales` | discovery → technical evidence／automation → revenue analysis → authorized follow-up | `sales-engineer`, `sales-automator`, `revenue-operations-analyst` |
 | `security` | threat model → hardening／testing → detection／audit → mitigation handoff | `threat-modeling-expert`, `application-security-engineer`, `security-auditor`, `threat-detection-engineer`, `privacy-engineer` |
