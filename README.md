@@ -623,6 +623,7 @@ npm run eval:skill-routing -- --skill solution-discovery --max-cases 3 --output 
 詳細來源與改寫紀錄：
 
 - [Three.js Skill sources](docs/threejs-skill-sources.md)
+- [Blender 與遊戲開發分組研究（提案，尚未提供安裝）](docs/blender-game-development-research.md)
 - [SVG Skills 與上游來源](docs/svg-skills.md)
 - [跨平台介面品質與固定上游來源](docs/interface-quality.md)
 - [Visual design Skill sources](docs/visual-design-skill-sources.md)

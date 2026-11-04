@@ -21,6 +21,12 @@ Record verified, durable project decisions and lessons here. Current catalog and
 - A referenced SPDX license can pass local manifest validation while its remote content matcher lacks that license branch. Impeccable's valid pinned Apache-2.0 LICENSE exposed this gap; keep its source/blob pins intact and test the actual `verifyRemote` path with positive license text, negative terms and mismatched license blobs.
 - OpenCode v1.19.5 accepts comments/trailing commas in both `.json` and `.jsonc`. Its global load order is `config.json` then `opencode.json` then `opencode.jsonc`, with higher explicit instruction arrays overriding lower arrays. When adding an array to a file that has none, carry forward the effective lower array; otherwise only append to the target's own array. Keep legacy `config.json` discovery limited to the standard global directory, preserve source bytes and all candidate snapshots, and keep ownership parsing strict JSON.
 
+## Blender source research — 2026-11-04
+
+- `docs/blender-game-development-research.md` records four pinned MIT sources and a proposed independent `game-development` purpose starting with Blender assets. Research has not added catalog members, installed upstream tools, or verified Blender runtime behavior.
+- arjun988's 94 canonical Skills have a Cursor mirror and shared sibling references; do not double-count the mirror or copy isolated folders without their resources. EL4CTEO's 28 Skills provide live/headless paths and script-based QA; their presence does not establish cross-platform or engine success.
+- Reimport reports and visual similarity metrics are partial evidence. majidmanzarpour's roundtrip script does not automatically compare the delivery manifest, and silhouette normalization does not prove world scale. setcodes includes author-specific FBX preferences and a distinct Blender Lab MCP protocol; adapt both to explicit project/tool contracts.
+
 ## Interface-quality implementation — 2026-10-29
 
 - `frontend-design-review` already separates experience critique, production web audit and polish review. It is read-only unless fixes are separately authorized. `docs/visual-design-skill-sources.md` records prior Impeccable research; adding three duplicate web review Skills would miss the actual native-platform gap.
